@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   <div class="final-box" id="final-box"><h2>Test Complete!</h2><div class="final-grade" id="final-grade"></div><div class="final-pct" id="final-pct"></div><p class="final-msg" id="final-msg"></p><button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button><div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div><div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div></div>
 </div>
 <script>
-const SCRIPT_URL='';const TEST_KEY='edx_gcse_chem_hw_t6';const TEST_NAME='T6 Groups in the Periodic Table';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbx5tEve2zTJHVxbY-QIbRRlhoqaKKUZp6dVGTIo2cdVrsZv8k6yo7zBHBi0z9wlYI0JMA/exec';const TEST_KEY='edx_gcse_chem_hw_t6';const TEST_NAME='T6 Groups in the Periodic Table';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
 const questions=[
   {text:'Which group of the periodic table contains the alkali metals?',options:['Group 0','Group 2','Group 7','Group 1'],answer:3,tier:'F',explain:'The <strong>alkali metals</strong> are in <strong>Group 1</strong> of the periodic table. They include lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs) and francium (Fr). They are called alkali metals because they react with water to form alkaline hydroxide solutions.'},
   {text:'What happens when potassium is added to water?',options:['It dissolves slowly with no gas produced','It reacts vigorously, producing hydrogen gas and potassium hydroxide solution — the hydrogen ignites with a lilac flame','It reacts gently and produces a white precipitate','It sinks to the bottom and gradually dissolves over several hours'],answer:1,tier:'F',explain:'Potassium reacts very vigorously with water: 2K + 2H₂O → 2KOH + H₂. The <strong>hydrogen gas produced ignites immediately</strong> due to the heat of the reaction, burning with a characteristic <strong>lilac/violet flame</strong> (from the potassium). Potassium moves around on the water surface and fizzes rapidly.'},
@@ -70,3 +70,4 @@ renderAttempts();buildQuiz();
 </script>
 </body>
 </html>
+

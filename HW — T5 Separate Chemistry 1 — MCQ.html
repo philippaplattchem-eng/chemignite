@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   <div class="final-box" id="final-box"><h2>Test Complete!</h2><div class="final-grade" id="final-grade"></div><div class="final-pct" id="final-pct"></div><p class="final-msg" id="final-msg"></p><button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button><div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div><div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div></div>
 </div>
 <script>
-const SCRIPT_URL='';const TEST_KEY='edx_gcse_chem_hw_t5';const TEST_NAME='T5 Separate Chemistry 1';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbx5tEve2zTJHVxbY-QIbRRlhoqaKKUZp6dVGTIo2cdVrsZv8k6yo7zBHBi0z9wlYI0JMA/exec';const TEST_KEY='edx_gcse_chem_hw_t5';const TEST_NAME='T5 Separate Chemistry 1';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
 const questions=[
   {text:'Which of the following is a characteristic property of transition metals?',options:['They all have very low melting points','They form coloured compounds and can act as catalysts','They react very vigorously with cold water','They have only one possible oxidation state'],answer:1,tier:'F',explain:'<strong>Transition metals</strong> (the central block of the periodic table, e.g. Fe, Cu, Cr, Mn) form <strong>coloured compounds</strong> and many act as <strong>catalysts</strong>. They typically have high melting points, are malleable and ductile, and have variable oxidation states. These properties contrast with Group 1 metals which react vigorously with water.'},
   {text:'Iron rusts in the presence of which two substances?',options:['Carbon dioxide and water','Oxygen and water','Oxygen and nitrogen','Oxygen and carbon dioxide'],answer:1,tier:'F',explain:'Rusting requires both <strong>oxygen</strong> (O₂) and <strong>water</strong> (H₂O) to be present. Iron does not rust in dry air (no water) or in water that has been boiled (no dissolved oxygen). The product of rusting is hydrated iron(III) oxide — the reddish-brown substance we see on iron and steel objects.'},
@@ -70,3 +70,4 @@ renderAttempts();buildQuiz();
 </script>
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   <div class="final-box" id="final-box"><h2>Test Complete!</h2><div class="final-grade" id="final-grade"></div><div class="final-pct" id="final-pct"></div><p class="final-msg" id="final-msg"></p><button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button><div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div><div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div></div>
 </div>
 <script>
-const SCRIPT_URL='';const TEST_KEY='edx_gcse_chem_hw_t7';const TEST_NAME='T7 Rates of Reaction & Energy Changes';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbx5tEve2zTJHVxbY-QIbRRlhoqaKKUZp6dVGTIo2cdVrsZv8k6yo7zBHBi0z9wlYI0JMA/exec';const TEST_KEY='edx_gcse_chem_hw_t7';const TEST_NAME='T7 Rates of Reaction & Energy Changes';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
 const questions=[
   {text:'How is the rate of a chemical reaction defined?',options:['The number of collisions between particles per second','The amount of product formed or reactant used up per unit time','The temperature at which the reaction occurs most rapidly','The energy released per mole of reactant used up'],answer:1,tier:'F',explain:'The <strong>rate of reaction</strong> = amount of reactant used up (or product formed) ÷ time. It can be measured by monitoring how quickly the mass decreases, how quickly a gas is produced (by volume or mass), or how quickly a colour change or precipitate forms. The faster the rate, the less time the reaction takes.'},
   {text:'In an experiment, marble chips react with hydrochloric acid. How could you measure the rate of reaction?',options:['By measuring the temperature of the solution every minute','By recording the mass of the flask every 30 seconds as CO₂ escapes','By measuring the colour change of universal indicator','By counting the number of bubbles visible in the solution'],answer:1,tier:'F',explain:'CO₂ gas is produced and escapes from the flask, so the <strong>mass of the flask decreases</strong> over time. Recording mass at regular intervals lets you calculate the rate. A loss in mass graph that starts steeply (fast rate) and flattens out (rate slows as reactants are used up) is the expected shape. This is the basis of the marble chip/acid practical (CP5).'},
@@ -70,3 +70,4 @@ renderAttempts();buildQuiz();
 </script>
 </body>
 </html>
+

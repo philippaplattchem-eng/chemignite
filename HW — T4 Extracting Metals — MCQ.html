@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   <div class="final-box" id="final-box"><h2>Test Complete!</h2><div class="final-grade" id="final-grade"></div><div class="final-pct" id="final-pct"></div><p class="final-msg" id="final-msg"></p><button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button><div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div><div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div></div>
 </div>
 <script>
-const SCRIPT_URL='';const TEST_KEY='edx_gcse_chem_hw_t4';const TEST_NAME='T4 Extracting Metals & Equilibria';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbx5tEve2zTJHVxbY-QIbRRlhoqaKKUZp6dVGTIo2cdVrsZv8k6yo7zBHBi0z9wlYI0JMA/exec';const TEST_KEY='edx_gcse_chem_hw_t4';const TEST_NAME='T4 Extracting Metals & Equilibria';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
 const questions=[
   {text:'What does the reactivity series show?',options:['The order of metals from highest to lowest density','The order of metals from most reactive to least reactive','The order of metals by melting point','The order of metals by electrical conductivity'],answer:1,tier:'F',explain:'The <strong>reactivity series</strong> ranks metals in order from most reactive (e.g. potassium, sodium) to least reactive (e.g. gold, platinum). It is used to predict which metals can displace others from compounds and which extraction method is needed.'},
   {text:'Iron can be extracted by heating iron oxide with carbon. What type of reaction is this for the iron oxide?',options:['Oxidation — iron oxide gains oxygen','Reduction — iron oxide loses oxygen','Neutralisation — the oxide reacts with an acid','Electrolysis — electrical energy decomposes the oxide'],answer:1,tier:'F',explain:'<strong>Reduction</strong> is the removal of oxygen from a compound. Iron oxide loses its oxygen to the carbon (which is oxidised to carbon dioxide/monoxide), leaving iron metal behind. Carbon acts as a reducing agent because it removes oxygen from the iron oxide.'},
@@ -70,3 +70,4 @@ renderAttempts();buildQuiz();
 </script>
 </body>
 </html>
+

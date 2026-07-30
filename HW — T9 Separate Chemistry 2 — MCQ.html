@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   <div class="final-box" id="final-box"><h2>Test Complete!</h2><div class="final-grade" id="final-grade"></div><div class="final-pct" id="final-pct"></div><p class="final-msg" id="final-msg"></p><button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button><div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div><div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div></div>
 </div>
 <script>
-const SCRIPT_URL='';const TEST_KEY='edx_gcse_chem_hw_t9';const TEST_NAME='T9 Separate Chemistry 2';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbx5tEve2zTJHVxbY-QIbRRlhoqaKKUZp6dVGTIo2cdVrsZv8k6yo7zBHBi0z9wlYI0JMA/exec';const TEST_KEY='edx_gcse_chem_hw_t9';const TEST_NAME='T9 Separate Chemistry 2';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
 const questions=[
   {text:'A student performs a flame test on an unknown compound. The flame turns brick-red. Which metal ion is present?',options:['Sodium (Na⁺)','Potassium (K⁺)','Calcium (Ca²⁺)','Copper (Cu²⁺)'],answer:2,tier:'F',explain:'Flame test colours: <strong>lithium (Li⁺)</strong> = crimson red; <strong>sodium (Na⁺)</strong> = yellow; <strong>potassium (K⁺)</strong> = lilac/violet; <strong>calcium (Ca²⁺)</strong> = <strong>brick-red/orange-red</strong>; <strong>copper (Cu²⁺)</strong> = blue-green. The brick-red colour is characteristic of calcium. A clean nichrome or platinum wire is dipped in the compound and held in a roaring Bunsen flame.'},
   {text:'What flame colour is produced by sodium ions (Na⁺)?',options:['Crimson red','Lilac/violet','Brick-red','Yellow/orange'],answer:3,tier:'F',explain:'Sodium produces an intense <strong>yellow/orange</strong> flame. This colour is so intense that it can mask other flame colours — for example, potassium\'s lilac flame is easily obscured by even tiny sodium contamination. Sodium is also responsible for the yellow colour of street lamps (sodium vapour lamps).'},
@@ -70,3 +70,4 @@ renderAttempts();buildQuiz();
 </script>
 </body>
 </html>
+

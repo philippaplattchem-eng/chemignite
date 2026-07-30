@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   <div class="final-box" id="final-box"><h2>Test Complete!</h2><div class="final-grade" id="final-grade"></div><div class="final-pct" id="final-pct"></div><p class="final-msg" id="final-msg"></p><button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button><div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div><div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div></div>
 </div>
 <script>
-const SCRIPT_URL='';const TEST_KEY='edx_gcse_chem_hw_t8';const TEST_NAME='T8 Fuels & Earth Science';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbx5tEve2zTJHVxbY-QIbRRlhoqaKKUZp6dVGTIo2cdVrsZv8k6yo7zBHBi0z9wlYI0JMA/exec';const TEST_KEY='edx_gcse_chem_hw_t8';const TEST_NAME='T8 Fuels & Earth Science';const MAX_ATT=3;const LETTERS=['A','B','C','D'];
 const questions=[
   {text:'What is crude oil and how was it formed?',options:['A pure chemical compound formed by the reaction of carbon with water over millions of years','A mixture of hydrocarbons formed from the remains of marine organisms over millions of years under high pressure and temperature','A mineral oil extracted from salt mines','A man-made mixture of hydrocarbons produced by the chemical industry'],answer:1,tier:'F',explain:'Crude oil is a <strong>mixture of hydrocarbons</strong> — compounds containing only carbon and hydrogen. It formed over millions of years from the remains of <strong>marine organisms</strong> (plants and animals) that were buried, compressed and heated under the sea bed. It is a <strong>non-renewable fossil fuel</strong>. Because it is a mixture, its components can be separated by fractional distillation.'},
   {text:'What is fractional distillation and why can it be used to separate crude oil?',options:['A chemical reaction that converts long-chain hydrocarbons into shorter ones at high temperature','A separation technique that exploits the different boiling points of the hydrocarbons in crude oil','A process that burns off unwanted fractions, leaving only the most useful ones','A type of chromatography that separates oil components by their solubility in water'],answer:1,tier:'F',explain:'<strong>Fractional distillation</strong> separates a mixture of liquids with different boiling points. Crude oil is heated and the vapours rise up a fractionating column, which has a temperature gradient (hotter at bottom, cooler at top). Hydrocarbons condense at different levels depending on their boiling points, allowing collection of separate <strong>fractions</strong>. It works because the components have different boiling points.'},
@@ -70,3 +70,4 @@ renderAttempts();buildQuiz();
 </script>
 </body>
 </html>
+
