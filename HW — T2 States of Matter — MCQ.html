@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HW — T2 States of Matter &amp; Mixtures — MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',Arial,sans-serif;font-size:11pt;color:#2d3748;background:#eef0f7;line-height:1.6;}
+.page{max-width:800px;margin:24px auto 40px;background:#fff;padding:28px 32px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.header-box{background:linear-gradient(135deg,#4a6fa5,#6b8ec7);color:#fff;padding:16px 20px;border-radius:8px;margin-bottom:14px;}
+.header-box h1{font-size:15pt;font-weight:700;letter-spacing:-0.3px;}
+.header-box .meta{font-size:9pt;margin-top:5px;opacity:0.9;font-weight:300;}
+.tier-note{font-size:8.5pt;margin-top:6px;opacity:0.85;}
+.h-badge-hdr{background:rgba(255,255,255,0.25);padding:1px 6px;border-radius:3px;font-weight:600;font-size:8pt;}
+.student-row{display:flex;gap:20px;flex-wrap:wrap;margin:12px 0 6px;font-size:10pt;align-items:center;}
+.field{display:flex;align-items:center;gap:6px;}
+.field label{font-weight:500;color:#4a5568;}
+.field input[type=text]{border:none;border-bottom:2px solid #c9d3e0;outline:none;font-family:inherit;font-size:10pt;width:160px;padding:2px 4px;color:#2d3748;background:transparent;transition:border-color 0.2s;}
+.field input[type=text]:focus{border-bottom-color:#4a6fa5;}
+.name-warn{font-size:9pt;color:#c05621;display:none;margin-bottom:8px;font-weight:500;}
+.attempts-panel{background:#f7f8fc;border:1.5px solid #d8deed;border-radius:8px;padding:14px 18px;margin:14px 0;}
+.attempts-panel h3{font-size:10pt;font-weight:600;color:#4a5568;margin-bottom:10px;}
+.attempt-slots{display:flex;gap:12px;flex-wrap:wrap;}
+.attempt-slot{flex:1;min-width:100px;background:#fff;border:1.5px solid #d0d8e8;border-radius:6px;padding:10px 12px;text-align:center;}
+.attempt-slot .slot-label{font-size:8.5pt;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:0.5px;}
+.attempt-slot .slot-score{font-size:17pt;font-weight:700;color:#4a6fa5;margin:4px 0 2px;}
+.attempt-slot .slot-date{font-size:8pt;color:#a0aec0;}
+.attempt-slot.empty .slot-score{color:#c9d3e0;font-size:13pt;}
+.attempt-slot.best{border-color:#52b788;background:#f0faf5;}
+.attempt-slot.best .slot-score{color:#2d8c6e;}
+.instructions{font-size:10pt;padding:10px 14px;border-left:4px solid #a3b8d8;background:#f5f7fc;border-radius:0 6px 6px 0;margin:12px 0 20px;color:#4a5568;}
+.instructions strong{color:#2d3748;}
+.progress-bar-wrap{margin-bottom:18px;}
+.progress-label{font-size:9.5pt;color:#718096;margin-bottom:5px;font-weight:500;}
+.progress-bar{background:#e2e8f0;border-radius:99px;height:7px;overflow:hidden;}
+.progress-fill{background:linear-gradient(90deg,#4a6fa5,#7ba7d8);height:100%;border-radius:99px;transition:width 0.3s ease;}
+.question{background:#fff;border:1.5px solid #e2e8f0;border-radius:8px;padding:16px 18px;margin-bottom:12px;transition:border-color 0.2s;}
+.question.selected-q{border-color:#a3b8d8;}
+.q-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;}
+.q-num{font-weight:700;color:#4a6fa5;font-size:11pt;min-width:24px;flex-shrink:0;}
+.q-text{flex:1;font-size:10.5pt;line-height:1.6;color:#2d3748;}
+.q-marks{font-size:9pt;color:#a0aec0;white-space:nowrap;font-style:italic;}
+.tier-badge{display:inline-block;background:#7b5ea7;color:#fff;font-size:7.5pt;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:4px;vertical-align:middle;}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:520px){.options{grid-template-columns:1fr;}}
+.opt-btn{display:flex;align-items:center;gap:10px;background:#f8f9fd;border:1.5px solid #dde3ef;border-radius:6px;padding:9px 13px;cursor:pointer;font-family:inherit;font-size:10pt;text-align:left;transition:all 0.15s;width:100%;color:#2d3748;}
+.opt-btn:hover:not(:disabled){background:#edf2fc;border-color:#7ba7d8;}
+.opt-letter{font-weight:700;color:#7ba7d8;min-width:20px;flex-shrink:0;font-size:10.5pt;}
+.opt-btn.selected-opt{background:#e8eef8;border-color:#4a6fa5;}
+.opt-btn.selected-opt .opt-letter{color:#4a6fa5;}
+.opt-btn:disabled{cursor:default;}
+.opt-btn.correct{background:#eaf7f0;border-color:#52b788;color:#276749;}
+.opt-btn.correct .opt-letter{color:#276749;}
+.opt-btn.wrong{background:#fdf0f0;border-color:#e07070;color:#9b2c2c;}
+.opt-btn.wrong .opt-letter{color:#9b2c2c;}
+.opt-btn.reveal{background:#eaf7f0;border-color:#52b788;color:#276749;}
+.opt-btn.reveal .opt-letter{color:#276749;}
+.opt-btn.dimmed{background:#f8f9fd;border-color:#e8eaf0;color:#a0aec0;}
+.opt-btn.dimmed .opt-letter{color:#c9d3e0;}
+.q-feedback{margin-top:9px;font-size:9.5pt;font-weight:500;padding:5px 10px;border-radius:5px;display:none;}
+.q-feedback.ok{background:#eaf7f0;color:#276749;}
+.q-feedback.bad{background:#fdf0f0;color:#9b2c2c;}
+.q-explain{margin-top:7px;font-size:9.5pt;padding:8px 12px;border-radius:5px;display:none;background:#fff8ec;border-left:3px solid #e8a730;color:#744210;line-height:1.55;}
+.submit-wrap{text-align:center;margin:24px 0 10px;}
+.submit-btn{background:linear-gradient(135deg,#4a6fa5,#6b8ec7);color:#fff;border:none;padding:13px 40px;border-radius:8px;font-family:inherit;font-size:11.5pt;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(74,111,165,0.3);transition:all 0.2s;}
+.submit-btn:hover:not(:disabled){background:linear-gradient(135deg,#3a5f95,#5a7db5);}
+.submit-btn:disabled{background:#c9d3e0;box-shadow:none;cursor:not-allowed;}
+.submit-hint{font-size:9pt;color:#a0aec0;margin-top:6px;}
+.final-box{display:none;border:1.5px solid #c9d8f0;border-radius:10px;padding:24px 28px;text-align:center;margin-top:14px;background:linear-gradient(135deg,#f0f5ff,#e8eef8);}
+.final-box h2{font-size:14pt;font-weight:700;color:#2d3748;margin-bottom:4px;}
+.final-grade{font-size:34pt;font-weight:700;color:#4a6fa5;margin:8px 0 4px;}
+.final-pct{font-size:12pt;color:#718096;margin-bottom:10px;}
+.final-msg{font-size:10.5pt;color:#4a5568;max-width:480px;margin:0 auto 18px;}
+.retry-btn{background:#fff;color:#4a6fa5;border:2px solid #4a6fa5;padding:10px 30px;border-radius:7px;font-family:inherit;font-size:10.5pt;font-weight:600;cursor:pointer;transition:all 0.2s;margin:4px;}
+.retry-btn:hover:not(:disabled){background:#4a6fa5;color:#fff;}
+.retry-btn:disabled{opacity:0.4;cursor:not-allowed;}
+.no-more{font-size:9.5pt;color:#a0aec0;margin-top:8px;}
+.score-sent{font-size:9pt;color:#52b788;margin-top:10px;font-weight:500;}
+sub,sup{font-size:75%;}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header-box">
+    <h1>Topic 2: States of Matter &amp; Mixtures &mdash; MCQ Homework Test</h1>
+    <div class="meta">Edexcel GCSE Chemistry &nbsp;&bull;&nbsp; Separate Science (1CH0) + Combined Science (1SC0) &nbsp;&bull;&nbsp; Paper 1 &nbsp;&bull;&nbsp; Foundation + Higher</div>
+    <div class="tier-note">Covers states of matter, separation techniques &amp; water purification &nbsp;&middot;&nbsp; Questions marked <span class="h-badge-hdr">H</span> are Higher tier only</div>
+  </div>
+  <div class="student-row">
+    <div class="field"><label for="stu-name">Name:</label><input type="text" id="stu-name" placeholder="Your full name"></div>
+    <div class="field"><label for="stu-class">Class:</label><input type="text" id="stu-class" placeholder="e.g. 10B" style="width:110px"></div>
+    <div class="field"><label for="stu-date">Date:</label><input type="text" id="stu-date" placeholder="e.g. 30 Jul" style="width:110px"></div>
+  </div>
+  <div class="name-warn" id="name-warn">&#9888; Please enter your name before submitting so your teacher can see your score.</div>
+  <div class="attempts-panel">
+    <h3>Your Attempts &nbsp;<span style="font-weight:400;color:#a0aec0;font-size:9pt;">(max 3 &mdash; saved automatically)</span></h3>
+    <div class="attempt-slots" id="attempt-slots"></div>
+  </div>
+  <div class="instructions"><strong>Instructions:</strong> Select one answer per question. Click <strong>Submit Answers</strong> once all 25 are answered. Wrong answers will show an explanation. You have <strong>3 attempts</strong>.</div>
+  <div class="progress-bar-wrap">
+    <div class="progress-label" id="progress-label">0 of 25 answered</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div id="quiz-container"></div>
+  <div class="submit-wrap">
+    <button class="submit-btn" id="submit-btn" onclick="submitQuiz()" disabled>Submit Answers</button>
+    <div class="submit-hint" id="submit-hint">Answer all 25 questions to submit</div>
+  </div>
+  <div class="final-box" id="final-box">
+    <h2>Test Complete!</h2>
+    <div class="final-grade" id="final-grade"></div>
+    <div class="final-pct" id="final-pct"></div>
+    <p class="final-msg" id="final-msg"></p>
+    <button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button>
+    <div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div>
+    <div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div>
+  </div>
+</div>
+<script>
+const SCRIPT_URL='';
+const TEST_KEY='edx_gcse_chem_hw_t2';
+const TEST_NAME='T2 States of Matter & Mixtures';
+const MAX_ATT=3;
+const LETTERS=['A','B','C','D'];
+const questions=[
+  {text:'Which statement best describes the arrangement of particles in a solid?',options:['Particles are far apart and move randomly in all directions','Particles are close together in a regular arrangement and vibrate about fixed positions','Particles are close together but can flow and slide past one another','Particles have no fixed arrangement and fill any container they are in'],answer:1,tier:'F',explain:'In a <strong>solid</strong>, particles are close together in a regular arrangement and can only <strong>vibrate about fixed positions</strong> — they cannot move from place to place. This is why solids have a fixed shape and cannot flow.'},
+  {text:'What happens to the particles in a liquid when it is heated to its boiling point?',options:['The particles begin to vibrate in fixed positions','The particles gain enough energy to break free from one another and become a gas','The particles pack more closely together','The particles arrange themselves into a regular lattice'],answer:1,tier:'F',explain:'At the boiling point, particles gain enough <strong>kinetic energy</strong> to overcome the forces between them and escape into the gas state. The temperature stays constant during boiling because all the energy goes into separating the particles, not raising temperature.'},
+  {text:'What is the name of the change of state from liquid to solid?',options:['Evaporation','Condensation','Freezing','Sublimation'],answer:2,tier:'F',explain:'<strong>Freezing</strong> (also called solidification) is the change from liquid to solid. The particles lose energy, slow down, and settle into the regular arrangement of a solid. The reverse — solid to liquid — is called melting.'},
+  {text:'Why does the temperature stay constant during melting, even though the substance is being heated?',options:['The substance reflects the heat energy away','Energy is being used to break the forces between particles, not to increase their kinetic energy','The substance stops absorbing heat at its melting point','The particles slow down, which cancels out the energy being added'],answer:1,tier:'F',explain:'During melting, all the energy supplied is used to <strong>overcome the forces holding the particles in the solid</strong> — it breaks these forces rather than raising temperature. Only once all the solid has melted does the temperature start to rise again.'},
+  {text:'Which of the following best describes a pure substance?',options:['A substance that contains only one type of atom or compound and has not been mixed with anything else','Any colourless liquid or gas','A substance that dissolves completely in water','A substance with a pH of exactly 7'],answer:0,tier:'F',explain:'A <strong>pure substance</strong> contains only one type of atom or compound with nothing else mixed in. At GCSE, purity is tested using melting/boiling points — a pure substance has a sharp, precise melting point; an impure substance melts over a range of temperatures.'},
+  {text:'How can you use melting point data to test whether a substance is pure?',options:['A pure substance has a higher melting point than an impure one','A pure substance melts sharply at a precise temperature; an impure substance melts over a range of temperatures','A pure substance glows when heated; an impure one does not','A pure substance cannot be melted at all'],answer:1,tier:'F',explain:'A <strong>pure substance melts at a precise, fixed temperature</strong>. Any impurity lowers and broadens the melting point, so an impure substance begins to melt at a lower temperature and finishes melting at a higher one — it melts over a range. This is the standard laboratory test for purity.'},
+  {text:'Which separation technique is best for separating an insoluble solid from a liquid?',options:['Distillation','Chromatography','Filtration','Crystallisation'],answer:2,tier:'F',explain:'<strong>Filtration</strong> separates an insoluble solid from a liquid. The mixture is poured through filter paper — the solid particles are too large to pass through the tiny pores in the paper (forming the residue), while the liquid passes through freely (the filtrate).'},
+  {text:'Simple distillation is used to separate a soluble solid from a liquid. What property difference makes this possible?',options:['The solid and liquid have different densities','The solid and liquid have different boiling points','The solid and liquid have different colours','The solid and liquid have different masses'],answer:1,tier:'F',explain:'<strong>Simple distillation</strong> works because the liquid has a much lower boiling point than the dissolved solid. The liquid evaporates when heated, leaving the solid behind, and is then condensed back to a liquid in a cooler part of the apparatus.'},
+  {text:'Fractional distillation is used rather than simple distillation when:',options:['The mixture contains an insoluble solid','The liquids in the mixture have very different boiling points','The liquids in the mixture have similar boiling points and both need to be collected','The mixture needs to be separated by colour'],answer:2,tier:'F',explain:'<strong>Fractional distillation</strong> is used when two or more liquids have <strong>similar boiling points</strong> and you want to collect each one separately. The fractionating column allows them to be separated gradually — the lowest boiling point liquid rises to the top first.'},
+  {text:'In paper chromatography, what is the mobile phase?',options:['The chromatography paper','The solvent that moves up through the paper','The mixture of substances being separated','The baseline drawn in pencil'],answer:1,tier:'F',explain:'The <strong>mobile phase</strong> is the solvent that moves up through the paper carrying dissolved substances with it. The stationary phase is the paper itself, which stays still. Substances separate because they have different attractions to the mobile and stationary phases.'},
+  {text:'Why must the baseline be drawn in pencil, not pen, in paper chromatography?',options:['Pencil marks are easier to see under UV light','Pen ink would run up the paper with the solvent and interfere with the results','Pencil makes a more precise line than pen','The ink from a pen would dissolve the sample spots'],answer:1,tier:'F',explain:'<strong>Pencil marks are insoluble</strong> in the solvent used in chromatography, so a pencil baseline stays in place and does not run. If an ink pen were used, the ink would dissolve and travel up the paper with the solvent, interfering with the results.'},
+  {text:'What does a pure substance produce on a chromatogram?',options:['Many spots of different colours','Two spots, one above the baseline','A single spot in every solvent tested','No spots at all'],answer:2,tier:'F',explain:'A <strong>pure substance produces only one spot</strong> in any solvent — it has just one set of interactions with the paper and solvent, so it always travels as a single spot. If a substance produces more than one spot, it must be a mixture of at least two different compounds.'},
+  {text:'The solvent front travels 8.0 cm and a spot travels 6.0 cm. What is the R<sub>f</sub> value of the spot?',options:['1.33','0.75','48','0.25'],answer:1,tier:'F',explain:'<strong>R<sub>f</sub> = distance travelled by spot ÷ distance travelled by solvent = 6.0 ÷ 8.0 = 0.75.</strong> R<sub>f</sub> values are always between 0 and 1. They are characteristic for a given substance in a given solvent and can be used to identify unknown substances by comparison with known standards.'},
+  {text:'Why does a more soluble substance travel further up a chromatogram?',options:['It has a higher density, so gravity pulls it further','It dissolves more readily in the mobile phase and spends more time moving with the solvent','It sticks more strongly to the stationary phase','It has a lower molecular mass, so it moves more quickly'],answer:1,tier:'F',explain:'A more soluble substance has a <strong>stronger attraction to the mobile phase (solvent)</strong> than to the stationary phase (paper). It spends more time dissolved in the moving solvent, so it travels further up the paper. A less soluble substance spends more time adsorbed onto the paper, so it barely moves.'},
+  {text:'What process is used in Core Practical 1 to separate the dyes in an ink?',options:['Simple distillation','Filtration','Paper chromatography','Crystallisation'],answer:2,tier:'F',explain:'Core Practical 1 uses <strong>paper chromatography</strong> to separate the dyes in an ink. A spot of ink is placed on the baseline, the paper is placed in solvent, and the solvent carries the different dyes up at different rates, separating them into individual spots.'},
+  {text:'What is crystallisation used to obtain?',options:['A pure liquid from a mixture of liquids','A pure solid from a solution of that solid dissolved in a liquid','An insoluble solid from a suspension','A gas from a liquid'],answer:1,tier:'F',explain:'<strong>Crystallisation</strong> is used to obtain a pure solid from a solution. The solution is heated to evaporate some solvent, then allowed to cool. As it cools, the solid becomes less soluble and forms crystals. The crystals are then collected by filtration and dried.'},
+  {text:'Potable water is water that is safe to drink. Which statement about potable water is correct?',options:['Potable water is completely pure — it contains only water molecules','Potable water may contain dissolved substances but at concentrations safe for human consumption','Potable water must have a pH of exactly 7','Potable water is the same as distilled water'],answer:1,tier:'F',explain:'<strong>Potable water is safe to drink</strong> but it is not pure — it contains dissolved minerals, salts and other substances at levels that are not harmful. Pure water (distilled water) contains no dissolved substances at all, which makes it unsuitable for drinking as it would disrupt ion balance in the body.'},
+  {text:'What is added to water supplies to kill bacteria and make the water safe to drink?',options:['Sodium hydroxide','Carbon dioxide','Chlorine','Silver nitrate'],answer:2,tier:'F',explain:'<strong>Chlorine</strong> (or chlorine-based compounds such as sodium hypochlorite) is added to water supplies as a disinfectant to kill harmful bacteria and other microorganisms, making the water safe for human consumption. This process is called chlorination.'},
+  {text:'What is the purpose of sedimentation in the treatment of drinking water?',options:['To add chlorine to kill bacteria','To allow large solid particles to sink to the bottom before filtration','To remove dissolved salts from the water','To adjust the pH of the water'],answer:1,tier:'F',explain:'In <strong>sedimentation</strong>, water is left in large tanks so that large, heavy insoluble particles sink to the bottom under gravity. This removes the bulk of the suspended solid before the water is passed through sand and gravel filters to remove smaller particles.'},
+  {text:'Which process removes dissolved salts from sea water to produce fresh water?',options:['Filtration','Chlorination','Distillation','Sedimentation'],answer:2,tier:'F',explain:'<strong>Distillation</strong> can remove dissolved salts from seawater — the water evaporates, leaving the salt behind, and is then condensed to give pure fresh water. However, it requires large amounts of energy, making it expensive compared to treating fresh water sources.'},
+  {text:'Why is distillation not widely used to purify seawater in countries like the UK?',options:['Distillation produces water that is too acidic to drink','The UK does not have access to seawater','Distillation requires a large amount of energy and is therefore too expensive for large-scale use','Distillation cannot remove bacteria from the water'],answer:2,tier:'F',explain:'<strong>Distillation is very energy-intensive</strong> — large amounts of heat are needed to boil the seawater. This makes it expensive to run at the scale needed to supply drinking water to a large population. It is used in water-scarce countries where no freshwater alternative exists, but not routinely in the UK.'},
+  {text:'<span class="tier-badge">H</span>A student performs paper chromatography on a food dye and a reference mixture of known dyes. The food dye produces two spots with R<sub>f</sub> values of 0.45 and 0.72. The reference mixture contains dyes with R<sub>f</sub> values of 0.30, 0.45, 0.60 and 0.72. What can the student conclude?',options:['The food dye is pure and matches the reference mixture exactly','The food dye contains two components that match two of the known reference dyes','The food dye is a new compound not present in the reference mixture','The food dye is the same as the reference mixture'],answer:1,tier:'H',explain:'The food dye produces spots at R<sub>f</sub> = 0.45 and 0.72, both of which <strong>match known reference dyes</strong>. This means the food dye is a <strong>mixture of two components</strong> that have been identified as two of the four known dyes. It does not contain the dyes with R<sub>f</sub> = 0.30 or 0.60.'},
+  {text:'<span class="tier-badge">H</span>Explain why a substance with a very high affinity for the stationary phase would have a very low R<sub>f</sub> value.',options:['It moves quickly with the solvent because it is very soluble','It spends most of its time adsorbed onto the paper rather than moving with the solvent, so it barely moves from the baseline','It evaporates before the solvent reaches it','It has too high a molecular mass to dissolve in the solvent'],answer:1,tier:'H',explain:'A substance with a <strong>high affinity for the stationary phase</strong> (paper) is strongly adsorbed onto the paper and spends very little time in the mobile phase (solvent). Because it barely moves, the distance it travels is very small relative to the solvent front, giving a <strong>low R<sub>f</sub> value close to 0</strong>.'},
+  {text:'<span class="tier-badge">H</span>A student dissolves 5.0 g of copper sulfate in 250 cm³ of water. What is the concentration of the solution in g/dm³?',options:['1.25 g/dm³','0.02 g/dm³','20 g/dm³','12.5 g/dm³'],answer:2,tier:'H',explain:'<strong>250 cm³ = 0.25 dm³.</strong> Concentration = mass ÷ volume = 5.0 ÷ 0.25 = <strong>20 g/dm³</strong>. Remember to convert cm³ to dm³ by dividing by 1000 before calculating concentration.'},
+  {text:'<span class="tier-badge">H</span>Which statement correctly explains why dissolving a solid in a liquid lowers the melting point of the solid?',options:['The solid particles are destroyed by the liquid','The dissolved particles disrupt the regular lattice structure, making it easier to break apart at lower temperatures','The liquid increases the pressure on the solid','The solid becomes a gas when dissolved'],answer:1,tier:'H',explain:'Dissolved particles <strong>disrupt the regular lattice</strong> of the solvent as it tries to freeze. The impurity particles get in the way of the crystal structure forming, so a lower temperature is needed for the liquid to solidify. This is the principle behind using salt to de-ice roads.'}
+];
+let chosen=[...Array(questions.length)].fill(null),submitted=false;
+function getAttempts(){try{return JSON.parse(localStorage.getItem(TEST_KEY)||'[]')}catch{return[]}}
+function saveAttempt(s){const a=getAttempts();if(a.length>=MAX_ATT)return;const d=new Date();a.push({score:s,total:questions.length,date:d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})});localStorage.setItem(TEST_KEY,JSON.stringify(a))}
+function renderAttempts(){const a=getAttempts(),w=document.getElementById('attempt-slots');w.innerHTML='';const b=a.length?Math.max(...a.map(x=>x.score)):-1,bi=a.length?a.reduce((i,x,j)=>x.score===b?j:i,-1):-1;for(let i=0;i<MAX_ATT;i++){const x=a[i],d=document.createElement('div');d.className='attempt-slot'+(x?(i===bi?' best':''):' empty');d.innerHTML=x?`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">${x.score}/${x.total}</div><div class="slot-date">${Math.round(x.score/x.total*100)}% &middot; ${x.date}</div>`:`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">&mdash;</div><div class="slot-date">&nbsp;</div>`;w.appendChild(d)}}
+function buildQuiz(){const c=document.getElementById('quiz-container');c.innerHTML='';questions.forEach((q,qi)=>{const d=document.createElement('div');d.className='question';d.id='q'+qi;d.innerHTML=`<div class="q-header"><span class="q-num">${qi+1}.</span><span class="q-text">${q.text}</span><span class="q-marks">(1 mark)</span></div><div class="options" id="opts${qi}">${q.options.map((o,oi)=>`<button class="opt-btn" id="opt${qi}_${oi}" onclick="selectOpt(${qi},${oi})"><span class="opt-letter">${LETTERS[oi]}.</span><span>${o}</span></button>`).join('')}</div><div class="q-feedback" id="fb${qi}"></div><div class="q-explain" id="ex${qi}"></div>`;c.appendChild(d)});updateProgress()}
+function selectOpt(qi,oi){if(submitted)return;chosen[qi]=oi;for(let i=0;i<questions[qi].options.length;i++){const b=document.getElementById('opt'+qi+'_'+i);b.className='opt-btn'+(i===oi?' selected-opt':'')}document.getElementById('q'+qi).className='question selected-q';updateProgress()}
+function updateProgress(){const done=chosen.filter(c=>c!==null).length,total=questions.length;document.getElementById('progress-label').textContent=done+' of '+total+' answered';document.getElementById('progress-fill').style.width=(done/total*100)+'%';const btn=document.getElementById('submit-btn');btn.disabled=done<total;document.getElementById('submit-hint').textContent=done<total?'Answer all '+total+' questions to submit':''}
+function submitQuiz(){if(submitted)return;const name=document.getElementById('stu-name').value.trim();if(!name){document.getElementById('name-warn').style.display='block';document.getElementById('stu-name').focus();return}document.getElementById('name-warn').style.display='none';submitted=true;let score=0;questions.forEach((q,qi)=>{const sel=chosen[qi],ok=sel===q.answer;if(ok)score++;for(let i=0;i<q.options.length;i++){const b=document.getElementById('opt'+qi+'_'+i);b.disabled=true;b.classList.add(i===q.answer&&ok&&i===sel?'correct':i===sel&&!ok?'wrong':i===q.answer&&!ok?'reveal':'dimmed')}const fb=document.getElementById('fb'+qi);fb.style.display='block';fb.className='q-feedback '+(ok?'ok':'bad');fb.textContent=ok?'Correct!':'Incorrect — the correct answer is highlighted in green.';if(!ok&&q.explain){const ex=document.getElementById('ex'+qi);ex.style.display='block';ex.innerHTML=q.explain}});document.getElementById('submit-btn').disabled=true;document.getElementById('submit-btn').textContent='Submitted';saveAttempt(score);renderAttempts();reportScore(score,name);const pct=Math.round(score/questions.length*100);document.getElementById('final-grade').textContent=score+' / '+questions.length;document.getElementById('final-pct').textContent=pct+'%';document.getElementById('final-msg').innerHTML=pct>=90?'Excellent! You have a strong understanding of states of matter and separation techniques.':pct>=70?'Good work! Review any questions you got wrong before your next attempt.':pct>=50?'A reasonable start — re-read your notes on the topics you found difficult.':'Keep going — review your notes carefully and use your remaining attempts.';const arr=getAttempts(),rb=document.getElementById('retry-btn'),nm=document.getElementById('no-more');if(arr.length>=MAX_ATT){rb.disabled=true;nm.style.display='block'}const box=document.getElementById('final-box');box.style.display='block';setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'start'}),300)}
+function reportScore(score,name){if(!SCRIPT_URL)return;const cls=document.getElementById('stu-class').value.trim()||'—',attempt=getAttempts().length,params=new URLSearchParams({name,class:cls,test:TEST_NAME,attempt,score,total:questions.length,pct:Math.round(score/questions.length*100)});fetch(SCRIPT_URL+'?'+params.toString(),{mode:'no-cors'}).then(()=>{document.getElementById('score-sent').style.display='block'}).catch(()=>{})}
+function resetQuiz(){if(getAttempts().length>=MAX_ATT)return;chosen=[...Array(questions.length)].fill(null);submitted=false;document.getElementById('final-box').style.display='none';document.getElementById('score-sent').style.display='none';buildQuiz();window.scrollTo({top:0,behavior:'smooth'})}
+renderAttempts();buildQuiz();
+</script>
+</body>
+</html>

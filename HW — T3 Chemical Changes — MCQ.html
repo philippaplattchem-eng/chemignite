@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HW — T3 Chemical Changes — MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',Arial,sans-serif;font-size:11pt;color:#2d3748;background:#eef0f7;line-height:1.6;}
+.page{max-width:800px;margin:24px auto 40px;background:#fff;padding:28px 32px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.header-box{background:linear-gradient(135deg,#4a6fa5,#6b8ec7);color:#fff;padding:16px 20px;border-radius:8px;margin-bottom:14px;}
+.header-box h1{font-size:15pt;font-weight:700;letter-spacing:-0.3px;}
+.header-box .meta{font-size:9pt;margin-top:5px;opacity:0.9;font-weight:300;}
+.tier-note{font-size:8.5pt;margin-top:6px;opacity:0.85;}
+.h-badge-hdr{background:rgba(255,255,255,0.25);padding:1px 6px;border-radius:3px;font-weight:600;font-size:8pt;}
+.student-row{display:flex;gap:20px;flex-wrap:wrap;margin:12px 0 6px;font-size:10pt;align-items:center;}
+.field{display:flex;align-items:center;gap:6px;}
+.field label{font-weight:500;color:#4a5568;}
+.field input[type=text]{border:none;border-bottom:2px solid #c9d3e0;outline:none;font-family:inherit;font-size:10pt;width:160px;padding:2px 4px;color:#2d3748;background:transparent;transition:border-color 0.2s;}
+.field input[type=text]:focus{border-bottom-color:#4a6fa5;}
+.name-warn{font-size:9pt;color:#c05621;display:none;margin-bottom:8px;font-weight:500;}
+.attempts-panel{background:#f7f8fc;border:1.5px solid #d8deed;border-radius:8px;padding:14px 18px;margin:14px 0;}
+.attempts-panel h3{font-size:10pt;font-weight:600;color:#4a5568;margin-bottom:10px;}
+.attempt-slots{display:flex;gap:12px;flex-wrap:wrap;}
+.attempt-slot{flex:1;min-width:100px;background:#fff;border:1.5px solid #d0d8e8;border-radius:6px;padding:10px 12px;text-align:center;}
+.attempt-slot .slot-label{font-size:8.5pt;font-weight:600;color:#718096;text-transform:uppercase;letter-spacing:0.5px;}
+.attempt-slot .slot-score{font-size:17pt;font-weight:700;color:#4a6fa5;margin:4px 0 2px;}
+.attempt-slot .slot-date{font-size:8pt;color:#a0aec0;}
+.attempt-slot.empty .slot-score{color:#c9d3e0;font-size:13pt;}
+.attempt-slot.best{border-color:#52b788;background:#f0faf5;}
+.attempt-slot.best .slot-score{color:#2d8c6e;}
+.instructions{font-size:10pt;padding:10px 14px;border-left:4px solid #a3b8d8;background:#f5f7fc;border-radius:0 6px 6px 0;margin:12px 0 20px;color:#4a5568;}
+.instructions strong{color:#2d3748;}
+.progress-bar-wrap{margin-bottom:18px;}
+.progress-label{font-size:9.5pt;color:#718096;margin-bottom:5px;font-weight:500;}
+.progress-bar{background:#e2e8f0;border-radius:99px;height:7px;overflow:hidden;}
+.progress-fill{background:linear-gradient(90deg,#4a6fa5,#7ba7d8);height:100%;border-radius:99px;transition:width 0.3s ease;}
+.question{background:#fff;border:1.5px solid #e2e8f0;border-radius:8px;padding:16px 18px;margin-bottom:12px;transition:border-color 0.2s;}
+.question.selected-q{border-color:#a3b8d8;}
+.q-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;}
+.q-num{font-weight:700;color:#4a6fa5;font-size:11pt;min-width:24px;flex-shrink:0;}
+.q-text{flex:1;font-size:10.5pt;line-height:1.6;color:#2d3748;}
+.q-marks{font-size:9pt;color:#a0aec0;white-space:nowrap;font-style:italic;}
+.tier-badge{display:inline-block;background:#7b5ea7;color:#fff;font-size:7.5pt;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:4px;vertical-align:middle;}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:520px){.options{grid-template-columns:1fr;}}
+.opt-btn{display:flex;align-items:center;gap:10px;background:#f8f9fd;border:1.5px solid #dde3ef;border-radius:6px;padding:9px 13px;cursor:pointer;font-family:inherit;font-size:10pt;text-align:left;transition:all 0.15s;width:100%;color:#2d3748;}
+.opt-btn:hover:not(:disabled){background:#edf2fc;border-color:#7ba7d8;}
+.opt-letter{font-weight:700;color:#7ba7d8;min-width:20px;flex-shrink:0;font-size:10.5pt;}
+.opt-btn.selected-opt{background:#e8eef8;border-color:#4a6fa5;}
+.opt-btn.selected-opt .opt-letter{color:#4a6fa5;}
+.opt-btn:disabled{cursor:default;}
+.opt-btn.correct{background:#eaf7f0;border-color:#52b788;color:#276749;}
+.opt-btn.correct .opt-letter{color:#276749;}
+.opt-btn.wrong{background:#fdf0f0;border-color:#e07070;color:#9b2c2c;}
+.opt-btn.wrong .opt-letter{color:#9b2c2c;}
+.opt-btn.reveal{background:#eaf7f0;border-color:#52b788;color:#276749;}
+.opt-btn.reveal .opt-letter{color:#276749;}
+.opt-btn.dimmed{background:#f8f9fd;border-color:#e8eaf0;color:#a0aec0;}
+.opt-btn.dimmed .opt-letter{color:#c9d3e0;}
+.q-feedback{margin-top:9px;font-size:9.5pt;font-weight:500;padding:5px 10px;border-radius:5px;display:none;}
+.q-feedback.ok{background:#eaf7f0;color:#276749;}
+.q-feedback.bad{background:#fdf0f0;color:#9b2c2c;}
+.q-explain{margin-top:7px;font-size:9.5pt;padding:8px 12px;border-radius:5px;display:none;background:#fff8ec;border-left:3px solid #e8a730;color:#744210;line-height:1.55;}
+.submit-wrap{text-align:center;margin:24px 0 10px;}
+.submit-btn{background:linear-gradient(135deg,#4a6fa5,#6b8ec7);color:#fff;border:none;padding:13px 40px;border-radius:8px;font-family:inherit;font-size:11.5pt;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(74,111,165,0.3);transition:all 0.2s;}
+.submit-btn:hover:not(:disabled){background:linear-gradient(135deg,#3a5f95,#5a7db5);}
+.submit-btn:disabled{background:#c9d3e0;box-shadow:none;cursor:not-allowed;}
+.submit-hint{font-size:9pt;color:#a0aec0;margin-top:6px;}
+.final-box{display:none;border:1.5px solid #c9d8f0;border-radius:10px;padding:24px 28px;text-align:center;margin-top:14px;background:linear-gradient(135deg,#f0f5ff,#e8eef8);}
+.final-box h2{font-size:14pt;font-weight:700;color:#2d3748;margin-bottom:4px;}
+.final-grade{font-size:34pt;font-weight:700;color:#4a6fa5;margin:8px 0 4px;}
+.final-pct{font-size:12pt;color:#718096;margin-bottom:10px;}
+.final-msg{font-size:10.5pt;color:#4a5568;max-width:480px;margin:0 auto 18px;}
+.retry-btn{background:#fff;color:#4a6fa5;border:2px solid #4a6fa5;padding:10px 30px;border-radius:7px;font-family:inherit;font-size:10.5pt;font-weight:600;cursor:pointer;transition:all 0.2s;margin:4px;}
+.retry-btn:hover:not(:disabled){background:#4a6fa5;color:#fff;}
+.retry-btn:disabled{opacity:0.4;cursor:not-allowed;}
+.no-more{font-size:9.5pt;color:#a0aec0;margin-top:8px;}
+.score-sent{font-size:9pt;color:#52b788;margin-top:10px;font-weight:500;}
+sub,sup{font-size:75%;}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header-box">
+    <h1>Topic 3: Chemical Changes &mdash; MCQ Homework Test</h1>
+    <div class="meta">Edexcel GCSE Chemistry &nbsp;&bull;&nbsp; Separate Science (1CH0) + Combined Science (1SC0) &nbsp;&bull;&nbsp; Paper 1 &nbsp;&bull;&nbsp; Foundation + Higher</div>
+    <div class="tier-note">Covers acids, salts, electrolysis &amp; redox &nbsp;&middot;&nbsp; Questions marked <span class="h-badge-hdr">H</span> are Higher tier only</div>
+  </div>
+  <div class="student-row">
+    <div class="field"><label for="stu-name">Name:</label><input type="text" id="stu-name" placeholder="Your full name"></div>
+    <div class="field"><label for="stu-class">Class:</label><input type="text" id="stu-class" placeholder="e.g. 10B" style="width:110px"></div>
+    <div class="field"><label for="stu-date">Date:</label><input type="text" id="stu-date" placeholder="e.g. 30 Jul" style="width:110px"></div>
+  </div>
+  <div class="name-warn" id="name-warn">&#9888; Please enter your name before submitting so your teacher can see your score.</div>
+  <div class="attempts-panel">
+    <h3>Your Attempts &nbsp;<span style="font-weight:400;color:#a0aec0;font-size:9pt;">(max 3 &mdash; saved automatically)</span></h3>
+    <div class="attempt-slots" id="attempt-slots"></div>
+  </div>
+  <div class="instructions"><strong>Instructions:</strong> Select one answer per question. Click <strong>Submit Answers</strong> once all 25 are answered. Wrong answers will show an explanation. You have <strong>3 attempts</strong>.</div>
+  <div class="progress-bar-wrap">
+    <div class="progress-label" id="progress-label">0 of 25 answered</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div id="quiz-container"></div>
+  <div class="submit-wrap">
+    <button class="submit-btn" id="submit-btn" onclick="submitQuiz()" disabled>Submit Answers</button>
+    <div class="submit-hint" id="submit-hint">Answer all 25 questions to submit</div>
+  </div>
+  <div class="final-box" id="final-box">
+    <h2>Test Complete!</h2>
+    <div class="final-grade" id="final-grade"></div>
+    <div class="final-pct" id="final-pct"></div>
+    <p class="final-msg" id="final-msg"></p>
+    <button class="retry-btn" id="retry-btn" onclick="resetQuiz()">Try Again</button>
+    <div class="no-more" id="no-more" style="display:none;">You have used all 3 attempts for this test.</div>
+    <div class="score-sent" id="score-sent" style="display:none;">&#10003; Score recorded for your teacher.</div>
+  </div>
+</div>
+<script>
+const SCRIPT_URL='';
+const TEST_KEY='edx_gcse_chem_hw_t3';
+const TEST_NAME='T3 Chemical Changes';
+const MAX_ATT=3;
+const LETTERS=['A','B','C','D'];
+const questions=[
+  {text:'Which statement correctly describes an acid?',options:['A substance that produces OH⁻ ions in solution','A substance that produces H⁺ ions in solution','A substance with a pH above 7','A substance that turns litmus blue'],answer:1,tier:'F',explain:'An acid produces <strong>H⁺ ions (hydrogen ions)</strong> in aqueous solution. This is what makes a solution acidic — the higher the concentration of H⁺ ions, the lower the pH and the more acidic the solution.'},
+  {text:'On the pH scale, which pH value indicates a neutral solution?',options:['0','14','7','1'],answer:2,tier:'F',explain:'A <strong>pH of 7</strong> is neutral — neither acidic nor alkaline. Values below 7 are acidic (lower pH = stronger acid); values above 7 are alkaline. The pH scale runs from 0 (very acidic) to 14 (very alkaline).'},
+  {text:'Which colour does universal indicator turn in an acidic solution with a pH of around 2?',options:['Blue','Green','Purple','Red'],answer:3,tier:'F',explain:'Universal indicator turns <strong>red</strong> in strongly acidic solutions (pH 1–3). It is orange for weakly acidic solutions (pH 4–6), green for neutral (pH 7), blue for weakly alkaline, and purple for strongly alkaline.'},
+  {text:'What are the products when an acid reacts with a metal carbonate?',options:['Salt + water only','Salt + carbon dioxide only','Salt + water + carbon dioxide','Salt + hydrogen + water'],answer:2,tier:'F',explain:'Acid + metal carbonate → <strong>salt + water + carbon dioxide</strong>. For example: HCl + Na₂CO₃ → NaCl + H₂O + CO₂. The carbon dioxide gas causes effervescence (fizzing), and turns limewater milky — this is the standard test for CO₂.'},
+  {text:'What gas is produced when an acid reacts with a metal such as magnesium?',options:['Carbon dioxide','Oxygen','Chlorine','Hydrogen'],answer:3,tier:'F',explain:'Acid + metal → salt + <strong>hydrogen</strong>. For example: Mg + H₂SO₄ → MgSO₄ + H₂. The hydrogen gas can be tested by holding a lit splint near the mouth of the test tube — it burns with a squeaky pop.'},
+  {text:'How do you test for hydrogen gas?',options:['Hold a glowing splint near the gas — it relights','Bubble the gas through limewater — it turns milky','Hold a burning splint near the gas — it burns with a squeaky pop','Hold damp litmus paper in the gas — it turns red'],answer:2,tier:'F',explain:'<strong>Hydrogen burns with a squeaky pop</strong> when a lit splint is held near it. This distinctive sound is caused by hydrogen igniting rapidly. Compare: a glowing splint relights in oxygen; limewater turns milky with carbon dioxide; damp red litmus turns white with chlorine.'},
+  {text:'What is produced when hydrochloric acid reacts with sodium hydroxide solution?',options:['Sodium carbonate + water','Sodium chloride + water','Sodium chloride + hydrogen','Sodium oxide + water'],answer:1,tier:'F',explain:'HCl + NaOH → <strong>NaCl + H₂O</strong>. This is a neutralisation reaction — the H⁺ ions from the acid react with the OH⁻ ions from the alkali to form water. The sodium and chloride ions combine to form the salt sodium chloride.'},
+  {text:'What name is given to the salt formed when sulfuric acid reacts with a base?',options:['Chloride','Nitrate','Sulfate','Carbonate'],answer:2,tier:'F',explain:'The name of the salt depends on the acid used: sulfuric acid → <strong>sulfates</strong>; hydrochloric acid → chlorides; nitric acid → nitrates. The metal (or positive ion) comes from the base. So sulfuric acid + copper oxide → copper sulfate.'},
+  {text:'What are the products of reacting copper oxide with dilute sulfuric acid?',options:['Copper chloride + water','Copper carbonate + water','Copper + sulfur dioxide + water','Copper sulfate + water'],answer:3,tier:'F',explain:'Acid + metal oxide → salt + water. CuO + H₂SO₄ → <strong>CuSO₄ + H₂O</strong>. Copper oxide is a base (metal oxide that reacts with acid). The blue colour of the copper sulfate solution is a useful visual indicator that the reaction has occurred.'},
+  {text:'In Core Practical 3, excess copper carbonate is added to sulfuric acid to prepare copper sulfate. Why is excess copper carbonate used?',options:['To make the reaction go faster','To ensure all the acid is neutralised so the product is not contaminated with acid','To increase the yield of copper sulfate','To lower the temperature of the reaction'],answer:1,tier:'F',explain:'Using <strong>excess copper carbonate ensures all the acid is used up</strong>. Any unreacted copper carbonate (a solid) can then simply be filtered off, leaving a pure copper sulfate solution. If excess acid were used instead, the product would be contaminated with acid.'},
+  {text:'What is an electrolyte?',options:['A solid ionic compound','An ionic compound in the molten state or dissolved in water','A metal that conducts electricity','A covalent compound dissolved in water'],answer:1,tier:'F',explain:'An <strong>electrolyte</strong> is an ionic compound that is either molten or dissolved in water. In both cases, the ions are free to move and can carry electrical charge. In the solid state, the ions are locked in the lattice and cannot move, so solid ionic compounds do not conduct.'},
+  {text:'During electrolysis, which electrode do positive ions (cations) move towards?',options:['The anode (positive electrode)','The cathode (negative electrode)','Both electrodes equally','Neither electrode — ions do not move'],answer:1,tier:'F',explain:'<strong>Cations (positive ions) migrate to the cathode (negative electrode)</strong>. Opposite charges attract — positive ions are attracted to the negative electrode. Similarly, anions (negative ions) migrate to the anode (positive electrode).'},
+  {text:'Why does a solid ionic compound not conduct electricity?',options:['It does not contain any charged particles','Its ions are fixed in the lattice and cannot move to carry charge','It has covalent bonds that prevent electron flow','It is too dense for electrons to pass through'],answer:1,tier:'F',explain:'In a <strong>solid ionic compound</strong>, the ions are locked into fixed positions in the ionic lattice by strong electrostatic forces. They can vibrate but cannot move from place to place. Electrical conduction requires charged particles to move through the substance, so a solid ionic compound is an insulator.'},
+  {text:'When dilute hydrochloric acid is electrolysed, what is produced at the cathode?',options:['Chlorine','Oxygen','Hydrogen','Sodium'],answer:2,tier:'F',explain:'At the <strong>cathode (negative electrode)</strong>, H⁺ ions from the acid are discharged (gain electrons) to form hydrogen gas: 2H⁺ + 2e⁻ → H₂. At the anode, Cl⁻ ions are discharged to form chlorine gas: 2Cl⁻ → Cl₂ + 2e⁻.'},
+  {text:'When aqueous copper sulfate solution is electrolysed using inert electrodes, what is deposited at the cathode?',options:['Sulfur','Oxygen','Hydrogen','Copper'],answer:3,tier:'F',explain:'Cu²⁺ ions are <strong>discharged at the cathode</strong>: Cu²⁺ + 2e⁻ → Cu. A pink/orange layer of copper metal forms on the cathode. At the anode, OH⁻ ions are discharged to produce oxygen gas. This is the basis of electroplating.'},
+  {text:'In terms of electrons, what is oxidation?',options:['Gain of electrons','Loss of electrons','Gain of oxygen atoms','Loss of hydrogen atoms'],answer:1,tier:'F',explain:'<strong>Oxidation is loss of electrons</strong>; reduction is gain of electrons. The memory aid OIL RIG (Oxidation Is Loss, Reduction Is Gain) is extremely useful. In electrolysis, oxidation occurs at the anode (negative ions lose electrons); reduction occurs at the cathode (positive ions gain electrons).'},
+  {text:'In electrolysis, which process occurs at the anode?',options:['Reduction — ions gain electrons','Oxidation — ions lose electrons','Neutralisation — acids and bases react','Precipitation — insoluble solids form'],answer:1,tier:'F',explain:'<strong>Oxidation occurs at the anode</strong> (positive electrode) — anions (negative ions) lose electrons here. Reduction occurs at the cathode — cations (positive ions) gain electrons. A useful memory aid: AN OX, RED CAT (ANode = OXidation; REDuction at CATode).'},
+  {text:'When molten lead bromide is electrolysed, what is produced at the anode?',options:['Lead','Bromine','Hydrogen','Oxygen'],answer:1,tier:'F',explain:'In molten lead bromide, the ions are Pb²⁺ and Br⁻. At the <strong>anode</strong>, Br⁻ ions are oxidised: 2Br⁻ → Br₂ + 2e⁻, producing <strong>bromine</strong> gas/liquid. At the cathode, Pb²⁺ ions are reduced: Pb²⁺ + 2e⁻ → Pb, producing liquid lead metal.'},
+  {text:'What does the term "neutralisation" describe?',options:['The reaction between two acids','The reaction between an acid and a base to form a salt and water','The decomposition of a salt by heating','The reaction between a metal and water'],answer:1,tier:'F',explain:'<strong>Neutralisation</strong> is the reaction between an acid and a base (or alkali) to form a salt and water. The H⁺ ions from the acid react with the OH⁻ ions from the alkali: H⁺ + OH⁻ → H₂O. The pH moves towards 7 during neutralisation.'},
+  {text:'Which indicator is used in a titration to find the end point of a neutralisation reaction?',options:['Universal indicator','Litmus','Phenolphthalein or methyl orange','pH meter only'],answer:2,tier:'F',explain:'Titrations use a <strong>single-colour change indicator</strong> such as phenolphthalein or methyl orange, which give a sharp, clear colour change at the end point. Universal indicator gives a gradual colour change over a range of pH values, making it unsuitable for the precise end point determination needed in a titration.'},
+  {text:'<span class="tier-badge">H</span>A strong acid and a weak acid have the same concentration in mol/dm³. Which statement correctly compares their pH values?',options:['They have the same pH because they have the same concentration','The strong acid has a lower pH because it fully dissociates, producing more H⁺ ions','The weak acid has a lower pH because its molecules are larger','The strong acid has a higher pH because it is more dangerous'],answer:1,tier:'H',explain:'A <strong>strong acid fully dissociates</strong> into H⁺ ions in solution, so at the same concentration it produces far more H⁺ ions than a weak acid (which only partially dissociates). More H⁺ ions = lower pH. This is the key distinction between strong and weak acids — it is about dissociation, not concentration.'},
+  {text:'<span class="tier-badge">H</span>Which statement correctly distinguishes between a "dilute" acid and a "weak" acid?',options:['They mean the same thing — both have a high pH','Dilute refers to the amount of acid dissolved per unit volume; weak refers to the degree of dissociation into ions','Dilute acids are safer; weak acids are more reactive','A weak acid has a lower concentration than a dilute acid'],answer:1,tier:'H',explain:'<strong>Dilute/concentrated</strong> describes how much acid is dissolved per unit volume (concentration). <strong>Strong/weak</strong> describes how completely the acid dissociates into ions. A concentrated weak acid (e.g. concentrated ethanoic acid) has a lot of acid present but it only partially dissociates. A dilute strong acid (e.g. dilute HCl) has little acid present but it fully dissociates.'},
+  {text:'<span class="tier-badge">H</span>Write the half-equation for the formation of chlorine at the anode during the electrolysis of brine. Which option is correct?',options:['Cl₂ + 2e⁻ → 2Cl⁻','2Cl⁻ → Cl₂ + 2e⁻','Cl⁻ + e⁻ → Cl','2Cl → Cl₂'],answer:1,tier:'H',explain:'At the anode, chloride ions are <strong>oxidised</strong> (lose electrons): <strong>2Cl⁻ → Cl₂ + 2e⁻</strong>. Two Cl⁻ ions each lose one electron, forming one Cl₂ molecule and releasing two electrons back to the circuit. Check: charge on left = −2; on right = −2 (from 2e⁻ released). Balanced.'},
+  {text:'<span class="tier-badge">H</span>The electrolysis of brine (concentrated sodium chloride solution) produces three useful products. Which set is correct?',options:['Sodium + chlorine + water','Hydrogen + chlorine + sodium hydroxide solution','Sodium + oxygen + hydrochloric acid','Hydrogen + oxygen + sodium chloride'],answer:1,tier:'H',explain:'Electrolysis of brine produces: <strong>hydrogen</strong> at the cathode (2H⁺ + 2e⁻ → H₂), <strong>chlorine</strong> at the anode (2Cl⁻ → Cl₂ + 2e⁻), and a solution of <strong>sodium hydroxide</strong> remaining in the electrolyte. All three are industrially important: H₂ for fuel/margarine, Cl₂ for disinfectants/PVC, NaOH for soap/paper.'},
+  {text:'<span class="tier-badge">H</span>In the electrolysis of aqueous copper sulfate using copper electrodes, what happens to the mass of the anode over time?',options:['It increases as copper is deposited on it','It stays the same — no reaction occurs at copper anodes','It decreases as copper atoms are oxidised and dissolve into solution','It decreases as oxygen is produced from it'],answer:2,tier:'H',explain:'When copper electrodes are used, the <strong>copper anode dissolves</strong>: Cu → Cu²⁺ + 2e⁻. Copper atoms are oxidised and pass into solution as Cu²⁺ ions, so the anode loses mass. At the cathode, Cu²⁺ ions are reduced and deposited: Cu²⁺ + 2e⁻ → Cu. The cathode gains mass. This keeps the Cu²⁺ concentration constant — this is how copper is refined industrially.'}
+];
+let chosen=[...Array(questions.length)].fill(null),submitted=false;
+function getAttempts(){try{return JSON.parse(localStorage.getItem(TEST_KEY)||'[]')}catch{return[]}}
+function saveAttempt(s){const a=getAttempts();if(a.length>=MAX_ATT)return;const d=new Date();a.push({score:s,total:questions.length,date:d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})});localStorage.setItem(TEST_KEY,JSON.stringify(a))}
+function renderAttempts(){const a=getAttempts(),w=document.getElementById('attempt-slots');w.innerHTML='';const b=a.length?Math.max(...a.map(x=>x.score)):-1,bi=a.length?a.reduce((i,x,j)=>x.score===b?j:i,-1):-1;for(let i=0;i<MAX_ATT;i++){const x=a[i],d=document.createElement('div');d.className='attempt-slot'+(x?(i===bi?' best':''):' empty');d.innerHTML=x?`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">${x.score}/${x.total}</div><div class="slot-date">${Math.round(x.score/x.total*100)}% &middot; ${x.date}</div>`:`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">&mdash;</div><div class="slot-date">&nbsp;</div>`;w.appendChild(d)}}
+function buildQuiz(){const c=document.getElementById('quiz-container');c.innerHTML='';questions.forEach((q,qi)=>{const d=document.createElement('div');d.className='question';d.id='q'+qi;d.innerHTML=`<div class="q-header"><span class="q-num">${qi+1}.</span><span class="q-text">${q.text}</span><span class="q-marks">(1 mark)</span></div><div class="options" id="opts${qi}">${q.options.map((o,oi)=>`<button class="opt-btn" id="opt${qi}_${oi}" onclick="selectOpt(${qi},${oi})"><span class="opt-letter">${LETTERS[oi]}.</span><span>${o}</span></button>`).join('')}</div><div class="q-feedback" id="fb${qi}"></div><div class="q-explain" id="ex${qi}"></div>`;c.appendChild(d)});updateProgress()}
+function selectOpt(qi,oi){if(submitted)return;chosen[qi]=oi;for(let i=0;i<questions[qi].options.length;i++){const b=document.getElementById('opt'+qi+'_'+i);b.className='opt-btn'+(i===oi?' selected-opt':'')}document.getElementById('q'+qi).className='question selected-q';updateProgress()}
+function updateProgress(){const done=chosen.filter(c=>c!==null).length,total=questions.length;document.getElementById('progress-label').textContent=done+' of '+total+' answered';document.getElementById('progress-fill').style.width=(done/total*100)+'%';const btn=document.getElementById('submit-btn');btn.disabled=done<total;document.getElementById('submit-hint').textContent=done<total?'Answer all '+total+' questions to submit':''}
+function submitQuiz(){if(submitted)return;const name=document.getElementById('stu-name').value.trim();if(!name){document.getElementById('name-warn').style.display='block';document.getElementById('stu-name').focus();return}document.getElementById('name-warn').style.display='none';submitted=true;let score=0;questions.forEach((q,qi)=>{const sel=chosen[qi],ok=sel===q.answer;if(ok)score++;for(let i=0;i<q.options.length;i++){const b=document.getElementById('opt'+qi+'_'+i);b.disabled=true;b.classList.add(i===q.answer&&ok&&i===sel?'correct':i===sel&&!ok?'wrong':i===q.answer&&!ok?'reveal':'dimmed')}const fb=document.getElementById('fb'+qi);fb.style.display='block';fb.className='q-feedback '+(ok?'ok':'bad');fb.textContent=ok?'Correct!':'Incorrect — the correct answer is highlighted in green.';if(!ok&&q.explain){const ex=document.getElementById('ex'+qi);ex.style.display='block';ex.innerHTML=q.explain}});document.getElementById('submit-btn').disabled=true;document.getElementById('submit-btn').textContent='Submitted';saveAttempt(score);renderAttempts();reportScore(score,name);const pct=Math.round(score/questions.length*100);document.getElementById('final-grade').textContent=score+' / '+questions.length;document.getElementById('final-pct').textContent=pct+'%';document.getElementById('final-msg').innerHTML=pct>=90?'Excellent! You have a strong understanding of chemical changes.':pct>=70?'Good work! Review any questions you got wrong before your next attempt.':pct>=50?'A reasonable start — re-read your notes on acids and electrolysis.':'Keep going — review your notes carefully and use your remaining attempts.';const arr=getAttempts(),rb=document.getElementById('retry-btn'),nm=document.getElementById('no-more');if(arr.length>=MAX_ATT){rb.disabled=true;nm.style.display='block'}const box=document.getElementById('final-box');box.style.display='block';setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'start'}),300)}
+function reportScore(score,name){if(!SCRIPT_URL)return;const cls=document.getElementById('stu-class').value.trim()||'—',attempt=getAttempts().length,params=new URLSearchParams({name,class:cls,test:TEST_NAME,attempt,score,total:questions.length,pct:Math.round(score/questions.length*100)});fetch(SCRIPT_URL+'?'+params.toString(),{mode:'no-cors'}).then(()=>{document.getElementById('score-sent').style.display='block'}).catch(()=>{})}
+function resetQuiz(){if(getAttempts().length>=MAX_ATT)return;chosen=[...Array(questions.length)].fill(null);submitted=false;document.getElementById('final-box').style.display='none';document.getElementById('score-sent').style.display='none';buildQuiz();window.scrollTo({top:0,behavior:'smooth'})}
+renderAttempts();buildQuiz();
+</script>
+</body>
+</html>
