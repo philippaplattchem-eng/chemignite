@@ -53,6 +53,13 @@ h1{font-size:1.8rem;letter-spacing:.02em}
 .reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
 .reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
 .reveal-btn.active{background:#374151;box-shadow:none}
+.abox{position:relative;overflow:hidden;width:28px;height:32px}
+.abox input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:transparent;text-align:center;font-size:11pt;font-weight:bold;font-family:inherit;text-transform:uppercase;padding:0;outline:none;color:inherit;cursor:text}
+.abox.cb-correct{background:#dcfce7;border-color:#16a34a;color:#15803d}
+.abox.cb-wrong{border-color:#ef4444;animation:cb-flash .35s ease}
+@keyframes cb-flash{0%,100%{background:transparent}50%{background:#fecaca}}
+.cb-complete{background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-radius:12px;padding:1rem 1.5rem;text-align:center;margin-top:1.5rem;font-size:1.05rem;font-weight:700;animation:cb-pop .4s ease}
+@keyframes cb-pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 }
 @media print{.screen-nav,.reveal-wrap{display:none}}
 </style></head>
@@ -403,6 +410,114 @@ h1{font-size:1.8rem;letter-spacing:.02em}
     });
     wrap.appendChild(btn);
     ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script>
+<script id="cb-interactive">
+(function(){
+  var ws=document.querySelector('.words-section');
+  if(!ws||ws.dataset.cbInit) return;
+  ws.dataset.cbInit='1';
+  function normCode(s){ return String(parseInt(s,10)||0); }
+  function notInAns(el){ return !el.closest('.answer-page'); }
+
+  // Build code<->letter maps from answer key
+  var c2l={},l2c={};
+  document.querySelectorAll('.answer-page .key-section table.key').forEach(function(tbl){
+    var rows=tbl.querySelectorAll('tr');
+    var ltrs=Array.from(rows[0].querySelectorAll('td')).map(function(td){ return td.textContent.trim(); });
+    var cods=Array.from(rows[1].querySelectorAll('td')).map(function(td){ return td.textContent.trim(); });
+    ltrs.forEach(function(l,i){ var c=normCode(cods[i]); if(l&&c!=='0'){c2l[c]=l;l2c[l]=c;} });
+  });
+
+  // Find puzzle sections
+  var puzzleWS=Array.from(document.querySelectorAll('.words-section')).find(notInAns);
+  var puzzleBS=Array.from(document.querySelectorAll('.bonus-section')).find(notInAns);
+  var puzzleKS=Array.from(document.querySelectorAll('.key-section')).find(notInAns);
+  var answerWS=document.querySelector('.answer-page .words-section');
+  var answerBS=document.querySelector('.answer-page .bonus-section');
+
+  var codeMap={},totalBoxes=0,solvedBoxes=0;
+
+  function registerBox(abox,correct,code){
+    if(!correct) return;
+    totalBoxes++;
+    var inp=document.createElement('input');
+    inp.type='text'; inp.maxLength=1;
+    inp.dataset.correct=correct; inp.dataset.code=code;
+    abox.style.padding='0';
+    abox.appendChild(inp);
+    if(code){
+      if(!codeMap[code]) codeMap[code]=[];
+      codeMap[code].push({abox:abox,input:inp,correct:correct});
+    }
+    inp.addEventListener('input',function(){
+      var v=inp.value.replace(/[^a-zA-Z]/g,'').toUpperCase().slice(0,1);
+      inp.value=v; if(!v) return;
+      if(v===correct){ onCorrect(abox,inp,correct,code); }
+      else { abox.classList.add('cb-wrong'); setTimeout(function(){ abox.classList.remove('cb-wrong'); inp.value=''; },400); }
+    });
+    inp.addEventListener('keydown',function(e){ if((e.key==='Backspace'||e.key==='Delete')&&!inp.readOnly) inp.value=''; });
+  }
+
+  function onCorrect(abox,inp,letter,code){
+    if(abox.classList.contains('cb-correct')) return;
+    abox.classList.add('cb-correct'); inp.readOnly=true; solvedBoxes++;
+    if(code&&codeMap[code]){
+      codeMap[code].forEach(function(item){
+        if(!item.abox.classList.contains('cb-correct')){
+          item.input.value=item.correct; item.abox.classList.add('cb-correct'); item.input.readOnly=true; solvedBoxes++;
+        }
+      });
+    }
+    // Fill key table blank cell for this letter
+    if(puzzleKS){
+      puzzleKS.querySelectorAll('table.key').forEach(function(tbl){
+        var rows=tbl.querySelectorAll('tr');
+        var ltrs=Array.from(rows[0].querySelectorAll('td'));
+        var cods=Array.from(rows[1].querySelectorAll('td'));
+        ltrs.forEach(function(lTd,i){
+          if(lTd.textContent.trim()===letter&&cods[i].classList.contains('blank')&&!cods[i].dataset.filled){
+            cods[i].textContent=String(parseInt(code)).padStart(2,'0');
+            cods[i].dataset.filled='1'; cods[i].style.color='#16a34a'; cods[i].style.fontWeight='bold';
+          }
+        });
+      });
+    }
+    if(solvedBoxes>=totalBoxes) setTimeout(celebrate,400);
+  }
+
+  function celebrate(){
+    var msg=document.createElement('div'); msg.className='cb-complete';
+    msg.innerHTML='&#127881; <strong>Code cracked!</strong> Every word decoded correctly!';
+    var fn=Array.from(document.querySelectorAll('.footer-note')).find(notInAns)||document.body;
+    fn.insertAdjacentElement('beforebegin',msg);
+  }
+
+  // Process word items
+  if(puzzleWS&&answerWS){
+    var pwItems=Array.from(puzzleWS.querySelectorAll('.word-item'));
+    var awItems=Array.from(answerWS.querySelectorAll('.word-item'));
+    pwItems.forEach(function(item,wi){
+      var codedText=((item.querySelector('.coded')||{}).textContent)||'';
+      var codes=codedText.split(/[^\d]+/).filter(Boolean);
+      var ansBoxes=awItems[wi]?awItems[wi].querySelectorAll('.abox'):[];
+      item.querySelectorAll('.abox').forEach(function(abox,bi){
+        var correct=ansBoxes[bi]?ansBoxes[bi].textContent.trim().toUpperCase():'';
+        registerBox(abox,correct,codes[bi]?normCode(codes[bi]):'');
+      });
+    });
+  }
+
+  // Process bonus
+  if(puzzleBS&&answerBS){
+    var bonusCoded=((puzzleBS.querySelector('.bonus-coded')||{}).textContent)||'';
+    var bCodes=bonusCoded.split(/[^\d]+/).filter(Boolean);
+    var aBonusBoxes=Array.from(answerBS.querySelectorAll('.abox'));
+    Array.from(puzzleBS.querySelectorAll('.abox')).forEach(function(abox,bi){
+      var correct=aBonusBoxes[bi]?aBonusBoxes[bi].textContent.trim().toUpperCase():'';
+      registerBox(abox,correct,bCodes[bi]?normCode(bCodes[bi]):'');
+    });
   }
 })();
 </script></body>
