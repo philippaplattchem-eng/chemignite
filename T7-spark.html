@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T7 Spark &mdash; Rates of Reaction & Energy Changes</title>
+<style>:root{--pr:#3f51b5;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(63,81,181,.10);--sh2:0 6px 24px rgba(63,81,181,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+
+/* ── quiz-page header ── */
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}
+
+/* ── landing hero ── */
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center}
+.hero-icon{font-size:2.8rem;margin-bottom:.6rem;display:block}
+.hero h1{font-size:1.9rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.4rem}
+.hero p{font-size:1rem;opacity:.88;max-width:480px;margin:0 auto .5rem}
+.hero-pills{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem .85rem;font-size:.82rem;font-weight:600}
+
+/* ── tier legend ── */
+.tier-legend{display:flex;gap:0;max-width:700px;margin:1.8rem auto 0;background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.tier-leg-item{flex:1;padding:.85rem 1rem;text-align:center;border-right:1px solid var(--bdr)}
+.tier-leg-item:last-child{border-right:none}
+.tl-name{font-weight:700;font-size:.9rem;margin-bottom:.15rem}
+.tl-desc{font-size:.78rem;color:var(--txm)}
+.tl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+.tl-dot.spark{background:var(--sp)}.tl-dot.flame{background:var(--fl)}.tl-dot.inferno{background:var(--inf)}
+
+/* ── topic grid ── */
+.topics-section{max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem}
+.topics-heading{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem;padding-left:.2rem}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1}
+.tc-num{display:inline-block;background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;margin-bottom:.55rem}
+.tc-name{font-weight:700;font-size:.95rem;line-height:1.4;color:var(--tx)}
+.tc-btns{display:flex;flex-direction:column;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{display:flex;align-items:center;justify-content:flex-start;gap:.45rem;padding:.55rem .9rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.85rem;color:#fff;transition:filter .15s,transform .1s}
+.tc-btn:hover{filter:brightness(1.1);transform:translateX(2px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+
+/* ── quiz page ── */
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0f2ff;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{display:none;font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0f2ff;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(63,81,181,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(63,81,181,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:700px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}.tier-legend{flex-direction:column}.tier-leg-item{border-right:none;border-bottom:1px solid var(--bdr)}.tier-leg-item:last-child{border-bottom:none}}.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="back-link">&larr; All Topics</a>
+  <h1>T7 &mdash; Rates of Reaction &amp; Energy Changes</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>20 questions</span>
+    <span>Spark &mdash; Recall</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"What is the rate of reaction?","A":"The total amount of product made in a reaction","B":"The change in amount of reactant or product per unit time","C":"The temperature at which a reaction occurs","D":"The minimum energy needed for a reaction to occur","correct":"B","explain":"Rate of reaction = change in quantity ÷ time. It tells you how quickly reactants are used up or products are formed. Common units are cm³/s, g/s, or mol/dm³/s. It is not the total amount, nor the temperature, nor the activation energy."},{"stem":"A reaction produces carbon dioxide gas. Which method is best for collecting and measuring the gas accurately?","A":"Collecting the gas over water in an inverted measuring cylinder","B":"Using a gas syringe connected to the reaction flask","C":"Measuring the temperature change of the solution","D":"Using a disappearing cross on paper underneath the flask","correct":"B","explain":"A gas syringe is preferred because it works for any gas (including CO₂, which dissolves in water making collection over water unreliable), has low friction, and has fine graduations. Collecting CO₂ over water gives an underestimate because CO₂ is moderately soluble in water."},{"stem":"The 'disappearing cross' method is used to measure the rate of which type of reaction?","A":"A reaction that produces a gas","B":"A reaction where mass is lost","C":"A reaction that forms a precipitate making the solution go cloudy","D":"A reaction where the temperature changes","correct":"C","explain":"The disappearing cross method is used for reactions that form a solid precipitate that clouds the solution (e.g. sodium thiosulfate + hydrochloric acid forming sulfur). You time how long until the cross under the flask can no longer be seen. Rate is inversely proportional to this time (rate ∝ 1/time)."},{"stem":"According to collision theory, for a reaction to occur what must happen?","A":"Particles must get hot enough to evaporate","B":"Particles must collide with sufficient energy and the correct orientation","C":"Particles must dissolve in the reaction mixture","D":"Particles must react at the surface of a solid only","correct":"B","explain":"Collision theory states that reactions only happen when reactant particles collide with each other with enough energy (at least equal to the activation energy) and the correct orientation. Most collisions are unsuccessful, the particles bounce off without reacting."},{"stem":"What is activation energy?","A":"The total energy released by a reaction","B":"The energy needed to break all bonds in the reactants","C":"The minimum energy that colliding particles must have for a reaction to occur","D":"The energy released when bonds form in the products","correct":"C","explain":"Activation energy (Eₐ) is the minimum energy that colliding particles must have for a collision to be successful. Particles with energy below Eₐ bounce off without reacting. It is shown on a reaction profile as the height from the reactant energy level to the peak of the curve."},{"stem":"How does increasing the concentration of a solution affect the rate of reaction?","A":"It increases the energy of each particle","B":"It increases the frequency of collisions between particles","C":"It decreases the activation energy","D":"It increases the temperature of the solution","correct":"B","explain":"Increasing concentration puts more solute particles in the same volume. Particles are closer together, so they collide more frequently. This is a frequency-only effect, the energy of the individual particles does not change. More frequent collisions → more frequent successful collisions → faster rate."},{"stem":"What happens when a solid reactant is ground into a powder?","A":"The activation energy is lowered","B":"The temperature of the reactant increases","C":"The surface area to volume ratio increases, increasing the frequency of collisions","D":"The mass of the reactant decreases","correct":"C","explain":"Grinding a solid into powder increases its surface area without changing its mass or volume. More solid particles are exposed to the other reactant, so collisions happen more frequently. This is again a frequency-only effect, the energy of collisions is unchanged."},{"stem":"Which factor affects BOTH the frequency AND energy of collisions?","A":"Concentration of solution","B":"Pressure of a gas","C":"Surface area of a solid","D":"Temperature","correct":"D","explain":"Temperature is the only one of the four main rate factors that affects both the frequency and the energy of collisions. Higher temperature → particles move faster → they meet more often (frequency up) AND a greater proportion have energy ≥ Eₐ (energy effect). The other three factors (concentration, pressure, surface area) affect frequency only."},{"stem":"What is a catalyst?","A":"A substance that is used up in a reaction to make it faster","B":"A substance that speeds up the rate of reaction without being chemically changed or used up","C":"A substance that lowers the temperature needed for a reaction","D":"A substance that increases the amount of product made","correct":"B","explain":"A catalyst speeds up the rate of reaction but is unchanged chemically and in mass at the end. It does not appear in the overall balanced equation, does not change the type or amount of products, and is not used up. It works by providing an alternative reaction pathway with a lower activation energy."},{"stem":"An exothermic reaction causes the temperature of the surroundings to:","A":"Decrease","B":"Stay the same","C":"Increase","D":"First increase then decrease","correct":"C","explain":"In an exothermic reaction, heat energy is given out from the chemicals to the surroundings. The surroundings (the solution in the beaker, the air, the glassware) absorb this heat and their temperature increases. A temperature rise is the observable sign that a reaction is exothermic."},{"stem":"Which of the following is an endothermic reaction?","A":"Combustion of natural gas","B":"Neutralisation of acid with alkali","C":"Thermal decomposition of calcium carbonate","D":"Displacement of copper by magnesium","correct":"C","explain":"Thermal decomposition requires continuous heating to proceed, the reaction absorbs heat energy from the surroundings, making it endothermic. Combustion, neutralisation and displacement are all exothermic reactions that release energy to the surroundings."},{"stem":"Which statement about bond breaking and bond making is correct?","A":"Breaking bonds releases energy; making bonds absorbs energy","B":"Breaking bonds absorbs energy; making bonds releases energy","C":"Both breaking and making bonds release energy","D":"Both breaking and making bonds absorb energy","correct":"B","explain":"Breaking bonds is endothermic, you must put energy in to separate bonded atoms. Making bonds is exothermic, energy is released as new bonds form between atoms. This is the fundamental principle behind all bond energy calculations: ΔH = (energy in to break bonds) − (energy out when bonds form)."},{"stem":"A student uses the mass-loss method to monitor a reaction. What must be placed in the neck of the flask?","A":"A sealed bung to prevent gas escaping","B":"A delivery tube connected to a gas syringe","C":"A loose cotton wool plug to prevent liquid splashing","D":"A thermometer to measure temperature change","correct":"C","explain":"A loose cotton wool plug allows gas to escape (so the mass changes as CO₂ is released) while preventing liquid from splashing onto the balance. A sealed bung would prevent mass loss entirely, ruining the method. This is the most commonly missed detail in mass-loss method questions."},{"stem":"On a rate graph showing volume of gas produced against time, what does the flat (plateau) section at the end of the curve indicate?","A":"The rate of reaction has reached its maximum","B":"The reaction has stopped because the limiting reactant has been used up","C":"The temperature of the reaction has fallen","D":"All the product has decomposed back into reactants","correct":"B","explain":"The plateau shows the reaction has finished. The limiting reactant has been completely consumed, so no more gas can be produced. The height of the plateau depends on the starting amount of limiting reactant, not on how fast the reaction was."},{"stem":"What is the overall energy change (ΔH) for a reaction where more energy is released making product bonds than is absorbed breaking reactant bonds?","A":"Positive ΔH, endothermic","B":"Negative ΔH, exothermic","C":"Zero ΔH, neither exo nor endothermic","D":"Positive ΔH, exothermic","correct":"B","explain":"ΔH = (energy in to break bonds) − (energy out when bonds form). If more energy is released making bonds than was absorbed breaking them, then energy out > energy in, and ΔH is negative. A negative ΔH means the reaction is exothermic, it releases energy to the surroundings."},{"stem":"Which piece of apparatus must be included in any gas-collection experiment to prevent gas escaping before it reaches the collection vessel?","A":"A thermometer","B":"A balance","C":"A bung sealing the reaction flask","D":"A stopwatch","correct":"C","explain":"Without a bung, the gas escapes into the room before it reaches the delivery tube and collection vessel. A bung seals the flask so all gas produced is forced through the delivery tube. Missing the bung is the most common error in apparatus diagram questions, according to the 2019 Higher tier examiner report."},{"stem":"A student adds a catalyst to a reaction. What happens to the amount of product formed?","A":"More product is formed because the reaction is faster","B":"Less product is formed because the catalyst uses up some reactant","C":"The same amount of product is formed","D":"No product is formed because the catalyst stops the reaction","correct":"C","explain":"A catalyst speeds up the rate but does not change the products or the amount of product. The yield (how much product can be made from a given amount of reactant) is determined by chemistry and stoichiometry, not by the catalyst. The catalyst only changes how quickly equilibrium or completion is reached."},{"stem":"Which of the following is an everyday use of an exothermic reaction?","A":"Instant cold pack used in sports injuries","B":"Thermal decomposition of calcium carbonate","C":"Hand warmers that use iron oxidation","D":"Photosynthesis in plants","correct":"C","explain":"Hand warmers use the slow exothermic oxidation of iron: 4Fe + 3O₂ → 2Fe₂O₃. This releases heat over several hours. Instant cold packs use an endothermic reaction (ammonium nitrate dissolving in water). Thermal decomposition and photosynthesis are both endothermic."},{"stem":"On a reaction profile for an exothermic reaction, where do the products sit compared to the reactants?","A":"Higher than the reactants","B":"At the same level as the reactants","C":"Lower than the reactants","D":"At the peak of the activation energy hump","correct":"C","explain":"In an exothermic reaction, energy is released to the surroundings, so the products have less energy than the reactants. On the reaction profile (energy vs progress of reaction), the products sit lower on the y-axis than the reactants. The overall drop in energy equals the energy released by the reaction."},{"stem":"What is meant by the 'mean rate' of a reaction?","A":"The rate at the very start of the reaction","B":"The rate at the very end of the reaction","C":"The total change in quantity divided by the total time taken","D":"The gradient of the curve at one specific point in time","correct":"C","explain":"Mean rate = total change in quantity ÷ total time. It gives an average rate over an interval rather than the rate at one instant. The instantaneous rate at a specific moment is found from the gradient of a tangent drawn to the curve at that point."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect — correct answer: <strong>'+q.correct+'</strong>':'Not answered — correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks — excellent work!':score>=Math.round(total*0.7)?'Good work — check the explanations for any you missed.':'Keep practising — work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% — '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

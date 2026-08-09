@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reference — GCSE Chemistry</title>
+<style>
+:root{--pr:#3f51b5;--pr-dk:#283593;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:12px;--sh:0 2px 10px rgba(63,81,181,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15)}
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:2.5rem 1.5rem 5rem;text-align:center}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.8rem;font-weight:800;margin-bottom:.35rem}
+.hero p{opacity:.88;font-size:.97rem;max-width:520px;margin:0 auto}
+
+/* Tab bar */
+.tab-bar{background:var(--card);border-bottom:2px solid var(--bdr);display:flex;padding:0 1.5rem;gap:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 6px rgba(63,81,181,.07)}
+.tab-btn{padding:.85rem 1.4rem;font-size:.93rem;font-weight:700;color:var(--txm);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .15s;margin-bottom:-2px;white-space:nowrap}
+.tab-btn.active{color:var(--pr);border-bottom-color:var(--pr)}
+.tab-btn:hover:not(.active){color:var(--tx);background:var(--bg)}
+
+/* Sections */
+.section{display:none}
+.section.visible{display:block;animation:secIn .22s ease}
+@keyframes secIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+main{max-width:860px;margin:0 auto;padding:1.8rem 1.2rem 5rem}
+
+/* ── EQUATION SHEET ── */
+.eq-group-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin:2rem 0 .9rem}
+.eq-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:1.1rem;overflow:hidden}
+.eq-head{padding:1rem 1.2rem .7rem;display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem}
+.eq-name{font-weight:800;font-size:1rem;color:var(--tx)}
+.badges{display:flex;gap:.4rem;flex-wrap:wrap;flex-shrink:0}
+.badge{font-size:.7rem;font-weight:700;padding:.18rem .55rem;border-radius:10px;white-space:nowrap}
+.badge-fh{background:#e8f5e9;color:#2e7d32}
+.badge-h{background:#f3e5f5;color:#6a1b9a}
+.badge-sep{background:#e8eaf6;color:#283593}
+.badge-p{background:#e3f2fd;color:#1565c0}
+.formula-box{background:#f0f3ff;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:1rem 1.2rem;font-family:'Courier New',Courier,monospace;font-size:.92rem;color:#1c1f3a;line-height:1.9}
+.f-main{font-size:1.02rem;font-weight:700;color:#283593}
+.f-sub{color:#4a5568;font-size:.85rem}
+.f-vars{margin-top:.5rem;font-family:'Nunito','Segoe UI',system-ui,sans-serif;font-size:.82rem;color:var(--txm);font-style:italic}
+.convert-note{background:#e8f5e9;border-top:1px solid #c8e6c9;border-bottom:1px solid #c8e6c9;padding:.6rem 1.2rem;font-size:.83rem;color:#2e7d32;font-weight:600}
+.errors-box{padding:.9rem 1.2rem}
+.errors-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#b45309;margin-bottom:.5rem}
+.errors-box ul{margin-left:1.1rem}
+.errors-box li{font-size:.85rem;color:#78350f;margin-bottom:.35rem;line-height:1.45}
+.errors-box li:last-child{margin-bottom:0}
+
+/* ── GLOSSARY ── */
+.search-wrap{position:sticky;top:50px;z-index:90;background:var(--bg);padding:.8rem 0 .4rem}
+.search-input{width:100%;padding:.75rem 1rem;border:2px solid var(--bdr);border-radius:var(--r);font-size:.97rem;font-family:'Nunito','Segoe UI',system-ui,sans-serif;color:var(--tx);background:var(--card);outline:none;transition:border .15s}
+.search-input:focus{border-color:var(--pr)}
+.az-index{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0 1.4rem}
+.az-btn{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:7px;font-size:.82rem;font-weight:700;cursor:pointer;background:var(--card);border:1.5px solid var(--bdr);color:var(--txm);text-decoration:none;transition:all .15s}
+.az-btn:hover{background:var(--pr);color:#fff;border-color:var(--pr)}
+.letter-group{margin-bottom:1.6rem}
+.letter-heading{font-size:1.3rem;font-weight:800;color:var(--pr);border-bottom:2px solid var(--bdr);padding-bottom:.3rem;margin-bottom:.7rem}
+.gloss-item{background:var(--card);border-radius:10px;box-shadow:var(--sh);padding:.8rem 1.1rem;margin-bottom:.55rem;border-left:4px solid var(--pr)}
+.gloss-item.hidden{display:none}
+.gloss-term{font-weight:700;font-size:.96rem;color:var(--tx)}
+.gloss-def{font-size:.87rem;color:#374151;margin-top:.25rem;line-height:1.55}
+.gloss-src{font-size:.72rem;color:var(--txm);margin-top:.3rem}
+.no-results{text-align:center;padding:3rem;color:var(--txm);font-size:.97rem}
+.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+/* Print button (screen only) */
+.print-bar{max-width:860px;margin:.9rem auto 0;padding:0 1.2rem;display:flex;justify-content:flex-end}
+.print-btn{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:2px solid var(--bdr);color:var(--pr);font-family:'Nunito','Segoe UI',system-ui,sans-serif;font-size:.88rem;font-weight:700;padding:.5rem 1.1rem;border-radius:8px;cursor:pointer;transition:border-color .15s,background .15s}
+.print-btn:hover{border-color:var(--pr);background:#eef1ff}
+.print-btn svg{flex-shrink:0}
+
+/* ── PRINT STYLES ── */
+@media print{
+  @page{size:A4 portrait;margin:1.5cm 1.2cm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .site-header,.hero,.tab-bar,.print-bar,#sec-gl,.back-link{display:none!important}
+  #sec-eq{display:block!important}
+  body{background:#fff;color:#000;font-family:'Nunito','Segoe UI',system-ui,sans-serif;font-size:9pt}
+  .print-header{display:block!important}
+  main{max-width:none;padding:0;columns:2;column-gap:1.2cm}
+  .eq-group-label{font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#555;margin:1rem 0 .4rem;break-after:avoid;column-span:all}
+  .eq-card{background:#fff;border:1px solid #c8cce8;border-radius:6px;margin-bottom:.55rem;box-shadow:none;break-inside:avoid;overflow:hidden}
+  .eq-head{padding:.55rem .75rem .4rem;display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem}
+  .eq-name{font-weight:700;font-size:9pt;color:#000}
+  .badges{display:flex;gap:.3rem;flex-wrap:wrap}
+  .badge{font-size:6.5pt;font-weight:700;padding:.1rem .35rem;border-radius:6px}
+  .badge-fh{background:#e8f5e9;color:#2e7d32}.badge-h{background:#f3e5f5;color:#6a1b9a}.badge-sep{background:#e8eaf6;color:#283593}.badge-p{background:#e3f2fd;color:#1565c0}
+  .formula-box{background:#f0f3ff;border-top:1px solid #c8cce8;border-bottom:1px solid #c8cce8;padding:.55rem .75rem;font-family:'Courier New',Courier,monospace;font-size:9pt;line-height:1.7}
+  .f-main{font-size:9.5pt;font-weight:700;color:#283593}
+  .f-sub{color:#444;font-size:8pt}
+  .f-vars{margin-top:.3rem;font-family:'Nunito','Segoe UI',system-ui,sans-serif;font-size:7.5pt;color:#555;font-style:italic}
+  .convert-note{background:#e8f5e9;border-top:1px solid #c8e6c9;border-bottom:1px solid #c8e6c9;padding:.35rem .75rem;font-size:7.5pt;color:#2e7d32;font-weight:600}
+  .errors-box{padding:.5rem .75rem}
+  .errors-label{font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#92400e;margin-bottom:.3rem}
+  .errors-box ul{margin-left:.9rem}
+  .errors-box li{font-size:7.5pt;color:#78350f;margin-bottom:.2rem;line-height:1.4}
+}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="home.html" class="back-link">&larr; Home</a>
+  <h1>Reference &mdash; Equations &amp; Glossary</h1>
+</header>
+
+<div class="hero">
+  <svg class="hero-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+  </svg>
+  <h1>Chemistry reference</h1>
+  <p>Equation sheet with common errors &bull; full A&ndash;Z glossary</p>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<!-- Hidden on screen, visible when printing -->
+<div class="print-header" style="display:none;margin-bottom:1rem;border-bottom:2px solid #283593;padding-bottom:.5rem">
+  <div style="font-size:13pt;font-weight:900;color:#283593">GCSE Chemistry &mdash; Equation Sheet</div>
+  <div style="font-size:8pt;color:#555;margin-top:.2rem">Edexcel (1CH0) &bull; Equations, units and common errors from examiner reports</div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('eq',this)">&#x1D453;&nbsp; Equation Sheet</button>
+  <button class="tab-btn" onclick="showTab('gl',this)">&#x1F4D6;&nbsp; Glossary</button>
+</div>
+
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6,9 6,2 18,2 18,9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+      <rect x="6" y="14" width="12" height="8"/>
+    </svg>
+    Print equation sheet
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     EQUATION SHEET
+═══════════════════════════════════════════════ -->
+<div id="sec-eq" class="section visible">
+<main>
+
+  <div class="eq-group-label">Atomic masses &amp; formulae</div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Relative Atomic Mass (A<sub>r</sub>)</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">A<sub>r</sub> = &Sigma;(mass<sub>n</sub> &times; abundance<sub>n</sub>) &divide; 100</div>
+      <div class="f-sub">If abundances are given as decimals, divide by 1 instead of 100</div>
+      <div class="f-vars">A<sub>r</sub> = relative atomic mass (no units) &bull; mass<sub>n</sub> = mass number of isotope &bull; abundance<sub>n</sub> = % abundance</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Rounding the answer to a whole number &mdash; e.g. writing 28 instead of 28.1 for silicon (1CH0/1H Nov 2021)</li>
+        <li>Not showing the multiplication step for each isotope &mdash; loses the working mark</li>
+        <li>Not dividing by 100 when abundances are given as percentages</li>
+        <li>Confusing this with empirical formula work &mdash; both use percentages but this is a weighted mean, not a moles ratio</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Relative Formula Mass (M<sub>r</sub>)</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">M<sub>r</sub> = &Sigma;(A<sub>r</sub> &times; number of atoms of each element)</div>
+      <div class="f-sub">Multiply A<sub>r</sub> by subscript, then by any bracket multiplier, before adding</div>
+      <div class="f-vars">No units &bull; Include water of crystallisation if shown (e.g. &bull;5H<sub>2</sub>O)</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Failing to multiply A<sub>r</sub> by the subscript &mdash; e.g. M<sub>r</sub>(CaCO<sub>3</sub>) = 68 instead of 100 (1CH0 Jun 2019)</li>
+        <li>Not multiplying every atom inside brackets by the bracket subscript &mdash; e.g. M<sub>r</sub>(Mg(OH)<sub>2</sub>) = 41 instead of 58</li>
+        <li>Writing a unit (&ldquo;g&rdquo; or &ldquo;g/mol&rdquo;) on the final answer &mdash; M<sub>r</sub> is unitless</li>
+        <li>Ignoring water of crystallisation in hydrated salts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Empirical &amp; Molecular Formula</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">moles of each element = mass &divide; A<sub>r</sub></div>
+      <div class="f-sub">&#8594; divide all mole values by the smallest &rarr; round to whole numbers</div>
+      <div class="f-sub" style="margin-top:.4rem">Molecular formula: n = M<sub>r</sub>(compound) &divide; M<sub>r</sub>(empirical unit) &rarr; multiply empirical formula by n</div>
+      <div class="f-vars">If ratio is 1.5 &rarr; &times;2 &bull; 1.33 &rarr; &times;3 &bull; 1.25 &rarr; &times;4</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Multiplying mass &times; A<sub>r</sub> instead of dividing mass &divide; A<sub>r</sub> (1CH0/1F Jun 2019)</li>
+        <li>Inverting the fraction &mdash; dividing A<sub>r</sub> &divide; mass (1CH0/1H Jun 2019)</li>
+        <li>Stopping at the ratio (e.g. &ldquo;1:2:1&rdquo;) without converting to a formula with subscripts &mdash; loses final mark (1CH0/2H Jun 2019)</li>
+        <li>Rounding 1.5 down to 1 rather than doubling all values to get integers</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Percentage Composition (% by mass)</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">% by mass = (A<sub>r</sub> &times; subscript) &divide; M<sub>r</sub> &times; 100</div>
+      <div class="f-vars">Answer is a percentage &mdash; no mass unit on the final answer</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Using A<sub>r</sub> alone instead of A<sub>r</sub> &times; subscript &mdash; e.g. 16 for oxygen in CaCO<sub>3</sub> instead of 48</li>
+        <li>Not rounding to the number of significant figures the question specifies &mdash; &ldquo;a major reason candidates lost the final mark&rdquo; (1CH0 Jun 2019)</li>
+        <li>Rounding mid-calculation instead of at the final step</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-group-label">Moles &amp; amounts</div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">The Mole</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">moles = mass &divide; M<sub>r</sub></div>
+      <div class="f-sub">Rearrangements: mass = moles &times; M<sub>r</sub> &nbsp;|&nbsp; M<sub>r</sub> = mass &divide; moles</div>
+      <div class="f-main" style="margin-top:.7rem">number of particles = moles &times; 6.02 &times; 10<sup>23</sup></div>
+      <div class="f-sub">Rearrangement: moles = particles &divide; 6.02 &times; 10<sup>23</sup></div>
+      <div class="f-vars">moles in mol &bull; mass in g &bull; 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup> = Avogadro constant</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Quoting 6.02 &times; 10<sup>23</sup> as the final answer without multiplying by atoms per formula unit (1CH0/1H Jun 2019 &mdash; CuI question)</li>
+        <li>Dividing the wrong way round &mdash; e.g. 159.5 &divide; 15.95 instead of 15.95 &divide; 159.5 (1CH0/1H Jun 2019)</li>
+        <li>Forgetting to convert milligrams to grams first (divide mg by 1000)</li>
+        <li>Entering 6.02 &times; 10 &times; 23 on the calculator &mdash; use the EXP button</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Reacting Masses</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">Method A &mdash; Ratio</div>
+      <div class="f-sub">mass given &divide; M<sub>r</sub>(given) = mass unknown &divide; M<sub>r</sub>(unknown)</div>
+      <div class="f-main" style="margin-top:.7rem">Method B &mdash; Moles (preferred at Higher)</div>
+      <div class="f-sub">moles = mass &divide; M<sub>r</sub> &rarr; apply equation ratio &rarr; mass = moles &times; M<sub>r</sub></div>
+      <div class="f-vars">Always use coefficients from the balanced equation to set the ratio</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Calculating M<sub>r</sub> of the product and writing that as the answer without scaling (1CH0/2F Jun 2019)</li>
+        <li>Not using the balancing numbers (coefficients) to set the ratio</li>
+        <li>Poor unstructured working &mdash; &ldquo;the setting out of many candidates&rsquo; calculations was invariably poor&rdquo; (1CH0/2F Jun 2019)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Limiting Reagents</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-sub">Step 1: moles of each reactant = mass &divide; M<sub>r</sub></div>
+      <div class="f-sub">Step 2: divide moles by its coefficient in the balanced equation</div>
+      <div class="f-sub">Step 3: smallest result = limiting reagent</div>
+      <div class="f-sub">Step 4: moles of product = moles(limiting) &times; (product coeff &divide; limiting coeff)</div>
+      <div class="f-sub">Step 5: mass of product = moles &times; M<sub>r</sub></div>
+      <div class="f-vars">Name the limiting reagent explicitly before calculating product mass</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Assuming all reactions are 1:1 &mdash; must check the balanced equation coefficients</li>
+        <li>Not naming which reagent is limiting before calculating</li>
+        <li>Using moles of the excess reagent instead of the limiting reagent</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-group-label">Concentrations</div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Concentration (g dm<sup>&minus;3</sup>)</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="convert-note">&#9654; Unit check first: volume in cm<sup>3</sup>? Divide by 1000 to get dm<sup>3</sup>. &nbsp; 1 dm<sup>3</sup> = 1000 cm<sup>3</sup> = 1 litre</div>
+    <div class="formula-box">
+      <div class="f-main">c = m &divide; V</div>
+      <div class="f-sub">Rearrangements: m = c &times; V &nbsp;|&nbsp; V = m &divide; c</div>
+      <div class="f-vars">c = concentration (g dm<sup>&minus;3</sup>) &bull; m = mass of solute (g) &bull; V = volume of solution (dm<sup>3</sup>)</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li><strong>Not converting cm<sup>3</sup> to dm<sup>3</sup></strong> &mdash; gives answer 1000&times; wrong; &ldquo;the single most common error&rdquo; (1CH0/2F Jun 2019)</li>
+        <li>Omitting the unit (g dm<sup>&minus;3</sup>) from the final answer</li>
+        <li>Using the volume of solvent added rather than the total final volume of solution</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Concentration (mol dm<sup>&minus;3</sup>)</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P1</span></div>
+    </div>
+    <div class="convert-note">&#9654; Unit check: cm<sup>3</sup> &divide; 1000 = dm<sup>3</sup> &nbsp;&bull;&nbsp; g dm<sup>&minus;3</sup> &rarr; mol dm<sup>&minus;3</sup>: divide by M<sub>r</sub></div>
+    <div class="formula-box">
+      <div class="f-main">C = n &divide; V</div>
+      <div class="f-sub">Rearrangements: n = C &times; V &nbsp;|&nbsp; V = n &divide; C</div>
+      <div class="f-sub">Converting: mol dm<sup>&minus;3</sup> = g dm<sup>&minus;3</sup> &divide; M<sub>r</sub></div>
+      <div class="f-vars">C = concentration (mol dm<sup>&minus;3</sup>) &bull; n = moles (mol) &bull; V = volume (dm<sup>3</sup>)</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Forgetting to divide volume by 1000 &mdash; answer 1000&times; wrong (1CH0/1H Jun 2019)</li>
+        <li>Dividing M<sub>r</sub> by concentration instead of concentration by M<sub>r</sub> (1CH0/1H Jun 2019)</li>
+        <li>Not giving the answer to the decimal places specified (1CH0/1H Jun 2019)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-group-label">Quantitative analysis &mdash; Separate Chemistry (1CH0) only</div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Percentage Yield</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P1</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">% yield = (actual yield &divide; theoretical yield) &times; 100</div>
+      <div class="f-sub">Both yields must be in the same units (usually g) before dividing</div>
+      <div class="f-vars">Answer is a % &mdash; never write g or mol &bull; Expected range: 0&ndash;100% for a normal reaction</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Giving an &ldquo;incomplete reaction / practical losses / side reactions&rdquo; reason when asked why yield is <em>greater than</em> 100% &mdash; that question needs &ldquo;product not fully dried&rdquo; or &ldquo;contains impurities&rdquo; (1CH0/1H Nov 2020)</li>
+        <li>Not calculating theoretical yield from reacting masses first</li>
+        <li>Mixing units &mdash; actual yield in kg, theoretical in g (or vice versa)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Atom Economy</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P1</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">% atom economy = (M<sub>r</sub> of desired product &divide; total M<sub>r</sub> of all products) &times; 100</div>
+      <div class="f-sub">Apply balancing coefficients: 2 mol of product &rarr; use 2 &times; M<sub>r</sub> in numerator</div>
+      <div class="f-vars">Answer is a % &mdash; no units &bull; Only reactions with one product can have 100% atom economy</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Writing 100% because &ldquo;both products are useful&rdquo; &mdash; uses <em>desired</em> product only (1CH0/1F Jun 2019)</li>
+        <li>Giving a bare answer without working &mdash; &ldquo;a common answer was 56, which generally did not score&rdquo; (1CH0/1F Jun 2019)</li>
+        <li>Confusing &ldquo;1 decimal place&rdquo; with &ldquo;nearest whole number&rdquo; &mdash; 80.5% &ne; 80% (1CH0/1H Nov 2020)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Titration Calculations</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P1</span></div>
+    </div>
+    <div class="convert-note">&#9654; Before calculating: use concordant titres only (within 0.10 cm<sup>3</sup>) for the mean. Convert cm<sup>3</sup> &divide; 1000 = dm<sup>3</sup>.</div>
+    <div class="formula-box">
+      <div class="f-main">n = C &times; V &nbsp;&nbsp; (V in dm<sup>3</sup>)</div>
+      <div class="f-sub">Rearrangements: C = n &divide; V &nbsp;|&nbsp; V = n &divide; C</div>
+      <div class="f-sub">Apply the mole ratio from the balanced equation to find moles of the unknown</div>
+      <div class="f-sub">Convert mol dm<sup>&minus;3</sup> &rarr; g dm<sup>&minus;3</sup>: multiply by M<sub>r</sub></div>
+      <div class="f-vars">n = moles (mol) &bull; C = concentration (mol dm<sup>&minus;3</sup>) &bull; V = volume (dm<sup>3</sup>)</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Forgetting to divide cm<sup>3</sup> by 1000 &mdash; answer 1000&times; wrong (1CH0/1H Jun 2019)</li>
+        <li>Inverting the division when converting units &mdash; &ldquo;159.5/15.95&rdquo; flagged as wrong (1CH0/1H Jun 2019)</li>
+        <li>Assuming 1:1 mole ratio &mdash; check the equation (HCl:Ca(OH)<sub>2</sub> = 2:1; H<sub>2</sub>SO<sub>4</sub>:NaOH = 1:2)</li>
+        <li>Including the rough titre in the mean &mdash; concordant titres only</li>
+        <li>Not rounding to the decimal places specified</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Molar Volume of a Gas</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="convert-note">&#9654; Molar volume at rtp = 24 dm<sup>3</sup> mol<sup>&minus;1</sup> (= 24,000 cm<sup>3</sup> mol<sup>&minus;1</sup>) at &asymp;20&deg;C, 1 atm</div>
+    <div class="formula-box">
+      <div class="f-main">V (dm<sup>3</sup>) = moles &times; 24</div>
+      <div class="f-sub">Rearrangement: moles = V (dm<sup>3</sup>) &divide; 24 &nbsp;|&nbsp; then: mass = moles &times; M<sub>r</sub></div>
+      <div class="f-vars">V must be in dm<sup>3</sup> &mdash; convert cm<sup>3</sup> by dividing by 1000 first</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Dividing when converting moles to volume &mdash; &ldquo;often divided by 24 when they should have multiplied&rdquo; (1CH0/1H Jun 2019)</li>
+        <li>Not converting cm<sup>3</sup> to dm<sup>3</sup> before dividing by 24</li>
+        <li>Forgetting to scale O<sub>2</sub> volume to air volume when asked (air &asymp;20% O<sub>2</sub>, so &times;5) (1CH0/1H Jun 2019)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Avogadro&rsquo;s Law &mdash; Gas Volume Ratios</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">Volume ratio = Mole ratio (from balanced equation coefficients)</div>
+      <div class="f-sub">Only applies to gases (g) at the same temperature and pressure</div>
+      <div class="f-sub">V<sub>unknown</sub> = V<sub>known</sub> &times; (coeff<sub>unknown</sub> &divide; coeff<sub>known</sub>)</div>
+      <div class="f-vars">Units stay the same throughout (both dm<sup>3</sup> or both cm<sup>3</sup>) &bull; Exclude solids and liquids</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Dividing when the larger-coefficient gas requires multiplying (1CH0/1H Jun 2019)</li>
+        <li>Applying the ratio to non-gaseous species &mdash; only state symbol (g) counts</li>
+        <li>Adding CO<sub>2</sub> volume but ignoring H<sub>2</sub>O vapour when &ldquo;total gaseous products&rdquo; is asked (1CH0/1H Jun 2024)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-group-label">Rates &amp; energy</div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Rate of Reaction</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">Rate = change in quantity &divide; time</div>
+      <div class="f-sub">Gas collected: Rate (cm<sup>3</sup>/s) = volume of gas (cm<sup>3</sup>) &divide; time (s)</div>
+      <div class="f-sub">Mass loss: Rate (g/s) = mass lost (g) &divide; time (s)</div>
+      <div class="f-vars">Mean rate uses total change over total time &bull; Initial rate = gradient at time = 0 (steepest part)</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Missing the bung from apparatus diagrams &mdash; &ldquo;candidates lost marks by missing the bung&rdquo; (1CH0/2H Jun 2019)</li>
+        <li>Not labelling apparatus scientifically (1CH0/2H Jun 2019)</li>
+        <li>Calculating mean rate over the whole experiment when initial rate is asked for</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Bond Energy Calculation</div>
+      <div class="badges"><span class="badge badge-h">H only</span><span class="badge badge-p">P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">&Delta;H = &Sigma;(bond energies broken) &minus; &Sigma;(bond energies made)</div>
+      <div class="f-sub">&Delta;H = (energy in) &minus; (energy out)</div>
+      <div class="f-sub">Negative &Delta;H = exothermic &nbsp;&bull;&nbsp; Positive &Delta;H = endothermic</div>
+      <div class="f-vars">&Delta;H in kJ mol<sup>&minus;1</sup> &bull; Multiply each bond energy by the number of those bonds &bull; Data table provided</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Forgetting the minus sign &mdash; &ldquo;most common cause of lost marks: 730 instead of &minus;730&rdquo; (1CH0/2H Nov 2021)</li>
+        <li>Doing the subtraction the wrong way round (made &minus; broken gives right magnitude, wrong sign)</li>
+        <li>Not multiplying bond energy by the number of bonds &mdash; CH<sub>4</sub> has 4 C&ndash;H bonds; 2H<sub>2</sub>O has 4 O&ndash;H bonds</li>
+        <li>Misidentifying double bonds as single (C=C &ne; C&ndash;C; O=O &ne; O&ndash;O)</li>
+        <li>Transcription errors between calculator and paper (1CH0/2H Nov 2021)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">Heat of Combustion (Core Practical)</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-sep">SEP</span><span class="badge badge-p">P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">mass burnt = mass of burner (before) &minus; mass of burner (after)</div>
+      <div class="f-main" style="margin-top:.5rem">temperature rise (&Delta;T) = T<sub>final</sub> &minus; T<sub>initial</sub></div>
+      <div class="f-vars">mass in g &bull; temperature in &deg;C &bull; Weigh burner + lid each time</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Confusing &ldquo;stop at 30&deg;C&rdquo; with &ldquo;a temperature rise of 30&deg;C&rdquo; &mdash; it is the <em>rise</em> that must equal the target (1CH0/2F Jun 2019)</li>
+        <li>Not replacing the lid immediately after lighting &mdash; evaporation loss makes the mass change too large</li>
+        <li>Confusing mass of the whole burner with mass of alcohol only (1CH0/2F Jun 2019)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eq-card">
+    <div class="eq-head">
+      <div class="eq-name">R<sub>f</sub> Value (Chromatography)</div>
+      <div class="badges"><span class="badge badge-fh">F+H</span><span class="badge badge-p">P1 or P2</span></div>
+    </div>
+    <div class="formula-box">
+      <div class="f-main">R<sub>f</sub> = distance moved by substance &divide; distance moved by solvent front</div>
+      <div class="f-sub">Both distances measured from the baseline &bull; Measure to the centre of the spot</div>
+      <div class="f-vars">No units &bull; Always between 0 and 1 &bull; Quote to 2 significant figures</div>
+    </div>
+    <div class="errors-box">
+      <div class="errors-label">&#9888;&#xFE0E; Common errors</div>
+      <ul>
+        <li>Not recalling the formula &mdash; &ldquo;some candidates were unable to recall the correct formula for R<sub>f</sub>&rdquo; (1CH0/1F Jun 2019)</li>
+        <li>Not giving the answer to 2 significant figures &mdash; &ldquo;failing to give 0.29 to required 2 s.f.&rdquo; (1CH0/1F Jun 2019)</li>
+        <li>Measuring from the bottom of the paper rather than the pencil baseline</li>
+        <li>Measuring to the top or edge of the spot rather than its centre</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     GLOSSARY
+═══════════════════════════════════════════════ -->
+<div id="sec-gl" class="section">
+<main>
+  <div class="search-wrap">
+    <input class="search-input" type="search" id="gloss-search" placeholder="&#128269; Search definitions..." oninput="filterGloss(this.value)" autocomplete="off">
+  </div>
+
+  <div class="az-index" id="az-index"></div>
+
+  <div id="gloss-body"></div>
+  <div id="no-results" class="no-results" style="display:none">No matching terms found.</div>
+</main>
+</div>
+
+<script>
+/* ── TAB SWITCHING ── */
+function showTab(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('visible'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('visible');if(btn){document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');}
+  event.currentTarget.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+/* ── GLOSSARY DATA ── */
+const TERMS = [
+  {t:"Actual yield",d:"The mass of product actually obtained from the experiment, measured on a balance after the product has been separated and dried.",s:"5.2.4.1"},
+  {t:"Anion",d:"A negatively charged ion — an atom or group of atoms that has gained one or more electrons.",s:"1.3.1.1"},
+  {t:"Atom",d:"The smallest particle of an element that still has the chemical properties of that element.",s:"1.1.1.1"},
+  {t:"Atom economy",d:"A measure of the proportion of the total mass of reactants that ends up in the desired product, expressed as a percentage.",s:"5.2.5.1"},
+  {t:"Atomic number (Z)",d:"The number of protons in the nucleus of an atom. Defines which element it is.",s:"1.1.3.2"},
+  {t:"Atomic radius",d:"The distance from the centre of the nucleus to the outermost electron shell — gives the overall size of the atom.",s:"1.1.3.1"},
+  {t:"Avogadro constant",d:"The number of particles in one mole of any substance: 6.02 × 10²³ mol⁻¹.",s:"1.6.7.1"},
+  {t:"Avogadro's law",d:"Equal volumes of any gas, measured at the same temperature and pressure, contain equal numbers of molecules (and therefore equal numbers of moles).",s:"5.2.8.1"},
+  {t:"Balanced equation",d:"An equation in which the number of atoms of each element is the same on both sides — the coefficients (big numbers) give the reacting ratio.",s:"1.6.5.1"},
+  {t:"Baseline (chromatography)",d:"The pencil line drawn near the bottom of the chromatography paper on which the spots of the substances being tested are placed before dipping into solvent.",s:"2.2.3.1"},
+  {t:"Bond breaking",d:"An endothermic process — energy must be put in to pull bonded atoms apart.",s:"7.2.3.1"},
+  {t:"Bond energy",d:"The energy needed to break one mole of a particular covalent bond in the gaseous state, measured in kJ mol⁻¹.",s:"7.2.3.1"},
+  {t:"Bond making",d:"An exothermic process — energy is released when new bonds form between atoms.",s:"7.2.3.1"},
+  {t:"Bonding pair",d:"The pair of electrons that is shared between two atoms in a covalent bond.",s:"1.4.1.1"},
+  {t:"Bracket multiplier",d:"A subscript written outside a bracket — it multiplies every atom inside the brackets (e.g. the 2 in Mg(OH)₂ applies to both O and H).",s:"1.6.1.1"},
+  {t:"Byproduct",d:"Any other product formed alongside the desired product; usually waste, although sometimes it can be sold or reused.",s:"5.2.5.1"},
+  {t:"Calorimeter",d:"The vessel (usually a copper or glass beaker) holding the water that absorbs the heat from the burning fuel in a combustion experiment.",s:"9.4.2.1"},
+  {t:"Cation",d:"A positively charged ion — an atom or group of atoms that has lost one or more electrons.",s:"1.3.1.1"},
+  {t:"Charge",d:"The net electrical imbalance on a particle; equal to (protons − electrons).",s:"1.3.1.1"},
+  {t:"Closed system",d:"A reaction system in which matter cannot enter or leave, so all species remain in contact and equilibrium can be established.",s:"4.2.3.1"},
+  {t:"Colorimetry",d:"A technique that measures how much light a coloured solution absorbs, used to follow a colour change over time as a reaction proceeds.",s:"7.1.1.1"},
+  {t:"Combustion",d:"A reaction in which a substance burns in oxygen, releasing heat energy.",s:"9.4.2.1"},
+  {t:"Concentration",d:"The mass (or amount) of solute dissolved in a given volume of solution. Measured in g dm⁻³ at Foundation/Higher, or mol dm⁻³ at Higher Separate.",s:"1.6.6.1"},
+  {t:"Concordant titres",d:"Titres that agree to within 0.10 cm³ of each other — the readings you average to get a reliable mean titre.",s:"5.2.3.1"},
+  {t:"Control variable",d:"A variable kept constant throughout an experiment so that any change in the dependent variable can be attributed to the independent variable.",s:"9.4.2.1"},
+  {t:"Covalent bond",d:"A shared pair of electrons between two atoms.",s:"1.4.1.1"},
+  {t:"Delocalised electron",d:"An electron that is not attached to any particular atom and is free to move through the structure — responsible for electrical conductivity in metals and graphite.",s:"1.5.1.1"},
+  {t:"Dependent variable",d:"The variable you measure in an experiment — it responds to changes in the independent variable.",s:"9.4.2.1"},
+  {t:"Desired product",d:"The product that the reaction is being carried out to make — the substance you actually want (used in atom economy calculations).",s:"5.2.5.1"},
+  {t:"Diatomic molecule",d:"A molecule made of exactly two atoms — e.g. H₂, Cl₂, O₂, N₂, HCl.",s:"1.4.1.1"},
+  {t:"dm³",d:"Cubic decimetre: one dm³ equals 1000 cm³ and 1 litre. The standard volume unit for solutions and gases at GCSE.",s:"1.6.6.1"},
+  {t:"Dot-and-cross diagram",d:"A model showing the electrons in each shell of an atom or molecule, using dots and crosses arranged on concentric circles around a central nucleus.",s:"1.2.3.1"},
+  {t:"Double bond",d:"A covalent bond made of two shared pairs of electrons, drawn as a double line (e.g. O=O, C=C, C=O).",s:"1.4.1.1"},
+  {t:"Dynamic equilibrium",d:"The state of a reversible reaction in a closed system where the forward and reverse reactions occur at the same rate, so concentrations of reactants and products remain constant.",s:"4.2.3.1"},
+  {t:"Electron",d:"A negatively charged sub-atomic particle found in shells around the nucleus. Relative mass ≈ 1/1840; relative charge = −1.",s:"1.1.2.1"},
+  {t:"Electron configuration",d:"A description of how an atom's electrons are arranged into shells, written as numbers separated by full stops (e.g. 2.8.1 for sodium).",s:"1.2.3.1"},
+  {t:"Electron shell",d:"A region around the nucleus at a fixed distance and energy level where electrons are found. Also called an energy level.",s:"1.1.1.1"},
+  {t:"Electron transfer",d:"The movement of one or more electrons from a metal atom to a non-metal atom during ionic bond formation.",s:"1.3.2.1"},
+  {t:"Electrostatic force",d:"The force of attraction between particles with opposite electrical charges (or repulsion between like charges). Holds ionic lattices together.",s:"1.3.2.2"},
+  {t:"Element",d:"A pure substance made of only one type of atom. Cannot be broken down further by chemical means.",s:"1.1.1.1"},
+  {t:"Empirical formula",d:"The simplest whole-number ratio of atoms of each element in a compound (e.g. CH₂O is the empirical formula of glucose C₆H₁₂O₆).",s:"1.6.2.1"},
+  {t:"Endothermic reaction",d:"A reaction that takes in energy from the surroundings, causing the temperature of the surroundings to fall. ΔH is positive.",s:"7.2.3.1"},
+  {t:"Energy change (ΔH)",d:"The overall energy change of a reaction, equal to (energy in to break bonds) − (energy out when bonds form). Measured in kJ mol⁻¹.",s:"7.2.3.1"},
+  {t:"Energy level",d:"The fixed amount of energy associated with a particular electron shell. Shells closer to the nucleus are at lower energy levels.",s:"1.2.3.1"},
+  {t:"Exothermic reaction",d:"A reaction that releases energy to the surroundings, causing the temperature of the surroundings to rise. ΔH is negative.",s:"7.2.3.1"},
+  {t:"g dm⁻³",d:"Grams of solute per cubic decimetre of solution — the unit used for concentration at Foundation and Higher tier (non-Separate).",s:"1.6.6.1"},
+  {t:"Gas syringe",d:"A graduated, low-friction syringe used to collect and measure the volume of gas produced in a rate experiment.",s:"7.1.1.1"},
+  {t:"Giant covalent substance",d:"A substance with a huge 3D network of atoms all joined by strong covalent bonds — examples include diamond, graphite, and silicon dioxide.",s:"1.5.1.1"},
+  {t:"Giant structure",d:"A structure made of very large numbers of particles arranged in a repeating pattern extending in all directions — applies to ionic lattices, metallic lattices, and giant covalent substances.",s:"1.3.2.2"},
+  {t:"Heat of combustion",d:"The energy released when one mole of a substance burns completely in oxygen.",s:"9.4.2.1"},
+  {t:"Independent variable",d:"The variable you deliberately change in an experiment to investigate its effect on the dependent variable.",s:"9.4.2.1"},
+  {t:"Initial rate",d:"The rate of reaction at the very start (time = 0), found from the steepest gradient at the beginning of a rate graph, before any reactant has been used up.",s:"7.1.1.1"},
+  {t:"Intermolecular force",d:"A weak force of attraction between separate molecules (much weaker than a covalent bond). Responsible for the low melting points of simple molecular substances.",s:"1.5.1.1"},
+  {t:"Inverted measuring cylinder",d:"A water-filled measuring cylinder upturned over a water trough, used to collect and measure gas by water displacement.",s:"7.1.1.1"},
+  {t:"Ion",d:"An atom, or group of atoms, that has a positive or negative electrical charge because the number of electrons is no longer equal to the number of protons.",s:"1.3.1.1"},
+  {t:"Ionic bond",d:"The strong electrostatic force of attraction between oppositely charged ions in an ionic compound.",s:"1.3.2.1"},
+  {t:"Ionic compound",d:"A compound formed when a metal transfers electrons to a non-metal, producing oppositely charged ions held together in a giant ionic lattice.",s:"1.5.1.1"},
+  {t:"Ionic lattice",d:"A regular, repeating 3D arrangement of oppositely-charged ions held together by strong electrostatic forces of attraction.",s:"1.3.2.2"},
+  {t:"Isotopes",d:"Atoms of the same element (same number of protons) that contain different numbers of neutrons, giving them different mass numbers.",s:"1.1.4.1"},
+  {t:"Isotopic abundance",d:"The proportion of atoms of a given isotope present in a naturally-occurring sample of the element, usually expressed as a percentage.",s:"1.1.5.1"},
+  {t:"Le Chatelier's principle",d:"If a closed system at dynamic equilibrium is subjected to a change in conditions, the position of equilibrium shifts to oppose that change.",s:"4.2.3.1"},
+  {t:"Limiting reagent",d:"The reactant that runs out first in a chemical reaction — it determines the maximum mass of product that can be formed.",s:"1.6.8.1"},
+  {t:"Lone pair",d:"A pair of outer-shell electrons on an atom that is not involved in bonding.",s:"1.4.1.1"},
+  {t:"Mass loss",d:"The mass of fuel burnt during a combustion experiment, calculated as (mass of burner before) − (mass of burner after).",s:"9.4.2.1"},
+  {t:"Mass number (A)",d:"The total number of protons and neutrons in the nucleus of an atom.",s:"1.1.3.2"},
+  {t:"Maximum yield",d:"The mass of product that can be made when the limiting reagent has fully reacted — it cannot be exceeded however much excess reagent is added.",s:"1.6.8.1"},
+  {t:"Mean (average) rate",d:"Total change in quantity divided by total time taken — gives one rate value across the whole experiment or a stated interval.",s:"7.1.1.1"},
+  {t:"Mean titre",d:"The average of the concordant titres only (those agreeing within 0.10 cm³), used as the volume value in calculations.",s:"5.2.3.1"},
+  {t:"Metallic substance",d:"A lattice of positive metal ions arranged in a regular pattern, with delocalised electrons that move freely throughout — explains conductivity and malleability.",s:"1.5.1.1"},
+  {t:"mol dm⁻³",d:"Moles of solute per cubic decimetre of solution. Also written as M or 'molar'. Used for concentration at Higher Separate tier.",s:"5.2.1.1"},
+  {t:"Molar mass",d:"The mass of one mole of a substance in g mol⁻¹, numerically equal to Aᵣ (for elements) or Mᵣ (for compounds).",s:"1.6.7.1"},
+  {t:"Molar volume",d:"The volume occupied by one mole of any gas at room temperature and pressure: 24 dm³ mol⁻¹ (= 24,000 cm³ mol⁻¹).",s:"5.2.7.1"},
+  {t:"Mole",d:"The amount of substance that contains 6.02 × 10²³ particles. The mass of one mole in grams equals the relative formula mass (Mᵣ).",s:"1.6.7.1"},
+  {t:"Mole ratio",d:"The whole-number ratio of moles of reactants and products taken directly from the balancing numbers of a balanced equation.",s:"5.2.3.1"},
+  {t:"Molecular formula",d:"The actual number of atoms of each element in one molecule of the compound (e.g. C₆H₁₂O₆ for glucose).",s:"1.6.2.1"},
+  {t:"Molecule",d:"A particle made of two or more atoms joined by covalent bonds.",s:"1.4.1.1"},
+  {t:"Monatomic ion",d:"An ion made of a single atom, e.g. Na⁺, Cl⁻, Mg²⁺, O²⁻, Fe³⁺.",s:"1.3.1.1"},
+  {t:"Nanometre (nm)",d:"A unit of length equal to 1 × 10⁻⁹ m, used to express atomic and molecular sizes.",s:"1.4.1.1"},
+  {t:"Neutron",d:"A neutral (uncharged) sub-atomic particle found in the nucleus. Relative mass = 1; relative charge = 0.",s:"1.1.2.1"},
+  {t:"Noble gas configuration",d:"A full outer electron shell — the stable electron arrangement that ions achieve after gaining or losing electrons during ionic bond formation.",s:"1.3.2.1"},
+  {t:"Nuclear model",d:"The model of the atom in which a tiny, dense, positively charged nucleus sits at the centre with electrons moving in shells around the outside.",s:"1.1.1.1"},
+  {t:"Nuclear radius",d:"The distance from the centre of the nucleus to its outer edge — approximately 1/10,000 of the atomic radius.",s:"1.1.3.1"},
+  {t:"Nucleus",d:"The small, dense, positively charged centre of an atom, containing protons and (except in ¹H) neutrons.",s:"1.1.1.1"},
+  {t:"Particle",d:"A general term in the mole definition — can mean atoms, molecules, formula units or ions depending on the substance.",s:"1.6.7.1"},
+  {t:"Percentage by mass",d:"The mass of one element in a compound expressed as a percentage of the total relative formula mass: (Aᵣ × subscript) ÷ Mᵣ × 100.",s:"1.6.5.2"},
+  {t:"Percentage yield",d:"The actual yield expressed as a percentage of the theoretical yield: (actual ÷ theoretical) × 100. A measure of how efficiently a reaction produces the desired product.",s:"5.2.4.1"},
+  {t:"Plum pudding model",d:"J. J. Thomson's model of the atom as a sphere of positive charge with negatively charged electrons embedded in it, like raisins in a pudding.",s:"1.1.1.1"},
+  {t:"Polyatomic ion",d:"An ion made of two or more atoms covalently bonded together that carry a combined charge, e.g. SO₄²⁻, NO₃⁻, OH⁻, NH₄⁺, CO₃²⁻.",s:"1.3.1.1"},
+  {t:"Position of equilibrium",d:"A description of the relative amounts of reactants and products in an equilibrium mixture. Shifts right = more products; shifts left = more reactants.",s:"4.2.3.1"},
+  {t:"Proton",d:"A positively charged sub-atomic particle found in the nucleus. Relative mass = 1; relative charge = +1.",s:"1.1.2.1"},
+  {t:"Pure substance",d:"A substance made of only one compound or one element. Melts and boils at a single, sharp temperature. Produces a single spot on a chromatogram.",s:"2.2.3.1"},
+  {t:"Rate of reaction",d:"The change in amount of reactant or product per unit time — expressed in g/s, cm³/s, or mol dm⁻³ s⁻¹.",s:"7.1.1.1"},
+  {t:"Reactant in excess",d:"A reactant present in a larger amount than needed to react with the limiting reagent — some is left unreacted when the reaction stops.",s:"1.6.8.1"},
+  {t:"Reacting mass",d:"The mass of a reactant or product calculated from a balanced equation when the mass of one other substance is known.",s:"1.6.5.1"},
+  {t:"Relative atomic mass (Aᵣ)",d:"The weighted mean mass of atoms of an element compared to 1/12 the mass of a carbon-12 atom. Found on the periodic table.",s:"1.1.5.1"},
+  {t:"Relative charge",d:"The charge of a sub-atomic particle expressed relative to the charge on a proton (proton = +1; electron = −1; neutron = 0).",s:"1.1.2.2"},
+  {t:"Relative formula mass (Mᵣ)",d:"The sum of the relative atomic masses of all the atoms in the chemical formula of a substance. Calculated using Aᵣ values from the periodic table.",s:"1.6.1.1"},
+  {t:"Relative isotopic mass",d:"The mass of one atom of a specific isotope compared to 1/12 the mass of a carbon-12 atom. At GCSE, numerically equal to the mass number.",s:"1.1.5.1"},
+  {t:"Relative mass",d:"The mass of a sub-atomic particle expressed relative to the mass of a proton (proton = 1; neutron = 1; electron ≈ 1/1840).",s:"1.1.2.2"},
+  {t:"Rf value",d:"The ratio of (distance moved by the substance) to (distance moved by the solvent front), measured from the baseline. No units; always between 0 and 1.",s:"2.2.3.1"},
+  {t:"Room temperature and pressure (rtp)",d:"Approximately 20°C and 1 atmosphere pressure — the standard conditions at which molar volume = 24 dm³ mol⁻¹.",s:"5.2.7.1"},
+  {t:"Rough titre",d:"The first, fast titration run done to find the approximate end point. Not included in the mean titre calculation.",s:"5.2.3.1"},
+  {t:"Scientific model",d:"A simplified description used to explain experimental observations. Models change when new evidence cannot be explained by the existing model.",s:"1.1.1.1"},
+  {t:"Shell",d:"A region around the nucleus at a fixed energy level where electrons are found. The first shell holds up to 2 electrons; the second and third hold up to 8.",s:"1.1.2.1"},
+  {t:"Side reaction",d:"A competing reaction in which reactants form an unwanted product instead of (or as well as) the desired product, reducing the yield.",s:"5.2.4.1"},
+  {t:"Significant figures",d:"The number of meaningful digits in a numerical answer. Round to the number of significant figures specified in the question.",s:"1.6.5.2"},
+  {t:"Simple molecular substance",d:"Made of small molecules where atoms within the molecule are joined by strong covalent bonds, but separate molecules are attracted only by weak intermolecular forces.",s:"1.5.1.1"},
+  {t:"Single bond",d:"A covalent bond made of one shared pair of electrons, drawn as a single line.",s:"1.4.1.1"},
+  {t:"Solute",d:"The substance that has been dissolved to make a solution (usually a solid in GCSE examples).",s:"1.6.6.1"},
+  {t:"Solution",d:"The mixture formed when a solute dissolves in a solvent.",s:"1.6.6.1"},
+  {t:"Solvent",d:"The liquid in which a solute dissolves — usually water in GCSE problems.",s:"1.6.6.1"},
+  {t:"Solvent front",d:"The furthest distance the solvent travels up the chromatography paper; measured from the baseline at the moment the paper is removed.",s:"2.2.3.1"},
+  {t:"Spirit burner",d:"A small container holding a liquid fuel with a wick, used to burn alcohols in a controlled way in the heat of combustion core practical.",s:"9.4.2.1"},
+  {t:"Standard solution",d:"A solution whose concentration is already known precisely — usually placed in the burette during a titration.",s:"5.2.3.1"},
+  {t:"Stoichiometric ratio",d:"The whole-number ratio in which substances react and are produced, taken directly from the coefficients in the balanced equation.",s:"1.6.5.1"},
+  {t:"Subatomic particle",d:"A particle smaller than an atom. At GCSE the three relevant ones are the proton, neutron, and electron.",s:"1.1.1.1"},
+  {t:"Subscript",d:"The small number written after an element symbol that shows how many atoms of that element appear in the formula unit (e.g. the 2 in H₂O).",s:"1.6.1.1"},
+  {t:"Temperature rise (ΔT)",d:"The difference between the final and initial temperature of the water: ΔT = T_final − T_initial. The key measured variable in the heat of combustion practical.",s:"9.4.2.1"},
+  {t:"Theoretical yield",d:"The maximum mass of product calculated from the balanced equation, assuming the reaction goes to 100% completion with no losses.",s:"5.2.4.1"},
+  {t:"Titration",d:"A quantitative technique in which a solution of known concentration is added from a burette to a fixed volume of a second solution until the reaction is exactly complete (the end point).",s:"5.2.3.1"},
+  {t:"Titre",d:"The volume of solution delivered from the burette during one run of a titration, read from the difference between start and end burette readings.",s:"5.2.3.1"},
+  {t:"Triple bond",d:"A covalent bond made of three shared pairs of electrons, drawn as a triple line (e.g. N≡N).",s:"1.4.1.1"},
+  {t:"Volume of solution",d:"The total volume of the solute + solvent mixture after dissolving — not just the volume of solvent added. This is the value that goes into concentration calculations.",s:"1.6.6.1"},
+  {t:"Volume ratio (gases)",d:"For gases at the same temperature and pressure, the ratio of their volumes is identical to the mole ratio from the balanced equation.",s:"5.2.8.1"},
+  {t:"Water of crystallisation",d:"Water molecules locked into the crystal structure of a hydrated salt, shown after a centred dot — e.g. the 5H₂O in CuSO₄·5H₂O.",s:"1.6.1.1"},
+  {t:"Weighted mean",d:"An average that accounts for how often each value occurs — values with higher abundance have a bigger effect on the result. Used when calculating relative atomic mass.",s:"1.1.5.1"},
+];
+
+/* ── BUILD GLOSSARY ── */
+(function buildGloss(){
+  const body = document.getElementById('gloss-body');
+  const azIdx = document.getElementById('az-index');
+  const letters = [...new Set(TERMS.map(t=>t.t[0].toUpperCase()))].sort();
+
+  // A-Z index buttons
+  letters.forEach(l=>{
+    const a = document.createElement('a');
+    a.className='az-btn'; a.textContent=l; a.href='#gl-'+l;
+    azIdx.appendChild(a);
+  });
+
+  // Group by letter
+  const groups = {};
+  TERMS.forEach(t=>{
+    const l = t.t[0].toUpperCase();
+    if(!groups[l]) groups[l]=[];
+    groups[l].push(t);
+  });
+
+  letters.forEach(l=>{
+    const sec = document.createElement('div');
+    sec.className='letter-group'; sec.id='gl-'+l;
+    sec.innerHTML='<div class="letter-heading">'+l+'</div>';
+    groups[l].forEach(t=>{
+      const item = document.createElement('div');
+      item.className='gloss-item';
+      item.dataset.search=(t.t+' '+t.d).toLowerCase();
+      item.innerHTML='<div class="gloss-term">'+t.t+'</div>'
+        +'<div class="gloss-def">'+t.d+'</div>'
+        +'<div class="gloss-src">Spec point '+t.s+'</div>';
+      sec.appendChild(item);
+    });
+    body.appendChild(sec);
+  });
+})();
+
+/* ── SEARCH ── */
+function filterGloss(q){
+  q = q.toLowerCase().trim();
+  let anyVisible = false;
+  document.querySelectorAll('.gloss-item').forEach(el=>{
+    const show = !q || el.dataset.search.includes(q);
+    el.classList.toggle('hidden', !show);
+    if(show) anyVisible=true;
+  });
+  // Show/hide letter headings
+  document.querySelectorAll('.letter-group').forEach(g=>{
+    const visible = g.querySelectorAll('.gloss-item:not(.hidden)').length > 0;
+    g.style.display = visible ? '' : 'none';
+  });
+  document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
+}
+</script>
+</body>
+</html>

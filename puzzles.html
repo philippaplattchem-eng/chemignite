@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chemistry Puzzles</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#7c3aed;--pr-dk:#5b21b6;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 12px rgba(124,58,237,.08);--sh2:0 8px 28px rgba(124,58,237,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+
+.topbar{background:#0d1b3e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem}
+.topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s}
+.topbar-back:hover{background:rgba(255,255,255,.12)}
+.topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
+
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#2e1065 0%,#5b21b6 45%,#7c3aed 80%,#8b5cf6 100%);color:#fff;padding:3rem 1.5rem 5.5rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.35) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.95rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.97rem;opacity:.87;max-width:480px;margin:0 auto;font-weight:600}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+main{flex:1;max-width:960px;margin:2.2rem auto 4rem;padding:0 1.2rem;width:100%}
+.section-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem;margin-top:2rem}
+.section-label:first-child{margin-top:0}
+
+.puzzle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:.5rem}
+
+.puzzle-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;border:1.5px solid var(--bdr);text-decoration:none;color:var(--tx)}
+.puzzle-card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:#c4b5fd}
+
+.pc-head{background:linear-gradient(135deg,#2e1065,#7c3aed);padding:.9rem 1.1rem;display:flex;align-items:center;gap:.75rem}
+.pc-head svg{flex-shrink:0;opacity:.9}
+.pc-type{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.85)}
+.pc-body{padding:.85rem 1.1rem;flex:1}
+.pc-name{font-size:.97rem;font-weight:800;color:var(--tx);margin-bottom:.25rem}
+.pc-desc{font-size:.82rem;color:var(--txm);line-height:1.5}
+.pc-meta{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.55rem}
+.pc-pill{background:var(--bg);border:1px solid var(--bdr);border-radius:20px;padding:.1rem .5rem;font-size:.7rem;font-weight:700;color:var(--txm)}
+
+.pc-links{display:flex;flex-direction:column;gap:.35rem;padding:.75rem 1.1rem 1rem;border-top:1px solid var(--bdr)}
+.pc-link{display:flex;align-items:center;justify-content:space-between;text-decoration:none;background:var(--bg);border:1px solid var(--bdr);border-radius:8px;padding:.4rem .75rem;font-size:.84rem;font-weight:700;color:var(--tx);transition:background .12s,border-color .12s}
+.pc-link:hover{background:#f3e8ff;border-color:#c4b5fd;color:var(--pr)}
+.pc-link-arrow{opacity:.4;font-size:1rem}
+.pc-link:hover .pc-link-arrow{opacity:1}
+
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600;margin-top:auto}
+footer a{color:var(--pr);text-decoration:none}
+
+@media(max-width:700px){.puzzle-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.puzzle-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="landing.html" class="topbar-back">&#8592; Home</a>
+  <span class="topbar-title">Chemistry Puzzles</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg class="hero-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="6" width="18" height="18" rx="3"/>
+      <rect x="30" y="6" width="18" height="18" rx="3"/>
+      <rect x="6" y="30" width="18" height="18" rx="3"/>
+      <rect x="30" y="30" width="18" height="18" rx="3"/>
+      <line x1="15" y1="15" x2="15" y2="15" stroke-width="4" stroke-linecap="round"/>
+      <line x1="39" y1="12" x2="42" y2="12"/><line x1="36" y1="15" x2="42" y2="15"/><line x1="39" y1="18" x2="42" y2="18"/>
+      <line x1="9" y1="39" x2="21" y2="39"/><line x1="9" y1="43" x2="17" y2="43"/>
+      <line x1="33" y1="36" x2="45" y2="36"/><line x1="33" y1="40" x2="45" y2="40"/><line x1="33" y1="44" x2="45" y2="44"/>
+    </svg>
+    <h1>Chemistry puzzles</h1>
+    <p>Quick-fire activities for spare moments &mdash; around 10 minutes each</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+  <div class="section-label">Word &amp; letter puzzles</div>
+  <div class="puzzle-grid">
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+        <span class="pc-type">Wordsearch</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Chemistry wordsearches</div>
+        <div class="pc-desc">Find key chemistry terms hidden in the grid — horizontal, vertical and diagonal.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE &ndash; A Level</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/wordsearch-general.html" class="pc-link" target="_blank"><span>Wordsearch 1</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/wordsearch-2.html" class="pc-link" target="_blank"><span>Wordsearch 2</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4v4H4zM10 4h4v4h-4zM16 4h4v4h-4z"/><path d="M4 10h4v4H4zM16 10h4v4h-4z"/><path d="M4 16h4v4H4zM10 16h4v4h-4zM16 16h4v4h-4z"/></svg>
+        <span class="pc-type">Missing letters</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Missing letters</div>
+        <div class="pc-desc">Fill in the blanks to complete key chemistry words and terms from the specification.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/missing-letters.html" class="pc-link" target="_blank"><span>Missing letters</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span class="pc-type">Word ladders</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Word ladders</div>
+        <div class="pc-desc">Change one letter at a time to climb from one chemistry word to another.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE &ndash; A Level</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/word-ladders.html" class="pc-link" target="_blank"><span>Word ladders</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Code &amp; logic puzzles</div>
+  <div class="puzzle-grid">
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/></svg>
+        <span class="pc-type">Codebreaking</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Codebreaking</div>
+        <div class="pc-desc">Crack the code to reveal hidden chemistry terms — each number represents a letter.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE &ndash; A Level</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/codebreaking.html" class="pc-link" target="_blank"><span>Codebreaking 1</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/codebreaking-2.html" class="pc-link" target="_blank"><span>Codebreaking 2</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/codebreaking-3.html" class="pc-link" target="_blank"><span>Codebreaking 3</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <span class="pc-type">Sudoku</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Chemistry sudoku</div>
+        <div class="pc-desc">Classic sudoku logic puzzles with a chemistry twist — numbers replaced with symbols or terms.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE &ndash; A Level</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/sudoku-chemistry.html" class="pc-link" target="_blank"><span>Chemistry sudoku</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/sudoku-symbols.html" class="pc-link" target="_blank"><span>Symbols sudoku</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span class="pc-type">Odd one out</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Odd one out</div>
+        <div class="pc-desc">Spot which item in each group doesn&apos;t belong — and explain why.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE &ndash; A Level</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/odd-one-out.html" class="pc-link" target="_blank"><span>Odd one out</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Connections</div>
+  <div class="puzzle-grid">
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2" fill="white" stroke="none"/><circle cx="18" cy="6" r="2" fill="white" stroke="none"/><circle cx="18" cy="18" r="2" fill="white" stroke="none"/><line x1="8" y1="12" x2="16" y2="7"/><line x1="8" y1="12" x2="16" y2="17"/></svg>
+        <span class="pc-type">Connections</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Connections</div>
+        <div class="pc-desc">Group the words into four categories — each group shares a hidden chemistry connection.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">GCSE</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/connections-1.html" class="pc-link" target="_blank"><span>Connections 1</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/connections-2.html" class="pc-link" target="_blank"><span>Connections 2</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/connections-3.html" class="pc-link" target="_blank"><span>Connections 3</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+    <div class="puzzle-card">
+      <div class="pc-head">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 1.5"/></svg>
+        <span class="pc-type">Connections challenge</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Connections challenge</div>
+        <div class="pc-desc">Harder connections puzzles — more complex categories and trickier misdirection.</div>
+        <div class="pc-meta"><span class="pc-pill">~10 min</span><span class="pc-pill">A Level</span></div>
+      </div>
+      <div class="pc-links">
+        <a href="puzzles/connections-challenge-1.html" class="pc-link" target="_blank"><span>Challenge 1</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/connections-challenge-2.html" class="pc-link" target="_blank"><span>Challenge 2</span><span class="pc-link-arrow">&#8250;</span></a>
+        <a href="puzzles/connections-challenge-3.html" class="pc-link" target="_blank"><span>Challenge 3</span><span class="pc-link-arrow">&#8250;</span></a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Chemistry Puzzles &nbsp;&bull;&nbsp; <a href="landing.html">&#8592; Back to home</a>
+</footer>
+
+</body>
+</html>

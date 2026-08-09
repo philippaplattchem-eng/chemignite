@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paper topics &mdash; GCSE Chemistry</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#3f51b5;--pr-dk:#1a2f6e;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 12px rgba(63,81,181,.09);--sh2:0 8px 28px rgba(63,81,181,.20);--p1:#1565c0;--p1-lt:#e3f0ff;--p2:#6a1b9a;--p2-lt:#f3e8ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+
+.topbar{background:#0d1b3e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;z-index:10}
+.topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.topbar-back:hover{background:rgba(255,255,255,.12)}
+.topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
+
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 5.5rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.95rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.97rem;opacity:.87;max-width:480px;margin:0 auto;font-weight:600}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+main{flex:1;max-width:960px;margin:2.2rem auto 4rem;padding:0 1.2rem;width:100%}
+
+/* Combined science notice */
+.cs-notice{background:#fff8e1;border:1.5px solid #ffe082;border-radius:var(--r);padding:.85rem 1.1rem;margin-bottom:2rem;display:flex;gap:.75rem;align-items:flex-start;font-size:.88rem;line-height:1.55}
+.cs-notice-icon{font-size:1.2rem;flex-shrink:0;margin-top:.05rem}
+.cs-notice strong{color:#5d4037}
+
+/* Paper grid */
+.paper-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:2.5rem}
+
+.paper-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.paper-card.p1{border-top:4px solid var(--p1)}
+.paper-card.p2{border-top:4px solid var(--p2)}
+
+.paper-head{padding:1.2rem 1.4rem 1rem}
+.paper-label{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.paper-card.p1 .paper-label{color:var(--p1)}
+.paper-card.p2 .paper-label{color:var(--p2)}
+.paper-name{font-size:1.15rem;font-weight:900;color:var(--tx);margin-bottom:.7rem}
+.paper-meta{display:flex;flex-wrap:wrap;gap:.35rem}
+.pm-chip{background:var(--bg);border:1px solid var(--bdr);border-radius:20px;padding:.18rem .6rem;font-size:.73rem;font-weight:700;color:var(--txm)}
+.paper-card.p1 .pm-chip.code{background:var(--p1-lt);border-color:#90caf9;color:var(--p1)}
+.paper-card.p2 .pm-chip.code{background:var(--p2-lt);border-color:#ce93d8;color:var(--p2)}
+
+.paper-topics{padding:.2rem 0 1rem}
+.topic-row{display:flex;align-items:stretch;border-top:1px solid var(--bdr);padding:.65rem 1.4rem;gap:.75rem;transition:background .12s}
+.topic-row:hover{background:#f7f9ff}
+.tr-num{font-size:.72rem;font-weight:800;background:var(--pr);color:#fff;border-radius:6px;padding:.18rem .48rem;letter-spacing:.04em;flex-shrink:0;align-self:flex-start;margin-top:.12rem}
+.tr-body{flex:1}
+.tr-name{font-size:.9rem;font-weight:700;color:var(--tx);line-height:1.35}
+.tr-badge{display:inline-block;font-size:.67rem;font-weight:700;border-radius:10px;padding:.1rem .45rem;margin-top:.25rem;letter-spacing:.03em}
+.tr-badge.higher{background:#fff3cd;color:#856404;border:1px solid #ffc107}
+.tr-badge.sepchem{background:#fce4ec;color:#880e4f;border:1px solid #f48fb1}
+.tr-links{display:flex;gap:.4rem;align-items:center;flex-shrink:0;align-self:center}
+.tr-link{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;text-decoration:none;font-size:.75rem;font-weight:700;transition:filter .15s;border:none}
+.tr-link.fc{background:#5b9bd5;color:#fff}
+.tr-link.pq{background:#3f51b5;color:#fff}
+.tr-link:hover{filter:brightness(1.15)}
+.tr-link title{display:none}
+
+/* Legend */
+.legend{background:var(--card);border:1.5px solid var(--bdr);border-radius:var(--r);padding:.85rem 1.1rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.83rem}
+.legend-item{display:flex;align-items:center;gap:.4rem;font-weight:600;color:var(--txm)}
+.legend-badge{font-size:.67rem;font-weight:700;border-radius:10px;padding:.1rem .45rem;letter-spacing:.03em}
+
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600;margin-top:auto}
+footer a{color:var(--pr);text-decoration:none}
+
+@media(max-width:680px){
+  .paper-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.5rem}
+  .tr-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="home.html" class="topbar-back">&#8592; Home</a>
+  <span class="topbar-title">GCSE Chemistry &mdash; Paper topics</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg class="hero-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="6" width="20" height="28" rx="3"/>
+      <rect x="32" y="6" width="20" height="28" rx="3"/>
+      <line x1="12" y1="14" x2="24" y2="14"/>
+      <line x1="12" y1="19" x2="24" y2="19"/>
+      <line x1="12" y1="24" x2="20" y2="24"/>
+      <line x1="36" y1="14" x2="48" y2="14"/>
+      <line x1="36" y1="19" x2="48" y2="19"/>
+      <line x1="36" y1="24" x2="44" y2="24"/>
+      <line x1="18" y1="34" x2="18" y2="50"/>
+      <line x1="42" y1="34" x2="42" y2="50"/>
+      <line x1="10" y1="50" x2="50" y2="50"/>
+    </svg>
+    <h1>What is on each paper?</h1>
+    <p>Every topic broken down by paper, with Foundation and Higher differences explained</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+  <div class="cs-notice">
+    <span class="cs-notice-icon">&#9432;</span>
+    <div>
+      <strong>Separate science (1CH0) vs combined science (1SC0):</strong>
+      The topic split below applies to both. However, if you are doing <strong>combined science</strong>, Topics 5 and 9 (Separate Chemistry 1 &amp; 2) are <strong>not examined</strong> &mdash; skip those rows entirely.
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-badge higher">Higher only</span> Examined on the Higher tier paper only. Not assessed at Foundation.</div>
+    <div class="legend-item"><span class="legend-badge sepchem">Sep. science only</span> Not examined in combined science (1SC0).</div>
+    <div class="legend-item">
+      <a class="tr-link fc" style="pointer-events:none;opacity:.7">F</a> Flashcards &nbsp;
+      <a class="tr-link pq" style="pointer-events:none;opacity:.7">Q</a> Practice questions
+    </div>
+  </div>
+
+  <div class="paper-grid">
+
+    <!-- PAPER 1 -->
+    <div class="paper-card p1">
+      <div class="paper-head">
+        <div class="paper-label">Paper 1</div>
+        <div class="paper-name">Key concepts &amp; inorganic chemistry</div>
+        <div class="paper-meta">
+          <span class="pm-chip code">1CH0/1F &amp; 1CH0/1H</span>
+          <span class="pm-chip">1 hr 45 min</span>
+          <span class="pm-chip">110 marks</span>
+          <span class="pm-chip">Topics 1&ndash;5</span>
+        </div>
+      </div>
+      <div class="paper-topics">
+
+        <div class="topic-row">
+          <span class="tr-num">T1</span>
+          <div class="tr-body">
+            <div class="tr-name">Atomic Structure &amp; the Periodic Table</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T1-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T1" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T2</span>
+          <div class="tr-body">
+            <div class="tr-name">States of Matter &amp; Mixtures</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T2-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T2" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T3</span>
+          <div class="tr-body">
+            <div class="tr-name">Chemical Changes</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T3-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T3" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T4</span>
+          <div class="tr-body">
+            <div class="tr-name">Extracting Metals &amp; Equilibria</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T4-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T4" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T5</span>
+          <div class="tr-body">
+            <div class="tr-name">Separate Chemistry 1</div>
+            <span class="tr-badge higher">Higher only</span>
+            <span class="tr-badge sepchem">Sep. science only</span>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T5-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T5" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAPER 2 -->
+    <div class="paper-card p2">
+      <div class="paper-head">
+        <div class="paper-label">Paper 2</div>
+        <div class="paper-name">Physical &amp; organic chemistry</div>
+        <div class="paper-meta">
+          <span class="pm-chip code">1CH0/2F &amp; 1CH0/2H</span>
+          <span class="pm-chip">1 hr 45 min</span>
+          <span class="pm-chip">110 marks</span>
+          <span class="pm-chip">Topics 6&ndash;9</span>
+        </div>
+      </div>
+      <div class="paper-topics">
+
+        <div class="topic-row">
+          <span class="tr-num">T6</span>
+          <div class="tr-body">
+            <div class="tr-name">Groups in the Periodic Table</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T6-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T6" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T7</span>
+          <div class="tr-body">
+            <div class="tr-name">Rates of Reaction &amp; Energy Changes</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T7-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T7" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T8</span>
+          <div class="tr-body">
+            <div class="tr-name">Fuels &amp; Earth Science</div>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T8-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T8" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+        <div class="topic-row">
+          <span class="tr-num">T9</span>
+          <div class="tr-body">
+            <div class="tr-name">Separate Chemistry 2</div>
+            <span class="tr-badge higher">Higher only</span>
+            <span class="tr-badge sepchem">Sep. science only</span>
+          </div>
+          <div class="tr-links">
+            <a href="flashcards/T9-spark.html" class="tr-link fc" title="Flashcards">F</a>
+            <a href="index.html?topic=T9" class="tr-link pq" title="Practice questions">Q</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end paper-grid -->
+
+  <!-- Combined science summary -->
+  <div class="paper-grid">
+    <div class="paper-card" style="border-top:4px solid #2e7d32;grid-column:1/-1">
+      <div class="paper-head">
+        <div class="paper-label" style="color:#2e7d32">Combined science (1SC0) at a glance</div>
+        <div class="paper-name" style="font-size:1rem;font-weight:700">Same topic split &mdash; but Topics 5 and 9 are removed</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--bdr)">
+        <div style="padding:.9rem 1.4rem;border-right:1px solid var(--bdr)">
+          <div style="font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#2e7d32;margin-bottom:.5rem">Paper 1 (1SC0/1F &amp; 1H) &mdash; 1 hr 10 min &mdash; 60 marks</div>
+          <div style="font-size:.88rem;font-weight:700;color:var(--tx)">Topics 1, 2, 3, 4</div>
+          <div style="font-size:.82rem;color:var(--txm);margin-top:.2rem">Topic 5 is <strong>not assessed</strong> in combined science</div>
+        </div>
+        <div style="padding:.9rem 1.4rem">
+          <div style="font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#2e7d32;margin-bottom:.5rem">Paper 2 (1SC0/2F &amp; 2H) &mdash; 1 hr 10 min &mdash; 60 marks</div>
+          <div style="font-size:.88rem;font-weight:700;color:var(--tx)">Topics 6, 7, 8</div>
+          <div style="font-size:.82rem;color:var(--txm);margin-top:.2rem">Topic 9 is <strong>not assessed</strong> in combined science</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Edexcel GCSE Chemistry &mdash; 1CH0 &nbsp;&bull;&nbsp; <a href="home.html">&#8592; Back to home</a>
+</footer>
+
+</body>
+</html>

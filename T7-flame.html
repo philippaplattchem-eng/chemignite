@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T7 Flame &mdash; Rates of Reaction & Energy Changes</title>
+<style>:root{--pr:#3f51b5;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(63,81,181,.10);--sh2:0 6px 24px rgba(63,81,181,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+
+/* ── quiz-page header ── */
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}
+
+/* ── landing hero ── */
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center}
+.hero-icon{font-size:2.8rem;margin-bottom:.6rem;display:block}
+.hero h1{font-size:1.9rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.4rem}
+.hero p{font-size:1rem;opacity:.88;max-width:480px;margin:0 auto .5rem}
+.hero-pills{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem .85rem;font-size:.82rem;font-weight:600}
+
+/* ── tier legend ── */
+.tier-legend{display:flex;gap:0;max-width:700px;margin:1.8rem auto 0;background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.tier-leg-item{flex:1;padding:.85rem 1rem;text-align:center;border-right:1px solid var(--bdr)}
+.tier-leg-item:last-child{border-right:none}
+.tl-name{font-weight:700;font-size:.9rem;margin-bottom:.15rem}
+.tl-desc{font-size:.78rem;color:var(--txm)}
+.tl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+.tl-dot.spark{background:var(--sp)}.tl-dot.flame{background:var(--fl)}.tl-dot.inferno{background:var(--inf)}
+
+/* ── topic grid ── */
+.topics-section{max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem}
+.topics-heading{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem;padding-left:.2rem}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1}
+.tc-num{display:inline-block;background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;margin-bottom:.55rem}
+.tc-name{font-weight:700;font-size:.95rem;line-height:1.4;color:var(--tx)}
+.tc-btns{display:flex;flex-direction:column;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{display:flex;align-items:center;justify-content:flex-start;gap:.45rem;padding:.55rem .9rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.85rem;color:#fff;transition:filter .15s,transform .1s}
+.tc-btn:hover{filter:brightness(1.1);transform:translateX(2px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+
+/* ── quiz page ── */
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0f2ff;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{display:none;font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0f2ff;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(63,81,181,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(63,81,181,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:700px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}.tier-legend{flex-direction:column}.tier-leg-item{border-right:none;border-bottom:1px solid var(--bdr)}.tier-leg-item:last-child{border-bottom:none}}.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="back-link">&larr; All Topics</a>
+  <h1>T7 &mdash; Rates of Reaction &amp; Energy Changes</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>20 questions</span>
+    <span>Flame &mdash; Apply</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student measures the rate of the reaction between marble chips and hydrochloric acid by collecting CO₂ gas. She collects 60 cm³ of gas in 30 seconds. What is the mean rate of reaction?","A":"1800 cm³/s","B":"0.5 cm³/s","C":"2.0 cm³/s","D":"90 cm³/s","correct":"C","explain":"Mean rate = change in quantity ÷ time = 60 cm³ ÷ 30 s = 2.0 cm³/s. The unit comes from the y-axis unit (cm³) divided by the x-axis unit (s). 1800 would be 60 × 30 (wrong operation); 0.5 would be 30 ÷ 60 (upside-down)."},{"stem":"A student compares the reaction of large marble chips with that of marble powder in excess hydrochloric acid. Both use the same mass of marble. Which graph correctly describes the result?","A":"Powder reaches the same plateau, faster (steeper curve)","B":"Powder reaches a higher plateau because more surface is exposed","C":"Powder reaches a lower plateau because some marble is lost as dust","D":"Powder has the same rate initially but finishes at the same time","correct":"A","explain":"Using powder instead of lumps increases the surface area, so the frequency of collisions increases and the reaction is faster (steeper curve). However, the same mass of marble is used, so the same total amount of CO₂ is produced, the plateau height is identical. Surface area does not change how much product is formed, only how quickly."},{"stem":"Explain, in terms of particles, why increasing the temperature of a reaction increases its rate more significantly than increasing the concentration.","A":"Higher temperature adds more particles to the solution, increasing collision frequency more than concentration does","B":"Higher temperature increases both collision frequency AND the proportion of particles with energy ≥ Eₐ, while concentration increases frequency only","C":"Higher temperature decreases the activation energy, while concentration keeps it the same","D":"Higher temperature and concentration have identical effects on rate","correct":"B","explain":"Temperature is special because it affects two things: particles move faster (more frequent collisions) AND a greater proportion of particles have energy at or above the activation energy (more successful collisions per collision event). Concentration only increases the number of particles per unit volume, the energy per collision is unchanged. This double effect makes temperature the most powerful rate factor per unit change."},{"stem":"A catalyst is used in the industrial Haber process for making ammonia. Which of the following is the correct catalyst?","A":"Vanadium(V) oxide","B":"Nickel","C":"Platinum","D":"Iron","correct":"D","explain":"The Haber process uses iron as a catalyst for N₂ + 3H₂ ⇌ 2NH₃. Vanadium(V) oxide is used in the Contact process (making SO₃). Nickel catalyses hydrogenation of vegetable oils. The iron catalyst lowers the activation energy for the forward reaction, allowing the process to run at a more economical temperature."},{"stem":"A student mixes hydrochloric acid with sodium hydroxide in a polystyrene cup and records a temperature rise of 6.8°C. What type of reaction is this, and why?","A":"Endothermic, because energy is taken from the surroundings to increase the temperature","B":"Exothermic, because heat energy is given out by the reaction to the surroundings, causing the temperature to rise","C":"Exothermic, because the temperature of the reactants fell before the products were made","D":"Endothermic, because the acid and alkali need energy to react","correct":"B","explain":"A temperature rise means the surroundings (the solution) absorbed heat energy. This heat came from the reaction, so the reaction gave out heat to the surroundings, making it exothermic. The classic misconception is to think \"energy taken in = temperature rise\", it is the opposite: energy given OUT to surroundings causes a temperature rise in those surroundings."},{"stem":"Which of the following correctly explains why a catalyst increases the rate of reaction in terms of activation energy?","A":"The catalyst makes the particles move faster, increasing the energy of collisions","B":"The catalyst provides an alternative pathway with a lower activation energy, so a greater proportion of collisions are successful","C":"The catalyst increases the concentration of reactant particles","D":"The catalyst breaks the bonds in the reactants before they collide","correct":"B","explain":"A catalyst provides an alternative reaction pathway with a lower activation energy. This means more of the colliding particles have enough energy (≥ the new, lower Eₐ) to react successfully. The catalyst does not speed up the particles (that would require a temperature increase), nor does it change the number of particles."},{"stem":"A rate graph shows two curves: Curve A (original) and Curve B (same reactant amounts, catalyst added). Which description correctly shows both curves?","A":"Curve B steeper and reaches a higher plateau than A","B":"Curve B steeper and reaches the same plateau height as A","C":"Curve B shallower and reaches the same plateau height as A","D":"Curve B starts at the same rate and reaches the same plateau faster","correct":"B","explain":"Adding a catalyst speeds up the reaction (steeper initial gradient, shorter time to finish) but does not change how much product is formed (same plateau height). The same amount of limiting reactant is present in both cases, so the same total amount of product must be formed. A higher plateau would imply more product, not possible without adding more reactant."},{"stem":"The bond energy of a C–H bond is 413 kJ/mol. A reaction breaks four C–H bonds and makes four O–H bonds (bond energy 463 kJ/mol). What is the overall energy change?","A":"+200 kJ/mol","B":"−200 kJ/mol","C":"+3752 kJ/mol","D":"−413 kJ/mol","correct":"B","explain":"Energy in (breaking bonds) = 4 × 413 = 1652 kJ/mol. Energy out (making bonds) = 4 × 463 = 1852 kJ/mol. ΔH = 1652 − 1852 = −200 kJ/mol. The negative sign shows the reaction is exothermic, more energy is released making O–H bonds than was put in to break C–H bonds."},{"stem":"A student carries out the sodium thiosulfate and hydrochloric acid reaction at three different temperatures. She records the time until the cross disappears: 20°C → 80s, 30°C → 40s, 40°C → 20s. What is the rate at 30°C?","A":"40 s⁻¹","B":"0.025 s⁻¹","C":"0.80 s⁻¹","D":"80 s⁻¹","correct":"B","explain":"For the disappearing cross method, rate is proportional to 1/time. Rate at 30°C = 1/time = 1/40 = 0.025 s⁻¹. The data also shows the rate roughly doubling for every 10°C rise (80s → 40s → 20s), consistent with the temperature-doubling rule for many reactions."},{"stem":"An endothermic reaction is carried out in a polystyrene cup. What would you observe with a thermometer in the reaction mixture?","A":"The temperature rises by several degrees","B":"The temperature stays constant","C":"The temperature falls below the starting temperature","D":"The temperature rises then returns to the starting value","correct":"C","explain":"In an endothermic reaction, the chemicals absorb heat energy from the surroundings (the solution). This removes thermal energy from the solution, cooling it down. The thermometer reading falls below the starting temperature. ΔT = T_final − T_starting is negative for endothermic reactions."},{"stem":"On a reaction profile, the activation energy is measured as:","A":"The energy difference between the products and the reactants","B":"The energy of the products above the zero line","C":"The energy from the reactant level to the peak of the curve","D":"The energy from the peak of the curve to the product level","correct":"C","explain":"Activation energy is the minimum energy particles must have to react. On a reaction profile, this is represented as the difference in energy between the reactant level (starting line on the left) and the top of the curve (the peak/hump). It is NOT the gap from peak to products, that would give the wrong value for both exothermic and endothermic reactions."},{"stem":"Why does the gradient of a rate graph decrease as the reaction proceeds?","A":"The temperature decreases as the reaction goes on","B":"The reactants become more concentrated as the reaction proceeds","C":"As reactants are used up, their concentration falls, reducing collision frequency","D":"The catalyst becomes less effective over time","correct":"C","explain":"At the start of a reaction, reactant concentrations are highest, giving maximum collision frequency. As reactants are consumed, there are fewer reactant particles per unit volume, so collisions between reactants happen less often. The frequency of successful collisions falls, and so does the rate, shown by a decreasing gradient on the curve."},{"stem":"A student designs an experiment to show that a catalyst is unchanged in mass after a reaction. What must they do after the reaction that most candidates miss?","A":"Weigh the flask with the products inside","B":"Filter, wash and dry the catalyst, then reweigh it","C":"Add more reactant and measure the temperature change","D":"Add indicator to the reaction mixture","correct":"B","explain":"To isolate and reweigh the solid catalyst, it must be filtered out of the reaction mixture, washed with distilled water (to remove attached chemicals), and then dried (to remove water that would add to the mass). The 2019 examiner report specifically noted that most candidates scored only 2/3 because they failed to mention the filter-wash-dry recovery step."},{"stem":"H₂(g) + Cl₂(g) → 2HCl(g). Bond energies: H–H = 436 kJ/mol, Cl–Cl = 243 kJ/mol, H–Cl = 432 kJ/mol. What is the ΔH for this reaction?","A":"+1111 kJ/mol","B":"−185 kJ/mol","C":"+185 kJ/mol","D":"−679 kJ/mol","correct":"B","explain":"Bonds broken: 1 × H–H (436) + 1 × Cl–Cl (243) = 679 kJ/mol. Bonds made: 2 × H–Cl (2 × 432) = 864 kJ/mol. ΔH = 679 − 864 = −185 kJ/mol. Negative = exothermic. This makes chemical sense: hydrogen burning in chlorine is highly exothermic."},{"stem":"A student uses a gas syringe instead of a measuring cylinder to collect gas from a reaction. State one advantage of the gas syringe.","A":"The gas syringe is always cheaper and more widely available","B":"The gas syringe gives more accurate readings because it has finer graduations and works for soluble gases","C":"The gas syringe automatically records the volume without the student reading it","D":"The gas syringe prevents gas from escaping into the air","correct":"B","explain":"A gas syringe is more accurate (finer scale, lower friction, not affected by the pressure of water) and works for soluble gases like CO₂ that would dissolve in water during over-water collection. This was specifically tested in the 2022 Higher tier paper, where \"gas syringe\" with a reason (finer graduations) earned both marks."},{"stem":"A reaction between citric acid and sodium hydrogen carbonate in a test tube makes the glass feel cold. What type of reaction is this?","A":"Exothermic, heat is given out, making the glass feel cold","B":"Endothermic, heat is taken in from the surroundings, cooling the glass","C":"Exothermic, the glass is acting as the surroundings and absorbing heat","D":"Neither, only temperature probes can detect endothermic reactions","correct":"B","explain":"When the glass feels cold, the reaction inside is absorbing heat from the glass (and from your hand). The reaction takes in heat energy from the surroundings, the glass and your skin, making them feel cold. This is the classic endothermic reaction demonstration. Exothermic reactions would make the glass feel warm."},{"stem":"A student increases the pressure of a gas-phase reaction. What effect does this have on the rate, and why?","A":"The rate decreases because there is less space for particles to move","B":"The rate stays the same because pressure does not affect gases","C":"The rate increases because more particles are in the same volume, increasing collision frequency","D":"The rate increases because higher pressure raises the temperature of the gas","correct":"C","explain":"Increasing pressure compresses the gas into a smaller volume (or equivalently places more gas particles into the same volume). This is analogous to increasing concentration: more particles per unit volume means more frequent collisions between reactant particles. Pressure only affects reactions involving gases, it has no significant effect on liquids or solids."},{"stem":"The reaction profile for a catalysed reaction is compared with the uncatalysed one. Which features are the same in both profiles?","A":"The activation energy","B":"The height of the peak","C":"The energy levels of the reactants and products, and the overall energy change","D":"The time taken to complete the reaction","correct":"C","explain":"A catalyst provides an alternative pathway with a lower activation energy (lower peak) but does NOT change the energy of the reactants or products. Therefore the overall energy change (ΔH, the difference between the reactant and product energy levels) is unchanged. The reaction profile for the catalysed version has the same starting and ending heights, just a lower hump in the middle."},{"stem":"In the reaction A → B, 500 kJ/mol is needed to break the bonds in A, and 600 kJ/mol is released when bonds form in B. What is the ΔH and what type of reaction is it?","A":"+100 kJ/mol, endothermic","B":"−100 kJ/mol, exothermic","C":"+1100 kJ/mol, endothermic","D":"−600 kJ/mol, exothermic","correct":"B","explain":"ΔH = energy in (bonds broken) − energy out (bonds made) = 500 − 600 = −100 kJ/mol. Negative ΔH = exothermic. More energy is released making bonds in B than was absorbed breaking bonds in A, so the surplus energy is released to the surroundings as heat."},{"stem":"A student is monitoring a rate-of-reaction experiment and notices the graph levels off at 45 cm³ of gas. She then repeats the experiment with twice the amount of acid (but keeps the marble chips the same). What will the new plateau height be?","A":"90 cm³, double because twice the acid is used","B":"45 cm³, same, because the marble chips are the limiting reactant","C":"22.5 cm³, half because the acid takes longer to react","D":"0 cm³, no gas is produced because there is too much acid","correct":"B","explain":"The plateau height depends on the limiting reactant. The marble chips are used in the same amount, so the same number of moles of CaCO₃ can react, producing the same number of moles of CO₂, regardless of how much excess acid is present. Doubling the acid just means the acid is not the limiting reactant; it doesn't produce more product."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect — correct answer: <strong>'+q.correct+'</strong>':'Not answered — correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks — excellent work!':score>=Math.round(total*0.7)?'Good work — check the explanations for any you missed.':'Keep practising — work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% — '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

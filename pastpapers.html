@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Past Papers &mdash; GCSE Chemistry</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#3f51b5;--pr-dk:#283593;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:12px;--sh:0 2px 10px rgba(63,81,181,.09);--sh2:0 6px 24px rgba(63,81,181,.16);--f-bg:#e8f5e9;--f-c:#2e7d32;--h-bg:#f3e5f5;--h-c:#6a1b9a;--er-bg:#fef3c7;--er-c:#92400e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+
+/* ── Header ── */
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15)}
+
+/* ── Hero ── */
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:2.5rem 1.5rem 5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.8rem;font-weight:900;letter-spacing:-.01em;margin-bottom:.35rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{opacity:.88;font-size:.97rem;max-width:520px;margin:0 auto}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+/* ── Course tabs ── */
+.course-tabs{background:var(--card);border-bottom:2px solid var(--bdr);display:flex;padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 6px rgba(63,81,181,.07)}
+.ctab{padding:.85rem 1.4rem;font-size:.93rem;font-weight:700;color:var(--txm);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .15s;margin-bottom:-2px;white-space:nowrap;font-family:'Nunito','Segoe UI',system-ui,sans-serif}
+.ctab.active{color:var(--pr);border-bottom-color:var(--pr)}
+.ctab:hover:not(.active){color:var(--tx);background:var(--bg)}
+
+/* ── Page layout ── */
+.course-pane{display:none}
+.course-pane.visible{display:block;animation:fadeUp .22s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.pane-inner{max-width:1000px;margin:0 auto;padding:1.8rem 1.2rem 5rem}
+
+/* ── File naming guide ── */
+.guide{background:var(--card);border:1.5px solid var(--bdr);border-radius:var(--r);margin-bottom:1.8rem;overflow:hidden}
+.guide summary{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.1rem;cursor:pointer;font-weight:700;font-size:.88rem;color:var(--pr);list-style:none;user-select:none}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::after{content:'▸';margin-left:auto;font-size:.8rem;transition:transform .2s}
+.guide[open] summary::after{transform:rotate(90deg)}
+.guide-body{padding:.1rem 1.1rem 1rem;border-top:1px solid var(--bdr)}
+.guide-body p{font-size:.85rem;color:var(--txm);margin:.7rem 0 .4rem}
+.guide-body code{background:#f0f2ff;color:var(--pr-dk);padding:.15rem .4rem;border-radius:4px;font-size:.82rem;font-family:'Courier New',Courier,monospace}
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem .9rem;margin-top:.5rem}
+.guide-row{display:contents}
+.guide-label{font-size:.78rem;font-weight:700;color:var(--txm);padding:.15rem 0}
+.guide-code{font-size:.78rem;font-family:'Courier New',Courier,monospace;color:var(--tx);padding:.15rem 0}
+
+/* ── Paper sections ── */
+.paper-section{margin-bottom:2rem}
+.paper-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:.85rem 1.2rem;border-radius:var(--r) var(--r) 0 0;display:flex;align-items:center;gap:.8rem}
+.paper-header h2{font-size:1rem;font-weight:800;flex:1}
+.paper-code{font-size:.78rem;font-weight:700;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.2rem .65rem;white-space:nowrap}
+
+/* ── Papers table ── */
+.papers-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:0 0 var(--r) var(--r);box-shadow:var(--sh);overflow:hidden}
+.papers-table th{background:#f0f3ff;padding:.65rem 1rem;font-size:.75rem;font-weight:800;color:var(--pr-dk);text-align:left;border-bottom:2px solid var(--bdr);white-space:nowrap}
+.papers-table th.center{text-align:center}
+.papers-table td{padding:.7rem 1rem;border-bottom:1px solid var(--bdr);vertical-align:middle}
+.papers-table tr:last-child td{border-bottom:none}
+.papers-table tr:hover td{background:#fafbff}
+.series-name{font-weight:700;font-size:.9rem;white-space:nowrap}
+.doc-cell{display:flex;gap:.4rem;flex-wrap:wrap}
+
+/* ── Doc link buttons ── */
+.doc-link{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;transition:filter .15s,transform .1s;white-space:nowrap}
+.doc-link:hover{filter:brightness(.9);transform:translateY(-1px)}
+.doc-link.f{background:var(--f-bg);color:var(--f-c)}
+.doc-link.h{background:var(--h-bg);color:var(--h-c)}
+.doc-link.er{background:var(--er-bg);color:var(--er-c)}
+.doc-link svg{flex-shrink:0}
+
+/* ── Legend ── */
+.legend{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem;font-size:.8rem;align-items:center}
+.leg-item{display:flex;align-items:center;gap:.35rem;color:var(--txm)}
+
+.coming-soon{background:#f0f3ff;border:1.5px dashed #b3bcef;border-radius:var(--r);padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.8rem;color:var(--txm);font-size:.88rem;font-weight:600;margin-bottom:1.5rem}
+.coming-soon svg{flex-shrink:0;color:var(--pr);opacity:.6}
+@media(max-width:700px){
+  .papers-table th,.papers-table td{padding:.55rem .65rem}
+  .doc-link{font-size:.7rem;padding:.22rem .5rem}
+  .guide-grid{grid-template-columns:1fr}
+  .course-tabs{padding:0 .5rem}
+  .ctab{padding:.75rem .9rem;font-size:.82rem}
+}
+@media(max-width:500px){
+  .papers-table{font-size:.82rem}
+  .series-name{font-size:.82rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="home.html" class="back-link">&larr; Home</a>
+  <h1>Past papers</h1>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg class="hero-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="13" height="17" rx="2"/>
+      <rect x="8" y="2" width="13" height="17" rx="2" opacity=".45"/>
+      <line x1="6" y1="9" x2="13" y2="9"/>
+      <line x1="6" y1="12" x2="13" y2="12"/>
+      <line x1="6" y1="15" x2="10" y2="15"/>
+    </svg>
+    <h1>Past papers</h1>
+    <p>Edexcel GCSE Chemistry &mdash; question papers, mark schemes &amp; examiner reports</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<div class="course-tabs">
+  <button class="ctab active" onclick="switchCourse('sep',this)">Separate science (1CH0)</button>
+  <button class="ctab" onclick="switchCourse('com',this)">Combined science (1SC0)</button>
+</div>
+
+<div id="course-sep" class="course-pane visible"></div>
+<div id="course-com" class="course-pane"></div>
+
+<script>
+/* ── Data ── */
+const COURSES = {
+  sep:{
+    label:"Separate science (1CH0)",
+    series:[
+      {label:"June 2024", slug:"jun2024"},
+      {label:"June 2023", slug:"jun2023"},
+      {label:"June 2022", slug:"jun2022"},
+      {label:"June 2021", slug:"jun2021"},
+      {label:"June 2020", slug:"jun2020"},
+      {label:"June 2019", slug:"jun2019"},
+      {label:"June 2018", slug:"jun2018"},
+      {label:"Specimen",  slug:"spec"}
+    ],
+    papers:[
+      {label:"Paper 1 &mdash; Topics 1&ndash;5", code:"1CH0/1", pcode:"1"},
+      {label:"Paper 2 &mdash; Topics 6&ndash;9", code:"1CH0/2", pcode:"2"}
+    ],
+    qpF:(p,s)=>`papers/1ch0-${p}f-${s}-qp.pdf`,
+    qpH:(p,s)=>`papers/1ch0-${p}h-${s}-qp.pdf`,
+    msF:(p,s)=>`papers/1ch0-${p}f-${s}-ms.pdf`,
+    msH:(p,s)=>`papers/1ch0-${p}h-${s}-ms.pdf`,
+    er: (p,s)=>`papers/1ch0-${p}-${s}-er.pdf`,
+    guideRows:[
+      ["QP — Foundation",    "1ch0-1f-jun2024-qp.pdf"],
+      ["QP — Higher",        "1ch0-1h-jun2024-qp.pdf"],
+      ["Mark scheme — Fdn",  "1ch0-1f-jun2024-ms.pdf"],
+      ["Mark scheme — Hgr",  "1ch0-1h-jun2024-ms.pdf"],
+      ["Examiner report",    "1ch0-1-jun2024-er.pdf"]
+    ]
+  },
+  com:{
+    label:"Combined science (1SC0)",
+    series:[
+      {label:"June 2024",     slug:"jun2024"},
+      {label:"June 2023",     slug:"jun2023"},
+      {label:"June 2022",     slug:"jun2022"},
+      {label:"November 2021", slug:"nov2021"},
+      {label:"November 2020", slug:"nov2020"},
+      {label:"June 2019",     slug:"jun2019"}
+    ],
+    papers:[
+      {label:"Chemistry paper 1C &mdash; Topics 1&ndash;4", code:"1SC0/1C", pcode:"1c"},
+      {label:"Chemistry paper 2C &mdash; Topics 6&ndash;8", code:"1SC0/2C", pcode:"2c"}
+    ],
+    qpF:(p,s)=>`papers/1sc0-${p}f-${s}-qp.pdf`,
+    qpH:(p,s)=>`papers/1sc0-${p}h-${s}-qp.pdf`,
+    msF:(p,s)=>`papers/1sc0-${p}f-${s}-ms.pdf`,
+    msH:(p,s)=>`papers/1sc0-${p}h-${s}-ms.pdf`,
+    er: (p,s)=>`papers/1sc0-${p}-${s}-er.pdf`,
+    guideRows:[
+      ["QP — Foundation",    "1sc0-1cf-jun2024-qp.pdf"],
+      ["QP — Higher",        "1sc0-1ch-jun2024-qp.pdf"],
+      ["Mark scheme — Fdn",  "1sc0-1cf-jun2024-ms.pdf"],
+      ["Mark scheme — Hgr",  "1sc0-1ch-jun2024-ms.pdf"],
+      ["Examiner report",    "1sc0-1c-jun2024-er.pdf"]
+    ]
+  }
+};
+
+/* ── Helpers ── */
+const pdfIcon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`;
+
+function docLink(href, cls, label){
+  return `<a href="${href}" target="_blank" rel="noopener" class="doc-link ${cls}">${pdfIcon}${label}</a>`;
+}
+
+/* ── Render ── */
+function renderCourse(courseKey){
+  const c = COURSES[courseKey];
+  const pane = document.getElementById('course-'+courseKey);
+
+  // Guide rows
+  const guideRowsHTML = c.guideRows.map(r=>
+    `<div class="guide-label">${r[0]}</div><div class="guide-code"><code>${r[1]}</code></div>`
+  ).join('');
+
+  let html = `
+    <div class="pane-inner">
+      <details class="guide">
+        <summary>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          How to add papers — file naming guide
+        </summary>
+        <div class="guide-body">
+          <p>Save your PDFs in a <code>papers/</code> folder inside the <code>Web/</code> folder, using this naming format (Paper 1, June 2024 example):</p>
+          <div class="guide-grid">${guideRowsHTML}</div>
+          <p style="margin-top:.8rem">Replace <code>1</code> with <code>2</code> for Paper 2, and <code>jun2024</code> with the series slug (e.g. <code>jun2021</code>, <code>jun2020</code>, <code>jun2019</code>, <code>jun2018</code>, <code>spec</code>).</p>
+        </div>
+      </details>
+
+      <div class="legend">
+        <span class="leg-item"><span class="doc-link f" style="pointer-events:none">${pdfIcon} Foundation</span> Foundation tier</span>
+        <span class="leg-item"><span class="doc-link h" style="pointer-events:none">${pdfIcon} Higher</span> Higher tier</span>
+      </div>`;
+
+  c.papers.forEach(paper => {
+    html += `
+      <div class="paper-section">
+        <div class="paper-header">
+          <h2>${paper.label}</h2>
+          <span class="paper-code">${paper.code}</span>
+        </div>
+        <table class="papers-table">
+          <thead>
+            <tr>
+              <th>Series</th>
+              <th class="center" colspan="2">Question paper</th>
+              <th class="center" colspan="2">Mark scheme</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Foundation</th>
+              <th>Higher</th>
+              <th>Foundation</th>
+              <th>Higher</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+    c.series.forEach(s => {
+      const p = paper.pcode;
+      html += `
+            <tr>
+              <td class="series-name">${s.label}</td>
+              <td>${docLink(c.qpF(p,s.slug),'f','Foundation')}</td>
+              <td>${docLink(c.qpH(p,s.slug),'h','Higher')}</td>
+              <td>${docLink(c.msF(p,s.slug),'f','Foundation')}</td>
+              <td>${docLink(c.msH(p,s.slug),'h','Higher')}</td>
+            </tr>`;
+    });
+
+    html += `
+          </tbody>
+        </table>
+      </div>`;
+  });
+
+  html += `</div>`;
+  pane.innerHTML = html;
+}
+
+function switchCourse(id, btn){
+  document.querySelectorAll('.course-pane').forEach(p=>p.classList.remove('visible'));
+  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('course-'+id).classList.add('visible');
+  btn.classList.add('active');
+}
+
+/* ── Init ── */
+renderCourse('sep');
+renderCourse('com');
+</script>
+</body>
+</html>

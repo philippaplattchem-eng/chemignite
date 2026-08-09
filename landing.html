@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chemistry resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fb;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--sh:0 2px 12px rgba(63,81,181,.10);--sh2:0 10px 32px rgba(63,81,181,.22);--r:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;display:flex;flex-direction:column}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:4rem 1.5rem 6rem;text-align:center;flex-shrink:0}
+
+/* Decorative background circles */
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}
+
+.hero-inner{position:relative;z-index:1}
+.hero-icon{display:block;width:64px;height:64px;margin:0 auto 1rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.hero h1{font-size:2.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.55rem;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hero p{font-size:1rem;opacity:.87;max-width:460px;margin:0 auto;font-weight:600}
+.hero-sub{margin-top:.45rem;font-size:.88rem;opacity:.65;font-weight:400}
+
+/* Wave */
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:64px;pointer-events:none}
+
+/* Main */
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.8rem 1.5rem 5rem}
+.choose-label{font-size:.9rem;font-weight:700;color:var(--txm);margin-bottom:1.3rem;text-align:center}
+
+.level-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;width:100%;max-width:700px}
+
+/* Level cards */
+.level-card{border-radius:var(--r);box-shadow:var(--sh);text-decoration:none;color:#fff;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.level-card:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
+.level-card.gcse{background:linear-gradient(155deg,#1a2f6e 0%,#3f51b5 55%,#5c6bc0 100%)}
+.level-card.alevel{background:linear-gradient(155deg,#1b4332 0%,#2d6a4f 55%,#40916c 100%)}
+.level-card.soon{opacity:.68;cursor:default;pointer-events:none}
+
+.lc-body{padding:2rem 1.8rem 1.5rem;flex:1}
+.lc-icon{display:block;width:56px;height:56px;margin-bottom:1rem;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.lc-tag{display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);border-radius:20px;padding:.2rem .75rem;margin-bottom:.7rem}
+.lc-title{font-size:1.45rem;font-weight:900;letter-spacing:-.01em;margin-bottom:.45rem;line-height:1.2}
+.lc-spec{font-size:.87rem;opacity:.83;margin-bottom:1.1rem;line-height:1.5;font-weight:600}
+.lc-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.lc-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:.18rem .65rem;font-size:.75rem;font-weight:700}
+
+.lc-footer{padding:.85rem 1.8rem;background:rgba(0,0,0,.2);font-size:.9rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.soon-badge{background:rgba(255,255,255,.22);border-radius:20px;padding:.18rem .75rem;font-size:.76rem;font-weight:700}
+
+/* Puzzle strip */
+.puzzle-strip{display:flex;align-items:center;gap:1.1rem;width:100%;max-width:700px;background:linear-gradient(135deg,#2e1065,#7c3aed);border-radius:var(--r);box-shadow:0 4px 18px rgba(124,58,237,.28);text-decoration:none;color:#fff;padding:1.1rem 1.4rem;transition:transform .18s,box-shadow .18s}
+.puzzle-strip:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(124,58,237,.38)}
+.ps-icon{width:52px;height:52px;background:rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ps-body{flex:1}
+.ps-title{font-size:1.05rem;font-weight:800;margin-bottom:.2rem}
+.ps-desc{font-size:.84rem;opacity:.85;font-weight:600}
+.ps-arrow{font-size:1.5rem;opacity:.6}
+.puzzle-strip:hover .ps-arrow{opacity:1}
+
+/* Footer */
+footer{text-align:center;padding:1.2rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr)}
+
+@media(max-width:580px){.level-grid{grid-template-columns:1fr;max-width:380px}.hero h1{font-size:1.8rem}.lc-title{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <!-- Atom icon -->
+    <svg class="hero-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="32" cy="32" r="5" fill="white" stroke="none" opacity=".9"/>
+      <ellipse cx="32" cy="32" rx="28" ry="10"/>
+      <ellipse cx="32" cy="32" rx="28" ry="10" transform="rotate(60 32 32)"/>
+      <ellipse cx="32" cy="32" rx="28" ry="10" transform="rotate(-60 32 32)"/>
+    </svg>
+    <h1>Chemistry resources</h1>
+    <p>Revision tools, practice questions, and reference materials</p>
+    <p class="hero-sub">Select your course to get started</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+  <div class="choose-label">Which course are you studying?</div>
+
+  <div class="level-grid">
+
+    <a href="home.html" class="level-card gcse">
+      <div class="lc-body">
+        <svg class="lc-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="8" x2="38" y2="8"/>
+          <line x1="24" y1="8" x2="24" y2="24"/>
+          <line x1="36" y1="8" x2="36" y2="24"/>
+          <path d="M24 24L10 46a4 4 0 003.5 6h33a4 4 0 003.5-6L36 24"/>
+          <path d="M14 48c4-5 10-4 16-2s12 2 16-2" stroke-width="2" opacity=".75"/>
+          <circle cx="22" cy="50" r="2" fill="white" stroke="none" opacity=".8"/>
+          <circle cx="34" cy="48" r="1.5" fill="white" stroke="none" opacity=".65"/>
+        </svg>
+        <div class="lc-tag">GCSE</div>
+        <div class="lc-title">GCSE Chemistry</div>
+        <div class="lc-spec">Edexcel — separate science (1CH0) &amp; combined science (1SC0)</div>
+        <div class="lc-pills">
+          <span class="lc-pill">Practice questions</span>
+          <span class="lc-pill">Flashcards</span>
+          <span class="lc-pill">Equations</span>
+          <span class="lc-pill">Glossary</span>
+          <span class="lc-pill">Spec list</span>
+        </div>
+      </div>
+      <div class="lc-footer"><span>Go to GCSE resources</span><span>&#8250;</span></div>
+    </a>
+
+    <a class="level-card alevel soon">
+      <div class="lc-body">
+        <svg class="lc-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="30" cy="20" r="6" fill="white" stroke="none" opacity=".85"/>
+          <circle cx="14" cy="44" r="6" fill="white" stroke="none" opacity=".85"/>
+          <circle cx="46" cy="44" r="6" fill="white" stroke="none" opacity=".85"/>
+          <line x1="30" y1="26" x2="22" y2="38"/>
+          <line x1="30" y1="26" x2="38" y2="38"/>
+          <line x1="20" y1="44" x2="40" y2="44"/>
+        </svg>
+        <div class="lc-tag">A level</div>
+        <div class="lc-title">A level Chemistry</div>
+        <div class="lc-spec">OCR A — full specification resources coming soon</div>
+        <div class="lc-pills">
+          <span class="lc-pill">Practice questions</span>
+          <span class="lc-pill">Flashcards</span>
+          <span class="lc-pill">Equations</span>
+          <span class="lc-pill">Glossary</span>
+        </div>
+      </div>
+      <div class="lc-footer"><span>Coming soon</span><span class="soon-badge">In development</span></div>
+    </a>
+
+  </div>
+
+  <div class="choose-label" style="margin-top:2.8rem">Just for fun</div>
+  <a href="puzzles.html" class="puzzle-strip">
+    <div class="ps-icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <div class="ps-body">
+      <div class="ps-title">Fancy a chemistry puzzle?</div>
+      <div class="ps-desc">If you have a few minutes to spare, why not have a go? Wordsearches, codebreaking, connections, sudoku and more. Around 10 minutes each!</div>
+    </div>
+    <div class="ps-arrow">&#8250;</div>
+  </a>
+
+</main>
+
+<footer>Built for Edexcel GCSE &amp; OCR A level Chemistry students</footer>
+
+</body>
+</html>

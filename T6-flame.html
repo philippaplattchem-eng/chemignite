@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T6 Flame &mdash; Groups in the Periodic Table</title>
+<style>:root{--pr:#3f51b5;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(63,81,181,.10);--sh2:0 6px 24px rgba(63,81,181,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+
+/* ── quiz-page header ── */
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}
+
+/* ── landing hero ── */
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center}
+.hero-icon{font-size:2.8rem;margin-bottom:.6rem;display:block}
+.hero h1{font-size:1.9rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.4rem}
+.hero p{font-size:1rem;opacity:.88;max-width:480px;margin:0 auto .5rem}
+.hero-pills{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem .85rem;font-size:.82rem;font-weight:600}
+
+/* ── tier legend ── */
+.tier-legend{display:flex;gap:0;max-width:700px;margin:1.8rem auto 0;background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.tier-leg-item{flex:1;padding:.85rem 1rem;text-align:center;border-right:1px solid var(--bdr)}
+.tier-leg-item:last-child{border-right:none}
+.tl-name{font-weight:700;font-size:.9rem;margin-bottom:.15rem}
+.tl-desc{font-size:.78rem;color:var(--txm)}
+.tl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+.tl-dot.spark{background:var(--sp)}.tl-dot.flame{background:var(--fl)}.tl-dot.inferno{background:var(--inf)}
+
+/* ── topic grid ── */
+.topics-section{max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem}
+.topics-heading{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem;padding-left:.2rem}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1}
+.tc-num{display:inline-block;background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;margin-bottom:.55rem}
+.tc-name{font-weight:700;font-size:.95rem;line-height:1.4;color:var(--tx)}
+.tc-btns{display:flex;flex-direction:column;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{display:flex;align-items:center;justify-content:flex-start;gap:.45rem;padding:.55rem .9rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.85rem;color:#fff;transition:filter .15s,transform .1s}
+.tc-btn:hover{filter:brightness(1.1);transform:translateX(2px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+
+/* ── quiz page ── */
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0f2ff;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{display:none;font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0f2ff;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(63,81,181,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(63,81,181,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:700px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}.tier-legend{flex-direction:column}.tier-leg-item{border-right:none;border-bottom:1px solid var(--bdr)}.tier-leg-item:last-child{border-bottom:none}}.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="back-link">&larr; All Topics</a>
+  <h1>T6 &mdash; Groups in the Periodic Table</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>20 questions</span>
+    <span>Flame &mdash; Apply</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student adds a small piece of rubidium to water. Rubidium is below potassium in Group 1. Which prediction is correct?","A":"Rubidium reacts less vigorously than potassium because it is larger","B":"Rubidium reacts more vigorously than potassium, likely explosively","C":"Rubidium does not react with water because it is too large","D":"Rubidium reacts at the same rate as potassium","correct":"B","explain":"Reactivity increases down Group 1. Rubidium is below potassium, so it is more reactive. Its outer electron is even further from the nucleus and more shielded, so it is lost even more easily. The reaction with water would be more vigorous than potassium, likely explosive."},{"stem":"A data table shows melting points for Group 1 metals: Li = 181°C, Na = 98°C, K = 63°C, Rb = 39°C. Which prediction for caesium's melting point is consistent with the trend?","A":"300°C","B":"150°C","C":"28°C","D":"63°C","correct":"C","explain":"Melting points decrease down Group 1. The trend shows decreasing values: 181 → 98 → 63 → 39°C. The next value (Cs) should be lower than Rb (39°C). 28°C is consistent, and is in fact the real melting point of caesium. Values above 39°C go against the trend."},{"stem":"Chlorine water is added to potassium bromide solution. What colour change is observed and why?","A":"The solution turns purple because iodine is produced","B":"The solution turns orange because bromine is displaced","C":"The solution stays colourless because no reaction occurs","D":"The solution turns yellow because chloride ions are yellow","correct":"B","explain":"Chlorine is more reactive than bromine, so it displaces bromide ions from solution: Cl₂(aq) + 2KBr(aq) → 2KCl(aq) + Br₂(aq). Bromine (Br₂) is orange, turning the solution orange. The KBr solution starts colourless, so any colour comes from the displaced halogen."},{"stem":"A student adds bromine water to potassium chloride solution. What is observed?","A":"The orange colour disappears and the solution becomes colourless","B":"The solution turns yellow-green as chlorine is displaced","C":"No colour change occurs, the solution remains orange","D":"A white precipitate forms","correct":"C","explain":"Bromine cannot displace chloride ions because chlorine is more reactive than bromine. A more reactive halogen displaces a less reactive one, not the other way around. The bromine water remains orange because no reaction occurs (the orange colour is the bromine water itself, not a product)."},{"stem":"The electronic configuration of chlorine is 2,8,7. Explain why chlorine is more reactive than bromine.","A":"Chlorine has more electrons so it reacts more easily","B":"Chlorine has fewer shells so its outer shell is closer to the nucleus, attracting an incoming electron more strongly","C":"Chlorine is a gas so it reacts faster","D":"Chlorine has more protons so it repels electrons less","correct":"B","explain":"Halogens react by gaining one electron. Chlorine (2,8,7, 3 shells) has its outer shell closer to the nucleus than bromine (2,8,18,7, 4 shells), with less shielding. The nucleus attracts an incoming electron more strongly in chlorine, making it more reactive."},{"stem":"Which of the following word equations is correct for the reaction of sodium with chlorine?","A":"sodium + chlorine → sodium chlorine","B":"sodium + chlorine → sodium chloride","C":"sodium + chlorine → sodium chlorate","D":"sodium + chloride → sodium chlorine","correct":"B","explain":"When a halogen reacts with a metal, the halogen ending changes to -ide: chlorine → chloride. The product is sodium chloride. \"Sodium chlorine\" and \"sodium chlorate\" are not correct chemical names. Note that the reactant is chlorine (the element), not chloride."},{"stem":"Why does potassium react more vigorously with water than lithium?","A":"Potassium has more neutrons so it is heavier","B":"Potassium has more shells, so its outer electron is further from the nucleus and more shielded, so it is lost more easily","C":"Potassium is a bigger atom so there is more metal to react","D":"Potassium has more outer electrons so it reacts more times","correct":"B","explain":"Both Li and K have 1 outer electron, but in potassium (2,8,8,1, 4 shells) that electron is further from the nucleus and shielded by more inner-shell electrons than in lithium (2,1, 2 shells). The weaker nuclear attraction means the outer electron is lost more easily, giving a more vigorous reaction."},{"stem":"A student burns sodium in chlorine gas. Which of the following correctly describes what is seen?","A":"No reaction as sodium and chlorine are both very reactive","B":"The sodium glows with an orange-yellow flame and a white smoke of sodium chloride forms","C":"The chlorine gas turns purple as sodium iodide is produced","D":"A brown gas is produced and the sodium dissolves","correct":"B","explain":"Sodium reacts vigorously with chlorine: 2Na(s) + Cl₂(g) → 2NaCl(s). Sodium burns with its characteristic orange-yellow flame (the flame colour of Na⁺ ions). White smoke of solid sodium chloride forms. This is a typical halogen–metal reaction."},{"stem":"Why must the litmus paper be damp when testing for chlorine gas?","A":"Damp paper has a brighter colour making it easier to see","B":"Chlorine must dissolve in water on the paper to form the acids that cause the colour change","C":"Damp paper absorbs more chlorine","D":"Dry paper would catch fire in chlorine gas","correct":"B","explain":"Chlorine reacts with water on the paper: Cl₂ + H₂O → HCl + HOCl. HCl makes the paper acidic (turns litmus red) and HOCl (hypochlorous acid) bleaches it white. Without water, chlorine cannot produce these acids, so dry litmus paper would not change. This is why \"blue litmus paper\" without \"damp\" is incorrect in an exam."},{"stem":"A noble gas is described as having the electronic configuration 2,8,8. Which noble gas is this, and why does it not react?","A":"Helium, full outer shell of 2 electrons so unreactive","B":"Neon, full outer shell of 8 electrons so unreactive","C":"Argon, full outer shell of 8 electrons so unreactive","D":"Krypton, 8 outer-shell electrons, so reactive like Group 8","correct":"C","explain":"Argon has atomic number 18 with configuration 2,8,8. Its third (outer) shell holds 8 electrons, the maximum at GCSE, making it full. A full outer shell means argon has no tendency to gain, lose or share electrons, so it is chemically inert. (Krypton has atomic number 36 and configuration 2,8,18,8, a different pattern.)"},{"stem":"A data table shows densities of noble gases: He = 0.17 g/dm³, Ne = 0.84 g/dm³, Ar = 1.66 g/dm³, Xe = 5.49 g/dm³. Use the table to suggest a density for krypton.","A":"0.5 g/dm³","B":"8.0 g/dm³","C":"1.66 g/dm³","D":"3.5 g/dm³","correct":"D","explain":"Krypton sits between argon (1.66) and xenon (5.49) in Group 0. Density increases down the group, so krypton's density must lie between 1.66 and 5.49 g/dm³. The midpoint is approximately (1.66 + 5.49)/2 ≈ 3.6 g/dm³, so 3.5 g/dm³ is a consistent estimate. The actual value is 3.49 g/dm³."},{"stem":"Iodine solution is added to potassium bromide solution. What is observed?","A":"The solution turns orange as bromine is displaced","B":"No reaction, iodine cannot displace bromide because iodine is less reactive than bromine","C":"The solution is bleached white","D":"A brown precipitate forms","correct":"B","explain":"In halogen displacement, only a more reactive halogen can displace a less reactive one. Bromine is above iodine in Group 7 and therefore more reactive. Iodine cannot displace bromide ions. The solution would simply remain brown (the colour of the added iodine solution) with no reaction taking place."},{"stem":"Which of the following is the correct balanced equation for hydrogen reacting with bromine?","A":"H + Br → HBr","B":"H₂ + Br → HBr","C":"H₂ + Br₂ → 2HBr","D":"2H + Br₂ → 2HBr","correct":"C","explain":"Both hydrogen and bromine are diatomic: H₂ and Br₂. The equation must show diatomic reactants. H₂ + Br₂ → 2HBr is balanced: 2 H atoms and 2 Br atoms on each side. Writing \"H\" or \"Br\" as monatomic atoms is a common exam error."},{"stem":"When potassium is added to water, the hydrogen produced ignites with a lilac flame. What causes the lilac colour?","A":"The hydrogen gas itself burns with a lilac colour","B":"The high temperature of the reaction causes water vapour to emit lilac light","C":"K⁺ ions in the flame emit lilac light, the same colour seen in the potassium flame test","D":"The potassium oxide produced in the flame emits lilac light","correct":"C","explain":"When potassium reacts with water, hydrogen gas is produced and ignites. As it burns, the flame passes through potassium vapour (K⁺ ions). These K⁺ ions absorb energy and emit light at a specific wavelength, producing the distinctive lilac colour, the same colour seen in a potassium flame test. Sodium ions produce a yellow-orange flame; only K⁺ produces lilac."},{"stem":"Hydrogen bromide dissolves in water. Which statement is correct about the resulting solution?","A":"It is alkaline because bromide ions are basic","B":"It is neutral because HBr is a neutral compound","C":"It is acidic and is called hydrobromic acid","D":"It is acidic and is called bromine hydroxide","correct":"C","explain":"All hydrogen halides dissolve in water to release H⁺ ions, forming acidic solutions. The naming pattern is hydro- + halide stem + -ic acid: HBr → hydrobromic acid. \"Bromine hydroxide\" is a common wrong answer, hydroxide implies an alkaline species, the opposite of what an acid produces."},{"stem":"A student claims \"iodine is the most reactive halogen because it produces the most intensely coloured (brown) solution in displacement reactions.\" What is wrong with this reasoning?","A":"The colour is caused by the halide ions, not the halogen","B":"The brown colour shows iodine was produced (displaced), making it the least reactive halogen in those reactions","C":"Iodine is actually colourless in solution","D":"The reasoning is correct, more colour means more reactivity","correct":"B","explain":"A brown solution in a displacement experiment means iodine (I₂) was produced, it was displaced by a more reactive halogen. The product, not the reactant, shows the brown colour. Iodine is the least reactive of Cl, Br and I. Confusing the colour of the product with a sign of the halogen being reactive is a classic examiner-reported error."},{"stem":"Which equation correctly shows the ionic equation for chlorine displacing iodide from solution?","A":"Cl₂ + I⁻ → Cl⁻ + I₂","B":"Cl₂ + 2I⁻ → 2Cl⁻ + I₂","C":"2Cl⁻ + I₂ → Cl₂ + 2I⁻","D":"Cl + 2I⁻ → 2Cl⁻ + I","correct":"B","explain":"Chlorine is diatomic (Cl₂) and displaces two iodide ions: Cl₂(aq) + 2I⁻(aq) → 2Cl⁻(aq) + I₂(aq). Option A is unbalanced (one iodide can't balance one Cl₂). Option C is the reverse, iodide displacing chloride, which doesn't happen. Option D uses monatomic chlorine, which is wrong."},{"stem":"The boiling point of neon is −246°C and that of krypton is −152°C. Using the trend, which value is a sensible prediction for the boiling point of argon?","A":"−300°C","B":"−100°C","C":"−199°C","D":"−40°C","correct":"C","explain":"Boiling points increase (become less negative) down Group 0. Argon sits between neon (−246°C) and krypton (−152°C). A value between these two is needed. The midpoint is approximately (−246 + −152)/2 = −199°C, which is consistent. The actual boiling point of argon is −186°C. Values outside the range (−300 or −100) are inconsistent with the trend."},{"stem":"Why does helium have such a low boiling point compared with xenon?","A":"Helium has fewer protons so repels electrons less","B":"Helium atoms are smaller with fewer electrons, so the forces between atoms are weaker, requiring less energy to separate them","C":"Helium is a gas so it has already boiled at room temperature","D":"Helium has a full outer shell so it cannot bond at all","correct":"B","explain":"Noble gases are held together only by weak London dispersion forces between atoms. Larger atoms (like xenon) have more electrons, giving stronger forces that need more energy to overcome, hence higher boiling points. Helium, with only 2 electrons, has very weak inter-atomic forces and boils at the lowest temperature of any element (−269°C)."},{"stem":"A student writes: \"Potassium is more reactive than sodium because it has more electrons.\" Is this correct, and why?","A":"Correct, more electrons means more reactivity in all cases","B":"Incorrect, the number of electrons is not relevant; only the number of outer electrons matters","C":"Incorrect, the relevant factor is that the outer electron in potassium is further from the nucleus and more shielded, not simply that potassium has more electrons","D":"Correct, more electrons means a stronger positive nucleus attracting electrons","correct":"C","explain":"Both Na and K have 1 outer electron. The difference is that K has 4 shells (2,8,8,1) vs Na's 3 shells (2,8,1), so the outer electron in K is further from the nucleus and shielded by more inner-shell electrons. The weaker nuclear attraction means K loses its outer electron more easily, this is the correct reasoning, not \"more electrons.\""}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect — correct answer: <strong>'+q.correct+'</strong>':'Not answered — correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks — excellent work!':score>=Math.round(total*0.7)?'Good work — check the explanations for any you missed.':'Keep practising — work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% — '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

@@ -1,122 +1,190 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GCSE Chemistry — MCQ Homework Tests</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',Arial,sans-serif;font-size:11pt;color:#2d3748;background:#eef0f7;line-height:1.6;min-height:100vh;}
-.page{max-width:700px;margin:32px auto 48px;padding:0 16px;}
-.header-box{background:linear-gradient(135deg,#4a6fa5,#6b8ec7);color:#fff;padding:28px 32px;border-radius:12px;margin-bottom:28px;text-align:center;}
-.header-box h1{font-size:17pt;font-weight:700;letter-spacing:-0.3px;margin-bottom:6px;}
-.header-box p{font-size:10pt;opacity:0.9;font-weight:300;}
-.header-box .spec{margin-top:10px;font-size:9pt;opacity:0.8;font-style:italic;}
-.section-label{font-size:9pt;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#718096;margin:0 0 10px 4px;}
-.test-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.test-card{display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid #e2e8f0;border-radius:10px;padding:14px 18px;text-decoration:none;color:#2d3748;transition:all 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
-.test-card:hover{border-color:#7ba7d8;box-shadow:0 4px 16px rgba(74,111,165,0.15);transform:translateY(-1px);}
-.topic-num{background:linear-gradient(135deg,#4a6fa5,#6b8ec7);color:#fff;font-weight:700;font-size:11pt;width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.test-info{flex:1;}
-.test-title{font-weight:600;font-size:10.5pt;color:#2d3748;line-height:1.3;}
-.test-sub{font-size:8.5pt;color:#718096;margin-top:2px;}
-.test-arrow{color:#a3b8d8;font-size:14pt;flex-shrink:0;}
-.test-card:hover .test-arrow{color:#4a6fa5;}
-.sep-badge{display:inline-block;background:#7b5ea7;color:#fff;font-size:7pt;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;}
-.footer{text-align:center;font-size:9pt;color:#a0aec0;margin-top:8px;}
-.footer a{color:#7ba7d8;text-decoration:none;}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GCSE Chemistry &mdash; Tiered Practice</title>
+<style>:root{--pr:#3f51b5;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(63,81,181,.10);--sh2:0 6px 24px rgba(63,81,181,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+
+/* ── quiz-page header ── */
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}
+
+/* ── landing hero ── */
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 5.5rem;text-align:center}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.9rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.4rem}
+.hero p{font-size:1rem;opacity:.88;max-width:480px;margin:0 auto .5rem}
+.hero-pills{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem .85rem;font-size:.82rem;font-weight:600}
+
+/* ── tier legend ── */
+.tier-legend{display:flex;gap:.6rem;max-width:700px;margin:1.8rem auto 0}
+.tier-leg-item{flex:1;padding:.75rem 1rem;text-align:center;border-radius:var(--r);box-shadow:var(--sh);border:none}
+.tier-leg-item:nth-child(1){background:var(--sp)}
+.tier-leg-item:nth-child(2){background:var(--fl)}
+.tier-leg-item:nth-child(3){background:var(--inf)}
+.tier-leg-item .tl-name{color:#fff}
+.tier-leg-item .tl-desc{color:rgba(210,230,255,.9)}
+.tl-name{font-weight:700;font-size:.9rem;margin-bottom:.15rem}
+.tl-desc{font-size:.78rem;color:var(--txm)}
+.tl-dot{display:none}
+.fl-svg{display:inline-block;width:12px;height:16px;vertical-align:middle;margin-right:4px}
+.tc-btn-sub{display:none}
+
+/* ── topic grid ── */
+.topics-section{max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem}
+.topics-heading{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem;padding-left:.2rem}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1;text-align:center}
+.tc-icon{display:block;width:26px;height:26px;margin:0 auto .5rem}.tc-num{display:inline-block;background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;margin-bottom:.55rem}
+.tc-name{font-weight:700;font-size:.95rem;line-height:1.4;color:var(--tx)}
+.tc-btns{display:flex;flex-direction:column;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{display:flex;align-items:center;justify-content:center;padding:.55rem .5rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;color:#fff;transition:filter .15s,transform .1s;text-align:center}
+.tc-btn:hover{filter:brightness(1.1);transform:translateX(2px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+
+/* ── quiz page ── */
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0f2ff;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{display:none;font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0f2ff;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(63,81,181,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(63,81,181,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:700px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}.tier-legend{flex-direction:column}.tier-leg-item{border-right:none;border-bottom:1px solid var(--bdr)}.tier-leg-item:last-child{border-bottom:none}}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.topic-card{animation:fadeUp .4s ease both}
+.topic-card:nth-child(1){animation-delay:.04s}.topic-card:nth-child(2){animation-delay:.08s}.topic-card:nth-child(3){animation-delay:.12s}.topic-card:nth-child(4){animation-delay:.16s}.topic-card:nth-child(5){animation-delay:.20s}.topic-card:nth-child(6){animation-delay:.24s}.topic-card:nth-child(7){animation-delay:.28s}.topic-card:nth-child(8){animation-delay:.32s}.topic-card:nth-child(9){animation-delay:.36s}
+.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="page">
-  <div class="header-box">
-    <h1>GCSE Chemistry — MCQ Homework Tests</h1>
-    <p>Edexcel Separate Science (1CH0) &amp; Combined Science (1SC0)</p>
-    <p class="spec">Click a topic below to open your homework test &nbsp;&bull;&nbsp; 25 questions &nbsp;&bull;&nbsp; 3 attempts saved automatically</p>
-  </div>
 
-  <div class="section-label">Paper 1 Topics</div>
-  <div class="test-list">
-    <a class="test-card" href="HW%20%E2%80%94%20T1%20Topic%201%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T1</div>
-      <div class="test-info">
-        <div class="test-title">Atomic Structure &amp; the Periodic Table</div>
-        <div class="test-sub">Atomic models &bull; isotopes &bull; bonding &bull; types of substance &bull; calculations</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T2%20States%20of%20Matter%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T2</div>
-      <div class="test-info">
-        <div class="test-title">States of Matter &amp; Mixtures</div>
-        <div class="test-sub">Particle model &bull; changes of state &bull; separation techniques &bull; water purification</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T3%20Chemical%20Changes%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T3</div>
-      <div class="test-info">
-        <div class="test-title">Chemical Changes</div>
-        <div class="test-sub">Acids &bull; neutralisation &bull; electrolysis &bull; redox &bull; OIL RIG</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T4%20Extracting%20Metals%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T4</div>
-      <div class="test-info">
-        <div class="test-title">Extracting Metals &amp; Equilibria</div>
-        <div class="test-sub">Reactivity series &bull; extraction &bull; recycling &bull; LCA &bull; Haber process</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T5%20Separate%20Chemistry%201%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T5</div>
-      <div class="test-info">
-        <div class="test-title">Separate Chemistry 1 <span class="sep-badge">SEP</span></div>
-        <div class="test-sub">Transition metals &bull; alloys &bull; electroplating &bull; titration &bull; fuel cells</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-  </div>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="ic-flame" viewBox="0 0 24 24"><path fill="white" d="M12 2C9 7 6 11 6 15c0 3 2 5 4 6 0-2 1-3 2-4 1 1 2 2 2 4 2-1 4-3 4-6 0-4-3-8-6-13z"/><path fill="rgba(255,255,255,.4)" d="M12 10c-1 2-2 3.5-2 5a2 2 0 004 0c0-1.5-1-3-2-5z"/></symbol></svg>
+<header class="site-header">
+  <a href="home.html" class="back-link">&larr; Home</a>
+  <h1>Tiered practice questions</h1>
+</header>
 
-  <div class="section-label">Paper 2 Topics</div>
-  <div class="test-list">
-    <a class="test-card" href="HW%20%E2%80%94%20T6%20Groups%20in%20the%20Periodic%20Table%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T6</div>
-      <div class="test-info">
-        <div class="test-title">Groups in the Periodic Table</div>
-        <div class="test-sub">Group 1 alkali metals &bull; Group 7 halogens &bull; Group 0 noble gases</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T7%20Rates%20%26%20Energy%20Changes%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T7</div>
-      <div class="test-info">
-        <div class="test-title">Rates of Reaction &amp; Energy Changes</div>
-        <div class="test-sub">Collision theory &bull; factors &bull; catalysts &bull; exo/endothermic &bull; bond energies</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T8%20Fuels%20%26%20Earth%20Science%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T8</div>
-      <div class="test-info">
-        <div class="test-title">Fuels &amp; Earth Science</div>
-        <div class="test-sub">Crude oil &bull; alkanes &bull; combustion &bull; cracking &bull; greenhouse effect &bull; climate change</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
-    <a class="test-card" href="HW%20%E2%80%94%20T9%20Separate%20Chemistry%202%20%E2%80%94%20MCQ.html">
-      <div class="topic-num">T9</div>
-      <div class="test-info">
-        <div class="test-title">Separate Chemistry 2 <span class="sep-badge">SEP</span></div>
-        <div class="test-sub">Ion tests &bull; flame tests &bull; organic chemistry &bull; polymers &bull; nanoparticles</div>
-      </div>
-      <div class="test-arrow">&#8250;</div>
-    </a>
+<div class="hero">
+  <svg class="hero-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="27" cy="27" r="23"/>
+    <circle cx="27" cy="27" r="14"/>
+    <circle cx="27" cy="27" r="5" fill="white" stroke="none"/>
+  </svg>
+  <h1>GCSE Chemistry practice</h1>
+  <p>Edexcel (1CH0) &mdash; tiered multiple-choice questions with instant feedback</p>
+  <div class="hero-pills">
+    <span class="hero-pill">9 topics</span>
+    <span class="hero-pill">3 tiers</span>
+    <span class="hero-pill">Up to 20 questions each</span>
+    <span class="hero-pill">Score &amp; explanations</span>
   </div>
-
-  <div class="footer">Edexcel GCSE Chemistry 1CH0 &nbsp;&bull;&nbsp; Questions include Foundation &amp; Higher tier &nbsp;&bull;&nbsp; <a href="https://github.com/philippaplattchem-eng/gcse-chemistry-homework">GitHub</a></div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
 </div>
+
+<div class="topics-section">
+  <div class="tier-legend">
+    <div class="tier-leg-item">
+      <div class="tl-name"><span class="tl-dot spark"></span><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</div>
+      <div class="tl-desc">Recall &amp; definitions</div>
+    </div>
+    <div class="tier-leg-item">
+      <div class="tl-name"><span class="tl-dot flame"></span><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</div>
+      <div class="tl-desc">Apply in context</div>
+    </div>
+    <div class="tier-leg-item">
+      <div class="tl-name"><span class="tl-dot inferno"></span><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</div>
+      <div class="tl-desc">Multi-step &amp; analyse</div>
+    </div>
+  </div>
+
+  <div class="topics-heading" style="margin-top:2rem">Choose a topic</div>
+  <div class="topic-grid">
+    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="2" fill="var(--pr)" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="3.5"/><ellipse cx="12" cy="12" rx="10" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="3.5" transform="rotate(-60 12 12)"/></svg><span class="tc-num">T1</span>
+        <div class="tc-name">Atomic Structure &amp; the Periodic Table</div>
+      </div>
+      <div class="tc-btns"><a href="T1-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T1-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T1-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2V12.46L22 3z"/></svg><span class="tc-num">T2</span>
+        <div class="tc-name">States of Matter &amp; Mixtures</div>
+      </div>
+      <div class="tc-btns"><a href="T2-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T2-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T2-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10"/><path d="M3.51 15a9 9 0 0014.85 3.36L23 14"/></svg><span class="tc-num">T3</span>
+        <div class="tc-name">Chemical Changes</div>
+      </div>
+      <div class="tc-btns"><a href="T3-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T3-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T3-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="20"/><path d="M5 20h14"/><path d="M12 3L4 7M12 3l8 4"/><path d="M2 7c0 2.2 2 4 4 4s4-1.8 4-4"/><path d="M14 11c0 2.2 2 4 4 4s4-1.8 4-4"/></svg><span class="tc-num">T4</span>
+        <div class="tc-name">Extracting Metals &amp; Equilibria</div>
+      </div>
+      <div class="tc-btns"><a href="T4-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T4-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T4-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v10l-3 6-3-6V3z"/><line x1="9" y1="8" x2="15" y2="8"/><circle cx="11" cy="12" r=".9" fill="var(--pr)" stroke="none"/><circle cx="13.5" cy="11" r=".9" fill="var(--pr)" stroke="none"/></svg><span class="tc-num">T5</span>
+        <div class="tc-name">Separate Chemistry 1</div>
+      </div>
+      <div class="tc-btns"><a href="T5-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T5-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T5-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.5"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/></svg><span class="tc-num">T6</span>
+        <div class="tc-name">Groups in the Periodic Table</div>
+      </div>
+      <div class="tc-btns"><a href="T6-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T6-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T6-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round"><polyline points="3,20 3,4"/><polyline points="3,20 21,20"/><path d="M4 17 Q9 16 12 10 Q15 5 19 7"/><circle cx="19" cy="7" r="1.5" fill="var(--pr)" stroke="none"/></svg><span class="tc-num">T7</span>
+        <div class="tc-name">Rates of Reaction &amp; Energy Changes</div>
+      </div>
+      <div class="tc-btns"><a href="T7-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T7-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T7-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="tc-num">T8</span>
+        <div class="tc-name">Fuels &amp; Earth Science</div>
+      </div>
+      <div class="tc-btns"><a href="T8-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T8-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T8-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>    <div class="topic-card">
+      <div class="tc-top">
+        <svg class="tc-icon" viewBox="0 0 24 24" fill="none" stroke="var(--pr)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 20.5,7 20.5,17 12,22 3.5,17 3.5,7"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 1.5"/></svg><span class="tc-num">T9</span>
+        <div class="tc-name">Separate Chemistry 2</div>
+      </div>
+      <div class="tc-btns"><a href="T9-spark.html" class="tc-btn spark"><svg class="fl-svg"><use href="#ic-flame"/></svg> Spark</a><a href="T9-flame.html" class="tc-btn flame"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Flame</a><a href="T9-inferno.html" class="tc-btn inferno"><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg><svg class="fl-svg"><use href="#ic-flame"/></svg> Inferno</a></div>
+    </div>  </div>
+</div>
+
 </body>
 </html>
