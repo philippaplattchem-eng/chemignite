@@ -59,6 +59,12 @@ h1{font-size:1.8rem;letter-spacing:.02em}
 .reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
 .reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
 .reveal-btn.active{background:#374151;box-shadow:none}
+.wl-inp-cell{position:relative;padding:0!important;overflow:hidden}
+.wl-inp-cell input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:transparent;text-align:center;font-size:13pt;font-weight:bold;font-family:inherit;text-transform:uppercase;padding:0;outline:none;color:inherit;cursor:text}
+.wl-correct{background:#dcfce7!important;border-color:#16a34a!important}
+.wl-wrong{background:#fecaca!important}
+.wl-complete{background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-radius:12px;padding:1rem 1.5rem;text-align:center;margin-top:1.5rem;font-size:1.05rem;font-weight:700;animation:wl-pop .4s ease}
+@keyframes wl-pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 }
 @media print{.screen-nav,.reveal-wrap{display:none}}
 </style></head>
@@ -456,5 +462,76 @@ h1{font-size:1.8rem;letter-spacing:.02em}
     ap.parentNode.insertBefore(wrap,ap);
   }
 })();
-</script></body>
+<script id="wl-interactive">
+(function(){
+  function notInAns(el){return !el.closest('.answer-page');}
+  var puzzleLadders=Array.from(document.querySelectorAll('.ladder')).filter(notInAns);
+  var ansLadders=Array.from(document.querySelectorAll('.answer-page .ladder'));
+  var puzzleBonus=Array.from(document.querySelectorAll('.bonus')).find(notInAns);
+  var ansBonus=document.querySelector('.answer-page .bonus');
+  var pairs=puzzleLadders.map(function(el,i){return{p:el,a:ansLadders[i]};});
+  if(puzzleBonus&&ansBonus)pairs.push({p:puzzleBonus,a:ansBonus});
+  function getWords(container){
+    return Array.from(container.querySelectorAll('.word-row')).map(function(row){
+      return Array.from(row.querySelectorAll('.letter-cell')).map(function(c){return c.textContent.trim().toUpperCase();}).join('');
+    });
+  }
+  var allTotal=0,allDone=0;
+  pairs.forEach(function(pair){
+    var ansWords=getWords(pair.a);
+    var rows=Array.from(pair.p.querySelectorAll('.word-row'));
+    var rowGroups=[];
+    rows.forEach(function(row,ri){
+      var blanks=Array.from(row.querySelectorAll('.letter-cell.blank'));
+      if(!blanks.length)return;
+      var expected=ansWords[ri]||'';
+      if(!expected)return;
+      var items=[];
+      blanks.forEach(function(cell){
+        cell.classList.add('wl-inp-cell');
+        var inp=document.createElement('input');
+        inp.type='text';inp.maxLength=1;
+        cell.appendChild(inp);
+        allTotal++;
+        items.push({inp:inp,cell:cell});
+      });
+      rowGroups.push({items:items,expected:expected,row:row,solved:false});
+    });
+    rowGroups.forEach(function(grp,gi){
+      grp.items.forEach(function(item,ii){
+        var inp=item.inp;
+        inp.addEventListener('input',function(){
+          if(grp.solved)return;
+          var v=inp.value.replace(/[^a-zA-Z]/g,'').toUpperCase().slice(0,1);
+          inp.value=v;if(!v)return;
+          if(ii<grp.items.length-1)grp.items[ii+1].inp.focus();
+          var allFilled=grp.items.every(function(it){return it.inp.value||it.inp.readOnly;});
+          if(!allFilled)return;
+          var allCells=Array.from(grp.row.querySelectorAll('.letter-cell'));
+          var entered=allCells.map(function(c){var i=c.querySelector('input');return i?i.value.toUpperCase():c.textContent.trim().toUpperCase();}).join('');
+          if(entered===grp.expected){
+            grp.solved=true;
+            grp.items.forEach(function(it){it.cell.classList.add('wl-correct');it.inp.readOnly=true;allDone++;});
+            if(gi<rowGroups.length-1)rowGroups[gi+1].items[0].inp.focus();
+            if(allDone>=allTotal)setTimeout(celebrate,400);
+          }else{
+            grp.items.forEach(function(it){it.cell.classList.add('wl-wrong');});
+            setTimeout(function(){grp.items.forEach(function(it){it.cell.classList.remove('wl-wrong');if(!it.inp.readOnly)it.inp.value='';});grp.items[0].inp.focus();},500);
+          }
+        });
+        inp.addEventListener('keydown',function(e){
+          if(inp.readOnly)return;
+          if((e.key==='Backspace'||e.key==='Delete')&&!inp.value&&ii>0)grp.items[ii-1].inp.focus();
+        });
+      });
+    });
+  });
+  function celebrate(){
+    var msg=document.createElement('div');msg.className='wl-complete';
+    msg.innerHTML='&#127881; <strong>Well done!</strong> All word ladders completed!';
+    var fn=Array.from(document.querySelectorAll('.footer-note')).find(notInAns);
+    if(fn)fn.insertAdjacentElement('beforebegin',msg);else document.body.appendChild(msg);
+  }
+})();
+</script></script></body>
 </html>

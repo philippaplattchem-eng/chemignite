@@ -49,6 +49,13 @@ h1{font-size:1.8rem;letter-spacing:.02em}
 .reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
 .reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
 .reveal-btn.active{background:#374151;box-shadow:none}
+.letter-box{position:relative;overflow:hidden;width:28px;height:32px}
+.letter-box input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:transparent;text-align:center;font-size:11pt;font-weight:bold;font-family:inherit;text-transform:uppercase;padding:0;outline:none;color:inherit;cursor:text}
+.letter-box.ml-correct{background:#dcfce7;border-color:#16a34a;color:#15803d}
+.letter-box.ml-wrong{border-color:#ef4444;animation:ml-flash .35s ease}
+@keyframes ml-flash{0%,100%{background:transparent}50%{background:#fecaca}}
+.ml-complete{background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-radius:12px;padding:1rem 1.5rem;text-align:center;margin-top:1.5rem;font-size:1.05rem;font-weight:700;animation:ml-pop .4s ease}
+@keyframes ml-pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 }
 @media print{.screen-nav,.reveal-wrap{display:none}}
 </style></head>
@@ -669,6 +676,52 @@ h1{font-size:1.8rem;letter-spacing:.02em}
     });
     wrap.appendChild(btn);
     ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script>
+<script id="ml-interactive">
+(function(){
+  function notInAns(el){ return !el.closest('.answer-page'); }
+  var grids = Array.from(document.querySelectorAll('.grid'));
+  var puzzleGrid = grids.find(notInAns);
+  if(!puzzleGrid||puzzleGrid.dataset.mlInit) return;
+  puzzleGrid.dataset.mlInit='1';
+  var answerGrid = document.querySelector('.answer-page .grid');
+  var puzzleItems = Array.from(puzzleGrid.querySelectorAll('.item'));
+  var answerItems = answerGrid ? Array.from(answerGrid.querySelectorAll('.item')) : [];
+  var allInputs=[],totalBoxes=0,solvedBoxes=0;
+  puzzleItems.forEach(function(item,wi){
+    var pBoxes=Array.from(item.querySelectorAll('.letter-box'));
+    var aBoxes=answerItems[wi]?Array.from(answerItems[wi].querySelectorAll('.letter-box')):[];
+    pBoxes.forEach(function(box,bi){
+      if(!box.classList.contains('blank')) return;
+      var correct=aBoxes[bi]?aBoxes[bi].textContent.trim().toUpperCase():'';
+      if(!correct) return;
+      totalBoxes++;
+      var inp=document.createElement('input');
+      inp.type='text'; inp.maxLength=1; inp.dataset.correct=correct;
+      box.style.padding='0'; box.appendChild(inp); allInputs.push(inp);
+      inp.addEventListener('input',function(){
+        var v=inp.value.replace(/[^a-zA-Z]/g,'').toUpperCase().slice(0,1);
+        inp.value=v; if(!v) return;
+        if(v===correct){
+          box.classList.add('ml-correct'); inp.readOnly=true; solvedBoxes++;
+          var idx=allInputs.indexOf(inp);
+          for(var ni=idx+1;ni<allInputs.length;ni++){ if(!allInputs[ni].readOnly){allInputs[ni].focus();break;} }
+          if(solvedBoxes>=totalBoxes) setTimeout(celebrate,400);
+        } else {
+          box.classList.add('ml-wrong');
+          setTimeout(function(){ box.classList.remove('ml-wrong'); inp.value=''; },400);
+        }
+      });
+      inp.addEventListener('keydown',function(e){ if((e.key==='Backspace'||e.key==='Delete')&&!inp.readOnly) inp.value=''; });
+    });
+  });
+  function celebrate(){
+    var msg=document.createElement('div'); msg.className='ml-complete';
+    msg.innerHTML='&#127881; <strong>Well done!</strong> All 20 words completed correctly!';
+    var fn=Array.from(document.querySelectorAll('.footer-note')).find(notInAns)||document.body;
+    fn.insertAdjacentElement('beforebegin',msg);
   }
 })();
 </script></body>

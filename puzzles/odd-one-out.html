@@ -60,6 +60,14 @@ h1{font-size:1.8rem;letter-spacing:.02em}
 .reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
 .reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
 .reveal-btn.active{background:#374151;box-shadow:none}
+.word-chip{cursor:pointer;border-radius:6px;transition:background .15s,transform .1s}
+.word-chip:hover{background:#f3f0ff;border-color:#7c3aed}
+.word-chip.ooo-correct{background:#dcfce7!important;border-color:#16a34a!important;color:#15803d!important;cursor:default}
+.word-chip.ooo-wrong{animation:ooo-shake .35s ease}
+@keyframes ooo-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.ooo-reason{font-size:.82rem;color:#15803d;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:.4rem .6rem;margin-top:.5rem;animation:ooo-pop .3s ease}
+@keyframes ooo-pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.write-line{display:none}
 }
 @media print{.screen-nav,.reveal-wrap{display:none}}
 </style></head>
@@ -304,5 +312,37 @@ h1{font-size:1.8rem;letter-spacing:.02em}
     ap.parentNode.insertBefore(wrap,ap);
   }
 })();
-</script></body>
+<script id="ooo-interactive">
+(function(){
+  function notInAns(el){return !el.closest('.answer-page');}
+  var puzzleGroups=Array.from(document.querySelectorAll('.group')).filter(notInAns);
+  var ansGroups=Array.from(document.querySelectorAll('.answer-page .answer-group'));
+  puzzleGroups.forEach(function(grp,gi){
+    var ansGrp=ansGroups[gi];if(!ansGrp)return;
+    var ansLabel=ansGrp.querySelector('.ans-label');
+    var oddSpan=ansLabel?ansLabel.querySelector('span'):null;
+    var oddWord=oddSpan?oddSpan.textContent.trim().toUpperCase():'';
+    var reasonEl=ansGrp.querySelector('.reason');
+    var reasonHTML=reasonEl?reasonEl.innerHTML:'';
+    var chips=Array.from(grp.querySelectorAll('.word-chip'));
+    var solved=false;
+    chips.forEach(function(chip){
+      chip.addEventListener('click',function(){
+        if(solved)return;
+        var word=chip.textContent.trim().toUpperCase();
+        if(word===oddWord){
+          chip.classList.add('ooo-correct');
+          chips.forEach(function(c){if(c!==chip)c.style.opacity='.4';});
+          solved=true;
+          var div=document.createElement('div');div.className='ooo-reason';div.innerHTML=reasonHTML;
+          grp.appendChild(div);
+        }else{
+          chip.classList.add('ooo-wrong');
+          setTimeout(function(){chip.classList.remove('ooo-wrong');},400);
+        }
+      });
+    });
+  });
+})();
+</script></script></body>
 </html>

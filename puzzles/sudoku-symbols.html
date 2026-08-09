@@ -53,6 +53,14 @@ h1{font-size:1.8rem;letter-spacing:.02em}
 .reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
 .reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
 .reveal-btn.active{background:#374151;box-shadow:none}
+td.sd-blank{position:relative;padding:0!important;cursor:pointer}
+td.sd-blank input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:transparent;text-align:center;font-size:10pt;font-weight:700;font-family:inherit;padding:0;outline:none;cursor:text}
+td.sd-correct{background:#dcfce7!important;color:#15803d}
+td.sd-wrong{animation:sd-flash .45s ease}
+@keyframes sd-flash{0%,100%{background:#fff}50%{background:#fecaca}}
+td.sd-focus{background:#ede9fe!important}
+.sd-complete{background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-radius:12px;padding:1rem 1.5rem;text-align:center;margin-top:1.5rem;font-size:1.05rem;font-weight:700;animation:sd-pop .4s ease}
+@keyframes sd-pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 }
 @media print{.screen-nav,.reveal-wrap{display:none}}
 </style></head>
@@ -339,5 +347,63 @@ h1{font-size:1.8rem;letter-spacing:.02em}
     ap.parentNode.insertBefore(wrap,ap);
   }
 })();
-</script></body>
+<script id="sd-interactive">
+(function(){
+  function notInAns(el){return !el.closest('.answer-page');}
+  var puzzleTable=Array.from(document.querySelectorAll('table.sudoku')).find(notInAns);
+  var ansTable=document.querySelector('.answer-page table.sudoku');
+  if(!puzzleTable||!ansTable||puzzleTable.dataset.sdInit)return;
+  puzzleTable.dataset.sdInit='1';
+  var SYMBOLS=['H','C','N','O','S','Na','Fe','Cu','Au'];
+  var pRows=Array.from(puzzleTable.querySelectorAll('tr'));
+  var aRows=Array.from(ansTable.querySelectorAll('tr'));
+  var allItems=[],total=0,solved=0;
+  pRows.forEach(function(tr,ri){
+    var pCells=Array.from(tr.querySelectorAll('td'));
+    var aCells=Array.from(aRows[ri].querySelectorAll('td'));
+    pCells.forEach(function(td,ci){
+      if(td.classList.contains('given'))return;
+      if(td.textContent.trim()!=='')return;
+      var correct=aCells[ci].textContent.trim();
+      if(!correct)return;
+      total++;
+      var idx=allItems.length;
+      td.classList.add('sd-blank');
+      var inp=document.createElement('input');
+      inp.type='text';inp.maxLength=2;
+      allItems.push({inp:inp,td:td,correct:correct});
+      td.appendChild(inp);
+      inp.addEventListener('focus',function(){if(!inp.readOnly)td.classList.add('sd-focus');});
+      inp.addEventListener('blur',function(){td.classList.remove('sd-focus');});
+      inp.addEventListener('input',function(){
+        var raw=inp.value.replace(/[^a-zA-Z]/g,'');
+        var v=raw.length>0?raw[0].toUpperCase()+raw.slice(1).toLowerCase():'';
+        inp.value=v;if(!v)return;
+        if(v.length<correct.length)return;
+        v=v.slice(0,correct.length);inp.value=v;
+        if(!SYMBOLS.includes(v)){
+          td.classList.add('sd-wrong');
+          setTimeout(function(){td.classList.remove('sd-wrong');inp.value='';},500);
+          return;
+        }
+        if(v===correct){
+          td.classList.remove('sd-wrong');td.classList.add('sd-correct');inp.readOnly=true;solved++;
+          for(var ni=idx+1;ni<allItems.length;ni++){if(!allItems[ni].inp.readOnly){allItems[ni].inp.focus();break;}}
+          if(solved>=total)setTimeout(celebrate,400);
+        }else{
+          td.classList.add('sd-wrong');
+          setTimeout(function(){td.classList.remove('sd-wrong');inp.value='';},500);
+        }
+      });
+      inp.addEventListener('keydown',function(e){if((e.key==='Backspace'||e.key==='Delete')&&!inp.readOnly)inp.value='';});
+    });
+  });
+  function celebrate(){
+    var msg=document.createElement('div');msg.className='sd-complete';
+    msg.innerHTML='&#127881; <strong>Brilliant!</strong> Sudoku complete!';
+    var fn=Array.from(document.querySelectorAll('.footer-note')).find(notInAns);
+    if(fn)fn.insertAdjacentElement('beforebegin',msg);else document.body.appendChild(msg);
+  }
+})();
+</script></script></body>
 </html>
