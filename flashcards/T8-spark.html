@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T8 Spark Flashcards</title><style>:root{--pr:#3f51b5;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 10px rgba(63,81,181,.10);--sh2:0 8px 30px rgba(63,81,181,.20)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center}
+.hero-icon{font-size:2.8rem;margin-bottom:.6rem;display:block}
+.hero h1{font-size:1.9rem;font-weight:800;margin-bottom:.4rem}
+.hero p{font-size:1rem;opacity:.88;max-width:480px;margin:0 auto}
+.tier-legend{display:flex;max-width:700px;margin:1.8rem auto 0;background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.tier-leg-item{flex:1;padding:.85rem 1rem;text-align:center;border-right:1px solid var(--bdr)}
+.tier-leg-item:last-child{border-right:none}
+.tl-name{font-weight:700;font-size:.9rem;margin-bottom:.15rem}
+.tl-desc{font-size:.78rem;color:var(--txm)}
+.tl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+.tl-dot.spark{background:var(--sp)}.tl-dot.flame{background:var(--fl)}.tl-dot.inferno{background:var(--inf)}
+.topics-section{max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem}
+.topics-heading{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1}
+.tc-num{display:inline-block;background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;margin-bottom:.55rem}
+.tc-name{font-weight:700;font-size:.95rem;line-height:1.4}
+.tc-btns{display:flex;flex-direction:column;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{display:flex;align-items:center;gap:.45rem;padding:.55rem .9rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.85rem;color:#fff;transition:filter .15s,transform .1s}
+.tc-btn:hover{filter:brightness(1.1);transform:translateX(2px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+main{max-width:720px;margin:0 auto;padding:2rem 1rem 4rem}
+.deck-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.88rem;color:var(--txm)}
+.counter{font-weight:700;font-size:1rem;color:var(--pr)}
+.card-scene{perspective:1000px;width:100%;height:300px;cursor:pointer;margin-bottom:1.5rem}
+.card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .45s ease}
+.card.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;width:100%;height:100%;border-radius:var(--r);padding:1.8rem 2rem;display:flex;flex-direction:column;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.card-front{background:var(--card);border:2px solid var(--bdr);box-shadow:var(--sh2)}
+.card-back{background:#eef1ff;border:2px solid var(--pr);transform:rotateY(180deg);justify-content:flex-start;overflow-y:auto}
+.card-hint{font-size:.73rem;color:var(--txm);margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.06em}
+.card-q{font-size:1.05rem;line-height:1.6;color:var(--tx)}
+.card-ans{font-size:.97rem;font-weight:700;color:var(--pr);margin-bottom:.6rem}
+.card-ex{font-size:.86rem;line-height:1.6;color:#374151}
+.nav-row{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1rem}
+.nav-btn{background:var(--card);border:2px solid var(--bdr);color:var(--tx);padding:.55rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s}
+.nav-btn:hover:not(:disabled){border-color:var(--pr);background:#eef1ff}
+.nav-btn:disabled{opacity:.35;cursor:default}
+.btn-shuffle{background:var(--pr);color:#fff;border-color:var(--pr)}
+.btn-shuffle:hover{background:var(--pr-dk);border-color:var(--pr-dk)}
+.flip-hint{text-align:center;font-size:.8rem;color:var(--txm);margin-top:.5rem}
+@media(max-width:700px){.topic-grid{grid-template-columns:repeat(2,1fr)}.card-scene{height:260px}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.card-face{padding:1.2rem 1.3rem}.tier-legend{flex-direction:column}.tier-leg-item{border-right:none;border-bottom:1px solid var(--bdr)}.tier-leg-item:last-child{border-bottom:none}}.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}</style><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head><body>
+<header class="site-header">
+  <a href="practice.html" class="back-link">&larr; All Topics</a>
+  <h1>T8 &mdash; Fuels &amp; Earth Science</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+<div class="deck-meta"><span>20 cards &mdash; Spark (Recall)</span><span class="counter" id="counter">1 / 20</span></div>
+<div class="card-scene"><div class="card" id="card">
+  <div class="card-face card-front"><div class="card-hint">Question &mdash; tap to reveal answer</div><div class="card-q" id="card-q"></div></div>
+  <div class="card-face card-back"><div class="card-hint">Answer</div><div class="card-ans" id="card-ans"></div><div class="card-ex" id="card-ex"></div></div>
+</div></div>
+<div class="nav-row">
+  <button class="nav-btn" id="btn-prev">&larr; Prev</button>
+  <button class="nav-btn btn-shuffle" id="btn-shuffle">&#x1F500; Shuffle</button>
+  <button class="nav-btn" id="btn-next">Next &rarr;</button>
+</div>
+<div class="flip-hint">Tap card or press Space to flip &nbsp;&bull;&nbsp; &larr; &rarr; arrow keys to navigate</div>
+</main>
+<script>const QUESTIONS=[{"stem":"What are hydrocarbons?","A":"Compounds containing only hydrogen and oxygen","B":"Compounds containing only carbon and oxygen","C":"Compounds containing only carbon and hydrogen","D":"Compounds containing carbon, hydrogen and nitrogen","correct":"C","explain":"The definition of a hydrocarbon is a compound containing <strong>only</strong> carbon and hydrogen atoms. The word \"only\" is essential, it excludes any other elements. Crude oil is a mixture of hydrocarbons."},{"stem":"What is crude oil?","A":"A pure compound of carbon and hydrogen","B":"A complex mixture of hydrocarbons","C":"A single alkane with a very long chain","D":"A refined fuel ready to use in engines","correct":"B","explain":"Crude oil is a complex mixture of many different hydrocarbon molecules with varying chain lengths. It must be separated by fractional distillation before the individual fractions can be used as fuels."},{"stem":"In fractional distillation of crude oil, where are the longest-chain hydrocarbons collected?","A":"At the top of the column","B":"In the middle of the column","C":"At the bottom of the column","D":"They leave the column as a gas","correct":"C","explain":"Longer chains have stronger intermolecular forces, so they have higher boiling points. They only condense at the hotter lower parts of the column. Short-chain hydrocarbons with lower boiling points travel further up the column before condensing."},{"stem":"Which fraction from crude oil is used as fuel for aircraft?","A":"Petrol","B":"Diesel oil","C":"Kerosene","D":"Bitumen","correct":"C","explain":"Kerosene (also called jet fuel) is the fraction used in aircraft. Petrol is used in car engines; diesel is used in lorries, trains and some cars; bitumen is used for roads and roofing."},{"stem":"What is bitumen used for?","A":"Fuelling large ships","B":"Domestic heating and cooking","C":"Roads and roofs","D":"Fuelling aircraft","correct":"C","explain":"Bitumen is the heaviest fraction from crude oil with the longest carbon chains. It has a very high boiling point and is a semi-solid at room temperature. It is used to surface roads and to waterproof roofs."},{"stem":"Which of the following describes an alkane?","A":"CₙH₂ₙ","B":"CₙH₂ₙ₊₂","C":"CₙH₂ₙ₋₂","D":"CₙHₙ","correct":"B","explain":"Alkanes have the general formula CₙH₂ₙ₊₂. They are saturated hydrocarbons, meaning they contain only single C–C bonds. For example, methane is CH₄ (n=1: 2×1+2=4 ✓), ethane is C₂H₆ (2×2+2=6 ✓)."},{"stem":"What are the products of complete combustion of a hydrocarbon?","A":"Carbon monoxide and water","B":"Carbon and water","C":"Carbon dioxide and water","D":"Carbon dioxide and hydrogen","correct":"C","explain":"Complete combustion occurs when there is a plentiful supply of oxygen. Every carbon atom is fully oxidised to CO₂ and every hydrogen atom is oxidised to water (H₂O). Complete combustion is always exothermic."},{"stem":"Why does incomplete combustion produce carbon monoxide?","A":"The temperature is too high","B":"There is insufficient oxygen","C":"The fuel is too long a chain","D":"There is too much nitrogen in the air","correct":"B","explain":"Incomplete combustion happens when the oxygen supply is limited. Each carbon atom needs two oxygen atoms to form CO₂. If only one oxygen is available, it only partially oxidises to carbon monoxide (CO). If there is barely any oxygen, solid carbon (soot) forms instead."},{"stem":"Why is carbon monoxide dangerous?","A":"It is a greenhouse gas that warms the planet","B":"It reacts with oxygen in the lungs","C":"It binds to haemoglobin and reduces oxygen transport","D":"It causes acid rain when it dissolves in water","correct":"C","explain":"CO binds to haemoglobin in red blood cells at the same site that oxygen normally uses. CO binds much more strongly than oxygen, so that haemoglobin molecule is permanently blocked and cannot carry oxygen to the body's cells. CO is colourless and odourless, victims may have no warning."},{"stem":"How is sulfur dioxide produced when a fuel burns?","A":"Nitrogen in the fuel reacts with oxygen","B":"Carbon in the fuel is only partly oxidised","C":"Sulfur impurities in the fuel react with oxygen","D":"Water vapour reacts with carbon dioxide in the flame","correct":"C","explain":"Hydrocarbon fuels refined from crude oil contain small amounts of sulfur as an impurity. When the fuel burns, the sulfur also reacts with oxygen: S + O₂ → SO₂. The sulfur comes from the fuel, not from the air."},{"stem":"What is the equation for sulfur burning in oxygen?","A":"S + O → SO","B":"S + O₂ → SO₂","C":"2S + O₂ → 2SO","D":"S + 2O₂ → SO₄","correct":"B","explain":"Sulfur is a non-metal that burns in oxygen to form sulfur dioxide: S + O₂ → SO₂. This equation is already balanced, one sulfur atom and two oxygen atoms on each side. Sulfur dioxide is an acidic gas that contributes to acid rain."},{"stem":"Where does the nitrogen in nitrogen oxides (NOₓ) from a car engine come from?","A":"Nitrogen-containing compounds in the fuel","B":"The nitrogen in the air drawn into the engine","C":"Ammonia in the exhaust pipe","D":"The lubricating oil in the engine","correct":"B","explain":"Petrol and diesel are hydrocarbons, they contain only carbon and hydrogen, so they contain no nitrogen. The N₂ in NOₓ comes from the nitrogen in the air (about 78% N₂) that is drawn into the engine to supply oxygen for combustion. At the very high temperatures inside an engine, N₂ and O₂ react."},{"stem":"What condition is needed for nitrogen and oxygen to react inside an engine?","A":"A catalyst","B":"High pressure","C":"High temperature","D":"Low oxygen concentration","correct":"C","explain":"N₂ has a very strong triple bond (N≡N). At everyday temperatures there is not enough energy to break it, so N₂ and O₂ do not react. Inside a combustion engine, temperatures can exceed 1000 °C, providing enough energy for N₂ + O₂ → 2NO."},{"stem":"Which gas is the main component of natural gas?","A":"Propane","B":"Ethane","C":"Butane","D":"Methane","correct":"D","explain":"Methane (CH₄) is the main component of natural gas. It is a non-renewable fossil fuel found in underground reservoirs, often alongside crude oil. The other three options (propane, ethane, butane) are present only in small amounts in natural gas."},{"stem":"What is the only product when hydrogen burns in oxygen?","A":"Carbon dioxide","B":"Water","C":"Water and carbon dioxide","D":"Hydrogen peroxide","correct":"B","explain":"2H₂ + O₂ → 2H₂O. Because hydrogen contains no carbon, there is no way to produce CO₂, CO or soot. This is the key advantage of hydrogen as a fuel, it produces no carbon-based pollutants or greenhouse gases at the point of use."},{"stem":"What was the main gas in Earth's early atmosphere?","A":"Nitrogen","B":"Oxygen","C":"Carbon dioxide","D":"Methane","correct":"C","explain":"The early atmosphere formed from gases released by volcanic activity. Volcanic gases are mostly CO₂, along with water vapour, nitrogen and small amounts of other gases. Because there were no plants to photosynthesise, CO₂ accumulated to very high levels and there was little or no oxygen."},{"stem":"How did the Earth's oceans form?","A":"Ice from comets melted on the Earth's surface","B":"Hydrogen and oxygen reacted inside volcanoes","C":"Water vapour in the atmosphere condensed as the Earth cooled","D":"Underground water was pumped to the surface by volcanic pressure","correct":"C","explain":"The early atmosphere contained large amounts of water vapour released by volcanoes. As the Earth cooled below 100 °C, this water vapour condensed to liquid water. Torrential rain fell for millions of years, filling the basins of the Earth's surface to form the first oceans."},{"stem":"Which three gases are named on the Edexcel spec as greenhouse gases?","A":"CO₂, oxygen and nitrogen","B":"CO₂, methane and water vapour","C":"CO₂, ozone and sulfur dioxide","D":"Methane, carbon monoxide and water vapour","correct":"B","explain":"The Edexcel GCSE spec (8.24) names carbon dioxide (CO₂), methane (CH₄) and water vapour (H₂O) as greenhouse gases. All three absorb infrared radiation emitted from the Earth's surface and re-emit energy that keeps the Earth warm."},{"stem":"What does the greenhouse effect do?","A":"It lets harmful UV radiation reach the Earth","B":"It absorbs infrared radiation and keeps the Earth warm","C":"It reflects sunlight back into space","D":"It destroys the ozone layer","correct":"B","explain":"Greenhouse gases absorb infrared (heat) radiation emitted from the warmed Earth's surface and re-emit energy in all directions, including back towards the Earth. This keeps the Earth warm, without it, the Earth's surface temperature would be far below 0 °C. The greenhouse effect is a natural process."},{"stem":"Which of the following is a product of cracking a long-chain alkane?","A":"A longer alkane and a noble gas","B":"A shorter alkane and an alkene","C":"Carbon dioxide and water","D":"An alkene and an alcohol","correct":"B","explain":"Cracking breaks large, saturated alkane molecules into smaller, more useful hydrocarbons. The products are always a shorter alkane and at least one alkene (which is unsaturated, containing a C=C double bond). Cracking is a type of thermal decomposition."}];var cur=0,flipped=false;
+var order=QUESTIONS.map(function(_,i){return i;});
+function showCard(idx){
+  cur=idx;
+  var q=QUESTIONS[order[idx]];
+  document.getElementById('card-q').innerHTML=q.stem;
+  document.getElementById('card-ans').innerHTML='<strong>'+q.correct+'.</strong> '+q[q.correct];
+  document.getElementById('card-ex').textContent=q.explain;
+  document.getElementById('counter').textContent=(idx+1)+' / '+QUESTIONS.length;
+  document.getElementById('card').classList.remove('flipped');
+  flipped=false;
+  document.getElementById('btn-prev').disabled=(cur===0);
+  document.getElementById('btn-next').disabled=(cur===order.length-1);
+}
+function flip(){flipped=!flipped;document.getElementById('card').classList.toggle('flipped');}
+document.getElementById('card').addEventListener('click',flip);
+document.getElementById('btn-prev').addEventListener('click',function(){if(cur>0)showCard(cur-1);});
+document.getElementById('btn-next').addEventListener('click',function(){if(cur<order.length-1)showCard(cur+1);});
+document.getElementById('btn-shuffle').addEventListener('click',function(){
+  for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+  showCard(0);
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'){if(cur<order.length-1)showCard(cur+1);}
+  else if(e.key==='ArrowLeft'){if(cur>0)showCard(cur-1);}
+  else if(e.key===' '){e.preventDefault();flip();}
+});
+showCard(0);</script></body></html>

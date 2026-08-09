@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Sudoku — Element Symbols</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10pt; margin: 0 0 12px 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 14px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+
+        .key-box { border: 2px solid #000; border-radius: 4px; padding: 8px 14px; margin-bottom: 14px; }
+        .key-box h3 { font-size: 9pt; font-weight: 700; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 1px; }
+        .key-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px; text-align: center; }
+        .key-symbol { font-size: 13pt; font-weight: 800; line-height: 1.1; }
+        .key-name { font-size: 7pt; color: #555; }
+
+        table.sudoku { border-collapse: collapse; width: 100%; max-width: 490px; margin: 0 auto 8px auto; table-layout: fixed; }
+        table.sudoku td {
+            border: 1px solid #000;
+            height: 46px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 11pt;
+            font-weight: 700;
+            padding: 0;
+        }
+        table.sudoku td.given { background: #e0e0e0; }
+        table.sudoku td.bb { border-bottom: 3px solid #000; }
+        table.sudoku td.br { border-right: 3px solid #000; }
+
+        .footer-note { margin-top: 10px; font-size: 9pt; color: #555; text-align: center; }
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 10px; }
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Chemistry Sudoku</h1>
+    <p class="subtitle">Fill the grid so that every row, every column and every 3×3 box<br>contains each of the nine element symbols exactly once.</p>
+
+    <div class="key-box">
+        <h3>Use only these nine element symbols:</h3>
+        <div class="key-grid">
+            <div><div class="key-symbol">H</div><div class="key-name">Hydrogen</div></div>
+            <div><div class="key-symbol">C</div><div class="key-name">Carbon</div></div>
+            <div><div class="key-symbol">N</div><div class="key-name">Nitrogen</div></div>
+            <div><div class="key-symbol">O</div><div class="key-name">Oxygen</div></div>
+            <div><div class="key-symbol">S</div><div class="key-name">Sulfur</div></div>
+            <div><div class="key-symbol">Na</div><div class="key-name">Sodium</div></div>
+            <div><div class="key-symbol">Fe</div><div class="key-name">Iron</div></div>
+            <div><div class="key-symbol">Cu</div><div class="key-name">Copper</div></div>
+            <div><div class="key-symbol">Au</div><div class="key-name">Gold</div></div>
+        </div>
+    </div>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <table class="sudoku">
+        <!-- Row 1 -->
+        <tr>
+            <td class="given">S</td>
+            <td class="given">N</td>
+            <td class="br"></td>
+            <td></td>
+            <td class="given">Fe</td>
+            <td class="br"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+            <td class="given">Na</td>
+            <td></td>
+            <td class="br"></td>
+            <td class="given">H</td>
+            <td class="given">Au</td>
+            <td class="given br">S</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+            <td class="bb"></td>
+            <td class="given bb">Au</td>
+            <td class="given bb br">Cu</td>
+            <td class="bb"></td>
+            <td class="bb"></td>
+            <td class="bb br"></td>
+            <td class="bb"></td>
+            <td class="given bb">Na</td>
+            <td class="bb"></td>
+        </tr>
+        <!-- Row 4 -->
+        <tr>
+            <td class="given">Cu</td>
+            <td></td>
+            <td class="br"></td>
+            <td></td>
+            <td class="given">Na</td>
+            <td class="br"></td>
+            <td></td>
+            <td></td>
+            <td class="given">N</td>
+        </tr>
+        <!-- Row 5 -->
+        <tr>
+            <td class="given">O</td>
+            <td></td>
+            <td class="br"></td>
+            <td class="given">Cu</td>
+            <td></td>
+            <td class="given br">N</td>
+            <td></td>
+            <td></td>
+            <td class="given">H</td>
+        </tr>
+        <!-- Row 6 -->
+        <tr>
+            <td class="given bb">Fe</td>
+            <td class="bb"></td>
+            <td class="bb br"></td>
+            <td class="bb"></td>
+            <td class="given bb">C</td>
+            <td class="bb br"></td>
+            <td class="bb"></td>
+            <td class="bb"></td>
+            <td class="given bb">Na</td>
+        </tr>
+        <!-- Row 7 -->
+        <tr>
+            <td></td>
+            <td class="given">Na</td>
+            <td class="br"></td>
+            <td></td>
+            <td></td>
+            <td class="br"></td>
+            <td class="given">C</td>
+            <td class="given">Cu</td>
+            <td></td>
+        </tr>
+        <!-- Row 8 -->
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="br"></td>
+            <td class="given">O</td>
+            <td class="given">H</td>
+            <td class="given br">Au</td>
+            <td></td>
+            <td></td>
+            <td class="given">S</td>
+        </tr>
+        <!-- Row 9 -->
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="br"></td>
+            <td></td>
+            <td class="given">Cu</td>
+            <td class="br"></td>
+            <td></td>
+            <td class="given">Fe</td>
+            <td class="given">Au</td>
+        </tr>
+    </table>
+
+    <p class="footer-note">★ Na, Fe, Cu and Au all have symbols from their Latin names: Natrium, Ferrum, Cuprum, Aurum.</p>
+    <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Chemistry Sudoku — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:9.5pt; margin-bottom:14px; color:#444;">Grey cells = original clues &nbsp;|&nbsp; White cells = student answers</p>
+
+        <table class="sudoku">
+            <!-- Row 1: S N O | Na Fe Cu | Au H C -->
+            <tr>
+                <td class="given">S</td>
+                <td class="given">N</td>
+                <td class="br">O</td>
+                <td>Na</td>
+                <td class="given">Fe</td>
+                <td class="br">Cu</td>
+                <td>Au</td>
+                <td>H</td>
+                <td>C</td>
+            </tr>
+            <!-- Row 2: Na Fe C | H Au S | N O Cu -->
+            <tr>
+                <td class="given">Na</td>
+                <td>Fe</td>
+                <td class="br">C</td>
+                <td class="given">H</td>
+                <td class="given">Au</td>
+                <td class="given br">S</td>
+                <td>N</td>
+                <td>O</td>
+                <td>Cu</td>
+            </tr>
+            <!-- Row 3: H Au Cu | N O C | S Na Fe -->
+            <tr>
+                <td class="bb">H</td>
+                <td class="given bb">Au</td>
+                <td class="given bb br">Cu</td>
+                <td class="bb">N</td>
+                <td class="bb">O</td>
+                <td class="bb br">C</td>
+                <td class="bb">S</td>
+                <td class="given bb">Na</td>
+                <td class="bb">Fe</td>
+            </tr>
+            <!-- Row 4: Cu S Au | Fe Na H | O C N -->
+            <tr>
+                <td class="given">Cu</td>
+                <td>S</td>
+                <td class="br">Au</td>
+                <td>Fe</td>
+                <td class="given">Na</td>
+                <td class="br">H</td>
+                <td>O</td>
+                <td>C</td>
+                <td class="given">N</td>
+            </tr>
+            <!-- Row 5: O C Na | Cu S N | Fe Au H -->
+            <tr>
+                <td class="given">O</td>
+                <td>C</td>
+                <td class="br">Na</td>
+                <td class="given">Cu</td>
+                <td>S</td>
+                <td class="given br">N</td>
+                <td>Fe</td>
+                <td>Au</td>
+                <td class="given">H</td>
+            </tr>
+            <!-- Row 6: Fe H N | Au C O | Cu S Na -->
+            <tr>
+                <td class="given bb">Fe</td>
+                <td class="bb">H</td>
+                <td class="bb br">N</td>
+                <td class="bb">Au</td>
+                <td class="given bb">C</td>
+                <td class="bb br">O</td>
+                <td class="bb">Cu</td>
+                <td class="bb">S</td>
+                <td class="given bb">Na</td>
+            </tr>
+            <!-- Row 7: Au Na H | S N Fe | C Cu O -->
+            <tr>
+                <td>Au</td>
+                <td class="given">Na</td>
+                <td class="br">H</td>
+                <td>S</td>
+                <td>N</td>
+                <td class="br">Fe</td>
+                <td class="given">C</td>
+                <td class="given">Cu</td>
+                <td>O</td>
+            </tr>
+            <!-- Row 8: C Cu Fe | O H Au | Na N S -->
+            <tr>
+                <td>C</td>
+                <td>Cu</td>
+                <td class="br">Fe</td>
+                <td class="given">O</td>
+                <td class="given">H</td>
+                <td class="given br">Au</td>
+                <td>Na</td>
+                <td>N</td>
+                <td class="given">S</td>
+            </tr>
+            <!-- Row 9: N O S | C Cu Na | H Fe Au -->
+            <tr>
+                <td>N</td>
+                <td>O</td>
+                <td class="br">S</td>
+                <td>C</td>
+                <td class="given">Cu</td>
+                <td class="br">Na</td>
+                <td>H</td>
+                <td class="given">Fe</td>
+                <td class="given">Au</td>
+            </tr>
+        </table>
+
+        <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

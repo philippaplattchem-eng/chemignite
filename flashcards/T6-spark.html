@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T6 Spark Flashcards</title><style>:root{--pr:#3f51b5;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 10px rgba(63,81,181,.10);--sh2:0 8px 30px rgba(63,81,181,.20)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d1b3e,#1a2f6e 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}
+.hero{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d1b3e 0%,#1a2f6e 45%,#3f51b5 80%,#5c6bc0 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center}
+.hero-icon{font-size:2.8rem;margin-bottom:.6rem;display:block}
+.hero h1{font-size:1.9rem;font-weight:800;margin-bottom:.4rem}
+.hero p{font-size:1rem;opacity:.88;max-width:480px;margin:0 auto}
+.tier-legend{display:flex;max-width:700px;margin:1.8rem auto 0;background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.tier-leg-item{flex:1;padding:.85rem 1rem;text-align:center;border-right:1px solid var(--bdr)}
+.tier-leg-item:last-child{border-right:none}
+.tl-name{font-weight:700;font-size:.9rem;margin-bottom:.15rem}
+.tl-desc{font-size:.78rem;color:var(--txm)}
+.tl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+.tl-dot.spark{background:var(--sp)}.tl-dot.flame{background:var(--fl)}.tl-dot.inferno{background:var(--inf)}
+.topics-section{max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem}
+.topics-heading{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--txm);margin-bottom:1rem}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1}
+.tc-num{display:inline-block;background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;margin-bottom:.55rem}
+.tc-name{font-weight:700;font-size:.95rem;line-height:1.4}
+.tc-btns{display:flex;flex-direction:column;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{display:flex;align-items:center;gap:.45rem;padding:.55rem .9rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.85rem;color:#fff;transition:filter .15s,transform .1s}
+.tc-btn:hover{filter:brightness(1.1);transform:translateX(2px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+main{max-width:720px;margin:0 auto;padding:2rem 1rem 4rem}
+.deck-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.88rem;color:var(--txm)}
+.counter{font-weight:700;font-size:1rem;color:var(--pr)}
+.card-scene{perspective:1000px;width:100%;height:300px;cursor:pointer;margin-bottom:1.5rem}
+.card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .45s ease}
+.card.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;width:100%;height:100%;border-radius:var(--r);padding:1.8rem 2rem;display:flex;flex-direction:column;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.card-front{background:var(--card);border:2px solid var(--bdr);box-shadow:var(--sh2)}
+.card-back{background:#eef1ff;border:2px solid var(--pr);transform:rotateY(180deg);justify-content:flex-start;overflow-y:auto}
+.card-hint{font-size:.73rem;color:var(--txm);margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.06em}
+.card-q{font-size:1.05rem;line-height:1.6;color:var(--tx)}
+.card-ans{font-size:.97rem;font-weight:700;color:var(--pr);margin-bottom:.6rem}
+.card-ex{font-size:.86rem;line-height:1.6;color:#374151}
+.nav-row{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1rem}
+.nav-btn{background:var(--card);border:2px solid var(--bdr);color:var(--tx);padding:.55rem 1.3rem;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s}
+.nav-btn:hover:not(:disabled){border-color:var(--pr);background:#eef1ff}
+.nav-btn:disabled{opacity:.35;cursor:default}
+.btn-shuffle{background:var(--pr);color:#fff;border-color:var(--pr)}
+.btn-shuffle:hover{background:var(--pr-dk);border-color:var(--pr-dk)}
+.flip-hint{text-align:center;font-size:.8rem;color:var(--txm);margin-top:.5rem}
+@media(max-width:700px){.topic-grid{grid-template-columns:repeat(2,1fr)}.card-scene{height:260px}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.card-face{padding:1.2rem 1.3rem}.tier-legend{flex-direction:column}.tier-leg-item{border-right:none;border-bottom:1px solid var(--bdr)}.tier-leg-item:last-child{border-bottom:none}}.hero{position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(92,107,192,.35) 0%,transparent 70%);pointer-events:none}.hero h1,.hero p,.hero-icon,.hero-pills,.hero-sub,.tier-legend{position:relative;z-index:1}</style><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head><body>
+<header class="site-header">
+  <a href="practice.html" class="back-link">&larr; All Topics</a>
+  <h1>T6 &mdash; Groups in the Periodic Table</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+<div class="deck-meta"><span>20 cards &mdash; Spark (Recall)</span><span class="counter" id="counter">1 / 20</span></div>
+<div class="card-scene"><div class="card" id="card">
+  <div class="card-face card-front"><div class="card-hint">Question &mdash; tap to reveal answer</div><div class="card-q" id="card-q"></div></div>
+  <div class="card-face card-back"><div class="card-hint">Answer</div><div class="card-ans" id="card-ans"></div><div class="card-ex" id="card-ex"></div></div>
+</div></div>
+<div class="nav-row">
+  <button class="nav-btn" id="btn-prev">&larr; Prev</button>
+  <button class="nav-btn btn-shuffle" id="btn-shuffle">&#x1F500; Shuffle</button>
+  <button class="nav-btn" id="btn-next">Next &rarr;</button>
+</div>
+<div class="flip-hint">Tap card or press Space to flip &nbsp;&bull;&nbsp; &larr; &rarr; arrow keys to navigate</div>
+</main>
+<script>const QUESTIONS=[{"stem":"Which group in the periodic table contains the alkali metals?","A":"Group 0","B":"Group 1","C":"Group 7","D":"Group 2","correct":"B","explain":"The alkali metals (lithium, sodium, potassium, rubidium, caesium, francium) are in Group 1, the first vertical column on the far left of the periodic table. Group 7 is the halogens, Group 0 is the noble gases."},{"stem":"What is the name given to the elements in Group 7 of the periodic table?","A":"Noble gases","B":"Alkali metals","C":"Halogens","D":"Halides","correct":"C","explain":"Group 7 elements are called halogens (meaning \"salt-formers\"). Halides is the name for the 1− ions formed from halogens (e.g. Cl⁻), a very common confusion that costs marks. Noble gases are Group 0; alkali metals are Group 1."},{"stem":"All Group 1 alkali metals have which of the following in common?","A":"2 electrons in the outer shell","B":"7 electrons in the outer shell","C":"1 electron in the outer shell","D":"A full outer shell","correct":"C","explain":"Every Group 1 atom has exactly 1 electron in its outer shell. This is what places them in Group 1 (the group number = the number of outer-shell electrons). They react by losing this single outer electron to form 1+ ions."},{"stem":"Which two physical properties of the alkali metals does the Edexcel specification ask you to recall?","A":"Hard and high melting point","B":"Soft and relatively low melting point","C":"Hard and low melting point","D":"Soft and high melting point","correct":"B","explain":"Alkali metals are soft (can be cut with a knife) and have relatively low melting points compared with most other metals. This is unlike typical metals such as iron or copper, which are hard and have very high melting points."},{"stem":"When potassium is added to water, what two products are formed?","A":"Potassium oxide and hydrogen","B":"Potassium hydroxide and oxygen","C":"Potassium chloride and hydrogen","D":"Potassium hydroxide and hydrogen","correct":"D","explain":"All Group 1 metals react with water to form a metal hydroxide and hydrogen gas: 2K(s) + 2H₂O(l) → 2KOH(aq) + H₂(g). The hydroxide solution is alkaline. No chloride is formed unless hydrochloric acid is involved."},{"stem":"Which of the following correctly describes what happens when lithium is added to water?","A":"It sinks and reacts vigorously with a lilac flame","B":"It floats and fizzes steadily, gradually disappearing","C":"It floats and ignites immediately with a lilac flame","D":"It sinks and dissolves slowly with no gas produced","correct":"B","explain":"Lithium floats (low density), fizzes steadily as hydrogen is released, and gradually disappears. There is no flame. Potassium (not lithium) is the one that produces a lilac flame. The more vigorous reaction (melting into a ball, possible flame) is sodium and potassium respectively."},{"stem":"What colour is chlorine gas at room temperature?","A":"Orange-brown","B":"Grey-black","C":"Purple","D":"Yellow-green","correct":"D","explain":"Chlorine is a pale yellow-green (or pale green) gas at room temperature. Orange-brown is bromine; grey-black is iodine solid; purple is iodine vapour. These colour-state pairings are frequently tested in 1-mark MCQs."},{"stem":"Which halogen is a liquid at room temperature?","A":"Chlorine","B":"Bromine","C":"Iodine","D":"Fluorine","correct":"B","explain":"Bromine is one of only two elements that are liquid at room temperature (the other is mercury). Chlorine and fluorine are gases; iodine is a solid (grey-black). Bromine's liquid state and red-brown colour are key recall facts."},{"stem":"What is the chemical test for chlorine gas?","A":"Hold limewater in the gas, it turns cloudy","B":"Hold damp blue litmus paper in the gas, it turns red then is bleached white","C":"Hold damp red litmus paper in the gas, it turns blue","D":"Add silver nitrate solution, a white precipitate forms","correct":"B","explain":"The test for chlorine gas is damp blue litmus paper: it turns red (acidic) then is bleached white. The bleaching step is unique to chlorine. Silver nitrate tests for chloride ions in solution (a completely different test). Limewater tests for CO₂."},{"stem":"Going down Group 7 from chlorine to iodine, what happens to reactivity?","A":"Reactivity increases","B":"Reactivity stays the same","C":"Reactivity decreases","D":"Reactivity first increases then decreases","correct":"C","explain":"Reactivity decreases going down Group 7. Fluorine is the most reactive halogen, then chlorine, bromine, iodine. This is the opposite of Group 1 where reactivity increases down the group, a common exam trap."},{"stem":"Why are noble gases placed in Group 0 of the periodic table?","A":"They have no protons","B":"They have a full outer shell and do not react","C":"They are all gases with no electrons","D":"They have zero mass","correct":"B","explain":"Group 0 atoms have a full outer shell of electrons (He: 2, others: 8), so they have no tendency to gain, lose or share electrons. The \"0\" reflects zero electrons available for bonding, not zero electrons overall."},{"stem":"What is the electronic configuration of helium?","A":"2, 8","B":"2, 1","C":"8","D":"2","correct":"D","explain":"Helium has atomic number 2, so its two electrons both sit in the first shell. Configuration: 2. The first shell is full at 2 electrons. Helium is still a noble gas even though it doesn't have 8 outer electrons, a full outer shell (not \"8 outer electrons\") is what matters."},{"stem":"Which of the following best explains why argon is used to fill filament light bulbs?","A":"It is cheap and is denser than air","B":"It is inert and does not react with the hot tungsten filament","C":"It conducts heat away from the filament efficiently","D":"It reflects light and improves brightness","correct":"B","explain":"Argon is inert (chemically unreactive) so it does not react with the hot tungsten filament, allowing it to last longer. The bulb would fail quickly if filled with air, because oxygen in the air would react with the hot tungsten and oxidise it."},{"stem":"Why is helium used in weather balloons instead of hydrogen?","A":"Helium is cheaper than hydrogen","B":"Helium is less dense than hydrogen","C":"Helium is non-flammable, unlike hydrogen","D":"Helium is more dense than air","correct":"C","explain":"Both helium and hydrogen are less dense than air, so both could provide lift. Helium is chosen because it is non-flammable, unlike hydrogen, which is highly flammable and dangerous. The non-flammability property is the key distinguishing factor."},{"stem":"What happens to the boiling points of the noble gases as you go down Group 0?","A":"Boiling points decrease","B":"Boiling points stay the same","C":"Boiling points increase","D":"Boiling points first decrease then increase","correct":"C","explain":"Boiling points increase going down Group 0 (He → Ne → Ar → Kr → Xe → Rn). Bigger atoms have more electrons, so the forces between atoms are stronger, requiring more energy (higher temperature) to boil them."},{"stem":"When sodium reacts with water, which observation shows the solution is alkaline?","A":"The sodium melts into a silver ball","B":"The sodium floats on the surface","C":"Universal indicator in the water turns purple","D":"Bubbles of gas are produced","correct":"C","explain":"Sodium hydroxide (NaOH) is produced, which is an alkali. Universal indicator turns purple (pH 12–14) in the presence of an alkali. Floating and melting are physical observations about the sodium itself; bubbles show hydrogen gas is produced but don't confirm the solution is alkaline."},{"stem":"What ion do halogens form when they react with metals?","A":"1+ ion","B":"2+ ion","C":"2− ion","D":"1− ion","correct":"D","explain":"Halogens have 7 outer-shell electrons and gain one electron to form a full outer shell, producing a 1− halide ion (e.g. Cl⁻, Br⁻, I⁻). Group 1 metals form 1+ ions; Group 2 metals form 2+ ions."},{"stem":"Hydrogen and chlorine react together. What product is formed?","A":"Hydrochloric acid","B":"Chlorine hydride","C":"Hydrogen chloride","D":"Chlorine acid","correct":"C","explain":"When hydrogen reacts with chlorine: H₂(g) + Cl₂(g) → 2HCl(g). The product is hydrogen chloride (a covalent gas). When HCl dissolves in water it forms hydrochloric acid, but the product of the direct reaction of the elements is hydrogen chloride gas, not the acid."},{"stem":"What is observed when a small piece of potassium is added to water?","A":"Steady fizzing, metal floats and gradually disappears, no flame","B":"Very vigorous reaction, metal melts, floats and burns with a lilac flame","C":"No reaction at room temperature","D":"Metal sinks and fizzes gently","correct":"B","explain":"Potassium reacts very vigorously with water. The hydrogen produced ignites immediately, burning with a distinctive lilac flame. The metal melts (low melting point + exothermic reaction) and whizzes across the surface. No reaction and sinking are both wrong, alkali metals float and all react with water."},{"stem":"Which statement correctly describes iodine at room temperature?","A":"It is a yellow-green gas","B":"It is an orange-brown liquid","C":"It is a grey-black solid","D":"It is a colourless gas","correct":"C","explain":"Iodine is a grey-black (almost metallic-looking) solid at room temperature. Yellow-green gas is chlorine; orange-brown liquid is bromine. When iodine is gently warmed it sublimes, giving a striking purple vapour, but at room temperature it is solid."}];var cur=0,flipped=false;
+var order=QUESTIONS.map(function(_,i){return i;});
+function showCard(idx){
+  cur=idx;
+  var q=QUESTIONS[order[idx]];
+  document.getElementById('card-q').innerHTML=q.stem;
+  document.getElementById('card-ans').innerHTML='<strong>'+q.correct+'.</strong> '+q[q.correct];
+  document.getElementById('card-ex').textContent=q.explain;
+  document.getElementById('counter').textContent=(idx+1)+' / '+QUESTIONS.length;
+  document.getElementById('card').classList.remove('flipped');
+  flipped=false;
+  document.getElementById('btn-prev').disabled=(cur===0);
+  document.getElementById('btn-next').disabled=(cur===order.length-1);
+}
+function flip(){flipped=!flipped;document.getElementById('card').classList.toggle('flipped');}
+document.getElementById('card').addEventListener('click',flip);
+document.getElementById('btn-prev').addEventListener('click',function(){if(cur>0)showCard(cur-1);});
+document.getElementById('btn-next').addEventListener('click',function(){if(cur<order.length-1)showCard(cur+1);});
+document.getElementById('btn-shuffle').addEventListener('click',function(){
+  for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}
+  showCard(0);
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'){if(cur<order.length-1)showCard(cur+1);}
+  else if(e.key==='ArrowLeft'){if(cur>0)showCard(cur-1);}
+  else if(e.key===' '){e.preventDefault();flip();}
+});
+showCard(0);</script></body></html>

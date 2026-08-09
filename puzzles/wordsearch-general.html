@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Wordsearch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 18mm 20mm 15mm 20mm;
+            color: #000;
+            background: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24pt;
+            font-weight: 800;
+            margin: 0 0 4px 0;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 10.5pt;
+            margin: 0 0 16px 0;
+            color: #333;
+        }
+
+        .name-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11pt;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+        }
+
+        .grid-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        table.grid {
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        table.grid td {
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 13pt;
+            font-weight: bold;
+            border: 1px solid #bbb;
+            padding: 0;
+        }
+
+        .word-list-section h2 {
+            font-size: 12pt;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .words {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+
+        .word {
+            padding: 5px 8px;
+            border: 1.5px solid #000;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 10.5pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-note {
+            margin-top: 14px;
+            font-size: 9pt;
+            color: #555;
+            text-align: center;
+        }
+
+        /* --- Answer sheet page --- */
+        .answer-page {
+            page-break-before: always;
+            padding-top: 10mm;
+        }
+
+        .answer-page h1 {
+            font-size: 18pt;
+            margin-bottom: 10px;
+        }
+
+        .answer-grid td.found {
+            color: #000;
+            text-decoration: underline;
+            font-weight: 900;
+        }
+
+        .answer-key {
+            margin-top: 16px;
+            font-size: 10pt;
+            columns: 2;
+            column-gap: 30px;
+        }
+
+        .answer-key p {
+            margin: 4px 0;
+        }
+
+        @media print {
+            body { padding: 15mm 18mm 12mm 18mm; }
+        }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+.grid-container{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.grid:not(.answer-grid){user-select:none;-webkit-user-select:none}
+table.grid:not(.answer-grid) td{cursor:pointer;transition:background .08s,color .08s;width:36px;height:36px;font-size:14pt}
+table.grid:not(.answer-grid) td:hover{background:rgba(124,58,237,.15)}
+table.grid:not(.answer-grid) td.selecting{background:rgba(124,58,237,.45);color:#fff}
+table.grid:not(.answer-grid) td.found{background:#059669;color:#fff}
+.words .word.found{text-decoration:line-through;opacity:.5;background:rgba(5,150,105,.1);border-color:#059669;color:#059669}
+.ws-complete{background:linear-gradient(135deg,#059669,#10b981);color:#fff;border-radius:12px;padding:1rem 1.5rem;text-align:center;margin-top:1.5rem;font-size:1.05rem;font-weight:700;animation:ws-pop .4s ease}
+@keyframes ws-pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <!-- ===== PUZZLE PAGE ===== -->
+    <h1>Chemistry Wordsearch</h1>
+    <p class="subtitle">Find all 15 chemistry words hidden in the grid — words run left-to-right or top-to-bottom.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="grid-container">
+        <table class="grid">
+            <tr><td>E</td><td>L</td><td>E</td><td>M</td><td>E</td><td>N</td><td>T</td><td>K</td><td>M</td><td>B</td><td>W</td><td>Q</td><td>I</td><td>Z</td><td>A</td></tr>
+            <tr><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>P</td><td>Q</td><td>R</td><td>I</td><td>V</td><td>X</td><td>Y</td><td>O</td><td>C</td><td>T</td></tr>
+            <tr><td>C</td><td>O</td><td>M</td><td>P</td><td>O</td><td>U</td><td>N</td><td>D</td><td>X</td><td>A</td><td>B</td><td>D</td><td>N</td><td>E</td><td>O</td></tr>
+            <tr><td>S</td><td>T</td><td>W</td><td>Y</td><td>Z</td><td>B</td><td>F</td><td>G</td><td>T</td><td>H</td><td>J</td><td>K</td><td>L</td><td>P</td><td>M</td></tr>
+            <tr><td>M</td><td>O</td><td>L</td><td>E</td><td>C</td><td>U</td><td>L</td><td>E</td><td>U</td><td>Q</td><td>R</td><td>S</td><td>V</td><td>W</td><td>X</td></tr>
+            <tr><td>A</td><td>B</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>R</td><td>P</td><td>R</td><td>O</td><td>T</td><td>O</td><td>N</td></tr>
+            <tr><td>E</td><td>L</td><td>E</td><td>C</td><td>T</td><td>R</td><td>O</td><td>N</td><td>E</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td><td>D</td></tr>
+            <tr><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>M</td><td>P</td><td>Q</td><td>N</td><td>E</td><td>U</td><td>T</td><td>R</td><td>O</td><td>N</td></tr>
+            <tr><td>C</td><td>A</td><td>T</td><td>A</td><td>L</td><td>Y</td><td>S</td><td>T</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>B</td><td>C</td></tr>
+            <tr><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>M</td><td>P</td><td>I</td><td>S</td><td>O</td><td>T</td><td>O</td><td>P</td><td>E</td></tr>
+            <tr><td>R</td><td>E</td><td>A</td><td>C</td><td>T</td><td>I</td><td>O</td><td>N</td><td>Q</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>A</td></tr>
+            <tr><td>B</td><td>C</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>F</td><td>O</td><td>R</td><td>M</td><td>U</td><td>L</td><td>A</td></tr>
+            <tr><td>P</td><td>E</td><td>R</td><td>I</td><td>O</td><td>D</td><td>I</td><td>C</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td></tr>
+            <tr><td>X</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>P</td><td>O</td><td>L</td><td>Y</td><td>M</td><td>E</td><td>R</td></tr>
+            <tr><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>V</td><td>W</td><td>X</td></tr>
+        </table>
+    </div>
+
+    <div class="word-list-section">
+        <h2>Find these 15 words:</h2>
+        <div class="words">
+            <div class="word">ATOM</div>
+            <div class="word">CATALYST</div>
+            <div class="word">COMPOUND</div>
+            <div class="word">ELECTRON</div>
+            <div class="word">ELEMENT</div>
+            <div class="word">FORMULA</div>
+            <div class="word">ION</div>
+            <div class="word">ISOTOPE</div>
+            <div class="word">MIXTURE</div>
+            <div class="word">MOLECULE</div>
+            <div class="word">NEUTRON</div>
+            <div class="word">PERIODIC</div>
+            <div class="word">POLYMER</div>
+            <div class="word">PROTON</div>
+            <div class="word">REACTION</div>
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+
+
+    <!-- ===== ANSWER PAGE (for teacher) ===== -->
+    <div class="answer-page">
+        <h1 style="text-align:center;">Chemistry Wordsearch — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:12px;">Teacher copy — underlined letters show the hidden words.</p>
+
+        <div class="grid-container">
+            <table class="grid answer-grid">
+                <tr>
+                    <td class="found">E</td><td class="found">L</td><td class="found">E</td><td class="found">M</td><td class="found">E</td><td class="found">N</td><td class="found">T</td>
+                    <td>K</td>
+                    <td class="found">M</td><td>B</td><td>W</td><td>Q</td>
+                    <td class="found">I</td><td>Z</td>
+                    <td class="found">A</td>
+                </tr>
+                <tr>
+                    <td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>P</td><td>Q</td><td>R</td>
+                    <td class="found">I</td><td>V</td><td>X</td><td>Y</td>
+                    <td class="found">O</td><td>C</td>
+                    <td class="found">T</td>
+                </tr>
+                <tr>
+                    <td class="found">C</td><td class="found">O</td><td class="found">M</td><td class="found">P</td><td class="found">O</td><td class="found">U</td><td class="found">N</td><td class="found">D</td>
+                    <td class="found">X</td><td>A</td><td>B</td><td>D</td>
+                    <td class="found">N</td><td>E</td>
+                    <td class="found">O</td>
+                </tr>
+                <tr>
+                    <td>S</td><td>T</td><td>W</td><td>Y</td><td>Z</td><td>B</td><td>F</td><td>G</td>
+                    <td class="found">T</td><td>H</td><td>J</td><td>K</td><td>L</td><td>P</td>
+                    <td class="found">M</td>
+                </tr>
+                <tr>
+                    <td class="found">M</td><td class="found">O</td><td class="found">L</td><td class="found">E</td><td class="found">C</td><td class="found">U</td><td class="found">L</td><td class="found">E</td>
+                    <td class="found">U</td><td>Q</td><td>R</td><td>S</td><td>V</td><td>W</td><td>X</td>
+                </tr>
+                <tr>
+                    <td>A</td><td>B</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td>
+                    <td class="found">R</td>
+                    <td class="found">P</td><td class="found">R</td><td class="found">O</td><td class="found">T</td><td class="found">O</td><td class="found">N</td>
+                </tr>
+                <tr>
+                    <td class="found">E</td><td class="found">L</td><td class="found">E</td><td class="found">C</td><td class="found">T</td><td class="found">R</td><td class="found">O</td><td class="found">N</td>
+                    <td class="found">E</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td><td>D</td>
+                </tr>
+                <tr>
+                    <td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>M</td><td>P</td><td>Q</td>
+                    <td class="found">N</td><td class="found">E</td><td class="found">U</td><td class="found">T</td><td class="found">R</td><td class="found">O</td><td class="found">N</td>
+                </tr>
+                <tr>
+                    <td class="found">C</td><td class="found">A</td><td class="found">T</td><td class="found">A</td><td class="found">L</td><td class="found">Y</td><td class="found">S</td><td class="found">T</td>
+                    <td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>B</td><td>C</td>
+                </tr>
+                <tr>
+                    <td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>M</td><td>P</td>
+                    <td class="found">I</td><td class="found">S</td><td class="found">O</td><td class="found">T</td><td class="found">O</td><td class="found">P</td><td class="found">E</td>
+                </tr>
+                <tr>
+                    <td class="found">R</td><td class="found">E</td><td class="found">A</td><td class="found">C</td><td class="found">T</td><td class="found">I</td><td class="found">O</td><td class="found">N</td>
+                    <td>Q</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>A</td>
+                </tr>
+                <tr>
+                    <td>B</td><td>C</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td>
+                    <td class="found">F</td><td class="found">O</td><td class="found">R</td><td class="found">M</td><td class="found">U</td><td class="found">L</td><td class="found">A</td>
+                </tr>
+                <tr>
+                    <td class="found">P</td><td class="found">E</td><td class="found">R</td><td class="found">I</td><td class="found">O</td><td class="found">D</td><td class="found">I</td><td class="found">C</td>
+                    <td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td>
+                </tr>
+                <tr>
+                    <td>X</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td>
+                    <td class="found">P</td><td class="found">O</td><td class="found">L</td><td class="found">Y</td><td class="found">M</td><td class="found">E</td><td class="found">R</td>
+                </tr>
+                <tr>
+                    <td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td>
+                    <td>Q</td><td>R</td><td>S</td><td>T</td><td>V</td><td>W</td><td>X</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="answer-key">
+            <p><strong>ATOM</strong> — col 15, rows 1–4 (↓)</p>
+            <p><strong>CATALYST</strong> — row 9, cols 1–8 (→)</p>
+            <p><strong>COMPOUND</strong> — row 3, cols 1–8 (→)</p>
+            <p><strong>ELECTRON</strong> — row 7, cols 1–8 (→)</p>
+            <p><strong>ELEMENT</strong> — row 1, cols 1–7 (→)</p>
+            <p><strong>FORMULA</strong> — row 12, cols 9–15 (→)</p>
+            <p><strong>ION</strong> — col 13, rows 1–3 (↓)</p>
+            <p><strong>ISOTOPE</strong> — row 10, cols 9–15 (→)</p>
+            <p><strong>MIXTURE</strong> — col 9, rows 1–7 (↓)</p>
+            <p><strong>MOLECULE</strong> — row 5, cols 1–8 (→)</p>
+            <p><strong>NEUTRON</strong> — row 8, cols 9–15 (→)</p>
+            <p><strong>PERIODIC</strong> — row 13, cols 1–8 (→)</p>
+            <p><strong>POLYMER</strong> — row 14, cols 9–15 (→)</p>
+            <p><strong>PROTON</strong> — row 6, cols 10–15 (→)</p>
+            <p><strong>REACTION</strong> — row 11, cols 1–8 (→)</p>
+        </div>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script>
+<script id="ws-interactive">
+(function(){
+  var table=document.querySelector('table.grid:not(.answer-grid)');
+  if(!table||table.dataset.wsInit) return;
+  table.dataset.wsInit='1';
+  var trows=Array.from(table.querySelectorAll('tr')),grid=[];
+  trows.forEach(function(tr,r){
+    grid[r]=[];
+    Array.from(tr.querySelectorAll('td')).forEach(function(td,c){
+      td.dataset.r=r; td.dataset.c=c;
+      grid[r][c]=td.textContent.trim().toUpperCase();
+    });
+  });
+  var wordList=Array.from(document.querySelectorAll('.words .word')).map(function(el){
+    return {text:el.textContent.trim().toUpperCase(),el:el,found:false};
+  });
+  var foundCount=0,selecting=false,startR=-1,startC=-1,activeCells=[];
+  function tdAt(r,c){ return table.querySelector('td[data-r="'+r+'"][data-c="'+c+'"]'); }
+  function clearActive(){ activeCells.forEach(function(td){ td.classList.remove('selecting'); }); activeCells=[]; }
+  function lineCells(r1,c1,r2,c2){
+    if(r1<0) return [];
+    var dr=r2===r1?0:(r2>r1?1:-1),dc=c2===c1?0:(c2>c1?1:-1);
+    if(r1!==r2&&c1!==c2&&Math.abs(r2-r1)!==Math.abs(c2-c1)) return [];
+    var cells=[],r=r1,c=c1,s=0;
+    while(s++<30){ var td=tdAt(r,c); if(td) cells.push(td); if(r===r2&&c===c2) break; r+=dr; c+=dc; }
+    return cells;
+  }
+  function showActive(cells){
+    clearActive();
+    cells.forEach(function(td){ if(!td.classList.contains('found')) td.classList.add('selecting'); });
+    activeCells=cells;
+  }
+  function validate(cells){
+    if(cells.length<2){ clearActive(); return; }
+    var word=cells.map(function(td){ return grid[+td.dataset.r][+td.dataset.c]; }).join('');
+    var rev=word.split('').reverse().join('');
+    var hit=null;
+    for(var i=0;i<wordList.length;i++){ var w=wordList[i]; if(!w.found&&(w.text===word||w.text===rev)){ hit=w; break; } }
+    if(hit){
+      hit.found=true; hit.el.classList.add('found');
+      cells.forEach(function(td){ td.classList.remove('selecting'); td.classList.add('found'); });
+      activeCells=[];
+      if(++foundCount===wordList.length) setTimeout(celebrate,400);
+    } else { clearActive(); }
+  }
+  function celebrate(){
+    var d=document.createElement('div'); d.className='ws-complete';
+    d.innerHTML='&#127881; <strong>Excellent work!</strong> You found all '+wordList.length+' words!';
+    (document.querySelector('.word-list-section')||document.body).appendChild(d);
+  }
+  function tdFromEl(el){ while(el&&el.tagName!=='TD') el=el.parentElement; return (el&&'r' in el.dataset&&table.contains(el))?el:null; }
+  function tdFromXY(x,y){ return tdFromEl(document.elementFromPoint(x,y)); }
+  table.addEventListener('mousedown',function(e){
+    var td=tdFromEl(e.target); if(!td) return;
+    e.preventDefault(); selecting=true; startR=+td.dataset.r; startC=+td.dataset.c; showActive([td]);
+  });
+  document.addEventListener('mousemove',function(e){
+    if(!selecting) return;
+    var td=tdFromXY(e.clientX,e.clientY); if(td) showActive(lineCells(startR,startC,+td.dataset.r,+td.dataset.c));
+  });
+  document.addEventListener('mouseup',function(){
+    if(!selecting) return; selecting=false; validate(activeCells.slice()); startR=startC=-1;
+  });
+  table.addEventListener('touchstart',function(e){
+    var t=e.touches[0],td=tdFromXY(t.clientX,t.clientY); if(!td) return;
+    e.preventDefault(); selecting=true; startR=+td.dataset.r; startC=+td.dataset.c; showActive([td]);
+  },{passive:false});
+  table.addEventListener('touchmove',function(e){
+    if(!selecting) return; e.preventDefault();
+    var t=e.touches[0],td=tdFromXY(t.clientX,t.clientY); if(td) showActive(lineCells(startR,startC,+td.dataset.r,+td.dataset.c));
+  },{passive:false});
+  table.addEventListener('touchend',function(){
+    if(!selecting) return; selecting=false; validate(activeCells.slice()); startR=startC=-1;
+  });
+})();
+</script></body>
+</html>

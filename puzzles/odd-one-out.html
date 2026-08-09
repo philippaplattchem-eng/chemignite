@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Odd One Out</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10.5pt; margin: 0 0 16px 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 16px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 22px; }
+
+        .group { border: 2px solid #000; padding: 8px 10px; }
+        .group-num { font-weight: bold; font-size: 10pt; margin-bottom: 5px; }
+        .words { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 7px; }
+        .word-chip {
+            border: 1.5px solid #000;
+            padding: 4px 8px;
+            font-size: 10.5pt;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .write-line { margin-top: 4px; }
+        .write-label { font-size: 8.5pt; color: #444; }
+        .write-blank { border-bottom: 1px solid #000; min-width: 130px; display: inline-block; height: 14px; margin-left: 3px; }
+
+        .bonus-section { margin-top: 12px; }
+        .bonus-section h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0; }
+
+        .footer-note { margin-top: 10px; font-size: 9pt; color: #555; text-align: center; }
+
+        /* Answer page */
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 10px; }
+        .word-chip.odd { background: #333; color: #fff; }
+        .answer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+        .answer-group { border: 1.5px solid #000; padding: 6px 8px; font-size: 9.5pt; }
+        .answer-group .ans-label { font-weight: bold; font-size: 10pt; }
+        .answer-group .reason { font-size: 9pt; color: #333; margin-top: 2px; }
+
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Odd One Out</h1>
+    <p class="subtitle">Circle the odd one out in each group, then write a reason why it does not belong.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="grid">
+
+        <!-- 1 -->
+        <div class="group">
+            <div class="group-num">1.</div>
+            <div class="words">
+                <div class="word-chip">PROTON</div>
+                <div class="word-chip">NEUTRON</div>
+                <div class="word-chip">ELECTRON</div>
+                <div class="word-chip">PHOTON</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 2 -->
+        <div class="group">
+            <div class="group-num">2.</div>
+            <div class="words">
+                <div class="word-chip">LITHIUM</div>
+                <div class="word-chip">SODIUM</div>
+                <div class="word-chip">POTASSIUM</div>
+                <div class="word-chip">CALCIUM</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 3 -->
+        <div class="group">
+            <div class="group-num">3.</div>
+            <div class="words">
+                <div class="word-chip">FLUORINE</div>
+                <div class="word-chip">CHLORINE</div>
+                <div class="word-chip">BROMINE</div>
+                <div class="word-chip">SULFUR</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 4 -->
+        <div class="group">
+            <div class="group-num">4.</div>
+            <div class="words">
+                <div class="word-chip">METHANE</div>
+                <div class="word-chip">ETHANE</div>
+                <div class="word-chip">PROPANE</div>
+                <div class="word-chip">ETHENE</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 5 -->
+        <div class="group">
+            <div class="group-num">5.</div>
+            <div class="words">
+                <div class="word-chip">HCl</div>
+                <div class="word-chip">H₂SO₄</div>
+                <div class="word-chip">HNO₃</div>
+                <div class="word-chip">NaOH</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 6 -->
+        <div class="group">
+            <div class="group-num">6.</div>
+            <div class="words">
+                <div class="word-chip">COVALENT</div>
+                <div class="word-chip">IONIC</div>
+                <div class="word-chip">METALLIC</div>
+                <div class="word-chip">VAN DER WAALS</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 7 -->
+        <div class="group">
+            <div class="group-num">7.</div>
+            <div class="words">
+                <div class="word-chip">BURETTE</div>
+                <div class="word-chip">PIPETTE</div>
+                <div class="word-chip">MEASURING CYLINDER</div>
+                <div class="word-chip">SPATULA</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+        <!-- 8 -->
+        <div class="group">
+            <div class="group-num">8.</div>
+            <div class="words">
+                <div class="word-chip">OXIDATION</div>
+                <div class="word-chip">REDUCTION</div>
+                <div class="word-chip">NEUTRALISATION</div>
+                <div class="word-chip">FILTRATION</div>
+            </div>
+            <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+            <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+        </div>
+
+    </div>
+
+    <!-- Bonus -->
+    <div class="bonus-section">
+        <h2>★ Bonus — two trickier ones</h2>
+        <div class="grid">
+
+            <!-- 9 -->
+            <div class="group">
+                <div class="group-num">9.</div>
+                <div class="words">
+                    <div class="word-chip">HELIUM</div>
+                    <div class="word-chip">NEON</div>
+                    <div class="word-chip">ARGON</div>
+                    <div class="word-chip">NITROGEN</div>
+                </div>
+                <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+                <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+            </div>
+
+            <!-- 10 -->
+            <div class="group">
+                <div class="group-num">10.</div>
+                <div class="words">
+                    <div class="word-chip">CO₂</div>
+                    <div class="word-chip">H₂O</div>
+                    <div class="word-chip">CO</div>
+                    <div class="word-chip">O₂</div>
+                </div>
+                <div class="write-line"><span class="write-label">Odd one out:</span><span class="write-blank"></span></div>
+                <div class="write-line" style="margin-top:3px;"><span class="write-label">Reason:</span><span class="write-blank" style="min-width:160px;"></span></div>
+            </div>
+
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Odd One Out — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:10px;">Teacher copy — black chip = odd one out. Accept other well-reasoned answers.</p>
+
+        <div class="answer-grid">
+
+            <div class="answer-group">
+                <div class="ans-label">1. <span style="background:#333;color:#fff;padding:2px 6px;">PHOTON</span></div>
+                <div class="reason">Proton, neutron and electron are subatomic particles found in atoms. A photon is a particle of electromagnetic radiation (light), not part of an atom's structure.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">2. <span style="background:#333;color:#fff;padding:2px 6px;">CALCIUM</span></div>
+                <div class="reason">Lithium, sodium and potassium are Group 1 alkali metals. Calcium is a Group 2 metal (alkaline earth metal).</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">3. <span style="background:#333;color:#fff;padding:2px 6px;">SULFUR</span></div>
+                <div class="reason">Fluorine, chlorine and bromine are Group 7 halogens. Sulfur is in Group 6 (Group 16) and is a non-metal but not a halogen.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">4. <span style="background:#333;color:#fff;padding:2px 6px;">ETHENE</span></div>
+                <div class="reason">Methane, ethane and propane are alkanes (general formula C<sub>n</sub>H<sub>2n+2</sub>). Ethene is an alkene (C=C double bond, general formula C<sub>n</sub>H<sub>2n</sub>).</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">5. <span style="background:#333;color:#fff;padding:2px 6px;">NaOH</span></div>
+                <div class="reason">HCl, H₂SO₄ and HNO₃ are acids that donate H⁺ ions in solution. NaOH is an alkali/base — it releases OH⁻ ions and has pH > 7.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">6. <span style="background:#333;color:#fff;padding:2px 6px;">VAN DER WAALS</span></div>
+                <div class="reason">Covalent, ionic and metallic are types of primary (intramolecular) chemical bonds. Van der Waals forces are weak intermolecular forces, not a type of chemical bond.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">7. <span style="background:#333;color:#fff;padding:2px 6px;">SPATULA</span></div>
+                <div class="reason">Burette, pipette and measuring cylinder are all used to measure volumes of liquid accurately. A spatula is used to transfer solid substances — it does not measure volume.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">8. <span style="background:#333;color:#fff;padding:2px 6px;">FILTRATION</span></div>
+                <div class="reason">Oxidation, reduction and neutralisation are chemical reactions (bonds are broken and formed). Filtration is a physical separation technique — no chemical change occurs.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">★ 9. <span style="background:#333;color:#fff;padding:2px 6px;">NITROGEN</span></div>
+                <div class="reason">Helium, neon and argon are noble gases (Group 0/18) with full outer shells. Nitrogen is in Group 5 (Group 15) and forms diatomic molecules (N₂); it is not a noble gas.</div>
+            </div>
+
+            <div class="answer-group">
+                <div class="ans-label">★ 10. <span style="background:#333;color:#fff;padding:2px 6px;">O₂</span></div>
+                <div class="reason">CO₂, H₂O and CO can all be products of combustion of a hydrocarbon fuel. O₂ is a reactant in combustion (it is the oxidant), not a product.</div>
+            </div>
+
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

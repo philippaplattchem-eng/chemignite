@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Connections — Challenge 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        .title-block { text-align: center; margin-bottom: 14px; }
+        h1 { font-size: 24pt; font-weight: 800; margin: 0; letter-spacing: 3px; }
+        .challenge-badge { display: inline-block; border: 3px solid #000; border-radius: 4px; font-size: 9pt; font-weight: 800; letter-spacing: 3px; padding: 2px 10px; margin-top: 4px; }
+        .subtitle { font-size: 10pt; margin: 8px 0 0 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 16px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+        .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+        .tile {
+            border: 2px solid #000; border-radius: 6px;
+            padding: 10px 6px; text-align: center;
+            font-size: 10.5pt; font-weight: 700; letter-spacing: 0.3px;
+            min-height: 46px; display: flex; align-items: center; justify-content: center;
+        }
+        .groups-section h2 { font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0; border-top: 2px solid #000; padding-top: 8px; }
+        .meta-hint { font-size: 9.5pt; margin: 0 0 12px 0; color: #333; font-style: italic; }
+        .group-row { margin-bottom: 12px; }
+        .group-label { font-weight: 700; font-size: 10pt; margin-bottom: 3px; }
+        .connection-line { font-size: 9.5pt; margin-bottom: 5px; }
+        .connection-blank { display: inline-block; border-bottom: 1px solid #000; width: 220px; height: 14px; margin-left: 4px; vertical-align: bottom; }
+        .word-boxes { display: flex; gap: 6px; }
+        .word-box { border: 1.5px solid #000; border-radius: 4px; height: 32px; flex: 1; }
+        .footer-note { margin-top: 14px; font-size: 9pt; color: #555; text-align: center; }
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 6px; }
+        .answer-page .challenge-badge { display: inline-block; border: 3px solid #000; border-radius: 4px; font-size: 9pt; font-weight: 800; letter-spacing: 3px; padding: 2px 10px; margin-bottom: 10px; }
+        .answer-group { margin-bottom: 14px; border: 2px solid #000; border-radius: 6px; padding: 8px 12px; }
+        .answer-group .category { font-size: 10pt; font-weight: 700; margin-bottom: 2px; }
+        .answer-group .difficulty { font-size: 8.5pt; color: #555; margin-bottom: 5px; }
+        .answer-tiles { display: flex; gap: 6px; flex-wrap: wrap; }
+        .answer-tile { border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; font-size: 10pt; font-weight: 600; }
+        .trap-note { font-size: 8pt; font-style: italic; color: #444; margin-top: 4px; }
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <div class="title-block">
+        <h1>Chemistry Connections</h1>
+        <div class="challenge-badge">CHALLENGE</div>
+        <p class="subtitle">Sort the 16 words into four groups of four. Each group shares a hidden connection.<br><strong>Hint:</strong> every single word connects to chemistry in the same way — can you spot the pattern?</p>
+    </div>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="tile-grid">
+        <div class="tile">ATOMIC</div>
+        <div class="tile">COVALENT</div>
+        <div class="tile">KINETIC</div>
+        <div class="tile">CHAIN</div>
+        <div class="tile">MASS</div>
+        <div class="tile">IONIC</div>
+        <div class="tile">POTENTIAL</div>
+        <div class="tile">NUCLEAR</div>
+        <div class="tile">AVOGADRO</div>
+        <div class="tile">HYDROGEN</div>
+        <div class="tile">ACTIVATION</div>
+        <div class="tile">DISPLACEMENT</div>
+        <div class="tile">OXIDATION</div>
+        <div class="tile">METALLIC</div>
+        <div class="tile">THERMAL</div>
+        <div class="tile">REDOX</div>
+    </div>
+
+    <div class="groups-section">
+        <h2>Your Groups</h2>
+        <p class="meta-hint">For each group, write the four words AND the word they all share.</p>
+        <div class="group-row">
+            <div class="group-label">Group 1</div>
+            <div class="connection-line">All precede the word: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+        <div class="group-row">
+            <div class="group-label">Group 2</div>
+            <div class="connection-line">All precede the word: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+        <div class="group-row">
+            <div class="group-label">Group 3</div>
+            <div class="connection-line">All precede the word: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+        <div class="group-row">
+            <div class="group-label">Group 4</div>
+            <div class="connection-line">All precede the word: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — Challenge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1 style="text-align:center;">Connections Challenge 3 — <span style="color:#555;">ANSWERS</span></h1>
+        <div style="text-align:center;"><div class="challenge-badge">CHALLENGE</div></div>
+        <p style="text-align:center; font-size:9pt; margin: 8px 0 12px 0; color:#444;">The meta-connection: every word in the puzzle is an adjective or noun that precedes a common chemistry term. Students must find which 4 words share the same hidden word. Key traps — NUCLEAR and THERMAL could fit in energy OR reaction; OXIDATION could fit number OR reaction; HYDROGEN could look like a reaction type.</p>
+
+        <div class="answer-group">
+            <div class="category">★★☆☆ &nbsp; GROUP 1 — All precede "NUMBER"</div>
+            <div class="difficulty">Atomic number (proton count), mass number (protons + neutrons), Avogadro's number (6.02 × 10²³), oxidation number (charge in a compound).</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">ATOMIC</div>
+                <div class="answer-tile">MASS</div>
+                <div class="answer-tile">AVOGADRO</div>
+                <div class="answer-tile">OXIDATION</div>
+            </div>
+            <div class="trap-note">Trap: OXIDATION seems to belong with reactions (oxidation reaction) — but "oxidation number" is a more precise and specific term.</div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★☆☆ &nbsp; GROUP 2 — All precede "BOND"</div>
+            <div class="difficulty">Covalent bond (shared electrons), ionic bond (electrostatic attraction), hydrogen bond (intermolecular, δ+ H to lone pair), metallic bond (sea of delocalised electrons).</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">COVALENT</div>
+                <div class="answer-tile">IONIC</div>
+                <div class="answer-tile">HYDROGEN</div>
+                <div class="answer-tile">METALLIC</div>
+            </div>
+            <div class="trap-note">Trap: HYDROGEN is an element — students may think it belongs with reaction types (but "hydrogen reaction" is not a standard term).</div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★★☆ &nbsp; GROUP 3 — All precede "ENERGY"</div>
+            <div class="difficulty">Kinetic energy (energy of movement), potential energy (stored energy), activation energy (minimum energy for reaction to occur), thermal energy (heat energy).</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">KINETIC</div>
+                <div class="answer-tile">POTENTIAL</div>
+                <div class="answer-tile">ACTIVATION</div>
+                <div class="answer-tile">THERMAL</div>
+            </div>
+            <div class="trap-note">Trap: THERMAL could go with "THERMAL decomposition" as a reaction type — students must choose between thermal energy and thermal reaction.</div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★★★ &nbsp; GROUP 4 — All precede "REACTION"</div>
+            <div class="difficulty">Chain reaction (free radical propagation), nuclear reaction (fission/fusion), displacement reaction (more reactive metal displaces less reactive), redox reaction (simultaneous oxidation and reduction).</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">CHAIN</div>
+                <div class="answer-tile">NUCLEAR</div>
+                <div class="answer-tile">DISPLACEMENT</div>
+                <div class="answer-tile">REDOX</div>
+            </div>
+            <div class="trap-note">Trap: NUCLEAR could go with "nuclear energy" — the deciding factor is that THERMAL fills the energy slot, leaving NUCLEAR here.</div>
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — Challenge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

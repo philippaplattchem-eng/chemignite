@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Sudoku</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10.5pt; margin: 0 0 6px 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 14px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+        .key-box { text-align: center; margin-bottom: 14px; font-size: 12pt; font-weight: bold; letter-spacing: 3px; border: 2px solid #000; display: inline-block; padding: 6px 18px; }
+        .key-wrap { text-align: center; margin-bottom: 14px; }
+        .key-label { font-size: 10pt; margin-bottom: 4px; color: #333; }
+        .grid-container { display: flex; justify-content: center; margin-bottom: 18px; }
+        table.sudoku { border-collapse: collapse; border: 3px solid #000; }
+        table.sudoku td {
+            width: 44px; height: 44px;
+            text-align: center; vertical-align: middle;
+            font-size: 16pt; font-weight: bold;
+            border: 1px solid #bbb;
+            padding: 0;
+        }
+        /* thick borders for 3x3 boxes */
+        table.sudoku td.bb { border-bottom: 3px solid #000; }
+        table.sudoku td.br { border-right: 3px solid #000; }
+        table.sudoku td.bb.br { border-bottom: 3px solid #000; border-right: 3px solid #000; }
+        td.given { background: #e8e8e8; }
+        td.blank { background: #fff; }
+        .footer-note { margin-top: 14px; font-size: 9pt; color: #555; text-align: center; }
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; margin-bottom: 10px; text-align: center; }
+        table.sudoku td.sol { background: #fff; }
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Chemistry Sudoku</h1>
+    <p class="subtitle">Fill in the grid so every row, column, and 3×3 box contains each of the nine letters exactly once.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="key-wrap">
+        <p class="key-label">Use only these nine letters (one of each per row, column and box):</p>
+        <div class="key-box">R &nbsp; E &nbsp; A &nbsp; C &nbsp; T &nbsp; I &nbsp; O &nbsp; N &nbsp; S</div>
+    </div>
+
+    <div class="grid-container">
+        <table class="sudoku">
+            <!-- Row 1: T A _ I _ _ S _ _ -->
+            <tr>
+                <td class="given">T</td>
+                <td class="given">A</td>
+                <td class="blank br">  </td>
+                <td class="given">I</td>
+                <td class="blank">  </td>
+                <td class="blank br">  </td>
+                <td class="given">S</td>
+                <td class="blank">  </td>
+                <td class="blank">  </td>
+            </tr>
+            <!-- Row 2: _ O _ _ S _ _ C N -->
+            <tr>
+                <td class="blank">  </td>
+                <td class="given">O</td>
+                <td class="blank br">  </td>
+                <td class="blank">  </td>
+                <td class="given">S</td>
+                <td class="blank br">  </td>
+                <td class="blank">  </td>
+                <td class="given">C</td>
+                <td class="given">N</td>
+            </tr>
+            <!-- Row 3: _ _ N _ _ E _ I _ -->
+            <tr>
+                <td class="blank bb">  </td>
+                <td class="blank bb">  </td>
+                <td class="given bb br">N</td>
+                <td class="blank bb">  </td>
+                <td class="blank bb">  </td>
+                <td class="given bb br">E</td>
+                <td class="blank bb">  </td>
+                <td class="given bb">I</td>
+                <td class="blank bb">  </td>
+            </tr>
+            <!-- Row 4: N _ _ _ I _ _ _ A -->
+            <tr>
+                <td class="given">N</td>
+                <td class="blank">  </td>
+                <td class="blank br">  </td>
+                <td class="blank">  </td>
+                <td class="given">I</td>
+                <td class="blank br">  </td>
+                <td class="blank">  </td>
+                <td class="blank">  </td>
+                <td class="given">A</td>
+            </tr>
+            <!-- Row 5: _ E _ N _ _ O _ _ -->
+            <tr>
+                <td class="blank">  </td>
+                <td class="given">E</td>
+                <td class="blank br">  </td>
+                <td class="given">N</td>
+                <td class="blank">  </td>
+                <td class="blank br">  </td>
+                <td class="given">O</td>
+                <td class="blank">  </td>
+                <td class="blank">  </td>
+            </tr>
+            <!-- Row 6: _ _ A _ _ C _ T _ -->
+            <tr>
+                <td class="blank bb">  </td>
+                <td class="blank bb">  </td>
+                <td class="given bb br">A</td>
+                <td class="blank bb">  </td>
+                <td class="blank bb">  </td>
+                <td class="given bb br">C</td>
+                <td class="blank bb">  </td>
+                <td class="given bb">T</td>
+                <td class="blank bb">  </td>
+            </tr>
+            <!-- Row 7: S _ _ T _ _ E _ C -->
+            <tr>
+                <td class="given">S</td>
+                <td class="blank">  </td>
+                <td class="blank br">  </td>
+                <td class="given">T</td>
+                <td class="blank">  </td>
+                <td class="blank br">  </td>
+                <td class="given">E</td>
+                <td class="blank">  </td>
+                <td class="given">C</td>
+            </tr>
+            <!-- Row 8: _ _ O _ R _ _ A _ -->
+            <tr>
+                <td class="blank">  </td>
+                <td class="blank">  </td>
+                <td class="given br">O</td>
+                <td class="blank">  </td>
+                <td class="given">R</td>
+                <td class="blank br">  </td>
+                <td class="blank">  </td>
+                <td class="given">A</td>
+                <td class="blank">  </td>
+            </tr>
+            <!-- Row 9: _ C _ _ _ I _ _ S -->
+            <tr>
+                <td class="blank">  </td>
+                <td class="given">C</td>
+                <td class="blank br">  </td>
+                <td class="blank">  </td>
+                <td class="blank">  </td>
+                <td class="given br">I</td>
+                <td class="blank">  </td>
+                <td class="blank">  </td>
+                <td class="given">S</td>
+            </tr>
+        </table>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — General Knowledge &nbsp;|&nbsp; Hint: the nine letters spell REACTIONS</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Chemistry Sudoku — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:14px;">Teacher copy</p>
+
+        <div class="key-wrap">
+            <div class="key-box">R &nbsp; E &nbsp; A &nbsp; C &nbsp; T &nbsp; I &nbsp; O &nbsp; N &nbsp; S</div>
+        </div>
+
+        <div class="grid-container">
+            <table class="sudoku">
+                <tr>
+                    <td class="given">T</td><td class="given">A</td><td class="sol br">C</td>
+                    <td class="given">I</td><td class="sol">O</td><td class="sol br">N</td>
+                    <td class="given">S</td><td class="sol">R</td><td class="sol">E</td>
+                </tr>
+                <tr>
+                    <td class="sol">I</td><td class="given">O</td><td class="sol br">E</td>
+                    <td class="sol">R</td><td class="given">S</td><td class="sol br">T</td>
+                    <td class="sol">A</td><td class="given">C</td><td class="given">N</td>
+                </tr>
+                <tr>
+                    <td class="sol bb">R</td><td class="sol bb">S</td><td class="given bb br">N</td>
+                    <td class="sol bb">A</td><td class="sol bb">C</td><td class="given bb br">E</td>
+                    <td class="sol bb">T</td><td class="given bb">I</td><td class="sol bb">O</td>
+                </tr>
+                <tr>
+                    <td class="given">N</td><td class="sol">T</td><td class="sol br">S</td>
+                    <td class="sol">O</td><td class="given">I</td><td class="sol br">R</td>
+                    <td class="sol">C</td><td class="sol">E</td><td class="given">A</td>
+                </tr>
+                <tr>
+                    <td class="sol">C</td><td class="given">E</td><td class="sol br">I</td>
+                    <td class="given">N</td><td class="sol">T</td><td class="sol br">A</td>
+                    <td class="given">O</td><td class="sol">S</td><td class="sol">R</td>
+                </tr>
+                <tr>
+                    <td class="sol bb">O</td><td class="sol bb">R</td><td class="given bb br">A</td>
+                    <td class="sol bb">S</td><td class="sol bb">E</td><td class="given bb br">C</td>
+                    <td class="sol bb">N</td><td class="given bb">T</td><td class="sol bb">I</td>
+                </tr>
+                <tr>
+                    <td class="given">S</td><td class="sol">I</td><td class="sol br">R</td>
+                    <td class="given">T</td><td class="sol">A</td><td class="sol br">O</td>
+                    <td class="given">E</td><td class="sol">N</td><td class="given">C</td>
+                </tr>
+                <tr>
+                    <td class="sol">E</td><td class="sol">N</td><td class="given br">O</td>
+                    <td class="sol">C</td><td class="given">R</td><td class="sol br">S</td>
+                    <td class="sol">I</td><td class="given">A</td><td class="sol">T</td>
+                </tr>
+                <tr>
+                    <td class="sol">A</td><td class="given">C</td><td class="sol br">T</td>
+                    <td class="sol">E</td><td class="sol">N</td><td class="given br">I</td>
+                    <td class="sol">R</td><td class="sol">O</td><td class="given">S</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

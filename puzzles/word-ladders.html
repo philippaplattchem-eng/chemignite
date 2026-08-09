@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Word Ladders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10.5pt; margin: 0 0 4px 0; color: #333; }
+        .rules { text-align: center; font-size: 9.5pt; margin: 0 0 14px 0; color: #555; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 16px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+
+        .ladders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 30px; }
+
+        .ladder { border: 2px solid #000; padding: 10px 12px; }
+        .ladder-title { font-weight: bold; font-size: 10.5pt; margin-bottom: 4px; }
+        .ladder-clue { font-size: 9pt; color: #444; font-style: italic; margin-bottom: 10px; border-left: 3px solid #999; padding-left: 6px; }
+
+        .ladder-steps { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .word-row { display: flex; gap: 3px; }
+        .letter-cell {
+            width: 26px; height: 30px;
+            border: 2px solid #000;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13pt; font-weight: bold;
+            background: #e8e8e8;
+        }
+        .letter-cell.blank { background: #fff; }
+        .arrow { font-size: 9pt; color: #666; }
+
+        .bonus { margin-top: 14px; border: 2px solid #000; padding: 10px 12px; }
+        .bonus .ladder-title { font-size: 11pt; }
+
+        .footer-note { margin-top: 12px; font-size: 9pt; color: #555; text-align: center; }
+
+        /* Answer page */
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 12px; }
+        .letter-cell.ans { background: #fff; text-decoration: underline; font-weight: 900; }
+
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Chemistry Word Ladders</h1>
+    <p class="subtitle">Change one letter at a time to turn the top word into the bottom word.</p>
+    <p class="rules">Each step must make a real English word. Only one letter changes per step.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="ladders-grid">
+
+        <!-- Ladder 1: LEAD → GOLD (3 steps) -->
+        <div class="ladder">
+            <div class="ladder-title">1. LEAD → GOLD &nbsp;<span style="font-weight:normal;font-size:9pt;">(3 steps)</span></div>
+            <div class="ladder-clue">Alchemists spent centuries trying to turn lead into gold. We now know it is only possible using nuclear reactions.</div>
+            <div class="ladder-steps">
+                <div class="word-row">
+                    <div class="letter-cell">L</div>
+                    <div class="letter-cell">E</div>
+                    <div class="letter-cell">A</div>
+                    <div class="letter-cell">D</div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell">G</div>
+                    <div class="letter-cell">O</div>
+                    <div class="letter-cell">L</div>
+                    <div class="letter-cell">D</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ladder 2: SALT → BASE (3 steps) -->
+        <div class="ladder">
+            <div class="ladder-title">2. SALT → BASE &nbsp;<span style="font-weight:normal;font-size:9pt;">(3 steps)</span></div>
+            <div class="ladder-clue">In a neutralisation reaction, an acid and a base react together to form a salt and water.</div>
+            <div class="ladder-steps">
+                <div class="word-row">
+                    <div class="letter-cell">S</div>
+                    <div class="letter-cell">A</div>
+                    <div class="letter-cell">L</div>
+                    <div class="letter-cell">T</div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell">B</div>
+                    <div class="letter-cell">A</div>
+                    <div class="letter-cell">S</div>
+                    <div class="letter-cell">E</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ladder 3: BURN → FIRE (4 steps) -->
+        <div class="ladder">
+            <div class="ladder-title">3. BURN → FIRE &nbsp;<span style="font-weight:normal;font-size:9pt;">(4 steps)</span></div>
+            <div class="ladder-clue">Combustion is the rapid reaction of a fuel with oxygen. Complete combustion produces carbon dioxide and water.</div>
+            <div class="ladder-steps">
+                <div class="word-row">
+                    <div class="letter-cell">B</div>
+                    <div class="letter-cell">U</div>
+                    <div class="letter-cell">R</div>
+                    <div class="letter-cell">N</div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell">F</div>
+                    <div class="letter-cell">I</div>
+                    <div class="letter-cell">R</div>
+                    <div class="letter-cell">E</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ladder 4: MOLE → SALT (5 steps) -->
+        <div class="ladder">
+            <div class="ladder-title">4. MOLE → SALT &nbsp;<span style="font-weight:normal;font-size:9pt;">(5 steps)</span></div>
+            <div class="ladder-clue">One mole of any substance contains 6.02 × 10²³ particles. This number is called the Avogadro constant.</div>
+            <div class="ladder-steps">
+                <div class="word-row">
+                    <div class="letter-cell">M</div>
+                    <div class="letter-cell">O</div>
+                    <div class="letter-cell">L</div>
+                    <div class="letter-cell">E</div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                    <div class="letter-cell blank"></div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="word-row">
+                    <div class="letter-cell">S</div>
+                    <div class="letter-cell">A</div>
+                    <div class="letter-cell">L</div>
+                    <div class="letter-cell">T</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bonus ladder -->
+    <div class="bonus">
+        <div class="ladder-title">★ Bonus Challenge — HEAT → COLD &nbsp;<span style="font-weight:normal;font-size:9pt;">(6 steps)</span></div>
+        <div class="ladder-clue">In an exothermic reaction, heat energy is released into the surroundings. In an endothermic reaction, heat energy is absorbed from the surroundings.</div>
+        <div style="display:flex; justify-content:center; margin-top:8px;">
+            <div class="ladder-steps" style="flex-direction:row; align-items:flex-start; gap:8px;">
+                <!-- Show as horizontal sequence with arrows -->
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">H</div><div class="letter-cell">E</div><div class="letter-cell">A</div><div class="letter-cell">T</div></div>
+                    <div style="font-size:8pt;margin-top:2px;">Start</div>
+                </div>
+                <div style="padding-top:8px; font-size:14pt; color:#666;">→</div>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div></div>
+                    <div style="font-size:8pt;margin-top:2px;">Step 1</div>
+                </div>
+                <div style="padding-top:8px; font-size:14pt; color:#666;">→</div>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div></div>
+                    <div style="font-size:8pt;margin-top:2px;">Step 2</div>
+                </div>
+                <div style="padding-top:8px; font-size:14pt; color:#666;">→</div>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div></div>
+                    <div style="font-size:8pt;margin-top:2px;">Step 3</div>
+                </div>
+                <div style="padding-top:8px; font-size:14pt; color:#666;">→</div>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div></div>
+                    <div style="font-size:8pt;margin-top:2px;">Step 4</div>
+                </div>
+                <div style="padding-top:8px; font-size:14pt; color:#666;">→</div>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div><div class="letter-cell blank"></div></div>
+                    <div style="font-size:8pt;margin-top:2px;">Step 5</div>
+                </div>
+                <div style="padding-top:8px; font-size:14pt; color:#666;">→</div>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">C</div><div class="letter-cell">O</div><div class="letter-cell">L</div><div class="letter-cell">D</div></div>
+                    <div style="font-size:8pt;margin-top:2px;">End</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Chemistry Word Ladders — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:12px;">Teacher copy — underlined letters show the change at each step. (Other valid routes may exist.)</p>
+
+        <div class="ladders-grid">
+
+            <!-- Answer 1: LEAD → LOAD → GOAD → GOLD -->
+            <div class="ladder">
+                <div class="ladder-title">1. LEAD → GOLD</div>
+                <div class="ladder-steps">
+                    <div class="word-row">
+                        <div class="letter-cell">L</div><div class="letter-cell">E</div><div class="letter-cell">A</div><div class="letter-cell">D</div>
+                    </div>
+                    <div class="arrow">↓ (E→O)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">L</div><div class="letter-cell ans">O</div><div class="letter-cell">A</div><div class="letter-cell">D</div>
+                    </div>
+                    <div class="arrow">↓ (L→G)</div>
+                    <div class="word-row">
+                        <div class="letter-cell ans">G</div><div class="letter-cell">O</div><div class="letter-cell">A</div><div class="letter-cell">D</div>
+                    </div>
+                    <div class="arrow">↓ (A→L)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">G</div><div class="letter-cell">O</div><div class="letter-cell ans">L</div><div class="letter-cell">D</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Answer 2: SALT → SALE → BALE → BASE -->
+            <div class="ladder">
+                <div class="ladder-title">2. SALT → BASE</div>
+                <div class="ladder-steps">
+                    <div class="word-row">
+                        <div class="letter-cell">S</div><div class="letter-cell">A</div><div class="letter-cell">L</div><div class="letter-cell">T</div>
+                    </div>
+                    <div class="arrow">↓ (T→E)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">S</div><div class="letter-cell">A</div><div class="letter-cell">L</div><div class="letter-cell ans">E</div>
+                    </div>
+                    <div class="arrow">↓ (S→B)</div>
+                    <div class="word-row">
+                        <div class="letter-cell ans">B</div><div class="letter-cell">A</div><div class="letter-cell">L</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (L→S)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">B</div><div class="letter-cell">A</div><div class="letter-cell ans">S</div><div class="letter-cell">E</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Answer 3: BURN → BORN → BORE → FORE → FIRE -->
+            <div class="ladder">
+                <div class="ladder-title">3. BURN → FIRE</div>
+                <div class="ladder-steps">
+                    <div class="word-row">
+                        <div class="letter-cell">B</div><div class="letter-cell">U</div><div class="letter-cell">R</div><div class="letter-cell">N</div>
+                    </div>
+                    <div class="arrow">↓ (U→O)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">B</div><div class="letter-cell ans">O</div><div class="letter-cell">R</div><div class="letter-cell">N</div>
+                    </div>
+                    <div class="arrow">↓ (N→E)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">B</div><div class="letter-cell">O</div><div class="letter-cell">R</div><div class="letter-cell ans">E</div>
+                    </div>
+                    <div class="arrow">↓ (B→F)</div>
+                    <div class="word-row">
+                        <div class="letter-cell ans">F</div><div class="letter-cell">O</div><div class="letter-cell">R</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (O→I)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">F</div><div class="letter-cell ans">I</div><div class="letter-cell">R</div><div class="letter-cell">E</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Answer 4: MOLE → POLE → PALE → TALE → SALE → SALT -->
+            <div class="ladder">
+                <div class="ladder-title">4. MOLE → SALT</div>
+                <div class="ladder-steps">
+                    <div class="word-row">
+                        <div class="letter-cell">M</div><div class="letter-cell">O</div><div class="letter-cell">L</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (M→P)</div>
+                    <div class="word-row">
+                        <div class="letter-cell ans">P</div><div class="letter-cell">O</div><div class="letter-cell">L</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (O→A)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">P</div><div class="letter-cell ans">A</div><div class="letter-cell">L</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (P→T)</div>
+                    <div class="word-row">
+                        <div class="letter-cell ans">T</div><div class="letter-cell">A</div><div class="letter-cell">L</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (T→S)</div>
+                    <div class="word-row">
+                        <div class="letter-cell ans">S</div><div class="letter-cell">A</div><div class="letter-cell">L</div><div class="letter-cell">E</div>
+                    </div>
+                    <div class="arrow">↓ (E→T)</div>
+                    <div class="word-row">
+                        <div class="letter-cell">S</div><div class="letter-cell">A</div><div class="letter-cell">L</div><div class="letter-cell ans">T</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bonus answer: HEAT → HEAL → TEAL → TELL → TOLL → TOLD → COLD -->
+        <div class="bonus" style="margin-top:14px;">
+            <div class="ladder-title">★ Bonus: HEAT → COLD</div>
+            <div style="display:flex; justify-content:center; margin-top:8px; flex-wrap:wrap; gap:6px; align-items:center;">
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">H</div><div class="letter-cell">E</div><div class="letter-cell">A</div><div class="letter-cell">T</div></div>
+                </div>
+                <span style="font-size:10pt; color:#666;">→(T→L)→</span>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">H</div><div class="letter-cell">E</div><div class="letter-cell">A</div><div class="letter-cell ans">L</div></div>
+                </div>
+                <span style="font-size:10pt; color:#666;">→(H→T)→</span>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell ans">T</div><div class="letter-cell">E</div><div class="letter-cell">A</div><div class="letter-cell">L</div></div>
+                </div>
+                <span style="font-size:10pt; color:#666;">→(A→L)→</span>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">T</div><div class="letter-cell">E</div><div class="letter-cell ans">L</div><div class="letter-cell">L</div></div>
+                </div>
+                <span style="font-size:10pt; color:#666;">→(E→O)→</span>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">T</div><div class="letter-cell ans">O</div><div class="letter-cell">L</div><div class="letter-cell">L</div></div>
+                </div>
+                <span style="font-size:10pt; color:#666;">→(L→D)→</span>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell">T</div><div class="letter-cell">O</div><div class="letter-cell">L</div><div class="letter-cell ans">D</div></div>
+                </div>
+                <span style="font-size:10pt; color:#666;">→(T→C)→</span>
+                <div style="text-align:center;">
+                    <div class="word-row"><div class="letter-cell ans">C</div><div class="letter-cell">O</div><div class="letter-cell">L</div><div class="letter-cell">D</div></div>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

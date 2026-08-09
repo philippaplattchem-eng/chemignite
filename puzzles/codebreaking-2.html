@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Code Breaker 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10.5pt; margin: 0 0 12px 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 14px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+        .key-section h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0; }
+        table.key { border-collapse: collapse; width: 100%; margin-bottom: 4px; }
+        table.key td { border: 1.5px solid #000; text-align: center; padding: 3px 0; width: 3.85%; }
+        table.key td.letter { font-size: 11pt; font-weight: bold; background: #e8e8e8; }
+        table.key td.code { font-size: 11pt; height: 26px; }
+        table.key td.code.given { font-weight: bold; }
+        table.key td.code.blank { background: #fff; }
+        .key-note { font-size: 8.5pt; color: #555; margin-bottom: 12px; }
+        .words-section h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0; }
+        .word-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 30px; margin-bottom: 14px; }
+        .word-item { }
+        .word-num { font-weight: bold; font-size: 10pt; }
+        .coded { font-size: 10pt; color: #444; margin: 2px 0; letter-spacing: 1px; }
+        .answer-boxes { display: flex; gap: 3px; margin-top: 3px; }
+        .abox { width: 22px; height: 26px; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-size: 12pt; font-weight: bold; }
+        .bonus-section h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 6px 0; }
+        .bonus-coded { font-size: 10.5pt; color: #333; letter-spacing: 1px; margin-bottom: 6px; }
+        .bonus-boxes { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 4px; }
+        .bonus-gap { width: 10px; }
+        .footer-note { margin-top: 10px; font-size: 9pt; color: #555; text-align: center; }
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 10px; }
+        table.key td.code.ans { font-weight: 900; text-decoration: underline; }
+        .abox.ans { text-decoration: underline; font-weight: 900; }
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Chemistry Code Breaker</h1>
+    <p class="subtitle">Each letter of the alphabet has been replaced by a number. Use the key below (some numbers have been filled in for you) to crack the chemistry words.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <!-- CODE KEY -->
+    <!-- Full cipher: A=14 B=02 C=22 D=17 E=06 F=25 G=11 H=19 I=03 J=24 K=16 L=09 M=01 N=13 O=18 P=07 Q=26 R=21 S=04 T=15 U=10 V=20 W=08 X=23 Y=05 Z=12 -->
+    <!-- Given: A=14, E=06, H=19, I=03, L=09, N=13, O=18, R=21, S=04, T=15 -->
+    <div class="key-section">
+        <h2>The Code Key</h2>
+        <table class="key">
+            <tr>
+                <td class="letter">A</td><td class="letter">B</td><td class="letter">C</td><td class="letter">D</td>
+                <td class="letter">E</td><td class="letter">F</td><td class="letter">G</td><td class="letter">H</td>
+                <td class="letter">I</td><td class="letter">J</td><td class="letter">K</td><td class="letter">L</td><td class="letter">M</td>
+            </tr>
+            <tr>
+                <td class="code given">14</td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code given">06</td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code given">19</td>
+                <td class="code given">03</td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code given">09</td>
+                <td class="code blank"></td>
+            </tr>
+        </table>
+        <table class="key" style="margin-top:4px;">
+            <tr>
+                <td class="letter">N</td><td class="letter">O</td><td class="letter">P</td><td class="letter">Q</td>
+                <td class="letter">R</td><td class="letter">S</td><td class="letter">T</td><td class="letter">U</td>
+                <td class="letter">V</td><td class="letter">W</td><td class="letter">X</td><td class="letter">Y</td><td class="letter">Z</td>
+            </tr>
+            <tr>
+                <td class="code given">13</td>
+                <td class="code given">18</td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code given">21</td>
+                <td class="code given">04</td>
+                <td class="code given">15</td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+                <td class="code blank"></td>
+            </tr>
+        </table>
+        <p class="key-note">Tip: start with the shorter words — each one reveals new letters you can use to crack the harder ones.</p>
+    </div>
+
+    <!-- CODED WORDS -->
+    <div class="words-section">
+        <h2>Crack the Code</h2>
+        <div class="word-grid">
+
+            <!-- 1. LITHIUM: 09–03–15–19–03–10–01 -->
+            <div class="word-item">
+                <div class="word-num">1.</div>
+                <div class="coded">09 – 03 – 15 – 19 – 03 – 10 – 01</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 2. CARBON: 22–14–21–02–18–13 -->
+            <div class="word-item">
+                <div class="word-num">2.</div>
+                <div class="coded">22 – 14 – 21 – 02 – 18 – 13</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 3. PLASMA: 07–09–14–04–01–14 -->
+            <div class="word-item">
+                <div class="word-num">3.</div>
+                <div class="coded">07 – 09 – 14 – 04 – 01 – 14</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 4. DENSITY: 17–06–13–04–03–15–05 -->
+            <div class="word-item">
+                <div class="word-num">4.</div>
+                <div class="coded">17 – 06 – 13 – 04 – 03 – 15 – 05</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 5. FORMULA: 25–18–21–01–10–09–14 -->
+            <div class="word-item">
+                <div class="word-num">5.</div>
+                <div class="coded">25 – 18 – 21 – 01 – 10 – 09 – 14</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 6. OXIDISE: 18–23–03–17–03–04–06 -->
+            <div class="word-item">
+                <div class="word-num">6.</div>
+                <div class="coded">18 – 23 – 03 – 17 – 03 – 04 – 06</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 7. VALENCE: 20–14–09–06–13–22–06 -->
+            <div class="word-item">
+                <div class="word-num">7.</div>
+                <div class="coded">20 – 14 – 09 – 06 – 13 – 22 – 06</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div>
+                </div>
+            </div>
+
+            <!-- 8. DIFFUSION: 17–03–25–25–10–04–03–18–13 -->
+            <div class="word-item">
+                <div class="word-num">8.</div>
+                <div class="coded">17 – 03 – 25 – 25 – 10 – 04 – 03 – 18 – 13</div>
+                <div class="answer-boxes">
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                    <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BONUS -->
+    <!-- MATTER IS MADE OF ATOMS: 01–14–15–15–06–21 / 03–04 / 01–14–17–06 / 18–25 / 14–15–18–01–04 -->
+    <div class="bonus-section">
+        <h2>★ Bonus Challenge — decode the full sentence</h2>
+        <div class="bonus-coded">01–14–15–15–06–21 &nbsp;/&nbsp; 03–04 &nbsp;/&nbsp; 01–14–17–06 &nbsp;/&nbsp; 18–25 &nbsp;/&nbsp; 14–15–18–01–04</div>
+        <div class="bonus-boxes">
+            <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+            <div class="abox"></div><div class="abox"></div><div class="abox"></div>
+            <div class="bonus-gap"></div>
+            <div class="abox"></div><div class="abox"></div>
+            <div class="bonus-gap"></div>
+            <div class="abox"></div><div class="abox"></div><div class="abox"></div><div class="abox"></div>
+            <div class="bonus-gap"></div>
+            <div class="abox"></div><div class="abox"></div>
+            <div class="bonus-gap"></div>
+            <div class="abox"></div><div class="abox"></div><div class="abox"></div><div class="abox"></div><div class="abox"></div>
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Chemistry Code Breaker 2 — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:10px;">Teacher copy — underlined = deduced from context, not given in the key</p>
+
+        <div class="key-section">
+            <h2>Full Code Key</h2>
+            <table class="key">
+                <tr>
+                    <td class="letter">A</td><td class="letter">B</td><td class="letter">C</td><td class="letter">D</td>
+                    <td class="letter">E</td><td class="letter">F</td><td class="letter">G</td><td class="letter">H</td>
+                    <td class="letter">I</td><td class="letter">J</td><td class="letter">K</td><td class="letter">L</td><td class="letter">M</td>
+                </tr>
+                <tr>
+                    <td class="code given">14</td>
+                    <td class="code ans">02</td>
+                    <td class="code ans">22</td>
+                    <td class="code ans">17</td>
+                    <td class="code given">06</td>
+                    <td class="code ans">25</td>
+                    <td class="code ans">11</td>
+                    <td class="code given">19</td>
+                    <td class="code given">03</td>
+                    <td class="code ans">24</td>
+                    <td class="code ans">16</td>
+                    <td class="code given">09</td>
+                    <td class="code ans">01</td>
+                </tr>
+            </table>
+            <table class="key" style="margin-top:4px;">
+                <tr>
+                    <td class="letter">N</td><td class="letter">O</td><td class="letter">P</td><td class="letter">Q</td>
+                    <td class="letter">R</td><td class="letter">S</td><td class="letter">T</td><td class="letter">U</td>
+                    <td class="letter">V</td><td class="letter">W</td><td class="letter">X</td><td class="letter">Y</td><td class="letter">Z</td>
+                </tr>
+                <tr>
+                    <td class="code given">13</td>
+                    <td class="code given">18</td>
+                    <td class="code ans">07</td>
+                    <td class="code ans">26</td>
+                    <td class="code given">21</td>
+                    <td class="code given">04</td>
+                    <td class="code given">15</td>
+                    <td class="code ans">10</td>
+                    <td class="code ans">20</td>
+                    <td class="code ans">08</td>
+                    <td class="code ans">23</td>
+                    <td class="code ans">05</td>
+                    <td class="code ans">12</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="words-section" style="margin-top:14px;">
+            <h2>Answers</h2>
+            <div class="word-grid">
+
+                <div class="word-item">
+                    <div class="word-num">1. LITHIUM</div>
+                    <div class="answer-boxes">
+                        <div class="abox">L</div><div class="abox">I</div><div class="abox">T</div>
+                        <div class="abox">H</div><div class="abox">I</div><div class="abox ans">U</div>
+                        <div class="abox ans">M</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">2. CARBON</div>
+                    <div class="answer-boxes">
+                        <div class="abox ans">C</div><div class="abox">A</div><div class="abox">R</div>
+                        <div class="abox ans">B</div><div class="abox">O</div><div class="abox">N</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">3. PLASMA</div>
+                    <div class="answer-boxes">
+                        <div class="abox ans">P</div><div class="abox">L</div><div class="abox">A</div>
+                        <div class="abox">S</div><div class="abox ans">M</div><div class="abox">A</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">4. DENSITY</div>
+                    <div class="answer-boxes">
+                        <div class="abox ans">D</div><div class="abox">E</div><div class="abox">N</div>
+                        <div class="abox">S</div><div class="abox">I</div><div class="abox">T</div>
+                        <div class="abox ans">Y</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">5. FORMULA</div>
+                    <div class="answer-boxes">
+                        <div class="abox ans">F</div><div class="abox">O</div><div class="abox">R</div>
+                        <div class="abox ans">M</div><div class="abox ans">U</div><div class="abox">L</div>
+                        <div class="abox">A</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">6. OXIDISE</div>
+                    <div class="answer-boxes">
+                        <div class="abox">O</div><div class="abox ans">X</div><div class="abox">I</div>
+                        <div class="abox ans">D</div><div class="abox">I</div><div class="abox">S</div>
+                        <div class="abox">E</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">7. VALENCE</div>
+                    <div class="answer-boxes">
+                        <div class="abox ans">V</div><div class="abox">A</div><div class="abox">L</div>
+                        <div class="abox">E</div><div class="abox">N</div><div class="abox ans">C</div>
+                        <div class="abox">E</div>
+                    </div>
+                </div>
+
+                <div class="word-item">
+                    <div class="word-num">8. DIFFUSION</div>
+                    <div class="answer-boxes">
+                        <div class="abox ans">D</div><div class="abox">I</div><div class="abox ans">F</div>
+                        <div class="abox ans">F</div><div class="abox ans">U</div><div class="abox">S</div>
+                        <div class="abox">I</div><div class="abox">O</div><div class="abox">N</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bonus-section">
+            <h2>★ Bonus: MATTER IS MADE OF ATOMS</h2>
+            <div class="bonus-boxes">
+                <div class="abox ans">M</div><div class="abox">A</div><div class="abox">T</div>
+                <div class="abox">T</div><div class="abox">E</div><div class="abox">R</div>
+                <div class="bonus-gap"></div>
+                <div class="abox">I</div><div class="abox">S</div>
+                <div class="bonus-gap"></div>
+                <div class="abox ans">M</div><div class="abox">A</div><div class="abox ans">D</div><div class="abox">E</div>
+                <div class="bonus-gap"></div>
+                <div class="abox">O</div><div class="abox ans">F</div>
+                <div class="bonus-gap"></div>
+                <div class="abox">A</div><div class="abox">T</div><div class="abox">O</div><div class="abox ans">M</div><div class="abox">S</div>
+            </div>
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

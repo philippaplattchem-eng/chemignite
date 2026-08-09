@@ -1,0 +1,675 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Missing Letters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10.5pt; margin: 0 0 16px 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 16px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; }
+        .item { margin-bottom: 2px; }
+        .clue { font-size: 9.5pt; color: #333; margin-bottom: 3px; }
+        .num { font-weight: bold; font-size: 10pt; margin-right: 3px; }
+        .letters { display: flex; gap: 3px; flex-wrap: nowrap; }
+        .letter-box {
+            width: 24px; height: 28px;
+            border: 2px solid #000;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13pt; font-weight: bold;
+        }
+        .letter-box.blank { background: #fff; }
+        .letter-box.given { background: #e8e8e8; }
+        .footer-note { margin-top: 12px; font-size: 9pt; color: #555; text-align: center; }
+
+        /* Answer page */
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 10px; }
+        .answer-page .letter-box.ans { background: #fff; text-decoration: underline; font-weight: 900; }
+
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Missing Letters</h1>
+    <p class="subtitle">Fill in the missing letters to complete each chemistry word. Use the clue to help you.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="grid">
+
+        <!-- 1: ATOM → _ T _ M -->
+        <div class="item">
+            <div class="clue"><span class="num">1.</span>Smallest particle of an element</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">M</div>
+            </div>
+        </div>
+
+        <!-- 2: ELECTRON → _ L _ _ T R _ N -->
+        <div class="item">
+            <div class="clue"><span class="num">2.</span>Negatively charged subatomic particle</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box given">R</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+            </div>
+        </div>
+
+        <!-- 3: PROTON → P _ _ T _ N -->
+        <div class="item">
+            <div class="clue"><span class="num">3.</span>Positively charged particle in the nucleus</div>
+            <div class="letters">
+                <div class="letter-box given">P</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+            </div>
+        </div>
+
+        <!-- 4: NEUTRON → N _ _ T _ _ N -->
+        <div class="item">
+            <div class="clue"><span class="num">4.</span>Subatomic particle with no charge</div>
+            <div class="letters">
+                <div class="letter-box given">N</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+            </div>
+        </div>
+
+        <!-- 5: ELEMENT → _ L _ M _ N _ -->
+        <div class="item">
+            <div class="clue"><span class="num">5.</span>Pure substance made of one type of atom</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">M</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 6: COMPOUND → _ O M _ _ _ N _ -->
+        <div class="item">
+            <div class="clue"><span class="num">6.</span>Two or more elements chemically combined</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">O</div>
+                <div class="letter-box given">M</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 7: MIXTURE → _ _ X _ _ R _ -->
+        <div class="item">
+            <div class="clue"><span class="num">7.</span>Two or more substances not chemically joined</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">X</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">R</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 8: MOLECULE → M _ L _ _ U _ _ -->
+        <div class="item">
+            <div class="clue"><span class="num">8.</span>Two or more atoms bonded together</div>
+            <div class="letters">
+                <div class="letter-box given">M</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">U</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 9: CATALYST → C _ T _ L _ _ _ -->
+        <div class="item">
+            <div class="clue"><span class="num">9.</span>Speeds up a reaction without being used up</div>
+            <div class="letters">
+                <div class="letter-box given">C</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 10: ISOTOPE → _ S _ T _ _ _ -->
+        <div class="item">
+            <div class="clue"><span class="num">10.</span>Same element, different number of neutrons</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">S</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 11: EQUILIBRIUM → E Q _ _ L _ _ _ _ _ M -->
+        <div class="item">
+            <div class="clue"><span class="num">11.</span>Forward and reverse reactions at equal rates</div>
+            <div class="letters">
+                <div class="letter-box given">E</div>
+                <div class="letter-box given">Q</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">M</div>
+            </div>
+        </div>
+
+        <!-- 12: COVALENT → _ _ V _ L _ N _ -->
+        <div class="item">
+            <div class="clue"><span class="num">12.</span>Bond formed by sharing electrons</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">V</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 13: IONIC → _ O _ _ C -->
+        <div class="item">
+            <div class="clue"><span class="num">13.</span>Bond formed by electron transfer</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">O</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">C</div>
+            </div>
+        </div>
+
+        <!-- 14: OXIDATION → O _ _ D _ T _ _ N -->
+        <div class="item">
+            <div class="clue"><span class="num">14.</span>Loss of electrons (OIL RIG)</div>
+            <div class="letters">
+                <div class="letter-box given">O</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">D</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+            </div>
+        </div>
+
+        <!-- 15: REDUCTION → _ E _ U _ T _ _ N -->
+        <div class="item">
+            <div class="clue"><span class="num">15.</span>Gain of electrons (OIL RIG)</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">E</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">U</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">T</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+            </div>
+        </div>
+
+        <!-- 16: ACID → _ C _ D -->
+        <div class="item">
+            <div class="clue"><span class="num">16.</span>pH less than 7, releases H⁺ ions</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">C</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">D</div>
+            </div>
+        </div>
+
+        <!-- 17: ALKALI → _ _ K _ L _ -->
+        <div class="item">
+            <div class="clue"><span class="num">17.</span>pH greater than 7, releases OH⁻ ions</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">K</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 18: BUFFER → _ U _ _ E _ -->
+        <div class="item">
+            <div class="clue"><span class="num">18.</span>Resists changes in pH</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">U</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">E</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 19: ENTHALPY → _ N _ H _ _ P _ -->
+        <div class="item">
+            <div class="clue"><span class="num">19.</span>Symbol ΔH; heat energy change of a reaction</div>
+            <div class="letters">
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">N</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">H</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">P</div>
+                <div class="letter-box blank"></div>
+            </div>
+        </div>
+
+        <!-- 20: POLYMER → P _ L _ _ _ R -->
+        <div class="item">
+            <div class="clue"><span class="num">20.</span>Large molecule made of repeating monomer units</div>
+            <div class="letters">
+                <div class="letter-box given">P</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">L</div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box blank"></div>
+                <div class="letter-box given">R</div>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Missing Letters — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:14px;">Teacher copy — underlined letters are the missing ones.</p>
+
+        <div class="grid">
+
+            <!-- 1: ATOM -->
+            <div class="item">
+                <div class="clue"><span class="num">1.</span>Smallest particle of an element</div>
+                <div class="letters">
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">M</div>
+                </div>
+            </div>
+
+            <!-- 2: ELECTRON -->
+            <div class="item">
+                <div class="clue"><span class="num">2.</span>Negatively charged subatomic particle</div>
+                <div class="letters">
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box ans">C</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box given">R</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">N</div>
+                </div>
+            </div>
+
+            <!-- 3: PROTON -->
+            <div class="item">
+                <div class="clue"><span class="num">3.</span>Positively charged particle in the nucleus</div>
+                <div class="letters">
+                    <div class="letter-box given">P</div>
+                    <div class="letter-box ans">R</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">N</div>
+                </div>
+            </div>
+
+            <!-- 4: NEUTRON -->
+            <div class="item">
+                <div class="clue"><span class="num">4.</span>Subatomic particle with no charge</div>
+                <div class="letters">
+                    <div class="letter-box given">N</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box ans">U</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">R</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">N</div>
+                </div>
+            </div>
+
+            <!-- 5: ELEMENT -->
+            <div class="item">
+                <div class="clue"><span class="num">5.</span>Pure substance made of one type of atom</div>
+                <div class="letters">
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">M</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">N</div>
+                    <div class="letter-box ans">T</div>
+                </div>
+            </div>
+
+            <!-- 6: COMPOUND -->
+            <div class="item">
+                <div class="clue"><span class="num">6.</span>Two or more elements chemically combined</div>
+                <div class="letters">
+                    <div class="letter-box ans">C</div>
+                    <div class="letter-box given">O</div>
+                    <div class="letter-box given">M</div>
+                    <div class="letter-box ans">P</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box ans">U</div>
+                    <div class="letter-box given">N</div>
+                    <div class="letter-box ans">D</div>
+                </div>
+            </div>
+
+            <!-- 7: MIXTURE -->
+            <div class="item">
+                <div class="clue"><span class="num">7.</span>Two or more substances not chemically joined</div>
+                <div class="letters">
+                    <div class="letter-box ans">M</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">X</div>
+                    <div class="letter-box ans">T</div>
+                    <div class="letter-box ans">U</div>
+                    <div class="letter-box given">R</div>
+                    <div class="letter-box ans">E</div>
+                </div>
+            </div>
+
+            <!-- 8: MOLECULE -->
+            <div class="item">
+                <div class="clue"><span class="num">8.</span>Two or more atoms bonded together</div>
+                <div class="letters">
+                    <div class="letter-box given">M</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box ans">C</div>
+                    <div class="letter-box given">U</div>
+                    <div class="letter-box ans">L</div>
+                    <div class="letter-box ans">E</div>
+                </div>
+            </div>
+
+            <!-- 9: CATALYST -->
+            <div class="item">
+                <div class="clue"><span class="num">9.</span>Speeds up a reaction without being used up</div>
+                <div class="letters">
+                    <div class="letter-box given">C</div>
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">Y</div>
+                    <div class="letter-box ans">S</div>
+                    <div class="letter-box ans">T</div>
+                </div>
+            </div>
+
+            <!-- 10: ISOTOPE -->
+            <div class="item">
+                <div class="clue"><span class="num">10.</span>Same element, different number of neutrons</div>
+                <div class="letters">
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">S</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box ans">P</div>
+                    <div class="letter-box ans">E</div>
+                </div>
+            </div>
+
+            <!-- 11: EQUILIBRIUM -->
+            <div class="item">
+                <div class="clue"><span class="num">11.</span>Forward and reverse reactions at equal rates</div>
+                <div class="letters">
+                    <div class="letter-box given">E</div>
+                    <div class="letter-box given">Q</div>
+                    <div class="letter-box ans">U</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box ans">B</div>
+                    <div class="letter-box ans">R</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box ans">U</div>
+                    <div class="letter-box given">M</div>
+                </div>
+            </div>
+
+            <!-- 12: COVALENT -->
+            <div class="item">
+                <div class="clue"><span class="num">12.</span>Bond formed by sharing electrons</div>
+                <div class="letters">
+                    <div class="letter-box ans">C</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">V</div>
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">N</div>
+                    <div class="letter-box ans">T</div>
+                </div>
+            </div>
+
+            <!-- 13: IONIC -->
+            <div class="item">
+                <div class="clue"><span class="num">13.</span>Bond formed by electron transfer</div>
+                <div class="letters">
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">O</div>
+                    <div class="letter-box ans">N</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">C</div>
+                </div>
+            </div>
+
+            <!-- 14: OXIDATION -->
+            <div class="item">
+                <div class="clue"><span class="num">14.</span>Loss of electrons (OIL RIG)</div>
+                <div class="letters">
+                    <div class="letter-box given">O</div>
+                    <div class="letter-box ans">X</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">D</div>
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">N</div>
+                </div>
+            </div>
+
+            <!-- 15: REDUCTION -->
+            <div class="item">
+                <div class="clue"><span class="num">15.</span>Gain of electrons (OIL RIG)</div>
+                <div class="letters">
+                    <div class="letter-box ans">R</div>
+                    <div class="letter-box given">E</div>
+                    <div class="letter-box ans">D</div>
+                    <div class="letter-box given">U</div>
+                    <div class="letter-box ans">C</div>
+                    <div class="letter-box given">T</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">N</div>
+                </div>
+            </div>
+
+            <!-- 16: ACID -->
+            <div class="item">
+                <div class="clue"><span class="num">16.</span>pH less than 7, releases H⁺ ions</div>
+                <div class="letters">
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">C</div>
+                    <div class="letter-box ans">I</div>
+                    <div class="letter-box given">D</div>
+                </div>
+            </div>
+
+            <!-- 17: ALKALI -->
+            <div class="item">
+                <div class="clue"><span class="num">17.</span>pH greater than 7, releases OH⁻ ions</div>
+                <div class="letters">
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box ans">L</div>
+                    <div class="letter-box given">K</div>
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">I</div>
+                </div>
+            </div>
+
+            <!-- 18: BUFFER -->
+            <div class="item">
+                <div class="clue"><span class="num">18.</span>Resists changes in pH</div>
+                <div class="letters">
+                    <div class="letter-box ans">B</div>
+                    <div class="letter-box given">U</div>
+                    <div class="letter-box ans">F</div>
+                    <div class="letter-box ans">F</div>
+                    <div class="letter-box given">E</div>
+                    <div class="letter-box ans">R</div>
+                </div>
+            </div>
+
+            <!-- 19: ENTHALPY -->
+            <div class="item">
+                <div class="clue"><span class="num">19.</span>Symbol ΔH; heat energy change of a reaction</div>
+                <div class="letters">
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">N</div>
+                    <div class="letter-box ans">T</div>
+                    <div class="letter-box given">H</div>
+                    <div class="letter-box ans">A</div>
+                    <div class="letter-box ans">L</div>
+                    <div class="letter-box given">P</div>
+                    <div class="letter-box ans">Y</div>
+                </div>
+            </div>
+
+            <!-- 20: POLYMER -->
+            <div class="item">
+                <div class="clue"><span class="num">20.</span>Large molecule made of repeating monomer units</div>
+                <div class="letters">
+                    <div class="letter-box given">P</div>
+                    <div class="letter-box ans">O</div>
+                    <div class="letter-box given">L</div>
+                    <div class="letter-box ans">Y</div>
+                    <div class="letter-box ans">M</div>
+                    <div class="letter-box ans">E</div>
+                    <div class="letter-box given">R</div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Connections 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        h1 { text-align: center; font-size: 24pt; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 3px; }
+        .subtitle { text-align: center; font-size: 10pt; margin: 0 0 14px 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 16px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+        .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+        .tile {
+            border: 2px solid #000;
+            border-radius: 6px;
+            padding: 10px 4px;
+            text-align: center;
+            font-size: 10pt;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            min-height: 46px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .groups-section h2 { font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px 0; border-top: 2px solid #000; padding-top: 8px; }
+        .group-row { margin-bottom: 12px; }
+        .group-label { font-weight: 700; font-size: 10pt; margin-bottom: 3px; }
+        .connection-line { font-size: 9.5pt; margin-bottom: 5px; }
+        .connection-blank { display: inline-block; border-bottom: 1px solid #000; width: 220px; height: 14px; margin-left: 4px; vertical-align: bottom; }
+        .word-boxes { display: flex; gap: 6px; }
+        .word-box { border: 1.5px solid #000; border-radius: 4px; height: 32px; flex: 1; }
+        .footer-note { margin-top: 14px; font-size: 9pt; color: #555; text-align: center; }
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 12px; }
+        .answer-group { margin-bottom: 14px; border: 2px solid #000; border-radius: 6px; padding: 8px 12px; }
+        .answer-group .category { font-size: 10pt; font-weight: 700; margin-bottom: 2px; }
+        .answer-group .difficulty { font-size: 8.5pt; color: #555; margin-bottom: 5px; }
+        .answer-tiles { display: flex; gap: 6px; flex-wrap: wrap; }
+        .answer-tile { border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; font-size: 10pt; font-weight: 600; }
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <h1>Chemistry Connections</h1>
+    <p class="subtitle">Sort the 16 words into four groups of four. Each group shares a hidden connection.<br>Write your four groups in the spaces below, and name the connection for each.</p>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="tile-grid">
+        <div class="tile">ALPHA</div>
+        <div class="tile">SOLID</div>
+        <div class="tile">HYDROCHLORIC</div>
+        <div class="tile">TEMPERATURE</div>
+        <div class="tile">BETA</div>
+        <div class="tile">LIQUID</div>
+        <div class="tile">NITRIC</div>
+        <div class="tile">CONCENTRATION</div>
+        <div class="tile">GAMMA</div>
+        <div class="tile">GAS</div>
+        <div class="tile">SULFURIC</div>
+        <div class="tile">CATALYST</div>
+        <div class="tile">NEUTRON</div>
+        <div class="tile">PLASMA</div>
+        <div class="tile">ETHANOIC</div>
+        <div class="tile">PRESSURE</div>
+    </div>
+
+    <div class="groups-section">
+        <h2>Your Groups</h2>
+
+        <div class="group-row">
+            <div class="group-label">Group 1</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes">
+                <div class="word-box"></div><div class="word-box"></div>
+                <div class="word-box"></div><div class="word-box"></div>
+            </div>
+        </div>
+
+        <div class="group-row">
+            <div class="group-label">Group 2</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes">
+                <div class="word-box"></div><div class="word-box"></div>
+                <div class="word-box"></div><div class="word-box"></div>
+            </div>
+        </div>
+
+        <div class="group-row">
+            <div class="group-label">Group 3</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes">
+                <div class="word-box"></div><div class="word-box"></div>
+                <div class="word-box"></div><div class="word-box"></div>
+            </div>
+        </div>
+
+        <div class="group-row">
+            <div class="group-label">Group 4</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes">
+                <div class="word-box"></div><div class="word-box"></div>
+                <div class="word-box"></div><div class="word-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — Theme: Mixed</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1>Connections 3 — <span style="color:#555;">ANSWERS</span></h1>
+        <p style="text-align:center; font-size:10pt; margin-bottom:14px;">Teacher copy — Theme: Mixed<br>
+        <em style="font-size:9pt;">Tricky group: NEUTRON looks like a subatomic particle but here belongs with types of radioactive emission.</em></p>
+
+        <div class="answer-group">
+            <div class="category">★☆☆☆ &nbsp; GROUP 1 — States of matter</div>
+            <div class="difficulty">Solid, liquid and gas are the three common states. Plasma is sometimes called the fourth state — a high-energy ionised gas.</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">SOLID</div>
+                <div class="answer-tile">LIQUID</div>
+                <div class="answer-tile">GAS</div>
+                <div class="answer-tile">PLASMA</div>
+            </div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★☆☆ &nbsp; GROUP 2 — Acids</div>
+            <div class="difficulty">All are acids commonly used in the laboratory. Ethanoic acid is the weak acid found in vinegar; the others are strong acids.</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">HYDROCHLORIC</div>
+                <div class="answer-tile">SULFURIC</div>
+                <div class="answer-tile">NITRIC</div>
+                <div class="answer-tile">ETHANOIC</div>
+            </div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★★☆ &nbsp; GROUP 3 — Factors that affect rate of reaction</div>
+            <div class="difficulty">Increasing temperature, concentration, pressure (for gases) or adding a catalyst all increase the rate of a chemical reaction.</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">TEMPERATURE</div>
+                <div class="answer-tile">CONCENTRATION</div>
+                <div class="answer-tile">CATALYST</div>
+                <div class="answer-tile">PRESSURE</div>
+            </div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★★★ &nbsp; GROUP 4 — Types of radioactive emission</div>
+            <div class="difficulty">Alpha (α) particles, beta (β) particles, gamma (γ) rays and neutron emission are all forms of radioactive decay. Students may expect NEUTRON to be in the subatomic particles group — but there is no such group here!</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">ALPHA</div>
+                <div class="answer-tile">BETA</div>
+                <div class="answer-tile">GAMMA</div>
+                <div class="answer-tile">NEUTRON</div>
+            </div>
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — General Knowledge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>

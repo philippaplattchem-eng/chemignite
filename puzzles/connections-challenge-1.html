@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Connections — Challenge 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 18mm 20mm 15mm 20mm; color: #000; background: #fff; }
+        .title-block { text-align: center; margin-bottom: 14px; }
+        h1 { font-size: 24pt; font-weight: 800; margin: 0; letter-spacing: 3px; }
+        .challenge-badge { display: inline-block; border: 3px solid #000; border-radius: 4px; font-size: 9pt; font-weight: 800; letter-spacing: 3px; padding: 2px 10px; margin-top: 4px; }
+        .subtitle { font-size: 10pt; margin: 8px 0 0 0; color: #333; }
+        .name-line { display: flex; justify-content: space-between; font-size: 11pt; margin-bottom: 16px; border-bottom: 1px solid #000; padding-bottom: 4px; }
+        .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+        .tile {
+            border: 2px solid #000; border-radius: 6px;
+            padding: 10px 6px; text-align: center;
+            font-size: 10.5pt; font-weight: 700; letter-spacing: 0.3px;
+            min-height: 46px; display: flex; align-items: center; justify-content: center;
+        }
+        .groups-section h2 { font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px 0; border-top: 2px solid #000; padding-top: 8px; }
+        .group-row { margin-bottom: 12px; }
+        .group-label { font-weight: 700; font-size: 10pt; margin-bottom: 3px; }
+        .connection-line { font-size: 9.5pt; margin-bottom: 5px; }
+        .connection-blank { display: inline-block; border-bottom: 1px solid #000; width: 220px; height: 14px; margin-left: 4px; vertical-align: bottom; }
+        .word-boxes { display: flex; gap: 6px; }
+        .word-box { border: 1.5px solid #000; border-radius: 4px; height: 32px; flex: 1; }
+        .footer-note { margin-top: 14px; font-size: 9pt; color: #555; text-align: center; }
+        .answer-page { page-break-before: always; padding-top: 10mm; }
+        .answer-page h1 { font-size: 18pt; text-align: center; margin-bottom: 6px; }
+        .answer-page .challenge-badge { display: inline-block; border: 3px solid #000; border-radius: 4px; font-size: 9pt; font-weight: 800; letter-spacing: 3px; padding: 2px 10px; margin-bottom: 10px; }
+        .answer-group { margin-bottom: 14px; border: 2px solid #000; border-radius: 6px; padding: 8px 12px; }
+        .answer-group .category { font-size: 10pt; font-weight: 700; margin-bottom: 2px; }
+        .answer-group .difficulty { font-size: 8.5pt; color: #555; margin-bottom: 5px; }
+        .answer-tiles { display: flex; gap: 6px; flex-wrap: wrap; }
+        .answer-tile { border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; font-size: 10pt; font-weight: 600; }
+        .trap-note { font-size: 8pt; font-style: italic; color: #444; margin-top: 4px; }
+        @media print { body { padding: 15mm 18mm 12mm 18mm; } }
+    </style>
+<style id="screen-styles">
+@media screen{
+body{padding:0 2rem 3rem;max-width:900px;margin:0 auto;background:#f4f6fb}
+h1{font-size:1.8rem;letter-spacing:.02em}
+.subtitle{font-size:.92rem}
+.name-line{display:none}
+.footer-note{margin-top:2rem}
+.answer-page{display:none;page-break-before:auto;padding-top:0}
+.answer-page.revealed{display:block;margin-top:2rem;border-top:2px solid #dde1f0;padding-top:1.5rem}
+.screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:2rem}
+.screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.screen-nav a:hover{background:rgba(255,255,255,.12)}
+.screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+.reveal-wrap{text-align:center;margin:2.5rem 0 1rem}
+.reveal-btn{background:#7c3aed;color:#fff;border:none;padding:.75rem 2.2rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.02em;transition:background .15s,transform .1s;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.reveal-btn:hover{background:#5b21b6;transform:translateY(-1px)}
+.reveal-btn.active{background:#374151;box-shadow:none}
+}
+@media print{.screen-nav,.reveal-wrap{display:none}}
+</style></head>
+<body>
+
+    <div class="title-block">
+        <h1>Chemistry Connections</h1>
+        <div class="challenge-badge">CHALLENGE</div>
+        <p class="subtitle">Sort the 16 words into four groups of four. Each group shares a hidden connection.<br>Some words could seem to fit more than one group — only one arrangement works perfectly.</p>
+    </div>
+
+    <div class="name-line">
+        <span>Name: _______________________________</span>
+        <span>Class: ________________</span>
+        <span>Date: ________________</span>
+    </div>
+
+    <div class="tile-grid">
+        <div class="tile">COMBUSTION</div>
+        <div class="tile">MELTING</div>
+        <div class="tile">FILTRATION</div>
+        <div class="tile">EMPIRICAL</div>
+        <div class="tile">NEUTRALISATION</div>
+        <div class="tile">EVAPORATION</div>
+        <div class="tile">DISTILLATION</div>
+        <div class="tile">MOLECULAR</div>
+        <div class="tile">CONDENSATION</div>
+        <div class="tile">PHOTOSYNTHESIS</div>
+        <div class="tile">CHROMATOGRAPHY</div>
+        <div class="tile">STRUCTURAL</div>
+        <div class="tile">FREEZING</div>
+        <div class="tile">ELECTROLYSIS</div>
+        <div class="tile">CRYSTALLISATION</div>
+        <div class="tile">DISPLAYED</div>
+    </div>
+
+    <div class="groups-section">
+        <h2>Your Groups</h2>
+        <div class="group-row">
+            <div class="group-label">Group 1</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+        <div class="group-row">
+            <div class="group-label">Group 2</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+        <div class="group-row">
+            <div class="group-label">Group 3</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+        <div class="group-row">
+            <div class="group-label">Group 4</div>
+            <div class="connection-line">Connection: <span class="connection-blank"></span></div>
+            <div class="word-boxes"><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div><div class="word-box"></div></div>
+        </div>
+    </div>
+
+    <p class="footer-note">Chemistry Puzzles — Challenge</p>
+
+
+    <!-- ANSWER PAGE -->
+    <div class="answer-page">
+        <h1 style="text-align:center;">Connections Challenge 1 — <span style="color:#555;">ANSWERS</span></h1>
+        <div style="text-align:center;"><div class="challenge-badge">CHALLENGE</div></div>
+        <p style="text-align:center; font-size:9pt; margin: 8px 0 12px 0; color:#444;">Key traps: CONDENSATION looks like it belongs with separation techniques (condensation is a step in distillation) — it is actually exothermic. CRYSTALLISATION looks endothermic — it is actually a separation technique. EVAPORATION is used in separation but here belongs with endothermic processes.</p>
+
+        <div class="answer-group">
+            <div class="category">★★☆☆ &nbsp; GROUP 1 — Exothermic processes</div>
+            <div class="difficulty">All release energy to the surroundings. Combustion and neutralisation are chemical; condensation and freezing are physical phase changes.</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">COMBUSTION</div>
+                <div class="answer-tile">NEUTRALISATION</div>
+                <div class="answer-tile">CONDENSATION</div>
+                <div class="answer-tile">FREEZING</div>
+            </div>
+            <div class="trap-note">Trap: CONDENSATION is also a step in distillation — but the process itself is exothermic (gas → liquid releases energy).</div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★★☆ &nbsp; GROUP 2 — Endothermic processes</div>
+            <div class="difficulty">All absorb energy from the surroundings. Melting and evaporation are physical; photosynthesis and electrolysis are chemical.</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">MELTING</div>
+                <div class="answer-tile">EVAPORATION</div>
+                <div class="answer-tile">PHOTOSYNTHESIS</div>
+                <div class="answer-tile">ELECTROLYSIS</div>
+            </div>
+            <div class="trap-note">Trap: EVAPORATION is used in some separation techniques, but the process itself is endothermic (liquid → gas absorbs energy).</div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★☆☆ &nbsp; GROUP 3 — Separation techniques</div>
+            <div class="difficulty">All are methods used to separate mixtures in the laboratory.</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">FILTRATION</div>
+                <div class="answer-tile">DISTILLATION</div>
+                <div class="answer-tile">CHROMATOGRAPHY</div>
+                <div class="answer-tile">CRYSTALLISATION</div>
+            </div>
+            <div class="trap-note">Trap: CRYSTALLISATION involves solidification (which releases energy) — but its role here is as a separation/purification technique.</div>
+        </div>
+
+        <div class="answer-group">
+            <div class="category">★★★★ &nbsp; GROUP 4 — Types of chemical formula</div>
+            <div class="difficulty">All describe different ways to represent a compound's formula. Empirical (simplest ratio), molecular (actual number of atoms), structural (shows bonds), displayed (shows all bonds and atoms).</div>
+            <div class="answer-tiles">
+                <div class="answer-tile">EMPIRICAL</div>
+                <div class="answer-tile">MOLECULAR</div>
+                <div class="answer-tile">STRUCTURAL</div>
+                <div class="answer-tile">DISPLAYED</div>
+            </div>
+            <div class="trap-note">Trap: these are adjectives used before "formula" — students may not spot the linking word.</div>
+        </div>
+
+        <p class="footer-note">Chemistry Puzzles — Challenge</p>
+    </div>
+
+<script>
+(function(){
+  var nav=document.createElement('div');
+  nav.className='screen-nav';
+  nav.innerHTML='<a href="../puzzles.html">← Back to puzzles</a><span class="screen-nav-title">'+document.title+'</span>';
+  document.body.insertBefore(nav,document.body.firstChild);
+  var ap=document.querySelector('.answer-page');
+  if(ap){
+    var wrap=document.createElement('div');
+    wrap.className='reveal-wrap';
+    var btn=document.createElement('button');
+    btn.className='reveal-btn';
+    btn.textContent='Show answers';
+    btn.addEventListener('click',function(){
+      var shown=ap.classList.toggle('revealed');
+      btn.textContent=shown?'Hide answers':'Show answers';
+      btn.classList.toggle('active',shown);
+      if(shown)ap.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    wrap.appendChild(btn);
+    ap.parentNode.insertBefore(wrap,ap);
+  }
+})();
+</script></body>
+</html>
