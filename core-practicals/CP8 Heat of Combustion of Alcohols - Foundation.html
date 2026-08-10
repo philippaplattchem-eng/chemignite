@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP8 Heat of Combustion of Alcohols (Foundation)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #0277bd; border-bottom: 3px solid #0277bd; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #0277bd; border-bottom: 2px solid #b3d9f2; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #0277bd; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #0277bd; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #0277bd; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #e1f5fe; border-left: 4px solid #0277bd; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #0277bd; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #0277bd; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #e1f5fe; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #0277bd; margin: 3em 0 2em; }
+  .ms-banner { background: #0277bd; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP8 Heat of Combustion of Alcohols</h1>
+<p class="subtitle">Foundation Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Separate Chemistry (1CH0) only, not assessed in Combined Science (1SC0)</p>
+  <p><strong>Paper:</strong> Paper 2</p>
+  <p><strong>Specification:</strong> 9.28C. Core Practical: Investigate the temperature rise produced in a known mass of water by the combustion of the alcohols ethanol, propanol, butanol and pentanol.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical compares the energy released by four alcohols (ethanol, propanol, butanol and pentanol) by burning each one and measuring either how much fuel is needed to raise the temperature of water by a fixed amount, or how much the temperature rises when a fixed mass of fuel is burnt. The 1CH0/2F June 2019 examiner report flagged two repeating errors: candidates confusing "raise the temperature by 30 &deg;C" with "raise the temperature to 30 &deg;C", and confusing the mass of the burner with the mass of alcohol burnt.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. The Aim</h3>
+
+<p>The aim is to compare how much energy is released when ethanol, propanol, butanol and pentanol are burnt. The version usually examined is: <strong>find the mass of each alcohol needed to raise the temperature of 100 cm<sup>3</sup> of water by a fixed amount (e.g. 30 &deg;C)</strong>.</p>
+
+<h3>Part 2. Apparatus</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/10/fig-16-q10ci-1cho-2f-paper-1-june-2019.png" alt="Apparatus for the heat of combustion of alcohols experiment: a spirit burner containing alcohol with a lit wick beneath a metal calorimeter / beaker holding water, with a thermometer in the water">
+  <div class="caption">Apparatus for the heat of combustion experiment, taken from 1CH0/2F June 2019 Figure 16. A spirit burner containing alcohol heats a fixed volume of water in the calorimeter above, with a thermometer recording the temperature rise.</div>
+</div>
+
+<ol>
+  <li><strong>Spirit burner</strong>, small glass container holding the alcohol with a cotton wick.</li>
+  <li><strong>Calorimeter</strong> (a copper or metal beaker), holds the water that the heat is transferred into.</li>
+  <li><strong>Clamp and stand</strong>, holds the calorimeter at a fixed height above the burner.</li>
+  <li><strong>Thermometer</strong>, measures the temperature of the water before and after.</li>
+  <li><strong>Measuring cylinder</strong>, measures 100 cm<sup>3</sup> of water into the calorimeter.</li>
+  <li><strong>Balance</strong>, weighs the spirit burner before and after burning, to the nearest 0.01 g.</li>
+  <li><strong>Heatproof mat</strong>, under the burner for safety.</li>
+</ol>
+
+<h3>Part 3. Method (with mass-loss measurement)</h3>
+
+<ol start="8">
+  <li>Measure 100 cm<sup>3</sup> of water into the calorimeter using a measuring cylinder.</li>
+  <li>Record the <strong>initial temperature</strong> of the water with the thermometer.</li>
+  <li>Weigh the spirit burner (with cap on) and record the <strong>initial mass</strong> of the burner.</li>
+  <li>Place the burner under the calorimeter and light the wick.</li>
+  <li>Stir the water gently. Stop the experiment when the temperature has <strong>risen by 30 &deg;C</strong>.</li>
+  <li>Cap the burner to extinguish the flame and reweigh it, record the <strong>final mass</strong>.</li>
+  <li>Calculate the <strong>mass of alcohol burnt</strong>: mass burnt = initial mass &minus; final mass.</li>
+  <li>Repeat for each of the four alcohols (ethanol, propanol, butanol, pentanol) using a fresh volume of water each time.</li>
+</ol>
+
+<h3>Part 4. Variables</h3>
+
+<table>
+  <tr><th>Variable type</th><th>In this experiment</th></tr>
+  <tr><td>Independent variable</td><td>The alcohol being burnt</td></tr>
+  <tr><td>Dependent variable</td><td>The mass of alcohol burnt</td></tr>
+  <tr><td>Control variables</td><td>Volume / mass of water; distance from wick to calorimeter; same calorimeter; same temperature rise (e.g. 30 &deg;C)</td></tr>
+</table>
+
+<h3>Part 5. Safety</h3>
+
+<ol start="16">
+  <li>Alcohols are <strong>highly flammable</strong>, keep stoppers on burners when not in use.</li>
+  <li>Tie back long hair; remove loose clothing.</li>
+  <li>Use a <strong>heatproof mat</strong> under the apparatus.</li>
+  <li>Wear safety goggles.</li>
+  <li><strong>Cap</strong> the burner to extinguish the flame, never blow it out, as this can spread alcohol vapour.</li>
+  <li>Allow the apparatus to cool before handling.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Which piece of equipment is used to measure the <strong>temperature</strong> of the water in this experiment? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Balance</li>
+  <li>Measuring cylinder</li>
+  <li>Stopwatch</li>
+  <li>Thermometer</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> A student weighs the spirit burner before and after the experiment. The initial mass is 165.20 g. The final mass is 163.10 g. What is the mass of alcohol burnt? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>2.10 g</li>
+  <li>2.20 g</li>
+  <li>165.20 g</li>
+  <li>328.30 g</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> The water starts at 20.0 &deg;C. The student needs to raise the temperature of the water by 30 &deg;C. At what temperature should the student stop the experiment? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>10 &deg;C</li>
+  <li>30 &deg;C</li>
+  <li>50 &deg;C</li>
+  <li>60 &deg;C</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> A student carries out the heat of combustion experiment using ethanol, propanol, butanol and pentanol, keeping all conditions the same. What general trend is seen in the mass of alcohol burnt to give the same temperature rise? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The mass burnt increases as the number of carbon atoms increases</li>
+  <li>The mass burnt decreases as the number of carbon atoms increases</li>
+  <li>The mass burnt stays the same for all four alcohols</li>
+  <li>The mass burnt is highest for propanol</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> The temperature rise measured in the experiment is always less than the theoretical value. What is the main reason for this? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The alcohol does not all burn</li>
+  <li>The thermometer is broken</li>
+  <li>Heat is lost to the surroundings, so not all the energy from the flame heats the water</li>
+  <li>The water is too cold to be heated</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates how much energy is released when different alcohols are burnt. The student uses a spirit burner to heat 100 cm<sup>3</sup> of water in a calorimeter. The student records the mass of the burner before and after the experiment, and the temperature of the water before and after.</p>
+<p>The student's results are shown in <strong>Table 1</strong>.</p>
+<table>
+  <tr><th>Alcohol</th><th>Number of C atoms</th><th>Initial mass of burner / g</th><th>Final mass of burner / g</th><th>Mass of alcohol burnt / g</th><th>Initial water temperature / &deg;C</th><th>Final water temperature / &deg;C</th><th>Temperature rise / &deg;C</th></tr>
+  <tr><td>Ethanol</td><td>2</td><td>165.20</td><td>163.10</td><td>2.10</td><td>20.0</td><td>50.0</td><td>30.0</td></tr>
+  <tr><td>Propanol</td><td>3</td><td>158.40</td><td>156.80</td><td>1.60</td><td>20.0</td><td>50.0</td><td>30.0</td></tr>
+  <tr><td>Butanol</td><td>4</td><td>172.55</td><td>171.25</td><td></td><td>20.0</td><td>50.0</td><td>30.0</td></tr>
+  <tr><td>Pentanol</td><td>5</td><td>169.80</td><td>168.70</td><td>1.10</td><td>20.0</td><td>50.0</td><td>30.0</td></tr>
+</table>
+<p class="center"><strong>Table 1</strong></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Name a piece of equipment from the apparatus list that is used to:</p>
+<p>(i) measure 100 cm<sup>3</sup> of water into the calorimeter. <span class="marks">[1 mark]</span></p>
+<p>(ii) measure the mass of the spirit burner. <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Use the data in <strong>Table 1</strong> to calculate the mass of <strong>butanol</strong> burnt. Give your answer to 2 decimal places. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Describe the trend shown by the data in Table 1 in the mass of alcohol burnt as the number of carbon atoms in the alcohol increases. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> The student stopped the experiment when the temperature of the water had <strong>risen by 30 &deg;C</strong>, not when the temperature of the water had reached 30 &deg;C.</p>
+<p>(i) State at what temperature the student should have stopped the experiment, given that the water started at 20.0 &deg;C. <span class="marks">[1 mark]</span></p>
+<p>(ii) Explain why the value of 30 &deg;C is the <strong>temperature rise</strong>, not the final temperature. <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> The student plotted a graph of the mass of alcohol burnt (y-axis) against the number of carbon atoms (x-axis). State two features that the student should include on the graph for it to score full marks. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> Give <strong>two</strong> safety precautions that the student should take when carrying out this experiment. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(g)</strong> The experimental values for the energy released are always lower than the theoretical (data book) values.</p>
+<p>(i) Suggest <strong>one</strong> reason for this. <span class="marks">[1 mark]</span></p>
+<p>(ii) Suggest <strong>one</strong> way the student could improve the experiment to get a more accurate temperature rise. <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(h)</strong> Why should the student cap the spirit burner (rather than blow out the flame) when the experiment is finished? <span class="marks">[1 mark]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Equipment for measuring temperature.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>D.</strong> Thermometer <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. A balance measures mass, not temperature.</p>
+<p>B is incorrect. A measuring cylinder measures volume.</p>
+<p>C is incorrect. A stopwatch measures time.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Match the quantity to the right instrument: mass &rarr; balance, volume &rarr; measuring cylinder / pipette / burette, temperature &rarr; thermometer (or temperature probe), time &rarr; stopwatch. A "temperature probe" is also accepted as a modern equivalent.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Mass of alcohol burnt.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> 2.10 g <span class="marks-inline">[1 mark]</span></p>
+<p>Working: 165.20 &minus; 163.10 = 2.10 g</p>
+<p>B is incorrect. 2.20 would come from a calculation slip.</p>
+<p>C is incorrect. 165.20 is the whole burner mass before, not the mass of alcohol burnt.</p>
+<p>D is incorrect. 328.30 would come from adding the two masses instead of subtracting.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the classic "mass of burner" vs "mass of alcohol" confusion flagged in the 1CH0/2F June 2019 examiner report. The balance weighs the <strong>whole burner</strong> (metal + wick + cap + alcohol inside), so the mass of <strong>alcohol burnt</strong> is the <em>difference</em> between the readings before and after, not either reading on its own.</p>
+<p>Always write: mass of alcohol burnt = initial mass &minus; final mass.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> At what temperature to stop.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> 50 &deg;C <span class="marks-inline">[1 mark]</span></p>
+<p>The water starts at 20.0 &deg;C and needs to rise by 30 &deg;C, so the final temperature is 20.0 + 30 = 50.0 &deg;C.</p>
+<p>A is incorrect. 10 &deg;C is below the starting temperature, impossible if the water is being heated.</p>
+<p>B is incorrect. 30 &deg;C is the temperature <em>rise</em>, not the final temperature. The water would only be 10 &deg;C above its starting point at this thermometer reading.</p>
+<p>D is incorrect. 60 &deg;C would be a 40 &deg;C rise, not 30.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/2F June 2019 examiner report specifically flagged this as a top mark loser: <em>"many candidates answered by stating 'stop heating the water once it had reached 30 &deg;C', as opposed to a temperature increase of 30 &deg;C."</em></p>
+<p>Use the formula: <strong>final temperature = starting temperature + temperature rise</strong>. Here, 20 + 30 = 50 &deg;C.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Trend in mass burnt as carbon number increases.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> The mass burnt decreases as the number of carbon atoms increases <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The longer-chain alcohols release more energy per gram, so less mass is needed for the same temperature rise, mass burnt decreases.</p>
+<p>C is incorrect. The mass burnt clearly changes from one alcohol to the next.</p>
+<p>D is incorrect. The trend is monotonic (ethanol &gt; propanol &gt; butanol &gt; pentanol), not peaked at propanol.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Longer-chain alcohols have more C&ndash;C and C&ndash;H bonds, so each gram of the alcohol releases more energy when burnt. Less mass is therefore needed to produce the same temperature rise in the same volume of water.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Why the temperature rise is too low.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Heat is lost to the surroundings, so not all the energy from the flame heats the water <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Incomplete combustion is a smaller effect than heat loss.</p>
+<p>B is incorrect. A working thermometer gives a reliable reading; the problem is that less energy actually reaches the water.</p>
+<p>D is incorrect. Starting temperature does not affect the magnitude of the rise.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>In a school version of this experiment, only about 20&ndash;40% of the heat from the flame actually heats the water. The rest is lost to: the air (convection), the metal calorimeter and clamp (conduction), and the surroundings (radiation). Using a lid and a draught shield reduces these losses significantly.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a)(i).</strong> Equipment for measuring 100 cm<sup>3</sup> of water. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The correct piece of equipment is:</p>
+<ul>
+  <li>Measuring cylinder <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Burette" or "pipette" is also accepted. Both measure volume accurately, although a measuring cylinder is the standard choice at this scale.</p>
+<p>"Beaker" is not accepted. Beakers do not have accurate graduations.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>For 100 cm<sup>3</sup> of water, a 100 cm<sup>3</sup> measuring cylinder is the standard choice. Pipettes are usually used for smaller, precise volumes (25 cm<sup>3</sup>), and burettes are reserved for titrations. A beaker with rough graduations is too inaccurate.</p>
+</div>
+
+<div class="qref">
+<strong>Question (a)(ii).</strong> Equipment for measuring the mass of the burner. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The correct piece of equipment is:</p>
+<ul>
+  <li>Balance / mass balance / scales <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Ruler" is not accepted. Rulers measure length.</p>
+<p>"Measuring cylinder" is not accepted. That measures volume.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Mass &rarr; balance. The balance used should read to at least 0.01 g (2 decimal places) so that the mass burnt (typically about 1&ndash;2 g) can be measured with sensible precision.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Mass of butanol burnt. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the mass of butanol burnt:</p>
+
+<ul>
+  <li>Write down the formula:
+    <p class="center">mass burnt = initial mass &minus; final mass</p>
+  </li>
+  <li>Read the values from Table 1:
+    <p class="center">initial mass = 172.55 g, final mass = 171.25 g</p>
+  </li>
+  <li>Substitute the values:
+    <p class="center">mass burnt = 172.55 &minus; 171.25</p>
+    <p class="center"><span class="working">mass burnt = 1.30</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the answer with the correct unit, to 2 decimal places:
+    <p class="center"><span class="final">mass of butanol burnt = 1.30 g</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the correct subtraction (172.55 &minus; 171.25 = 1.30).</p>
+<p>1 mark for the final answer with correct unit g, to 2 decimal places.</p>
+<p>"1.30" with no unit is not accepted for the second mark.</p>
+<p>"1.3" with the unit is accepted with a slight penalty (loses the 2-decimal-place precision mark in some schemes; here we accept it).</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The mass burnt is always <strong>initial minus final</strong> because the burner gets <em>lighter</em> as alcohol is burnt away. Match the decimal places of the data in the table, if the data is to 2 decimal places, give your answer to 2 decimal places.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Trend in mass burnt with carbon number. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The trend description:</p>
+<ul>
+  <li>The mass of alcohol burnt <strong>decreases</strong> as the number of carbon atoms increases <span class="marks-inline">[1 mark]</span></li>
+  <li>Supported by reference to data: e.g. ethanol (2 C) needs 2.10 g, pentanol (5 C) needs only 1.10 g (or any other valid data comparison) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"It goes down" alone is acceptable for the first mark but is improved by stating the direction explicitly (decreases).</p>
+<p>"The mass changes" without a direction is not accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"Describe the trend" answers need a <strong>direction</strong> (increases / decreases) and ideally a <strong>data reference</strong> (e.g. specific values from the table). At GCSE, a model trend answer has two parts: a sentence about the trend, plus a sentence picking out specific numbers as evidence.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(i).</strong> Stop temperature. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The correct stop temperature is:</p>
+<ul>
+  <li>50.0 &deg;C / 50 &deg;C <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"30 &deg;C" is not accepted. That is the temperature rise, not the final temperature.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Starting temperature 20.0 &deg;C plus a rise of 30 &deg;C gives a final temperature of 50.0 &deg;C. Look at the "Final water temperature" column in Table 1, it's 50.0 &deg;C for every alcohol, which confirms this.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(ii).</strong> Why 30 &deg;C is the rise, not the final temperature. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> sensible explanation from:</p>
+<ul>
+  <li>The water starts at 20 &deg;C, so a final reading of 30 &deg;C would only be a 10 &deg;C rise <span class="marks-inline">[1 mark]</span></li>
+  <li>The 30 &deg;C is the size of the temperature change / increase, not where the reading ends up</li>
+  <li>If the experiment was stopped at 30 &deg;C, the water would not have absorbed enough energy for a fair comparison between alcohols</li>
+</ul>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Words to look out for in the question:</p>
+<ul>
+  <li>"rise <strong>by</strong> 30 &deg;C" or "increase <strong>by</strong> 30 &deg;C" &rarr; the rise amount</li>
+  <li>"<strong>reach</strong> 30 &deg;C" or "<strong>to</strong> 30 &deg;C" &rarr; the final temperature</li>
+</ul>
+<p>This is one of the most common slip-ups in the whole spec, per the 1CH0/2F June 2019 examiner report.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Two features of a good graph. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> features from (1 mark each):</p>
+<ul>
+  <li>Axes labelled with the quantity and units (e.g. "mass of alcohol burnt / g" and "number of carbon atoms")</li>
+  <li>Linear scale that uses more than half of the grid (no big empty space)</li>
+  <li>Points plotted accurately (e.g. small crosses) to &plusmn; half a square</li>
+  <li>A smooth curve / line of best fit through the points</li>
+  <li>A clear title for the graph</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Make it neat" or "use pencil" alone are not accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The reliable two-mark answer: <strong>axes labelled with units</strong> and <strong>line/curve of best fit drawn smoothly through the points</strong>. These two features cover most mark schemes.</p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Two safety precautions. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark each):</p>
+<ul>
+  <li>Wear safety goggles / eye protection</li>
+  <li>Tie back long hair</li>
+  <li>Use a heatproof mat under the burner</li>
+  <li>Cap the burner to extinguish (never blow out)</li>
+  <li>Allow apparatus to cool before handling</li>
+  <li>Keep stoppers on alcohol burners when not in use (alcohols are flammable)</li>
+  <li>Refill burners away from any open flame</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Be careful" is not accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The two safest answers for this experiment: <strong>wear safety goggles</strong> (eye protection from sudden flares and hot water splashes) and <strong>tie back long hair</strong> (open flame is the main hazard).</p>
+</div>
+
+<div class="qref">
+<strong>Question (g)(i).</strong> Why experimental value is lower than data book. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>Heat is lost to the surroundings (air, beaker walls) <span class="marks-inline">[1 mark]</span></li>
+  <li>Not all of the energy from the burning alcohol goes into the water</li>
+  <li>Incomplete combustion of the alcohol (soot / yellow flame) means less energy is released</li>
+  <li>Some alcohol evaporates from the wick without burning</li>
+</ul>
+<p>"The thermometer is wrong" is not accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The most accepted answer is <strong>heat lost to the surroundings</strong>. Most of the energy from the flame heats the air, the calorimeter walls and the clamp, not just the water. Less than half of the energy typically reaches the water in a school experiment.</p>
+</div>
+
+<div class="qref">
+<strong>Question (g)(ii).</strong> One improvement. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> sensible improvement from:</p>
+<ul>
+  <li>Use a <strong>lid</strong> on the calorimeter <span class="marks-inline">[1 mark]</span></li>
+  <li>Use a <strong>draught shield</strong> around the burner and calorimeter</li>
+  <li>Insulate the sides of the calorimeter</li>
+  <li>Use a polished metal calorimeter (reduces heat lost by radiation)</li>
+  <li>Reduce the distance between the wick and the calorimeter base</li>
+</ul>
+<p>"Use more water" is not accepted. This would lower the temperature rise per gram, not improve accuracy.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Improvements always tie back to <strong>reducing heat loss</strong>: lid (stops hot air rising out), draught shield (stops draughts cooling the flame), insulation (stops conduction). All make more of the flame's energy actually go into heating the water.</p>
+</div>
+
+<div class="qref">
+<strong>Question (h).</strong> Why cap the burner (not blow it out). <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>Blowing out the flame could spread alcohol vapour, which is flammable / could catch fire <span class="marks-inline">[1 mark]</span></li>
+  <li>Capping the burner stops the alcohol from evaporating further so the final mass is recorded accurately</li>
+  <li>Capping is safer / does not risk relighting</li>
+</ul>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two reasons combined: <strong>safety</strong> (alcohol vapour is flammable; blowing on a flame could disperse the vapour into a fireball) and <strong>accuracy</strong> (capping prevents further evaporation so the mass loss is only what burnt, not what evaporated).</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

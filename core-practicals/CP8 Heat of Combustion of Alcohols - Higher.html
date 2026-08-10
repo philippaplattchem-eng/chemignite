@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP8 Heat of Combustion of Alcohols (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP8 Heat of Combustion of Alcohols</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Separate Chemistry (1CH0) only, not assessed in Combined Science (1SC0)</p>
+  <p><strong>Paper:</strong> Paper 2</p>
+  <p><strong>Specification:</strong> 9.28C. Core Practical: Investigate the temperature rise produced in a known mass of water by the combustion of the alcohols ethanol, propanol, butanol and pentanol.</p>
+  <p><strong>Total marks:</strong> 21</p>
+</div>
+
+<div class="intro">
+This Core Practical compares the energy released per gram of fuel for the alcohols ethanol, propanol, butanol and pentanol by burning each one and measuring either the mass of fuel needed for a fixed temperature rise, or the temperature rise for a fixed mass of fuel. Higher-tier questions test the full extended-response method (6 marks), data-handling and plotting, balanced symbol equations for combustion, and quantitative reasoning about the trend along the homologous series. The 1CH0/2F June 2019 examiner report flagged two repeating errors: confusing "raise by 30 &deg;C" with "raise to 30 &deg;C", and confusing the mass of the burner with the mass of alcohol burnt.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Aim and Approach</h3>
+
+<p>Compare the energy released by ethanol (2 C), propanol (3 C), butanol (4 C) and pentanol (5 C). Two equivalent versions are used:</p>
+<ul>
+  <li><strong>Constant Î”T, measure mass</strong>: burn each alcohol until the water rises by a fixed amount (e.g. 30 &deg;C), then find the mass of fuel needed.</li>
+  <li><strong>Constant mass, measure Î”T</strong>: burn the same mass of each alcohol and record the temperature rise produced.</li>
+</ul>
+
+<h3>Part 2. Apparatus</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/10/fig-16-q10ci-1cho-2f-paper-1-june-2019.png" alt="Apparatus for the heat of combustion of alcohols experiment: a spirit burner containing alcohol with a lit wick beneath a metal calorimeter / beaker holding water, with a thermometer in the water">
+  <div class="caption">Apparatus for method (a), taken from 1CH0/2F June 2019 Figure 16. The spirit burner heats a fixed volume of water in the calorimeter; the thermometer records the temperature rise; the balance (not shown) records the mass loss of the burner.</div>
+</div>
+
+<ol>
+  <li>Spirit burner with cap, containing the alcohol</li>
+  <li>Copper calorimeter or thin-walled metal beaker, clamped above the burner</li>
+  <li>Thermometer (0&ndash;110 &deg;C) or temperature probe + data logger</li>
+  <li>Measuring cylinder (100 cm<sup>3</sup>) for the water</li>
+  <li>Balance (to 0.01 g) for the burner</li>
+  <li>Stirring rod, lid (with hole for thermometer), draught shield, heatproof mat</li>
+</ol>
+
+<h3>Part 3. Method (constant Î”T version)</h3>
+
+<ol start="7">
+  <li>Measure 100 cm<sup>3</sup> of water into the calorimeter and record the initial temperature T<sub>initial</sub>.</li>
+  <li>Weigh the spirit burner (with cap, containing alcohol) on the balance and record the mass m<sub>before</sub>.</li>
+  <li>Position the burner under the calorimeter at a fixed distance (e.g. 5 cm from the wick to the base). Light the wick.</li>
+  <li>Stir the water continuously. Cap the burner the moment the temperature has risen by exactly 30 &deg;C (so T<sub>final</sub> = T<sub>initial</sub> + 30 &deg;C).</li>
+  <li>Reweigh the burner with cap on, record m<sub>after</sub>.</li>
+  <li>Calculate <strong>mass burnt = m<sub>before</sub> &minus; m<sub>after</sub></strong>.</li>
+  <li>Repeat with each of the four alcohols, using fresh water each time and keeping the same volume of water, distance from wick, and target temperature rise.</li>
+  <li>Repeat the whole experiment to get concordant results, then calculate the mean mass burnt for each alcohol.</li>
+</ol>
+
+<h3>Part 4. Variables</h3>
+
+<table>
+  <tr><th>Variable</th><th>Identification</th></tr>
+  <tr><td>Independent</td><td>The alcohol (ethanol, propanol, butanol, pentanol)</td></tr>
+  <tr><td>Dependent</td><td>Mass of alcohol burnt for the fixed temperature rise</td></tr>
+  <tr><td>Control</td><td>Volume / mass of water; starting temperature; distance from wick to calorimeter; same calorimeter; same target temperature rise; draught conditions</td></tr>
+</table>
+
+<h3>Part 5. Trend and Combustion Equations</h3>
+
+<p>The longer the carbon chain, the more energy released per gram, so the mass needed for a fixed temperature rise decreases:</p>
+
+<p class="center">ethanol &gt; propanol &gt; butanol &gt; pentanol (mass burnt, for same Î”T)</p>
+
+<p>Balanced combustion equations (complete combustion):</p>
+<ul>
+  <li>Ethanol: C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> &rarr; 2CO<sub>2</sub> + 3H<sub>2</sub>O</li>
+  <li>Propanol: 2C<sub>3</sub>H<sub>7</sub>OH + 9O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 8H<sub>2</sub>O</li>
+  <li>Butanol: C<sub>4</sub>H<sub>9</sub>OH + 6O<sub>2</sub> &rarr; 4CO<sub>2</sub> + 5H<sub>2</sub>O</li>
+  <li>Pentanol: 2C<sub>5</sub>H<sub>11</sub>OH + 15O<sub>2</sub> &rarr; 10CO<sub>2</sub> + 12H<sub>2</sub>O</li>
+</ul>
+
+<h3>Part 6. Sources of Error</h3>
+
+<ol start="15">
+  <li><strong>Heat loss to surroundings</strong>, the dominant error; up to 50&ndash;80% of energy is lost to air, calorimeter walls and the clamp. Reduce with a lid, a draught shield, and a polished metal calorimeter.</li>
+  <li><strong>Incomplete combustion</strong>, yellow / sooty flame means some carbon is unreacted, so less energy is released than expected.</li>
+  <li><strong>Evaporation from the wick</strong> after extinguishing, cap the burner the instant the temperature reaches the target.</li>
+  <li><strong>Calorimeter absorbs heat</strong>, the metal walls warm up as well as the water, so the water gets less of the energy than expected.</li>
+</ol>
+
+<p>Because of these losses, <strong>experimental values are always lower than data-book values</strong>, often by 50&ndash;80%. The pattern along the series is reliable but the absolute energies are not.</p>
+
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Which is the balanced symbol equation for the complete combustion of ethanol, C<sub>2</sub>H<sub>5</sub>OH? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>C<sub>2</sub>H<sub>5</sub>OH + 2O<sub>2</sub> &rarr; 2CO<sub>2</sub> + 3H<sub>2</sub>O</li>
+  <li>C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> &rarr; 2CO<sub>2</sub> + 3H<sub>2</sub>O</li>
+  <li>C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> &rarr; 2CO + 3H<sub>2</sub>O</li>
+  <li>2C<sub>2</sub>H<sub>5</sub>OH + 5O<sub>2</sub> &rarr; 4CO<sub>2</sub> + 6H<sub>2</sub>O</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> A student burns 0.46 g of pentanol and finds that 100 cm<sup>3</sup> of water rises by 20 &deg;C. What is the mass of pentanol needed to raise the temperature of the same volume of water by 1 &deg;C? Give your answer to 2 decimal places. <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>0.02 g</li>
+  <li>0.23 g</li>
+  <li>0.46 g</li>
+  <li>9.20 g</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> Why are experimental values for the heat of combustion of alcohols always lower than the data-book values? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The alcohols are diluted with water in the burner</li>
+  <li>The thermometer reads the temperature too low</li>
+  <li>Most of the energy is lost to the surroundings, not transferred into the water</li>
+  <li>Data-book values are estimates and are always slightly too high</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> What is the <strong>independent variable</strong> in this Core Practical? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The alcohol used</li>
+  <li>The mass of water used</li>
+  <li>The mass of alcohol burnt</li>
+  <li>The distance from the wick to the calorimeter</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student wants to improve the accuracy of the experiment by reducing heat loss. Which change would reduce heat loss the most? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Using cold water at the start</li>
+  <li>Adding a lid to the calorimeter and a draught shield around the apparatus</li>
+  <li>Using more alcohol in the burner</li>
+  <li>Using a glass beaker rather than a metal calorimeter</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (16 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates the energy released by burning different alcohols. The student uses the apparatus shown in <strong>Figure 1</strong>, and burns each alcohol until the temperature of 100 cm<sup>3</sup> of water has <strong>risen by 20 &deg;C</strong>. The student records the mass of the spirit burner (with cap) before and after each experiment. The results are shown in <strong>Table 1</strong>.</p>
+
+<table>
+  <tr><th>Alcohol</th><th>Number of C atoms</th><th>Initial mass of burner / g</th><th>Final mass of burner / g</th><th>Mass burnt / g</th></tr>
+  <tr><td>Ethanol</td><td>2</td><td>122.51</td><td>122.02</td><td>0.49</td></tr>
+  <tr><td>Propanol</td><td>3</td><td>168.55</td><td>168.13</td><td>0.42</td></tr>
+  <tr><td>Butanol</td><td>4</td><td>152.62</td><td>152.23</td><td></td></tr>
+  <tr><td>Pentanol</td><td>5</td><td>67.22</td><td>66.86</td><td>0.36</td></tr>
+</table>
+<p class="center"><strong>Table 1</strong></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Describe an experiment, using the apparatus in Figure 1, that the student could use to obtain results like those in Table 1. Your answer should include the variables that are kept the same and the measurements that are recorded. <span class="marks">[6 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Calculate the mass of <strong>butanol</strong> burnt in this experiment. Give your answer to 2 decimal places. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> The results in Table 1 show that 0.36 g of pentanol was needed to raise the temperature of 100 cm<sup>3</sup> of water by 20 &deg;C. Calculate the mass of pentanol that would be needed to raise the temperature of the same volume of water by 1 &deg;C. Give your answer to 2 decimal places. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> Use the data in Table 1 to describe the trend in the mass of alcohol burnt as the number of carbon atoms in the alcohol increases. Explain this trend in terms of the bonds in the alcohol molecules. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> The student compares her values for the energy released per gram of alcohol with the data-book values. Her experimental values are about 60% lower than the data-book values. Give <strong>two</strong> reasons why the experimental values are so much lower, and suggest <strong>one</strong> improvement to the apparatus that would reduce the difference. <span class="marks">[3 marks]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Balanced equation for combustion of ethanol.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> &rarr; 2CO<sub>2</sub> + 3H<sub>2</sub>O <span class="marks-inline">[1 mark]</span></p>
+<p>Check: left = 2C, 6H, 7O; right = 2C, 6H, (4+3)=7O. Balanced.</p>
+<p>A is incorrect. With only 2O<sub>2</sub>, the right-hand side has 7 O atoms (4 + 3) but the left only has 5 (1 + 4), not balanced.</p>
+<p>C is incorrect. CO is the incomplete combustion product. Complete combustion gives CO<sub>2</sub>.</p>
+<p>D is incorrect. Doubling the ethanol and using 5O<sub>2</sub> doesn't balance either: left = 13 O, right = (8+6) = 14 O.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Balancing alcohol combustion: write the products first (n CO<sub>2</sub> from n carbons; (n+1)/2 H<sub>2</sub>O from (2n+1) H atoms if the alcohol is C<sub>n</sub>H<sub>2n+1</sub>OH). Then count the O atoms on the right and balance O<sub>2</sub> on the left, remembering the O atom in the &minus;OH group.</p>
+<p>For ethanol: 2CO<sub>2</sub> has 4 O; 3H<sub>2</sub>O has 3 O; total 7 O on the right. Left side has 1 O from &minus;OH, so need 6 more from O<sub>2</sub>, i.e. 3 O<sub>2</sub>.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Pentanol mass per &deg;C.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> 0.02 g <span class="marks-inline">[1 mark]</span></p>
+<p>Working: 0.46 &divide; 20 = 0.023, which to 2 decimal places is 0.02.</p>
+<p>B is incorrect. 0.23 = 0.46 &divide; 2 (used 2 instead of 20).</p>
+<p>C is incorrect. 0.46 is the original mass, not divided by anything.</p>
+<p>D is incorrect. 9.20 = 0.46 &times; 20 (multiplied instead of divided).</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>If x g produces a temperature rise of Î”T, then x &divide; Î”T g produces a 1 &deg;C rise, assuming the response is proportional. Always divide by the temperature rise.</p>
+<p>Watch the decimal-place instruction: "to 2 decimal places" means 0.023 rounds to 0.02 (not 0.023). The third decimal place is rounded off.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Why experimental &lt; data-book.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Most of the energy is lost to the surroundings, not transferred into the water <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Alcohols in spirit burners are not diluted with water.</p>
+<p>B is incorrect. The thermometer reads correctly; the issue is that less heat is reaching the water in the first place.</p>
+<p>D is incorrect. Data-book values are theoretical maxima from calorimetry, they are not estimates that happen to be too high.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The school version of this experiment typically transfers only 20&ndash;40% of the combustion energy to the water. Heat is lost to: <strong>air</strong> (convection from the rising hot gases), <strong>calorimeter walls</strong> (conduction; warming the metal beaker rather than the water), and the <strong>clamp / surroundings</strong> (radiation). Lids and draught shields reduce all three.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Independent variable.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> The alcohol used <span class="marks-inline">[1 mark]</span></p>
+<p>B is incorrect. The mass of water is a control variable (kept constant).</p>
+<p>C is incorrect. The mass of alcohol burnt is the dependent variable (what you measure).</p>
+<p>D is incorrect. The distance from the wick to the calorimeter is a control variable.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The independent variable is the thing you deliberately change to investigate its effect. Here you change the <em>alcohol</em>, that's the I in "I change".</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Improvement that reduces heat loss most.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Adding a lid to the calorimeter and a draught shield around the apparatus <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Starting temperature does not affect heat loss; it just shifts the initial reading.</p>
+<p>C is incorrect. More alcohol does not change heat loss; it just lets the experiment run longer.</p>
+<p>D is incorrect. A glass beaker loses more heat by conduction than polished metal, so this would make things <em>worse</em>, though glass beakers are sometimes used for visibility.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two-part improvements always beat one-part improvements: a lid stops convection losses (hot air rising out); a draught shield stops convection losses (cold air blowing in). Used together they typically cut heat loss in half.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Describe the experiment in detail. <span class="marks-inline">[6 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>This is a 6-mark levelled-response question. Mark across the response rather than per point.</p>
+
+<p><strong>Chemical ideas expected:</strong></p>
+<ul>
+  <li>Measure 100 cm<sup>3</sup> of water into the calorimeter (using a measuring cylinder)</li>
+  <li>Place the calorimeter above the spirit burner (clamped at a fixed distance)</li>
+  <li>Record the initial temperature of the water</li>
+  <li>Weigh the spirit burner with cap (containing the alcohol) and record the initial mass</li>
+  <li>Light the wick</li>
+  <li>Stir the water continuously / use a stirrer</li>
+  <li>Stop the heating (cap the burner) when the temperature has <strong>risen by 20 &deg;C</strong> (not "reached 20 &deg;C")</li>
+  <li>Reweigh the burner with cap and record the final mass</li>
+  <li>Calculate mass burnt = initial mass &minus; final mass</li>
+  <li>Repeat with each alcohol (ethanol, propanol, butanol, pentanol)</li>
+  <li>Control variables: same volume of water; same distance from wick to calorimeter; same target temperature rise; same calorimeter</li>
+</ul>
+
+<p><strong>Level descriptors:</strong></p>
+<ul>
+  <li><strong>Level 3 (5&ndash;6 marks):</strong> A well-developed answer covering apparatus, measurements before and after, the temperature-rise stopping point, the mass-loss calculation, and at least one control variable, in a logical order with chemical terms used correctly.</li>
+  <li><strong>Level 2 (3&ndash;4 marks):</strong> A relevant answer with most of the method steps, possibly missing one of: control variables, the explicit "temperature rise" wording, or the mass-loss subtraction.</li>
+  <li><strong>Level 1 (1&ndash;2 marks):</strong> A basic answer with some method steps in the right order but key details (apparatus names, what is measured, the temperature-rise wording) missing or wrong.</li>
+  <li><strong>Level 0:</strong> No relevant chemistry.</li>
+</ul>
+<p><strong>Common errors that cap the mark:</strong></p>
+<ul>
+  <li>"Stop heating when the temperature reaches 20 &deg;C" instead of "rises by 20 &deg;C" caps at Level 2 (per the 1CH0/2F June 2019 examiner report)</li>
+  <li>Confusing the mass of the burner with the mass of alcohol (e.g. "the mass of alcohol was 122.51 g") caps at Level 2</li>
+</ul>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This question was lifted directly from 1CH0/2F November 2021 Q7(b)(ii) format. The 1CH0/2F June 2019 examiner report on the same practical highlighted the two top errors: <em>"many candidates answered by stating 'stop heating the water once it had reached 30 &deg;C', as opposed to a temperature increase of 30 &deg;C. Many candidates confused the mass of the burner with the mass of ethanol."</em></p>
+<p>Top-band template (memorise this structure):</p>
+<ol>
+  <li>Measure 100 cm<sup>3</sup> water into calorimeter</li>
+  <li>Record initial water temperature</li>
+  <li>Weigh burner (with cap) and record initial mass</li>
+  <li>Light wick, stir continuously</li>
+  <li>Cap burner when temperature has <strong>risen by 20 &deg;C</strong></li>
+  <li>Reweigh burner with cap, calculate mass burnt = initial &minus; final</li>
+  <li>Repeat with each alcohol, keeping the volume of water and the wick distance the same</li>
+</ol>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Mass of butanol burnt. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the mass of butanol burnt:</p>
+
+<ul>
+  <li>Write down the formula:
+    <p class="center">mass burnt = initial mass &minus; final mass</p>
+  </li>
+  <li>Substitute the values from Table 1:
+    <p class="center">mass burnt = 152.62 &minus; 152.23</p>
+    <p class="center"><span class="working">mass burnt = 0.39</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the answer with the correct unit, to 2 decimal places:
+    <p class="center"><span class="final">mass of butanol burnt = 0.39 g</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the correct subtraction (152.62 &minus; 152.23 = 0.39).</p>
+<p>1 mark for the final answer with correct unit g, to 2 decimal places.</p>
+<p>"0.39" with no unit is not accepted for the second mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Always: mass of fuel burnt = initial mass of burner &minus; final mass of burner. The whole burner is weighed each time, so the difference gives you the mass of alcohol that has evaporated and burnt.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Mass of pentanol per &deg;C. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the mass of pentanol needed per &deg;C rise:</p>
+
+<ul>
+  <li>Write down the formula:
+    <p class="center">mass per &deg;C = total mass &divide; total temperature rise</p>
+  </li>
+  <li>Substitute the values:
+    <p class="center">mass per &deg;C = 0.36 &divide; 20</p>
+    <p class="center"><span class="working">mass per &deg;C = 0.018</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>Round to 2 decimal places and state with the correct unit:
+    <p class="center"><span class="final">mass per &deg;C = 0.02 g</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the calculation (0.36 &divide; 20 = 0.018).</p>
+<p>1 mark for the final answer 0.02 g (to 2 decimal places) with unit.</p>
+<p>"0.018" is accepted for the calculation mark, but the question asks for 2 decimal places, only 0.02 scores the second mark.</p>
+<p>An answer of 0.02 without working or without unit scores only 1 mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Watch the rounding instruction: "to 2 decimal places" cuts off everything from the third decimal place onwards. 0.018 rounds to 0.02 because the third decimal (8) rounds the second decimal up from 1 to 2.</p>
+<p>This style of calculation (mass per degree) appears almost every sitting on this Core Practical. The trick is the unit: g/&deg;C or just g.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d).</strong> Trend and explanation in terms of bonds. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The trend and explanation:</p>
+<ul>
+  <li>The mass of alcohol burnt <strong>decreases</strong> as the number of carbon atoms in the alcohol increases (use specific data: e.g. ethanol = 0.49 g, pentanol = 0.36 g) <span class="marks-inline">[1 mark]</span></li>
+  <li>Longer-chain alcohols have <strong>more bonds</strong> (more C&ndash;C and C&ndash;H bonds) per molecule <span class="marks-inline">[1 mark]</span></li>
+  <li>So more energy is released per molecule (or per gram) when they burn, meaning less mass is needed for the same temperature rise <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"It decreases" without a data reference is acceptable for the first mark.</p>
+<p>"More energy because longer chain" alone scores 1 of the final 2 marks, the answer must link the longer chain to more bonds and then to more energy released.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The bond-energy reasoning: <strong>making bonds releases energy</strong>. Combustion forms many new C=O and O&ndash;H bonds in CO<sub>2</sub> and H<sub>2</sub>O. Longer-chain alcohols have more carbons and more hydrogens, so combustion forms more product bonds per molecule, releasing more energy per molecule, and per gram of fuel.</p>
+<p>For full marks, link the chain: <em>more carbons &rarr; more bonds (to break and to form) &rarr; more energy released per gram</em>.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Two reasons for low experimental value + one improvement. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> reasons (1 mark each):</p>
+<ul>
+  <li>Heat lost to the surroundings (air, beaker walls, clamp, calorimeter sides)</li>
+  <li>Incomplete combustion of the alcohol (yellow / sooty flame means some energy stays in unreacted carbon)</li>
+  <li>Some alcohol evaporates from the wick without burning</li>
+  <li>Some of the heat warms the calorimeter (metal walls) rather than the water</li>
+</ul>
+
+<p>Plus <strong>one</strong> improvement (1 mark):</p>
+<ul>
+  <li>Add a lid to the calorimeter</li>
+  <li>Use a draught shield around the apparatus</li>
+  <li>Use a polished metal calorimeter (reduces radiation losses)</li>
+  <li>Insulate the sides of the calorimeter</li>
+  <li>Reduce the distance from wick to calorimeter base</li>
+  <li>Use a bomb calorimeter (commercial method, isolates the system from the surroundings entirely)</li>
+</ul>
+
+<p>"Inaccurate equipment" or "human error" without specifics scores 0.</p>
+<p>"Improve the procedure" without naming a specific apparatus change scores 0 for the improvement mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The top scoring three-part answer:</p>
+<ol>
+  <li><strong>Heat loss to surroundings</strong> (the dominant effect)</li>
+  <li><strong>Incomplete combustion</strong> (yellow flame, soot)</li>
+  <li><strong>Lid on calorimeter</strong> + <strong>draught shield</strong>, both reduce convection losses</li>
+</ol>
+<p>These three points are the canonical answers and appear in nearly every sitting of this practical.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

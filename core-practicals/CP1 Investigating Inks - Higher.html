@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP1 Investigating Inks (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP1 Investigating Inks</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Combined Science (1SC0) and Separate Chemistry (1CH0)</p>
+  <p><strong>Paper:</strong> Paper 1</p>
+  <p><strong>Specification:</strong> 2.11. Investigate the composition of inks using simple distillation and paper chromatography.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical answers one big question about an ink: what is it actually made of? Because an ink is a mixture of a liquid solvent and one or more dissolved coloured dyes, two separation techniques are needed. Simple distillation recovers the solvent. Paper chromatography separates the dyes. Together they reveal every substance in the original ink.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part A. Simple Distillation (recovering the solvent)</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/10/fig-9-q6b-1cho-1f-paper-1-june-2018.png" alt="Past-paper diagram of distillation apparatus used to separate water from ink: heated flask containing ink, side-arm leading to a condenser, with arrows indicating cold water flowing in at the bottom and out at the top, and a collecting tube at the receiving end. Two points are labelled A and B inside the apparatus">
+  <div class="caption">Past-paper distillation apparatus used to separate water from ink (Edexcel 1CH0/1F Paper 1, June 2018, Figure 9). Cold water flows in at the bottom of the condenser and out at the top. <strong>Point A</strong> is inside the condenser, where the water is in the <em>gas state</em> (water vapour). <strong>Point B</strong> is at the collecting end, where the water has cooled and condensed back to the <em>liquid state</em>.</div>
+</div>
+
+<ol>
+  <li>The practical answers two questions about an ink. <strong>What is the solvent?</strong> Simple distillation tells you. <strong>What dyes are dissolved in it?</strong> Paper chromatography tells you.</li>
+  <li>The thermometer bulb sits level with the side-arm. The steady reading is the boiling point of the solvent and identifies it. Around 100 °C points to water. Around 78 °C points to ethanol.</li>
+  <li>The condenser uses counter-current cold water. Water enters at the bottom and leaves at the top. The receiving end is always open to the atmosphere because sealing it can shatter the glassware.</li>
+  <li>Anti-bumping granules are added before heating to stop the boiling liquid from erupting suddenly.</li>
+  <li>The dyes are left behind in the distillation flask. Their boiling points are far above the heating temperature, so they cannot enter the vapour phase.</li>
+</ol>
+
+<h3>Part B. Paper Chromatography (separating the dyes)</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/10/fig-6-q4c-1cho-1f-paper-1-june-2019.png" alt="Past-paper chromatogram from Edexcel GCSE Chemistry showing five food colouring samples P, Q, R, S and T separated by paper chromatography. The pencil baseline at the bottom shows the starting position of each sample. Above the baseline, separated coloured spots are visible at different heights. The solvent front is marked near the top of the paper">
+  <div class="caption">Past-paper chromatogram showing the result of paper chromatography on five food colourings (Edexcel 1CH0/1F Paper 1, June 2019, Figure 6). The samples P, Q, R, S and T were placed on the pencil baseline. As the solvent rose up the paper, each dye separated to a different height. The line near the top of the paper is the solvent front.</div>
+</div>
+
+<ol start="6">
+  <li>The baseline is drawn in pencil. Pen ink would dissolve and run up the paper, contaminating the chromatogram.</li>
+  <li>The solvent level in the beaker must sit below the baseline. If the solvent covered the spots, the dyes would dissolve directly into the solvent in the beaker and never travel up the paper.</li>
+  <li>The tank is covered with a lid so the solvent does not evaporate during the run. Mark the solvent front in pencil immediately after removing the paper, before it evaporates and becomes invisible.</li>
+  <li><strong>R<sub>f</sub> = distance moved by dye ÷ distance moved by solvent front.</strong> Measure both distances from the baseline to the centre of the spot. Always give R<sub>f</sub> to 2 significant figures.</li>
+  <li>R<sub>f</sub> values lie between 0 and 1. Match a dye's R<sub>f</sub> (or its spot position) to a reference run on the same paper in the same solvent to identify it.</li>
+  <li>A dye that stays on the baseline has not dissolved in the solvent. The fix is to repeat the chromatography with a different solvent that can dissolve the missing dye.</li>
+  <li>Variables. Independent: the ink. Dependent: the number and position of the spots (or the R<sub>f</sub> values). Controls: solvent, paper type, run distance, temperature, spot size, and that the tank is covered.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> A student sets up the apparatus for simple distillation. The thermometer bulb is positioned level with the side-arm exit. Which property of the distillate does the thermometer reading measure? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The melting point of any dye remaining in the flask</li>
+  <li>The temperature of the cold water in the condenser</li>
+  <li>The boiling point of the solvent passing into the condenser</li>
+  <li>The temperature inside the flame of the Bunsen burner</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> Which expression correctly defines the R<sub>f</sub> value of a dye in paper chromatography? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>distance moved by solvent front ÷ distance moved by dye</li>
+  <li>distance moved by dye ÷ distance moved by solvent front</li>
+  <li>distance from solvent front to top of paper ÷ distance moved by dye</li>
+  <li>distance moved by dye × distance moved by solvent front</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> Before lowering the chromatography paper into a beaker of solvent, the depth of solvent in the beaker is checked. The solvent level must sit below the baseline. Which is the best reason for this? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>So the paper does not float on the solvent</li>
+  <li>So the dye spots dissolve directly into the solvent in the beaker instead of travelling up the paper</li>
+  <li>So the dye spots stay on the baseline and are carried up the paper by the rising solvent rather than washing off into the beaker</li>
+  <li>So the solvent reaches the top of the paper more quickly</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> On a finished chromatogram, one dye produces a spot that has not moved from the baseline. What does this tell you about that dye? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>It is insoluble in the solvent used</li>
+  <li>It has an R<sub>f</sub> value greater than 1</li>
+  <li>It is the same as one of the reference dyes</li>
+  <li>It has reached the solvent front</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student investigates four different brands of black ink using paper chromatography. Which is a <strong>control variable</strong> in this experiment? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The number of dyes that appear on the chromatogram for each ink</li>
+  <li>The R<sub>f</sub> value of each dye</li>
+  <li>The brand of ink placed on the baseline</li>
+  <li>The solvent used to run the chromatogram</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates a sample of black ink that she suspects is a mixture of three coloured dyes dissolved in ethanol. She first uses simple distillation to recover the solvent, then paper chromatography to separate the dyes.</p>
+</div>
+
+<p class="qpart">(a) The student sets up simple distillation. The thermometer bulb is positioned level with the side-arm exit, and the condenser water flows counter-current (in at the bottom, out at the top).</p>
+
+<div class="question">
+<p class="stem"><strong>(a)(i)</strong> Describe how simple distillation separates the solvent from the dyes in the ink. Refer to a change of state in your answer. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)(ii)</strong> The thermometer reading rises and then holds steady at 78 °C while liquid drips into the receiving beaker. State, with a reason, what this tells the student about the solvent in the ink. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)(iii)</strong> Explain why the receiving end of the distillation apparatus is left open to the atmosphere. <span class="marks">[1 mark]</span></p>
+</div>
+
+<p class="qpart">(b) Once the solvent has been recovered, the student turns her attention to the dyes that have been left behind in the flask. She wants to identify which dyes are present using paper chromatography.</p>
+
+<div class="question">
+<p class="stem"><strong>(b)(i)</strong> Describe three things the student must do when preparing the chromatography paper, before lowering it into the beaker of solvent. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)(ii)</strong> One of the dyes moves 24 mm from the baseline. The solvent front moves 80 mm from the baseline in the same time.</p>
+<p>Calculate the R<sub>f</sub> value of this dye. Give your answer to 2 significant figures. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)(iii)</strong> After running the chromatogram, the student notices that one of the dyes she was expecting has stayed on the baseline. She wants to identify this dye too.</p>
+<p>Suggest one change the student could make to the experiment, and explain why this change would let her identify the missing dye. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Apart from changing the solvent, suggest one improvement the student could make to obtain more accurate R<sub>f</sub> values, and explain why this improvement would help. <span class="marks">[2 marks]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Which property of the distillate does the thermometer reading measure?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> The boiling point of the solvent passing into the condenser <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The dye stays in the flask and does not vaporise, so the thermometer does not read its temperature.</p>
+<p>B is incorrect. The thermometer bulb is at the side-arm exit, not inside the condenser jacket.</p>
+<p>D is incorrect. The thermometer measures the vapour leaving the flask, not the flame.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The thermometer's job in this experiment is identification, not safety. The reading at the moment the distillate is being collected tells you which liquid is coming over, and that is how the solvent is named.</p>
+<p>For an ink made with water, the reading holds steady around 100 °C. For an ethanol-based ink, around 78 °C. Memorising those two values is worth a mark every time this practical appears.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Which expression correctly defines the R<sub>f</sub> value of a dye?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> distance moved by dye ÷ distance moved by solvent front <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. This is the formula inverted and would give a value greater than 1, which is impossible for an R<sub>f</sub>.</p>
+<p>C is incorrect. The distance is measured from the baseline, not from the solvent front to the top of the paper.</p>
+<p>D is incorrect. R<sub>f</sub> is a ratio, so the formula is a division, not a multiplication.</p>
+<p>Both distances must be measured from the baseline. The dye distance is taken to the centre of the spot, not its leading edge.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>R<sub>f</sub> is always a number between 0 and 1, because a dye cannot move further up the paper than the solvent that is carrying it. If your calculation gives a value greater than 1, you have either inverted the formula or measured from the wrong reference line.</p>
+<p>The June 2019 Foundation examiner report specifically called out candidates losing marks for not knowing this formula. Learn it as a sentence: "dye over front, both from the baseline."</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Why must the solvent level sit below the baseline?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> So the dye spots stay on the baseline and are carried up the paper by the rising solvent rather than washing off into the beaker <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The depth of solvent is not deep enough to float the paper, so this is not the reason for the rule.</p>
+<p>B is incorrect. This describes exactly what would happen if the solvent <em>were</em> above the baseline. It is the failure case, not the reason for the rule.</p>
+<p>D is incorrect. The position of the baseline relative to the solvent does not affect how quickly the solvent rises up the paper.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The wording trap here is real. A and B both contain a true statement, but only C answers the question being asked. Read each option as the completion of the sentence "The solvent must be below the baseline so that...", then pick the one that states the consequence the rule actually prevents.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> What does it tell you if a dye has not moved from the baseline?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> It is insoluble in the solvent used <span class="marks-inline">[1 mark]</span></p>
+<p>The dye has an R<sub>f</sub> of 0. The solvent could not dissolve it, so the rising solvent did not carry it up the paper.</p>
+<p>B is incorrect. R<sub>f</sub> cannot exceed 1, because a dye cannot move further than the solvent that is carrying it.</p>
+<p>C is incorrect. Identifying a dye by reference requires the spot to have moved up and aligned with a reference spot, not to have stayed on the baseline.</p>
+<p>D is incorrect. A dye that reached the solvent front would give an R<sub>f</sub> close to 1, not 0.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the set-up for one of the most common discriminator questions in this practical: "The experiment is repeated with a different solvent. Suggest why." The answer is always the same. The new solvent dissolves the dye that the original solvent could not, so the dye can now be carried up the paper and identified.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Which is a control variable in this experiment?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>D.</strong> The solvent used to run the chromatogram <span class="marks-inline">[1 mark]</span></p>
+<p>A is the dependent variable (what is being measured).</p>
+<p>B is also dependent because it is derived from the spot position.</p>
+<p>C is the independent variable (what is being changed).</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The quick check for any variable question is to ask yourself three things. What is being changed deliberately? That is the independent variable. What is being measured? That is the dependent variable. What is being kept the same so the comparison is fair? Those are the control variables.</p>
+<p>In chromatography questions, the solvent, the paper type, the run distance and the temperature are the classic control variables.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a)(i).</strong> Describe how simple distillation separates the solvent from the dyes in the ink. Refer to a change of state in your answer. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The procedure separates the solvent from the dyes as follows:</p>
+<ul>
+  <li>The ink is heated in the flask, and the solvent boils / evaporates (because its boiling point is much lower than the boiling points of the dyes) <span class="marks-inline">[1 mark]</span></li>
+  <li>The solvent vapour travels into the condenser, where it is cooled and condenses back to a liquid <span class="marks-inline">[1 mark]</span></li>
+  <li>The liquid solvent is collected in the receiving beaker, and the dyes are left behind in the flask as a coloured residue <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Evaporates" and "boils" are both accepted for the first marking point.</p>
+<p>"Melts" is not accepted. The change of state in this practical is liquid to gas and back to liquid, not solid to liquid.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The command word is <strong>describe</strong>, so the marks are for telling the story of the solvent: liquid in the flask, vapour in the side-arm, cooled in the condenser, back to liquid in the receiver. Each of those moments is a potential mark.</p>
+<p>The phrase "change of state" in the question is your hint that the marker is looking for the words <em>boils</em> (or <em>evaporates</em>) and <em>condenses</em>. If either word is missing, you risk dropping a mark even if the rest of the description is correct.</p>
+<p>Avoid the temptation to add "and then we identify the solvent from the thermometer" here. That point belongs to part (ii) and gains no credit in part (i).</p>
+</div>
+
+<div class="qref">
+<strong>Question (a)(ii).</strong> The thermometer reading holds steady at 78 °C while liquid drips into the receiving beaker. State, with a reason, what this tells the student about the solvent. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The conclusion and the reason are:</p>
+<ul>
+  <li>The solvent is ethanol <span class="marks-inline">[1 mark]</span></li>
+  <li>Because the boiling point of ethanol is 78 °C, and a steady thermometer reading at the side-arm shows the boiling point of the liquid that is vaporising <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>Naming any other liquid is not accepted, unless its boiling point matches 78 °C.</p>
+<p>Stating only "the boiling point is 78 °C" without identifying the solvent does not gain the first marking point.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"State, with a reason" is a two-mark prompt. One mark for the conclusion, one mark for the justification. Always check the question for these compound command words, then structure your answer in two clear halves.</p>
+<p>The reasoning mark is for linking the thermometer reading to the concept of a boiling point. Saying "because ethanol boils at 78 °C" is the cleanest version of that link.</p>
+</div>
+
+<div class="qref">
+<strong>Question (a)(iii).</strong> Explain why the receiving end of the distillation apparatus is left open to the atmosphere. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The reason the receiver is open to the atmosphere:</p>
+<ul>
+  <li>If sealed, pressure would build up inside the apparatus as the solvent boils, which could cause the glass to shatter / the bung to be blown out <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"To let the gas out" alone does not gain the mark. The answer must explain the consequence of trapping the vapour (pressure build-up, with risk of the glass cracking or the bung firing out).</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Safety-reasoning marks need a chain of cause and effect, not a single phrase. The chain here is: solvent boils, vapour forms, if sealed the pressure builds, the glass cracks or the bung is forced out. Write at least two links of that chain so the marker can see the reasoning.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b)(i).</strong> Describe three things the student must do when preparing the chromatography paper, before lowering it into the beaker of solvent. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>three</strong> from (1 mark for each point):</p>
+<ul>
+  <li>Draw a baseline in pencil (about 1 cm from the bottom of the paper)</li>
+  <li>Place a small concentrated spot of the ink on the baseline, or re-spot two or three times to concentrate the dye</li>
+  <li>Add reference spots of known dyes on the same baseline, well separated from the ink spot</li>
+  <li>Allow the spots to dry before placing the paper in the solvent</li>
+  <li>Avoid touching the surface of the paper where the spots will travel (skin oils prevent the solvent from rising evenly)</li>
+</ul>
+<p class="right"><span class="marks-inline">[3 marks]</span></p>
+<p>"Draw a baseline" without specifying pencil does not gain the mark. Pen ink would itself dissolve and run up the paper.</p>
+<p>Lowering the paper into the solvent and waiting for the solvent to rise are not preparation steps, so they do not gain credit on this part.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Read the question carefully. It asks about <em>preparing the paper</em>, not running the chromatogram. Steps that happen after the paper enters the beaker (the solvent rising, marking the front, removing the paper) all sit outside the scope of this part and gain no marks.</p>
+<p>The two safest marks to bank are "pencil baseline" and "small concentrated spot of ink". Both are points examiners specifically flag in past papers, so neither is a throwaway detail.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b)(ii).</strong> A dye moves 24 mm from the baseline; the solvent front moves 80 mm. Calculate the R<sub>f</sub> value to 2 significant figures. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the R<sub>f</sub> value of the dye:</p>
+
+<ul>
+  <li>Write down the R<sub>f</sub> formula:
+    <p class="center">R<sub>f</sub> = distance moved by dye ÷ distance moved by solvent front</p>
+  </li>
+  <li>Substitute the measured distances:
+    <p class="center">R<sub>f</sub> = 24 ÷ 80</p>
+    <p class="center"><span class="working">R<sub>f</sub> = 0.30</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>Quote the final answer to 2 significant figures:
+    <p class="center"><span class="final">R<sub>f</sub> = 0.30</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the calculation 24 ÷ 80 = 0.30 (or equivalent decimal value).</p>
+<p>1 mark for the final answer quoted correctly to 2 significant figures.</p>
+<p>An answer of "0.3" is not accepted for the second mark. This is only 1 significant figure; the trailing zero in 0.30 is required.</p>
+<p>Allow error carried forward if the student inverts the formula (giving 80 ÷ 24 = 3.3 to 2 sf). No marks are awarded for the inverted calculation; show working acknowledgement only.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the calculation the June 2019 Foundation examiner report singled out as a common mark-loser, and the same trap appears on Higher papers. The two marking points are <em>do the arithmetic</em> and <em>round correctly to 2 sf</em>. They are awarded independently.</p>
+<p>Watch the trailing zero. 0.30 and 0.3 are mathematically the same number, but in chemistry exams they signal different levels of precision. Two significant figures means two digits after rounding, so 0.30 is required and 0.3 is not.</p>
+<p>Both distances were already given in millimetres, so no unit conversion is needed. R<sub>f</sub> is a ratio of two distances and has no units. Do not write "0.30 mm" or "0.30 cm".</p>
+</div>
+
+<div class="qref">
+<strong>Question (b)(iii).</strong> A dye has stayed on the baseline. Suggest one change to the experiment, and explain why this change would identify the missing dye. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The change and the reason are:</p>
+<ul>
+  <li>Repeat the chromatography using a different solvent <span class="marks-inline">[1 mark]</span></li>
+  <li>Because the new solvent dissolves the dye that the original solvent could not, so the dye can now be carried up the paper and produce a spot on the chromatogram <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Use a different solvent" alone does not gain the second marking point. The reasoning step must mention that the new solvent dissolves the dye that the original could not.</p>
+<p>"Heat the solvent" or "leave it for longer" are not accepted. These do not address the underlying reason the dye stayed put.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the discriminator question that the November 2020 Higher examiner report identified as separating the top candidates from the rest. The report's exact phrasing was that "only the better candidates were able to explain that the different solvent was required <em>to dissolve the ink</em>." That is the second mark.</p>
+<p>The shape of a top answer is always two halves. First, the change: "use a different solvent." Second, the reason: "because the new solvent can dissolve the dye that the original solvent could not, so the dye is now carried up the paper." Write both halves explicitly and the marker has no choice but to award both marks.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Apart from changing the solvent, suggest one improvement to obtain more accurate R<sub>f</sub> values, and explain why it would help. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> improvement, with its matching reason (1 mark for the improvement, 1 mark for the matching reason):</p>
+<ul>
+  <li>Improvement: cover the beaker or tank with a lid (or watch-glass) during the run.<br>
+      Reason: to stop the solvent evaporating, so the solvent front rises further and the R<sub>f</sub> value is reliable.</li>
+  <li>Improvement: mark the solvent front in pencil immediately after removing the paper.<br>
+      Reason: the solvent front evaporates quickly and becomes invisible, so R<sub>f</sub> cannot be calculated if it is lost.</li>
+  <li>Improvement: measure distances to the centre of each spot (rather than to the leading edge).<br>
+      Reason: this gives a consistent, repeatable reading and avoids overestimating how far the dye has moved.</li>
+  <li>Improvement: keep the spots small and concentrated, or re-spot the ink several times.<br>
+      Reason: small spots prevent overlap between adjacent dyes, so the centre of each spot can be measured accurately.</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Use a better paper" or "use more solvent" are not accepted without a clear explanation of how this improves accuracy.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Pair every <strong>improvement</strong> with its matching <strong>reason</strong>. A single sentence of the form "do X, so that Y" gives the marker both marks at once and is harder to under-credit than two separate sentences.</p>
+<p>The lid-on-tank improvement is the most reliable choice here. It is in the specification, it is in the examiner reports, and it has a clean cause-and-effect reason that fits in one line. If you are short of ideas under exam pressure, default to this one.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

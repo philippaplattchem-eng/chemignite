@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP3 Preparing Copper Sulfate (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP3 Preparing Copper Sulfate</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Combined Science (1SC0) and Separate Chemistry (1CH0)</p>
+  <p><strong>Paper:</strong> Paper 1</p>
+  <p><strong>Specification:</strong> 3.17. Investigate the preparation of pure, dry hydrated copper sulfate crystals starting from copper oxide, including the use of a water bath.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical produces a sample of pure, dry, blue crystals of hydrated copper(II) sulfate, CuSO<sub>4</sub>·5H<sub>2</sub>O, starting from copper oxide and dilute sulfuric acid. You are expected to know both the procedure (what you do) and the reasoning behind every step (why you do it). The November 2021 examiner report singled out one persistent mistake: candidates saying "evaporate all the water" rather than "concentrate the solution and leave to crystallise". Avoiding that single phrase is worth a mark on most past papers.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2020/02/Preparing-Soluble-Salts-1.png" alt="Diagram showing the steps for preparing copper sulfate by the insoluble base method: warm dilute sulfuric acid in a beaker, add copper oxide in excess, filter to remove excess copper oxide, then heat the filtrate to concentrate it and leave to crystallise">
+  <div class="caption">The insoluble base method for preparing copper sulfate: warm acid → add copper oxide in excess → filter → concentrate → leave to crystallise.</div>
+</div>
+
+<ol>
+  <li>The reaction is: CuO (s) + H<sub>2</sub>SO<sub>4</sub> (aq) → CuSO<sub>4</sub> (aq) + H<sub>2</sub>O (l). An insoluble metal oxide (copper(II) oxide) neutralises a dilute acid to give a soluble salt plus water.</li>
+  <li>Two visible signs that the reaction is happening: the black copper oxide powder disappears as it reacts, and the colourless acid turns <strong>blue</strong> because of the Cu<sup>2+</sup> ions in solution.</li>
+  <li>The acid is warmed using a <strong>water bath</strong> rather than a Bunsen flame. The water bath gives even, controlled heating and keeps the temperature below 100 °C, which avoids spitting acid and bumping.</li>
+  <li>Copper(II) oxide is added a little at a time and stirred until it is in <strong>excess</strong>. You can see excess as black unreacted solid sitting at the bottom of the beaker after stirring.</li>
+  <li>Excess insoluble base is added to make sure <strong>all the acid reacts</strong>. If any acid were left, the crystals would be contaminated with sulfuric acid.</li>
+  <li>The excess unreacted CuO is removed by <strong>filtration</strong>. The black solid stays on the filter paper as the residue; the blue copper sulfate solution passes through as the filtrate.</li>
+  <li>After filtration, the only things in the solution are the salt (CuSO<sub>4</sub>) and water. There is no leftover acid (used up by the excess base) and no other dissolved product.</li>
+  <li>The filtrate is heated gently to <strong>concentrate</strong> it. Stop heating before the solution dries out. Evaporating to dryness destroys the water of crystallisation and gives a powdery, anhydrous solid instead of the bright blue crystals.</li>
+  <li>The concentrated solution is left to <strong>cool slowly</strong>. As it cools, large regular crystals of hydrated copper(II) sulfate, CuSO<sub>4</sub>·5H<sub>2</sub>O, form. Slow cooling gives bigger, purer crystals than fast cooling.</li>
+  <li>The crystals are dried by patting them between filter papers or by leaving them in a warm place. Do not dry them in an oven, as this can drive off the water of crystallisation.</li>
+  <li>The November 2021 Higher examiner report flagged "evaporate all the water" as the single biggest mark-loser on this topic. Always write "heat to <strong>concentrate</strong> the solution" and "leave to <strong>cool</strong>". Both halves are needed.</li>
+  <li>Safety: wear goggles throughout. Dilute sulfuric acid is an irritant. Use tongs to move hot glassware. Avoid breathing in the copper(II) oxide powder.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Which is the balanced equation for the reaction between copper(II) oxide and dilute sulfuric acid? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>CuO + H<sub>2</sub>SO<sub>4</sub> → CuSO<sub>4</sub> + H<sub>2</sub>O</li>
+  <li>Cu + H<sub>2</sub>SO<sub>4</sub> → CuSO<sub>4</sub> + H<sub>2</sub></li>
+  <li>CuO + 2H<sub>2</sub>SO<sub>4</sub> → Cu(SO<sub>4</sub>)<sub>2</sub> + 2H<sub>2</sub>O</li>
+  <li>CuO + H<sub>2</sub>SO<sub>4</sub> → CuSO<sub>4</sub> + 2H<sub>2</sub>O</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> Why is copper(II) oxide added to the dilute sulfuric acid until it is in excess? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>To speed up the reaction</li>
+  <li>To make sure all the acid is used up, so it cannot contaminate the final product</li>
+  <li>To give a brighter blue colour</li>
+  <li>To prevent the solution from boiling over</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> The excess unreacted copper(II) oxide is removed from the mixture by which technique? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Distillation, because the copper oxide has a higher boiling point than the solution</li>
+  <li>Chromatography, because the solid will not travel up the paper</li>
+  <li>Filtration, because the copper oxide is insoluble in water</li>
+  <li>Decanting, because the copper oxide floats on top of the solution</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> Why is a water bath used to warm the dilute sulfuric acid, rather than heating it directly with a Bunsen flame? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>A water bath is much faster than a Bunsen burner</li>
+  <li>A water bath heats the acid evenly and prevents spitting, because the temperature cannot exceed 100 °C</li>
+  <li>A water bath produces no flame and removes the need for goggles</li>
+  <li>A water bath dissolves the copper oxide more quickly than the acid does</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student heats the filtered copper sulfate solution until all the water has evaporated, leaving a white powder rather than blue crystals. What has the student done wrong? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The student filtered the mixture too soon</li>
+  <li>The student used too much copper oxide</li>
+  <li>The student evaporated the solution to dryness, which has removed the water of crystallisation</li>
+  <li>The student used the wrong acid</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student prepares pure, dry hydrated copper(II) sulfate crystals from copper(II) oxide and dilute sulfuric acid. She follows these steps:</p>
+<ol>
+  <li>She measures 25 cm³ of dilute sulfuric acid into a beaker and warms it using a water bath.</li>
+  <li>She adds copper(II) oxide a little at a time, stirring, until no more reacts.</li>
+  <li>She filters the mixture.</li>
+  <li>She heats the filtrate in an evaporating basin to concentrate the solution.</li>
+  <li>She leaves the concentrated solution to cool and crystallise.</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Write a balanced equation, including state symbols, for the reaction between copper(II) oxide and dilute sulfuric acid. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Describe <strong>two</strong> observations the student would make as the copper(II) oxide reacts with the dilute sulfuric acid. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Explain why the dilute sulfuric acid is warmed using a water bath rather than a Bunsen flame. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> Explain why the copper(II) oxide is added in <strong>excess</strong>. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> Describe how the student would obtain pure, dry crystals of hydrated copper(II) sulfate from the filtrate. Refer to <strong>both</strong> heating and cooling in your answer. <span class="marks">[4 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> The student's final product is a sample of slightly impure copper(II) sulfate crystals. Suggest <strong>one</strong> step in her method where impurities might have entered, and explain how this could be prevented. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(g)</strong> Hydrated copper(II) sulfate has the formula CuSO<sub>4</sub>·5H<sub>2</sub>O. Explain what the "·5H<sub>2</sub>O" represents. <span class="marks">[1 mark]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Which is the balanced equation?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> CuO + H<sub>2</sub>SO<sub>4</sub> → CuSO<sub>4</sub> + H<sub>2</sub>O <span class="marks-inline">[1 mark]</span></p>
+<p>B is incorrect. This is the reaction of copper metal (Cu) with the acid, which would produce hydrogen gas. The reactant in this practical is copper(II) oxide (CuO), and the product is water, not hydrogen.</p>
+<p>C is incorrect. The formula Cu(SO<sub>4</sub>)<sub>2</sub> is wrong. Cu<sup>2+</sup> and SO<sub>4</sub><sup>2−</sup> combine in a 1:1 ratio to give CuSO<sub>4</sub>.</p>
+<p>D is incorrect. There is no need for the "2" in front of water. The equation in A is already balanced.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Check the formula of the salt produced. Copper(II) has a charge of 2+, and the sulfate ion is 2−, so they combine in a 1:1 ratio to give CuSO<sub>4</sub>.</p>
+<p>The general pattern for acid + metal oxide is salt + water (no hydrogen). The pattern for acid + reactive metal is salt + hydrogen.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Why is the copper(II) oxide added in excess?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> To make sure all the acid is used up, so it cannot contaminate the final product <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Excess base does not speed up the reaction. It only ensures that no acid is left over.</p>
+<p>C is incorrect. The blue colour comes from the Cu<sup>2+</sup> ions in solution. Adding more solid does not change the shade of blue, because the dissolved Cu<sup>2+</sup> concentration is set by the acid available.</p>
+<p>D is incorrect. The water bath, not the excess base, controls the temperature of the mixture.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is a classic exam question for this practical. Adding excess insoluble base guarantees that no acid is left over. Because the base is insoluble, any extra simply sits as a solid that can be filtered out later. So there is no downside to adding too much.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Which technique removes the excess copper(II) oxide?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Filtration, because the copper oxide is insoluble in water <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Distillation separates a liquid from a dissolved solid, not an undissolved solid from a liquid.</p>
+<p>B is incorrect. Chromatography separates dyes or other coloured substances in solution. It is not used to remove undissolved solids.</p>
+<p>D is incorrect. Copper oxide does not float on water. It sinks. Decanting would lose some of the solid in the poured-off liquid and is less clean than filtration.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Filtration is the right choice whenever you need to separate an insoluble solid from a liquid. The solid stays on the filter paper as residue; the liquid passes through as filtrate.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Why is a water bath used?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> A water bath heats the acid evenly and prevents spitting, because the temperature cannot exceed 100 °C <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. A water bath is actually slower than a Bunsen, but speed is not the reason for choosing it.</p>
+<p>C is incorrect. Goggles are still needed regardless of the heat source. Acid is corrosive whether it is warm or cool.</p>
+<p>D is incorrect. A water bath does not dissolve the copper oxide. The reaction with acid is what removes the copper oxide.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The boiling point of water (100 °C) acts as a built-in temperature limit for a water bath. You cannot accidentally overheat the acid or boil it dry. That is what makes a water bath safer than a direct flame for this practical.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Why is the final product a white powder rather than blue crystals?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> The student evaporated the solution to dryness, which has removed the water of crystallisation <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Filtering too soon would mean unreacted acid remains, not loss of water of crystallisation.</p>
+<p>B is incorrect. Using too much copper oxide simply leaves excess solid on the filter paper. The colour of the final crystals would still be blue.</p>
+<p>D is incorrect. The wrong acid would give a different salt (for example, CuCl<sub>2</sub> with hydrochloric acid). Anhydrous CuCl<sub>2</sub> is brown, not white.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the most penalised mistake in the November 2021 examiner report. The student should heat the solution to <em>concentrate</em> it, not to dryness. Stop heating when you see crystals beginning to form at the edge of the evaporating basin or when a glass rod dipped in produces a film of crystals on cooling.</p>
+<p>The "·5H<sub>2</sub>O" in CuSO<sub>4</sub>·5H<sub>2</sub>O is what makes the crystals blue. Anhydrous (water-free) CuSO<sub>4</sub> is white.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Balanced equation with state symbols. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The balanced equation is:</p>
+<ul>
+  <li>CuO + H<sub>2</sub>SO<sub>4</sub> → CuSO<sub>4</sub> + H<sub>2</sub>O. Correct balanced equation. <span class="marks-inline">[1 mark]</span></li>
+  <li>State symbols: CuO (s) + H<sub>2</sub>SO<sub>4</sub> (aq) → CuSO<sub>4</sub> (aq) + H<sub>2</sub>O (l). All four state symbols correct. <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>An unbalanced equation with correct state symbols still gains the second mark only if the formulae are correct.</p>
+<p>"Cu" in place of "CuO" is not accepted. Copper metal is a different reactant.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two marks here: one for the balanced equation, one for the state symbols. Check both before moving on.</p>
+<p>State symbols: solid copper oxide is (s); dilute sulfuric acid and copper sulfate solution are both (aq); water is (l). The product is in solution, not in solid form, until the crystallisation step.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Two observations as CuO reacts with the acid. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark for each):</p>
+<ul>
+  <li>The black copper(II) oxide powder disappears / dissolves / is used up</li>
+  <li>The colourless acid turns blue / a blue solution is formed (because Cu<sup>2+</sup> ions are in solution)</li>
+  <li>The mixture warms up slightly (the reaction is slightly exothermic)</li>
+  <li>Once the acid is used up, some black solid remains undissolved at the bottom of the beaker</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"The mixture changes colour" alone is not enough. Specify the starting and ending colours (colourless to blue).</p>
+<p>"It fizzes" or "bubbles form" are not accepted. There is no gas produced in this reaction.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"Observations" means what you can see (or sometimes feel or hear). Stick to physical changes you would actually notice in the lab: colour, disappearance of solid, temperature.</p>
+<p>The blue colour is the key observation here. It comes from copper(II) ions, Cu<sup>2+</sup>, dissolved in water.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Why is a water bath used? <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark for each):</p>
+<ul>
+  <li>It heats the mixture evenly (avoiding hot spots and bumping)</li>
+  <li>The temperature cannot exceed 100 °C (the boiling point of water acts as a temperature limit)</li>
+  <li>It prevents the acid from spitting out of the beaker</li>
+  <li>It avoids accidentally boiling the solution to dryness</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"It is safer" alone is not accepted. The answer must give a specific reason.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two marks means two distinct reasons. Pick one safety reason ("prevents spitting") and one control reason ("temperature limited to 100 °C") to make sure you cover both halves of why a water bath is preferred.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d).</strong> Why is the copper(II) oxide added in excess? <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Copper(II) oxide is added in excess because:</p>
+<ul>
+  <li>To make sure all the dilute sulfuric acid reacts / is neutralised <span class="marks-inline">[1 mark]</span></li>
+  <li>So that no acid is left in the solution, which would contaminate / make impure the final crystals <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"To use up the acid" alone is not enough for the second mark. The answer must explain the consequence (contamination of the product) of having leftover acid.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The clean two-mark structure is: (i) what the excess does (uses up the acid), (ii) why that matters (no acid contamination of the crystals).</p>
+<p>Excess insoluble base is safe to add because any extra is filtered out at the next stage. That is what makes this method work.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Describe how to obtain pure, dry crystals from the filtrate. Refer to heating and cooling. <span class="marks-inline">[4 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The description should include:</p>
+<ul>
+  <li>Heat the filtrate gently (in an evaporating basin / using a water bath) to concentrate the solution / evaporate some of the water <span class="marks-inline">[1 mark]</span></li>
+  <li>Stop heating before the solution evaporates to dryness / when crystals start to form at the edge / when a glass rod dipped in produces a film of crystals <span class="marks-inline">[1 mark]</span></li>
+  <li>Leave the concentrated solution to cool slowly so that crystals form <span class="marks-inline">[1 mark]</span></li>
+  <li>Filter / decant / pat dry the crystals between filter papers (or leave in a warm place to dry) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Evaporate the water until it is all gone" is not accepted. This destroys the water of crystallisation and gives a white powder, not blue crystals.</p>
+<p>"Heat the solution and the crystals will form" is too vague. The cooling step must be mentioned.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the question the November 2021 Higher examiner report flagged most often. The mark-losers were students who said "evaporate all the water" or who skipped the slow cooling step.</p>
+<p>The safe phrasing is: "Heat to concentrate the solution. Stop before it evaporates to dryness. Leave to cool slowly so that crystals form. Pat dry between filter papers." That covers all four marks in one short paragraph.</p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Suggest a step where impurities might enter, and how to prevent it. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> source of impurity, with a matching prevention (1 mark for each):</p>
+<ul>
+  <li>Source: small particles of copper oxide pass through the filter paper.<br>
+      Prevention: use a finer / double-folded filter paper, or filter the mixture twice.</li>
+  <li>Source: the solution is contaminated by unwashed apparatus.<br>
+      Prevention: rinse all apparatus with distilled water before use.</li>
+  <li>Source: the crystals trap mother liquor when dried.<br>
+      Prevention: wash the crystals with a small amount of cold distilled water before drying.</li>
+  <li>Source: filtering before all the acid has reacted.<br>
+      Prevention: confirm that excess solid remains in the beaker before filtering.</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Be more careful" without specifying a step is not accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>For an "explain how this could be prevented" question, pair the source of impurity with a specific procedural fix. One sentence each is usually enough.</p>
+<p>The most common real-world source of impurity is fine copper oxide passing through the filter paper. Filtering twice, or using a smaller-pore filter paper, fixes this.</p>
+</div>
+
+<div class="qref">
+<strong>Question (g).</strong> Explain what the "·5H<sub>2</sub>O" in CuSO<sub>4</sub>·5H<sub>2</sub>O represents. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The "·5H<sub>2</sub>O" represents:</p>
+<ul>
+  <li>Water of crystallisation / five water molecules built into the structure of the crystal lattice (for each CuSO<sub>4</sub> formula unit) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Water" alone is not accepted. The answer must show that the water is part of the crystal structure.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The water of crystallisation is what gives the crystals their bright blue colour. If you heat them strongly, the water is driven off and you are left with anhydrous (water-free) copper sulfate, which is white.</p>
+<p>This is also why you do not dry the crystals in an oven. A warm place or a desiccator is fine; oven heat would remove the water of crystallisation and change the colour and the formula.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

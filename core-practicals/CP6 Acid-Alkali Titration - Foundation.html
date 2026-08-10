@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP6 Acid-Alkali Titration (Foundation)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #0277bd; border-bottom: 3px solid #0277bd; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #0277bd; border-bottom: 2px solid #b3d9f2; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #0277bd; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #0277bd; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #0277bd; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #e1f5fe; border-left: 4px solid #0277bd; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #0277bd; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #0277bd; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #e1f5fe; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #0277bd; margin: 3em 0 2em; }
+  .ms-banner { background: #0277bd; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP6 Acid-Alkali Titration</h1>
+<p class="subtitle">Foundation Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Separate Chemistry (1CH0) only, not assessed in Combined Science (1SC0)</p>
+  <p><strong>Paper:</strong> Paper 1</p>
+  <p><strong>Specification:</strong> 5.9C. Core Practical: Carry out an accurate acid-alkali titration, using burette, pipette and a suitable indicator.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical is the accurate titration of an acid against an alkali to find the exact volume of acid needed to neutralise a known volume of alkali. The June 2019 1CH0/1F examiner report flagged that lower-band candidates confuse the names of key apparatus (burette vs pipette) and forget to describe both the rough <em>and</em> the accurate titration stages.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Apparatus</h3>
+
+<ol>
+  <li>The <strong>burette</strong> holds the acid (usually HCl). It is a tall narrow glass tube with a tap at the bottom, and a graduated scale that lets you read the volume to the nearest 0.05 cm<sup>3</sup>.</li>
+  <li>The <strong>pipette</strong> measures an exact, fixed volume of alkali (usually 25.0 cm<sup>3</sup>) into the conical flask. A <strong>pipette filler</strong> is used to draw the liquid up safely, <strong>never</strong> use your mouth.</li>
+  <li>The <strong>conical flask</strong> holds the alkali. Its shape lets you swirl the contents without splashing.</li>
+  <li>A <strong>white tile</strong> is placed under the flask so that the indicator colour change is easy to see.</li>
+  <li>The <strong>funnel</strong> is used to fill the burette, then <strong>removed before titrating</strong> so that drips don't add extra acid uncounted.</li>
+  <li>A <strong>retort stand</strong> with a burette clamp holds the burette vertical and steady.</li>
+</ol>
+
+<h3>Part 2. Method</h3>
+
+<ol start="7">
+  <li>Use the pipette and pipette filler to transfer exactly 25.0 cm<sup>3</sup> of alkali into the conical flask.</li>
+  <li>Add 2&ndash;3 drops of indicator (e.g. <strong>phenolphthalein</strong>). The alkali turns pink.</li>
+  <li>Fill the burette with acid using a funnel. Remove the funnel. Record the initial burette reading from the bottom of the meniscus, at eye level.</li>
+  <li><strong>Rough titration:</strong> open the tap and run acid into the flask, swirling continuously, until the indicator just turns colourless. Record the rough titre.</li>
+  <li><strong>Accurate titrations:</strong> repeat with a fresh 25.0 cm<sup>3</sup> of alkali. Run acid quickly to within ~1&ndash;2 cm<sup>3</sup> of the rough titre, then add <strong>dropwise</strong> until the colour just disappears.</li>
+  <li>Repeat until you have at least two <strong>concordant</strong> titres (within 0.10 cm<sup>3</sup> of each other). Discard the rough titre and any anomalies, then calculate the <strong>mean</strong> of the concordant accurate titres.</li>
+</ol>
+
+<h3>Part 3. Indicator Choice</h3>
+
+<ol start="13">
+  <li><strong>Phenolphthalein</strong>: pink in alkali, colourless in acid, the standard choice for HCl + NaOH.</li>
+  <li><strong>Methyl orange</strong>: yellow in alkali, red in acid, used for strong acid + weak alkali.</li>
+  <li><strong>Universal indicator</strong> is <strong>not</strong> used in titrations because it has a gradual range of colours rather than a sharp end-point.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Which piece of apparatus is used to measure an exact 25.0 cm<sup>3</sup> of alkali into the conical flask? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Beaker</li>
+  <li>Burette</li>
+  <li>Measuring cylinder</li>
+  <li>Pipette</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> Why must a funnel be removed from the top of the burette before the titration starts? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>To stop the burette from falling over</li>
+  <li>To stop drips from the funnel adding extra acid that is not counted in the titre</li>
+  <li>To make sure all the acid escapes from the burette</li>
+  <li>To allow more air into the burette</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> Which indicator is suitable for an HCl and NaOH titration? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Litmus paper</li>
+  <li>Phenolphthalein</li>
+  <li>Universal indicator</li>
+  <li>Bromine water</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> A student does a rough titration first. Why? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>To use up some of the acid before the accurate run</li>
+  <li>To find the approximate end-point so that the accurate runs can be added dropwise near that volume</li>
+  <li>So the indicator changes colour more easily later</li>
+  <li>To clean the burette</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student records four accurate titres: 24.10 cm<sup>3</sup>, 24.15 cm<sup>3</sup>, 24.20 cm<sup>3</sup> and 24.65 cm<sup>3</sup>. Which value should be left out when working out the mean titre? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>24.10 cm<sup>3</sup></li>
+  <li>24.15 cm<sup>3</sup></li>
+  <li>24.20 cm<sup>3</sup></li>
+  <li>24.65 cm<sup>3</sup></li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student carries out an acid-alkali titration to find the volume of dilute hydrochloric acid needed to neutralise 25.0 cm<sup>3</sup> of dilute sodium hydroxide solution. The student uses a pipette, a burette, a conical flask, a white tile, a funnel and a few drops of phenolphthalein indicator.</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Complete the sentences by writing the name of the correct piece of apparatus from the list above.</p>
+<p>(i) The acid is added to the alkali from the ________________________ . <span class="marks">[1 mark]</span></p>
+<p>(ii) Exactly 25.0 cm<sup>3</sup> of alkali is measured into the conical flask using a ________________________ . <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> State the colour change of phenolphthalein indicator at the end-point of this titration. <span class="marks">[2 marks]</span></p>
+<p class="center">from ________________________ to ________________________</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Give one reason why universal indicator is <strong>not</strong> used for titrations. <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> The student's titration results are shown in the table.</p>
+<table>
+  <tr><th>Titration</th><th>Rough</th><th>1</th><th>2</th><th>3</th></tr>
+  <tr><td>Final burette reading / cm<sup>3</sup></td><td>25.30</td><td>49.55</td><td>24.20</td><td>48.45</td></tr>
+  <tr><td>Initial burette reading / cm<sup>3</sup></td><td>0.00</td><td>25.30</td><td>0.00</td><td>24.20</td></tr>
+  <tr><td>Volume of acid used / cm<sup>3</sup></td><td>25.30</td><td>24.25</td><td>24.20</td><td>24.25</td></tr>
+</table>
+<p>(i) State which two titration results are concordant (within 0.10 cm<sup>3</sup> of each other) and should be used to calculate the mean titre. <span class="marks">[1 mark]</span></p>
+<p>(ii) Calculate the mean titre, using only your two concordant results. Give your answer to 2 decimal places. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> Place these steps in the <strong>correct order</strong> for carrying out an accurate titration. Write the letters in the boxes below.</p>
+<p><strong>A</strong> Add 2&ndash;3 drops of phenolphthalein indicator to the alkali in the flask</p>
+<p><strong>B</strong> Read and record the initial burette reading at eye level</p>
+<p><strong>C</strong> Use a pipette and pipette filler to add 25.0 cm<sup>3</sup> of alkali into the conical flask</p>
+<p><strong>D</strong> Open the burette tap and add acid, swirling continuously, until the colour just disappears</p>
+<p><strong>E</strong> Fill the burette with acid using a funnel, then remove the funnel</p>
+<p class="center">________ ________ ________ ________ ________ <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> Explain why the student carries out a rough titration first, before doing the accurate titrations. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(g)</strong> Give <strong>two</strong> safety precautions the student should take when carrying out this titration. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(h)</strong> Suggest <strong>one</strong> reason, in terms of the apparatus, why a measuring cylinder should not be used to measure the 25.0 cm<sup>3</sup> of alkali. <span class="marks">[1 mark]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Apparatus for measuring 25.0 cm<sup>3</sup> of alkali.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>D.</strong> Pipette <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. A beaker has very rough graduations, not accurate enough for titrations.</p>
+<p>B is incorrect. The burette holds the acid (the solution being added), not the alkali.</p>
+<p>C is incorrect. A measuring cylinder is less precise than a pipette and is not normally used in titrations.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The pipette is a fixed-volume piece of glassware, a 25 cm<sup>3</sup> pipette delivers exactly 25.0 cm<sup>3</sup>, no more and no less. It is the most accurate way to measure a fixed volume of liquid at GCSE.</p>
+<p>Always use a <strong>pipette filler</strong> to draw the liquid up. Never use your mouth.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Why remove the funnel?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> To stop drips from the funnel adding extra acid that is not counted in the titre <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The funnel does not stabilise the burette, the burette clamp does.</p>
+<p>C is incorrect. The burette is meant to hold the acid and release it through the tap, not let it escape from the top.</p>
+<p>D is incorrect. Allowing air in is not a goal, the burette is open to air at the top anyway.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Once the burette is full, take the funnel off and place it on the bench. If you leave it in the burette during the titration, even a few drops will fall into the burette uncounted and your titre will be artificially small.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Suitable indicator for HCl + NaOH.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Phenolphthalein <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Litmus paper changes colour over a wide pH range, the change is too gradual to give a sharp end-point.</p>
+<p>C is incorrect. Universal indicator gives a continuous range of colours (red &rarr; orange &rarr; yellow &rarr; green &rarr; blue &rarr; purple), so there is no single sharp colour change at the end-point.</p>
+<p>D is incorrect. Bromine water is used to test for alkenes, not as an acid-alkali indicator.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The two suitable indicators at GCSE are <strong>phenolphthalein</strong> (pink in alkali, colourless in acid) and <strong>methyl orange</strong> (yellow in alkali, red in acid). Both give a sharp colour change at the end-point.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Why do a rough titration first?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> To find the approximate end-point so that the accurate runs can be added dropwise near that volume <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The rough titration is not about wasting acid, it is about finding the end-point quickly.</p>
+<p>C is incorrect. The indicator behaves the same way every time. The rough titration does not change the indicator.</p>
+<p>D is incorrect. Cleaning the burette is done with water and then a rinse with the acid, not with a titration.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The rough titration tells you roughly how much acid is needed (e.g. about 24 cm<sup>3</sup>). In the accurate runs, you can then add ~22 cm<sup>3</sup> quickly and then slow right down to dropwise additions for the last 2 cm<sup>3</sup>. This saves time and stops you overshooting the end-point.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Which titre should be left out?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>D.</strong> 24.65 cm<sup>3</sup> <span class="marks-inline">[1 mark]</span></p>
+<p>A, B and C are incorrect. The other three titres (24.10, 24.15 and 24.20 cm<sup>3</sup>) are all within 0.10 cm<sup>3</sup> of each other, so they are concordant and should all be used.</p>
+<p>The titre 24.65 cm<sup>3</sup> is more than 0.45 cm<sup>3</sup> away from the others, it is anomalous and should be discarded.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"Concordant" means the values agree to within 0.10 cm<sup>3</sup> of each other. When working out the mean titre, include only the concordant values, never the rough run, and never any clear anomalies.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a)(i).</strong> The acid is added from the &hellip; <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The correct piece of apparatus is:</p>
+<ul>
+  <li>Burette <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Pipette" is not accepted. The pipette delivers the alkali into the flask.</p>
+<p>"Measuring cylinder" is not accepted. It is not accurate enough for titrations.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/1F June 2019 examiner report flagged that candidates frequently confuse the names of the apparatus, especially burette and pipette. Memorise it this way:</p>
+<ul>
+  <li><strong>Burette</strong> (long, narrow, tap at the bottom) <strong>delivers the acid</strong></li>
+  <li><strong>Pipette</strong> (long, thin, no tap) <strong>measures the alkali</strong></li>
+</ul>
+</div>
+
+<div class="qref">
+<strong>Question (a)(ii).</strong> 25.0 cm<sup>3</sup> of alkali is measured using a &hellip; <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The correct piece of apparatus is:</p>
+<ul>
+  <li>Pipette <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Burette" is not accepted. The burette holds the acid.</p>
+<p>"Measuring cylinder" is not accepted. A pipette is more accurate.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The pipette gives a fixed, precise volume (25.0 cm<sup>3</sup>) every time, with very small uncertainty. A measuring cylinder is much less precise and would introduce a much larger error.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Colour change of phenolphthalein. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The colour change is:</p>
+<ul>
+  <li>From <strong>pink</strong> &hellip; <span class="marks-inline">[1 mark]</span></li>
+  <li>&hellip; to <strong>colourless</strong> <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Clear" is accepted in place of "colourless".</p>
+<p>"Red" is not accepted. Phenolphthalein in alkali is pink, not red.</p>
+<p>"White" is not accepted. The solution becomes colourless (transparent), not white.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The order of the colour change matters. The alkali is in the flask <strong>first</strong>, so it goes pink (alkaline). Acid is then added, at the end-point, the solution is just neutralised, so the pink colour disappears.</p>
+<p>One drop of acid is enough to discharge the pink colour completely at the end-point, which is why you slow down to dropwise additions near the end of each accurate titration.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Why universal indicator is not used. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>The colour change is gradual / not sharp <span class="marks-inline">[1 mark]</span></li>
+  <li>It changes through many colours rather than giving a single sharp end-point</li>
+  <li>You cannot tell exactly when the end-point has been reached</li>
+</ul>
+<p>"It is not accurate" is not accepted on its own, the reason must reference the gradual colour change or the absence of a sharp end-point.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Universal indicator is brilliant for showing approximate pH (e.g. "this solution is around pH 4") but useless for titrations. In a titration you need to detect a single moment (the end-point) and universal indicator's smooth colour change makes that moment impossible to pin down.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(i).</strong> Which two titres are concordant? <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The concordant titres are:</p>
+<ul>
+  <li>Titration 1 (24.25 cm<sup>3</sup>) and Titration 3 (24.25 cm<sup>3</sup>) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Rough and Titration 1" is not accepted. The rough titre is always discarded.</p>
+<p>"Titration 1 and Titration 2" is not accepted. 24.25 and 24.20 differ by 0.05 cm<sup>3</sup>, which is within concordant range, but Titration 3 also matches Titration 1 exactly, so the marker is looking for the best matching pair.</p>
+<p>Accept also "Titration 1, 2 and 3" (24.25, 24.20, 24.25), all three are within 0.10 cm<sup>3</sup>.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"Concordant" means within 0.10 cm<sup>3</sup>. Scan the volume-of-acid row, ignore the rough run, and look for the run(s) that match each other most closely.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(ii).</strong> Calculate the mean titre. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the mean titre using the two concordant results (Titration 1 and Titration 3):</p>
+
+<ul>
+  <li>Add the two concordant titres:
+    <p class="center">24.25 + 24.25 = 48.50</p>
+  </li>
+  <li>Divide by 2:
+    <p class="center">mean titre = 48.50 &divide; 2</p>
+    <p class="center"><span class="working">mean titre = 24.25</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the answer to 2 decimal places, with the correct unit:
+    <p class="center"><span class="final">mean titre = 24.25 cm<sup>3</sup></span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the correct calculation (48.50 &divide; 2 = 24.25).</p>
+<p>1 mark for the final answer with correct unit cm<sup>3</sup>, to 2 decimal places.</p>
+<p>If three concordant titres are used (24.25 + 24.20 + 24.25) &divide; 3 = 24.233..., accept 24.23 cm<sup>3</sup>.</p>
+<p>"24.25" with no unit is not accepted for the second mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Always quote titres and mean titres to two decimal places (e.g. 24.25, not 24.3), the burette can be read to 0.05 cm<sup>3</sup>, so the second decimal place must always be either 0 or 5.</p>
+<p>Always include the unit (cm<sup>3</sup>), missing units is one of the most common avoidable mark losses on calculation questions.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Place the steps in the correct order. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The correct order is:</p>
+<p class="center"><strong>C &rarr; A &rarr; E &rarr; B &rarr; D</strong></p>
+<ul>
+  <li>2 marks for the fully correct order (CAEBD)</li>
+  <li>1 mark if 4 of the 5 letters are in the correct position (i.e. one letter out of place)</li>
+</ul>
+<p>The reasoning:</p>
+<ol>
+  <li><strong>C</strong>, Pipette alkali into the flask <strong>first</strong></li>
+  <li><strong>A</strong>, Add indicator to the alkali in the flask</li>
+  <li><strong>E</strong>, Fill the burette and remove the funnel</li>
+  <li><strong>B</strong>, Record the initial burette reading</li>
+  <li><strong>D</strong>, Run acid in, swirling, until the colour disappears</li>
+</ol>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is a classic Foundation sequencing question (modelled on 1CH0/1H November 2020 Q10(a)(i)). The key logical jump is that you set up the <strong>flask first</strong> (alkali + indicator), then prepare the burette (fill + reading), then carry out the titration. You can't read the burette reading until the burette is filled, and you can't observe a colour change until indicator has been added.</p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Why do a rough titration first? <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> of the following (1 mark each):</p>
+<ul>
+  <li>The rough titration gives the approximate volume of acid needed to reach the end-point</li>
+  <li>So that, in the accurate titrations, acid can be added quickly at first / quickly up to that volume</li>
+  <li>Then added <strong>dropwise</strong> near the end-point</li>
+  <li>To avoid overshooting the end-point</li>
+  <li>To save time on each accurate run</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"To get a rough idea" is not enough on its own, the answer must explain how this helps the accurate runs.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The two-mark version of this answer always links the rough titration to a benefit for the accurate run. A good template:</p>
+<p><em>"The rough titration finds the approximate end-point volume <strong>(1 mark)</strong> so that the accurate runs can be added dropwise near that volume to avoid overshooting <strong>(1 mark)</strong>."</em></p>
+</div>
+
+<div class="qref">
+<strong>Question (g).</strong> Two safety precautions. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark each):</p>
+<ul>
+  <li>Wear safety goggles / eye protection (acid and alkali are irritants)</li>
+  <li>Use a pipette filler, never pipette by mouth</li>
+  <li>Wipe up any spills of acid or alkali with a damp cloth</li>
+  <li>Wash hands after handling the chemicals</li>
+  <li>Clamp the burette so it cannot fall over</li>
+  <li>Stand up to take the burette reading (so you don't drop the burette while leaning over)</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Be careful" alone is not accepted.</p>
+<p>"Wear a lab coat" is generally not credited at GCSE without a specific reason.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two safe answers for almost any acid/alkali practical: <strong>wear safety goggles</strong> (eye protection from splashes) and <strong>use a pipette filler</strong> (never use your mouth on a pipette).</p>
+</div>
+
+<div class="qref">
+<strong>Question (h).</strong> Why not use a measuring cylinder? <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>A measuring cylinder is not accurate / precise enough <span class="marks-inline">[1 mark]</span></li>
+  <li>A pipette measures the volume to a smaller uncertainty / more decimal places</li>
+  <li>A measuring cylinder has wider graduations than a pipette</li>
+</ul>
+<p>"It's the wrong shape" is not accepted. The reason must reference accuracy or precision.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>A 25 cm<sup>3</sup> pipette is calibrated to deliver exactly 25.00 cm<sup>3</sup> with very small uncertainty (typically &plusmn;0.06 cm<sup>3</sup>). A 25 cm<sup>3</sup> measuring cylinder has divisions of about 0.5 cm<sup>3</sup>, so the uncertainty is ten times larger. For accurate titrations, you need the pipette.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

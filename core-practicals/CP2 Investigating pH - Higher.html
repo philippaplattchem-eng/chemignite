@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP2 Investigating pH (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP2 Investigating pH</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Combined Science (1SC0) and Separate Chemistry (1CH0)</p>
+  <p><strong>Paper:</strong> Paper 1</p>
+  <p><strong>Specification:</strong> 3.6. Investigate the change in pH on adding powdered calcium hydroxide or calcium oxide to a fixed volume of dilute hydrochloric acid.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical investigates how the pH of a dilute acid changes as a powdered base is added. The chemistry is simple neutralisation, but the practical skills tested go further: identifying variables, plotting an S-shaped curve, and explaining the pH change at a particle level. The November 2020 examiner report singled out one mark as the discriminator: candidates must explicitly state that the concentration of H⁺ ions decreases.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2019/07/Investigating-pH-Graph.png" alt="Graph showing the change in pH as base is added to dilute hydrochloric acid. The curve starts at a low pH, has a steep rise around the equivalence point, and plateaus at a high pH">
+  <div class="caption">The expected shape of the pH curve: flat-low region, steep climb through the equivalence point, then flat-high region around pH 12 (because calcium hydroxide is only sparingly soluble).</div>
+</div>
+
+<ol>
+  <li>The practical investigates the pH change when powdered <strong>calcium hydroxide</strong>, Ca(OH)<sub>2</sub>, or <strong>calcium oxide</strong>, CaO, is added a spatula at a time to a fixed volume of dilute hydrochloric acid (HCl).</li>
+  <li>The reaction is neutralisation: Ca(OH)<sub>2</sub> (s) + 2HCl (aq) → CaCl<sub>2</sub> (aq) + 2H<sub>2</sub>O (l). The same products form from CaO.</li>
+  <li><strong>Variables.</strong> Independent: mass (or spatula measures) of base added. Dependent: pH of the mixture. Controls: volume and concentration of HCl, identity and particle size of the base, stirring time, temperature.</li>
+  <li>Measure pH using a <strong>pH probe</strong> (one decimal place) or <strong>universal indicator paper</strong> (whole-number pH only). A pH probe is more accurate because it gives one-decimal-place readings instead of just whole numbers from a colour chart.</li>
+  <li>The pH increases as more base is added. The plotted curve is an <strong>S-shape</strong>: flat-low at first, steep through the equivalence point (around pH 7), then flat-high above pH 7.</li>
+  <li>The curve <strong>plateaus near pH 12</strong> because calcium hydroxide is only <em>sparingly soluble</em>. Once the solution is saturated with Ca(OH)<sub>2</sub>, any extra base sits as undissolved solid and the pH cannot rise any further.</li>
+  <li><strong>Particle-level explanation</strong> (Higher discriminator). The base supplies OH<sup>−</sup> ions. These react with H<sup>+</sup> ions in the acid: H<sup>+</sup> (aq) + OH<sup>−</sup> (aq) → H<sub>2</sub>O (l). Each addition removes more H<sup>+</sup> ions, so the <strong>concentration of H<sup>+</sup> ions falls</strong>. Because pH measures the concentration of H<sup>+</sup>, the pH rises.</li>
+  <li>The November 2020 Higher examiner report flagged the top mark for stating that the <strong>concentration of H<sup>+</sup> ions decreases</strong>. Saying only "the pH increases" or "magnesium hydroxide neutralises the acid" did not gain the discriminator mark.</li>
+  <li><strong>Variants.</strong> Magnesium hydroxide, Mg(OH)<sub>2</sub>, and barium hydroxide, Ba(OH)<sub>2</sub>, are valid exam substitutes for the named bases. The method, the variables, and the shape of the curve are unchanged.</li>
+  <li>Safety: wear goggles throughout. Calcium oxide reacts exothermically with water, so add it slowly to avoid splashing. Universal indicator solution is flammable when alcohol-based.</li>
+  <li>To plot the graph: independent variable on the x-axis, dependent on the y-axis. Both axes labelled with quantity and unit (pH has no unit). Use a scale that fills more than half the grid. Plot points within half a small square. Draw a <strong>smooth curve</strong> of best fit, not dot-to-dot.</li>
+  <li>Common candidate errors flagged by examiner reports: saying the pH falls (it rises), copying "in excess" straight from the stem (no credit), and not stating the H<sup>+</sup> concentration change.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> A student adds spatula measures of powdered calcium hydroxide to a fixed volume of dilute hydrochloric acid and records the pH after each addition. Which is the <strong>dependent variable</strong> in this investigation? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The volume of dilute hydrochloric acid</li>
+  <li>The mass of calcium hydroxide added</li>
+  <li>The pH of the mixture</li>
+  <li>The temperature of the laboratory</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> Which is the balanced equation for the reaction between calcium hydroxide and dilute hydrochloric acid? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Ca(OH)<sub>2</sub> + HCl → CaCl + H<sub>2</sub>O</li>
+  <li>Ca(OH)<sub>2</sub> + 2HCl → CaCl<sub>2</sub> + 2H<sub>2</sub>O</li>
+  <li>Ca(OH)<sub>2</sub> + 2HCl → CaCl<sub>2</sub> + H<sub>2</sub></li>
+  <li>Ca + 2HCl → CaCl<sub>2</sub> + H<sub>2</sub></li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> A student plots a graph of pH against mass of calcium hydroxide added. What is the expected shape of the curve? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>A straight line with a negative gradient</li>
+  <li>A bell-shaped curve that peaks and then falls</li>
+  <li>An S-shape: flat at low pH, steep rise through the equivalence point, then flat at high pH</li>
+  <li>A straight line with a positive gradient that rises continuously</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> After many additions of calcium hydroxide, the pH stops changing at around pH 12. Which is the best explanation for this plateau? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>All the H<sup>+</sup> ions have been neutralised, and any extra Ca(OH)<sub>2</sub> is only sparingly soluble, so the pH cannot rise any further</li>
+  <li>The thermometer reading has reached its maximum value</li>
+  <li>All the calcium hydroxide has reacted and no more is left to add</li>
+  <li>The water in the solution has evaporated</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> Which is the most accurate piece of equipment for measuring the pH of the mixture after each addition? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Litmus paper, because it gives a clear red or blue reading</li>
+  <li>Universal indicator paper, because the colour chart is easy to read</li>
+  <li>A calibrated pH probe, because it gives a one-decimal-place reading</li>
+  <li>A thermometer, because pH depends on temperature</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates how the pH of dilute hydrochloric acid changes as powdered calcium hydroxide is added. She measures 25 cm³ of 1.0 mol/dm³ HCl into a conical flask, then adds Ca(OH)<sub>2</sub> one spatula measure at a time, stirring after each addition and recording the pH using a calibrated pH probe.</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Identify the independent variable in this investigation. <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Give <strong>two</strong> control variables the student should keep the same in this investigation. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Sketch the expected shape of the curve when pH (y-axis) is plotted against the mass of calcium hydroxide added (x-axis). Label the starting pH and the final pH on your sketch. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> Explain, in terms of ions, why the pH of the mixture increases as more calcium hydroxide is added. <span class="marks">[4 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> After many additions, the pH levels off at around pH 12 and does not increase further, even when more calcium hydroxide is added. Explain why. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> The student repeats the experiment using <strong>barium hydroxide</strong>, Ba(OH)<sub>2</sub>, instead of calcium hydroxide. Barium hydroxide is more soluble than calcium hydroxide. Suggest, with a reason, how the shape of the new graph would differ from the original. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(g)</strong> Suggest one improvement the student could make to the experiment to obtain more reliable results, other than using a different base. <span class="marks">[1 mark]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Which is the dependent variable in this investigation?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> The pH of the mixture <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The volume of HCl is kept the same throughout, so it is a control variable.</p>
+<p>B is incorrect. The mass of calcium hydroxide added is what the student deliberately changes, so it is the independent variable.</p>
+<p>D is incorrect. The temperature of the laboratory is kept constant, so it is a control variable.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The quick test for the dependent variable is: what is being measured after each change? In this practical the student records pH after every addition, so pH is the dependent variable.</p>
+<p>Independent is what you change. Dependent is what you measure. Controls are what you keep the same.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Which is the balanced equation?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Ca(OH)<sub>2</sub> + 2HCl → CaCl<sub>2</sub> + 2H<sub>2</sub>O <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The formula CaCl is wrong. Calcium forms a 2+ ion and chloride a 1− ion, so the formula must be CaCl<sub>2</sub>.</p>
+<p>C is incorrect. The product of acid + base is salt + water, not salt + hydrogen. Hydrogen gas is the product of acid + reactive metal.</p>
+<p>D is incorrect. The reactant is calcium hydroxide, Ca(OH)<sub>2</sub>, not calcium metal, Ca. Calcium metal would react with water immediately.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Always check the formula of the salt produced. Calcium has a charge of 2+ and chloride 1−, so calcium chloride is CaCl<sub>2</sub>, never CaCl.</p>
+<p>Acid + base gives salt + water. Acid + metal gives salt + hydrogen. Knowing which product set goes with which reactant pair stops you picking distractors C and D.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> What is the expected shape of the curve?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> An S-shape: flat at low pH, steep rise through the equivalence point, then flat at high pH <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The pH rises as base is added, so the gradient is positive, not negative.</p>
+<p>B is incorrect. The pH does not fall again after the rise. Once the acid is neutralised, more base only raises the pH (to a limit).</p>
+<p>D is incorrect. The curve is not a straight line. It is flat at the start, steep through the equivalence point, then flat again at the plateau.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Picture the experiment. At the start there is a huge excess of H<sup>+</sup>, so adding a small amount of base barely changes the pH (flat-low region). As you approach the equivalence point, each addition removes a much larger proportion of the remaining H<sup>+</sup>, so the pH climbs sharply. Once the acid is gone, the pH plateaus because calcium hydroxide is only sparingly soluble.</p>
+<p>That gives you the classic S-shape. Never draw a straight line for this practical.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Why does the pH plateau at pH 12?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> All the H<sup>+</sup> ions have been neutralised, and any extra Ca(OH)<sub>2</sub> is only sparingly soluble, so the pH cannot rise any further <span class="marks-inline">[1 mark]</span></p>
+<p>B is incorrect. The thermometer reading is not relevant. pH is being measured, not temperature.</p>
+<p>C is incorrect. The student is still adding more calcium hydroxide. It is the acid that has been used up, not the base.</p>
+<p>D is incorrect. The water has not evaporated. The experiment is done at room temperature and the flask is not heated.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The pH 12 plateau comes from a real chemistry constraint: Ca(OH)<sub>2</sub> is only sparingly soluble in water. Once the solution is saturated with Ca(OH)<sub>2</sub>, any extra base sits at the bottom of the flask as undissolved solid and does not increase the concentration of OH<sup>−</sup> ions in solution.</p>
+<p>If the base were more soluble (for example, barium hydroxide), the plateau pH would be higher.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Which is the most accurate piece of equipment for measuring pH?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> A calibrated pH probe, because it gives a one-decimal-place reading <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Litmus paper only tells you if a solution is acidic or alkaline. It does not give a numerical pH value.</p>
+<p>B is incorrect. Universal indicator paper gives only whole-number pH values, which are less precise than a pH probe.</p>
+<p>D is incorrect. A thermometer measures temperature, not pH.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>When asked about accuracy, think about <strong>resolution</strong>: how many decimal places can the instrument resolve? A pH probe reads to 0.1 of a unit. Universal indicator paper only resolves to whole numbers (or sometimes half-numbers if the colour chart is detailed).</p>
+<p>For a graph-plotting practical like this, one-decimal-place resolution makes the points easier to plot accurately and the curve smoother.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Identify the independent variable. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The independent variable is:</p>
+<ul>
+  <li>Mass of calcium hydroxide added / number of spatula measures of calcium hydroxide added <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Calcium hydroxide" on its own is not accepted. The variable is the <em>quantity</em> being changed, not the substance.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>An independent variable is the one the student deliberately changes. Here the student adds more and more Ca(OH)<sub>2</sub> after each pH reading, so the quantity of Ca(OH)<sub>2</sub> (mass or spatula measures) is what is being changed.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Give two control variables. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark for each):</p>
+<ul>
+  <li>Volume of dilute hydrochloric acid</li>
+  <li>Concentration of dilute hydrochloric acid</li>
+  <li>Particle size of the calcium hydroxide</li>
+  <li>Temperature of the mixture</li>
+  <li>Stirring time after each addition</li>
+  <li>The base used (Ca(OH)<sub>2</sub> throughout, not switching mid-experiment)</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"pH" is not accepted as a control variable. pH is the dependent variable.</p>
+<p>"Mass of calcium hydroxide" is not accepted as a control. That is the independent variable.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Particle size is a particularly important control here. A finer powder has more surface area and reacts faster, so using the same source of Ca(OH)<sub>2</sub> throughout means each addition reacts at a similar rate.</p>
+<p>Pick two safe controls and write each as one short phrase. Marks are not awarded for vague phrases like "keep the apparatus the same".</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Sketch the expected shape of the curve. Label the starting pH and the final pH. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>For the sketch:</p>
+<ul>
+  <li>Starting pH labelled near pH 1 (accept any value 1–2) <span class="marks-inline">[1 mark]</span></li>
+  <li>Curve has an S-shape: flat region at low pH, steep rise through pH 7, then flat region at high pH <span class="marks-inline">[1 mark]</span></li>
+  <li>Final plateau labelled near pH 12 (accept any value 11–13) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>A straight diagonal line is not accepted. The curve must show three regions: flat, steep, flat.</p>
+<p>Plotting individual points is not accepted as a sketch. The mark is for the overall shape.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The three regions of the S-curve match the three stages of the experiment. <strong>Flat-low:</strong> excess acid, pH changes very little. <strong>Steep:</strong> near the equivalence point, each addition removes a large fraction of the remaining H<sup>+</sup>. <strong>Flat-high:</strong> excess base, pH limited by the low solubility of Ca(OH)<sub>2</sub>.</p>
+<p>Always label your axes. y-axis: pH (no unit). x-axis: mass of Ca(OH)<sub>2</sub> / g (or number of spatula measures).</p>
+</div>
+
+<div class="qref">
+<strong>Question (d).</strong> Explain in terms of ions why the pH increases as more calcium hydroxide is added. <span class="marks-inline">[4 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The pH increases because:</p>
+<ul>
+  <li>The calcium hydroxide supplies OH<sup>−</sup> ions to the mixture <span class="marks-inline">[1 mark]</span></li>
+  <li>The OH<sup>−</sup> ions react with H<sup>+</sup> ions in the acid to form water: H<sup>+</sup> (aq) + OH<sup>−</sup> (aq) → H<sub>2</sub>O (l) <span class="marks-inline">[1 mark]</span></li>
+  <li>This decreases the concentration of H<sup>+</sup> ions in the solution <span class="marks-inline">[1 mark]</span></li>
+  <li>Because pH is a measure of the concentration of H<sup>+</sup> ions, the pH rises (above 7 once all the acid has reacted) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"The pH increases because the base neutralises the acid" alone does not gain credit. The answer must refer to ions.</p>
+<p>Copying "in excess" or other phrases from the stem does not gain credit. The marker is looking for chemistry, not paraphrase.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the exact question type the November 2020 Higher examiner report flagged. The discriminator mark was for stating that the <strong>concentration of H<sup>+</sup> ions decreases</strong>. Students who said only "pH increases" or "the base neutralises the acid" lost it.</p>
+<p>Structure your answer as a four-step chain: base supplies OH<sup>−</sup>, OH<sup>−</sup> reacts with H<sup>+</sup>, this lowers H<sup>+</sup> concentration, and lower H<sup>+</sup> concentration means higher pH. Tick each step off as you write.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Explain why the pH levels off at around pH 12. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The pH plateaus near pH 12 because:</p>
+<ul>
+  <li>All of the acid has been neutralised, so adding more base has no acid left to react with <span class="marks-inline">[1 mark]</span></li>
+  <li>Calcium hydroxide is only sparingly soluble in water, so any extra Ca(OH)<sub>2</sub> sits as undissolved solid and does not raise the OH<sup>−</sup> concentration in solution any further <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Because Ca(OH)<sub>2</sub> is in excess" alone is not enough. The reason for the plateau is the <em>limited solubility</em> of Ca(OH)<sub>2</sub>.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The reason for the plateau is a chemistry constraint, not a stopping point. Calcium hydroxide has a low solubility in water (about 0.02 mol/dm³ at room temperature). Once the solution is saturated with Ca(OH)<sub>2</sub>, no more dissolves and the OH<sup>−</sup> concentration in solution cannot rise.</p>
+<p>You can verify this by looking at the pH of a saturated Ca(OH)<sub>2</sub> solution (limewater): it is around pH 12, which matches the plateau on the graph.</p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Compare the graph using barium hydroxide with the original. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The shape of the graph using barium hydroxide compared with calcium hydroxide:</p>
+<ul>
+  <li>The plateau pH is higher (the curve levels off at a higher pH than 12) <span class="marks-inline">[1 mark]</span></li>
+  <li>Because barium hydroxide is more soluble than calcium hydroxide, so a higher concentration of OH<sup>−</sup> ions can be reached in solution <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"The graph would be the same" is not accepted. The greater solubility of Ba(OH)<sub>2</sub> changes the plateau height.</p>
+<p>Saying only "the pH is higher" without explaining why does not gain the second mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>When a question asks you to compare with a variant (like Ba(OH)<sub>2</sub> instead of Ca(OH)<sub>2</sub>), look at what is different about the variant. Here, barium hydroxide is described as <em>more soluble</em>. More soluble means more OH<sup>−</sup> can stay in solution, so the plateau pH is higher.</p>
+<p>Always pair the change in the graph with the underlying chemistry reason. One mark for the observation, one mark for the explanation.</p>
+</div>
+
+<div class="qref">
+<strong>Question (g).</strong> Suggest one improvement to obtain more reliable results. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>Weigh out a fixed mass of base each time (rather than using spatula measures), so the x-axis values are reproducible</li>
+  <li>Repeat the experiment and average the results / take more readings to identify and remove anomalies</li>
+  <li>Use a calibrated pH probe (if not already used) for one-decimal-place readings</li>
+  <li>Stir for a fixed time after each addition so the reading is taken at consistent reaction completeness</li>
+  <li>Use the same source of finely powdered base throughout so particle size is constant</li>
+</ul>
+<p class="right"><span class="marks-inline">[1 mark]</span></p>
+<p>"Use better equipment" alone is not accepted. The improvement must be specific.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"Reliable" in chemistry exams usually means <em>reproducible</em>. The cleanest improvement here is to weigh out fixed masses instead of using spatula measures. A spatula measure is not a precise quantity, so the x-axis values vary between additions even if the student is careful.</p>
+<p>Repeating the experiment and averaging is another safe answer that always works for "reliability" questions.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

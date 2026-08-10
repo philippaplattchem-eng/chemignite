@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP6 Acid-Alkali Titration (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP6 Acid-Alkali Titration</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Separate Chemistry (1CH0) only, not assessed in Combined Science (1SC0)</p>
+  <p><strong>Paper:</strong> Paper 1</p>
+  <p><strong>Specification:</strong> 5.9C. Core Practical: Carry out an accurate acid-alkali titration, using burette, pipette and a suitable indicator.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical is the accurate titration of an acid against an alkali, measured precisely enough that the titre can be used to calculate an unknown concentration. Higher-tier questions test apparatus terminology, reading the burette to 0.05 cm<sup>3</sup>, identifying concordant results within 0.10 cm<sup>3</sup>, and using the mean titre in a follow-on concentration calculation. The June 2019 1CH0/1F examiner report flagged that the most common errors are confusing burette with pipette and giving an incomplete method (describing only one of the rough or accurate stages).
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Apparatus and the Reasons Behind Each Choice</h3>
+
+<ol>
+  <li><strong>Burette</strong>, holds the acid; calibrated to deliver to the nearest 0.05 cm<sup>3</sup>. Acid is in the burette by convention because it can be added in tiny, controlled drops as the end-point is approached.</li>
+  <li><strong>Pipette (25.0 cm<sup>3</sup>)</strong> with pipette filler, transfers an exact, fixed volume of alkali into the conical flask. Uncertainty typically &plusmn;0.06 cm<sup>3</sup>, which is much smaller than a measuring cylinder.</li>
+  <li><strong>Conical flask</strong>, shape allows continuous swirling without splashing. A beaker would splash and lose alkali.</li>
+  <li><strong>White tile</strong>, placed under the flask so that the colour change is sharp and easy to see against a uniform background.</li>
+  <li><strong>Funnel</strong>, used <strong>only</strong> while filling the burette. Removed before titrating so that drips don't add uncounted acid to the burette during the run.</li>
+  <li>The burette is <strong>rinsed with the acid</strong> (not water) before filling, so that residual water does not dilute the acid, otherwise the titre would be too high.</li>
+  <li>The pipette is <strong>rinsed with the alkali</strong> before drawing the measured volume, for the same reason.</li>
+  <li>The burette tip is filled with acid <strong>before</strong> starting (by briefly opening the tap) to remove any air bubble, an air bubble would otherwise be displaced into the flask during the titration and the recorded titre would be too high.</li>
+</ol>
+
+<h3>Part 2. The Two-Stage Method</h3>
+
+<ol start="9">
+  <li><strong>Rough titration:</strong> add acid quickly while swirling, until the indicator just changes. Record the rough titre. This gives an approximate end-point.</li>
+  <li><strong>Accurate titration:</strong> with a fresh 25.0 cm<sup>3</sup> portion of alkali, add acid quickly to within 1&ndash;2 cm<sup>3</sup> of the rough titre, then add <strong>dropwise</strong> while swirling, until a single drop produces the colour change. Record the accurate titre.</li>
+  <li>Repeat the accurate titration until two titres are <strong>concordant</strong> (within 0.10 cm<sup>3</sup> of each other).</li>
+  <li>The <strong>mean titre</strong> is the average of the concordant accurate titres only, the rough run and any anomalies are discarded.</li>
+</ol>
+
+<h3>Part 3. Choosing the Indicator</h3>
+
+<table>
+  <tr><th>Indicator</th><th>Colour in acid</th><th>Colour in alkali</th><th>Use</th></tr>
+  <tr><td>Phenolphthalein</td><td>Colourless</td><td>Pink</td><td>Strong acid + strong alkali (HCl + NaOH)</td></tr>
+  <tr><td>Methyl orange</td><td>Red</td><td>Yellow</td><td>Strong acid + weak alkali (HCl + Na<sub>2</sub>CO<sub>3</sub>)</td></tr>
+  <tr><td>Universal indicator</td><td colspan="2">Continuous range of colours</td><td><strong>Not used</strong>, no sharp end-point</td></tr>
+</table>
+
+<h3>Part 4. Mean Titre to Concentration</h3>
+
+<ol start="13">
+  <li>Once you have the mean titre, the calculation of unknown concentration uses three steps: moles of known &rarr; moles of unknown via the balanced equation &rarr; concentration of unknown.</li>
+  <li>Formula: <strong>concentration (mol/dm<sup>3</sup>) = moles &divide; volume (in dm<sup>3</sup>)</strong>. Always convert cm<sup>3</sup> to dm<sup>3</sup> by dividing by 1000.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Why is a 25 cm<sup>3</sup> pipette used to measure the alkali rather than a 25 cm<sup>3</sup> measuring cylinder? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>A pipette is cheaper</li>
+  <li>A pipette has a smaller uncertainty / is more precise</li>
+  <li>A pipette is easier to hold</li>
+  <li>A pipette holds more liquid</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> Why is the burette rinsed with the acid (and not with water) before being filled? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>To dissolve any solid residue in the burette</li>
+  <li>To stop any residual water from diluting the acid, which would make the titre too high</li>
+  <li>To prevent the burette from cracking</li>
+  <li>To wet the inside of the tap</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> A student records the rough titre as 26.75 cm<sup>3</sup>, and three accurate titres as 26.30 cm<sup>3</sup>, 26.35 cm<sup>3</sup> and 26.55 cm<sup>3</sup>. Which values should be used to calculate the mean titre? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>All four titres (rough + 3 accurate)</li>
+  <li>The three accurate titres only (26.30, 26.35 and 26.55 cm<sup>3</sup>)</li>
+  <li>The two concordant titres only (26.30 and 26.35 cm<sup>3</sup>)</li>
+  <li>The rough titre only (26.75 cm<sup>3</sup>)</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> Why is universal indicator <strong>not</strong> suitable for an acid-alkali titration? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>It does not change colour when the solution is neutral</li>
+  <li>It gives a gradual range of colours, with no single sharp end-point</li>
+  <li>It can only be used in strongly alkaline solutions</li>
+  <li>It is too expensive for school use</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> In a titration of HCl (aq) against NaOH (aq), 25.0 cm<sup>3</sup> of NaOH of concentration 0.100 mol/dm<sup>3</sup> is neutralised by 20.0 cm<sup>3</sup> of HCl. What is the concentration of the HCl, in mol/dm<sup>3</sup>? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>0.0625</li>
+  <li>0.0800</li>
+  <li>0.1000</li>
+  <li>0.1250</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student carries out an acid-alkali titration to find the concentration of a dilute hydrochloric acid solution. The student uses a 25 cm<sup>3</sup> pipette to transfer sodium hydroxide solution of concentration 0.100 mol/dm<sup>3</sup> into a conical flask, adds 2&ndash;3 drops of phenolphthalein indicator, and titrates with the hydrochloric acid from a burette. The equation for the reaction is:</p>
+<p class="center">HCl (aq) + NaOH (aq) &rarr; NaCl (aq) + H<sub>2</sub>O (l)</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Explain why the pipette is rinsed with the sodium hydroxide solution (not with water) before drawing the measured volume into it. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Before each titration, the burette tip is filled with acid by briefly opening the tap. Explain why this is important. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> The student's titration results are shown in the table.</p>
+<table>
+  <tr><th>Titration</th><th>Rough</th><th>1</th><th>2</th><th>3</th></tr>
+  <tr><td>Final burette reading / cm<sup>3</sup></td><td>22.40</td><td>43.85</td><td>21.55</td><td>43.20</td></tr>
+  <tr><td>Initial burette reading / cm<sup>3</sup></td><td>0.00</td><td>22.40</td><td>0.00</td><td>21.55</td></tr>
+  <tr><td>Volume of acid used / cm<sup>3</sup></td><td>22.40</td><td>21.45</td><td>21.55</td><td>21.65</td></tr>
+</table>
+<p>(i) Identify which titration results are concordant (within 0.10 cm<sup>3</sup> of each other). <span class="marks">[1 mark]</span></p>
+<p>(ii) Calculate the mean titre from the concordant accurate results only. Give your answer to 2 decimal places. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> Use the mean titre from part (c)(ii) to calculate the concentration of the hydrochloric acid in mol/dm<sup>3</sup>. Show your working clearly. <span class="marks">[4 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> A second student repeats the experiment but leaves the funnel in the burette during the titration. State, with a reason, the effect this would have on the calculated concentration of the acid. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> Explain why phenolphthalein is suitable for this HCl + NaOH titration but universal indicator is not. <span class="marks">[2 marks]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Pipette vs measuring cylinder.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> A pipette has a smaller uncertainty / is more precise <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Cost is not the reason, pipettes are often more expensive than measuring cylinders.</p>
+<p>C is incorrect. The pipette is harder to hold steady than a measuring cylinder; that is not the reason.</p>
+<p>D is incorrect. Both can be made in 25 cm<sup>3</sup> sizes, volume is not the deciding factor.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>A 25 cm<sup>3</sup> bulb pipette has uncertainty around &plusmn;0.06 cm<sup>3</sup>; a 25 cm<sup>3</sup> measuring cylinder has graduations 10 times wider (uncertainty around &plusmn;0.5 cm<sup>3</sup>). For accurate titration calculations, this difference matters: an error of 0.5 cm<sup>3</sup> in the alkali volume propagates into a 2% error in the final concentration.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Why rinse burette with acid?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> To stop any residual water from diluting the acid, which would make the titre too high <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. A burette is washed with water first; the acid rinse is to displace this water, not to dissolve solids.</p>
+<p>C is incorrect. Burettes do not crack from rinsing with water or acid.</p>
+<p>D is incorrect. Tap wetting is not the reason, the issue is the bulk acid being diluted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>If the burette is wet with water and you fill it with acid, the water dilutes the acid in the burette. A diluted acid means more <em>volume</em> of acid is needed to neutralise the same amount of alkali (the titre is too high) which would make the calculated acid concentration <em>too low</em>.</p>
+<p>Always link the rinse to the effect on the recorded titre, not just "to avoid contamination".</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Which titres for the mean?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> The two concordant titres only (26.30 and 26.35 cm<sup>3</sup>) <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The rough titre is always discarded, it is a quick first estimate, not an accurate reading.</p>
+<p>B is incorrect. 26.55 cm<sup>3</sup> differs by 0.20 cm<sup>3</sup> from 26.35, which is greater than the 0.10 cm<sup>3</sup> concordant limit, so it should be discarded.</p>
+<p>D is incorrect. The rough titre alone is the least reliable value of the four.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>"Concordant" = within 0.10 cm<sup>3</sup>. Scan the accurate titres only, ignore the rough run, then pick out the values that match each other most closely. Only use those in the mean.</p>
+<p>If only one titre is left after discarding anomalies, repeat the experiment, one value is not enough to calculate a meaningful mean.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Why not use universal indicator?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> It gives a gradual range of colours, with no single sharp end-point <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Universal indicator does change colour at neutral (green) but the change to or from neutral is part of a continuous range, not a sharp transition.</p>
+<p>C is incorrect. Universal indicator works across the full pH range, including in acid.</p>
+<p>D is incorrect. Universal indicator is cheap and widely available; cost is not the reason.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Universal indicator passes through red &rarr; orange &rarr; yellow &rarr; green &rarr; blue &rarr; purple as pH changes. In a titration you need to know <em>exactly</em> when neutralisation has happened, and a gradual rainbow makes that moment impossible to identify precisely. Phenolphthalein (pink &rarr; colourless) gives a single, unmistakeable change.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Concentration of HCl from titration.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>D.</strong> 0.1250 mol/dm<sup>3</sup> <span class="marks-inline">[1 mark]</span></p>
+<p>Working: moles of NaOH = 0.100 &times; (25.0 &divide; 1000) = 0.00250 mol. From the 1:1 stoichiometry, moles of HCl = 0.00250 mol. Concentration of HCl = 0.00250 &divide; (20.0 &divide; 1000) = <strong>0.125 mol/dm<sup>3</sup></strong>.</p>
+<p>A is incorrect. 0.0625 would come from dividing by 2 by mistake.</p>
+<p>B is incorrect. 0.0800 would come from using the wrong ratio (e.g. 25/20 instead of 20/25 the wrong way).</p>
+<p>C is incorrect. 0.1000 would assume the acid concentration is the same as the alkali concentration, which ignores the different volumes.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Quick check: a <em>smaller volume</em> of acid is needed than alkali (20 vs 25 cm<sup>3</sup>), so the acid must be <em>more concentrated</em>. The answer should therefore be larger than 0.100, only D fits.</p>
+<p>The ratio shortcut: c<sub>HCl</sub> &divide; c<sub>NaOH</sub> = V<sub>NaOH</sub> &divide; V<sub>HCl</sub> = 25 &divide; 20 = 1.25. So c<sub>HCl</sub> = 1.25 &times; 0.100 = 0.125 mol/dm<sup>3</sup>.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Why rinse the pipette with sodium hydroxide. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The pipette is rinsed with sodium hydroxide because:</p>
+<ul>
+  <li>Any residual water in the pipette would dilute the sodium hydroxide / lower the concentration of the alkali in the flask <span class="marks-inline">[1 mark]</span></li>
+  <li>This would change the volume of acid needed to neutralise it / give an inaccurate / incorrect titre <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"To clean the pipette" or "to prevent contamination" alone is not accepted. The marker is looking for the dilution effect and its consequence for the titre.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The full chain: <em>residual water &rarr; dilutes the alkali &rarr; fewer moles of NaOH in the flask &rarr; less acid needed &rarr; titre too low</em>. Mention at least two steps for full marks.</p>
+<p>Notice that the rinse logic is the same as for the burette, both must be rinsed with the solution they will hold, not water.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Why fill the burette tip first. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The burette tip is filled first because:</p>
+<ul>
+  <li>To remove any air bubble (from the tap / tip of the burette) <span class="marks-inline">[1 mark]</span></li>
+  <li>If the air bubble was still there at the start of the titration, it would be displaced into the flask during the run, and the recorded volume of acid (the titre) would be too high <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"To make the burette ready" is not accepted. The answer must mention the air bubble specifically.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Air bubbles trapped below the tap take up space that would otherwise contain acid. During the titration, the bubble is displaced through the tap into the flask, but this volume of "acid" was never really there, so the burette reading drops without the matching amount of acid having actually been delivered. The recorded titre is artificially high, and so the calculated acid concentration would be artificially low.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c)(i).</strong> Which titres are concordant. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The concordant titres are:</p>
+<ul>
+  <li>Titrations 1, 2 and 3: 21.45, 21.55 and 21.65 cm<sup>3</sup>. The closest pair is 21.55 and 21.65 cm<sup>3</sup>. <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>Strict reading: each adjacent pair differs by 0.10 cm<sup>3</sup> (21.55 and 21.65; 21.45 and 21.55), so all three values are within the concordant range pairwise.</p>
+<p>Accept also "Titrations 2 and 3 (21.55 and 21.65 cm<sup>3</sup>)" if students apply the strictest pair-matching interpretation.</p>
+<p>"All four" is not accepted. The rough titre (22.40) is always discarded.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The strict "within 0.10 cm<sup>3</sup>" rule applies pairwise. When in doubt, take the closest matching pair as your concordant set. Always discard the rough run.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c)(ii).</strong> Mean titre. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>Using the three concordant accurate titres (Titrations 1, 2 and 3):</p>
+
+<ul>
+  <li>Add the three titres:
+    <p class="center">21.45 + 21.55 + 21.65 = 64.65</p>
+  </li>
+  <li>Divide by 3:
+    <p class="center">mean titre = 64.65 &divide; 3</p>
+    <p class="center"><span class="working">mean titre = 21.55</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the answer with the correct unit, to 2 decimal places:
+    <p class="center"><span class="final">mean titre = 21.55 cm<sup>3</sup></span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for correct addition and division (64.65 &divide; 3).</p>
+<p>1 mark for the final answer 21.55 cm<sup>3</sup> with correct unit and to 2 decimal places.</p>
+<p>If only Titrations 2 and 3 are used (the closest pair), accept (21.55 + 21.65) &divide; 2 = 21.60 cm<sup>3</sup>.</p>
+<p>"21.55" without unit is not accepted for the second mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Burette readings and titres must always be given to 2 decimal places (the second decimal is either 0 or 5). Answers like 21.6 or 21.55... (with trailing dots) lose marks.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d).</strong> Calculate the concentration of HCl. <span class="marks-inline">[4 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the concentration of the hydrochloric acid:</p>
+
+<ul>
+  <li>Step 1, convert the volume of NaOH (the known solution) to dm<sup>3</sup> and find the moles of NaOH:
+    <p class="center">volume of NaOH = 25.0 &divide; 1000 = 0.0250 dm<sup>3</sup></p>
+    <p class="center">moles of NaOH = concentration &times; volume = 0.100 &times; 0.0250</p>
+    <p class="center"><span class="working">moles of NaOH = 0.00250 mol</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>Step 2, use the 1:1 stoichiometry of the equation to find moles of HCl:
+    <p class="center">HCl + NaOH &rarr; NaCl + H<sub>2</sub>O (1:1 mole ratio)</p>
+    <p class="center"><span class="working">moles of HCl = 0.00250 mol</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>Step 3, convert the mean titre (volume of HCl) to dm<sup>3</sup>:
+    <p class="center">volume of HCl = 21.55 &divide; 1000 = 0.02155 dm<sup>3</sup></p>
+  </li>
+  <li>Step 4, calculate the concentration of HCl:
+    <p class="center">concentration = moles &divide; volume = 0.00250 &divide; 0.02155</p>
+    <p class="center"><span class="working">concentration = 0.11600&hellip;</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>Step 5, state the final answer with the correct unit, to 3 significant figures:
+    <p class="center"><span class="final">concentration = 0.116 mol/dm<sup>3</sup></span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the correct moles of NaOH calculation (0.100 &times; 0.0250 = 0.00250 mol).</p>
+<p>1 mark for correctly stating that moles of HCl = moles of NaOH from the 1:1 ratio.</p>
+<p>1 mark for the concentration calculation (moles &divide; volume in dm<sup>3</sup>).</p>
+<p>1 mark for the final answer 0.116 mol/dm<sup>3</sup> (accept 0.12 to 2 s.f.) with correct unit.</p>
+<p>Allow ECF (error carried forward) from a wrong mean titre in part (c)(ii), provided the working is shown.</p>
+<p>An answer of 0.116 without working scores 4/4. An answer of 0.116 with no unit scores 3/4.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The standard three-step titration calculation, every time:</p>
+<ol>
+  <li><strong>Moles of known</strong> = concentration &times; volume (converted to dm<sup>3</sup>)</li>
+  <li><strong>Moles of unknown</strong> from the balanced equation (here, 1:1)</li>
+  <li><strong>Concentration of unknown</strong> = moles &divide; volume (in dm<sup>3</sup>)</li>
+</ol>
+<p>The two cm<sup>3</sup> &rarr; dm<sup>3</sup> conversions are the most commonly forgotten steps. Always divide cm<sup>3</sup> by 1000 to get dm<sup>3</sup>.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Effect of leaving the funnel in the burette. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The effect on the calculated concentration is:</p>
+<ul>
+  <li>Drips from the funnel would add extra acid to the burette during the titration / the recorded volume of acid used would be smaller than the true volume actually delivered (the titre would be too low) <span class="marks-inline">[1 mark]</span></li>
+  <li>So the calculated concentration of the acid would be too high (because a smaller volume appears to neutralise the same amount of alkali) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"It would affect the result" or "results would be inaccurate" is not accepted alone, the direction (too high) and the reasoning must be given.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The trick is to track the direction of error all the way through to the calculated concentration:</p>
+<p><em>Funnel drips &rarr; extra acid enters the burette uncounted &rarr; recorded titre is smaller than the true delivered volume &rarr; using a smaller volume in the calculation (concentration = moles &divide; volume) gives a larger calculated concentration.</em></p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Why phenolphthalein but not universal indicator. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The explanation should include:</p>
+<ul>
+  <li>Phenolphthalein gives a <strong>sharp / single colour change</strong> at the end-point (pink to colourless) <span class="marks-inline">[1 mark]</span></li>
+  <li>Universal indicator gives a <strong>gradual range</strong> of colours, so it is impossible to identify a single, precise end-point <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Phenolphthalein is better" alone is not accepted.</p>
+<p>"Universal indicator is not accurate" alone is not accepted. The answer must mention the gradual colour change.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The key word is <strong>sharp</strong>. Titration end-point detection depends on one decisive colour change, phenolphthalein switches from pink to colourless with a single drop of acid. Universal indicator's red &rarr; orange &rarr; yellow &rarr; green &rarr; blue &rarr; purple sweep is great for showing pH approximately, but useless for pinning down the neutral end-point to 0.05 cm<sup>3</sup>.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

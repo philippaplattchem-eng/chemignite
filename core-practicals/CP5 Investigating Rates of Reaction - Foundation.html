@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP5 Investigating Rates of Reaction (Foundation)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #0277bd; border-bottom: 3px solid #0277bd; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #0277bd; border-bottom: 2px solid #b3d9f2; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #0277bd; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #0277bd; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #0277bd; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #e1f5fe; border-left: 4px solid #0277bd; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #0277bd; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #0277bd; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #e1f5fe; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #0277bd; margin: 3em 0 2em; }
+  .ms-banner { background: #0277bd; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP5 Investigating Rates of Reaction</h1>
+<p class="subtitle">Foundation Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Combined Science (1SC0) and Separate Chemistry (1CH0)</p>
+  <p><strong>Paper:</strong> Paper 2</p>
+  <p><strong>Specification:</strong> 7.1. Investigate the effects of changing the conditions of a reaction on the rates of chemical reactions by (a) measuring the production of a gas (in the reaction between hydrochloric acid and marble chips) and (b) observing a colour change (in the reaction between sodium thiosulfate and hydrochloric acid).</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical investigates rates of reaction using two different methods. Method (a) collects the carbon dioxide gas produced when hydrochloric acid reacts with marble chips, used to study concentration and surface area. Method (b) times how long a black cross takes to disappear when sodium thiosulfate reacts with hydrochloric acid, used to study temperature. Examiner reports flag apparatus drawing and the "frequency of collisions" wording as the two areas where Foundation candidates most often lose marks.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Method (a): Hydrochloric Acid + Marble Chips</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/10/mg-and-hcl-gas-syringe-experiment.png" alt="Apparatus for collecting a gas from a reaction in a conical flask: the flask is sealed with a bung, connected by a delivery tube to a gas syringe that measures the volume of gas produced">
+  <div class="caption">Apparatus for measuring the volume of carbon dioxide gas produced when hydrochloric acid reacts with marble chips (calcium carbonate). The bung is essential: without it, the gas escapes into the air.</div>
+</div>
+
+<ol>
+  <li>The reaction is: calcium carbonate + hydrochloric acid &rarr; calcium chloride + water + <strong>carbon dioxide</strong>.</li>
+  <li>Carbon dioxide is the gas being measured. It is collected in a <strong>gas syringe</strong>, which records the volume in cm<sup>3</sup>.</li>
+  <li>The conical flask must have a <strong>bung</strong> in the top, otherwise the gas escapes and is not collected.</li>
+  <li>The volume of gas is recorded every few seconds, using a <strong>stopwatch</strong>.</li>
+  <li>The volume of gas (y-axis) is plotted against time (x-axis). The curve is steep at the start, then bends, and finally <strong>levels off</strong> when the reaction has finished.</li>
+  <li>This method is used to investigate the effect of <strong>concentration</strong> of acid and <strong>surface area</strong> of marble chips on the rate of reaction.</li>
+</ol>
+
+<h3>Part 2. Method (b): Sodium Thiosulfate + Hydrochloric Acid (Disappearing Cross)</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/09/disappearing-cross-experiment-aqa-gcse-6-1e-tq4a.png" alt="Apparatus for the disappearing cross experiment: a conical flask containing sodium thiosulfate solution sits on top of a piece of paper marked with a black cross, viewed from above">
+  <div class="caption">Apparatus for the disappearing-cross experiment. The black cross is drawn on paper under the flask. A pale yellow precipitate of sulfur slowly clouds the mixture until the cross can no longer be seen.</div>
+</div>
+
+<ol start="7">
+  <li>Sodium thiosulfate reacts with hydrochloric acid to make a pale yellow <strong>sulfur</strong> precipitate, which slowly clouds the solution.</li>
+  <li>A piece of paper with a black cross on it is placed under the conical flask.</li>
+  <li>The reactants are mixed and a <strong>stopwatch</strong> is started. The stopwatch is stopped when the cross can no longer be seen from above.</li>
+  <li>The shorter the time, the faster the reaction.</li>
+  <li>This method is used to investigate the effect of <strong>temperature</strong> on rate. A water bath warms the thiosulfate to different starting temperatures (e.g. 20, 30, 40, 50, 60 &deg;C).</li>
+  <li>Sulfur dioxide gas is also released, so the experiment is done in a well-ventilated room.</li>
+</ol>
+
+<h3>Safety and Variables</h3>
+
+<ol start="13">
+  <li>Wear <strong>safety goggles</strong>, hydrochloric acid is an irritant.</li>
+  <li>Do not heat above 60 &deg;C in the disappearing-cross experiment, because sulfur dioxide is a toxic gas and a respiratory irritant.</li>
+  <li>The <strong>independent variable</strong> is what you change (e.g. concentration of acid, size of chips, or temperature).</li>
+  <li>The <strong>dependent variable</strong> is what you measure (volume of gas, or time for the cross to disappear).</li>
+  <li><strong>Control variables</strong> are what you keep the same to make it a fair test (e.g. volume of acid, mass of marble chips, same observer for the cross).</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> What is meant by the <strong>rate of a reaction</strong>? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The total mass of product made at the end of the reaction</li>
+  <li>How much reactant is used up or product made per unit time</li>
+  <li>The temperature at which a reaction takes place</li>
+  <li>The energy released when a reaction finishes</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> A student reacts marble chips with dilute hydrochloric acid. Which gas is produced? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Hydrogen</li>
+  <li>Oxygen</li>
+  <li>Carbon dioxide</li>
+  <li>Chlorine</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> Why must a bung be fitted to the top of the conical flask when collecting the gas? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>To stop the marble chips from falling out</li>
+  <li>To stop the gas escaping into the air, so all of it is collected</li>
+  <li>To keep the acid warm</li>
+  <li>To allow extra air to enter the flask</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> A student does the disappearing-cross experiment at five different temperatures. At the highest temperature, the cross disappears in the shortest time. What does this tell the student? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The reaction is faster at higher temperatures</li>
+  <li>The reaction is slower at higher temperatures</li>
+  <li>Temperature has no effect on rate</li>
+  <li>The reaction has stopped</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student wants to investigate the effect of surface area on the rate of the marble chip and acid reaction. Which is the <strong>independent variable</strong>? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Volume of acid used</li>
+  <li>Volume of gas collected</li>
+  <li>Size of the marble chips</li>
+  <li>Temperature of the acid</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates the rate of reaction between calcium carbonate (marble chips) and dilute hydrochloric acid. The student uses a conical flask, a gas syringe and a stopwatch to collect the gas given off.</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Name the piece of apparatus that must be fitted to the top of the flask to stop the gas escaping. <span class="marks">[1 mark]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Complete the word equation for the reaction. <span class="marks">[2 marks]</span></p>
+<p class="center">calcium carbonate + hydrochloric acid &rarr; ________________ + water + ________________</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> The student records the volume of gas every 30 seconds. The results are shown in the table.</p>
+<table>
+  <tr><th>Time / s</th><th>0</th><th>30</th><th>60</th><th>90</th><th>120</th><th>150</th></tr>
+  <tr><td>Volume of gas / cm<sup>3</sup></td><td>0</td><td>24</td><td>42</td><td>54</td><td>60</td><td>60</td></tr>
+</table>
+<p>(i) State what the result at 150 s shows about the reaction. <span class="marks">[1 mark]</span></p>
+<p>(ii) Calculate the mean rate of reaction over the first 60 seconds. Give the unit. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> The student repeats the experiment using the <strong>same mass</strong> of marble chips ground into a fine <strong>powder</strong>, but keeps all other conditions the same.</p>
+<p>(i) State the effect this would have on the rate of reaction. <span class="marks">[1 mark]</span></p>
+<p>(ii) Explain your answer in terms of particles and collisions. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> The student then carries out the disappearing-cross experiment between sodium thiosulfate and hydrochloric acid. The flask is placed on a piece of paper marked with a black cross. The student adds the acid to the thiosulfate, starts the stopwatch, and looks down through the top of the flask.</p>
+<p>(i) State <strong>when</strong> the student should stop the stopwatch. <span class="marks">[1 mark]</span></p>
+<p>(ii) The student carries out the experiment at five different temperatures. State <strong>two</strong> variables the student should keep the same each time to make it a fair test. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> Give <strong>two</strong> safety precautions the student should take when carrying out the disappearing-cross experiment. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(g)</strong> Suggest <strong>one</strong> reason why two students timing the same disappearing-cross experiment might record slightly different times. <span class="marks">[1 mark]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> What is meant by rate of reaction?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> How much reactant is used up or product made per unit time <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The total mass of product is the <em>amount</em> of product, not the rate. Rate is about how quickly that product is made, not how much.</p>
+<p>C is incorrect. Temperature is a condition that affects the rate, not the rate itself.</p>
+<p>D is incorrect. The energy released is the enthalpy change of the reaction (a different topic). It does not tell you anything about how fast the reaction is going.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Rate is always a "per unit time" quantity. The units of rate make this clear: g/s, cm<sup>3</sup>/s, or mol/dm<sup>3</sup>/s, all have "per second" baked in.</p>
+<p>If a question asks you to explain why a reaction "slows down", do not just say "because reactants are used up". Add that there are now fewer particles per unit volume, so fewer collisions per second. This links your answer to rate.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Which gas is produced from marble chips + HCl?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Carbon dioxide <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Hydrogen is produced when a <em>metal</em> (such as magnesium) reacts with an acid. Marble (calcium carbonate) is not a metal.</p>
+<p>B is incorrect. Oxygen is not a product of acid + carbonate reactions. It is produced in some electrolysis experiments, not here.</p>
+<p>D is incorrect. There is no chlorine gas given off. The chloride ions stay in solution as calcium chloride.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Marble chips are calcium carbonate (CaCO<sub>3</sub>). The general rule is: <strong>acid + carbonate &rarr; salt + water + carbon dioxide</strong>. The carbon dioxide is the gas you can collect, time, and graph.</p>
+<p>Test for carbon dioxide: bubble through limewater. The limewater turns milky / cloudy.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Why is the bung needed?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> To stop the gas escaping into the air, so all of it is collected <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The marble chips sit in the liquid at the bottom of the flask. They cannot fall out of the top.</p>
+<p>C is incorrect. The bung does not affect the temperature of the acid. The reaction is not heated.</p>
+<p>D is incorrect. Allowing extra air in would mix it with the gas being collected and the syringe reading would be wrong.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/2H June 2019 examiner report flagged this as one of the biggest mark losers in Paper 2 rate questions. Candidates who drew the apparatus without a bung lost marks because their set-up would not actually collect any gas.</p>
+<p>When drawing apparatus, check that the path from flask to syringe is <em>sealed</em>: bung in place, delivery tube connected, no gaps.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> What does the shortest time tell you?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> The reaction is faster at higher temperatures <span class="marks-inline">[1 mark]</span></p>
+<p>B is incorrect. Slower would mean a longer time, not a shorter one.</p>
+<p>C is incorrect. The time clearly changes with temperature, so temperature does have an effect.</p>
+<p>D is incorrect. The reaction has happened (the cross disappeared). Stopping would mean no precipitate is being made.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Shorter time = faster reaction. Time and rate are <em>inversely</em> related: as one goes up, the other goes down. A handy way to compare reactions quickly is to calculate 1 &divide; time, a bigger value means a faster rate.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Which is the independent variable?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Size of the marble chips <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The volume of acid should be a control variable (kept the same in each repeat).</p>
+<p>B is incorrect. The volume of gas collected is the <em>dependent</em> variable, what the student measures.</p>
+<p>D is incorrect. The temperature should also be kept the same so that surface area is the only thing being changed.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Use the "I change, I measure, I control" rule:</p>
+<ul>
+  <li><strong>I change</strong> = the independent variable</li>
+  <li><strong>I measure</strong> = the dependent variable</li>
+  <li><strong>I control</strong> = everything else, kept the same</li>
+</ul>
+<p>Whatever the question asks you to investigate (e.g. "the effect of surface area on rate"), the named factor (surface area) is your independent variable.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Apparatus needed to seal the flask. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The piece of apparatus is:</p>
+<ul>
+  <li>Bung / stopper <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Cork" or "lid" is not accepted. The standard chemistry term is "bung" (or "stopper"). A loose lid would not give a gas-tight seal.</p>
+<p>"Delivery tube" is not accepted on its own. The delivery tube carries the gas to the syringe, but it is the bung that actually seals the flask.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The bung holds the delivery tube in place and seals the flask at the same time. Without it, the gas takes the easy escape route into the air and never reaches the syringe.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Complete the word equation. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The completed equation is:</p>
+<p class="center">calcium carbonate + hydrochloric acid &rarr; <strong>calcium chloride</strong> + water + <strong>carbon dioxide</strong></p>
+<ul>
+  <li>Calcium chloride <span class="marks-inline">[1 mark]</span></li>
+  <li>Carbon dioxide <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Calcium chlorine" is not accepted. The salt formed is a chloride, not chlorine.</p>
+<p>"Carbon" alone is not accepted. The gas is carbon dioxide.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>For any acid + carbonate, learn the general equation: <strong>acid + carbonate &rarr; salt + water + carbon dioxide</strong>. Then work out the salt from the acid used (hydrochloric &rarr; chloride; sulfuric &rarr; sulfate; nitric &rarr; nitrate) and the metal in the carbonate (calcium here).</p>
+</div>
+
+<div class="qref">
+<strong>Question (c)(i).</strong> What does the result at 150 s show? <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>The reaction has finished / is complete / has stopped <span class="marks-inline">[1 mark]</span></li>
+  <li>No more gas is being produced (the volume has stopped increasing)</li>
+  <li>One of the reactants has been used up</li>
+</ul>
+<p>"The reaction is slow" is not accepted. The volume is not changing at all, so the reaction is not just slow, it has stopped.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>When two consecutive readings on a rate table are the same, the reaction has reached its end point (plateau). Either all the acid or all the marble has been used up, whichever one was the limiting reactant.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c)(ii).</strong> Calculate the mean rate over the first 60 seconds. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the mean rate of reaction over the first 60 seconds:</p>
+
+<ul>
+  <li>Write down the formula:
+    <p class="center">mean rate = volume of gas &divide; time</p>
+  </li>
+  <li>Read the volume of gas at 60 s from the table:
+    <p class="center">volume = 42 cm<sup>3</sup></p>
+  </li>
+  <li>Substitute the values and divide:
+    <p class="center">mean rate = 42 &divide; 60</p>
+    <p class="center"><span class="working">mean rate = 0.70</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the answer with the unit:
+    <p class="center"><span class="final">mean rate = 0.70 cm<sup>3</sup>/s</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the correct calculation: 42 &divide; 60 = 0.70.</p>
+<p>1 mark for the correct unit: cm<sup>3</sup>/s (or cm<sup>3</sup> per second).</p>
+<p>An answer of "0.70" with no unit is not accepted for the second mark.</p>
+<p>Answers of 0.7 cm<sup>3</sup>/s are accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Mean rate is total change &divide; total time. Take the volume of gas at the end of the interval (60 s here) and the volume at the start (0 cm<sup>3</sup> at 0 s), subtract, and divide by the time interval.</p>
+<p>The unit always comes from the axes: y-axis unit &divide; x-axis unit. Here that is cm<sup>3</sup> &divide; s = cm<sup>3</sup>/s.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(i).</strong> Effect of powdered marble chips on rate. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The effect on the rate is:</p>
+<ul>
+  <li>The rate of reaction <strong>increases</strong> / is faster / speeds up <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"Stays the same" is not accepted. Surface area changes the rate.</p>
+<p>"Less gas is made" is not accepted. The same mass of marble chips will make the same total volume of gas, just more quickly.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Same mass + same conditions + smaller pieces = faster rate, same total amount of product. The shape of the curve gets steeper at the start but levels off at the same height as before.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(ii).</strong> Explain in terms of particles and collisions. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The explanation must include:</p>
+<ul>
+  <li>The powder has a larger surface area / more solid particles are exposed (to the acid) <span class="marks-inline">[1 mark]</span></li>
+  <li>So the <strong>frequency of collisions</strong> between the acid particles and the marble particles increases (more collisions per second), and the rate of reaction increases <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"There is more powder" is not accepted. The question says the <em>same mass</em> is used, so there is the same amount.</p>
+<p>"The particles have more energy" is not accepted. Surface area does not change the energy of the particles. Only temperature does.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/2F June 2019 examiner report flagged that very few candidates used the words <strong>"particles"</strong> and <strong>"frequency of collisions"</strong> in their answers. These are the scoring words for this style of question. Use them.</p>
+<p>Be careful: surface area is a <em>frequency</em> effect, not an <em>energy</em> effect. Writing that "the particles have more energy" is a classic trap that the 1CH0/2H June 2019 examiner report singled out as the difference between top and bottom of the mark band.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e)(i).</strong> When to stop the stopwatch. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The student should stop the stopwatch:</p>
+<ul>
+  <li>When the cross can no longer be seen (through the solution) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"When the solution turns yellow" is not accepted. The cross may still be visible at this point.</p>
+<p>"When the reaction has finished" is not accepted. The reaction carries on after the cross has disappeared, but the cross-disappearance is the agreed end point of the timing.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The disappearing-cross method uses sight to fix the end point of the timing. The cross becomes harder to see as the sulfur precipitate builds up. The end point is when the cross has just disappeared from view, looking down through the top of the flask.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e)(ii).</strong> Two control variables. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark for each):</p>
+<ul>
+  <li>Volume of sodium thiosulfate solution</li>
+  <li>Concentration of sodium thiosulfate</li>
+  <li>Volume of hydrochloric acid</li>
+  <li>Concentration of hydrochloric acid</li>
+  <li>The same observer (same person looking at the cross)</li>
+  <li>The same darkness of cross / same paper</li>
+  <li>The same conical flask / same size of flask</li>
+  <li>The same viewing angle / viewing distance</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Temperature" is not accepted. That is the independent variable in this experiment.</p>
+<p>"Time" is not accepted. That is what is being measured (dependent variable).</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two safe control-variable answers are <strong>"same volume of acid"</strong> and <strong>"same concentration of thiosulfate"</strong>. Both are quick to write and clearly fair-test factors.</p>
+<p>Remember the "same observer" point, judging when the cross has disappeared is partly subjective, so one student should do all the judging to keep the measurement consistent.</p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Two safety precautions. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>two</strong> from (1 mark for each):</p>
+<ul>
+  <li>Wear safety goggles / eye protection (hydrochloric acid is an irritant)</li>
+  <li>Carry out the experiment in a well-ventilated room / use a fume cupboard (sulfur dioxide is toxic / irritant)</li>
+  <li>Do not heat above 60 &deg;C (to limit sulfur dioxide release)</li>
+  <li>Asthmatic students should keep away (sulfur dioxide can trigger asthma)</li>
+  <li>Wash hands after handling the chemicals</li>
+  <li>Wipe up any spills of acid immediately with a damp cloth</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"Be careful" or vague answers are not accepted. The answer must give a specific precaution.</p>
+<p>"Wear a lab coat" is not accepted on its own at GCSE level, it is general lab practice, not a specific precaution for this experiment.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The two safest precaution answers are "wear safety goggles" (eye protection from acid splashes) and "use a well-ventilated room" (deals with the toxic sulfur dioxide produced in this specific experiment). The second answer wins extra credit because it shows you understand the specific hazard.</p>
+</div>
+
+<div class="qref">
+<strong>Question (g).</strong> Why two students might get different times. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>The endpoint of the experiment is subjective / each student judges the disappearance of the cross differently <span class="marks-inline">[1 mark]</span></li>
+  <li>The students have different eyesight</li>
+  <li>The students view the flask from different angles / different heights</li>
+  <li>The students start or stop the stopwatch at slightly different times (human reaction time)</li>
+  <li>The lighting in the room may have changed between trials</li>
+</ul>
+<p>"They made a mistake" is not accepted. The question is asking about a known limitation of the method, not human error in general.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The disappearing-cross method relies on the human eye to decide when the cross has gone. This is what makes it cheap and easy to set up but also what limits its precision. A light sensor / colorimeter would remove the subjectivity.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

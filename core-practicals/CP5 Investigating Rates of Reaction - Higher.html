@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP5 Investigating Rates of Reaction (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP5 Investigating Rates of Reaction</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Combined Science (1SC0) and Separate Chemistry (1CH0)</p>
+  <p><strong>Paper:</strong> Paper 2</p>
+  <p><strong>Specification:</strong> 7.1. Investigate the effects of changing the conditions of a reaction on the rates of chemical reactions by (a) measuring the production of a gas (in the reaction between hydrochloric acid and marble chips) and (b) observing a colour change (in the reaction between sodium thiosulfate and hydrochloric acid).</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical investigates rates of reaction using two complementary methods. Method (a) uses the reaction CaCO<sub>3</sub> + 2HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>, with carbon dioxide collected in a gas syringe so that volume-against-time can be plotted and tangents drawn. Method (b) uses the reaction Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> + 2HCl &rarr; 2NaCl + S + SO<sub>2</sub> + H<sub>2</sub>O, where the time taken for a sulfur precipitate to obscure a cross is used to follow rate at different temperatures. The Higher-tier marker discriminator is the <strong>frequency-vs-energy</strong> distinction in collision-theory explanations, surface area and concentration affect frequency only; temperature affects both, and the energy effect dominates.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Method (a), Marble Chips + Dilute HCl (Gas Syringe)</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/10/mg-and-hcl-gas-syringe-experiment.png" alt="Apparatus for collecting a gas from a reaction in a conical flask: the flask is sealed with a bung, connected by a delivery tube to a gas syringe that measures the volume of gas produced">
+  <div class="caption">Apparatus for method (a). The bung and delivery tube must give a sealed pathway from flask to syringe, the single biggest source of lost marks in apparatus-drawing questions (1CH0/2H, June 2019 Examiner Report).</div>
+</div>
+
+<ol>
+  <li><strong>Reaction:</strong> CaCO<sub>3</sub> (s) + 2HCl (aq) &rarr; CaCl<sub>2</sub> (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g).</li>
+  <li>The volume of CO<sub>2</sub> is measured in a <strong>gas syringe</strong> (typically 100 cm<sup>3</sup>, divisions of 1 cm<sup>3</sup>). A gas syringe is preferred to an inverted measuring cylinder over water because CO<sub>2</sub> is moderately soluble in water, which would lower the apparent volume.</li>
+  <li>The syringe reading is taken at fixed time intervals (every 10 or 30 s, depending on the speed of the reaction).</li>
+  <li>Plot <strong>volume of CO<sub>2</sub> (y-axis)</strong> against <strong>time (x-axis)</strong>. The curve is steepest at t = 0 and flattens to a horizontal plateau when the limiting reactant is used up.</li>
+  <li><strong>Mean rate</strong> over an interval = change in volume &divide; change in time, in cm<sup>3</sup>/s. <strong>Initial rate</strong> = gradient of a tangent drawn to the curve at t = 0.</li>
+  <li>Used to investigate the effect of <strong>concentration of acid</strong> and the <strong>surface area to volume ratio</strong> of the marble chips on the rate of reaction.</li>
+</ol>
+
+<h3>Part 2. Method (b), Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> + HCl (Disappearing Cross)</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2022/09/disappearing-cross-experiment-aqa-gcse-6-1e-tq4a.png" alt="Apparatus for the disappearing cross experiment: a conical flask containing sodium thiosulfate solution sits on top of a piece of paper marked with a black cross, viewed from above">
+  <div class="caption">Apparatus for method (b). The conical flask sits on paper marked with a black cross; the cross is viewed from above and timed until it can no longer be seen through the sulfur precipitate. A water bath (not shown) is used to warm the thiosulfate to each chosen temperature before the acid is added.</div>
+</div>
+
+<ol start="7">
+  <li><strong>Reaction:</strong> Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> (aq) + 2HCl (aq) &rarr; 2NaCl (aq) + S (s) + SO<sub>2</sub> (g) + H<sub>2</sub>O (l).</li>
+  <li>A pale yellow precipitate of sulfur slowly clouds the mixture and obscures a black cross drawn on paper under the flask.</li>
+  <li>The student records the <strong>time taken</strong> for the cross to disappear when viewed from above. Repeat at e.g. 20, 30, 40, 50, 60 &deg;C.</li>
+  <li>Plot <strong>1/time</strong> against temperature. Since time is inversely proportional to rate, <strong>1/time is proportional to rate</strong>, and the graph is a steeply rising curve.</li>
+  <li>Used to investigate the effect of <strong>temperature</strong> on rate. Rate roughly doubles for every 10 &deg;C rise.</li>
+  <li>Sulfur dioxide is toxic, carry out in a well-ventilated room; do not heat above 60 &deg;C (above which thiosulfate decomposition releases additional SO<sub>2</sub>).</li>
+</ol>
+
+<h3>Variables, Maths and Errors</h3>
+
+<ol start="13">
+  <li><strong>Variables (method a, surface area investigation):</strong> Independent = size of marble chips (small / large / powder); Dependent = volume of CO<sub>2</sub> in fixed time; Controls = mass of marble chips, volume and concentration of HCl, temperature.</li>
+  <li><strong>Variables (method b, temperature investigation):</strong> Independent = temperature; Dependent = time for cross to disappear (then 1/time); Controls = volume and concentration of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>, volume and concentration of HCl, same observer, same darkness of cross.</li>
+  <li><strong>Calculating initial rate:</strong> draw a tangent at t = 0, pick two well-spaced points on the tangent, calculate gradient = &Delta;y / &Delta;x.</li>
+  <li><strong>Common candidate errors flagged by examiner reports:</strong> drawing apparatus without the bung (gas escapes); muddling "frequency of collisions" with "energy of collisions" in collision-theory answers; failing to level off comparison curves at the same plateau height.</li>
+  <li><strong>The "same observer" point on method (b)</strong> matters because the moment the cross "disappears" is partly subjective, one person should judge every trial.</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Which piece of apparatus is most suitable for accurately measuring the volume of carbon dioxide gas produced when marble chips react with dilute hydrochloric acid? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>A 100 cm<sup>3</sup> beaker</li>
+  <li>A gas syringe</li>
+  <li>An inverted measuring cylinder filled with water</li>
+  <li>A burette</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> In the disappearing-cross experiment, a student plots a graph of <strong>1/time</strong> against temperature instead of a graph of time against temperature. Why? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>1/time is easier to read off the stopwatch</li>
+  <li>1/time is directly proportional to rate, making the trend easier to interpret</li>
+  <li>1/time gives smaller numbers, which are easier to plot</li>
+  <li>1/time removes the need to convert between minutes and seconds</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> A student draws a tangent to a curve on a volume-against-time graph at t = 30 s. The tangent passes through the points (10 s, 12 cm<sup>3</sup>) and (50 s, 52 cm<sup>3</sup>). What is the rate of reaction at 30 s? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>0.4 cm<sup>3</sup>/s</li>
+  <li>0.8 cm<sup>3</sup>/s</li>
+  <li>1.0 cm<sup>3</sup>/s</li>
+  <li>1.6 cm<sup>3</sup>/s</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> A student repeats the marble chip + HCl experiment using the <strong>same mass</strong> of marble chips ground to a fine powder, with all other conditions kept the same. How will the volume-against-time graph differ from the original? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Steeper at the start; levels off at a higher final volume</li>
+  <li>Steeper at the start; levels off at the same final volume</li>
+  <li>Same gradient at the start; levels off at a higher final volume</li>
+  <li>Less steep at the start; levels off at the same final volume</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> Which statement best explains, in terms of particles, why <strong>increasing the temperature</strong> increases the rate of the sodium thiosulfate + hydrochloric acid reaction? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The particles move closer together, so collisions are more frequent</li>
+  <li>The particles have a greater proportion with energy equal to or greater than the activation energy, so more collisions are successful</li>
+  <li>The activation energy of the reaction decreases as temperature increases</li>
+  <li>The particles change shape so they collide more easily</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates the rate of reaction between calcium carbonate (marble chips) and dilute hydrochloric acid. The student uses a conical flask sealed with a bung and delivery tube leading to a gas syringe, and records the volume of carbon dioxide gas every 30 seconds.</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Write a balanced symbol equation, including state symbols, for the reaction between calcium carbonate and dilute hydrochloric acid. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> The student's results are shown in the table.</p>
+<table>
+  <tr><th>Time / s</th><th>0</th><th>30</th><th>60</th><th>90</th><th>120</th><th>150</th><th>180</th></tr>
+  <tr><td>Volume of CO<sub>2</sub> / cm<sup>3</sup></td><td>0</td><td>36</td><td>60</td><td>76</td><td>84</td><td>88</td><td>88</td></tr>
+</table>
+<p>(i) Calculate the mean rate of reaction over the first 90 seconds. Give the unit. <span class="marks">[2 marks]</span></p>
+<p>(ii) The student draws a tangent to the curve at t = 60 s. The tangent passes through the points (30 s, 36 cm<sup>3</sup>) and (90 s, 84 cm<sup>3</sup>). Use the tangent to calculate the rate of reaction at 60 s. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> The student repeats the experiment using the <strong>same mass</strong> of marble chips, but this time uses chips that have been ground to a powder. All other conditions are kept the same.</p>
+<p>On the same axes as the original results, sketch the curve the student would expect to obtain with the powdered marble chips. Label this curve <strong>P</strong>. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> Explain, in terms of particles and collisions, why the rate of reaction is higher when powdered marble chips are used instead of large lumps. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> The student now investigates the effect of temperature on the rate of reaction between sodium thiosulfate solution and dilute hydrochloric acid using the disappearing-cross method. The student records the time taken for a black cross drawn under the flask to disappear at five different temperatures.</p>
+<table>
+  <tr><th>Temperature / &deg;C</th><th>20</th><th>30</th><th>40</th><th>50</th><th>60</th></tr>
+  <tr><td>Time for cross to disappear / s</td><td>96</td><td>50</td><td>26</td><td>14</td><td>8</td></tr>
+</table>
+<p>(i) Calculate <strong>1/time</strong> at 40 &deg;C. Give your answer to 2 significant figures. <span class="marks">[1 mark]</span></p>
+<p>(ii) The student plots a graph of 1/time (y-axis) against temperature (x-axis). Describe the shape of the line you would expect, and explain why the student plots 1/time rather than time. <span class="marks">[2 marks]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Best apparatus for measuring CO<sub>2</sub> volume.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> A gas syringe <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. A beaker is an open container, so the gas would simply escape into the air. A beaker also has no graduations precise enough to measure gas volume.</p>
+<p>C is incorrect. Carbon dioxide is moderately soluble in water, so some of the gas dissolves rather than displacing water. The measured volume would be lower than the true volume produced.</p>
+<p>D is incorrect. A burette is designed for delivering measured volumes of liquid (e.g. in titrations), not for collecting gases.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>1CH0/2H June 2022 Q2(a)(i) asked candidates to name a better piece of apparatus than a 250 cm<sup>3</sup> measuring cylinder and give a reason. The expected answer was a gas syringe, with the reason being either greater precision (1 cm<sup>3</sup> divisions vs ~5 cm<sup>3</sup> divisions on a measuring cylinder) or that it avoids contact with water.</p>
+<p>For CO<sub>2</sub>, "avoids contact with water" matters: CO<sub>2</sub> dissolves measurably in water (about 1.5 g per litre at room temperature), so the gas-over-water method gives a low reading. For insoluble gases like H<sub>2</sub> or O<sub>2</sub>, either method works.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Why plot 1/time instead of time?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> 1/time is directly proportional to rate, making the trend easier to interpret <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. 1/time is not what is read off the stopwatch. The stopwatch reads time; the 1/time is calculated afterwards.</p>
+<p>C is incorrect. 1/time can be smaller or larger than time depending on the units (e.g. 1/8 = 0.125 is smaller, but 1/0.5 = 2 is larger). Ease of plotting is not the chemistry reason.</p>
+<p>D is incorrect. The unit conversion is independent of whether you plot 1/time or time.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Time is <em>inversely</em> proportional to rate, if the rate doubles, the time halves. Plotting 1/time straightens this out: rate is then directly proportional to 1/time. A graph of 1/time against temperature shows the dependence cleanly.</p>
+<p>Units of 1/time are s<sup>&minus;1</sup> (or min<sup>&minus;1</sup>).</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Rate from a tangent.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> 1.0 cm<sup>3</sup>/s <span class="marks-inline">[1 mark]</span></p>
+<p>gradient = (52 &minus; 12) &divide; (50 &minus; 10) = 40 &divide; 40 = 1.0 cm<sup>3</sup>/s</p>
+<p>A is incorrect. 0.4 would come from 16 &divide; 40, perhaps from a slip in reading the y-coordinates.</p>
+<p>B is incorrect. 0.8 would come from 32 &divide; 40, perhaps from using (10, 20) and (50, 52) by mistake.</p>
+<p>D is incorrect. 1.6 would come from 64 &divide; 40, perhaps from adding the y-values instead of subtracting.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Rate from a tangent uses the same gradient formula as for any straight line: gradient = (y<sub>2</sub> &minus; y<sub>1</sub>) &divide; (x<sub>2</sub> &minus; x<sub>1</sub>).</p>
+<p>Pick widely-spaced points along the tangent (not points close together, and not points on the curve), and double-check that you subtract the y-values and divide by the difference in x-values, in that order.</p>
+<p>The unit comes from the axes: (cm<sup>3</sup>) &divide; (s) = cm<sup>3</sup>/s.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Effect of using powdered marble chips on the graph.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Steeper at the start; levels off at the same final volume <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The same <em>mass</em> of marble chips is used, so the same amount of CO<sub>2</sub> is produced overall. The final volume is therefore the <strong>same</strong>, not higher.</p>
+<p>C is incorrect. Smaller pieces of marble have a higher surface area to volume ratio, so the rate at the start is faster, not the same.</p>
+<p>D is incorrect. The reaction is faster, not slower, with smaller pieces.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is a recurring graph-sketching question that the 1CH0/2F June 2019 examiner report flagged: many candidates correctly drew a steeper curve but failed to level off at the same height. The marker is looking for both features, steeper initial gradient <em>and</em> same final plateau.</p>
+<p>Rule of thumb: if the amount of limiting reactant has not changed, the plateau height does not change.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> Why temperature increases the rate.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> The particles have a greater proportion with energy equal to or greater than the activation energy, so more collisions are successful <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Particles do not move closer together when heated, if anything, they move further apart (gases and liquids expand on heating). The frequency effect of temperature is small.</p>
+<p>C is incorrect. The activation energy does not change with temperature. The activation energy is a fixed property of the reaction. What changes is the proportion of particles with at least that much energy.</p>
+<p>D is incorrect. Particles do not change shape. They gain kinetic energy.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Temperature is the only one of the four named rate factors that significantly changes the <strong>energy</strong> of the colliding particles. The other three (concentration, pressure, surface area to volume ratio) only change the <strong>frequency</strong> of collisions.</p>
+<p>At GCSE level, the energy effect of temperature dominates the frequency effect. A 10 &deg;C rise increases collision frequency slightly, but increases the proportion of particles with E &ge; E<sub>a</sub> by much more, which is why the rate roughly doubles.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Balanced symbol equation with state symbols. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The balanced symbol equation with state symbols is:</p>
+<p class="center">CaCO<sub>3</sub> (s) + 2HCl (aq) &rarr; CaCl<sub>2</sub> (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g)</p>
+<ul>
+  <li>Correct balanced equation (CaCO<sub>3</sub> + 2HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>) <span class="marks-inline">[1 mark]</span></li>
+  <li>All state symbols correct: (s), (aq), (aq), (l), (g) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>An equation that is correct but unbalanced (e.g. CaCO<sub>3</sub> + HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>) scores 0 for the first mark.</p>
+<p>If any state symbol is missing or wrong (e.g. (l) for HCl, (s) for CaCl<sub>2</sub>), the state-symbol mark is not awarded.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Marble chips are insoluble, (s). The acid is a solution, (aq). The calcium chloride dissolves in the water, (aq). Water is a liquid, (l). Carbon dioxide bubbles off as a gas, (g).</p>
+<p>The "2" in front of HCl is the easy-to-forget balancing coefficient. CaCO<sub>3</sub> contains one Ca, but CaCl<sub>2</sub> contains two Cl, so two HCl are needed to supply two Cl atoms.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b)(i).</strong> Mean rate over the first 90 seconds. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the mean rate over the first 90 seconds:</p>
+
+<ul>
+  <li>Read the volume of CO<sub>2</sub> at 90 s from the table:
+    <p class="center">volume at 90 s = 76 cm<sup>3</sup></p>
+  </li>
+  <li>Apply the mean rate formula:
+    <p class="center">mean rate = change in volume &divide; change in time</p>
+    <p class="center">mean rate = (76 &minus; 0) &divide; (90 &minus; 0)</p>
+    <p class="center"><span class="working">mean rate = 76 &divide; 90 = 0.844&hellip;</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the answer with the correct unit (to 2 sig figs):
+    <p class="center"><span class="final">mean rate = 0.84 cm<sup>3</sup>/s</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the correct calculation (76 &divide; 90).</p>
+<p>1 mark for the correct final answer with unit: 0.84 cm<sup>3</sup>/s (accept 0.84&ndash;0.85 cm<sup>3</sup>/s).</p>
+<p>An answer of "0.84" with no unit, or "76/90" with no calculation, is not accepted for the second mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Mean rate = total change &divide; total time. Read the volume of CO<sub>2</sub> at the end of the interval and at the start, subtract, then divide by the time interval.</p>
+<p>The unit comes straight from the axes: cm<sup>3</sup> on the y-axis &divide; s on the x-axis = cm<sup>3</sup>/s. Always state it.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b)(ii).</strong> Rate from a tangent at t = 60 s. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the rate of reaction at 60 s from the tangent:</p>
+
+<ul>
+  <li>Write down the two coordinates given on the tangent:
+    <p class="center">(x<sub>1</sub>, y<sub>1</sub>) = (30 s, 36 cm<sup>3</sup>)</p>
+    <p class="center">(x<sub>2</sub>, y<sub>2</sub>) = (90 s, 84 cm<sup>3</sup>)</p>
+  </li>
+  <li>Calculate &Delta;y and &Delta;x:
+    <p class="center">&Delta;y = 84 &minus; 36 = 48 cm<sup>3</sup> <span class="marks-inline">[1 mark]</span></p>
+    <p class="center">&Delta;x = 90 &minus; 30 = 60 s</p>
+  </li>
+  <li>Calculate the gradient:
+    <p class="center">rate = &Delta;y &divide; &Delta;x = 48 &divide; 60 <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>State the final answer with the correct unit:
+    <p class="center"><span class="final">rate at 60 s = 0.80 cm<sup>3</sup>/s</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for correctly subtracting the y-coordinates and x-coordinates (&Delta;y = 48, &Delta;x = 60).</p>
+<p>1 mark for the gradient calculation (48 &divide; 60).</p>
+<p>1 mark for the final answer with unit: 0.80 cm<sup>3</sup>/s (accept 0.8 cm<sup>3</sup>/s).</p>
+<p>Award full credit for an answer reached by an alternative valid method, provided the working is shown.</p>
+<p>"0.8" with no unit is not accepted for the final mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is a Higher-tier staple, modelled on questions like 1CH0/2H June 2022 Q2(a)(ii) and 1CH0/2F June 2024 Q8(b)(ii). The mark scheme breaks down into three predictable parts: subtracting the coordinates, dividing them, and stating the unit.</p>
+<p>The tangent gives the rate at <em>one moment</em>, not over an interval. Notice that the rate at 60 s (0.80 cm<sup>3</sup>/s) is slower than the mean rate over the first 90 s (0.84 cm<sup>3</sup>/s), this is because the curve has started to flatten by 60 s, so the instantaneous rate is below the average of the steep first half.</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Sketch the curve for powdered marble chips. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The sketched curve <strong>P</strong> for powdered marble chips must show:</p>
+<ul>
+  <li>A <strong>steeper initial gradient</strong> than the original curve (rises more quickly between 0 and ~30 s) <span class="marks-inline">[1 mark]</span></li>
+  <li>Levels off at the <strong>same final volume</strong> as the original curve (~88 cm<sup>3</sup>) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>A curve that levels off at a higher final volume scores 0 for the second mark (same mass of marble chips means the same amount of CO<sub>2</sub> is produced).</p>
+<p>A curve that does not level off (continues to rise as a straight line) scores 0 for the second mark.</p>
+<p>A curve that is less steep, or has the same steepness as the original, scores 0 for the first mark.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/2F June 2019 examiner report flagged that "many of these graphs failed to score on the second marking point since either they did not level out at the same place or simply did not level out or levelled out at higher mass loss than original existing curve."</p>
+<p>Two-feature rule for "sketch a faster reaction with the same amount of reactant": <strong>steeper at the start, same plateau height</strong>. Both features must be visible for full marks.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d).</strong> Explain in terms of particles and collisions. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The explanation must include three of:</p>
+<ul>
+  <li>The powdered marble chips have a larger total surface area / a higher surface area to volume ratio <span class="marks-inline">[1 mark]</span></li>
+  <li>More marble particles are exposed to the acid (at the surface) <span class="marks-inline">[1 mark]</span></li>
+  <li>The <strong>frequency of (successful) collisions</strong> between acid particles and marble particles per unit time is greater, so the rate of reaction increases <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"The particles have more energy" is not accepted. Surface area does not change the energy of the particles. Only temperature does. Writing this caps the response in the lower mark band.</p>
+<p>"The reaction is faster because there is more powder" is not accepted. The same mass of marble is used, so the amount of reactant is the same.</p>
+<p>The words <strong>particles</strong> and <strong>frequency of collisions</strong> must appear for full marks.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/2H June 2019 examiner report on a 6-mark question that asked about lump size and concentration flagged the muddling of "frequency" and "energy" as the discriminator: <em>"Weaker candidates were confused between the increased frequency of collisions and increased energy of collisions, in these cases the lower mark in the level was awarded."</em></p>
+<p>Build the answer in three steps: (1) surface area / surface-area-to-volume ratio increases, (2) more particles exposed, (3) frequency of collisions per unit time increases. Avoid the word "energy" entirely.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e)(i).</strong> Calculate 1/time at 40 &deg;C. <span class="marks-inline">[1 mark]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate 1/time at 40 &deg;C:</p>
+
+<ul>
+  <li>Read the time at 40 &deg;C from the table:
+    <p class="center">time = 26 s</p>
+  </li>
+  <li>Calculate 1/time:
+    <p class="center">1/time = 1 &divide; 26 = 0.03846&hellip;</p>
+  </li>
+  <li>Round to 2 significant figures:
+    <p class="center"><span class="final">1/time = 0.038 s<sup>&minus;1</sup></span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the answer 0.038 (or 0.038 s<sup>&minus;1</sup>).</p>
+<p>Accept 0.04 (to 1 sig fig) only if the working clearly shows 1 &divide; 26.</p>
+<p>Reject 0.0385 (3 sig fig) or 0.04 with no working.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>1/time has units of s<sup>&minus;1</sup> (or "per second"). It is a measure of rate, the bigger the number, the faster the reaction.</p>
+<p>For these "calculate to N sig figs" questions, do the full calculation on your calculator first, then round to the stated number of significant figures at the very end. Rounding early causes errors.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e)(ii).</strong> Shape of the 1/time graph and why use it. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Two of:</p>
+<ul>
+  <li>The line / curve rises steeply (steeper at higher temperatures) / the line shows that 1/time increases as temperature increases <span class="marks-inline">[1 mark]</span></li>
+  <li>1/time is (directly) proportional to rate, so the graph shows how the rate depends on temperature directly <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"The line goes up" alone is not enough. The marker is looking for the steep / accelerating nature of the rise.</p>
+<p>"1/time gives smaller numbers" is not accepted. The reason is about proportionality, not number size.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Time and rate are <em>inversely</em> proportional: a faster reaction takes less time. Plotting 1/time gives a quantity that is <em>directly</em> proportional to rate, so the relationship between rate and temperature is shown in a straightforward way.</p>
+<p>Typical pattern: the rate roughly doubles for every 10 &deg;C rise. From 20 &deg;C (96 s) to 30 &deg;C (50 s) the time roughly halves (so rate doubles). 30 &deg;C to 40 &deg;C: 50 &rarr; 26 s (rate ~ doubles). The data follow the rule closely.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

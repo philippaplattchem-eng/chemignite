@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP4 Electrolysis of Copper(II) Sulfate (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP4 Electrolysis of Copper(II) Sulfate</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Combined Science (1SC0) and Separate Chemistry (1CH0)</p>
+  <p><strong>Paper:</strong> Paper 1</p>
+  <p><strong>Specification:</strong> 3.31. Investigate the electrolysis of copper sulfate solution with inert electrodes and copper electrodes.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical compares the electrolysis of the same electrolyte (aqueous copper(II) sulfate) using two different sets of electrodes: inert (carbon) electrodes and reactive (copper) electrodes. The contrast between the two setups is the whole point of the experiment: same solution, different electrodes, very different observations. The June 2019 and November 2021 examiner reports both flagged this practical as a weak area, especially the explanation of why the solution stays blue with copper electrodes.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Inert (Carbon) Electrodes</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2020/02/Electrolysis-Apparatus-Inverted-Test-Tubes.png" alt="Apparatus for the electrolysis of copper(II) sulfate solution using inert carbon electrodes: a beaker of blue copper sulfate solution with two graphite rods dipping in, connected to a DC power supply, with inverted test tubes over each electrode to collect any gas produced">
+  <div class="caption">Apparatus for the electrolysis of copper(II) sulfate solution using passive (inert) carbon electrodes. The DC supply is connected so one electrode is the cathode (–) and the other is the anode (+).</div>
+</div>
+
+<ol>
+  <li>The electrolyte is copper(II) sulfate solution, CuSO<sub>4</sub> (aq), which contains Cu<sup>2+</sup> ions, SO<sub>4</sub><sup>2−</sup> ions, and water (a source of H<sup>+</sup> and OH<sup>−</sup>).</li>
+  <li>The supply must be <strong>DC</strong> (direct current), so one electrode is consistently the cathode and the other the anode. With AC the polarity reverses and nothing useful is deposited.</li>
+  <li>With inert (carbon) electrodes: at the <strong>cathode (–)</strong>, Cu<sup>2+</sup> ions gain electrons and are deposited as a pink-brown layer of copper. The cathode <strong>increases in mass</strong>.</li>
+  <li>At the <strong>anode (+)</strong>, OH<sup>−</sup> from water is discharged in preference to SO<sub>4</sub><sup>2−</sup>, giving off colourless <strong>oxygen gas</strong>. Test with a glowing splint: it relights.</li>
+  <li>The blue colour of the solution <strong>fades</strong> as electrolysis continues, because Cu<sup>2+</sup> ions are removed from the solution at the cathode and are not replaced.</li>
+</ol>
+
+<h3>Part 2. Copper Electrodes</h3>
+
+<div class="figure">
+  <img src="https://cdn.savemyexams.com/uploads/2021/01/5.3-Principles-of-Electrochemistry-Apparatus-Electrolysis.png" alt="Apparatus for the electrolysis of copper(II) sulfate solution using active copper electrodes: a beaker of blue copper sulfate solution with two copper strips dipping in, connected to a DC power supply via an ammeter">
+  <div class="caption">Apparatus for the electrolysis of copper(II) sulfate solution using active (copper) electrodes. This is the setup industry uses to purify copper.</div>
+</div>
+
+<ol start="6">
+  <li>With copper electrodes: at the <strong>cathode (–)</strong>, Cu<sup>2+</sup> gains electrons and is deposited as copper. The cathode <strong>increases in mass</strong>, just as before.</li>
+  <li>At the <strong>anode (+)</strong>, the copper of the electrode itself is oxidised: Cu atoms lose electrons and dissolve as Cu<sup>2+</sup> ions. The anode <strong>decreases in mass</strong>. No gas is produced.</li>
+  <li>The blue colour of the solution <strong>stays the same</strong>. Cu<sup>2+</sup> ions are added at the anode at the same rate they are removed at the cathode, so the concentration of Cu<sup>2+</sup> in solution is constant.</li>
+  <li>The mass <strong>gained at the cathode equals the mass lost at the anode</strong>. Copper is being transferred from one electrode to the other through the solution.</li>
+  <li>This is the basis of <strong>industrial copper refining</strong>: impure copper is used as the anode and pure copper is used as the cathode. Pure copper deposits on the cathode; impurities fall to the bottom as anode sludge.</li>
+</ol>
+
+<h3>Variables, Maths and Errors</h3>
+
+<ol start="11">
+  <li><strong>Variables.</strong> Independent: current (or time). Dependent: change in mass of the cathode (or anode). Controls: volume and concentration of CuSO<sub>4</sub> (aq), surface area of electrodes, distance between electrodes, temperature.</li>
+  <li>Plotting mass change against current gives a <strong>straight line through the origin</strong>. The gradient is the mass deposited per amp at the fixed time used. Mass deposited is <strong>directly proportional</strong> to current.</li>
+  <li>Common candidate errors flagged by examiner reports: thinking <strong>both</strong> electrodes gain mass; confusing <strong>electrons</strong> (move through the wires) with <strong>ions</strong> (move through the solution); not explaining why the solution stays blue with copper electrodes.</li>
+  <li>Safety: low-voltage DC (4–6 V is enough); avoid skin contact with CuSO<sub>4</sub> solution (irritant); dry the electrodes carefully before reweighing (without rubbing, which knocks off the freshly deposited copper).</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> Why must a DC (direct current) supply be used in this practical, rather than an AC supply? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>DC gives a higher voltage than AC</li>
+  <li>DC keeps each electrode consistently as the cathode or anode, so copper is deposited steadily</li>
+  <li>DC is safer than AC at any voltage</li>
+  <li>DC heats the solution less than AC</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> A student carries out the electrolysis using two carbon (inert) electrodes. What is produced at the anode? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Hydrogen gas</li>
+  <li>A layer of copper metal</li>
+  <li>Oxygen gas</li>
+  <li>Chlorine gas</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> The student replaces the carbon electrodes with two copper electrodes and repeats the experiment. Why does the blue colour of the solution stay the same in this version of the experiment? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>The copper electrodes prevent any chemical change in the solution</li>
+  <li>Cu<sup>2+</sup> ions are removed at the cathode at the same rate they are produced at the anode, so the concentration stays constant</li>
+  <li>The copper electrodes are coated to stop the solution changing colour</li>
+  <li>The temperature of the solution does not change</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> Which half-equation correctly shows what happens at the <strong>anode</strong> when copper electrodes are used? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu</li>
+  <li>Cu → Cu<sup>2+</sup> + 2e<sup>−</sup></li>
+  <li>2H<sub>2</sub>O → O<sub>2</sub> + 4H<sup>+</sup> + 4e<sup>−</sup></li>
+  <li>Cu + 2e<sup>−</sup> → Cu<sup>2+</sup></li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student plots mass deposited at the cathode against current. The line is straight and passes through the origin. What does this tell the student about the relationship between mass deposited and current? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Mass is inversely proportional to current</li>
+  <li>Mass is directly proportional to current</li>
+  <li>Mass and current are unrelated</li>
+  <li>Mass increases then plateaus</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A student investigates the electrolysis of copper(II) sulfate solution. She uses two pieces of pure copper as electrodes, each weighed before the experiment. She passes a steady current of 0.5 A through the solution for 10 minutes, then carefully removes, rinses, dries and reweighs both electrodes.</p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Describe two observations the student would make during the experiment, one at the cathode and one in the solution. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Write the half-equation, including state symbols, for the reaction at the cathode. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Explain, in terms of ions and electrons, why the copper anode decreases in mass during the experiment. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> The student measures the following masses:</p>
+<table>
+  <tr><th></th><th>Cathode</th><th>Anode</th></tr>
+  <tr><td>Initial mass / g</td><td>5.62</td><td>5.55</td></tr>
+  <tr><td>Final mass / g</td><td>5.78</td><td>5.39</td></tr>
+</table>
+<p>(i) Calculate the change in mass of the cathode and the change in mass of the anode. <span class="marks">[2 marks]</span></p>
+<p>(ii) Comment on what these two mass changes tell you about how copper is moving in the cell. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> The student now repeats the experiment using two carbon (inert) electrodes instead of copper electrodes. Predict and explain how the colour of the solution would change over the course of the experiment with inert electrodes. <span class="marks">[3 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(f)</strong> Suggest one practical reason why the student rinses each electrode with distilled water before reweighing it, but does <strong>not</strong> rub the electrodes dry with a cloth. <span class="marks">[1 mark]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Why must a DC supply be used?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> DC keeps each electrode consistently as the cathode or anode, so copper is deposited steadily <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The voltage from a DC supply is set by the equipment, not by the type of supply. The reason for choosing DC is not about voltage.</p>
+<p>C is incorrect. Safety is not the chemistry reason. Both supplies can be dangerous at high voltages.</p>
+<p>D is incorrect. Both supplies heat the solution slightly via the current. Heating is not the deciding factor.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>If the supply was AC, the polarity of each electrode would reverse 50 times per second. Copper deposited would immediately be re-dissolved, so no net change of mass would occur. DC keeps each electrode in one role, so deposition and dissolution can build up.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> What is produced at the anode with inert electrodes?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Oxygen gas <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Hydrogen is discharged at the cathode (negative electrode), not the anode. In this electrolyte, however, the Cu<sup>2+</sup> ions are discharged at the cathode in preference to H<sup>+</sup>, so no hydrogen is actually produced here either.</p>
+<p>B is incorrect. Copper is deposited at the cathode, not the anode.</p>
+<p>D is incorrect. There are no chloride ions in copper(II) sulfate solution, so chlorine cannot be produced.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The anode attracts negative ions. In CuSO<sub>4</sub> (aq), the choice is between OH<sup>−</sup> (from water) and SO<sub>4</sub><sup>2−</sup>. OH<sup>−</sup> is discharged in preference, giving oxygen gas.</p>
+<p>Test for oxygen with a glowing splint: it relights.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Why does the solution stay blue with copper electrodes?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Cu<sup>2+</sup> ions are removed at the cathode at the same rate they are produced at the anode, so the concentration stays constant <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. The copper electrodes are involved in the chemistry, not preventing it. The anode actually dissolves.</p>
+<p>C is incorrect. There is no coating on the copper electrodes. They are pure copper.</p>
+<p>D is incorrect. The temperature does change slightly, but the colour of the solution is determined by the Cu<sup>2+</sup> concentration, not the temperature.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the discriminator question flagged in the November 2021 examiner report. The mark is awarded for understanding the <em>balance</em>: Cu<sup>2+</sup> leaves the solution at the cathode (deposited as copper), and Cu<sup>2+</sup> enters the solution at the anode (from the dissolving copper electrode). Same rate at both, so the concentration is constant.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Which half-equation is correct for the anode with copper electrodes?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Cu → Cu<sup>2+</sup> + 2e<sup>−</sup> <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. This is the half-equation for the cathode (reduction of Cu<sup>2+</sup>).</p>
+<p>C is incorrect. This is the half-equation for the anode when inert electrodes are used (oxidation of water to give oxygen). It does not apply when the anode is itself copper.</p>
+<p>D is incorrect. This half-equation is the reverse of A and shows reduction. The anode involves oxidation (loss of electrons), so this cannot be the answer.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Oxidation happens at the anode: the metal atoms lose electrons. The "OIL RIG" mnemonic helps: <strong>O</strong>xidation <strong>I</strong>s <strong>L</strong>oss (of electrons), <strong>R</strong>eduction <strong>I</strong>s <strong>G</strong>ain.</p>
+<p>The half-equation must balance: charge on the left (0 for Cu atom) must equal charge on the right (2+ minus the 2− from the two electrons, so 0). Both sides have 1 Cu and a net charge of 0.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> What does the straight line through the origin tell you?
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Mass is directly proportional to current <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Inverse proportion would give a curve that falls towards zero as current rises, not a straight rising line.</p>
+<p>C is incorrect. The straight line clearly shows a relationship: doubling the current doubles the mass deposited.</p>
+<p>D is incorrect. A plateau would be a flat region. The line keeps rising in this practical, so no plateau is seen.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>A straight line through the origin is the signature of direct proportion. If you double the x-value, the y-value doubles. Here, doubling the current doubles the mass of copper deposited at the cathode in the fixed time.</p>
+<p>This is why electrolysis is used in industrial copper refining. More current means more pure copper produced per minute.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Two observations: one at the cathode, one in the solution. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> observation at the cathode (1 mark):</p>
+<ul>
+  <li>A pink-brown / red-brown layer of copper forms / coats the cathode</li>
+  <li>The cathode becomes coated in copper / gets thicker</li>
+  <li>The cathode increases in mass</li>
+</ul>
+<p>Any <strong>one</strong> observation in the solution (1 mark):</p>
+<ul>
+  <li>The solution stays blue (the same shade as at the start)</li>
+  <li>The colour of the solution does not change / stays constant</li>
+</ul>
+<p class="right"><span class="marks-inline">[2 marks]</span></p>
+<p>"The solution turns green / colourless" is not accepted with copper electrodes. (That observation would apply to inert electrodes.)</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two observations means two distinct ones. Mark them clearly in your answer: one for the cathode, one for the solution. Mixing them up loses marks.</p>
+<p>The key thing about the copper-electrode version is that the solution stays the same blue. Make sure your observation mentions that the colour is <em>unchanged</em>, not just that it is blue.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Half-equation at the cathode with state symbols. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The half-equation at the cathode is:</p>
+<p class="center">Cu<sup>2+</sup> (aq) + 2e<sup>−</sup> → Cu (s)</p>
+<ul>
+  <li>Correct half-equation (Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu) <span class="marks-inline">[1 mark]</span></li>
+  <li>Correct state symbols: (aq) for Cu<sup>2+</sup> and (s) for Cu <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>An equation with no electrons is not accepted. The cathode reaction is the gain of electrons.</p>
+<p>"Cu<sup>+</sup>" in place of "Cu<sup>2+</sup>" is not accepted. Copper in this electrolyte exists as 2+ ions.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The half-equation at the cathode shows <strong>reduction</strong>: Cu<sup>2+</sup> ions gain 2 electrons to become Cu atoms. Check that the charges balance (left: 2+ from Cu<sup>2+</sup> minus 2 from 2e<sup>−</sup> = 0; right: 0 from neutral Cu atom).</p>
+<p>State symbols: Cu<sup>2+</sup> is in solution (aq), the electrons are inside the wire (no state symbol), and the deposited copper is solid (s).</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Explain in terms of ions and electrons why the copper anode decreases in mass. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The explanation must include:</p>
+<ul>
+  <li>Copper atoms at the anode <strong>lose two electrons each</strong> / are oxidised <span class="marks-inline">[1 mark]</span></li>
+  <li>The copper atoms become Cu<sup>2+</sup> ions, which dissolve / enter the solution <span class="marks-inline">[1 mark]</span></li>
+  <li>The half-equation Cu → Cu<sup>2+</sup> + 2e<sup>−</sup> (loss of mass as the anode is consumed) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"The anode loses mass because electrons are removed" is not accepted. Electrons have almost no mass. The mass loss is from copper atoms leaving the solid electrode and entering the solution as ions.</p>
+<p>The November 2021 examiner report flagged this exact misconception: candidates wrongly stated that the loss of electrons (rather than loss of atoms) causes the mass change.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The reason for the mass loss is not the electrons. Electrons are far too light to matter. The mass is lost because copper <em>atoms</em> leave the solid electrode and become Cu<sup>2+</sup> ions in solution.</p>
+<p>Structure your answer in three steps: atoms lose electrons, atoms become ions, ions dissolve. Then write the half-equation as your evidence.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(i).</strong> Calculate the change in mass at each electrode. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<p class="ma-title">Model Answer</p>
+<p>To calculate the change in mass at each electrode:</p>
+
+<ul>
+  <li>Change in mass at the cathode = final mass − initial mass:
+    <p class="center">Change in cathode mass = 5.78 − 5.62</p>
+    <p class="center"><span class="final">Change in cathode mass = +0.16 g</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+  <li>Change in mass at the anode = final mass − initial mass:
+    <p class="center">Change in anode mass = 5.39 − 5.55</p>
+    <p class="center"><span class="final">Change in anode mass = −0.16 g</span> <span class="marks-inline">[1 mark]</span></p>
+  </li>
+</ul>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>1 mark for the cathode change (+0.16 g). Sign must be positive or labelled "increase".</p>
+<p>1 mark for the anode change (−0.16 g). Sign must be negative or labelled "decrease".</p>
+<p>Answers without sign or direction (e.g. "0.16 g" with no indication of gain or loss) are not accepted.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>For "change in mass" calculations, always do <em>final minus initial</em>. A positive value means the electrode gained mass; a negative value means it lost mass. Always state the sign or write "increase" / "decrease".</p>
+</div>
+
+<div class="qref">
+<strong>Question (d)(ii).</strong> Comment on what these mass changes tell you about copper in the cell. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The comment should include:</p>
+<ul>
+  <li>The mass gained at the cathode is equal in size to the mass lost at the anode (both 0.16 g) <span class="marks-inline">[1 mark]</span></li>
+  <li>This shows that copper is being transferred from the anode to the cathode (through the solution) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"They are the same" alone is not enough. The answer must say that copper has been transferred from one electrode to the other.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the principle behind industrial copper refining. The impure anode loses copper, which deposits as pure copper on the cathode. The mass balance in this experiment is your evidence that the copper is moving, not being created or destroyed.</p>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Predict and explain the colour change with inert electrodes. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The prediction and explanation:</p>
+<ul>
+  <li>The blue colour fades / the solution becomes paler / the solution eventually becomes colourless <span class="marks-inline">[1 mark]</span></li>
+  <li>Cu<sup>2+</sup> ions are still removed at the cathode (deposited as copper metal) <span class="marks-inline">[1 mark]</span></li>
+  <li>With inert (carbon) electrodes, the Cu<sup>2+</sup> ions are not replaced at the anode (oxygen is discharged instead from OH<sup>−</sup> from water), so the concentration of Cu<sup>2+</sup> falls and the blue colour fades <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"The colour stays the same" is not accepted. With inert electrodes, the colour does change.</p>
+<p>"The colour turns green / red" is not accepted. The blue colour fades to pale blue and eventually to colourless.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The two electrolyses look almost identical at the cathode (copper deposits in both). The difference is at the anode. With copper electrodes, copper dissolves and replenishes the Cu<sup>2+</sup> concentration. With inert electrodes, oxygen is released instead and the Cu<sup>2+</sup> concentration is not replenished.</p>
+<p>That is why the blue solution fades with inert electrodes, but stays blue with copper electrodes.</p>
+</div>
+
+<div class="qref">
+<strong>Question (f).</strong> Why rinse but not rub the electrodes? <span class="marks-inline">[1 mark]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>Any <strong>one</strong> from:</p>
+<ul>
+  <li>Rubbing would knock off the freshly deposited copper from the cathode, lowering the measured mass <span class="marks-inline">[1 mark]</span></li>
+  <li>Rinsing washes away copper sulfate solution from the surface so the measured mass is only the electrode (and the deposited copper), not any solution clinging to it</li>
+</ul>
+<p>"To clean the electrodes" alone is not accepted. The answer must explain the consequence of rubbing or not rinsing.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The freshly deposited copper on the cathode is soft and only loosely attached. Rubbing scrapes it off, which makes the measured mass change smaller than the true value.</p>
+<p>Rinsing in distilled water (then drying without rubbing, or by air-drying) gives the most accurate final mass.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>

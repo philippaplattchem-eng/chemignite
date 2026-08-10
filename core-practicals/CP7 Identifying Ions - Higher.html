@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CP7 Identifying Ions (Higher)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 2em; line-height: 1.7; color: #1a1a1a; }
+  h1 { color: #5e35b1; border-bottom: 3px solid #5e35b1; padding-bottom: 0.4em; margin-bottom: 0.1em; font-size: 2em; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: #5e35b1; border-bottom: 2px solid #ce93d8; padding-bottom: 0.3em; margin-top: 2.2em; font-size: 1.25em; font-weight: 600; letter-spacing: 0.01em; }
+  h3 { color: #5e35b1; margin-top: 1.5em; font-weight: 600; }
+  h4 { color: #5e35b1; margin: 1em 0 0.3em; }
+  .subtitle { display: inline-block; background: #5e35b1; color: #fff; font-weight: 600; font-size: 0.82em; padding: 0.25em 0.9em; border-radius: 14px; margin: 0.35em 0 0.9em; letter-spacing: 0.07em; text-transform: uppercase; }
+  .meta-block { background: #ede7f6; border-left: 4px solid #5e35b1; padding: 0.6em 1em; border-radius: 4px; margin: 0.8em 0 1.6em; }
+  .meta-block p { margin: 0.2em 0; }
+  .intro { background: #f8f8f8; border-left: 4px solid #888; padding: 0.8em 1.2em; border-radius: 4px; margin: 1em 0 1.6em; font-style: italic; color: #333; }
+  .revnotes { background: #f0f7f0; border-left: 4px solid #2e7d32; padding: 1em 1.4em; border-radius: 4px; }
+  .revnotes ol { padding-left: 1.4em; margin: 0.3em 0; }
+  .revnotes li { margin: 0.5em 0; }
+  .revnotes h3 { margin: 1em 0 0.4em; color: #2e7d32; }
+  .figure { margin: 1em 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; padding: 6px; }
+  .figure .caption { font-style: italic; color: #555; font-size: 0.95em; margin-top: 0.3em; }
+  .question { background: #fafafa; border: 1px solid #ddd; padding: 1em 1.4em; border-radius: 4px; margin: 1.2em 0 0.6em; }
+  .marks { float: right; color: #1565c0; font-weight: bold; }
+  .marks-inline { color: #1565c0; font-weight: bold; }
+  .final { color: #2e7d32; font-weight: bold; }
+  .working { color: #555; }
+  .msng { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.7em 1.1em; margin: 0.6em 0; border-radius: 4px; }
+  .msng-title { font-weight: bold; color: #5e35b1; margin: 0 0 0.4em; }
+  .ett { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.7em 1.1em; margin: 0.6em 0 1.4em; border-radius: 4px; }
+  .ett-title { font-weight: bold; color: #b8861e; margin: 0 0 0.4em; }
+  .ma-title { font-weight: bold; color: #5e35b1; margin: 1em 0 0.3em; }
+  .options { list-style: lower-alpha; padding-left: 2em; }
+  .options li { margin: 0.2em 0; }
+  .center { text-align: center; margin: 0.4em 0; }
+  .right { text-align: right; }
+  table { border-collapse: collapse; margin: 0.8em 0; }
+  th, td { border: 1px solid #999; padding: 0.4em 0.8em; }
+  th { background: #ede7f6; }
+  hr.section { border: none; border-top: 2px dashed #ccc; margin: 2.5em 0; }
+  .stem { margin: 0.6em 0; }
+  .qpart { margin: 1.2em 0 0.2em; font-weight: bold; }
+  .clear { clear: both; }
+  .page-break { page-break-before: always; border: none; border-top: 4px double #5e35b1; margin: 3em 0 2em; }
+  .ms-banner { background: #5e35b1; color: white; padding: 1em 1.4em; border-radius: 4px; margin: 1em 0 1.6em; font-weight: bold; font-size: 1.2em; text-align: center; }
+  .qref { background: #fff; border: 1px dashed #aaa; padding: 0.6em 1em; border-radius: 4px; margin: 1.2em 0 0.4em; font-style: italic; color: #444; }
+  @media print {
+    body { max-width: none; margin: 0; padding: 1.5em 2em; }
+    .question, .msng, .ett, .revnotes, .meta-block, .intro { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CP7 Identifying Ions in Unknown Salts</h1>
+<p class="subtitle">Higher Tier</p>
+<div class="meta-block">
+  <p><strong>Tier:</strong> Examined on Foundation and Higher tier</p>
+  <p><strong>Qualification:</strong> Separate Chemistry (1CH0) only, not assessed in Combined Science (1SC0)</p>
+  <p><strong>Paper:</strong> Paper 2</p>
+  <p><strong>Specification:</strong> 9.6C/9.7C. Identify the ions in unknown salts, using the tests for the specified cations and anions.</p>
+  <p><strong>Total marks:</strong> 20</p>
+</div>
+
+<div class="intro">
+This Core Practical pulls together flame tests, NaOH cation tests, the ammonium test, and the halide / sulfate / carbonate anion tests into a systematic identification procedure for unknown ionic salts. The 6-mark extended-response question that almost always appears on Paper 2H expects you to identify the ions in each sample <strong>and</strong> justify each identification with a balanced ionic equation. The 1CH0/2F June 2019 examiner report flagged this practical as having "caused great difficulty for candidates", the canonical traps are choosing the wrong acid for an anion test, confusing precipitate colours (Fe<sup>2+</sup> green vs Fe<sup>3+</sup> brown), and failing to distinguish ammonium from aluminium when both can appear to give a white precipitate.
+</div>
+
+<h2>Key Revision Notes</h2>
+<div class="revnotes">
+
+<h3>Part 1. Systematic Order of Tests</h3>
+
+<ol>
+  <li><strong>Flame test</strong> first, quick, non-destructive screen on a small scrape of solid. Identifies Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, Cu<sup>2+</sup>.</li>
+  <li><strong>NaOH on a fresh aqueous solution</strong>, identifies Al<sup>3+</sup>, Ca<sup>2+</sup>, Cu<sup>2+</sup>, Fe<sup>2+</sup>, Fe<sup>3+</sup> from precipitate colour.</li>
+  <li><strong>Warm with NaOH</strong>, test gas with damp red litmus paper to confirm NH<sub>4</sub><sup>+</sup> (turns blue).</li>
+  <li><strong>Anion tests on a fresh sample</strong> of the dissolved salt: dilute HCl for carbonate / sulfate, dilute HNO<sub>3</sub> for halides.</li>
+</ol>
+
+<h3>Part 2. Cation Tests, Reference Tables</h3>
+
+<table>
+  <tr><th>Cation</th><th>Flame colour</th><th>Precipitate with NaOH (aq)</th></tr>
+  <tr><td>Li<sup>+</sup></td><td>Crimson red</td><td>No precipitate</td></tr>
+  <tr><td>Na<sup>+</sup></td><td>Yellow</td><td>No precipitate</td></tr>
+  <tr><td>K<sup>+</sup></td><td>Lilac</td><td>No precipitate</td></tr>
+  <tr><td>Ca<sup>2+</sup></td><td>Orange-red</td><td>White (does not dissolve in excess)</td></tr>
+  <tr><td>Cu<sup>2+</sup></td><td>Blue-green</td><td>Blue</td></tr>
+  <tr><td>Fe<sup>2+</sup></td><td>(none)</td><td>Green</td></tr>
+  <tr><td>Fe<sup>3+</sup></td><td>(none)</td><td>Brown</td></tr>
+  <tr><td>Al<sup>3+</sup></td><td>(none)</td><td>White (<strong>dissolves</strong> in excess NaOH)</td></tr>
+  <tr><td>Mg<sup>2+</sup></td><td>(none)</td><td>White</td></tr>
+  <tr><td>NH<sub>4</sub><sup>+</sup></td><td>(none)</td><td>No precipitate; on warming, ammonia gas given off &rarr; damp red litmus turns blue</td></tr>
+</table>
+
+<h3>Part 3. Anion Tests, Reference Tables</h3>
+
+<table>
+  <tr><th>Anion</th><th>Reagent(s)</th><th>Positive result</th></tr>
+  <tr><td>CO<sub>3</sub><sup>2&minus;</sup></td><td>Dilute HCl &rarr; bubble gas through limewater</td><td>Fizzes; limewater turns milky / cloudy</td></tr>
+  <tr><td>SO<sub>4</sub><sup>2&minus;</sup></td><td>Dilute HCl, then BaCl<sub>2</sub> (aq)</td><td>White precipitate of BaSO<sub>4</sub></td></tr>
+  <tr><td>Cl<sup>&minus;</sup></td><td>Dilute HNO<sub>3</sub>, then AgNO<sub>3</sub> (aq)</td><td>White precipitate of AgCl</td></tr>
+  <tr><td>Br<sup>&minus;</sup></td><td>Dilute HNO<sub>3</sub>, then AgNO<sub>3</sub> (aq)</td><td>Cream precipitate of AgBr</td></tr>
+  <tr><td>I<sup>&minus;</sup></td><td>Dilute HNO<sub>3</sub>, then AgNO<sub>3</sub> (aq)</td><td>Yellow precipitate of AgI</td></tr>
+</table>
+
+<h3>Part 4. Why the Acid Choice Matters</h3>
+
+<ol start="5">
+  <li><strong>Sulfate test:</strong> use <strong>HCl</strong>, never H<sub>2</sub>SO<sub>4</sub>. Sulfuric acid would itself provide SO<sub>4</sub><sup>2&minus;</sup> ions and give a false positive.</li>
+  <li><strong>Halide test:</strong> use <strong>HNO<sub>3</sub></strong>, never HCl (would add Cl<sup>&minus;</sup> ions and give a false white precipitate) and never H<sub>2</sub>SO<sub>4</sub> (concentrated H<sub>2</sub>SO<sub>4</sub> would oxidise Br<sup>&minus;</sup> and I<sup>&minus;</sup>, destroying them).</li>
+  <li><strong>Why acidify at all?</strong> To remove any carbonate impurity, otherwise CO<sub>3</sub><sup>2&minus;</sup> would form a white precipitate with both BaCl<sub>2</sub> (BaCO<sub>3</sub>) and AgNO<sub>3</sub> (Ag<sub>2</sub>CO<sub>3</sub>), masking the true result.</li>
+</ol>
+
+<h3>Part 5. Key Ionic Equations</h3>
+
+<ol start="8">
+  <li>Cu<sup>2+</sup> (aq) + 2OH<sup>&minus;</sup> (aq) &rarr; Cu(OH)<sub>2</sub> (s), blue precipitate</li>
+  <li>Fe<sup>2+</sup> (aq) + 2OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>2</sub> (s), green precipitate</li>
+  <li>Fe<sup>3+</sup> (aq) + 3OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>3</sub> (s), brown precipitate</li>
+  <li>Ba<sup>2+</sup> (aq) + SO<sub>4</sub><sup>2&minus;</sup> (aq) &rarr; BaSO<sub>4</sub> (s), white precipitate</li>
+  <li>Ag<sup>+</sup> (aq) + Cl<sup>&minus;</sup> (aq) &rarr; AgCl (s), white precipitate</li>
+  <li>NH<sub>4</sub><sup>+</sup> (aq) + OH<sup>&minus;</sup> (aq) &rarr; NH<sub>3</sub> (g) + H<sub>2</sub>O (l), ammonia released</li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section A. Multiple Choice (5 marks)</h2>
+
+<div class="question">
+<p class="stem"><strong>1.</strong> A white solid gives a brick / orange-red flame in a flame test, and gives a white precipitate when sodium hydroxide solution is added to its aqueous solution. The white precipitate does <strong>not</strong> dissolve in excess sodium hydroxide. Which cation is present? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Aluminium, Al<sup>3+</sup></li>
+  <li>Ammonium, NH<sub>4</sub><sup>+</sup></li>
+  <li>Calcium, Ca<sup>2+</sup></li>
+  <li>Magnesium, Mg<sup>2+</sup></li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>2.</strong> Why is dilute <strong>hydrochloric</strong> acid used (and not dilute sulfuric acid) when testing for sulfate ions with barium chloride solution? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Hydrochloric acid is more concentrated than sulfuric acid</li>
+  <li>Sulfuric acid contains sulfate ions, which would give a false positive result</li>
+  <li>Hydrochloric acid dissolves barium chloride more easily</li>
+  <li>Sulfuric acid reacts with silver nitrate</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>3.</strong> Which balanced ionic equation correctly describes the formation of the precipitate when sodium hydroxide solution is added to a solution containing iron(III) ions? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Fe<sup>2+</sup> (aq) + 2OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>2</sub> (s)</li>
+  <li>Fe<sup>3+</sup> (aq) + 2OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>2</sub> (s)</li>
+  <li>Fe<sup>3+</sup> (aq) + 3OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>3</sub> (s)</li>
+  <li>Fe<sup>3+</sup> (aq) + OH<sup>&minus;</sup> (aq) &rarr; FeOH<sup>2+</sup> (aq)</li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>4.</strong> A student adds dilute nitric acid and then silver nitrate solution to a solution of an unknown salt. A pale precipitate forms. The student then adds dilute ammonia solution to the precipitate, and the precipitate dissolves. Which anion was in the original salt? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Bromide, Br<sup>&minus;</sup></li>
+  <li>Chloride, Cl<sup>&minus;</sup></li>
+  <li>Iodide, I<sup>&minus;</sup></li>
+  <li>Sulfate, SO<sub>4</sub><sup>2&minus;</sup></li>
+</ol>
+</div>
+
+<div class="question">
+<p class="stem"><strong>5.</strong> A student adds sodium hydroxide solution to a solution of an unknown salt. A white precipitate forms. When the mixture is warmed, no gas is released, but the white precipitate dissolves in excess sodium hydroxide. Which cation is in the salt? <span class="marks">[1 mark]</span></p>
+<ol class="options">
+  <li>Aluminium, Al<sup>3+</sup></li>
+  <li>Ammonium, NH<sub>4</sub><sup>+</sup></li>
+  <li>Calcium, Ca<sup>2+</sup></li>
+  <li>Magnesium, Mg<sup>2+</sup></li>
+</ol>
+</div>
+
+<hr class="section">
+
+<h2>Section B. Structured Question (15 marks)</h2>
+
+<div class="question">
+<p class="stem">A scientist analyses three unknown ionic compounds, labelled <strong>X</strong>, <strong>Y</strong> and <strong>Z</strong>. A small portion of each compound is dissolved in distilled water before each wet test, and a fresh sample is used for every test to avoid contamination. The results are shown in <strong>Table 2</strong>.</p>
+<table>
+  <tr><th>Test</th><th>X</th><th>Y</th><th>Z</th></tr>
+  <tr><td>Flame test on the solid</td><td>No characteristic colour</td><td>Crimson red flame</td><td>No characteristic colour</td></tr>
+  <tr><td>Add NaOH (aq), warm gently, test gas with damp red litmus paper</td><td>Brown precipitate; no gas given off</td><td>No precipitate; pungent gas turns damp red litmus blue</td><td>Blue precipitate; no gas given off</td></tr>
+  <tr><td>Add dilute HNO<sub>3</sub> then AgNO<sub>3</sub> (aq) to a fresh sample</td><td>No precipitate</td><td>No precipitate</td><td>Yellow precipitate</td></tr>
+  <tr><td>Add dilute HCl then BaCl<sub>2</sub> (aq) to a fresh sample</td><td>White precipitate</td><td>White precipitate</td><td>No precipitate</td></tr>
+</table>
+<p class="center"><strong>Table 2</strong></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(a)</strong> Identify the ions in each of the compounds X, Y and Z. For each compound, give the full chemical name. Use the results in Table 2 to justify each identification by referring to the test results. <span class="marks">[6 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(b)</strong> Write the balanced ionic equation, including state symbols, for the reaction that produces the brown precipitate when sodium hydroxide solution is added to a solution of compound <strong>X</strong>. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(c)</strong> Compound <strong>Y</strong> contains the ammonium ion. Write the balanced ionic equation, including state symbols, for the reaction between ammonium ions and hydroxide ions on warming. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(d)</strong> The scientist tested the yellow precipitate from compound <strong>Z</strong> by adding dilute ammonia solution. The precipitate did not dissolve. The scientist then added concentrated ammonia solution. The precipitate still did not dissolve. State what this further test confirms about the anion in compound Z. <span class="marks">[2 marks]</span></p>
+</div>
+
+<div class="question">
+<p class="stem"><strong>(e)</strong> Explain why dilute <strong>nitric</strong> acid (rather than dilute hydrochloric acid or sulfuric acid) is added to the sample before the silver nitrate test for halide ions. <span class="marks">[3 marks]</span></p>
+</div>
+
+<hr class="page-break">
+
+<div class="ms-banner">Mark Scheme and Guidance</div>
+
+<h2>Section A. Multiple Choice</h2>
+
+<div class="qref">
+<strong>Question 1.</strong> Brick-red flame + white precipitate that doesn't dissolve in excess NaOH.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Calcium, Ca<sup>2+</sup> <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Aluminium gives no characteristic flame colour, and its white precipitate <strong>does</strong> dissolve in excess NaOH (forms a colourless aluminate solution).</p>
+<p>B is incorrect. Ammonium gives no flame colour and no precipitate with NaOH at room temperature (only ammonia gas on warming).</p>
+<p>D is incorrect. Magnesium gives no characteristic flame colour and its white precipitate does not dissolve in excess NaOH, but the orange-red flame in the question rules it out.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Two pieces of evidence point to calcium: <strong>orange-red flame</strong> and <strong>white precipitate that does not dissolve in excess NaOH</strong>. Confirmation by two independent tests is the gold standard at Higher tier.</p>
+<p>To distinguish calcium from aluminium when both give a white precipitate: add excess NaOH. Al(OH)<sub>3</sub> dissolves; Ca(OH)<sub>2</sub> does not.</p>
+</div>
+
+<div class="qref">
+<strong>Question 2.</strong> Why HCl (not H<sub>2</sub>SO<sub>4</sub>) for sulfate test.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Sulfuric acid contains sulfate ions, which would give a false positive result <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Concentration is not the issue, both acids are used dilute.</p>
+<p>C is incorrect. Hydrochloric acid does not specifically help BaCl<sub>2</sub> dissolve.</p>
+<p>D is incorrect. The chemistry is unrelated to silver nitrate, this is the sulfate test, not the halide test.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Sulfuric acid is H<sub>2</sub>SO<sub>4</sub>, in solution it provides 2H<sup>+</sup> and SO<sub>4</sub><sup>2&minus;</sup>. If you used it to acidify the unknown, the SO<sub>4</sub><sup>2&minus;</sup> in the acid would react with the BaCl<sub>2</sub> in the test reagent and give a white precipitate of BaSO<sub>4</sub>, regardless of whether the unknown contained sulfate. So the test would always come back positive, even when sulfate is not present.</p>
+</div>
+
+<div class="qref">
+<strong>Question 3.</strong> Ionic equation for Fe<sup>3+</sup> + NaOH.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>C.</strong> Fe<sup>3+</sup> (aq) + 3OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>3</sub> (s) <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. That is the equation for Fe<sup>2+</sup>, which gives a green precipitate, not brown.</p>
+<p>B is incorrect. The charges do not balance: Fe<sup>3+</sup> + 2OH<sup>&minus;</sup> has a net +1 charge on the left and 0 on the right (since Fe(OH)<sub>2</sub> has Fe<sup>2+</sup>, not Fe<sup>3+</sup>).</p>
+<p>D is incorrect. The charges balance (3+ minus 1 = 2+) but Fe(OH)<sub>3</sub> is the actual precipitate observed, not FeOH<sup>2+</sup>.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Check ionic equations balance for <strong>both</strong> atoms and charge. For Fe<sup>3+</sup> + 3OH<sup>&minus;</sup> &rarr; Fe(OH)<sub>3</sub>: atoms are 1 Fe, 3 O, 3 H on each side; charge is (3+) + 3(&minus;1) = 0 on the left, 0 on the right (neutral solid).</p>
+<p>The number of OH<sup>&minus;</sup> ions always equals the charge on the metal cation: Fe<sup>2+</sup> needs 2OH<sup>&minus;</sup>, Fe<sup>3+</sup> needs 3OH<sup>&minus;</sup>, Al<sup>3+</sup> needs 3OH<sup>&minus;</sup>.</p>
+</div>
+
+<div class="qref">
+<strong>Question 4.</strong> Silver halide that dissolves in dilute ammonia.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>B.</strong> Chloride, Cl<sup>&minus;</sup> <span class="marks-inline">[1 mark]</span></p>
+<p>A is incorrect. Silver bromide (AgBr, cream) dissolves only in concentrated ammonia, not dilute.</p>
+<p>C is incorrect. Silver iodide (AgI, yellow) does not dissolve in dilute or concentrated ammonia.</p>
+<p>D is incorrect. Sulfate is not tested with silver nitrate.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The silver halides have increasing insolubility down the group:</p>
+<ul>
+  <li>AgCl (white), dissolves in <strong>dilute</strong> ammonia</li>
+  <li>AgBr (cream), dissolves in <strong>concentrated</strong> ammonia</li>
+  <li>AgI (yellow), does <strong>not dissolve</strong> in concentrated ammonia</li>
+</ul>
+<p>This ammonia confirmation step is essential when the colour is ambiguous (e.g. "very pale cream" could be Cl<sup>&minus;</sup> or Br<sup>&minus;</sup>) or when a mixture is suspected.</p>
+</div>
+
+<div class="qref">
+<strong>Question 5.</strong> White precipitate that dissolves in excess NaOH, no gas on warming.
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p><strong>A.</strong> Aluminium, Al<sup>3+</sup> <span class="marks-inline">[1 mark]</span></p>
+<p>B is incorrect. Ammonium gives no precipitate with NaOH at room temperature; on warming, ammonia gas is released and turns damp red litmus blue.</p>
+<p>C is incorrect. Calcium hydroxide does not dissolve in excess NaOH.</p>
+<p>D is incorrect. Magnesium hydroxide does not dissolve in excess NaOH.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Aluminium hydroxide is <strong>amphoteric</strong>, it reacts as a base with acids (dissolves in HCl) and as an acid with alkalis (dissolves in excess NaOH to form the aluminate ion AlO<sub>2</sub><sup>&minus;</sup> or [Al(OH)<sub>4</sub>]<sup>&minus;</sup>). This is the only easy way to distinguish Al<sup>3+</sup> from Mg<sup>2+</sup>/Ca<sup>2+</sup> when all three give white precipitates with NaOH at first.</p>
+</div>
+
+<h2>Section B. Structured Question</h2>
+
+<div class="qref">
+<strong>Question (a).</strong> Identify ions and name compounds X, Y, Z. <span class="marks-inline">[6 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>This is a 6-mark levelled-response question. Mark across the response, not by ion.</p>
+<p><strong>The full identifications:</strong></p>
+<ul>
+  <li><strong>X</strong> is <strong>iron(III) sulfate</strong>, Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>. Evidence: <strong>brown precipitate</strong> with NaOH &rarr; Fe<sup>3+</sup>; <strong>white precipitate</strong> with acidified BaCl<sub>2</sub> &rarr; SO<sub>4</sub><sup>2&minus;</sup>.</li>
+  <li><strong>Y</strong> is <strong>lithium ammonium sulfate</strong> (a double salt with two cations). Accept <strong>ammonium sulfate</strong> if the crimson flame is attributed to contamination rather than lithium. Evidence: <strong>crimson red flame</strong> &rarr; Li<sup>+</sup>; <strong>pungent gas turns damp red litmus blue</strong> &rarr; NH<sub>4</sub><sup>+</sup>; <strong>white precipitate</strong> with acidified BaCl<sub>2</sub> &rarr; SO<sub>4</sub><sup>2&minus;</sup>.</li>
+  <li><strong>Z</strong> is <strong>copper(II) iodide</strong>, CuI<sub>2</sub>. Evidence: <strong>blue precipitate</strong> with NaOH &rarr; Cu<sup>2+</sup>; <strong>yellow precipitate</strong> with acidified AgNO<sub>3</sub> &rarr; I<sup>&minus;</sup>.</li>
+</ul>
+
+<p><strong>Mark scheme (level descriptors):</strong></p>
+<ul>
+  <li><strong>Level 3 (5&ndash;6 marks):</strong> All three compounds correctly identified by name, with each identification justified by reference to <em>two</em> pieces of evidence (one for the cation, one for the anion) from Table 2.</li>
+  <li><strong>Level 2 (3&ndash;4 marks):</strong> All three cations and/or anions identified, but justifications are incomplete or reference only one test per compound.</li>
+  <li><strong>Level 1 (1&ndash;2 marks):</strong> Two or three ions identified correctly with minimal or no justification, or extensive listing of test results without identifying compounds.</li>
+  <li><strong>Level 0:</strong> No relevant chemistry.</li>
+</ul>
+<p>Iron alone (not iron(III)) caps at Level 2 because the oxidation state matters for the precipitate colour.</p>
+<p>Copper alone is acceptable in place of copper(II) since Cu<sup>+</sup> compounds are rare at GCSE.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The 1CH0/2H June 2024 Q8(c) and June 2019 Q8 were both 6-mark "identify the ions in unknown samples" questions, and the examiner report flagged that this Core Practical "caused great difficulty for candidates". The structure that scores top-band marks:</p>
+<ol>
+  <li><strong>Read the whole table before writing anything.</strong> Don't lock onto the first row.</li>
+  <li><strong>Identify each ion with a clear "observation &rarr; ion" link.</strong></li>
+  <li><strong>Match cation + anion</strong> to give the full salt name (iron(III) sulfate, not "iron(III) and sulfate separately").</li>
+  <li><strong>Cross-check with a second test where possible</strong>, e.g. Y has both a crimson flame (Li<sup>+</sup>) and a damp-litmus-blue gas (NH<sub>4</sub><sup>+</sup>), so it must contain both cations.</li>
+</ol>
+<p>The June 2019 1CH0/2F report specifically warned about confusing Fe<sup>2+</sup> (green) and Fe<sup>3+</sup> (brown). Always write the oxidation state in brackets.</p>
+</div>
+
+<div class="qref">
+<strong>Question (b).</strong> Ionic equation for Fe<sup>3+</sup> + OH<sup>&minus;</sup>. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The balanced ionic equation with state symbols is:</p>
+<p class="center">Fe<sup>3+</sup> (aq) + 3OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>3</sub> (s)</p>
+<ul>
+  <li>Correct balanced equation (Fe<sup>3+</sup> + 3OH<sup>&minus;</sup> &rarr; Fe(OH)<sub>3</sub>) <span class="marks-inline">[1 mark]</span></li>
+  <li>All state symbols correct: (aq), (aq), (s) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>An equation showing Fe(OH)<sub>2</sub> instead of Fe(OH)<sub>3</sub> scores 0, that is iron(II), which would give a green precipitate.</p>
+<p>An equation with Fe<sup>3+</sup> + 2OH<sup>&minus;</sup> &rarr; ... scores 0, the charge is not balanced.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>The number of hydroxide ions equals the cation charge: Fe<sup>3+</sup> needs 3 OH<sup>&minus;</sup>, just like Al<sup>3+</sup>. The precipitate is the neutral metal hydroxide solid: Fe(OH)<sub>3</sub>.</p>
+<p>State symbols: ions in solution are (aq); the precipitate is (s).</p>
+</div>
+
+<div class="qref">
+<strong>Question (c).</strong> Ionic equation for NH<sub>4</sub><sup>+</sup> + OH<sup>&minus;</sup>. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The balanced ionic equation with state symbols is:</p>
+<p class="center">NH<sub>4</sub><sup>+</sup> (aq) + OH<sup>&minus;</sup> (aq) &rarr; NH<sub>3</sub> (g) + H<sub>2</sub>O (l)</p>
+<ul>
+  <li>Correct balanced equation (NH<sub>4</sub><sup>+</sup> + OH<sup>&minus;</sup> &rarr; NH<sub>3</sub> + H<sub>2</sub>O) <span class="marks-inline">[1 mark]</span></li>
+  <li>All state symbols correct: (aq), (aq), (g), (l) <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>If NH<sub>3</sub> is shown as (aq) instead of (g), no mark for state symbols, the gas being released is the observation being tested.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>Ammonia must be a gas (g) here, that's the whole point of the test: NH<sub>3</sub> is released as a gas and detected by damp red litmus paper at the mouth of the tube. If the reaction was done at room temperature without warming, the ammonia would mostly stay dissolved, but the gentle warming drives it out into the gas phase.</p>
+</div>
+
+<div class="qref">
+<strong>Question (d).</strong> Further test on yellow precipitate confirms the anion. <span class="marks-inline">[2 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The further test confirms:</p>
+<ul>
+  <li>The precipitate is silver iodide / AgI (because it does not dissolve in either dilute or concentrated ammonia) <span class="marks-inline">[1 mark]</span></li>
+  <li>So the anion in compound Z is iodide / I<sup>&minus;</sup> <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"It is a yellow precipitate" alone is not accepted. The marker is looking for the ammonia confirmation step to rule out other halides.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This is the discriminator step: the colour of the precipitate alone could be a "pale yellow" cream (AgBr) or a true yellow (AgI). The ammonia test settles it:</p>
+<ul>
+  <li>AgCl dissolves in <strong>dilute</strong> ammonia &rarr; chloride</li>
+  <li>AgBr dissolves in <strong>concentrated</strong> ammonia &rarr; bromide</li>
+  <li>AgI does <strong>not dissolve</strong> in concentrated ammonia &rarr; iodide</li>
+</ul>
+</div>
+
+<div class="qref">
+<strong>Question (e).</strong> Why dilute HNO<sub>3</sub> (not HCl or H<sub>2</sub>SO<sub>4</sub>) for halide test. <span class="marks-inline">[3 marks]</span>
+</div>
+
+<div class="msng">
+<div class="msng-title">Mark Scheme and Guidance</div>
+<p>The explanation must include all three of:</p>
+<ul>
+  <li>The acid is added to remove any carbonate impurity (so that CO<sub>3</sub><sup>2&minus;</sup> does not give a false white precipitate of Ag<sub>2</sub>CO<sub>3</sub> with the silver nitrate) <span class="marks-inline">[1 mark]</span></li>
+  <li><strong>Hydrochloric acid cannot be used</strong> because it contains chloride ions, which would react with silver nitrate to give a white precipitate of AgCl, a false positive for chloride <span class="marks-inline">[1 mark]</span></li>
+  <li><strong>Sulfuric acid cannot be used</strong> because (concentrated) H<sub>2</sub>SO<sub>4</sub> would oxidise Br<sup>&minus;</sup> and I<sup>&minus;</sup> ions (to bromine and iodine respectively), destroying the very ions being tested for <span class="marks-inline">[1 mark]</span></li>
+</ul>
+<p>"HNO<sub>3</sub> is the standard acid" or "it's the one we use" alone scores 0.</p>
+<p>"H<sub>2</sub>SO<sub>4</sub> would react with the silver nitrate" is not accepted. The issue is the oxidation of halide ions, not a reaction with the test reagent.</p>
+</div>
+
+<div class="ett">
+<div class="ett-title">Examiner Tips and Tricks</div>
+<p>This question expects a full three-way comparison: why <em>this</em> acid, why <em>not</em> each of the others. The three-mark structure:</p>
+<ol>
+  <li>State why an acid is needed at all (to remove carbonate interference)</li>
+  <li>Rule out HCl (adds Cl<sup>&minus;</sup> &rarr; false positive)</li>
+  <li>Rule out H<sub>2</sub>SO<sub>4</sub> (oxidises Br<sup>&minus;</sup> and I<sup>&minus;</sup>)</li>
+</ol>
+<p>This three-part justification is the Higher-tier expectation any time a question asks "why is reagent X used?" with multiple possible alternatives.</p>
+</div>
+
+<p class="clear"></p>
+
+</body>
+</html>
