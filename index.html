@@ -50,11 +50,6 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .lc-footer{padding:.85rem 1.8rem;background:rgba(0,0,0,.2);font-size:.9rem;font-weight:700;display:flex;justify-content:space-between;align-items:center}
 .soon-badge{background:rgba(255,255,255,.22);border-radius:20px;padding:.18rem .75rem;font-size:.76rem;font-weight:700}
 
-/* Core Practical strip */
-.cp-strip{display:flex;align-items:center;gap:1.1rem;width:100%;max-width:700px;background:linear-gradient(135deg,#013d56,#0277bd);border-radius:var(--r);box-shadow:0 4px 18px rgba(2,119,189,.28);text-decoration:none;color:#fff;padding:1.1rem 1.4rem;transition:transform .18s,box-shadow .18s}
-.cp-strip:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(2,119,189,.38)}
-.cp-strip:hover .ps-arrow{opacity:1}
-
 /* Puzzle strip */
 .puzzle-strip{display:flex;align-items:center;gap:1.1rem;width:100%;max-width:700px;background:linear-gradient(135deg,#2e1065,#7c3aed);border-radius:var(--r);box-shadow:0 4px 18px rgba(124,58,237,.28);text-decoration:none;color:#fff;padding:1.1rem 1.4rem;transition:transform .18s,box-shadow .18s}
 .puzzle-strip:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(124,58,237,.38)}
@@ -146,20 +141,6 @@ footer{text-align:center;padding:1.2rem;font-size:.78rem;color:var(--txm);border
 
   </div>
 
-  <div class="choose-label" style="margin-top:2.8rem">Core Practical Revision</div>
-  <a href="core-practicals/index.html" class="cp-strip">
-    <div class="ps-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M10 2h4"/><path d="M10 2v6.8L5.2 17A2.5 2.5 0 007.6 21h8.8a2.5 2.5 0 002.4-4L14 8.8V2"/><line x1="8" y1="16" x2="16" y2="16" stroke-width="1.5" opacity=".7"/>
-      </svg>
-    </div>
-    <div class="ps-body">
-      <div class="ps-title">Core Practical Revision (CP1–CP8)</div>
-      <div class="ps-desc">Revision notes, exam-style questions, mark schemes and examiner tips for all 8 core practicals. Foundation and Higher tier.</div>
-    </div>
-    <div class="ps-arrow">&#8250;</div>
-  </a>
-
   <div class="choose-label" style="margin-top:2.8rem">Just for fun</div>
   <a href="puzzles.html" class="puzzle-strip">
     <div class="ps-icon">
@@ -168,6 +149,15 @@ footer{text-align:center;padding:1.2rem;font-size:.78rem;color:var(--txm);border
     <div class="ps-body">
       <div class="ps-title">Fancy a chemistry puzzle?</div>
       <div class="ps-desc">If you have a few minutes to spare, why not have a go? Wordsearches, codebreaking, connections, sudoku and more. Around 10 minutes each!</div>
+    </div>
+    <div class="ps-arrow">&#8250;</div>
+  </a>
+
+  <a href="cat-and-mouse.html" class="puzzle-strip" style="background:linear-gradient(135deg,#78350f,#d97706);box-shadow:0 4px 18px rgba(217,119,6,.28);margin-top:.9rem">
+    <div class="ps-icon" style="background:rgba(255,255,255,.15);border-radius:12px;width:52px;height:52px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.8rem">&#128049;</div>
+    <div class="ps-body">
+      <div class="ps-title">Cat and Mouse</div>
+      <div class="ps-desc">Answer chemistry questions to chase the mouse through the maze. Get it right and close the gap. Get it wrong and the mouse dashes ahead!</div>
     </div>
     <div class="ps-arrow">&#8250;</div>
   </a>
