@@ -22,27 +22,66 @@
     #score-bar{display:flex;justify-content:space-between;align-items:center;background:#0d1b3e;color:#fff;border-radius:10px;padding:.5rem 1.1rem;margin-bottom:1rem;font-size:.82rem;font-weight:700;gap:.5rem;flex-wrap:wrap}
     #score-bar span{white-space:nowrap}
 
-    /* Progress strips */
-    #progress-wrap{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
-    .prog-label{font-size:.7rem;font-weight:700;color:#64748b;margin-bottom:.2rem}
-    .prog-track{height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
-    .prog-fill{height:100%;border-radius:4px;transition:width .4s ease}
-    #cat-fill{background:#7c3aed}
-    #mouse-fill{background:#f59e0b}
+    /* Board track */
+    #track-wrap{background:#fff;border-radius:14px;padding:1rem .8rem .8rem;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:.75rem}
 
-    /* Maze */
-    #maze-wrap{display:flex;justify-content:center;margin-bottom:.8rem}
-    #maze{display:grid;grid-template-columns:repeat(9,1fr);gap:2px;background:#1e293b;border:3px solid #1e293b;border-radius:8px;width:100%;max-width:380px}
-    .cell{aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;line-height:1;transition:background .25s}
-    .cell.wall{background:#1e293b}
-    .cell.path{background:#dde3f0}
-    .cell.p-start{background:#bbf7d0}
-    .cell.p-end{background:#fecaca}
-    .cell.c-cat{background:#ede9fe;animation:bounce .35s ease}
-    .cell.c-mouse{background:#fef9c3}
-    @keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+    #track{display:flex;flex-direction:column;gap:5px}
 
-    #gap-line{text-align:center;font-size:.82rem;font-weight:700;color:#475569;margin-bottom:.9rem}
+    .track-row{display:flex;gap:3px;align-items:stretch}
+    .track-row.reverse{flex-direction:row-reverse}
+
+    .space{
+      flex:1;min-width:0;
+      aspect-ratio:1;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:clamp(.55rem,1.8vw,.8rem);
+      font-weight:700;
+      border:2px solid #cbd5e1;
+      background:#f8fafc;
+      color:#94a3b8;
+      transition:background .28s,border-color .28s,transform .25s,font-size .2s;
+      user-select:none;
+    }
+
+    .space.passed{background:#e2e8f0;border-color:#94a3b8;color:#c0cad8}
+    .space.cat-here{
+      background:#ede9fe;border-color:#7c3aed;
+      font-size:clamp(.9rem,3.8vw,1.45rem);color:#0d1b3e;
+      transform:scale(1.14);z-index:2;
+      animation:cat-hop .32s ease;
+    }
+    .space.mouse-here{
+      background:#fef9c3;border-color:#d97706;
+      font-size:clamp(.9rem,3.8vw,1.45rem);color:#0d1b3e;
+      transform:scale(1.08);z-index:1;
+    }
+    .space.both-here{
+      background:linear-gradient(135deg,#ede9fe 50%,#fef9c3 50%);
+      border-color:#7c3aed;
+      font-size:clamp(.9rem,3.8vw,1.45rem);color:#0d1b3e;
+      transform:scale(1.18);z-index:3;
+      animation:cat-hop .32s ease;
+    }
+    .space.exit-space{background:#fee2e2;border-color:#ef4444;color:#ef4444}
+    .space.exit-space.mouse-here{background:#fef9c3;border-color:#d97706}
+
+    @keyframes cat-hop{0%{transform:scale(1.14)}45%{transform:scale(1.28)}100%{transform:scale(1.14)}}
+
+    #track-turn{
+      text-align:right;
+      padding-right:3px;
+      font-size:1.5rem;
+      color:#7c3aed;
+      line-height:1;
+      margin:-1px 0;
+    }
+
+    #gap-line{
+      text-align:center;font-size:.82rem;font-weight:700;color:#475569;
+      margin-bottom:.9rem;padding:.32rem .8rem;
+      background:#f1f5f9;border-radius:8px;
+    }
 
     /* Question panel */
     #q-panel{background:#fff;border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 4px 20px rgba(0,0,0,.08)}
@@ -79,7 +118,7 @@
 
 <div id="game-wrap">
   <h1>&#128049; Cat and Mouse &#128045;</h1>
-  <p class="tagline">Answer questions correctly to chase down the mouse through the maze!</p>
+  <p class="tagline">Answer questions correctly to chase down the mouse before it escapes!</p>
 
   <div id="score-bar">
     <span>&#11088; Score: <span id="score-val">0</span></span>
@@ -87,18 +126,14 @@
     <span>&#10060; <span id="wrong-val">0</span> wrong</span>
   </div>
 
-  <div id="progress-wrap">
-    <div>
-      <div class="prog-label">&#128049; Cat progress</div>
-      <div class="prog-track"><div class="prog-fill" id="cat-fill" style="width:0%"></div></div>
-    </div>
-    <div>
-      <div class="prog-label">&#128045; Mouse to exit</div>
-      <div class="prog-track"><div class="prog-fill" id="mouse-fill" style="width:0%"></div></div>
+  <div id="track-wrap">
+    <div id="track">
+      <div class="track-row" id="row1"></div>
+      <div id="track-turn">&#8659;</div>
+      <div class="track-row reverse" id="row2"></div>
     </div>
   </div>
 
-  <div id="maze-wrap"><div id="maze"></div></div>
   <div id="gap-line"></div>
 
   <div id="q-panel">
@@ -124,39 +159,10 @@
 </div>
 
 <script>
-// ── MAZE ──────────────────────────────────────────────
-// 9×9 grid: 0 = wall, 1 = path
-var GRID = [
-  [1,1,1,1,0,0,0,0,0],
-  [0,0,0,1,0,0,0,0,0],
-  [0,1,1,1,1,1,1,0,0],
-  [0,1,0,0,1,0,1,0,0],
-  [0,1,1,1,1,0,1,1,1],
-  [0,0,0,0,0,0,0,0,1],
-  [0,0,0,0,1,1,1,1,1],
-  [0,0,0,0,1,0,0,0,0],
-  [0,0,0,0,1,1,1,1,1]
-];
+var TRACK_LEN = 20;
+var CAT_START  = 0;
+var MOUSE_START = 6;
 
-// Ordered path (cat and mouse move along this)
-var PATH = [
-  [0,0],[0,1],[0,2],[0,3],
-  [1,3],
-  [2,3],[2,2],[2,1],
-  [3,1],
-  [4,1],[4,2],[4,3],[4,4],
-  [3,4],
-  [2,4],[2,5],[2,6],
-  [3,6],
-  [4,6],[4,7],[4,8],
-  [5,8],
-  [6,8],[6,7],[6,6],[6,5],[6,4],
-  [7,4],
-  [8,4],[8,5],[8,6],[8,7],[8,8]
-];
-var PLEN = PATH.length; // 33
-
-// ── QUESTIONS ─────────────────────────────────────────
 var QUESTIONS = [
   // GCSE
   {lv:'GCSE', q:'What is the atomic number of carbon?',
@@ -220,7 +226,7 @@ var QUESTIONS = [
    o:['90&#176;','107&#176;','109.5&#176;','120&#176;'], a:2},
   {lv:'A-level', q:'What is the oxidation state of Cr in K&#8322;Cr&#8322;O&#8327;?',
    o:['+3','+4','+7','+6'], a:3},
-  {lv:'A-level', q:'According to Le Chatelier\'s principle, a system at equilibrium will...',
+  {lv:'A-level', q:"According to Le Chatelier's principle, a system at equilibrium will...",
    o:['Increase the rate of forward reaction','Decrease activation energy','Oppose any imposed change','Release heat when compressed'], a:2},
   {lv:'A-level', q:'What type of reaction is the formation of a polyester?',
    o:['Addition polymerisation','Free radical substitution','Condensation polymerisation','Electrophilic addition'], a:2},
@@ -228,7 +234,6 @@ var QUESTIONS = [
    o:['Trigonal planar','Tetrahedral','Pyramidal','Bent'], a:2},
 ];
 
-// ── GAME STATE ────────────────────────────────────────
 var catPos, mousePos, qIdx, scoreVal, correctVal, wrongVal, shuffled, gameOver;
 
 function shuffle(arr){
@@ -237,60 +242,66 @@ function shuffle(arr){
   return a;
 }
 
-function initGame(){
-  catPos=0; mousePos=8; qIdx=0;
-  scoreVal=0; correctVal=0; wrongVal=0; gameOver=false;
-  shuffled=shuffle(QUESTIONS);
-  buildMaze(); render(); showQ();
-  document.getElementById('overlay').classList.remove('show');
-}
-
-// ── MAZE BUILD ────────────────────────────────────────
-function buildMaze(){
-  var el=document.getElementById('maze');
-  el.innerHTML='';
-  for(var r=0;r<9;r++){
-    for(var c=0;c<9;c++){
-      var d=document.createElement('div');
-      d.id='c'+r+'x'+c;
-      d.className='cell '+(GRID[r][c]?'path':'wall');
-      el.appendChild(d);
-    }
+function buildTrack(){
+  var r1=document.getElementById('row1');
+  var r2=document.getElementById('row2');
+  r1.innerHTML='';r2.innerHTML='';
+  for(var i=0;i<10;i++){
+    var d=document.createElement('div');
+    d.className='space';d.id='sp'+i;
+    r1.appendChild(d);
+  }
+  for(var i=10;i<TRACK_LEN;i++){
+    var d=document.createElement('div');
+    d.className='space';d.id='sp'+i;
+    r2.appendChild(d);
   }
 }
 
 function render(){
-  // Reset path cells
-  for(var i=0;i<PLEN;i++){
-    var p=PATH[i];
-    var el=document.getElementById('c'+p[0]+'x'+p[1]);
-    el.textContent='';
-    el.className='cell '+(i===0?'p-start':i===PLEN-1?'p-end':'path');
+  for(var i=0;i<TRACK_LEN;i++){
+    var el=document.getElementById('sp'+i);
+    var isCat=(i===catPos), isMouse=(i===mousePos);
+    var passed=(i<catPos), isExit=(i===TRACK_LEN-1);
+
+    el.className='space';
+    if(isExit)el.classList.add('exit-space');
+
+    if(isCat&&isMouse){
+      el.classList.add('both-here');
+      el.innerHTML='&#128049;&#128045;';
+    }else if(isCat){
+      el.classList.add('cat-here');
+      el.innerHTML='&#128049;';
+    }else if(isMouse){
+      el.classList.add('mouse-here');
+      el.innerHTML='&#128045;';
+    }else if(passed){
+      el.classList.add('passed');
+      el.innerHTML=i===0?'&#10003;':(i+1);
+    }else if(isExit){
+      el.innerHTML='&#127937;';
+    }else{
+      el.innerHTML=(i+1);
+    }
   }
-  // Mouse
-  var mp=PATH[mousePos];
-  var mel=document.getElementById('c'+mp[0]+'x'+mp[1]);
-  mel.textContent='&#128045;';
-  mel.className='cell c-mouse';
-  // Cat (overrides if same cell)
-  var cp=PATH[catPos];
-  var cel=document.getElementById('c'+cp[0]+'x'+cp[1]);
-  cel.innerHTML=catPos===mousePos?'&#128049;&#128045;':'&#128049;';
-  cel.className='cell c-cat';
-  // Gap line
+
   var gap=mousePos-catPos;
   document.getElementById('gap-line').innerHTML=
     '&#128049; <span style="color:#7c3aed;font-weight:800;">'+gap+' step'+(gap===1?'':'s')+' behind</span> &#128045;';
-  // Progress bars
-  document.getElementById('cat-fill').style.width=Math.round(catPos/(PLEN-1)*100)+'%';
-  document.getElementById('mouse-fill').style.width=Math.round(mousePos/(PLEN-1)*100)+'%';
-  // Scores
   document.getElementById('score-val').textContent=scoreVal;
   document.getElementById('correct-val').textContent=correctVal;
   document.getElementById('wrong-val').textContent=wrongVal;
 }
 
-// ── QUESTION ─────────────────────────────────────────
+function initGame(){
+  catPos=CAT_START;mousePos=MOUSE_START;
+  qIdx=0;scoreVal=0;correctVal=0;wrongVal=0;gameOver=false;
+  shuffled=shuffle(QUESTIONS);
+  buildTrack();render();showQ();
+  document.getElementById('overlay').classList.remove('show');
+}
+
 function showQ(){
   if(gameOver)return;
   var q=shuffled[qIdx%shuffled.length];
@@ -302,41 +313,35 @@ function showQ(){
   var labels=['A','B','C','D'];
   btns.forEach(function(btn,i){
     btn.innerHTML='<b>'+labels[i]+'.</b> '+q.o[i];
-    btn.className='opt-btn';
-    btn.disabled=false;
+    btn.className='opt-btn';btn.disabled=false;
     btn.onclick=(function(idx,ans){return function(){answer(idx,ans);};})(i,q.a);
   });
 }
 
-// ── ANSWER ───────────────────────────────────────────
 function answer(sel,correct){
   if(gameOver)return;
   var btns=document.querySelectorAll('.opt-btn');
   btns.forEach(function(b){b.disabled=true;});
-  var ok=sel===correct;
+  var ok=(sel===correct);
   btns[sel].classList.add(ok?'correct':'wrong');
   if(!ok)btns[correct].classList.add('correct');
   var fb=document.getElementById('feedback');
   if(ok){
-    fb.textContent='Correct! Cat moves forward!';
-    fb.className='ok';
-    catPos=Math.min(catPos+1,PLEN-1);
-    scoreVal+=10; correctVal++;
+    fb.textContent='Correct! Cat moves forward!';fb.className='ok';
+    catPos=Math.min(catPos+1,TRACK_LEN-1);
+    scoreVal+=10;correctVal++;
   }else{
-    fb.textContent='Wrong! The mouse dashes ahead!';
-    fb.className='bad';
+    fb.textContent='Wrong! The mouse dashes ahead!';fb.className='bad';
     catPos=Math.max(catPos-1,0);
-    mousePos=Math.min(mousePos+1,PLEN-1);
+    mousePos=Math.min(mousePos+1,TRACK_LEN-1);
     wrongVal++;
   }
-  qIdx++;
-  render();
+  qIdx++;render();
   if(catPos>=mousePos){setTimeout(function(){end(true);},700);return;}
-  if(mousePos>=PLEN-1){setTimeout(function(){end(false);},700);return;}
+  if(mousePos>=TRACK_LEN-1){setTimeout(function(){end(false);},700);return;}
   setTimeout(showQ,950);
 }
 
-// ── END ──────────────────────────────────────────────
 function end(won){
   gameOver=true;
   document.getElementById('ov-emoji').innerHTML=won?'&#127881;&#128049;':'&#128045;&#128168;';
