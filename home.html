@@ -54,7 +54,15 @@ footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border
 footer a{color:var(--pr);text-decoration:none}
 
 @media(max-width:600px){.hero h1{font-size:1.5rem}.rc-icon-col{width:52px}.rc-icon-col svg{width:22px;height:22px}}
-</style>
+
+/* Core Practical strip */
+.cp-strip{display:flex;align-items:center;gap:1.1rem;width:100%;max-width:620px;background:linear-gradient(135deg,#013d56,#0277bd);border-radius:var(--r);box-shadow:0 4px 18px rgba(2,119,189,.28);text-decoration:none;color:#fff;padding:1.1rem 1.4rem;transition:transform .18s,box-shadow .18s;margin-bottom:2.2rem}
+.cp-strip:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(2,119,189,.38)}
+.cp-strip .ps-body{flex:1}
+.cp-strip .ps-title{font-size:1.05rem;font-weight:800;margin-bottom:.2rem}
+.cp-strip .ps-desc{font-size:.84rem;opacity:.85;font-weight:600}
+.cp-strip .ps-arrow{font-size:1.5rem;opacity:.6;flex-shrink:0}
+.cp-strip:hover .ps-arrow{opacity:1}</style>
 </head>
 <body>
 
@@ -272,6 +280,20 @@ footer a{color:var(--pr);text-decoration:none}
 
   </div>
 
+
+  <div class="section-label">Core practicals</div>
+  <a href="core-practicals/index.html" class="cp-strip">
+    <div class="ps-icon" style="width:52px;height:52px;background:rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2h4"/><path d="M10 2v6.8L5.2 17A2.5 2.5 0 007.6 21h8.8a2.5 2.5 0 002.4-4L14 8.8V2"/><line x1="8" y1="16" x2="16" y2="16" stroke-width="1.5" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="ps-body">
+      <div class="ps-title">Core Practical Revision (CP1 to CP8)</div>
+      <div class="ps-desc">Revision notes, exam-style questions, mark schemes and examiner tips for all 8 core practicals. Foundation and Higher tier.</div>
+    </div>
+    <div class="ps-arrow">&#8250;</div>
+  </a>
 </main>
 
 <footer>
