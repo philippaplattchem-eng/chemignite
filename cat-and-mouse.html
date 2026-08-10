@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cat and Mouse — ChemIgnite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#f4f6fb;min-height:100vh}
+
+    .screen-nav{background:#0d1b3e;color:#fff;padding:.65rem 1.5rem;display:flex;align-items:center;gap:.85rem;margin-bottom:1.5rem}
+    .screen-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+    .screen-nav a:hover{background:rgba(255,255,255,.12)}
+    .screen-nav-title{font-size:.88rem;opacity:.65;font-weight:600}
+
+    #game-wrap{max-width:680px;margin:0 auto;padding:0 1rem 3rem}
+
+    h1{text-align:center;font-size:1.55rem;font-weight:800;color:#0d1b3e;margin-bottom:.2rem}
+    .tagline{text-align:center;font-size:.82rem;color:#64748b;margin-bottom:1rem}
+
+    #score-bar{display:flex;justify-content:space-between;align-items:center;background:#0d1b3e;color:#fff;border-radius:10px;padding:.5rem 1.1rem;margin-bottom:1rem;font-size:.82rem;font-weight:700;gap:.5rem;flex-wrap:wrap}
+    #score-bar span{white-space:nowrap}
+
+    /* Progress strips */
+    #progress-wrap{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
+    .prog-label{font-size:.7rem;font-weight:700;color:#64748b;margin-bottom:.2rem}
+    .prog-track{height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+    .prog-fill{height:100%;border-radius:4px;transition:width .4s ease}
+    #cat-fill{background:#7c3aed}
+    #mouse-fill{background:#f59e0b}
+
+    /* Maze */
+    #maze-wrap{display:flex;justify-content:center;margin-bottom:.8rem}
+    #maze{display:grid;grid-template-columns:repeat(9,1fr);gap:2px;background:#1e293b;border:3px solid #1e293b;border-radius:8px;width:100%;max-width:380px}
+    .cell{aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;line-height:1;transition:background .25s}
+    .cell.wall{background:#1e293b}
+    .cell.path{background:#dde3f0}
+    .cell.p-start{background:#bbf7d0}
+    .cell.p-end{background:#fecaca}
+    .cell.c-cat{background:#ede9fe;animation:bounce .35s ease}
+    .cell.c-mouse{background:#fef9c3}
+    @keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+    #gap-line{text-align:center;font-size:.82rem;font-weight:700;color:#475569;margin-bottom:.9rem}
+
+    /* Question panel */
+    #q-panel{background:#fff;border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    #q-level{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#7c3aed;margin-bottom:.35rem}
+    #q-text{font-size:.95rem;font-weight:600;color:#0d1b3e;margin-bottom:.9rem;line-height:1.5}
+    #options{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+    .opt-btn{background:#f1f5f9;border:2px solid #e2e8f0;border-radius:10px;padding:.6rem .75rem;font-size:.82rem;font-weight:600;font-family:inherit;color:#1e293b;cursor:pointer;transition:all .15s;text-align:left;line-height:1.4}
+    .opt-btn:hover:not(:disabled){background:#ede9fe;border-color:#7c3aed;color:#5b21b6}
+    .opt-btn.correct{background:#dcfce7;border-color:#16a34a;color:#15803d}
+    .opt-btn.wrong{background:#fecaca;border-color:#dc2626;color:#dc2626}
+    .opt-btn:disabled{cursor:default}
+    #feedback{margin-top:.7rem;font-size:.85rem;font-weight:700;min-height:1.3rem;text-align:center}
+    #feedback.ok{color:#15803d}
+    #feedback.bad{color:#dc2626}
+
+    /* Overlay */
+    #overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .3s}
+    #overlay.show{opacity:1;pointer-events:all}
+    #ov-box{background:#fff;border-radius:20px;padding:2.2rem 1.8rem;text-align:center;max-width:340px;width:90%;animation:pop-in .4s ease}
+    @keyframes pop-in{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+    #ov-emoji{font-size:3.5rem;margin-bottom:.4rem}
+    #ov-title{font-size:1.45rem;font-weight:800;color:#0d1b3e;margin-bottom:.35rem}
+    #ov-msg{font-size:.88rem;color:#475569;margin-bottom:1.3rem;line-height:1.5}
+    #play-again{background:#7c3aed;color:#fff;border:none;border-radius:10px;padding:.7rem 1.8rem;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer;transition:background .15s}
+    #play-again:hover{background:#5b21b6}
+  </style>
+</head>
+<body>
+
+<div class="screen-nav">
+  <a href="index.html">&#8592; Home</a>
+  <span class="screen-nav-title">Cat and Mouse</span>
+</div>
+
+<div id="game-wrap">
+  <h1>&#128049; Cat and Mouse &#128045;</h1>
+  <p class="tagline">Answer questions correctly to chase down the mouse through the maze!</p>
+
+  <div id="score-bar">
+    <span>&#11088; Score: <span id="score-val">0</span></span>
+    <span>&#9989; <span id="correct-val">0</span> correct</span>
+    <span>&#10060; <span id="wrong-val">0</span> wrong</span>
+  </div>
+
+  <div id="progress-wrap">
+    <div>
+      <div class="prog-label">&#128049; Cat progress</div>
+      <div class="prog-track"><div class="prog-fill" id="cat-fill" style="width:0%"></div></div>
+    </div>
+    <div>
+      <div class="prog-label">&#128045; Mouse to exit</div>
+      <div class="prog-track"><div class="prog-fill" id="mouse-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div id="maze-wrap"><div id="maze"></div></div>
+  <div id="gap-line"></div>
+
+  <div id="q-panel">
+    <div id="q-level"></div>
+    <div id="q-text"></div>
+    <div id="options">
+      <button class="opt-btn" data-i="0"></button>
+      <button class="opt-btn" data-i="1"></button>
+      <button class="opt-btn" data-i="2"></button>
+      <button class="opt-btn" data-i="3"></button>
+    </div>
+    <div id="feedback"></div>
+  </div>
+</div>
+
+<div id="overlay">
+  <div id="ov-box">
+    <div id="ov-emoji"></div>
+    <div id="ov-title"></div>
+    <div id="ov-msg"></div>
+    <button id="play-again">Play Again</button>
+  </div>
+</div>
+
+<script>
+// ── MAZE ──────────────────────────────────────────────
+// 9×9 grid: 0 = wall, 1 = path
+var GRID = [
+  [1,1,1,1,0,0,0,0,0],
+  [0,0,0,1,0,0,0,0,0],
+  [0,1,1,1,1,1,1,0,0],
+  [0,1,0,0,1,0,1,0,0],
+  [0,1,1,1,1,0,1,1,1],
+  [0,0,0,0,0,0,0,0,1],
+  [0,0,0,0,1,1,1,1,1],
+  [0,0,0,0,1,0,0,0,0],
+  [0,0,0,0,1,1,1,1,1]
+];
+
+// Ordered path (cat and mouse move along this)
+var PATH = [
+  [0,0],[0,1],[0,2],[0,3],
+  [1,3],
+  [2,3],[2,2],[2,1],
+  [3,1],
+  [4,1],[4,2],[4,3],[4,4],
+  [3,4],
+  [2,4],[2,5],[2,6],
+  [3,6],
+  [4,6],[4,7],[4,8],
+  [5,8],
+  [6,8],[6,7],[6,6],[6,5],[6,4],
+  [7,4],
+  [8,4],[8,5],[8,6],[8,7],[8,8]
+];
+var PLEN = PATH.length; // 33
+
+// ── QUESTIONS ─────────────────────────────────────────
+var QUESTIONS = [
+  // GCSE
+  {lv:'GCSE', q:'What is the atomic number of carbon?',
+   o:['4','6','8','12'], a:1},
+  {lv:'GCSE', q:'What is the chemical formula for water?',
+   o:['HO','H&#8322;O&#8322;','H&#8322;O','H&#8323;O'], a:2},
+  {lv:'GCSE', q:'What type of bond forms between sodium and chlorine in NaCl?',
+   o:['Covalent','Metallic','Hydrogen','Ionic'], a:3},
+  {lv:'GCSE', q:'What gas is produced when an acid reacts with a carbonate?',
+   o:['Hydrogen','Oxygen','Nitrogen','Carbon dioxide'], a:3},
+  {lv:'GCSE', q:'What is the pH of a neutral solution?',
+   o:['0','5','7','14'], a:2},
+  {lv:'GCSE', q:'What is the formula for sulfuric acid?',
+   o:['HCl','HNO&#8323;','H&#8323;PO&#8324;','H&#8322;SO&#8324;'], a:3},
+  {lv:'GCSE', q:'In electrolysis of molten NaCl, what forms at the cathode?',
+   o:['Chlorine gas','Oxygen gas','Sodium metal','Hydrogen gas'], a:2},
+  {lv:'GCSE', q:'What is the general formula for alkanes?',
+   o:['C&#8345;H&#8322;&#8345;','C&#8345;H&#8322;&#8345;&#8330;&#8322;','C&#8345;H&#8322;&#8345;&#8331;&#8322;','C&#8345;H&#8345;'], a:1},
+  {lv:'GCSE', q:'What does the Haber process produce?',
+   o:['Sulfuric acid','Ethanol','Nitric acid','Ammonia'], a:3},
+  {lv:'GCSE', q:'Which group do the halogens belong to?',
+   o:['Group 1','Group 2','Group 6','Group 7'], a:3},
+  {lv:'GCSE', q:'What is oxidation in terms of electrons?',
+   o:['Gain of electrons','Loss of protons','Gain of protons','Loss of electrons'], a:3},
+  {lv:'GCSE', q:'Which particle has a relative mass of ~1 and a charge of +1?',
+   o:['Electron','Neutron','Photon','Proton'], a:3},
+  {lv:'GCSE', q:'What is the mass number of an atom?',
+   o:['Number of protons','Number of neutrons','Protons + electrons','Protons + neutrons'], a:3},
+  {lv:'GCSE', q:'Which of these is a mixture?',
+   o:['Water','Salt','Carbon dioxide','Air'], a:3},
+  {lv:'GCSE', q:'What is produced in the complete combustion of ethanol?',
+   o:['CO and H&#8322;O','CO&#8322; and H&#8322;','C and H&#8322;O','CO&#8322; and H&#8322;O'], a:3},
+  {lv:'GCSE', q:'Which state of matter has a definite volume but no fixed shape?',
+   o:['Solid','Liquid','Gas','Plasma'], a:1},
+  {lv:'GCSE', q:'What is the chemical symbol for iron?',
+   o:['Ir','In','Fr','Fe'], a:3},
+  {lv:'GCSE', q:'What is the charge of an electron?',
+   o:['+1','0','+2','&#8722;1'], a:3},
+  {lv:'GCSE', q:'In a neutralisation reaction, an acid and base produce...',
+   o:['Salt and water','Salt and gas','Water and gas','Salt only'], a:0},
+  {lv:'GCSE', q:'What is the role of a catalyst in a chemical reaction?',
+   o:['Increases activation energy','Is consumed in the reaction','Lowers activation energy','Changes the products'], a:2},
+  {lv:'GCSE', q:'What is the symbol for the element with atomic number 11?',
+   o:['N','Na','Mg','Ne'], a:1},
+  {lv:'GCSE', q:'Which of these is an alkali metal?',
+   o:['Calcium','Chlorine','Potassium','Copper'], a:2},
+  // A-level
+  {lv:'A-level', q:'What does K<sub>c</sub> represent?',
+   o:['Rate constant','Boltzmann constant','Partition coefficient','Equilibrium constant (concentrations)'], a:3},
+  {lv:'A-level', q:'What is the hybridisation of carbon in methane?',
+   o:['sp','sp&#178;','sp&#179;d','sp&#179;'], a:3},
+  {lv:'A-level', q:'Which reagent oxidises a primary alcohol to a carboxylic acid?',
+   o:["Tollens' reagent",'NaBH&#8324;','LiAlH&#8324;','Acidified K&#8322;Cr&#8322;O&#8327;'], a:3},
+  {lv:'A-level', q:'In a first order reaction, what happens to the half-life as the reaction proceeds?',
+   o:['It increases','It decreases','It doubles','It stays constant'], a:3},
+  {lv:'A-level', q:'What is the IUPAC name for CH&#8323;CH(OH)CH&#8323;?',
+   o:['Propan-1-ol','2-methylpropan-1-ol','Propan-2-ol','Propanol'], a:2},
+  {lv:'A-level', q:'Which has the highest first ionisation energy?',
+   o:['Na','Mg','Al','Ne'], a:3},
+  {lv:'A-level', q:'What is the bond angle in a tetrahedral molecule?',
+   o:['90&#176;','107&#176;','109.5&#176;','120&#176;'], a:2},
+  {lv:'A-level', q:'What is the oxidation state of Cr in K&#8322;Cr&#8322;O&#8327;?',
+   o:['+3','+4','+7','+6'], a:3},
+  {lv:'A-level', q:'According to Le Chatelier\'s principle, a system at equilibrium will...',
+   o:['Increase the rate of forward reaction','Decrease activation energy','Oppose any imposed change','Release heat when compressed'], a:2},
+  {lv:'A-level', q:'What type of reaction is the formation of a polyester?',
+   o:['Addition polymerisation','Free radical substitution','Condensation polymerisation','Electrophilic addition'], a:2},
+  {lv:'A-level', q:'What is the shape of a molecule with 3 bonding pairs and 1 lone pair?',
+   o:['Trigonal planar','Tetrahedral','Pyramidal','Bent'], a:2},
+];
+
+// ── GAME STATE ────────────────────────────────────────
+var catPos, mousePos, qIdx, scoreVal, correctVal, wrongVal, shuffled, gameOver;
+
+function shuffle(arr){
+  var a=arr.slice();
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+  return a;
+}
+
+function initGame(){
+  catPos=0; mousePos=8; qIdx=0;
+  scoreVal=0; correctVal=0; wrongVal=0; gameOver=false;
+  shuffled=shuffle(QUESTIONS);
+  buildMaze(); render(); showQ();
+  document.getElementById('overlay').classList.remove('show');
+}
+
+// ── MAZE BUILD ────────────────────────────────────────
+function buildMaze(){
+  var el=document.getElementById('maze');
+  el.innerHTML='';
+  for(var r=0;r<9;r++){
+    for(var c=0;c<9;c++){
+      var d=document.createElement('div');
+      d.id='c'+r+'x'+c;
+      d.className='cell '+(GRID[r][c]?'path':'wall');
+      el.appendChild(d);
+    }
+  }
+}
+
+function render(){
+  // Reset path cells
+  for(var i=0;i<PLEN;i++){
+    var p=PATH[i];
+    var el=document.getElementById('c'+p[0]+'x'+p[1]);
+    el.textContent='';
+    el.className='cell '+(i===0?'p-start':i===PLEN-1?'p-end':'path');
+  }
+  // Mouse
+  var mp=PATH[mousePos];
+  var mel=document.getElementById('c'+mp[0]+'x'+mp[1]);
+  mel.textContent='&#128045;';
+  mel.className='cell c-mouse';
+  // Cat (overrides if same cell)
+  var cp=PATH[catPos];
+  var cel=document.getElementById('c'+cp[0]+'x'+cp[1]);
+  cel.innerHTML=catPos===mousePos?'&#128049;&#128045;':'&#128049;';
+  cel.className='cell c-cat';
+  // Gap line
+  var gap=mousePos-catPos;
+  document.getElementById('gap-line').innerHTML=
+    '&#128049; <span style="color:#7c3aed;font-weight:800;">'+gap+' step'+(gap===1?'':'s')+' behind</span> &#128045;';
+  // Progress bars
+  document.getElementById('cat-fill').style.width=Math.round(catPos/(PLEN-1)*100)+'%';
+  document.getElementById('mouse-fill').style.width=Math.round(mousePos/(PLEN-1)*100)+'%';
+  // Scores
+  document.getElementById('score-val').textContent=scoreVal;
+  document.getElementById('correct-val').textContent=correctVal;
+  document.getElementById('wrong-val').textContent=wrongVal;
+}
+
+// ── QUESTION ─────────────────────────────────────────
+function showQ(){
+  if(gameOver)return;
+  var q=shuffled[qIdx%shuffled.length];
+  document.getElementById('q-level').textContent=q.lv;
+  document.getElementById('q-text').innerHTML=q.q;
+  document.getElementById('feedback').textContent='';
+  document.getElementById('feedback').className='';
+  var btns=document.querySelectorAll('.opt-btn');
+  var labels=['A','B','C','D'];
+  btns.forEach(function(btn,i){
+    btn.innerHTML='<b>'+labels[i]+'.</b> '+q.o[i];
+    btn.className='opt-btn';
+    btn.disabled=false;
+    btn.onclick=(function(idx,ans){return function(){answer(idx,ans);};})(i,q.a);
+  });
+}
+
+// ── ANSWER ───────────────────────────────────────────
+function answer(sel,correct){
+  if(gameOver)return;
+  var btns=document.querySelectorAll('.opt-btn');
+  btns.forEach(function(b){b.disabled=true;});
+  var ok=sel===correct;
+  btns[sel].classList.add(ok?'correct':'wrong');
+  if(!ok)btns[correct].classList.add('correct');
+  var fb=document.getElementById('feedback');
+  if(ok){
+    fb.textContent='Correct! Cat moves forward!';
+    fb.className='ok';
+    catPos=Math.min(catPos+1,PLEN-1);
+    scoreVal+=10; correctVal++;
+  }else{
+    fb.textContent='Wrong! The mouse dashes ahead!';
+    fb.className='bad';
+    catPos=Math.max(catPos-1,0);
+    mousePos=Math.min(mousePos+1,PLEN-1);
+    wrongVal++;
+  }
+  qIdx++;
+  render();
+  if(catPos>=mousePos){setTimeout(function(){end(true);},700);return;}
+  if(mousePos>=PLEN-1){setTimeout(function(){end(false);},700);return;}
+  setTimeout(showQ,950);
+}
+
+// ── END ──────────────────────────────────────────────
+function end(won){
+  gameOver=true;
+  document.getElementById('ov-emoji').innerHTML=won?'&#127881;&#128049;':'&#128045;&#128168;';
+  document.getElementById('ov-title').textContent=won?'You caught the mouse!':'The mouse escaped!';
+  document.getElementById('ov-msg').innerHTML=won
+    ?'Amazing! You answered <strong>'+correctVal+'</strong> correctly and scored <strong>'+scoreVal+'</strong> points!'
+    :'So close! You scored <strong>'+scoreVal+'</strong> points. Give it another go!';
+  document.getElementById('overlay').classList.add('show');
+}
+
+document.getElementById('play-again').addEventListener('click',initGame);
+initGame();
+</script>
+</body>
+</html>
