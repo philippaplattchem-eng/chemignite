@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Paper 2 Calculations | OCR A Level Chemistry</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><script>
+MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>:root{--primary:#1B5E20;--accent:#2E7D32;--light:#E8F5E9;--banner-grad:linear-gradient(135deg,#0d3311,#2E7D32)}@page{size:A4 portrait;margin:15mm}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',Arial,sans-serif;font-size:10.5pt;color:#1a1a1a;background:#fff;line-height:1.65}
+.print-note{background:#f5f5f5;border:1px dashed #bbb;padding:5px 14px;font-size:8.5pt;color:#666;text-align:center;margin:6px 0;border-radius:3px}
+@media print{.print-note{display:none}}
+.cover{background:var(--banner-grad);color:#fff;padding:52px 32px;text-align:center;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover h1{font-size:24pt;font-weight:800;margin-bottom:10px}
+.cover h2{font-size:13pt;font-weight:600;opacity:.9;margin-bottom:8px}
+.cover p{font-size:9.5pt;opacity:.8;margin-top:6px}
+.cover .badge{display:inline-block;margin-top:14px;padding:5px 14px;background:rgba(255,255,255,0.2);border-radius:20px;font-size:9pt;font-weight:700}
+.toc{padding:14px 16px;background:var(--light);border-bottom:3px solid var(--primary);margin-bottom:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.toc h2{color:var(--primary);font-size:11pt;font-weight:800;margin-bottom:10px;border-bottom:1.5px solid var(--accent);padding-bottom:5px}
+.toc ul{list-style:none;padding-left:8px;columns:2;column-gap:20px}
+.toc li{padding:2px 0;font-size:8.5pt;break-inside:avoid}
+.toc a{color:var(--accent);text-decoration:none;font-weight:600}
+.paper-banner{background:var(--banner-grad);color:#fff;padding:12px 16px;font-size:11.5pt;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact;margin:0 0 12px}
+.container{padding:0 0 20px}
+.topic{border:1px solid #d8e0ec;border-radius:6px;margin:10px 0;page-break-inside:avoid;overflow:hidden;background:#fff}
+.topic-header,.p1-header,.p2-header,.p3-header{padding:10px 16px;background:var(--accent);color:#fff;font-size:10pt;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topic-body{padding:13px 16px}
+.formula-box{background:var(--light);border:1.5px solid var(--accent);border-radius:8px;padding:14px 18px;margin:12px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.formula-box h4{color:var(--primary);font-size:8.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;font-weight:800;text-align:center;border-bottom:1.5px solid var(--accent);padding-bottom:6px;display:block}
+.formula-box table{width:100%;border-collapse:collapse;font-size:9.5pt;margin:0}
+.formula-box td{padding:5px 10px;vertical-align:middle;border:none;border-bottom:1px solid rgba(0,0,0,.07)}
+.formula-box tr:last-child td{border-bottom:none}
+.formula-box td:first-child{font-weight:700;color:var(--primary);width:38%;border-right:2px solid var(--accent);padding-right:14px;text-align:right}
+.worked{background:#F1FBF3;border-left:4px solid #388E3C;padding:9px 13px;margin:9px 0;border-radius:0 4px 4px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.worked h4{color:#1B5E20;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-weight:800}
+.step{margin:5px 0;padding-left:10px;border-left:2px solid #A5D6A7;font-size:9pt}
+.step-num{font-weight:800;color:#2E7D32}
+.error-box{background:#FFFDE7;border-left:4px solid #F9A825;padding:9px 13px;margin:7px 0;border-radius:0 4px 4px 0;font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.error-box h4{color:#E65100;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;font-weight:800}
+.questions{margin:10px 0}
+.questions h4{color:#B71C1C;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px;font-weight:800}
+.q{background:#FFF8F8;border:1px solid #F5C6C6;border-radius:4px;padding:8px 12px;margin:6px 0;font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.q-num{font-weight:800;color:#C62828;margin-right:4px}
+.marks{color:#888;font-size:8pt;float:right}
+.ms-section{margin:10px 0 4px}
+.ms-label{background:var(--primary);color:#fff;font-size:8pt;font-weight:800;padding:5px 12px;border-radius:4px 4px 0 0;text-transform:uppercase;letter-spacing:.06em;display:block;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ms-body{background:#F0FDF4;border:1.5px solid #86EFAC;border-top:none;border-radius:0 0 4px 4px;padding:10px 13px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ans{margin:6px 0;font-size:9pt;border-bottom:1px solid #D1FAE5;padding-bottom:6px}
+.ans:last-child{border-bottom:none;padding-bottom:0}
+.ans-num{font-weight:800;color:#14532D;margin-right:4px}
+.mark{background:#DCFCE7;border-radius:2px;padding:1px 4px;font-size:7.5pt;color:#166534;margin-left:3px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+table{width:100%;border-collapse:collapse;font-size:9pt;margin:6px 0}
+th{background:var(--accent);color:#fff;padding:5px 8px;text-align:left;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+td{padding:4px 8px;border-bottom:1px solid #eaeaea}
+tr:nth-child(even) td{background:var(--light);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+footer{text-align:center;padding:14px;color:#888;font-size:8pt;border-top:1px solid #e0e0e0;margin-top:16px}
+@media print{body{font-size:10pt}.topic{page-break-inside:avoid;box-shadow:none}.toc{page-break-after:always}}</style></head><body><style>.site-topbar{background:#0d2e1e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;font-family:'Nunito',Arial,sans-serif}.site-topbar a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.35);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}.site-topbar a:hover{background:rgba(255,255,255,.12)}.site-topbar span{font-size:.88rem;font-weight:600;opacity:.65}@media print{.site-topbar{display:none}}</style><div class="site-topbar"><a href="alevel-calculations.html">&larr; Calculation Booklets</a><span>Paper 2: Modules 1, 2, 4 &amp; 6</span></div><div class="print-note">To save as PDF: Ctrl+P &rarr; Save as PDF &rarr; A4 &rarr; tick &ldquo;Background graphics&rdquo;</div><div class='cover'><h1>OCR A Level Chemistry</h1><h2>Paper 2: Depth in Chemistry (H432/02)</h2><p>Calculation Booklet &nbsp;|&nbsp; Worked Examples, Practice Questions &amp; Mark Scheme</p><div class='badge'>Modules 1, 2, 4 and 6</div></div><div class='toc'><h2>Contents</h2><ul>
+<li><a href="#p2-moles">22. Foundation Calculations in Organic Context</a></li>
+<li><a href="#p2-yield">23. % Yield in Multi-Step Organic Synthesis</a></li>
+<li><a href="#p2-combustion">24. Combustion Analysis -- Empirical Formulae</a></li>
+<li><a href="#p2-ms">25. Mass Spectrometry Calculations</a></li>
+<li><a href="#p2-rf">26. Chromatography &amp; Rf Values</a></li>
+<li><a href="#p2-nmr">27. NMR -- Integration Ratios &amp; Chemical Shifts</a></li>
+<li><a href="#p2-backtitration">28. Back Titration &amp; Volumetric Analysis</a></li>
+</ul></div><!-- ==================== PAPER 2 ==================== -->
+<div class="paper-banner p2-banner">Paper 2 — Depth in Chemistry (H432/02) &nbsp;|&nbsp; Modules 1, 2, 4, 6</div>
+<div class="container">
+
+<!-- 22. FOUNDATION CALCS IN ORGANIC CONTEXT -->
+<div class="topic" id="p2-moles">
+  <div class="topic-header p2-header">22 &nbsp; Foundation Calculations in Organic Context (Module 2 in Paper 2)</div>
+  <div class="topic-body">
+    <p style="margin-bottom:12px;font-size:0.93em;color:#333">Paper 2 tests Module 2 calculation skills in the context of organic chemistry. All the same formulae apply ($n=m/M_r$, $c=n/V$, $n=V/24$, pV=nRT), but questions are set around organic reactions, synthesis routes, and spectroscopy.</p>
+    <div class="formula-box">
+      <h4>Key Reminders for Paper 2 Context</h4>
+      <table>
+        <tr><td>Moles</td><td>$n=m/M_r$ — need to know common organic $M_r$ values or calculate from formula</td></tr>
+        <tr><td>% yield</td><td>$\%\text{ yield}=\text{actual}/\text{theoretical}\times100$</td></tr>
+        <tr><td>% atom economy</td><td>$\%\text{AE}=M_r(\text{desired})/\sum M_r(\text{all products})\times100$</td></tr>
+        <tr><td>Volumetric analysis</td><td>Appears in titration of organic acids — same method as section 6</td></tr>
+      </table>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Ethyl ethanoate ($M_r=88.1$) is made from ethanol and ethanoic acid. 5.52 g of ethanol reacts with excess ethanoic acid; 6.16 g of ethyl ethanoate is isolated. Calculate the % yield. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Bromoethane ($M_r=109$) is made by the reaction $\text{C}_2\text{H}_5\text{OH + HBr} \rightarrow \text{C}_2\text{H}_5\text{Br + H}_2\text{O}$. Calculate the % atom economy for this reaction. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A sample of aspirin ($M_r=180$) is analysed by titrating with 0.100 mol dm$^{-3}$ NaOH. 0.450 g of aspirin requires 25.0 cm$^3$ of NaOH for neutralisation (1:1 ratio). Determine the purity of the aspirin sample. <span class="marks">[4]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $n(\text{C}_2\text{H}_5\text{OH})=5.52/46.1=0.1197$ mol <span class="mark">✓</span>; theoretical $m(\text{ester})=0.1197\times88.1=10.55$ g <span class="mark">✓</span>; $\%\text{yield}=6.16/10.55\times100=\mathbf{58.4\%}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $\sum M_r(\text{products})=109+18=127$; $\%\text{AE}=109/127\times100=\mathbf{85.8\%}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $n(\text{NaOH})=0.100\times(25.0/1000)=2.50\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{aspirin})=2.50\times10^{-3}$ mol (1:1) <span class="mark">✓</span>; $m(\text{pure aspirin})=2.50\times10^{-3}\times180=0.450$ g <span class="mark">✓</span>; purity $=0.450/0.450\times100=\mathbf{100\%}$ — sample is pure <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 23. % YIELD IN ORGANIC SYNTHESIS -->
+<div class="topic" id="p2-yield">
+  <div class="topic-header p2-header">23 &nbsp; % Yield in Multi-Step Organic Synthesis</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Multi-Step Yield</h4>
+      <table>
+        <tr><td>Overall yield</td><td>$\%\text{ overall yield} = \%\text{yield}_1 \times \%\text{yield}_2 \times \ldots$ (as decimals, then ×100)</td></tr>
+        <tr><td>e.g. two steps</td><td>75% × 80% = 60% overall yield</td></tr>
+      </table>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A three-step synthesis has individual step yields of 85%, 72% and 90%. Calculate the overall % yield. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Starting from 10.0 g of benzene ($M_r=78.1$), a two-step synthesis gives nitrobenzene ($M_r=123$) in step 1 (yield 80%) then aniline ($M_r=93.1$) in step 2 (yield 75%). Calculate the mass of aniline obtained. <span class="marks">[4]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $0.85\times0.72\times0.90=0.5508$ → $\mathbf{55.1\%}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n(\text{benzene})=10.0/78.1=0.1281$ mol <span class="mark">✓</span>; theoretical $m(\text{nitrobenzene})=0.1281\times123=15.75$ g; actual after step 1: $15.75\times0.80=12.60$ g <span class="mark">✓</span>; $n(\text{nitrobenzene})=12.60/123=0.1024$ mol; theoretical $m(\text{aniline})=0.1024\times93.1=9.54$ g; actual $=9.54\times0.75=\mathbf{7.15\ \text{g}}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 24. COMBUSTION ANALYSIS -->
+<div class="topic" id="p2-combustion">
+  <div class="topic-header p2-header">24 &nbsp; Combustion Analysis — Empirical Formulae from Elemental Analysis</div>
+  <div class="topic-body">
+    <p style="font-size:0.93em;color:#333;margin-bottom:12px">When an organic compound is burned completely in excess oxygen, the CO$_2$ and H$_2$O produced are collected and weighed. From these masses, the number of moles of C and H atoms can be found; any remaining mass is attributed to oxygen (or other heteroatoms).</p>
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Moles of carbon</td><td>$n(\text{C}) = n(\text{CO}_2) = \dfrac{m(\text{CO}_2)}{44.0}$</td></tr>
+        <tr><td>Moles of hydrogen</td><td>$n(\text{H}) = 2\times n(\text{H}_2\text{O}) = \dfrac{2\times m(\text{H}_2\text{O})}{18.0}$</td></tr>
+        <tr><td>Mass of oxygen in compound</td><td>$m(\text{O}) = m(\text{compound}) - m(\text{C}) - m(\text{H})$</td></tr>
+        <tr><td>Moles of oxygen</td><td>$n(\text{O}) = \dfrac{m(\text{O})}{16.0}$</td></tr>
+        <tr><td>Empirical formula</td><td>Find simplest whole-number ratio C : H : O (divide by smallest)</td></tr>
+        <tr><td>Molecular formula</td><td>$n = \dfrac{M_r(\text{compound})}{M_r(\text{empirical formula})}$, then multiply EF by $n$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Forgetting to double $n(\text{H}_2\text{O})$ to get $n(\text{H})$ — each water molecule contains <strong>2</strong> H atoms.<br>
+      • Finding mass of O by subtracting from $m(\text{CO}_2)+m(\text{H}_2\text{O})$ instead of from $m(\text{compound})$.<br>
+      • Assuming the compound contains oxygen when it may contain only C and H — always check whether $m(\text{C})+m(\text{H})$ accounts for the full sample mass.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>0.300 g of compound X is burned completely. The products are passed through anhydrous CaCl$_2$ (absorbs H$_2$O), then through NaOH(aq) (absorbs CO$_2$). The masses recorded are shown below. Given that $M_r(\text{X})=60$, find the molecular formula.</p>
+      <table style="border-collapse:collapse;font-size:0.92em;margin:8px 0 12px">
+        <tr style="background:#c8ddf0"><th style="padding:6px 14px;border:1px solid #aac;text-align:left">Measurement</th><th style="padding:6px 14px;border:1px solid #aac">Mass / g</th></tr>
+        <tr><td style="padding:5px 14px;border:1px solid #ccd">Mass of compound burned</td><td style="padding:5px 14px;border:1px solid #ccd;text-align:center">0.300</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:5px 14px;border:1px solid #ccd">Mass of CO$_2$ absorbed</td><td style="padding:5px 14px;border:1px solid #ccd;text-align:center">0.440</td></tr>
+        <tr><td style="padding:5px 14px;border:1px solid #ccd">Mass of H$_2$O absorbed</td><td style="padding:5px 14px;border:1px solid #ccd;text-align:center">0.180</td></tr>
+      </table>
+      <div class="step"><span class="step-num">Step 1 — Carbon</span>: $n(\text{CO}_2)=0.440/44.0=0.01000$ mol $\Rightarrow$ $n(\text{C})=0.01000$ mol; $m(\text{C})=0.01000\times12.0=0.1200$ g</div>
+      <div class="step"><span class="step-num">Step 2 — Hydrogen</span>: $n(\text{H}_2\text{O})=0.180/18.0=0.01000$ mol $\Rightarrow$ $n(\text{H})=2\times0.01000=0.02000$ mol; $m(\text{H})=0.02000$ g</div>
+      <div class="step"><span class="step-num">Step 3 — Oxygen</span>: $m(\text{O})=0.300-0.1200-0.0200=0.160$ g; $n(\text{O})=0.160/16.0=0.01000$ mol</div>
+      <div class="step"><span class="step-num">Step 4 — Ratio</span>: C : H : O $=0.01000:0.02000:0.01000=1:2:1$ $\Rightarrow$ empirical formula $=\mathbf{CH_2O}$</div>
+      <div class="step"><span class="step-num">Step 5 — Molecular formula</span>: $M_r(\text{CH}_2\text{O})=12+2+16=30$; $n=60/30=2$ $\Rightarrow$ molecular formula $=\mathbf{C_2H_4O_2}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> 0.500 g of a hydrocarbon (contains C and H only) is burned completely, producing 1.571 g of CO$_2$ and 0.643 g of H$_2$O. Determine the empirical formula of the hydrocarbon. <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Complete combustion of 0.408 g of compound Y gives 0.528 g CO$_2$ and 0.216 g H$_2$O. The remaining mass is due to nitrogen. $M_r(\text{Y})=102$.<br>
+      (a) Find the empirical formula of Y.<br>
+      (b) Find the molecular formula of Y. <span class="marks">[5]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A student burns 0.230 g of ethanol (C$_2$H$_5$OH, $M_r=46.1$) and collects the products. Predict the mass of CO$_2$ and the mass of H$_2$O that should be produced, assuming complete combustion. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $n(\text{C})=1.571/44.0=0.03571$ mol; $n(\text{H})=2\times0.643/18.0=0.07144$ mol <span class="mark">✓</span>; check: $m(\text{C})+m(\text{H})=0.4286+0.07144=0.500$ g — no O present <span class="mark">✓</span>; ratio C:H $=0.03571:0.07144=1:2.000$ <span class="mark">✓</span>; empirical formula $=\mathbf{CH_2}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2(a).</span> $n(\text{C})=0.528/44.0=0.01200$; $m(\text{C})=0.1440$ g; $n(\text{H})=2\times0.216/18.0=0.02400$; $m(\text{H})=0.02400$ g <span class="mark">✓</span>; $m(\text{N})=0.408-0.1440-0.02400=0.2400$ g; $n(\text{N})=0.2400/14.0=0.01714$ mol <span class="mark">✓</span>; ratio C:H:N $=0.01200:0.02400:0.01714=0.700:1.400:1.000$; multiply by 10/7: 1:2:1.43 … multiply by 7: $7:14:10$ — check: simplest is ratio $\times7$ → $\mathbf{C_7H_{14}N_{10}}$... <em>if ratio C:H:N=7:14:10 doesn't simplify further.</em> Accept follow-through from correct mole calculations. <span class="mark">✓✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $n(\text{C}_2\text{H}_5\text{OH})=0.230/46.1=4.990\times10^{-3}$ mol; equation: $\text{C}_2\text{H}_5\text{OH}+3\text{O}_2\rightarrow2\text{CO}_2+3\text{H}_2\text{O}$ <span class="mark">✓</span>; $m(\text{CO}_2)=2\times4.990\times10^{-3}\times44.0=\mathbf{0.439\ \text{g}}$ <span class="mark">✓</span>; $m(\text{H}_2\text{O})=3\times4.990\times10^{-3}\times18.0=\mathbf{0.270\ \text{g}}$ <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 25. MASS SPECTROMETRY -->
+<div class="topic" id="p2-ms">
+  <div class="topic-header p2-header">25 &nbsp; Mass Spectrometry Calculations</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Concepts</h4>
+      <table>
+        <tr><td>Molecular ion M$^+$</td><td>$m/z$ of M$^+$ gives $M_r$ of the compound (assuming singly charged ion, $z=1$)</td></tr>
+        <tr><td>Base peak</td><td>Most abundant fragment (tallest bar); assigned 100% relative abundance</td></tr>
+        <tr><td>Fragmentation</td><td>Loss of groups from M$^+$: $m/z(\text{fragment})=M_r-M_r(\text{group lost})$; common losses: $-15$ (CH$_3$), $-29$ (C$_2$H$_5$ or CHO), $-45$ (OC$_2$H$_5$), $-17$ (OH)</td></tr>
+        <tr><td>High-resolution MS</td><td>Gives exact $m/z$ to 4 decimal places, allowing molecular formula to be determined (see table of exact masses below)</td></tr>
+        <tr><td>Isotope patterns</td><td>Cl: M$^+$:M+2 $= 3:1$ (³⁵Cl:³⁷Cl); &nbsp; Br: M$^+$:M+2 $\approx 1:1$ (⁷⁹Br:⁸¹Br)</td></tr>
+      </table>
+    </div>
+    <div class="formula-box" style="margin-top:10px">
+      <h4>Exact Masses for High-Resolution MS</h4>
+      <table>
+        <tr style="background:#d0d8f0"><th style="padding:4px 10px;text-align:left">Isotope</th><th style="padding:4px 10px">Exact mass / u</th><th style="padding:4px 10px;text-align:left">Isotope</th><th style="padding:4px 10px">Exact mass / u</th></tr>
+        <tr><td style="padding:4px 10px">$^1$H</td><td style="padding:4px 10px;text-align:center">1.00783</td><td style="padding:4px 10px">$^{16}$O</td><td style="padding:4px 10px;text-align:center">15.99491</td></tr>
+        <tr style="background:#f0f0f0"><td style="padding:4px 10px">$^{12}$C</td><td style="padding:4px 10px;text-align:center">12.00000</td><td style="padding:4px 10px">$^{14}$N</td><td style="padding:4px 10px;text-align:center">14.00307</td></tr>
+        <tr><td style="padding:4px 10px">$^{35}$Cl</td><td style="padding:4px 10px;text-align:center">34.96885</td><td style="padding:4px 10px">$^{32}$S</td><td style="padding:4px 10px;text-align:center">31.97207</td></tr>
+      </table>
+    </div>
+    <div class="worked">
+      <h4>Worked Example 1 — Reading a Mass Spectrum</h4>
+      <p>The low-resolution mass spectrum below is for butanone (methyl ethyl ketone, CH$_3$COCH$_2$CH$_3$, $M_r=72$). Identify the fragments at each labelled peak.</p>
+      <svg viewBox="0 0 440 230" width="100%" style="max-width:500px;display:block;margin:10px auto;background:#fff;border:1px solid #ccc;font-family:sans-serif">
+        <line x1="50" y1="200" x2="418" y2="200" stroke="#333" stroke-width="1.5"/>
+        <line x1="50" y1="18" x2="50" y2="200" stroke="#333" stroke-width="1.5"/>
+        <text x="230" y="220" text-anchor="middle" font-size="12" fill="#333">m/z</text>
+        <text x="18" y="112" text-anchor="middle" font-size="11" fill="#333" transform="rotate(-90,18,112)">Relative abundance / %</text>
+        <line x1="46" y1="200" x2="50" y2="200" stroke="#333" stroke-width="1"/><text x="44" y="204" text-anchor="end" font-size="10" fill="#333">0</text>
+        <line x1="46" y1="110" x2="50" y2="110" stroke="#333" stroke-width="1"/><text x="44" y="114" text-anchor="end" font-size="10" fill="#333">50</text>
+        <line x1="46" y1="20" x2="50" y2="20" stroke="#333" stroke-width="1"/><text x="44" y="24" text-anchor="end" font-size="10" fill="#333">100</text>
+        <line x1="95" y1="200" x2="95" y2="204" stroke="#333" stroke-width="1"/><text x="95" y="213" text-anchor="middle" font-size="10" fill="#333">10</text>
+        <line x1="140" y1="200" x2="140" y2="204" stroke="#333" stroke-width="1"/><text x="140" y="213" text-anchor="middle" font-size="10" fill="#333">20</text>
+        <line x1="185" y1="200" x2="185" y2="204" stroke="#333" stroke-width="1"/><text x="185" y="213" text-anchor="middle" font-size="10" fill="#333">30</text>
+        <line x1="230" y1="200" x2="230" y2="204" stroke="#333" stroke-width="1"/><text x="230" y="213" text-anchor="middle" font-size="10" fill="#333">40</text>
+        <line x1="275" y1="200" x2="275" y2="204" stroke="#333" stroke-width="1"/><text x="275" y="213" text-anchor="middle" font-size="10" fill="#333">50</text>
+        <line x1="320" y1="200" x2="320" y2="204" stroke="#333" stroke-width="1"/><text x="320" y="213" text-anchor="middle" font-size="10" fill="#333">60</text>
+        <line x1="365" y1="200" x2="365" y2="204" stroke="#333" stroke-width="1"/><text x="365" y="213" text-anchor="middle" font-size="10" fill="#333">70</text>
+        <line x1="410" y1="200" x2="410" y2="204" stroke="#333" stroke-width="1"/><text x="410" y="213" text-anchor="middle" font-size="10" fill="#333">80</text>
+        <!-- m/z 29 (40%): x=50+29*4.5=180.5, height=72, y_top=128 -->
+        <rect x="176" y="128" width="9" height="72" fill="#0055aa"/>
+        <text x="181" y="123" text-anchor="middle" font-size="10" fill="#0055aa">29</text>
+        <!-- m/z 43 (85%): x=50+43*4.5=243.5, height=153, y_top=47 -->
+        <rect x="239" y="47" width="9" height="153" fill="#0055aa"/>
+        <text x="244" y="42" text-anchor="middle" font-size="10" fill="#0055aa">43</text>
+        <!-- m/z 57 (100%): x=50+57*4.5=306.5, height=180, y_top=20 (base peak) -->
+        <rect x="302" y="20" width="9" height="180" fill="#cc2200"/>
+        <text x="307" y="14" text-anchor="middle" font-size="10" fill="#cc2200" font-weight="bold">57&#x2605;</text>
+        <!-- m/z 72 (30%): x=50+72*4.5=374, height=54, y_top=146 (M+) -->
+        <rect x="370" y="146" width="9" height="54" fill="#005500"/>
+        <text x="375" y="141" text-anchor="middle" font-size="10" fill="#005500">72</text>
+        <text x="355" y="35" font-size="10" fill="#cc2200">&#x2605; base peak</text>
+        <text x="355" y="47" font-size="10" fill="#005500">72 = M⁺</text>
+      </svg>
+      <div class="step"><span class="step-num">m/z 72 (M⁺)</span>: Molecular ion — confirms $M_r=72$. Formula C$_4$H$_8$O.</div>
+      <div class="step"><span class="step-num">m/z 57 = M−15</span>: Loss of CH$_3$ ($M_r=15$) → [C$_3$H$_5$O]$^+$ or [CH$_3$CO·CH$_2$]$^+$ — base peak.</div>
+      <div class="step"><span class="step-num">m/z 43</span>: [CH$_3$CO]$^+$ (acetyl cation) — loss of C$_2$H$_5$ (29) from M$^+$.</div>
+      <div class="step"><span class="step-num">m/z 29</span>: [C$_2$H$_5$]$^+$ (ethyl cation) or [CHO]$^+$.</div>
+    </div>
+    <div class="worked">
+      <h4>Worked Example 2 — High-Resolution Mass Spectrometry</h4>
+      <p>A compound shows M$^+$ at exact $m/z = 44.0262$. Determine the molecular formula. (Possible formulae with $M_r\approx44$: CO$_2$, C$_2$H$_4$O, C$_3$H$_8$, N$_2$O)</p>
+      <table style="border-collapse:collapse;font-size:0.91em;margin:8px 0">
+        <tr style="background:#d0d8f0"><th style="padding:5px 12px;border:1px solid #aac">Formula</th><th style="padding:5px 12px;border:1px solid #aac">Exact mass / u</th><th style="padding:5px 12px;border:1px solid #aac">Match?</th></tr>
+        <tr><td style="padding:4px 12px;border:1px solid #ccd">CO$_2$: $12.000 + 2\times15.9949$</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">43.9898</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">✗</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 12px;border:1px solid #ccd">C$_2$H$_4$O: $2(12)+4(1.00783)+15.9949$</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">44.0262</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center;color:green;font-weight:bold">✓</td></tr>
+        <tr><td style="padding:4px 12px;border:1px solid #ccd">C$_3$H$_8$: $3(12)+8(1.00783)$</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">44.0626</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">✗</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 12px;border:1px solid #ccd">N$_2$O: $2(14.00307)+15.9949$</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">44.0011</td><td style="padding:4px 12px;border:1px solid #ccd;text-align:center">✗</td></tr>
+      </table>
+      <div class="step"><span class="step-num">Conclusion</span>: Molecular formula is $\mathbf{C_2H_4O}$ (e.g. ethanal or oxirane).</div>
+    </div>
+    <div class="worked">
+      <h4>Worked Example 3 — Isotope Patterns</h4>
+      <p>Chlorine has two isotopes: ³⁵Cl (75%) and ³⁷Cl (25%), giving a 3:1 abundance ratio. A molecule containing one Cl atom shows M$^+$ and M+2 peaks in a 3:1 ratio. Bromine (⁷⁹Br:⁸¹Br ≈ 1:1) gives near-equal M$^+$ and M+2 peaks.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin:10px 0">
+        <div style="text-align:center">
+          <p style="font-size:0.88em;margin-bottom:4px;font-weight:600">One chlorine atom</p>
+          <svg viewBox="0 0 160 150" width="150" style="background:#fff;border:1px solid #ccc;display:block">
+            <line x1="25" y1="125" x2="145" y2="125" stroke="#333" stroke-width="1.5"/>
+            <line x1="25" y1="20" x2="25" y2="125" stroke="#333" stroke-width="1.5"/>
+            <text x="22" y="129" text-anchor="end" font-size="9">0</text>
+            <text x="22" y="72" text-anchor="end" font-size="9">50</text>
+            <text x="22" y="20" text-anchor="end" font-size="9">100</text>
+            <line x1="21" y1="72" x2="25" y2="72" stroke="#333" stroke-width="1"/>
+            <rect x="50" y="20" width="20" height="105" fill="#0055aa"/>
+            <text x="60" y="15" text-anchor="middle" font-size="10" fill="#0055aa">M⁺</text>
+            <text x="60" y="138" text-anchor="middle" font-size="9">3</text>
+            <rect x="100" y="85" width="20" height="40" fill="#0055aa"/>
+            <text x="110" y="80" text-anchor="middle" font-size="10" fill="#0055aa">M+2</text>
+            <text x="110" y="138" text-anchor="middle" font-size="9">1</text>
+            <text x="85" y="148" text-anchor="middle" font-size="9">ratio</text>
+          </svg>
+        </div>
+        <div style="text-align:center">
+          <p style="font-size:0.88em;margin-bottom:4px;font-weight:600">One bromine atom</p>
+          <svg viewBox="0 0 160 150" width="150" style="background:#fff;border:1px solid #ccc;display:block">
+            <line x1="25" y1="125" x2="145" y2="125" stroke="#333" stroke-width="1.5"/>
+            <line x1="25" y1="20" x2="25" y2="125" stroke="#333" stroke-width="1.5"/>
+            <text x="22" y="129" text-anchor="end" font-size="9">0</text>
+            <text x="22" y="72" text-anchor="end" font-size="9">50</text>
+            <text x="22" y="20" text-anchor="end" font-size="9">100</text>
+            <line x1="21" y1="72" x2="25" y2="72" stroke="#333" stroke-width="1"/>
+            <rect x="50" y="20" width="20" height="105" fill="#cc5500"/>
+            <text x="60" y="15" text-anchor="middle" font-size="10" fill="#cc5500">M⁺</text>
+            <text x="60" y="138" text-anchor="middle" font-size="9">1</text>
+            <rect x="100" y="20" width="20" height="105" fill="#cc5500"/>
+            <text x="110" y="15" text-anchor="middle" font-size="10" fill="#cc5500">M+2</text>
+            <text x="110" y="138" text-anchor="middle" font-size="9">1</text>
+            <text x="85" y="148" text-anchor="middle" font-size="9">ratio</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A compound has M$^+$ at $m/z=74$ and a fragment at $m/z=59$. Suggest the group that has been lost and identify the fragment ion. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> The mass spectrum of compound Z shows two molecular ion peaks at $m/z=78$ (100%) and $m/z=80$ (33%). What does this pattern suggest about the structure of Z? <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> High-resolution MS gives M$^+$ at exact $m/z=58.0419$. Use exact masses to identify which of the following is the molecular formula: C$_3$H$_6$O, C$_4$H$_{10}$, C$_2$H$_2$O$_2$, or C$_2$H$_6$N$_2$. Show your working. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> A mass spectrum shows the base peak at $m/z=29$ and M$^+$ at $m/z=58$. Suggest a possible structure for this compound and explain the fragment at $m/z=29$. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $74-59=15$ → loss of <strong>CH$_3$</strong> <span class="mark">✓</span>; fragment ion $= [M-\text{CH}_3]^+$ or $[\text{C}_3\text{H}_7\text{O}]^+$ (or equivalent based on structure) <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> The M$^+$:(M+2) ratio of approximately 3:1 suggests the compound contains <strong>one chlorine atom</strong> <span class="mark">✓</span>; ³⁵Cl:³⁷Cl ratio = 3:1 gives this pattern <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> C$_3$H$_6$O: $3(12)+6(1.00783)+15.9949=36+6.0470+15.9949=58.0419$ ✓ <span class="mark">✓</span>; C$_4$H$_{10}$: $4(12)+10(1.00783)=48+10.0783=58.0783$ ✗; C$_2$H$_2$O$_2$: $24+2.0157+31.9898=58.0055$ ✗; molecular formula = $\mathbf{C_3H_6O}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A4.</span> $M_r=58$, base peak at 29 = $58/2$ → compound may be <strong>butanal</strong> (CH$_3$CH$_2$CH$_2$CHO) or <strong>butanone</strong> (CH$_3$COCH$_2$CH$_3$) <span class="mark">✓</span>; $m/z=29$ corresponds to [CHO]$^+$ or [C$_2$H$_5$]$^+$ <span class="mark">✓</span>; the molecule breaks symmetrically / at the C–C bond adjacent to the carbonyl <span class="mark">✓</span></div>
+      </div>
+    </div>
+
+    <div class="worked">
+      <h4>Worked Example 4 — Relative Atomic Mass from Isotopic Abundances (M1.2)</h4>
+      <p>A mass spectrum of bromine shows two peaks: $m/z = 79$ (50.7%) and $m/z = 81$ (49.3%). Calculate the relative atomic mass ($A_r$) of bromine.</p>
+      <div class="step"><span class="step-num">Weighted mean formula</span>: $A_r = \dfrac{(\text{isotopic mass}_1 \times \%\text{ abundance}_1) + (\text{isotopic mass}_2 \times \%\text{ abundance}_2)}{100}$</div>
+      <div class="step"><span class="step-num">Substitute</span>: $A_r = \dfrac{(79 \times 50.7) + (81 \times 49.3)}{100} = \dfrac{4005.3 + 3993.3}{100} = \dfrac{7998.6}{100} = \mathbf{80.0}$</div>
+      <div class="step"><span class="step-num">Note</span>: The % abundances must sum to 100. The answer (80.0) lies between the two isotopic masses, closer to the more abundant one.</div>
+    </div>
+
+    <div class="questions" style="margin-top:10px">
+      <h4>Practice Questions — Weighted Mean A<sub>r</sub></h4>
+      <div class="q"><span class="q-num">Q5.</span> A mass spectrum of chlorine shows peaks at $m/z = 35$ (75.8%) and $m/z = 37$ (24.2%). Calculate the $A_r$ of chlorine. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q6.</span> Silicon has three isotopes: $^{28}$Si (92.2%), $^{29}$Si (4.7%), $^{30}$Si (3.1%). Calculate the $A_r$ of silicon. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section" style="margin-top:6px"><div class="ms-label">Mark Scheme — Weighted Mean A<sub>r</sub></div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A5.</span> $A_r = \dfrac{(35\times75.8)+(37\times24.2)}{100} = \dfrac{2653+895.4}{100} = \dfrac{3548.4}{100} = \mathbf{35.5}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A6.</span> $A_r = \dfrac{(28\times92.2)+(29\times4.7)+(30\times3.1)}{100} = \dfrac{2581.6+136.3+93.0}{100} = \dfrac{2810.9}{100} = \mathbf{28.1}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 26. CHROMATOGRAPHY & Rf -->
+<div class="topic" id="p2-rf">
+  <div class="topic-header p2-header">26 &nbsp; Chromatography &amp; R<sub>f</sub> Values</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formula</h4>
+      <table>
+        <tr><td>Retention factor</td><td>$R_f = \dfrac{\text{distance moved by substance}}{\text{distance moved by solvent front}}$</td></tr>
+        <tr><td>Range</td><td>$0 \leq R_f \leq 1$ (dimensionless, no units)</td></tr>
+        <tr><td>GC retention time</td><td>Retention time = time taken for substance to pass through GC column; longer chain / higher $M_r$ → longer retention time</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Measuring the distance from the <em>top of the plate</em> rather than from the <em>baseline (origin)</em>.<br>
+      • Reporting $R_f > 1$ — this is impossible; recheck which distance is in the numerator.<br>
+      • Confusing $R_f$ with retention time (GC) — $R_f$ applies to TLC/paper chromatography only.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — TLC Plate</h4>
+      <p>The TLC plate below shows two compounds A and B separated in the same solvent system. All measurements are from the baseline.</p>
+      <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+        <svg viewBox="0 0 300 330" width="230" style="display:block;border:1px solid #ccc;background:#fff;font-family:sans-serif">
+          <!-- Silica plate -->
+          <rect x="65" y="40" width="170" height="252" fill="#fffff0" stroke="#aaa" stroke-width="2"/>
+          <!-- Solvent front at y=68 (distance from baseline y=268 = 200px) -->
+          <line x1="65" y1="68" x2="235" y2="68" stroke="#0044cc" stroke-width="1.5" stroke-dasharray="6,3"/>
+          <text x="238" y="72" font-size="10" fill="#0044cc">solvent front</text>
+          <!-- Baseline at y=268 -->
+          <line x1="65" y1="268" x2="235" y2="268" stroke="#555" stroke-width="1.5"/>
+          <text x="238" y="272" font-size="10" fill="#555">baseline</text>
+          <!-- Lane labels -->
+          <text x="130" y="288" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">A</text>
+          <text x="190" y="288" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">B</text>
+          <!-- Origin spots -->
+          <ellipse cx="130" cy="268" rx="10" ry="5" fill="#666" opacity="0.3"/>
+          <ellipse cx="190" cy="268" rx="10" ry="5" fill="#666" opacity="0.3"/>
+          <!-- Traveled spots: A at y=144 (moved 124px), B at y=192 (moved 76px) -->
+          <ellipse cx="130" cy="144" rx="13" ry="9" fill="#6600cc" opacity="0.85"/>
+          <ellipse cx="190" cy="192" rx="13" ry="9" fill="#009933" opacity="0.85"/>
+          <text x="130" y="147" text-anchor="middle" font-size="9" fill="#fff">A</text>
+          <text x="190" y="195" text-anchor="middle" font-size="9" fill="#fff">B</text>
+          <!-- Distance arrow for A (dashed purple) -->
+          <line x1="108" y1="268" x2="108" y2="144" stroke="#6600cc" stroke-width="1.2" stroke-dasharray="4,2"/>
+          <line x1="104" y1="268" x2="112" y2="268" stroke="#6600cc" stroke-width="1.2"/>
+          <line x1="104" y1="144" x2="112" y2="144" stroke="#6600cc" stroke-width="1.2"/>
+          <text x="100" y="210" text-anchor="end" font-size="9" fill="#6600cc">124 mm</text>
+          <!-- Distance arrow for solvent (dashed blue, left side) -->
+          <line x1="52" y1="268" x2="52" y2="68" stroke="#0044cc" stroke-width="1.2" stroke-dasharray="4,2"/>
+          <line x1="48" y1="268" x2="56" y2="268" stroke="#0044cc" stroke-width="1.2"/>
+          <line x1="48" y1="68" x2="56" y2="68" stroke="#0044cc" stroke-width="1.2"/>
+          <text x="42" y="175" text-anchor="middle" font-size="9" fill="#0044cc" transform="rotate(-90,42,175)">200 mm</text>
+          <!-- Distance for B -->
+          <line x1="212" y1="268" x2="212" y2="192" stroke="#009933" stroke-width="1.2" stroke-dasharray="4,2"/>
+          <line x1="208" y1="268" x2="216" y2="268" stroke="#009933" stroke-width="1.2"/>
+          <line x1="208" y1="192" x2="216" y2="192" stroke="#009933" stroke-width="1.2"/>
+          <text x="240" y="233" font-size="9" fill="#009933">76 mm</text>
+        </svg>
+        <div style="font-size:0.93em">
+          <p style="margin-bottom:8px"><strong>Solvent front distance</strong> = 200 mm</p>
+          <p style="margin-bottom:4px"><strong>Compound A</strong> distance = 124 mm</p>
+          <p style="margin-bottom:12px">$R_f(\text{A}) = 124/200 = \mathbf{0.62}$</p>
+          <p style="margin-bottom:4px"><strong>Compound B</strong> distance = 76 mm</p>
+          <p style="margin-bottom:12px">$R_f(\text{B}) = 76/200 = \mathbf{0.38}$</p>
+          <p style="color:#555;font-size:0.9em">Since $R_f$ values differ, A and B are <strong>different compounds</strong>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> In a TLC experiment, the solvent front travels 85.0 mm. Spot P travels 53.5 mm and spot Q travels 21.0 mm. Calculate $R_f$ for each spot. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> An unknown compound X has $R_f = 0.55$ in ethyl ethanoate/hexane (7:3). A reference sample of compound Y has $R_f = 0.55$ in the same system. A student concludes that X and Y are identical. State one limitation of this conclusion and suggest how the student could improve their identification. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> In gas chromatography (GC), compounds A, B and C have retention times of 3.2, 5.8 and 9.1 minutes respectively. State which compound has the highest boiling point and explain your reasoning. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> A TLC plate is run and four spots are visible. The solvent front moved 72 mm. The spots are at heights 18, 36, 54 and 72 mm. Calculate all four $R_f$ values and comment on the spot at 72 mm. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $R_f(\text{P})=53.5/85.0=\mathbf{0.629}$ <span class="mark">✓</span>; $R_f(\text{Q})=21.0/85.0=\mathbf{0.247}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Two different compounds can have the same $R_f$ by coincidence in one solvent system <span class="mark">✓</span>; run the TLC in a <em>different</em> solvent system and check they still co-spot / use another technique (e.g. MS or IR) to confirm identity <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> Compound <strong>C</strong> has the highest boiling point <span class="mark">✓</span>; longer retention time = stronger interaction with the stationary phase / higher boiling point → more energy needed to move through the column → elutes last <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A4.</span> $R_f$ values: $18/72=0.25$; $36/72=0.50$; $54/72=0.75$; $72/72=\mathbf{1.00}$ <span class="mark">✓✓</span>; the spot at $R_f=1.00$ has traveled with the solvent front — it is non-polar / has no affinity for the stationary phase, or has not been retained at all; result should be treated with caution <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 27. NMR -->
+<div class="topic" id="p2-nmr">
+  <div class="topic-header p2-header">27 &nbsp; NMR — Integration Ratios &amp; Chemical Shifts</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Concepts</h4>
+      <table>
+        <tr><td>Chemical shift $\delta$</td><td>Position of NMR peak relative to TMS (tetramethylsilane) at $\delta=0$ ppm; measured in ppm</td></tr>
+        <tr><td>Integration trace</td><td>Area under each peak is <strong>proportional to the number of equivalent protons</strong> in that environment; the step heights of the integration trace give the ratio</td></tr>
+        <tr><td>Multiplicity (splitting)</td><td>$n+1$ rule: a proton with $n$ equivalent neighbouring H gives $n+1$ lines (singlet, doublet, triplet, quartet…)</td></tr>
+        <tr><td>TMS reference</td><td>Si(CH$_3$)$_4$ — gives single sharp peak at $\delta=0$; inert, volatile, miscible with organic solvents</td></tr>
+      </table>
+    </div>
+    <div class="formula-box" style="margin-top:10px">
+      <h4>$^1$H Chemical Shift Reference Table</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.9em">
+        <tr style="background:#c8ddf0"><th style="padding:5px 10px;border:1px solid #aac;text-align:left">Proton environment</th><th style="padding:5px 10px;border:1px solid #aac">$\delta$ / ppm</th><th style="padding:5px 10px;border:1px solid #aac;text-align:left">Notes</th></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">R–CH$_3$, R–CH$_2$–, R$_3$CH (alkyl)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">0.5 – 2.0</td><td style="padding:4px 10px;border:1px solid #ccd">Upfield; shielded</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 10px;border:1px solid #ccd">R–CH$_2$–X (adjacent to halogen or O)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">3.0 – 4.5</td><td style="padding:4px 10px;border:1px solid #ccd">Deshielded by X</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">R–OCH$_3$, R–OCH$_2$–</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">3.3 – 4.5</td><td style="padding:4px 10px;border:1px solid #ccd">Ether/ester O–CH</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 10px;border:1px solid #ccd">CH$_3$CO–, –CH$_2$CO– (adjacent to C=O)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">2.0 – 2.9</td><td style="padding:4px 10px;border:1px solid #ccd">Alpha to carbonyl</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">C=C–H (alkenyl/vinyl)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">4.5 – 6.0</td><td style="padding:4px 10px;border:1px solid #ccd"></td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 10px;border:1px solid #ccd">Ar–H (aromatic)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">6.5 – 8.5</td><td style="padding:4px 10px;border:1px solid #ccd">Ring current deshielding</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">–CHO (aldehyde)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">9.0 – 10.5</td><td style="padding:4px 10px;border:1px solid #ccd">Very downfield</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 10px;border:1px solid #ccd">–COOH (carboxylic acid)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">10.5 – 12.0</td><td style="padding:4px 10px;border:1px solid #ccd">Broad; exchanges with D$_2$O</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">–OH (alcohol, broad)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">1.0 – 5.5</td><td style="padding:4px 10px;border:1px solid #ccd">Variable; D$_2$O shake removes peak</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:4px 10px;border:1px solid #ccd">–NH– (amine/amide, broad)</td><td style="padding:4px 10px;border:1px solid #ccd;text-align:center">1.0 – 9.0</td><td style="padding:4px 10px;border:1px solid #ccd">Broad; variable</td></tr>
+      </table>
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Reading Integration Ratios</h4>
+      <p>The $^1$H NMR spectrum below is for methyl propanoate (CH$_3$CH$_2$COOCH$_3$). The integration trace (stepped line above the spectrum) is also shown.</p>
+      <svg viewBox="0 0 520 220" width="100%" style="max-width:580px;display:block;margin:10px auto;background:#fff;border:1px solid #ccc;font-family:sans-serif">
+        <!-- Axes -->
+        <line x1="55" y1="175" x2="490" y2="175" stroke="#333" stroke-width="1.5"/>
+        <line x1="55" y1="20" x2="55" y2="175" stroke="#333" stroke-width="1.5"/>
+        <!-- X-axis label -->
+        <text x="270" y="210" text-anchor="middle" font-size="12" fill="#333">Chemical shift δ / ppm</text>
+        <!-- X-axis ticks: δ from 6(left=55) to 0(right=490), scale=72.5px/ppm -->
+        <!-- x = 55 + (6-δ)*72.5 -->
+        <!-- δ=6: x=55; δ=5: x=127.5; δ=4: x=200; δ=3: x=272.5; δ=2: x=345; δ=1: x=417.5; δ=0: x=490 -->
+        <line x1="490" y1="175" x2="490" y2="180" stroke="#333" stroke-width="1"/><text x="490" y="190" text-anchor="middle" font-size="11">0</text>
+        <line x1="417" y1="175" x2="417" y2="180" stroke="#333" stroke-width="1"/><text x="417" y="190" text-anchor="middle" font-size="11">1</text>
+        <line x1="345" y1="175" x2="345" y2="180" stroke="#333" stroke-width="1"/><text x="345" y="190" text-anchor="middle" font-size="11">2</text>
+        <line x1="272" y1="175" x2="272" y2="180" stroke="#333" stroke-width="1"/><text x="272" y="190" text-anchor="middle" font-size="11">3</text>
+        <line x1="200" y1="175" x2="200" y2="180" stroke="#333" stroke-width="1"/><text x="200" y="190" text-anchor="middle" font-size="11">4</text>
+        <line x1="127" y1="175" x2="127" y2="180" stroke="#333" stroke-width="1"/><text x="127" y="190" text-anchor="middle" font-size="11">5</text>
+        <line x1="55" y1="175" x2="55" y2="180" stroke="#333" stroke-width="1"/><text x="55" y="190" text-anchor="middle" font-size="11">6</text>
+        <!-- TMS marker -->
+        <text x="490" y="168" text-anchor="middle" font-size="9" fill="#888">TMS</text>
+        <!-- Peak positions: OCH3 (δ=3.7): x=55+(6-3.7)*72.5=55+166.75=222; CH2 (δ=2.3): x=55+3.7*72.5=55+268.25=323; CH3 (δ=1.1): x=55+4.9*72.5=55+355.25=410 -->
+        <!-- OCH3 peak (singlet, 3H, δ=3.7) at x=222, height=38 -->
+        <path d="M 209,175 L 222,137 L 235,175 Z" fill="#0055aa" opacity="0.8"/>
+        <text x="222" y="130" text-anchor="middle" font-size="10" fill="#0055aa">OCH₃</text>
+        <text x="222" y="122" text-anchor="middle" font-size="9" fill="#0055aa">δ 3.7</text>
+        <!-- CH2 peak (quartet, 2H, δ=2.3) at x=323 — show as 4 close lines -->
+        <line x1="313" y1="175" x2="313" y2="148" stroke="#333" stroke-width="3"/>
+        <line x1="319" y1="175" x2="319" y2="143" stroke="#333" stroke-width="3"/>
+        <line x1="327" y1="175" x2="327" y2="143" stroke="#333" stroke-width="3"/>
+        <line x1="333" y1="175" x2="333" y2="148" stroke="#333" stroke-width="3"/>
+        <text x="323" y="136" text-anchor="middle" font-size="10" fill="#333">CH₂</text>
+        <text x="323" y="128" text-anchor="middle" font-size="9" fill="#333">δ 2.3</text>
+        <!-- CH3 peak (triplet, 3H, δ=1.1) at x=410 — show as 3 close lines -->
+        <line x1="402" y1="175" x2="402" y2="145" stroke="#555" stroke-width="4"/>
+        <line x1="410" y1="175" x2="410" y2="135" stroke="#555" stroke-width="4"/>
+        <line x1="418" y1="175" x2="418" y2="145" stroke="#555" stroke-width="4"/>
+        <text x="410" y="128" text-anchor="middle" font-size="10" fill="#555">CH₃</text>
+        <text x="410" y="120" text-anchor="middle" font-size="9" fill="#555">δ 1.1</text>
+        <!-- Integration trace (right to left): start y=162, steps: CH3(3H)+30px, CH2(2H)+20px, OCH3(3H)+30px -->
+        <!-- Flat from x=490 to x=430(y=162); rise over CH3 from 430 to 395 (y:162→132); flat 395 to 352 (y=132); rise over CH2 from 352 to 303 (y:132→112); flat 303 to 248 (y=112); rise over OCH3 from 248 to 200 (y:112→82); flat 200 to 55 (y=82) -->
+        <polyline points="490,162 430,162 395,132 352,132 303,112 248,112 200,82 55,82" fill="none" stroke="#cc0000" stroke-width="2"/>
+        <!-- Integration ratio labels -->
+        <text x="412" y="155" text-anchor="middle" font-size="10" fill="#cc0000" font-weight="bold">3H</text>
+        <text x="328" y="125" text-anchor="middle" font-size="10" fill="#cc0000" font-weight="bold">2H</text>
+        <text x="224" y="100" text-anchor="middle" font-size="10" fill="#cc0000" font-weight="bold">3H</text>
+        <!-- Integration label -->
+        <text x="490" y="78" text-anchor="end" font-size="10" fill="#cc0000">Integration trace</text>
+      </svg>
+      <div class="step"><span class="step-num">Environments &amp; integration</span>: Three signals in ratio 3:2:3 (from right to left: CH$_3$ end, CH$_2$, OCH$_3$). Total = 8H. Molecular formula = C$_4$H$_8$O$_2$ ✓</div>
+      <div class="step"><span class="step-num">Splitting</span>: OCH$_3$ (singlet, no neighbours); CH$_2$ (quartet, 3 CH$_3$ neighbours); CH$_3$ end (triplet, 2 CH$_2$ neighbours).</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> An $^1$H NMR spectrum shows three signals with integration ratio 3:2:1 at $\delta$ 1.1 ppm (triplet), $\delta$ 2.3 ppm (quartet) and $\delta$ 11.5 ppm (singlet). Identify the compound and explain each signal. <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Propanone (CH$_3$COCH$_3$, $M_r=58$) gives a single $^1$H NMR signal. (a) Explain why there is only one signal. (b) At what $\delta$ value would you expect this signal? <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A compound (C$_4$H$_8$O$_2$) shows three $^1$H NMR signals with integration ratio 2:3:3 at $\delta$ 4.1 (quartet), $\delta$ 2.0 (singlet) and $\delta$ 1.3 (triplet). Identify the compound and draw its structure. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> The $^1$H NMR of a compound shows a signal at $\delta$ 9.7 ppm that disappears on shaking with D$_2$O and a signal at $\delta$ 2.4 ppm (triplet). Suggest what functional group is responsible for the signal at $\delta$ 9.7 ppm and explain the D$_2$O result. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> Compound = <strong>propanoic acid</strong> (CH$_3$CH$_2$COOH) <span class="mark">✓</span>; $\delta$11.5 singlet (1H) = –COOH (exchangeable proton, no neighbours) <span class="mark">✓</span>; $\delta$2.3 quartet (2H) = –CH$_2$– (split by 3 neighbours = CH$_3$) <span class="mark">✓</span>; $\delta$1.1 triplet (3H) = –CH$_3$ (split by 2 neighbours = CH$_2$) <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2(a).</span> Both CH$_3$ groups are <strong>equivalent</strong> (same chemical environment by symmetry) → one signal only <span class="mark">✓</span>; (b) $\delta$ <strong>2.0–2.5 ppm</strong> (alpha to C=O) <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> Signal at $\delta$4.1 (q, 2H) = OCH$_2$ (quartet = 3 neighbours = CH$_3$); $\delta$2.0 (s, 3H) = CH$_3$CO; $\delta$1.3 (t, 3H) = CH$_3$ (triplet = 2 neighbours = CH$_2$) <span class="mark">✓</span>; compound = <strong>ethyl ethanoate</strong> (CH$_3$COOCH$_2$CH$_3$) <span class="mark">✓</span>; structure: CH$_3$–CO–O–CH$_2$–CH$_3$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A4.</span> Signal at $\delta$9.7 = <strong>–OH of a carboxylic acid</strong> (–COOH) or possibly alcohol (though –OH usually lower) <span class="mark">✓</span>; D$_2$O replaces exchangeable H in –OH with D (deuterium), which is NMR-inactive → peak disappears <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 28. BACK TITRATION & VOLUMETRIC ANALYSIS OF ORGANIC COMPOUNDS -->
+<div class="topic" id="p2-backtitration">
+  <div class="topic-header p2-header">28 &nbsp; Back Titration &amp; Volumetric Analysis of Organic Compounds</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Methods</h4>
+      <table>
+        <tr><td>Back titration principle</td><td>Add a <strong>known, excess</strong> amount of reagent A to the analyte; titrate the <strong>remaining excess</strong> of A with standard solution B. Then: $n(\text{A reacted with analyte}) = n(\text{A added}) - n(\text{A in excess})$</td></tr>
+        <tr><td>When to use</td><td>When the analyte reacts too slowly for a direct titration, or is insoluble (e.g. CaCO$_3$, aspirin in a tablet)</td></tr>
+        <tr><td>Saponification</td><td>Esters are hydrolysed with excess NaOH; excess NaOH titrated with HCl; moles of NaOH used in hydrolysis = moles of ester</td></tr>
+        <tr><td>Organic acid titration</td><td>Same method as inorganic (section 6): $n=cV$; account for polyprotic acids (citric acid = triprotic, $n_\text{H}=3$)</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Subtracting the wrong way round: $n(\text{reacted}) = n(\text{added}) - n(\text{excess})$ NOT the reverse.<br>
+      • Forgetting that a diprotic/triprotic acid provides more than 1 mol H$^+$ per mole of acid.<br>
+      • Not scaling up from aliquot to whole sample (see section 6).
+    </div>
+    <div class="worked">
+      <h4>Worked Example 1 — Back Titration (CaCO$_3$ in limestone)</h4>
+      <p>2.52 g of an impure limestone sample is dissolved in 50.0 cm$^3$ of 1.00 mol dm$^{-3}$ HCl (excess). The excess acid is titrated with 0.500 mol dm$^{-3}$ NaOH; a mean titre of 14.40 cm$^3$ is used. Calculate the percentage of CaCO$_3$ in the limestone. ($M_r(\text{CaCO}_3)=100.1$)</p>
+      <div class="step"><span class="step-num">Step 1 — HCl added</span>: $n(\text{HCl added})=1.00\times(50.0/1000)=0.0500$ mol</div>
+      <div class="step"><span class="step-num">Step 2 — Excess HCl</span>: $n(\text{NaOH})=0.500\times(14.40/1000)=7.20\times10^{-3}$ mol; HCl:NaOH = 1:1 → $n(\text{HCl excess})=7.20\times10^{-3}$ mol</div>
+      <div class="step"><span class="step-num">Step 3 — HCl reacted</span>: $n(\text{HCl reacted})=0.0500-7.20\times10^{-3}=0.04280$ mol</div>
+      <div class="step"><span class="step-num">Step 4 — CaCO$_3$</span>: $\text{CaCO}_3+2\text{HCl}\rightarrow\text{CaCl}_2+\text{H}_2\text{O}+\text{CO}_2$; ratio 1:2 → $n(\text{CaCO}_3)=0.04280/2=0.02140$ mol; $m=0.02140\times100.1=2.142$ g</div>
+      <div class="step"><span class="step-num">Step 5 — % purity</span>: $\%=2.142/2.52\times100=\mathbf{85.0\%}$</div>
+    </div>
+    <div class="worked">
+      <h4>Worked Example 2 — Ester Saponification (Back Titration)</h4>
+      <p>0.880 g of ethyl ethanoate ($M_r=88.1$) is added to 25.0 cm$^3$ of 1.00 mol dm$^{-3}$ NaOH (excess). After complete hydrolysis, the excess NaOH requires 30.00 cm$^3$ of 0.500 mol dm$^{-3}$ HCl to neutralise. Verify the molar mass of the ester.</p>
+      <div class="step">$\text{CH}_3\text{COOC}_2\text{H}_5 + \text{NaOH} \rightarrow \text{CH}_3\text{COO}^-\text{Na}^+ + \text{C}_2\text{H}_5\text{OH}$ (1:1 ratio)</div>
+      <div class="step"><span class="step-num">Step 1</span>: $n(\text{NaOH added})=1.00\times0.0250=0.02500$ mol</div>
+      <div class="step"><span class="step-num">Step 2</span>: $n(\text{HCl})=0.500\times(30.00/1000)=0.01500$ mol = $n(\text{NaOH excess})$</div>
+      <div class="step"><span class="step-num">Step 3</span>: $n(\text{NaOH reacted})=0.02500-0.01500=0.01000$ mol = $n(\text{ester})$</div>
+      <div class="step"><span class="step-num">Step 4</span>: $M_r=m/n=0.880/0.01000=\mathbf{88.0}$ ✓ (agrees with $M_r(\text{ethyl ethanoate})=88.1$)</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> An aspirin tablet (stated 300 mg = 0.300 g of aspirin, $M_r=180$) is dissolved and treated with 25.0 cm$^3$ of 0.100 mol dm$^{-3}$ NaOH (excess). The excess NaOH is back-titrated with 0.0500 mol dm$^{-3}$ HCl; mean titre = 10.00 cm$^3$. $\text{Aspirin + NaOH} \rightarrow \text{products (1:1)}$. Calculate the actual mass of aspirin in the tablet and comment on the result. <span class="marks">[5]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> 0.630 g of citric acid (triprotic, $M_r=192$) is dissolved and titrated with 0.100 mol dm$^{-3}$ NaOH. Calculate the expected titre. $\text{H}_3\text{C}_6\text{H}_5\text{O}_7 + 3\text{NaOH} \rightarrow \text{Na}_3\text{C}_6\text{H}_5\text{O}_7 + 3\text{H}_2\text{O}$ <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Describe how a back titration would be used to determine the percentage of ethanoic acid in a sample of vinegar that also contains other acidic impurities that react with NaOH. Explain why a direct titration may still work for this purpose. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $n(\text{NaOH added})=0.100\times0.0250=2.50\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{HCl})=0.0500\times(10.00/1000)=5.00\times10^{-4}$ mol $=n(\text{NaOH excess})$ <span class="mark">✓</span>; $n(\text{NaOH reacted with aspirin})=2.50\times10^{-3}-5.00\times10^{-4}=2.00\times10^{-3}$ mol <span class="mark">✓</span>; $m(\text{aspirin})=2.00\times10^{-3}\times180=0.360$ g $=360$ mg <span class="mark">✓</span>; the tablet contains <strong>more aspirin than stated</strong> (360 mg vs 300 mg stated) / tablet is slightly over the stated dose <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n(\text{citric acid})=0.630/192=3.281\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{NaOH})=3\times3.281\times10^{-3}=9.844\times10^{-3}$ mol <span class="mark">✓</span>; $V(\text{NaOH})=9.844\times10^{-3}/0.100=\mathbf{98.4\ \text{cm}^3}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> A back titration would not distinguish between ethanoic acid and other acidic impurities — it would measure <em>all</em> acid present <span class="mark">✓</span>; a direct titration with NaOH similarly measures all acid, not just ethanoic acid — so neither method alone identifies the specific acid <span class="mark">✓</span>; to determine ethanoic acid specifically, use GC or $^1$H NMR to identify the species, or compare with a known standard <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+<footer>OCR A Level Chemistry (H432) &nbsp;|&nbsp; Paper 2: Depth in Chemistry (H432/02) &nbsp;|&nbsp; Calculation Booklet</footer></body></html>

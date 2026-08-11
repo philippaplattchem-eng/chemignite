@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Paper 3 Calculations | OCR A Level Chemistry</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><script>
+MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>:root{--primary:#4A148C;--accent:#6A1B9A;--light:#F3E5F5;--banner-grad:linear-gradient(135deg,#2d0060,#6A1B9A)}@page{size:A4 portrait;margin:15mm}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',Arial,sans-serif;font-size:10.5pt;color:#1a1a1a;background:#fff;line-height:1.65}
+.print-note{background:#f5f5f5;border:1px dashed #bbb;padding:5px 14px;font-size:8.5pt;color:#666;text-align:center;margin:6px 0;border-radius:3px}
+@media print{.print-note{display:none}}
+.cover{background:var(--banner-grad);color:#fff;padding:52px 32px;text-align:center;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover h1{font-size:24pt;font-weight:800;margin-bottom:10px}
+.cover h2{font-size:13pt;font-weight:600;opacity:.9;margin-bottom:8px}
+.cover p{font-size:9.5pt;opacity:.8;margin-top:6px}
+.cover .badge{display:inline-block;margin-top:14px;padding:5px 14px;background:rgba(255,255,255,0.2);border-radius:20px;font-size:9pt;font-weight:700}
+.toc{padding:14px 16px;background:var(--light);border-bottom:3px solid var(--primary);margin-bottom:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.toc h2{color:var(--primary);font-size:11pt;font-weight:800;margin-bottom:10px;border-bottom:1.5px solid var(--accent);padding-bottom:5px}
+.toc ul{list-style:none;padding-left:8px;columns:2;column-gap:20px}
+.toc li{padding:2px 0;font-size:8.5pt;break-inside:avoid}
+.toc a{color:var(--accent);text-decoration:none;font-weight:600}
+.paper-banner{background:var(--banner-grad);color:#fff;padding:12px 16px;font-size:11.5pt;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact;margin:0 0 12px}
+.container{padding:0 0 20px}
+.topic{border:1px solid #d8e0ec;border-radius:6px;margin:10px 0;page-break-inside:avoid;overflow:hidden;background:#fff}
+.topic-header,.p1-header,.p2-header,.p3-header{padding:10px 16px;background:var(--accent);color:#fff;font-size:10pt;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topic-body{padding:13px 16px}
+.formula-box{background:var(--light);border:1.5px solid var(--accent);border-radius:8px;padding:14px 18px;margin:12px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.formula-box h4{color:var(--primary);font-size:8.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;font-weight:800;text-align:center;border-bottom:1.5px solid var(--accent);padding-bottom:6px;display:block}
+.formula-box table{width:100%;border-collapse:collapse;font-size:9.5pt;margin:0}
+.formula-box td{padding:5px 10px;vertical-align:middle;border:none;border-bottom:1px solid rgba(0,0,0,.07)}
+.formula-box tr:last-child td{border-bottom:none}
+.formula-box td:first-child{font-weight:700;color:var(--primary);width:38%;border-right:2px solid var(--accent);padding-right:14px;text-align:right}
+.worked{background:#F1FBF3;border-left:4px solid #388E3C;padding:9px 13px;margin:9px 0;border-radius:0 4px 4px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.worked h4{color:#1B5E20;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-weight:800}
+.step{margin:5px 0;padding-left:10px;border-left:2px solid #A5D6A7;font-size:9pt}
+.step-num{font-weight:800;color:#2E7D32}
+.error-box{background:#FFFDE7;border-left:4px solid #F9A825;padding:9px 13px;margin:7px 0;border-radius:0 4px 4px 0;font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.error-box h4{color:#E65100;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;font-weight:800}
+.questions{margin:10px 0}
+.questions h4{color:#B71C1C;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px;font-weight:800}
+.q{background:#FFF8F8;border:1px solid #F5C6C6;border-radius:4px;padding:8px 12px;margin:6px 0;font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.q-num{font-weight:800;color:#C62828;margin-right:4px}
+.marks{color:#888;font-size:8pt;float:right}
+.ms-section{margin:10px 0 4px}
+.ms-label{background:var(--primary);color:#fff;font-size:8pt;font-weight:800;padding:5px 12px;border-radius:4px 4px 0 0;text-transform:uppercase;letter-spacing:.06em;display:block;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ms-body{background:#F0FDF4;border:1.5px solid #86EFAC;border-top:none;border-radius:0 0 4px 4px;padding:10px 13px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ans{margin:6px 0;font-size:9pt;border-bottom:1px solid #D1FAE5;padding-bottom:6px}
+.ans:last-child{border-bottom:none;padding-bottom:0}
+.ans-num{font-weight:800;color:#14532D;margin-right:4px}
+.mark{background:#DCFCE7;border-radius:2px;padding:1px 4px;font-size:7.5pt;color:#166534;margin-left:3px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+table{width:100%;border-collapse:collapse;font-size:9pt;margin:6px 0}
+th{background:var(--accent);color:#fff;padding:5px 8px;text-align:left;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+td{padding:4px 8px;border-bottom:1px solid #eaeaea}
+tr:nth-child(even) td{background:var(--light);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+footer{text-align:center;padding:14px;color:#888;font-size:8pt;border-top:1px solid #e0e0e0;margin-top:16px}
+@media print{body{font-size:10pt}.topic{page-break-inside:avoid;box-shadow:none}.toc{page-break-after:always}}</style></head><body><style>.site-topbar{background:#0d2e1e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;font-family:'Nunito',Arial,sans-serif}.site-topbar a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.35);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}.site-topbar a:hover{background:rgba(255,255,255,.12)}.site-topbar span{font-size:.88rem;font-weight:600;opacity:.65}@media print{.site-topbar{display:none}}</style><div class="site-topbar"><a href="alevel-calculations.html">&larr; Calculation Booklets</a><span>Paper 3: Synoptic</span></div><div class="print-note">To save as PDF: Ctrl+P &rarr; Save as PDF &rarr; A4 &rarr; tick &ldquo;Background graphics&rdquo;</div><div class='cover'><h1>OCR A Level Chemistry</h1><h2>Paper 3: Unified Chemistry (H432/03)</h2><p>Calculation Booklet &nbsp;|&nbsp; Worked Examples, Practice Questions &amp; Mark Scheme</p><div class='badge'>Synoptic -- All Modules</div></div><div class='toc'><h2>Contents</h2><ul>
+<li><a href="#p3-synoptic">29. Synoptic Calculation Questions -- All Modules</a></li>
+</ul></div><!-- ==================== PAPER 3 ==================== -->
+<div class="paper-banner p3-banner">Paper 3 — Unified Chemistry (H432/03) &nbsp;|&nbsp; Synoptic — All Modules</div>
+<div class="container">
+
+<!-- 24. SYNOPTIC -->
+<div class="topic" id="p3-synoptic">
+  <div class="topic-header p3-header">24 &nbsp; Synoptic Calculation Questions</div>
+  <div class="topic-body">
+    <p style="margin-bottom:12px;font-size:0.93em;color:#333">Paper 3 questions combine multiple topics in a single scenario. Practice linking calculations across modules.</p>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> (Synoptic: Moles + <i>K</i>c + Equilibrium)<br>
+      1.00 mol of H$_2$ and 1.00 mol of CO$_2$ are mixed and allowed to reach equilibrium in a 5.00 dm$^3$ flask at 700 K. At equilibrium, 0.608 mol of CO is present.<br>
+      $\text{H}_2\text{(g) + CO}_2\text{(g)} \rightleftharpoons \text{H}_2\text{O(g) + CO(g)}$<br>
+      (a) Calculate $K_c$ at 700 K. &nbsp; (b) Deduce the units of $K_c$. &nbsp; (c) Calculate $K_p$ if total pressure = 200 kPa. <span class="marks">[6]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> (Synoptic: Calorimetry + Hess's Law)<br>
+      The enthalpy of combustion of graphite is $-393$ kJ mol$^{-1}$ and of hydrogen is $-286$ kJ mol$^{-1}$. The enthalpy of combustion of ethanol is $-1368$ kJ mol$^{-1}$. In a separate experiment, 1.15 g of ethanol is burned in a spirit lamp and heats 250 cm$^3$ of water from 18.0 °C to 27.5 °C.<br>
+      (a) Calculate the experimental $\Delta H_c$ for ethanol.<br>
+      (b) Calculate the theoretical $\Delta H_f$ for ethanol using Hess's Law.<br>
+      (c) Suggest two reasons why the experimental value differs from the data book value. <span class="marks">[8]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> (Synoptic: pH + Buffers + $K_w$)<br>
+      A buffer solution is prepared by adding 20.0 cm$^3$ of 0.100 mol dm$^{-3}$ NaOH to 50.0 cm$^3$ of 0.100 mol dm$^{-3}$ ethanoic acid ($K_a=1.74\times10^{-5}$ mol dm$^{-3}$).<br>
+      (a) Show that the mixture forms a buffer.<br>
+      (b) Calculate the pH of the buffer.<br>
+      (c) Calculate the pH if the temperature is raised to 50 °C where $K_w=5.47\times10^{-14}$ mol$^2$ dm$^{-6}$. Does the pH of a neutral solution increase or decrease with increasing temperature? <span class="marks">[7]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> (Synoptic: Arrhenius + Rates + Born–Haber)<br>
+      A reaction has $E_a = 75.0$ kJ mol$^{-1}$. The rate constant at 300 K is $k_1 = 1.50\times10^{-4}$ s$^{-1}$.<br>
+      (a) Calculate $k$ at 350 K.<br>
+      (b) Explain, with reference to the Boltzmann distribution, why increasing temperature increases the rate constant. <span class="marks">[5]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1(a)</span> CO formed = 0.608 mol; by stoichiometry, H$_2$O = 0.608 mol; H$_2$ remaining = 1.00−0.608 = 0.392 mol; CO$_2$ remaining = 0.392 mol <span class="mark">✓</span>. Concentrations (÷5.00 dm$^3$): [H$_2$]=[CO$_2$]=0.0784; [H$_2$O]=[CO]=0.1216 mol dm$^{-3}$ <span class="mark">✓</span>. $K_c=(0.1216\times0.1216)/(0.0784\times0.0784)=(0.1216/0.0784)^2=(1.551)^2=\mathbf{2.40}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A1(b)</span> $\Delta n=(1+1)-(1+1)=0$ → <strong>no units / dimensionless</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A1(c)</span> $\Delta n=0$ → $K_p = K_c = \mathbf{2.40}$ (no units) <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2(a)</span> $q=250\times4.18\times9.5=9927$ J $=9.93$ kJ <span class="mark">✓</span>; $n(\text{ethanol})=1.15/46.1=0.02494$ mol <span class="mark">✓</span>; $\Delta H_c=-9.93/0.02494=\mathbf{-398\ \text{kJ mol}^{-1}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2(b)</span> $\text{2C+3H}_2+\frac{1}{2}\text{O}_2\rightarrow\text{C}_2\text{H}_5\text{OH}$; $\Delta_f H=[2(-393)+3(-286)]-(-1368)=[-786-858]+1368=-1644+1368=\mathbf{-276\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2(c)</span> Heat loss to surroundings/apparatus <span class="mark">✓</span>; incomplete combustion of ethanol <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3(a)</span> $n(\text{NaOH})=0.0200\times0.100=2.00\times10^{-3}$ mol; $n(\text{CH}_3\text{COOH})=0.0500\times0.100=5.00\times10^{-3}$ mol <span class="mark">✓</span>; NaOH neutralises $2.00\times10^{-3}$ mol acid, leaving $3.00\times10^{-3}$ mol CH$_3$COOH and $2.00\times10^{-3}$ mol CH$_3$COO$^-$ — both present → <strong>buffer</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3(b)</span> $\text{p}K_a=4.759$; pH $=4.759+\log(2.00/3.00)=4.759+\log(0.667)=4.759-0.176=\mathbf{4.58}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3(c)</span> $[\text{H}^+]=\sqrt{K_w}=\sqrt{5.47\times10^{-14}}=2.339\times10^{-7}$; pH $=-\log(2.339\times10^{-7})=\mathbf{6.63}$ <span class="mark">✓</span>; pH <strong>decreases</strong> — neutral pH $<7$ at 50°C because $K_w$ increases with temperature <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A4(a)</span> $\ln(k_2/k_1)=-\frac{E_a}{R}(\frac{1}{T_2}-\frac{1}{T_1})=-\frac{75000}{8.314}(\frac{1}{350}-\frac{1}{300})=-9020\times(-4.762\times10^{-4})=+4.295$ <span class="mark">✓✓</span>; $k_2=1.50\times10^{-4}\times e^{4.295}=1.50\times10^{-4}\times73.3=\mathbf{1.10\times10^{-2}\ \text{s}^{-1}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A4(b)</span> Higher temperature shifts the Boltzmann distribution to higher energies <span class="mark">✓</span>; a greater proportion of molecules have kinetic energy $\geq E_a$ → more successful collisions per unit time → $k$ increases <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<footer style="text-align:center;padding:30px;color:#888;font-size:0.85em;background:#e8e8e8;margin-top:40px">
+  OCR A Level Chemistry (H432) — Calculation Booklet &nbsp;|&nbsp; Based on OCR specification topics 2.2–2.3, 3.4, 3.6, 5.1–5.5 &nbsp;|&nbsp; For examination use only
+</footer>
+
+<script>
+function toggle(btn){
+  var content=btn.nextElementSibling;
+  if(content.classList.contains('open')){
+    content.classList.remove('open');
+    btn.textContent='Show Mark Scheme';
+  } else {
+    content.classList.add('open');
+    btn.textContent='Hide Mark Scheme';
+  }
+}
+</script>
+</body>
+</html><footer>OCR A Level Chemistry (H432) &nbsp;|&nbsp; Paper 3: Unified Chemistry (H432/03) &nbsp;|&nbsp; Calculation Booklet</footer></body></html>

@@ -1,0 +1,1117 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Paper 1 Calculations | OCR A Level Chemistry</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><script>
+MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>:root{--primary:#003366;--accent:#0055aa;--light:#dce8f7;--banner-grad:linear-gradient(135deg,#001f40,#0055aa)}@page{size:A4 portrait;margin:15mm}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',Arial,sans-serif;font-size:10.5pt;color:#1a1a1a;background:#fff;line-height:1.65}
+.print-note{background:#f5f5f5;border:1px dashed #bbb;padding:5px 14px;font-size:8.5pt;color:#666;text-align:center;margin:6px 0;border-radius:3px}
+@media print{.print-note{display:none}}
+.cover{background:var(--banner-grad);color:#fff;padding:52px 32px;text-align:center;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover h1{font-size:24pt;font-weight:800;margin-bottom:10px}
+.cover h2{font-size:13pt;font-weight:600;opacity:.9;margin-bottom:8px}
+.cover p{font-size:9.5pt;opacity:.8;margin-top:6px}
+.cover .badge{display:inline-block;margin-top:14px;padding:5px 14px;background:rgba(255,255,255,0.2);border-radius:20px;font-size:9pt;font-weight:700}
+.toc{padding:14px 16px;background:var(--light);border-bottom:3px solid var(--primary);margin-bottom:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.toc h2{color:var(--primary);font-size:11pt;font-weight:800;margin-bottom:10px;border-bottom:1.5px solid var(--accent);padding-bottom:5px}
+.toc ul{list-style:none;padding-left:8px;columns:2;column-gap:20px}
+.toc li{padding:2px 0;font-size:8.5pt;break-inside:avoid}
+.toc a{color:var(--accent);text-decoration:none;font-weight:600}
+.paper-banner{background:var(--banner-grad);color:#fff;padding:12px 16px;font-size:11.5pt;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact;margin:0 0 12px}
+.container{padding:0 0 20px}
+.topic{border:1px solid #d8e0ec;border-radius:6px;margin:10px 0;page-break-inside:avoid;overflow:hidden;background:#fff}
+.topic-header,.p1-header,.p2-header,.p3-header{padding:10px 16px;background:var(--accent);color:#fff;font-size:10pt;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topic-body{padding:13px 16px}
+.formula-box{background:var(--light);border:1.5px solid var(--accent);border-radius:8px;padding:14px 18px;margin:12px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.formula-box h4{color:var(--primary);font-size:8.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;font-weight:800;text-align:center;border-bottom:1.5px solid var(--accent);padding-bottom:6px;display:block}
+.formula-box table{width:100%;border-collapse:collapse;font-size:9.5pt;margin:0}
+.formula-box td{padding:5px 10px;vertical-align:middle;border:none;border-bottom:1px solid rgba(0,0,0,.07)}
+.formula-box tr:last-child td{border-bottom:none}
+.formula-box td:first-child{font-weight:700;color:var(--primary);width:38%;border-right:2px solid var(--accent);padding-right:14px;text-align:right}
+.worked{background:#F1FBF3;border-left:4px solid #388E3C;padding:9px 13px;margin:9px 0;border-radius:0 4px 4px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.worked h4{color:#1B5E20;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-weight:800}
+.step{margin:5px 0;padding-left:10px;border-left:2px solid #A5D6A7;font-size:9pt}
+.step-num{font-weight:800;color:#2E7D32}
+.error-box{background:#FFFDE7;border-left:4px solid #F9A825;padding:9px 13px;margin:7px 0;border-radius:0 4px 4px 0;font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.error-box h4{color:#E65100;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;font-weight:800}
+.questions{margin:10px 0}
+.questions h4{color:#B71C1C;font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px;font-weight:800}
+.q{background:#FFF8F8;border:1px solid #F5C6C6;border-radius:4px;padding:8px 12px;margin:6px 0;font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.q-num{font-weight:800;color:#C62828;margin-right:4px}
+.marks{color:#888;font-size:8pt;float:right}
+.ms-section{margin:10px 0 4px}
+.ms-label{background:var(--primary);color:#fff;font-size:8pt;font-weight:800;padding:5px 12px;border-radius:4px 4px 0 0;text-transform:uppercase;letter-spacing:.06em;display:block;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ms-body{background:#F0FDF4;border:1.5px solid #86EFAC;border-top:none;border-radius:0 0 4px 4px;padding:10px 13px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ans{margin:6px 0;font-size:9pt;border-bottom:1px solid #D1FAE5;padding-bottom:6px}
+.ans:last-child{border-bottom:none;padding-bottom:0}
+.ans-num{font-weight:800;color:#14532D;margin-right:4px}
+.mark{background:#DCFCE7;border-radius:2px;padding:1px 4px;font-size:7.5pt;color:#166534;margin-left:3px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+table{width:100%;border-collapse:collapse;font-size:9pt;margin:6px 0}
+th{background:var(--accent);color:#fff;padding:5px 8px;text-align:left;font-weight:800;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+td{padding:4px 8px;border-bottom:1px solid #eaeaea}
+tr:nth-child(even) td{background:var(--light);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+footer{text-align:center;padding:14px;color:#888;font-size:8pt;border-top:1px solid #e0e0e0;margin-top:16px}
+@media print{body{font-size:10pt}.topic{page-break-inside:avoid;box-shadow:none}.toc{page-break-after:always}}</style></head><body><style>.site-topbar{background:#0d2e1e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;font-family:'Nunito',Arial,sans-serif}.site-topbar a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.35);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}.site-topbar a:hover{background:rgba(255,255,255,.12)}.site-topbar span{font-size:.88rem;font-weight:600;opacity:.65}@media print{.site-topbar{display:none}}</style><div class="site-topbar"><a href="alevel-calculations.html">&larr; Calculation Booklets</a><span>Paper 1: Modules 1, 2, 3 &amp; 5</span></div><div class="print-note">To save as PDF: Ctrl+P &rarr; Save as PDF &rarr; A4 &rarr; tick &ldquo;Background graphics&rdquo;</div><div class='cover'><h1>OCR A Level Chemistry</h1><h2>Paper 1: Breadth in Chemistry (H432/01)</h2><p>Calculation Booklet &nbsp;|&nbsp; Worked Examples, Practice Questions &amp; Mark Scheme</p><div class='badge'>Modules 1, 2, 3 and 5</div></div><div class='toc'><h2>Contents</h2><ul>
+<li><a href="#p1-mathskills">0. Mathematical Skills — Sig Figs &amp; Uncertainties (M1.1, M1.3)</a></li>
+<li><a href="#p1-moles">1. The Mole &amp; Amount of Substance (2.2.1)</a></li>
+<li><a href="#p1-formulae">2. Empirical &amp; Molecular Formulae; Hydrated Salts (2.2.2)</a></li>
+<li><a href="#p1-rxncalc">3. Reaction Calculations (2.2.3)</a></li>
+<li><a href="#p1-idealgas">4. The Ideal Gas Equation (2.2.4)</a></li>
+<li><a href="#p1-yield">5. % Yield &amp; Atom Economy (2.2.5)</a></li>
+<li><a href="#p1-titration">6. Acid-Base Titrations (2.3.2)</a></li>
+<li><a href="#p1-calorimetry">7. Calorimetry (3.4.2)</a></li>
+<li><a href="#p1-bond">8. Bond Enthalpies (3.4.3)</a></li>
+<li><a href="#p1-hess">9. Hess's Law (3.4.4)</a></li>
+<li><a href="#p1-kc-as">10. <i>K</i>c — AS Level (3.6.3)</a></li>
+<li><a href="#p1-rates">11. Rate Equations &amp; Orders (5.1.1)</a></li>
+<li><a href="#p1-arrhenius">12. The Arrhenius Equation (5.1.7)</a></li>
+<li><a href="#p1-kckp">13. <i>K</i>c and <i>K</i>p — A Level (5.2.2)</a></li>
+<li><a href="#p1-ph">14. pH Calculations (5.3.2-5.3.3)</a></li>
+<li><a href="#p1-buffers">15. Buffer Calculations (5.3.4)</a></li>
+<li><a href="#p1-bornhaber">16. Born-Haber Cycles (5.4.3)</a></li>
+<li><a href="#p1-solution">17. Enthalpy of Solution &amp; Hydration (5.4.4)</a></li>
+<li><a href="#p1-entropy">18. Entropy (5.4.6)</a></li>
+<li><a href="#p1-gibbs">19. Gibbs Free Energy (5.4.8)</a></li>
+<li><a href="#p1-faraday">20. Faraday's Laws of Electrolysis (5.5.1)</a></li>
+<li><a href="#p1-redox">21. Redox Titrations (5.5.2)</a></li>
+<li><a href="#p1-electrode">22. Electrode Potential Calculations (5.5.4)</a></li>
+</ul></div><!-- ==================== PAPER 1 ==================== -->
+<div class="paper-banner p1-banner">Paper 1 — Breadth in Chemistry (H432/01) &nbsp;|&nbsp; Modules 1, 2, 3, 5</div>
+<div class="container">
+
+<!-- 0. MATHEMATICAL SKILLS -->
+<div class="topic" id="p1-mathskills">
+  <div class="topic-header p1-header">0 &nbsp; Mathematical Skills — Significant Figures &amp; Uncertainties &nbsp;(M1.1 &amp; M1.3)</div>
+  <div class="topic-body">
+
+    <div class="formula-box">
+      <h4>Significant Figures (M1.1)</h4>
+      <table>
+        <tr><td>General rule</td><td>Report the final answer to the <strong>same number of sig figs as the least precise piece of data</strong>.</td></tr>
+        <tr><td>Addition &amp; subtraction</td><td>Match <strong>decimal places</strong> (not sig figs) — e.g. 25.50 − 8.30 = 17.20 °C (2 d.p.)</td></tr>
+        <tr><td>Intermediate steps</td><td><strong>Do not round</strong> intermediate values — keep full precision in the calculator until the final step.</td></tr>
+        <tr><td>pH &amp; logarithms</td><td>The <em>whole number</em> part of a logarithm is <strong>not</strong> a significant figure. Only the decimal part counts. So pH = 2.45 = 2 sig figs; pH = 2.450 = 3 sig figs.</td></tr>
+        <tr><td>pH rule in practice</td><td>If data is given to 3 sig figs, give pH to <strong>2 decimal places</strong> (e.g. 1.70, 3.04). OCR mark schemes accept 2 d.p. as default.</td></tr>
+      </table>
+    </div>
+
+    <div class="formula-box">
+      <h4>Uncertainties (M1.3)</h4>
+      <table>
+        <tr><td>Absolute uncertainty</td><td>Half the resolution of the instrument. Burette: ±0.05 cm³ per reading.</td></tr>
+        <tr><td>% uncertainty (single measurement)</td><td>$\%\ \text{uncertainty} = \dfrac{\text{absolute uncertainty}}{\text{measurement}} \times 100\%$</td></tr>
+        <tr><td>Adding/subtracting measurements</td><td>Add the <strong>absolute</strong> uncertainties. E.g. titre = final − initial: uncertainty = 0.05 + 0.05 = 0.10 cm³</td></tr>
+        <tr><td>% uncertainty in a titre</td><td>$\%\ \text{uncertainty} = \dfrac{2 \times 0.05}{\text{titre}} \times 100\%$</td></tr>
+        <tr><td>Temperature difference</td><td>Thermometer resolution 0.5 °C: uncertainty in ΔT = 0.5 + 0.5 = 1.0 °C</td></tr>
+      </table>
+    </div>
+
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Rounding intermediate values — always round only at the final step.<br>
+      • Confusing sig figs with decimal places (e.g. giving 2.48 instead of 2.5 when 2 sig figs are required).<br>
+      • Forgetting that significant zeroes must be kept (e.g. 5.0 × 10⁵, not 5 × 10⁵).<br>
+      • Using only one burette reading's uncertainty instead of adding both (initial and final).
+    </div>
+
+    <div class="worked">
+      <h4>Worked Example — % Uncertainty in a Titration</h4>
+      <div class="step"><span class="step-num">Given</span>: Titre = 22.55 cm³; burette absolute uncertainty = ±0.05 cm³ per reading.</div>
+      <div class="step"><span class="step-num">Absolute uncertainty in titre</span>: 0.05 + 0.05 = 0.10 cm³ (two readings — initial and final)</div>
+      <div class="step"><span class="step-num">% uncertainty</span>: $\dfrac{0.10}{22.55} \times 100 = \mathbf{0.44\%}$</div>
+    </div>
+
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A student records a titre of 18.40 cm³ using a burette (uncertainty ±0.05 cm³ per reading). Calculate the percentage uncertainty in the titre. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> A temperature rise is measured as 12.5 °C using a thermometer with a resolution of 1 °C. Calculate the percentage uncertainty in this temperature measurement. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A student calculates [H⁺] = 0.0025 mol dm⁻³ from data given to 2 sig figs. State the pH to the appropriate number of significant figures. <span class="marks">[1]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> Absolute uncertainty = 0.05 + 0.05 = 0.10 cm³ <span class="mark">✓</span>; % uncertainty = 0.10/18.40 × 100 = <strong>0.54%</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Absolute uncertainty = 0.5 + 0.5 = 1.0 °C <span class="mark">✓</span>; % uncertainty = 1.0/12.5 × 100 = <strong>8.0%</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> pH = −log(0.0025) = 2.60; data is 2 sig figs so pH to <strong>2 decimal places: pH = 2.60</strong> <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. MOLES -->
+<div class="topic" id="p1-moles">
+  <div class="topic-header p1-header">1 &nbsp; The Mole &amp; Amount of Substance &nbsp;(2.2.1)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Amount from mass</td><td>$n = \dfrac{m}{M_r}$</td></tr>
+        <tr><td>Amount from particles</td><td>$n = \dfrac{N}{N_A}$ &nbsp; ($N_A = 6.02 \times 10^{23}$ mol$^{-1}$)</td></tr>
+        <tr><td>Amount from gas volume (r.t.p.)</td><td>$n = \dfrac{V}{24.0}$ &nbsp; ($V$ in dm$^3$)</td></tr>
+        <tr><td>Concentration</td><td>$c = \dfrac{n}{V}$ &nbsp; ($V$ in dm$^3$); &nbsp; $n = cV$</td></tr>
+        <tr><td>Volume unit conversions</td><td>$1\ \text{dm}^3 = 1000\ \text{cm}^3$; &nbsp; $1\ \text{cm}^3 = 10^{-3}\ \text{dm}^3$; &nbsp; $1\ \text{m}^3 = 1000\ \text{dm}^3$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Forgetting to convert cm$^3$ to dm$^3$ (divide by 1000) before using $n = cV$.<br>
+      • Using $M_r$ instead of the correct molar mass (e.g. using $M_r(\text{Cl})=35.5$ instead of $M_r(\text{Cl}_2)=71$).<br>
+      • Rounding intermediate values — keep full precision until the final answer.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>A compound contains only C, H and O. A sample of 0.720 g contains $1.44 \times 10^{22}$ atoms of carbon. The relative molecular mass is 60.0. Identify the molecular formula of the compound.</p>
+      <div class="step"><span class="step-num">Step 1 — Moles of C</span>: $n(\text{C}) = \dfrac{1.44\times10^{22}}{6.02\times10^{23}} = 0.02393$ mol</div>
+      <div class="step"><span class="step-num">Step 2 — Moles of compound</span>: $n(\text{compound}) = \dfrac{0.720}{60.0} = 0.01200$ mol</div>
+      <div class="step"><span class="step-num">Step 3 — C atoms per molecule</span>: $\dfrac{0.02392}{0.01200} = 1.99 \approx 2$ carbon atoms per molecule</div>
+      <div class="step"><span class="step-num">Step 4 — Identify formula</span>: mass of 2C per mole $= 24.0$ g mol$^{-1}$; remaining $= 60.0 - 24.0 = 36.0$ g mol$^{-1}$. Try 4H + 2O: $4(1.0)+2(16.0) = 36.0$ ✓ → molecular formula $\mathbf{C_2H_4O_2}$ (e.g. ethanoic acid, methyl methanoate).</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Calculate the amount, in mol, of CO$_2$ in 8.80 g of carbon dioxide. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Calculate the number of molecules in 0.250 mol of water. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A gas syringe contains 360 cm$^3$ of nitrogen gas at r.t.p. Calculate the mass of nitrogen in the syringe. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> A solution of potassium hydroxide has concentration 0.200 mol dm$^{-3}$. Calculate the amount of KOH, in mol, present in 35.0 cm$^3$ of this solution. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q5.</span> 4.60 g of sodium is added to excess water. Calculate the volume of H$_2$ gas produced at r.t.p. (24.0 dm$^3$ mol$^{-1}$). <br>$\text{2Na(s) + 2H}_2\text{O(l)} \rightarrow \text{2NaOH(aq) + H}_2\text{(g)}$ <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $n = 8.80/44.0 = \mathbf{0.200\ \text{mol}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $0.250 \times 6.02\times10^{23} = \mathbf{1.51\times10^{23}\ \text{molecules}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $n(\text{N}_2)=360/1000 \div 24.0 = 0.015\ \text{mol}$ <span class="mark">✓</span>; $m = 0.015\times28.0 = \mathbf{0.420\ \text{g}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A4.</span> $n = 0.200\times(35.0/1000) = \mathbf{7.00\times10^{-3}\ \text{mol}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A5.</span> $n(\text{Na})=4.60/23.0=0.200$ mol <span class="mark">✓</span>; $n(\text{H}_2)=0.200/2=0.100$ mol <span class="mark">✓</span>; $V=0.100\times24.0=\mathbf{2.40\ \text{dm}^3}$ <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. FORMULAE -->
+<div class="topic" id="p1-formulae">
+  <div class="topic-header p1-header">2 &nbsp; Empirical &amp; Molecular Formulae; Hydrated Salts &nbsp;(2.2.2)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae &amp; Procedure</h4>
+      <table>
+        <tr><td>Empirical formula method</td><td>% mass → ÷ $A_r$ → divide by smallest → whole number ratio</td></tr>
+        <tr><td>Molecular formula</td><td>$\text{Molecular formula} = (\text{Empirical formula}) \times n$, where $n = M_r / M_r(\text{EF})$</td></tr>
+        <tr><td>Water of crystallisation</td><td>$\text{Salt} \cdot x\text{H}_2\text{O}$; find $x$ from mole ratio of anhydrous salt : water lost on heating</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Incomplete dehydration (heating not to constant mass) → $x$ value too low.<br>
+      • Thermal decomposition of the anhydrous salt → $x$ value too high.<br>
+      • Rounding to whole number ratios too early (e.g. 1.5 → must double to get 3 : 2).
+    </div>
+    <div class="worked">
+      <h4>Worked Example 1 — Empirical Formula</h4>
+      <p>A compound contains 40.0% C, 6.67% H, 53.3% O by mass.</p>
+      <div class="step"><span class="step-num">Step 1</span> — Divide by $A_r$: C: $40.0/12.0=3.33$; H: $6.67/1.0=6.67$; O: $53.3/16.0=3.33$</div>
+      <div class="step"><span class="step-num">Step 2</span> — Divide by smallest (3.33): C: 1; H: 2; O: 1</div>
+      <div class="step"><span class="step-num">Answer</span> — Empirical formula: $\mathbf{CH_2O}$. If $M_r=180$, molecular formula: $n=180/30=6$ → $\mathbf{C_6H_{12}O_6}$.</div>
+    </div>
+    <div class="worked">
+      <h4>Worked Example 2 — Hydrated Salt</h4>
+      <p>4.91 g of hydrated copper(II) sulfate ($\text{CuSO}_4\cdot x\text{H}_2\text{O}$) was heated to constant mass, giving 3.14 g of anhydrous salt.</p>
+      <div class="step"><span class="step-num">Step 1</span> — Mass of water lost $= 4.91 - 3.14 = 1.77$ g</div>
+      <div class="step"><span class="step-num">Step 2</span> — $n(\text{CuSO}_4)=3.14/159.6=0.01966$ mol; $n(\text{H}_2\text{O})=1.77/18.0=0.09833$ mol</div>
+      <div class="step"><span class="step-num">Step 3</span> — Ratio: $0.09833/0.01966=5.0$ → $x=\mathbf{5}$; formula $= \mathbf{CuSO_4\cdot5H_2O}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A compound contains 52.2% C, 13.0% H, 34.8% O. Find the empirical formula. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> The empirical formula of a compound is CH$_2$ and its $M_r$ is 56. Determine its molecular formula. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> 6.24 g of hydrated iron(II) sulfate ($\text{FeSO}_4\cdot x\text{H}_2\text{O}$, $M_r(\text{FeSO}_4)=151.9$) was heated to constant mass, leaving 3.41 g of anhydrous salt. Find the value of $x$. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> A student heats hydrated barium chloride but stops too early. State how this would affect the calculated value of $x$. Explain your answer. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> C: $52.2/12.0=4.35$; H: $13.0/1.0=13.0$; O: $34.8/16.0=2.175$ → divide by 2.175 → C:2, H:6, O:1 → <strong>C$_2$H$_6$O</strong> <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n=56/14=4$ → <strong>C$_4$H$_8$</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> Water lost $=6.24-3.41=2.83$ g <span class="mark">✓</span>; $n(\text{FeSO}_4)=3.41/151.9=0.02244$ mol; $n(\text{H}_2\text{O})=2.83/18.0=0.1572$ mol; ratio $=0.1572/0.02244=7.0$ → <strong>$x=7$</strong> <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A4.</span> $x$ would be <strong>too low</strong> <span class="mark">✓</span>; because not all the water has been driven off / mass of water lost is less than the actual amount <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. REACTION CALCULATIONS -->
+<div class="topic" id="p1-rxncalc">
+  <div class="topic-header p1-header">3 &nbsp; Reaction Calculations — mass, volume, concentration, limiting reagent &nbsp;(2.2.3)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Three-Step Method</h4>
+      <table>
+        <tr><td>Step 1</td><td>Convert given quantity to moles</td></tr>
+        <tr><td>Step 2</td><td>Use molar ratio from balanced equation</td></tr>
+        <tr><td>Step 3</td><td>Convert moles to required quantity</td></tr>
+        <tr><td>Limiting reagent</td><td>Calculate moles of each reagent; the one that gives the smaller moles of product is the limiting reagent</td></tr>
+        <tr><td>Gas at r.t.p.</td><td>$V\ (\text{dm}^3) = n \times 24.0$</td></tr>
+        <tr><td>Concentration</td><td>$n = c \times V$ &nbsp; (V in dm$^3$); &nbsp; $c = n/V$</td></tr>
+      </table>
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Limiting Reagent</h4>
+      <p>4.00 g of calcium reacts with 100 cm$^3$ of 1.50 mol dm$^{-3}$ HCl. Calculate the volume of H$_2$ produced at r.t.p.$\\$ $\text{Ca(s) + 2HCl(aq)} \rightarrow \text{CaCl}_2\text{(aq) + H}_2\text{(g)}$</p>
+      <div class="step"><span class="step-num">Step 1</span> — $n(\text{Ca})=4.00/40.1=0.0997$ mol; $n(\text{HCl})=1.50\times0.100=0.150$ mol</div>
+      <div class="step"><span class="step-num">Step 2</span> — HCl needed to react all Ca $=2\times0.0997=0.199$ mol, but only 0.150 mol available → <strong>HCl is the limiting reagent</strong></div>
+      <div class="step"><span class="step-num">Step 3</span> — $n(\text{H}_2)=0.150/2=0.0750$ mol; $V=0.0750\times24.0=\mathbf{1.80\ \text{dm}^3}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Calculate the mass of iron produced when 16.0 g of iron(III) oxide is reduced by excess carbon monoxide. <br>$\text{Fe}_2\text{O}_3\text{(s) + 3CO(g)} \rightarrow \text{2Fe(s) + 3CO}_2\text{(g)}$ <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> 50.0 cm$^3$ of 0.200 mol dm$^{-3}$ H$_2$SO$_4$ is mixed with 80.0 cm$^3$ of 0.150 mol dm$^{-3}$ NaOH. Identify the limiting reagent and calculate the mass of Na$_2$SO$_4$ that could be formed. <br>$\text{H}_2\text{SO}_4 + \text{2NaOH} \rightarrow \text{Na}_2\text{SO}_4 + \text{2H}_2\text{O}$ <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> What volume of CO$_2$, at r.t.p., is produced when 5.00 g of CaCO$_3$ is added to excess HCl? <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $n(\text{Fe}_2\text{O}_3)=16.0/159.7=0.1002$ mol <span class="mark">✓</span>; $n(\text{Fe})=0.1002\times2=0.2004$ mol <span class="mark">✓</span>; $m=0.2004\times55.8=\mathbf{11.2\ \text{g}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n(\text{H}_2\text{SO}_4)=0.200\times0.0500=0.0100$ mol; $n(\text{NaOH})=0.150\times0.0800=0.0120$ mol <span class="mark">✓</span>. NaOH needed $=2\times0.0100=0.0200$ mol $>0.0120$ mol → <strong>NaOH is limiting</strong> <span class="mark">✓</span>. $n(\text{Na}_2\text{SO}_4)=0.0120/2=0.00600$ mol <span class="mark">✓</span>; $m=0.00600\times142.1=\mathbf{0.853\ \text{g}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $n(\text{CaCO}_3)=5.00/100.1=0.04995$ mol <span class="mark">✓</span>; $n(\text{CO}_2)=0.04995$ mol <span class="mark">✓</span>; $V=0.04995\times24.0=\mathbf{1.20\ \text{dm}^3}$ (1200 cm$^3$) <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. IDEAL GAS -->
+<div class="topic" id="p1-idealgas">
+  <div class="topic-header p1-header">4 &nbsp; The Ideal Gas Equation &nbsp;(2.2.4)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Ideal gas equation</td><td>$pV = nRT$</td></tr>
+        <tr><td>Gas constant</td><td>$R = 8.314\ \text{J mol}^{-1}\ \text{K}^{-1}$</td></tr>
+        <tr><td>Units required</td><td>$p$ in Pa; $V$ in m$^3$; $T$ in K ($T/\text{K} = \theta/°C + 273$)</td></tr>
+        <tr><td>Unit conversions</td><td>$1\ \text{kPa} = 1000\ \text{Pa}$; $1\ \text{dm}^3 = 10^{-3}\ \text{m}^3$; $1\ \text{cm}^3 = 10^{-6}\ \text{m}^3$</td></tr>
+        <tr><td>Finding $M_r$ of volatile liquid</td><td>$M_r = \dfrac{mRT}{pV}$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Using cm$^3$ or dm$^3$ instead of m$^3$ for volume — <em>always</em> convert to m$^3$.<br>
+      • Leaving temperature in °C — must convert to Kelvin.<br>
+      • Using kPa instead of Pa.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>0.153 g of a volatile liquid is vaporised at 97 °C and 100 kPa, occupying a volume of 65.0 cm$^3$. Calculate the $M_r$ of the liquid.</p>
+      <div class="step"><span class="step-num">Step 1</span> — Convert units: $p=100\times10^3=1.00\times10^5$ Pa; $V=65.0\times10^{-6}=6.50\times10^{-5}$ m$^3$; $T=97+273=370$ K</div>
+      <div class="step"><span class="step-num">Step 2</span> — $n = pV/RT = (1.00\times10^5\times6.50\times10^{-5})/(8.314\times370) = 6.50/(3076.2) = 2.113\times10^{-3}$ mol</div>
+      <div class="step"><span class="step-num">Step 3</span> — $M_r = m/n = 0.153/2.113\times10^{-3} = \mathbf{72.4}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Calculate the volume, in dm$^3$, occupied by 0.500 mol of an ideal gas at 298 K and 101 kPa. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> A flask of volume 500 cm$^3$ contains 1.20 g of a gas at 27 °C and 150 kPa. Calculate the $M_r$ of the gas. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Calculate the pressure, in kPa, exerted by 2.00 mol of gas in a 50.0 dm$^3$ container at 500 K. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $V=nRT/p=(0.500\times8.314\times298)/(101\times10^3)=1.239\times10^{-2}$ m$^3$ <span class="mark">✓</span> $=\mathbf{12.4\ \text{dm}^3}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n=pV/RT=(150\times10^3\times500\times10^{-6})/(8.314\times300)=75/(2494.2)=0.03007$ mol <span class="mark">✓✓</span>; $M_r=1.20/0.03007=\mathbf{39.9}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $p=nRT/V=(2.00\times8.314\times500)/(50.0\times10^{-3})=8314/0.0500=\mathbf{166\ \text{kPa}}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. YIELD & ATOM ECONOMY -->
+<div class="topic" id="p1-yield">
+  <div class="topic-header p1-header">5 &nbsp; Percentage Yield &amp; Atom Economy &nbsp;(2.2.5)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Percentage yield</td><td>$\%\ \text{yield} = \dfrac{\text{actual moles (or mass) of product}}{\text{theoretical moles (or mass) of product}} \times 100$</td></tr>
+        <tr><td>Atom economy</td><td>$\%\ \text{atom economy} = \dfrac{M_r\ \text{of desired product}}{\sum M_r\ \text{of all products}} \times 100$</td></tr>
+        <tr><td>Addition reactions</td><td>Always have 100% atom economy (only one product)</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Using $\sum M_r$ of <em>reactants</em> (not products) as the denominator in atom economy.<br>
+      • Forgetting to multiply $M_r$ by stoichiometric coefficients when calculating $\sum M_r$ products.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>Ethanol can be made by fermenting glucose: $\text{C}_6\text{H}_{12}\text{O}_6 \rightarrow \text{2C}_2\text{H}_5\text{OH + 2CO}_2$<br>
+      If 36.8 g of ethanol is produced from 90.0 g of glucose, calculate (a) the % yield and (b) the % atom economy.</p>
+      <div class="step"><span class="step-num">(a) % yield</span> — Theoretical: $n(\text{glucose})=90.0/180.2=0.4994$ mol; $n(\text{C}_2\text{H}_5\text{OH})_\text{theoretical}=2\times0.4994=0.9989$ mol; mass $=0.9989\times46.1=46.1$ g. $\%\ \text{yield}=36.8/46.1\times100=\mathbf{79.8\%}$</div>
+      <div class="step"><span class="step-num">(b) % atom economy</span> — $\sum M_r(\text{products})=2\times46.1+2\times44.0=92.2+88.0=180.2$. $\%\text{AE}=(2\times46.1)/180.2\times100=92.2/180.2\times100=\mathbf{51.2\%}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Methanol is manufactured from CO and H$_2$: $\text{CO + 2H}_2 \rightarrow \text{CH}_3\text{OH}$. Calculate the % atom economy for this reaction. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> 12.5 g of aspirin ($M_r=180$) is produced from 15.0 g of salicylic acid ($M_r=138$). Calculate the % yield. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Chlorine reacts with ethene by addition: $\text{C}_2\text{H}_4 + \text{Cl}_2 \rightarrow \text{CH}_2\text{ClCH}_2\text{Cl}$. State the % atom economy and explain why. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> Only one product, so $\%\text{AE} = \mathbf{100\%}$ (addition reaction) <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Theoretical: $n(\text{sal})=15.0/138=0.1087$ mol; theoretical $m(\text{aspirin})=0.1087\times180=19.57$ g <span class="mark">✓</span>; $\%\text{yield}=12.5/19.57\times100=\mathbf{63.9\%}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $\mathbf{100\%}$ <span class="mark">✓</span>; because it is an addition reaction — the only product is 1,2-dichloroethane, so all atoms are incorporated into the desired product <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. TITRATIONS -->
+<div class="topic" id="p1-titration">
+  <div class="topic-header p1-header">6 &nbsp; Acid–Base Titrations &nbsp;(2.3.2)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae &amp; Rules</h4>
+      <table>
+        <tr><td>Moles from titration</td><td>$n = c \times V$ &nbsp; (V in dm$^3$)</td></tr>
+        <tr><td>Concordant titres</td><td>Readings within $\pm 0.10$ cm$^3$ of each other (use mean of concordant values only)</td></tr>
+        <tr><td>Burette precision</td><td>Read to $\pm 0.05$ cm$^3$; titre uncertainty $=\pm 0.10$ cm$^3$</td></tr>
+        <tr><td>Scale-up</td><td>If 25.0 cm$^3$ aliquot from 250 cm$^3$ → multiply moles in aliquot $\times 10$ for whole sample</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Including a rough titre in the mean — only use concordant runs.<br>
+      • Forgetting to convert cm$^3$ to dm$^3$ (divide by 1000) before calculating moles.<br>
+      • Not scaling up from the aliquot to the whole solution.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>25.0 cm$^3$ aliquots of an impure Na$_2$CO$_3$ solution were titrated against 0.100 mol dm$^{-3}$ HCl. Three concordant titres of 23.60, 23.55, 23.65 cm$^3$ were obtained. The solution was made from 2.00 g of impure Na$_2$CO$_3$ dissolved in 250 cm$^3$. Calculate the purity of the sample.<br>$\text{Na}_2\text{CO}_3 + \text{2HCl} \rightarrow \text{2NaCl + H}_2\text{O + CO}_2$</p>
+      <div class="step"><span class="step-num">Step 1</span> — Mean titre $= (23.60+23.55+23.65)/3 = 23.60$ cm$^3$</div>
+      <div class="step"><span class="step-num">Step 2</span> — $n(\text{HCl})=0.100\times(23.60/1000)=2.360\times10^{-3}$ mol</div>
+      <div class="step"><span class="step-num">Step 3</span> — $n(\text{Na}_2\text{CO}_3)=2.360\times10^{-3}/2=1.180\times10^{-3}$ mol in 25.0 cm$^3$</div>
+      <div class="step"><span class="step-num">Step 4</span> — Scale up: $\times 10 = 1.180\times10^{-2}$ mol in 250 cm$^3$; $m=1.180\times10^{-2}\times106.0=1.251$ g</div>
+      <div class="step"><span class="step-num">Step 5</span> — Purity $=1.251/2.00\times100=\mathbf{62.6\%}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A student titrates 25.0 cm$^3$ of NaOH solution with 0.0500 mol dm$^{-3}$ HCl, obtaining titres of 26.45, 26.35, 26.40, 22.10 cm$^3$. Calculate the concentration of the NaOH solution. <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> 2.81 g of an impure sample of KOH is dissolved in water and made up to 250 cm$^3$. 25.0 cm$^3$ aliquots are titrated against 0.100 mol dm$^{-3}$ H$_2$SO$_4$; a mean titre of 20.00 cm$^3$ is obtained. $\text{H}_2\text{SO}_4 + \text{2KOH} \rightarrow \text{K}_2\text{SO}_4 + \text{2H}_2\text{O}$. Calculate the percentage purity of the KOH sample. <span class="marks">[4]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> Discard 22.10 (rough); mean $=(26.45+26.35+26.40)/3=26.40$ cm$^3$ <span class="mark">✓</span>; $n(\text{HCl})=0.0500\times(26.40/1000)=1.320\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{NaOH})=n(\text{HCl})=1.320\times10^{-3}$ mol (1:1 ratio) <span class="mark">✓</span>; $c=1.320\times10^{-3}/(25.0/1000)=\mathbf{0.0528\ \text{mol dm}^{-3}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n(\text{H}_2\text{SO}_4)=0.100\times(20.00/1000)=2.00\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{KOH})=2\times2.00\times10^{-3}=4.00\times10^{-3}$ mol in 25.0 cm$^3$ <span class="mark">✓</span>; $\times10$: $4.00\times10^{-2}$ mol total; $m=4.00\times10^{-2}\times56.1=2.244$ g <span class="mark">✓</span>; purity $=2.244/2.81\times100=\mathbf{79.9\%}$ <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. CALORIMETRY -->
+<div class="topic" id="p1-calorimetry">
+  <div class="topic-header p1-header">7 &nbsp; Calorimetry &nbsp;(3.4.2)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Heat transferred</td><td>$q = mc\Delta T$</td></tr>
+        <tr><td>Specific heat capacity of water</td><td>$c = 4.18\ \text{J g}^{-1}\ \text{K}^{-1}$</td></tr>
+        <tr><td>$m$ in calorimetry</td><td>Mass of the <strong>solution</strong> (not just the water); assume density $= 1.00\ \text{g cm}^{-3}$</td></tr>
+        <tr><td>Enthalpy change per mole</td><td>$\Delta H = -q/n$ &nbsp; (sign: exothermic $\Rightarrow \Delta H < 0$)</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Using the mass of water alone instead of the total mass of solution.<br>
+      • Using the mass of solid solute as $m$ in $q=mc\Delta T$.<br>
+      • Incorrect sign: if temperature <em>rises</em>, reaction is exothermic, $\Delta H$ must be <strong>negative</strong>.<br>
+      • Not converting $q$ from J to kJ before quoting $\Delta H$.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>50.0 cm$^3$ of 1.00 mol dm$^{-3}$ HCl is mixed with 50.0 cm$^3$ of 1.00 mol dm$^{-3}$ NaOH. Temperature rises by 6.80 °C. Calculate the enthalpy of neutralisation.</p>
+      <div class="step"><span class="step-num">Step 1</span> — $m(\text{solution})=(50.0+50.0)\times1.00=100.0\ \text{g}$</div>
+      <div class="step"><span class="step-num">Step 2</span> — $q=mc\Delta T=100.0\times4.18\times6.80=2842\ \text{J}=2.842\ \text{kJ}$</div>
+      <div class="step"><span class="step-num">Step 3</span> — $n(\text{H}_2\text{O formed})=1.00\times(50.0/1000)=0.0500$ mol</div>
+      <div class="step"><span class="step-num">Step 4</span> — $\Delta H=-2.842/0.0500=\mathbf{-56.8\ \text{kJ mol}^{-1}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> 2.40 g of magnesium is added to 200 cm$^3$ of 1.00 mol dm$^{-3}$ HCl (excess). The temperature rises by 19.2 °C. Calculate $\Delta H$ for the reaction per mole of Mg. <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> 25.0 cm$^3$ of ethanol is burned in a spirit lamp, raising the temperature of 200 g of water by 35.0 °C. The mass of ethanol burned is 0.920 g. Calculate the enthalpy of combustion of ethanol ($M_r=46.1$) in kJ mol$^{-1}$. <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Explain why the experimental value for enthalpy of combustion is always less exothermic than the data book value. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $m\approx200\ \text{g}$ (assume mass of solution $\approx$ mass of HCl solution; Mg dissolves, small correction) <span class="mark">✓</span>; $q=200\times4.18\times19.2=16051\ \text{J}=16.05\ \text{kJ}$ <span class="mark">✓</span>; $n(\text{Mg})=2.40/24.3=0.09877$ mol <span class="mark">✓</span>; $\Delta H=-16.05/0.09877=\mathbf{-163\ \text{kJ mol}^{-1}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $q=200\times4.18\times35.0=29260\ \text{J}=29.26\ \text{kJ}$ <span class="mark">✓</span>; $n(\text{ethanol})=0.920/46.1=0.01995$ mol <span class="mark">✓</span>; $\Delta H_c=-29.26/0.01995=\mathbf{-1467\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> Heat is lost to the surroundings / to the container <span class="mark">✓</span>; combustion may be incomplete (not all ethanol burns fully) <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. BOND ENTHALPIES -->
+<div class="topic" id="p1-bond">
+  <div class="topic-header p1-header">8 &nbsp; Bond Enthalpies &nbsp;(3.4.3)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>$\Delta_r H$ from bond enthalpies</td><td>$\Delta_r H = \sum E(\text{bonds broken}) - \sum E(\text{bonds made})$</td></tr>
+        <tr><td>Definition of bond enthalpy</td><td>Energy to break 1 mol of a given bond in gaseous molecules, averaged over many compounds</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Reversing the formula (bonds made − bonds broken) — gives wrong sign.<br>
+      • Forgetting to multiply individual bond enthalpies by the number of bonds of that type.<br>
+      • Using bond enthalpies for non-gaseous species — the method is only valid for gaseous reactants and products.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Methane Combustion</h4>
+      <p>$\text{CH}_4\text{(g) + 2O}_2\text{(g)} \rightarrow \text{CO}_2\text{(g) + 2H}_2\text{O(g)}$<br>
+      Bond enthalpies: C–H = 413, O=O = 498, C=O = 805, O–H = 463 kJ mol$^{-1}$</p>
+      <div class="step"><span class="step-num">Bonds broken</span> — 4(C–H) + 2(O=O) $= 4(413)+2(498)=1652+996=2648$ kJ mol$^{-1}$</div>
+      <div class="step"><span class="step-num">Bonds made</span> — 2(C=O) + 4(O–H) $= 2(805)+4(463)=1610+1852=3462$ kJ mol$^{-1}$</div>
+      <div class="step"><span class="step-num">$\Delta_r H$</span> $= 2648-3462 = \mathbf{-814\ \text{kJ mol}^{-1}}$</div>
+      <div class="step"><span class="step-num">Note</span> — This differs from $\Delta_c H(\text{CH}_4)=-890$ kJ mol$^{-1}$ because (i) bond enthalpies are <em>average</em> values, and (ii) the above assumes gaseous H$_2$O, but the standard value uses liquid H$_2$O.</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Use bond enthalpies to calculate $\Delta_r H$ for $\text{H}_2\text{(g) + Cl}_2\text{(g)} \rightarrow \text{2HCl(g)}$.<br>$E(\text{H–H})=436$, $E(\text{Cl–Cl})=243$, $E(\text{H–Cl})=432$ kJ mol$^{-1}$ <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> $\text{N}_2\text{(g) + 3H}_2\text{(g)} \rightarrow \text{2NH}_3\text{(g)}$. Calculate $\Delta_r H$.<br>$E(\text{N≡N})=945$, $E(\text{H–H})=436$, $E(\text{N–H})=391$ kJ mol$^{-1}$ <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> The bond enthalpy calculation gives a different value from the standard enthalpy of combustion found in data books. Give two reasons for this difference. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> Broken: $436+243=679$; Made: $2(432)=864$; $\Delta_r H=679-864=\mathbf{-185\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Broken: $945+3(436)=945+1308=2253$; Made: $2\times3(391)=6(391)=2346$; $\Delta_r H=2253-2346=\mathbf{-93\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> Bond enthalpy values are <em>average</em> values — they vary between different compounds <span class="mark">✓</span>; the method assumes water is formed as a gas, but standard enthalpies use liquid water <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. HESS'S LAW -->
+<div class="topic" id="p1-hess">
+  <div class="topic-header p1-header">9 &nbsp; Hess's Law &nbsp;(3.4.4)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Formation cycle</td><td>$\Delta_r H = \sum \Delta_f H(\text{products}) - \sum \Delta_f H(\text{reactants})$</td></tr>
+        <tr><td>Combustion cycle</td><td>$\Delta_r H = \sum \Delta_c H(\text{reactants}) - \sum \Delta_c H(\text{products})$</td></tr>
+        <tr><td>Note on elements</td><td>$\Delta_f H = 0$ for elements in their standard state</td></tr>
+        <tr><td>Stoichiometry</td><td>Multiply $\Delta H$ values by stoichiometric coefficients; reverse a reaction → change sign of $\Delta H$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Mixing up the combustion cycle formula — remember: <em>reactants minus products</em> (opposite to formation).<br>
+      • Not multiplying $\Delta_c H$ or $\Delta_f H$ by stoichiometric coefficients.<br>
+      • Sign errors when reversing arrows in the Hess cycle.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — $\Delta_f H$ of Ethanol</h4>
+      <p>Given: $\Delta_c H(\text{C})=-393$, $\Delta_c H(\text{H}_2)=-286$, $\Delta_c H(\text{C}_2\text{H}_5\text{OH})=-1368$ kJ mol$^{-1}$.<br>
+      Find $\Delta_f H(\text{C}_2\text{H}_5\text{OH})$. Formation equation: $\text{2C + 3H}_2 + \frac{1}{2}\text{O}_2 \rightarrow \text{C}_2\text{H}_5\text{OH}$</p>
+      <div class="step"><span class="step-num">Combustion cycle</span>: $\Delta_r H = \sum \Delta_c H(\text{reactants}) - \sum \Delta_c H(\text{products})$</div>
+      <div class="step"><span class="step-num">Calculation</span>: $\Delta_f H = [2(-393)+3(-286)+\frac{1}{2}(0)] - [(-1368)]$<br>$= [-786-858]-[-1368] = -1644+1368 = \mathbf{-276\ \text{kJ mol}^{-1}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Calculate $\Delta_r H$ for $\text{C(s) + 2H}_2\text{(g)} \rightarrow \text{CH}_4\text{(g)}$ given: $\Delta_f H(\text{CO}_2)=-393$, $\Delta_f H(\text{H}_2\text{O})=-286$, $\Delta_c H(\text{CH}_4)=-890$ kJ mol$^{-1}$. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Using the data below, calculate $\Delta_f H(\text{C}_3\text{H}_8)$ (propane). $\Delta_c H(\text{C})=-393$, $\Delta_c H(\text{H}_2)=-286$, $\Delta_c H(\text{C}_3\text{H}_8)=-2220$ kJ mol$^{-1}$. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> This is the formation of CH$_4$. Use combustion cycle: $\Delta_f H = [\Delta_c H(\text{C})+2\Delta_c H(\text{H}_2)] - [\Delta_c H(\text{CH}_4)]$ <span class="mark">✓</span> $= [(-393)+2(-286)]-[(-890)]=-965+890=\mathbf{-75\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Formation of C$_3$H$_8$: $\text{3C}+\text{4H}_2\rightarrow\text{C}_3\text{H}_8$. $\Delta_f H=[3(-393)+4(-286)]-[(-2220)]$ <span class="mark">✓</span> $=[-1179-1144]+2220=-2323+2220=\mathbf{-103\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 10. Kc AS LEVEL -->
+<div class="topic" id="p1-kc-as">
+  <div class="topic-header p1-header">10 &nbsp; Equilibrium Constant <i>K</i><sub>c</sub> — AS Level &nbsp;(3.6.3)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>$K_c$ expression</td><td>For $a\text{A}+b\text{B} \rightleftharpoons c\text{C}+d\text{D}$: &nbsp; $K_c=\dfrac{[\text{C}]^c[\text{D}]^d}{[\text{A}]^a[\text{B}]^b}$</td></tr>
+        <tr><td>Units of $K_c$</td><td>Depends on $\Delta n = (c+d)-(a+b)$; units $= (\text{mol dm}^{-3})^{\Delta n}$</td></tr>
+        <tr><td>ICE table</td><td>Initial → Change → Equilibrium: track moles/concentrations systematically</td></tr>
+        <tr><td>Effect of temperature</td><td>Only temperature changes $K_c$; catalysts, pressure, concentration do not</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Putting reactant concentrations in the numerator (they go in the denominator).<br>
+      • Giving wrong or no units — always derive units from the expression.<br>
+      • Stating that a catalyst or pressure change affects $K_c$.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>0.200 mol N$_2$O$_4$ is placed in a 2.00 dm$^3$ flask. At equilibrium, 30.0% has dissociated. $\text{N}_2\text{O}_4\text{(g)} \rightleftharpoons \text{2NO}_2\text{(g)}$. Calculate $K_c$.</p>
+      <div class="step"><span class="step-num">ICE</span> — N$_2$O$_4$: initial 0.200, change $-0.0600$, equil. $0.140$ mol; NO$_2$: initial 0, change $+0.120$, equil. $0.120$ mol</div>
+      <div class="step"><span class="step-num">Concentrations</span> — $[\text{N}_2\text{O}_4]=0.140/2.00=0.0700$ mol dm$^{-3}$; $[\text{NO}_2]=0.120/2.00=0.0600$ mol dm$^{-3}$</div>
+      <div class="step"><span class="step-num">$K_c$</span> $= (0.0600)^2/(0.0700)=3.60\times10^{-3}/0.0700=\mathbf{5.14\times10^{-2}\ \text{mol dm}^{-3}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Write the $K_c$ expression and deduce its units for: $\text{H}_2\text{(g) + I}_2\text{(g)} \rightleftharpoons \text{2HI(g)}$ <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> At equilibrium, $[\text{H}_2]=0.300$, $[\text{I}_2]=0.0500$, $[\text{HI}]=0.600$ mol dm$^{-3}$. Calculate $K_c$. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> 1.00 mol H$_2$ and 1.00 mol I$_2$ are placed in a 1.00 dm$^3$ flask. At equilibrium, 0.786 mol HI is present. Calculate $K_c$. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $K_c = [\text{HI}]^2/([\text{H}_2][\text{I}_2])$ <span class="mark">✓</span>; $\Delta n=2-2=0$ → units: <strong>no units / dimensionless</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $K_c=(0.600)^2/(0.300\times0.0500)=0.360/0.0150=\mathbf{24.0}$ (no units) <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> HI formed $=0.786$ mol; H$_2$ and I$_2$ each used $=0.786/2=0.393$ mol; equil: H$_2$=I$_2$=$1.00-0.393=0.607$ mol <span class="mark">✓</span>; in 1.00 dm$^3$, concentrations equal moles; $K_c=(0.786)^2/(0.607\times0.607)=0.6178/0.3684=\mathbf{1.68\times10^1}$ (accept 16.8) <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function toggle(btn){
+  var content=btn.nextElementSibling;
+  if(content.classList.contains('open')){
+    content.classList.remove('open');
+    btn.textContent='Show Mark Scheme';
+  } else {
+    content.classList.add('open');
+    btn.textContent='Hide Mark Scheme';
+  }
+}
+</script>
+<!-- ==================== PAPER 1 continued: Module 5 ==================== -->
+<div class="container">
+
+<!-- 11. RATES & ORDERS -->
+<div class="topic" id="p1-rates">
+  <div class="topic-header p1-header">11 &nbsp; Rate Equations &amp; Orders &nbsp;(5.1.1)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Rate equation</td><td>$\text{rate} = k[\text{A}]^m[\text{B}]^n$</td></tr>
+        <tr><td>Overall order</td><td>$m + n$</td></tr>
+        <tr><td>Units of rate</td><td>mol dm$^{-3}$ s$^{-1}$</td></tr>
+        <tr><td>Units of $k$</td><td>Order 0: mol dm$^{-3}$ s$^{-1}$; &nbsp; Order 1: s$^{-1}$; &nbsp; Order 2: mol$^{-1}$ dm$^3$ s$^{-1}$; &nbsp; Order 3: mol$^{-2}$ dm$^6$ s$^{-1}$</td></tr>
+        <tr><td>Deducing order (initial rates)</td><td>Double [A], rate doubles → order 1; rate quadruples → order 2; rate unchanged → order 0</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Including species that do not appear in the rate equation (e.g. catalysts, species in fast steps).<br>
+      • Giving wrong units for $k$ — always derive from the rate equation.<br>
+      • Calculating order incorrectly when concentrations are not doubled — take log of the ratio.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>Initial rate data for $\text{A + B + C} \rightarrow \text{products}$:</p>
+      <table style="border-collapse:collapse;font-size:0.91em;margin:8px 0">
+        <tr style="background:#dde"><th style="padding:4px 10px;border:1px solid #aab">[A] / mol dm$^{-3}$</th><th style="padding:4px 10px;border:1px solid #aab">[B] / mol dm$^{-3}$</th><th style="padding:4px 10px;border:1px solid #aab">[C] / mol dm$^{-3}$</th><th style="padding:4px 10px;border:1px solid #aab">Rate / mol dm$^{-3}$ s$^{-1}$</th></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">0.10</td><td style="padding:4px 10px;border:1px solid #ccd">0.10</td><td style="padding:4px 10px;border:1px solid #ccd">0.10</td><td style="padding:4px 10px;border:1px solid #ccd">$2.4\times10^{-4}$</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">0.20</td><td style="padding:4px 10px;border:1px solid #ccd">0.10</td><td style="padding:4px 10px;border:1px solid #ccd">0.10</td><td style="padding:4px 10px;border:1px solid #ccd">$4.8\times10^{-4}$</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">0.20</td><td style="padding:4px 10px;border:1px solid #ccd">0.30</td><td style="padding:4px 10px;border:1px solid #ccd">0.10</td><td style="padding:4px 10px;border:1px solid #ccd">$4.3\times10^{-3}$</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccd">0.20</td><td style="padding:4px 10px;border:1px solid #ccd">0.30</td><td style="padding:4px 10px;border:1px solid #ccd">0.20</td><td style="padding:4px 10px;border:1px solid #ccd">$4.3\times10^{-3}$</td></tr>
+      </table>
+      <div class="step"><span class="step-num">Order w.r.t. A</span> — Exps 1&2: [A] doubles, rate doubles → order 1</div>
+      <div class="step"><span class="step-num">Order w.r.t. B</span> — Exps 2&3: [B] triples ($\times3$), rate $\times(4.3\times10^{-3}/4.8\times10^{-4})=\times8.96\approx9=3^2$ → order 2</div>
+      <div class="step"><span class="step-num">Order w.r.t. C</span> — Exps 3&4: [C] doubles, rate unchanged → order 0</div>
+      <div class="step"><span class="step-num">Rate equation</span> — $\text{rate}=k[\text{A}][\text{B}]^2$; overall order = 3</div>
+      <div class="step"><span class="step-num">Calculate $k$</span> — Using exp 1: $k=2.4\times10^{-4}/(0.10\times0.10^2)=2.4\times10^{-4}/10^{-3}=\mathbf{0.24\ \text{mol}^{-2}\ \text{dm}^6\ \text{s}^{-1}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> For the reaction $2\text{NO(g) + O}_2\text{(g)} \rightarrow \text{2NO}_2\text{(g)}$, the rate equation is $\text{rate}=k[\text{NO}]^2[\text{O}_2]$. Give the units of $k$. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> When [A] is doubled and [B] is kept constant, the rate increases by a factor of 4. When [B] is tripled and [A] is kept constant, the rate is unchanged. Write the rate equation. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> The rate equation for a reaction is $\text{rate}=k[\text{X}]^2$. At 25 °C, rate $=1.20\times10^{-3}$ mol dm$^{-3}$ s$^{-1}$ when $[\text{X}]=0.150$ mol dm$^{-3}$. Calculate $k$ and state its units. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> Overall order = 3; units of $k$: <strong>mol$^{-2}$ dm$^6$ s$^{-1}$</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Doubling [A] quadruples rate → order 2 w.r.t. A <span class="mark">✓</span>; tripling [B] no effect → order 0 w.r.t. B <span class="mark">✓</span>; $\text{rate}=k[\text{A}]^2$</div>
+        <div class="ans"><span class="ans-num">A3.</span> $k=\text{rate}/[\text{X}]^2=1.20\times10^{-3}/(0.150)^2=1.20\times10^{-3}/0.02250=\mathbf{5.33\times10^{-2}\ \text{mol}^{-1}\ \text{dm}^3\ \text{s}^{-1}}$ <span class="mark">✓✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 12. ARRHENIUS -->
+<div class="topic" id="p1-arrhenius">
+  <div class="topic-header p1-header">12 &nbsp; The Arrhenius Equation &nbsp;(5.1.7)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Arrhenius equation</td><td>$k = Ae^{-E_a/RT}$</td></tr>
+        <tr><td>Linearised form</td><td>$\ln k = -\dfrac{E_a}{R}\cdot\dfrac{1}{T} + \ln A$</td></tr>
+        <tr><td>From graph of $\ln k$ vs $1/T$</td><td>Gradient $= -E_a/R$ &nbsp; → &nbsp; $E_a = -\text{gradient} \times R$</td></tr>
+        <tr><td>Two-temperature form</td><td>$\ln\!\left(\dfrac{k_2}{k_1}\right) = -\dfrac{E_a}{R}\!\left(\dfrac{1}{T_2} - \dfrac{1}{T_1}\right)$</td></tr>
+        <tr><td>Constants</td><td>$R = 8.314\ \text{J mol}^{-1}\ \text{K}^{-1}$; &nbsp; $T/\text{K} = \theta/°\text{C}+273$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Using temperature in °C — must convert to K.<br>
+      • When reading a graph with $1/T \times 10^{-3}$ on the x-axis, forgetting to multiply by $10^{-3}$, giving $E_a$ 1000× too small.<br>
+      • Getting a positive $E_a$ — the gradient is negative; $E_a = -\text{gradient}\times R$ must be positive.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>A graph of $\ln k$ vs $1/T$ gives a gradient of $-6360\ \text{K}$. Calculate $E_a$ in kJ mol$^{-1}$.</p>
+      <div class="step"><span class="step-num">Step 1</span> — $E_a = -\text{gradient} \times R = -(-6360)\times8.314 = 52876\ \text{J mol}^{-1}$</div>
+      <div class="step"><span class="step-num">Step 2</span> — $E_a = 52876/1000 = \mathbf{52.9\ \text{kJ mol}^{-1}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> For a reaction, $k = 2.50\times10^{-3}$ s$^{-1}$ at 300 K and $k = 8.00\times10^{-3}$ s$^{-1}$ at 320 K. Calculate the activation energy $E_a$ in kJ mol$^{-1}$. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> A graph of $\ln k$ against $1/T$ (where $1/T$ is in K$^{-1}$) gives a straight line with gradient $= -9500$ K. Calculate $E_a$ in kJ mol$^{-1}$. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Explain what the $y$-intercept of a $\ln k$ vs $1/T$ graph represents. <span class="marks">[1]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $\ln(k_2/k_1)=\ln(8.00\times10^{-3}/2.50\times10^{-3})=\ln(3.200)=1.163$ <span class="mark">✓</span>; $1/T_1-1/T_2=1/300-1/320=20/96000=2.083\times10^{-4}\ \text{K}^{-1}$; $E_a=1.163\times8.314/(2.083\times10^{-4})=46418\ \text{J mol}^{-1}=\mathbf{46.4\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $E_a=-(-9500)\times8.314=78983\ \text{J mol}^{-1}=\mathbf{79.0\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> The $y$-intercept $= \ln A$, where $A$ is the <strong>pre-exponential (frequency) factor</strong>, related to the frequency of collisions with the correct orientation <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 13. Kc AND Kp A LEVEL -->
+<div class="topic" id="p1-kckp">
+  <div class="topic-header p1-header">13 &nbsp; <i>K</i><sub>c</sub> &amp; <i>K</i><sub>p</sub> — A Level &nbsp;(5.2.2)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>$K_p$ expression</td><td>$K_p = \dfrac{p(\text{C})^c \cdot p(\text{D})^d}{p(\text{A})^a \cdot p(\text{B})^b}$ &nbsp; where $p$ = partial pressure</td></tr>
+        <tr><td>Partial pressure</td><td>$p_i = x_i \times P_\text{total}$ &nbsp; (mole fraction $x_i = n_i/n_\text{total}$)</td></tr>
+        <tr><td>Units of $K_p$</td><td>Units $=$ (pressure unit)$^{\Delta n}$; if $\Delta n=0$, no units. Use whatever unit pressures are given in — Pa, kPa or atm — consistently throughout.</td></tr>
+        <tr><td>Heterogeneous equilibria</td><td>Pure solids and pure liquids are <strong>omitted</strong> from $K_c$ and $K_p$ expressions</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Including solids or liquids in the equilibrium expression.<br>
+      • Using moles instead of mole fractions to calculate partial pressures.<br>
+      • Getting units wrong — derive them carefully from $\Delta n$.<br>
+      • Mixing pressure units — if the question gives pressures in kPa, $K_p$ units will be kPa$^{\Delta n}$, <strong>not</strong> Pa$^{\Delta n}$. Use whichever unit appears in the data, consistently throughout.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Ammonia Synthesis</h4>
+      <p>$\text{N}_2\text{(g) + 3H}_2\text{(g)} \rightleftharpoons \text{2NH}_3\text{(g)}$<br>
+      At equilibrium at 500 °C: $n(\text{N}_2)=0.200$, $n(\text{H}_2)=0.600$, $n(\text{NH}_3)=0.0800$ mol. Total pressure = 200 kPa. Calculate $K_p$.</p>
+      <div class="step"><span class="step-num">Total moles</span> $= 0.200+0.600+0.0800=0.880$ mol</div>
+      <div class="step"><span class="step-num">Mole fractions</span> — $x(\text{N}_2)=0.200/0.880=0.2273$; $x(\text{H}_2)=0.600/0.880=0.6818$; $x(\text{NH}_3)=0.0800/0.880=0.09091$</div>
+      <div class="step"><span class="step-num">Partial pressures (kPa)</span> — $p(\text{N}_2)=0.2273\times200=45.46$; $p(\text{H}_2)=0.6818\times200=136.4$; $p(\text{NH}_3)=0.09091\times200=18.18$</div>
+      <div class="step"><span class="step-num">$K_p$</span> $= (18.18)^2/(45.46\times136.4^3)=(330.5)/(45.46\times2.540\times10^6)=330.5/(1.155\times10^8)=\mathbf{2.86\times10^{-6}\ \text{kPa}^{-2}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Write the $K_p$ expression for $\text{2SO}_2\text{(g) + O}_2\text{(g)} \rightleftharpoons \text{2SO}_3\text{(g)}$ and deduce the units of $K_p$ (in Pa). <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> At equilibrium, a mixture contains 0.300 mol H$_2$, 0.100 mol I$_2$ and 0.600 mol HI. Total pressure = 100 kPa. $\text{H}_2\text{(g) + I}_2\text{(g)} \rightleftharpoons \text{2HI(g)}$. Calculate $K_p$ and state its units. <span class="marks">[4]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Write the $K_c$ expression for the heterogeneous equilibrium: $\text{CaCO}_3\text{(s)} \rightleftharpoons \text{CaO(s) + CO}_2\text{(g)}$ <span class="marks">[1]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $K_p = p(\text{SO}_3)^2/(p(\text{SO}_2)^2\cdot p(\text{O}_2))$ <span class="mark">✓</span>; $\Delta n=2-3=-1$ → units <strong>Pa$^{-1}$</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n_\text{total}=1.000$ mol; $x$: H$_2$=0.300, I$_2$=0.100, HI=0.600 <span class="mark">✓</span>; $p$: H$_2$=30.0, I$_2$=10.0, HI=60.0 kPa <span class="mark">✓</span>; $K_p=(60.0)^2/(30.0\times10.0)=3600/300=\mathbf{12.0}$ <span class="mark">✓</span>; $\Delta n=0$ → <strong>no units</strong> <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $K_c = [\text{CO}_2]$ &nbsp; (solids omitted) <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 14. pH CALCULATIONS -->
+<div class="topic" id="p1-ph">
+  <div class="topic-header p1-header">14 &nbsp; pH Calculations &nbsp;(5.3.2 &amp; 5.3.3)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>pH definition</td><td>$\text{pH} = -\log[\text{H}^+]$ &nbsp; (give pH to 2 d.p.)</td></tr>
+        <tr><td>Finding $[\text{H}^+]$ from pH</td><td>$[\text{H}^+] = 10^{-\text{pH}}$</td></tr>
+        <tr><td>Ionic product of water</td><td>$K_w = [\text{H}^+][\text{OH}^-] = 1.00\times10^{-14}\ \text{mol}^2\ \text{dm}^{-6}$ at 298 K</td></tr>
+        <tr><td>Strong acid</td><td>$[\text{H}^+] = c(\text{acid})$ &nbsp; (fully dissociates)</td></tr>
+        <tr><td>Strong base</td><td>$[\text{OH}^-] = c(\text{base})$; &nbsp; $[\text{H}^+] = K_w/[\text{OH}^-]$ &nbsp; (×2 for Ba(OH)$_2$)</td></tr>
+        <tr><td>Weak acid</td><td>$[\text{H}^+] = \sqrt{K_a \times c}$ &nbsp; (assumption: $[\text{H}^+]\ll c$)</td></tr>
+        <tr><td>$K_a$ from pH</td><td>$K_a = [\text{H}^+]^2 / c$</td></tr>
+        <tr><td>p<i>K</i>$_a$</td><td>$\text{p}K_a = -\log K_a$; &nbsp; $K_a = 10^{-\text{p}K_a}$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Forgetting to halve $[\text{H}^+]$ from $K_w$ when the base gives 2 OH$^-$ per formula unit (e.g. Ba(OH)$_2$).<br>
+      • Using $[\text{H}^+]=\sqrt{K_a\times c}$ without checking the 5% approximation is valid.<br>
+      • Quoting pH to only 1 decimal place — OCR requires <strong>2 decimal places</strong>.<br>
+      • Significant figures in pH: only the <em>decimal part</em> of a pH value counts as significant figures. So pH = 2.45 is given to 2 sig figs, and pH = 2.450 is given to 3 sig figs. If your data has 3 sig figs, give pH to 3 decimal places (e.g. 2.450, not 2.45).
+    </div>
+    <div class="worked">
+      <h4>Worked Example 1 — Strong Acid &amp; Base</h4>
+      <div class="step"><span class="step-num">HCl, 0.0400 mol dm$^{-3}$</span> — $[\text{H}^+]=0.0400$; pH $=-\log(0.0400)=\mathbf{1.40}$</div>
+      <div class="step"><span class="step-num">NaOH, 0.0250 mol dm$^{-3}$</span> — $[\text{OH}^-]=0.0250$; $[\text{H}^+]=1.00\times10^{-14}/0.0250=4.00\times10^{-13}$; pH $=-\log(4.00\times10^{-13})=\mathbf{12.40}$</div>
+    </div>
+    <div class="worked">
+      <h4>Worked Example 2 — Weak Acid</h4>
+      <p>Calculate the pH of 0.0500 mol dm$^{-3}$ ethanoic acid. $K_a=1.74\times10^{-5}$ mol dm$^{-3}$.</p>
+      <div class="step"><span class="step-num">Step 1</span> — $[\text{H}^+]=\sqrt{K_a\times c}=\sqrt{1.74\times10^{-5}\times0.0500}=\sqrt{8.70\times10^{-7}}=9.327\times10^{-4}$ mol dm$^{-3}$</div>
+      <div class="step"><span class="step-num">Step 2</span> — pH $=-\log(9.327\times10^{-4})=\mathbf{3.03}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Calculate the pH of 0.0200 mol dm$^{-3}$ HNO$_3$. <span class="marks">[1]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Calculate the pH of 0.100 mol dm$^{-3}$ Ba(OH)$_2$. ($K_w = 1.00\times10^{-14}$ mol$^2$ dm$^{-6}$) <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A solution of benzoic acid has pH 2.90. Calculate $K_a$ if $c = 0.0500$ mol dm$^{-3}$. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q4.</span> Calculate the pH of 0.100 mol dm$^{-3}$ propanoic acid. p<i>K</i>$_a = 4.87$. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> pH $= -\log(0.0200) = \mathbf{1.70}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Ba(OH)$_2$ gives 2 OH$^-$: $[\text{OH}^-]=2\times0.100=0.200$ mol dm$^{-3}$ <span class="mark">✓</span>; $[\text{H}^+]=10^{-14}/0.200=5.00\times10^{-14}$ <span class="mark">✓</span>; pH $=-\log(5.00\times10^{-14})=\mathbf{13.30}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $[\text{H}^+]=10^{-2.90}=1.259\times10^{-3}$ mol dm$^{-3}$ <span class="mark">✓</span>; $K_a=(1.259\times10^{-3})^2/0.0500=1.585\times10^{-6}/0.0500=\mathbf{3.17\times10^{-5}\ \text{mol dm}^{-3}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A4.</span> $K_a=10^{-4.87}=1.349\times10^{-5}$ <span class="mark">✓</span>; $[\text{H}^+]=\sqrt{1.349\times10^{-5}\times0.100}=\sqrt{1.349\times10^{-6}}=1.162\times10^{-3}$ <span class="mark">✓</span>; pH $=\mathbf{2.93}$ <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 15. BUFFERS -->
+<div class="topic" id="p1-buffers">
+  <div class="topic-header p1-header">15 &nbsp; Buffer Calculations &nbsp;(5.3.4)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Henderson–Hasselbalch</td><td>$\text{pH} = \text{p}K_a + \log\!\left(\dfrac{[\text{A}^-]}{[\text{HA}]}\right)$</td></tr>
+        <tr><td>Special case</td><td>When $[\text{HA}]=[\text{A}^-]$: $\text{pH}=\text{p}K_a$</td></tr>
+        <tr><td>Rearrangement</td><td>$K_a = [\text{H}^+]\times\dfrac{[\text{HA}]}{[\text{A}^-]}$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Inverting the ratio — [A$^-$] (conjugate base/salt) goes in the numerator.<br>
+      • Using masses or volumes instead of mole ratio — the volume cancels so mole ratio = concentration ratio when in the same solution.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>A buffer is prepared by mixing 0.0400 mol ethanoic acid with 0.0600 mol sodium ethanoate in 500 cm$^3$ of solution. $K_a(\text{CH}_3\text{COOH})=1.74\times10^{-5}$ mol dm$^{-3}$. Calculate the pH.</p>
+      <div class="step"><span class="step-num">Step 1</span> — $\text{p}K_a=-\log(1.74\times10^{-5})=4.759$</div>
+      <div class="step"><span class="step-num">Step 2</span> — $\text{pH}=4.759+\log(0.0600/0.0400)=4.759+\log(1.500)=4.759+0.1761=\mathbf{4.94}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A buffer contains 0.100 mol dm$^{-3}$ methanoic acid and 0.200 mol dm$^{-3}$ sodium methanoate. p$K_a(\text{HCOOH})=3.75$. Calculate the pH of the buffer. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> A buffer has pH = 4.50 and is made from ethanoic acid ($K_a=1.74\times10^{-5}$ mol dm$^{-3}$) and sodium ethanoate. Calculate the ratio $[\text{CH}_3\text{COO}^-]/[\text{CH}_3\text{COOH}]$. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> 25.0 cm$^3$ of 0.200 mol dm$^{-3}$ NaOH is added to 50.0 cm$^3$ of 0.200 mol dm$^{-3}$ ethanoic acid ($K_a=1.74\times10^{-5}$). Show that the resulting solution is a buffer and calculate its pH. <span class="marks">[4]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $\text{pH}=3.75+\log(0.200/0.100)=3.75+0.301=\mathbf{4.05}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $\text{p}K_a=4.759$; $4.50=4.759+\log([\text{A}^-]/[\text{HA}])$; $\log(r)=4.50-4.759=-0.259$; $r=10^{-0.259}=\mathbf{0.550}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $n(\text{NaOH})=0.0250\times0.200=5.00\times10^{-3}$ mol; $n(\text{CH}_3\text{COOH initial})=0.0500\times0.200=0.01000$ mol <span class="mark">✓</span>; NaOH neutralises half the acid: remaining CH$_3$COOH $=5.00\times10^{-3}$ mol; CH$_3$COO$^-$ formed $=5.00\times10^{-3}$ mol — both weak acid and its salt present, so it is a <strong>buffer</strong> <span class="mark">✓</span>; since $n(\text{HA})=n(\text{A}^-)$, pH $=\text{p}K_a=-\log(1.74\times10^{-5})=\mathbf{4.76}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 16. BORN-HABER -->
+<div class="topic" id="p1-bornhaber">
+  <div class="topic-header p1-header">16 &nbsp; Born–Haber Cycles &nbsp;(5.4.3)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Definitions &amp; Cycle Steps</h4>
+      <table>
+        <tr><td>Lattice enthalpy of formation ($\Delta_{LE}H$)</td><td>Enthalpy change when 1 mol of ionic solid forms from its gaseous ions under standard conditions; <strong>always exothermic (negative)</strong></td></tr>
+        <tr><td>Factors affecting $|\Delta_{LE}H|$</td><td>Ionic charge (dominant) — higher charge → more exothermic; ionic radius — smaller → more exothermic</td></tr>
+        <tr><td>Cycle (Hess's Law)</td><td>$\Delta_f H = \Delta_{at}H(\text{metal}) + \Delta_{at}H(\text{non-metal}) + \text{IE} + \text{EA} + \Delta_{LE}H$</td></tr>
+        <tr><td>Finding $\Delta_{LE}H$</td><td>Rearrange: $\Delta_{LE}H = \Delta_f H - [\Delta_{at}H + \text{IE} + \Delta_{at}H(\frac{1}{2}\text{X}_2) + \text{EA}]$</td></tr>
+        <tr><td>MgCl$_2$ — key point</td><td>Must use IE$_1$ + IE$_2$ for Mg; must double $\Delta_{at}H(\text{Cl})$ and EA(Cl)</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Forgetting to double (or triple) enthalpy terms for compounds with more than one halide ion (e.g. MgCl$_2$ needs ×2 for Cl steps).<br>
+      • Describing lattice enthalpy as "higher/lower" — say "more/less exothermic" or "more/less negative".<br>
+      • Getting the sign of EA wrong: EA for O (first) is exothermic; EA for O$^{2-}$ (second) is <strong>endothermic</strong>.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — NaCl</h4>
+      <p>Data (kJ mol$^{-1}$): $\Delta_f H(\text{NaCl})=-411$; $\Delta_{at}H(\text{Na})=+107$; IE$_1(\text{Na})=+496$; $\Delta_{at}H(\frac{1}{2}\text{Cl}_2)=+122$; EA(Cl)$=-349$</p>
+      <div class="step"><span class="step-num">By Hess's Law</span>: $\Delta_{LE}H = \Delta_f H - [\Delta_{at}H(\text{Na})+\text{IE}_1+\Delta_{at}H(\text{Cl})+\text{EA(Cl)}]$</div>
+      <div class="step">$= -411 - [+107 + 496 + 122 + (-349)] = -411 - [376] = \mathbf{-787\ \text{kJ mol}^{-1}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Using the data below, calculate the lattice enthalpy of formation of KBr.<br>
+      $\Delta_f H(\text{KBr})=-394$; $\Delta_{at}H(\text{K})=+89.0$; IE$_1(\text{K})=+419$; $\Delta_{at}H(\frac{1}{2}\text{Br}_2)=+112$; EA(Br)$=-325$ kJ mol$^{-1}$ <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Lattice enthalpy of MgO is $-3890$ kJ mol$^{-1}$ and that of CaO is $-3461$ kJ mol$^{-1}$. Explain why MgO has the more exothermic lattice enthalpy. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Explain why the second electron affinity of oxygen is endothermic. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $\Delta_{LE}H=\Delta_f H-[\Delta_{at}H(\text{K})+\text{IE}_1+\Delta_{at}H(\frac{1}{2}\text{Br}_2)+\text{EA(Br)}]$ <span class="mark">✓</span>$=-394-[89.0+419+112+(-325)]=-394-[295]=-394-295=\mathbf{-689\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Mg$^{2+}$ has a smaller ionic radius than Ca$^{2+}$ <span class="mark">✓</span>; smaller ion → stronger electrostatic attraction between ions → more exothermic lattice enthalpy <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> Adding a second electron to O$^-$ requires overcoming the repulsion between the incoming electron and the already-negative ion <span class="mark">✓</span>; energy must be put in to force the electron onto the negatively charged species <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 17. ENTHALPY OF SOLUTION & HYDRATION -->
+<div class="topic" id="p1-solution">
+  <div class="topic-header p1-header">17 &nbsp; Enthalpy of Solution &amp; Hydration &nbsp;(5.4.4)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Hess cycle</td><td>$\Delta_{sol}H = -\Delta_{LE}H(\text{formation}) + \sum\Delta_{hyd}H(\text{ions})$</td></tr>
+        <tr><td>i.e.</td><td>$\Delta_{sol}H = \Delta_{LE}H(\text{dissociation}) + \sum\Delta_{hyd}H$</td></tr>
+        <tr><td>$\Delta_{hyd}H$</td><td>Always exothermic (negative) — ion–dipole attraction between ions and water molecules</td></tr>
+        <tr><td>Calorimetry check</td><td>$q=mc\Delta T$ where $m$ = mass of <strong>solution</strong> (not just water)</td></tr>
+      </table>
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>$\Delta_{LE}H(\text{CaCl}_2) = -2237$ kJ mol$^{-1}$; $\Delta_{hyd}H(\text{Ca}^{2+}) = -1650$ kJ mol$^{-1}$; $\Delta_{hyd}H(\text{Cl}^-) = -363$ kJ mol$^{-1}$. Calculate $\Delta_{sol}H(\text{CaCl}_2)$.</p>
+      <div class="step">$\Delta_{sol}H = -\Delta_{LE}H + \Delta_{hyd}H(\text{Ca}^{2+})+2\Delta_{hyd}H(\text{Cl}^-)$</div>
+      <div class="step">$= -(-2237)+(-1650)+2(-363)=+2237-1650-726=\mathbf{-139\ \text{kJ mol}^{-1}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> $\Delta_{LE}H(\text{NaCl})=-787$; $\Delta_{hyd}H(\text{Na}^+)=-406$; $\Delta_{hyd}H(\text{Cl}^-)=-363$ kJ mol$^{-1}$. Calculate $\Delta_{sol}H(\text{NaCl})$. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> $\Delta_{sol}H(\text{CaCl}_2)=-107$ kJ mol$^{-1}$; $\Delta_{LE}H(\text{CaCl}_2)=-2237$ kJ mol$^{-1}$; $\Delta_{hyd}H(\text{Cl}^-)=-363$ kJ mol$^{-1}$. Calculate $\Delta_{hyd}H(\text{Ca}^{2+})$. <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $\Delta_{sol}H=+787+(-406)+(-363)=+787-769=\mathbf{+18\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span> (slightly endothermic — NaCl still dissolves due to entropy)</div>
+        <div class="ans"><span class="ans-num">A2.</span> $-107=+2237+\Delta_{hyd}H(\text{Ca}^{2+})+2(-363)$ <span class="mark">✓</span>; $-107=2237+\Delta_{hyd}H(\text{Ca}^{2+})-726$; $\Delta_{hyd}H(\text{Ca}^{2+})=-107-2237+726=\mathbf{-1618\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 18. ENTROPY -->
+<div class="topic" id="p1-entropy">
+  <div class="topic-header p1-header">18 &nbsp; Entropy &nbsp;(5.4.6)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Entropy change</td><td>$\Delta S = \sum S^\circ(\text{products}) - \sum S^\circ(\text{reactants})$</td></tr>
+        <tr><td>Units</td><td>J K$^{-1}$ mol$^{-1}$</td></tr>
+        <tr><td>Order of entropy</td><td>$S^\circ(\text{gas}) \gg S^\circ(\text{liquid}) > S^\circ(\text{solid}) > 0$</td></tr>
+        <tr><td>Key rule</td><td>$S^\circ$ of elements and compounds is <strong>always positive</strong>; $\Delta S$ can be negative</td></tr>
+        <tr><td>Predicting sign of $\Delta S$</td><td>Increase in gas moles → positive $\Delta S$; decrease → negative $\Delta S$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Confusing $S^\circ$ (always positive) with $\Delta S$ (can be negative).<br>
+      • Forgetting to convert $\Delta S$ from J K$^{-1}$ mol$^{-1}$ to kJ K$^{-1}$ mol$^{-1}$ before using in $\Delta G = \Delta H - T\Delta S$.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>$\text{CaCO}_3\text{(s)} \rightarrow \text{CaO(s) + CO}_2\text{(g)}$<br>
+      $S^\circ$: CaCO$_3$ = 92.9; CaO = 39.7; CO$_2$ = 213.7 J K$^{-1}$ mol$^{-1}$</p>
+      <div class="step">$\Delta S = [39.7+213.7]-[92.9]=253.4-92.9=\mathbf{+160.5\ \text{J K}^{-1}\ \text{mol}^{-1}}$</div>
+      <div class="step">Positive $\Delta S$ is expected: 1 mol of gas produced from a solid.</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> $\text{2H}_2\text{(g) + O}_2\text{(g)} \rightarrow \text{2H}_2\text{O(l)}$. Without calculation, predict the sign of $\Delta S$ and explain. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Calculate $\Delta S$ for $\text{N}_2\text{(g) + 3H}_2\text{(g)} \rightarrow \text{2NH}_3\text{(g)}$.<br>$S^\circ$: N$_2$ = 191.6; H$_2$ = 130.7; NH$_3$ = 192.5 J K$^{-1}$ mol$^{-1}$ <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> $\text{NH}_4\text{NO}_3\text{(s)} \rightarrow \text{N}_2\text{O(g) + 2H}_2\text{O(g)}$. $S^\circ$: NH$_4$NO$_3$ = 151.1; N$_2$O = 219.9; H$_2$O(g) = 188.7 J K$^{-1}$ mol$^{-1}$. Calculate $\Delta S$. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $\Delta S$ is <strong>negative</strong> <span class="mark">✓</span>; 3 mol gas → 2 mol liquid — large decrease in moles of gas, so disorder decreases significantly <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $\Delta S=[2(192.5)]-[191.6+3(130.7)]=385.0-[191.6+392.1]=385.0-583.7=\mathbf{-198.7\ \text{J K}^{-1}\ \text{mol}^{-1}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $\Delta S=[219.9+2(188.7)]-[151.1]=597.3-151.1=\mathbf{+446.2\ \text{J K}^{-1}\ \text{mol}^{-1}}$ <span class="mark">✓✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 19. GIBBS FREE ENERGY -->
+<div class="topic" id="p1-gibbs">
+  <div class="topic-header p1-header">19 &nbsp; Gibbs Free Energy &nbsp;(5.4.8)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Gibbs equation</td><td>$\Delta G = \Delta H - T\Delta S$</td></tr>
+        <tr><td>Units</td><td>$\Delta H$ in kJ mol$^{-1}$; $\Delta S$ must be converted: ÷1000 to get kJ K$^{-1}$ mol$^{-1}$; $T$ in K</td></tr>
+        <tr><td>Feasibility</td><td>Reaction is feasible (thermodynamically spontaneous) when $\Delta G < 0$</td></tr>
+        <tr><td>Minimum temperature</td><td>$T_\text{min} = \Delta H / \Delta S$ &nbsp; (when $\Delta H > 0$ and $\Delta S > 0$)</td></tr>
+        <tr><td>Link to equilibrium</td><td>$\Delta G^\circ = -RT\ln K$</td></tr>
+      </table>
+    </div>
+    <div class="formula-box" style="background:#fff3e0;border-color:#e65c00">
+      <h4>Sign Combinations</h4>
+      <table>
+        <tr><td>$\Delta H < 0$, $\Delta S > 0$</td><td>Always feasible (all $T$)</td></tr>
+        <tr><td>$\Delta H > 0$, $\Delta S < 0$</td><td>Never feasible</td></tr>
+        <tr><td>$\Delta H < 0$, $\Delta S < 0$</td><td>Feasible at low $T$</td></tr>
+        <tr><td>$\Delta H > 0$, $\Delta S > 0$</td><td>Feasible at high $T$ (above $T_\text{min}$)</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Not converting $\Delta S$ from J to kJ before substituting into $\Delta G = \Delta H - T\Delta S$.<br>
+      • Stating a reaction is "feasible" when $\Delta G > 0$ — it must be <em>negative</em>.<br>
+      • Forgetting kinetic limitations: a negative $\Delta G$ does not guarantee a fast reaction.
+    </div>
+    <div class="worked">
+      <h4>Worked Example</h4>
+      <p>For CaCO$_3$(s) → CaO(s) + CO$_2$(g): $\Delta H=+178$ kJ mol$^{-1}$; $\Delta S=+160.5$ J K$^{-1}$ mol$^{-1}$.<br>
+      (a) Calculate $\Delta G$ at 298 K. (b) Estimate the minimum temperature for feasibility.</p>
+      <div class="step"><span class="step-num">(a)</span> $\Delta G=+178-(298\times0.1605)=178-47.8=\mathbf{+130\ \text{kJ mol}^{-1}}$ — not feasible at 298 K</div>
+      <div class="step"><span class="step-num">(b)</span> $T_\text{min}=\Delta H/\Delta S=178\times10^3/160.5=\mathbf{1109\ \text{K}}$ (≈ 836 °C)</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> $\Delta H=-92.0$ kJ mol$^{-1}$ and $\Delta S=-198.7$ J K$^{-1}$ mol$^{-1}$ for N$_2$(g)+3H$_2$(g)→2NH$_3$(g). Calculate $\Delta G$ at 500 K and state whether the reaction is feasible. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> A reaction has $\Delta H=+240$ kJ mol$^{-1}$ and $\Delta S=+150$ J K$^{-1}$ mol$^{-1}$. Calculate the minimum temperature at which the reaction becomes feasible. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> Explain why a negative value of $\Delta G$ does not always mean a reaction occurs rapidly. <span class="marks">[2]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $\Delta G=-92.0-(500\times(-0.1987))=-92.0+99.35=\mathbf{+7.35\ \text{kJ mol}^{-1}}$ <span class="mark">✓✓</span>; $\Delta G > 0$ → reaction is <strong>not feasible</strong> at 500 K <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $T_\text{min}=240\times10^3/150=\mathbf{1600\ \text{K}}$ <span class="mark">✓✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $\Delta G$ is a thermodynamic quantity — it says nothing about the rate/mechanism <span class="mark">✓</span>; the activation energy may be very high, so even though the reaction is thermodynamically feasible, it proceeds too slowly to observe / kinetically hindered <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 20. FARADAY'S LAWS OF ELECTROLYSIS -->
+<div class="topic" id="p1-faraday">
+  <div class="topic-header p1-header">20 &nbsp; Faraday's Laws of Electrolysis &nbsp;(5.5.1)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Charge</td><td>$Q = It$ &nbsp; ($Q$ in C, $I$ in A, $t$ in s)</td></tr>
+        <tr><td>Moles of electrons</td><td>$n(\text{e}^-) = \dfrac{Q}{F}$ &nbsp; ($F = 96\,500$ C mol$^{-1}$)</td></tr>
+        <tr><td>Moles of element</td><td>Use the half-equation: e.g. Cu$^{2+}$ + 2e$^-$ → Cu means $n(\text{Cu}) = \frac{1}{2}n(\text{e}^-)$</td></tr>
+        <tr><td>Mass deposited</td><td>$m = n \times M_r$</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Forgetting to convert minutes to seconds before calculating $Q = It$.<br>
+      • Not dividing by the number of electrons in the half-equation (e.g. 2 for Cu$^{2+}$, 3 for Al$^{3+}$).<br>
+      • Using $F = 96\,500$ C mol$^{-1}$ — check the data sheet value if given differently.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Mass of Copper Deposited</h4>
+      <p>A current of 0.500 A is passed through a solution of CuSO$_4$ for 20.0 minutes. Calculate the mass of copper deposited at the cathode. ($M_r(\text{Cu})=63.5$)</p>
+      <div class="step"><span class="step-num">Step 1 — Charge</span>: $Q = It = 0.500 \times (20.0 \times 60) = 0.500 \times 1200 = 600$ C</div>
+      <div class="step"><span class="step-num">Step 2 — Moles of e⁻</span>: $n(\text{e}^-) = \dfrac{600}{96\,500} = 6.218\times10^{-3}$ mol</div>
+      <div class="step"><span class="step-num">Step 3 — Half-equation</span>: Cu$^{2+}$ + 2e$^-$ → Cu; $n(\text{Cu}) = \dfrac{6.218\times10^{-3}}{2} = 3.109\times10^{-3}$ mol</div>
+      <div class="step"><span class="step-num">Step 4 — Mass</span>: $m = 3.109\times10^{-3} \times 63.5 = \mathbf{0.197\ \text{g}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> A current of 1.50 A is passed through molten Al$_2$O$_3$ for 30.0 minutes. Calculate the mass of aluminium deposited. (Al$^{3+}$ + 3e$^-$ → Al; $M_r(\text{Al})=27.0$) <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> 0.635 g of copper is deposited from a CuSO$_4$ solution during electrolysis for 10.0 minutes. Calculate the current used. ($M_r(\text{Cu})=63.5$) <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> A charge of 2895 C is passed through dilute sulfuric acid. Calculate the volume of hydrogen gas (at RTP, molar volume = 24.0 dm$^3$ mol$^{-1}$) produced at the cathode. (2H$^+$ + 2e$^-$ → H$_2$) <span class="marks">[3]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $Q=1.50\times(30.0\times60)=2700$ C <span class="mark">✓</span>; $n(\text{e}^-)=2700/96500=2.798\times10^{-2}$ mol <span class="mark">✓</span>; $n(\text{Al})=2.798\times10^{-2}/3=9.326\times10^{-3}$ mol <span class="mark">✓</span>; $m=9.326\times10^{-3}\times27.0=\mathbf{0.252\ \text{g}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n(\text{Cu})=0.635/63.5=0.01000$ mol <span class="mark">✓</span>; $n(\text{e}^-)=2\times0.01000=0.02000$ mol <span class="mark">✓</span>; $Q=0.02000\times96500=1930$ C <span class="mark">✓</span>; $I=Q/t=1930/(10.0\times60)=\mathbf{3.22\ \text{A}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> $n(\text{e}^-)=2895/96500=0.03000$ mol <span class="mark">✓</span>; $n(\text{H}_2)=0.03000/2=0.01500$ mol <span class="mark">✓</span>; $V=0.01500\times24.0=\mathbf{0.360\ \text{dm}^3}$ (360 cm$^3$) <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 21. REDOX TITRATIONS -->
+<div class="topic" id="p1-redox">
+  <div class="topic-header p1-header">21 &nbsp; Redox Titrations &nbsp;(5.5.2)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Systems &amp; Molar Ratios</h4>
+      <table>
+        <tr><td>MnO$_4^-$ / Fe$^{2+}$ (acidic)</td><td>$\text{MnO}_4^- + 8\text{H}^+ + 5\text{Fe}^{2+} \rightarrow \text{Mn}^{2+}+4\text{H}_2\text{O}+5\text{Fe}^{3+}$; ratio 1:5; self-indicating (purple → colourless)</td></tr>
+        <tr><td>Acid used</td><td>Dilute H$_2$SO$_4$ (not HCl — would be oxidised; not HNO$_3$ — oxidising acid)</td></tr>
+        <tr><td>I$_2$ / S$_2$O$_3^{2-}$</td><td>$\text{I}_2 + 2\text{S}_2\text{O}_3^{2-} \rightarrow 2\text{I}^- + \text{S}_4\text{O}_6^{2-}$; ratio 1:2; starch indicator (added near endpoint)</td></tr>
+        <tr><td>Cu$^{2+}$ / I$^-$ / S$_2$O$_3^{2-}$</td><td>$2\text{Cu}^{2+}+4\text{I}^-\rightarrow 2\text{CuI}+\text{I}_2$; then titrate I$_2$ with S$_2$O$_3^{2-}$; Cu$^{2+}$ : I$_2$ : S$_2$O$_3^{2-}$ = 2:1:2</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Adding starch indicator too early in I$_2$/thiosulfate titrations — starch forms a very stable complex with I$_2$ at high concentrations, making the endpoint hard to see; add near endpoint (when pale yellow).<br>
+      • Using the wrong acid with KMnO$_4$.<br>
+      • Getting molar ratios wrong — derive from the half-equations if unsure.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Fe$^{2+}$/MnO$_4^-$</h4>
+      <p>25.0 cm$^3$ of Fe$^{2+}$ solution required 18.40 cm$^3$ of 0.0200 mol dm$^{-3}$ KMnO$_4$ for complete oxidation. Calculate $[\text{Fe}^{2+}]$.</p>
+      <div class="step"><span class="step-num">Step 1</span> — $n(\text{MnO}_4^-)=0.0200\times(18.40/1000)=3.68\times10^{-4}$ mol</div>
+      <div class="step"><span class="step-num">Step 2</span> — Ratio 1:5 → $n(\text{Fe}^{2+})=5\times3.68\times10^{-4}=1.84\times10^{-3}$ mol</div>
+      <div class="step"><span class="step-num">Step 3</span> — $[\text{Fe}^{2+}]=1.84\times10^{-3}/(25.0/1000)=\mathbf{0.0736\ \text{mol dm}^{-3}}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> 20.0 cm$^3$ of sodium thiosulfate solution (0.100 mol dm$^{-3}$) is used to titrate I$_2$ liberated from an excess of KI added to a Cu$^{2+}$ solution. Calculate $n$(Cu$^{2+}$) in the solution. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> An iron tablet is dissolved and titrated with 0.0200 mol dm$^{-3}$ KMnO$_4$. A mean titre of 22.50 cm$^3$ is used. Calculate the mass of Fe in the tablet. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> State why HCl cannot be used to acidify the solution in a KMnO$_4$ titration. <span class="marks">[1]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $n(\text{S}_2\text{O}_3^{2-})=0.100\times(20.0/1000)=2.00\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{I}_2)=\frac{1}{2}\times2.00\times10^{-3}=1.00\times10^{-3}$ mol <span class="mark">✓</span>; $n(\text{Cu}^{2+})=2\times1.00\times10^{-3}=\mathbf{2.00\times10^{-3}\ \text{mol}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> $n(\text{MnO}_4^-)=0.0200\times(22.50/1000)=4.50\times10^{-4}$ mol <span class="mark">✓</span>; $n(\text{Fe}^{2+})=5\times4.50\times10^{-4}=2.25\times10^{-3}$ mol <span class="mark">✓</span>; $m(\text{Fe})=2.25\times10^{-3}\times55.8=\mathbf{0.126\ \text{g}}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> KMnO$_4$ would oxidise Cl$^-$ to Cl$_2$ / HCl is a reducing agent — it would react with MnO$_4^-$, giving a falsely high titre <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 22. ELECTRODE POTENTIALS -->
+<div class="topic" id="p1-electrode">
+  <div class="topic-header p1-header">22 &nbsp; Electrode Potential Calculations &nbsp;(5.5.4)</div>
+  <div class="topic-body">
+    <div class="formula-box">
+      <h4>Key Formulae</h4>
+      <table>
+        <tr><td>Cell EMF</td><td>$E^\circ_\text{cell} = E^\circ(\text{more positive/right hand electrode}) - E^\circ(\text{less positive/left hand electrode})$</td></tr>
+        <tr><td>Feasibility</td><td>Reaction is feasible if $E^\circ_\text{cell} > 0$</td></tr>
+        <tr><td>Important</td><td>$E^\circ$ values are <strong>intensive</strong> — do not multiply by stoichiometric coefficients</td></tr>
+        <tr><td>Standard conditions</td><td>298 K, 100 kPa, 1.00 mol dm$^{-3}$ ion concentrations</td></tr>
+      </table>
+    </div>
+    <div class="error-box">
+      <h4>Common Examiner Errors</h4>
+      • Multiplying $E^\circ$ values by stoichiometric coefficients — they do not change.<br>
+      • Predicting feasibility without acknowledging kinetic limitations (e.g. high $E_a$ may prevent reaction).<br>
+      • Using "higher/lower" instead of "more positive/less negative" when comparing $E^\circ$ values.
+    </div>
+    <div class="worked">
+      <h4>Worked Example — Daniell Cell</h4>
+      <p>$\text{Cu}^{2+}/\text{Cu}$: $E^\circ=+0.34$ V; $\text{Zn}^{2+}/\text{Zn}$: $E^\circ=-0.76$ V.<br>
+      Calculate $E^\circ_\text{cell}$ and write the overall cell reaction.</p>
+      <div class="step"><span class="step-num">$E^\circ_\text{cell}$</span> $= +0.34-(-0.76)=+0.34+0.76=\mathbf{+1.10\ \text{V}}$</div>
+      <div class="step"><span class="step-num">Overall</span>: Zn is oxidised (less positive); Cu$^{2+}$ is reduced: $\text{Zn(s)+Cu}^{2+}\text{(aq)}\rightarrow\text{Zn}^{2+}\text{(aq)+Cu(s)}$</div>
+    </div>
+    <div class="questions">
+      <h4>Practice Questions</h4>
+      <div class="q"><span class="q-num">Q1.</span> Given $E^\circ(\text{Fe}^{3+}/\text{Fe}^{2+})=+0.77$ V and $E^\circ(\text{I}_2/\text{I}^-)=+0.54$ V, calculate $E^\circ_\text{cell}$ for the reaction of Fe$^{3+}$ with I$^-$, and state whether the reaction is feasible. <span class="marks">[2]</span></div>
+      <div class="q"><span class="q-num">Q2.</span> Use standard electrode potentials to predict whether Br$_2$ will oxidise Fe$^{2+}$ to Fe$^{3+}$. $E^\circ(\text{Br}_2/\text{Br}^-)=+1.07$ V; $E^\circ(\text{Fe}^{3+}/\text{Fe}^{2+})=+0.77$ V. <span class="marks">[3]</span></div>
+      <div class="q"><span class="q-num">Q3.</span> The reaction between MnO$_4^-$ and Fe$^{2+}$ is predicted to be feasible by $E^\circ$ values, and occurs readily. Give one reason why some reactions with positive $E^\circ_\text{cell}$ values do not occur in practice. <span class="marks">[1]</span></div>
+    </div>
+    <div class="ms-section"><div class="ms-label">Mark Scheme</div>
+      <div class="ms-body">
+        <div class="ans"><span class="ans-num">A1.</span> $E^\circ_\text{cell}=+0.77-(+0.54)=\mathbf{+0.23\ \text{V}}$ <span class="mark">✓</span>; positive → reaction is <strong>feasible</strong> (Fe$^{3+}$ oxidises I$^-$ to I$_2$) <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A2.</span> Br$_2$ would be reduced (more positive $E^\circ$) and Fe$^{2+}$ oxidised; $E^\circ_\text{cell}=+1.07-0.77=+0.30$ V <span class="mark">✓</span>; positive → thermodynamically feasible <span class="mark">✓</span>; Br$_2$ <strong>will</strong> oxidise Fe$^{2+}$ to Fe$^{3+}$ <span class="mark">✓</span></div>
+        <div class="ans"><span class="ans-num">A3.</span> The activation energy is too high / kinetic barrier / the reaction is kinetically hindered even though thermodynamically feasible <span class="mark">✓</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+<footer>OCR A Level Chemistry (H432) &nbsp;|&nbsp; Paper 1: Breadth in Chemistry (H432/01) &nbsp;|&nbsp; Calculation Booklet</footer></body></html>
