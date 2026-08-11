@@ -6,16 +6,16 @@
 <title>ChemIgnite — Puzzles</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--pr:#7c3aed;--pr-dk:#5b21b6;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 12px rgba(124,58,237,.08);--sh2:0 8px 28px rgba(124,58,237,.18)}
+:root{--pr:#9333ea;--pr-dk:#5b21b6;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 12px rgba(147,51,234,.08);--sh2:0 8px 28px rgba(147,51,234,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
 
-.topbar{background:#2e1065;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem}
+.topbar{background:#4a1d96;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem}
 .topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s}
 .topbar-back:hover{background:rgba(255,255,255,.12)}
 .topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
 
-.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#2e1065 0%,#5b21b6 45%,#7c3aed 80%,#8b5cf6 100%);color:#fff;padding:3rem 1.5rem 5.5rem;text-align:center}
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#4a1d96 0%,#5b21b6 45%,#9333ea 80%,#8b5cf6 100%);color:#fff;padding:3rem 1.5rem 5.5rem;text-align:center}
 .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.35) 0%,transparent 70%);pointer-events:none}
 .hero-inner{position:relative;z-index:1}
@@ -33,7 +33,7 @@ main{flex:1;max-width:960px;margin:2.2rem auto 4rem;padding:0 1.2rem;width:100%}
 .puzzle-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;border:1.5px solid var(--bdr);text-decoration:none;color:var(--tx)}
 .puzzle-card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:#c4b5fd}
 
-.pc-head{background:linear-gradient(135deg,#2e1065,#7c3aed);padding:.9rem 1.1rem;display:flex;align-items:center;gap:.75rem}
+.pc-head{background:linear-gradient(135deg,#4a1d96,#9333ea);padding:.9rem 1.1rem;display:flex;align-items:center;gap:.75rem}
 .pc-head svg{flex-shrink:0;opacity:.9}
 .pc-type{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.85)}
 .pc-body{padding:.85rem 1.1rem;flex:1}
