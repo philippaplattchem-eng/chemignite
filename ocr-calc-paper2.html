@@ -53,7 +53,7 @@ th{background:var(--accent);color:#fff;padding:5px 8px;text-align:left;font-weig
 td{padding:4px 8px;border-bottom:1px solid #eaeaea}
 tr:nth-child(even) td{background:var(--light);-webkit-print-color-adjust:exact;print-color-adjust:exact}
 footer{text-align:center;padding:14px;color:#888;font-size:8pt;border-top:1px solid #e0e0e0;margin-top:16px}
-@media print{body{font-size:10pt}.topic{page-break-inside:avoid;box-shadow:none}.toc{page-break-after:always}}</style></head><body><style>.site-topbar{background:#0d2e1e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;font-family:'Nunito',Arial,sans-serif}.site-topbar a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.35);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}.site-topbar a:hover{background:rgba(255,255,255,.12)}.site-topbar span{font-size:.88rem;font-weight:600;opacity:.65}@media print{.site-topbar{display:none}}</style><div class="site-topbar"><a href="alevel-calculations.html">&larr; Calculation Booklets</a><span>Paper 2: Modules 1, 2, 4 &amp; 6</span></div><div class="print-note">To save as PDF: Ctrl+P &rarr; Save as PDF &rarr; A4 &rarr; tick &ldquo;Background graphics&rdquo;</div><div class='cover'><h1>OCR A Level Chemistry</h1><h2>Paper 2: Depth in Chemistry (H432/02)</h2><p>Calculation Booklet &nbsp;|&nbsp; Worked Examples, Practice Questions &amp; Mark Scheme</p><div class='badge'>Modules 1, 2, 4 and 6</div></div><div class='toc'><h2>Contents</h2><ul>
+@media print{body{font-size:10pt}.topic{page-break-inside:avoid;box-shadow:none}.toc{page-break-after:always}}</style><style>@media print{.ms-body{display:block!important}}</style></head><body><style>.site-topbar{background:#0d2e1e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;font-family:'Nunito',Arial,sans-serif}.site-topbar a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.35);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}.site-topbar a:hover{background:rgba(255,255,255,.12)}.site-topbar span{font-size:.88rem;font-weight:600;opacity:.65}@media print{.site-topbar{display:none}}</style><div class="site-topbar"><a href="alevel-calculations.html">&larr; Calculation Booklets</a><span>Paper 2: Modules 1, 2, 4 &amp; 6</span></div><div class="print-note">To save as PDF: Ctrl+P &rarr; Save as PDF &rarr; A4 &rarr; tick &ldquo;Background graphics&rdquo;</div><div class='cover'><h1>OCR A Level Chemistry</h1><h2>Paper 2: Depth in Chemistry (H432/02)</h2><p>Calculation Booklet &nbsp;|&nbsp; Worked Examples, Practice Questions &amp; Mark Scheme</p><div class='badge'>Modules 1, 2, 4 and 6</div></div><div class='toc'><h2>Contents</h2><ul>
 <li><a href="#p2-moles">22. Foundation Calculations in Organic Context</a></li>
 <li><a href="#p2-yield">23. % Yield in Multi-Step Organic Synthesis</a></li>
 <li><a href="#p2-combustion">24. Combustion Analysis -- Empirical Formulae</a></li>
@@ -569,4 +569,23 @@ footer{text-align:center;padding:14px;color:#888;font-size:8pt;border-top:1px so
 </div>
 
 </div><!-- end container -->
-<footer>OCR A Level Chemistry (H432) &nbsp;|&nbsp; Paper 2: Depth in Chemistry (H432/02) &nbsp;|&nbsp; Calculation Booklet</footer></body></html>
+<footer>OCR A Level Chemistry (H432) &nbsp;|&nbsp; Paper 2: Depth in Chemistry (H432/02) &nbsp;|&nbsp; Calculation Booklet</footer><script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ms-section').forEach(function(s){
+    var lbl=s.querySelector('.ms-label'),bod=s.querySelector('.ms-body');
+    if(!lbl||!bod)return;
+    bod.style.display='none';
+    lbl.style.cursor='pointer';
+    lbl.style.userSelect='none';
+    lbl.style.borderRadius='4px';
+    lbl.innerHTML='&#9654;&nbsp; Reveal Mark Scheme';
+    lbl.addEventListener('click',function(){
+      var open=bod.style.display!=='none';
+      bod.style.display=open?'none':'block';
+      lbl.innerHTML=open?'&#9654;&nbsp; Reveal Mark Scheme':'&#9660;&nbsp; Mark Scheme';
+      lbl.style.borderRadius=open?'4px':'4px 4px 0 0';
+    });
+  });
+});
+</script></body></html>
+
