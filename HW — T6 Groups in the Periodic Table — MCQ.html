@@ -10,7 +10,7 @@
 <body>
 <div class="page">
   <div class="header-box">
-    <h1>Topic 6: Groups in the Periodic Table &mdash; MCQ Homework Test</h1>
+    <h1>Topic 6: Groups in the Periodic Table MCQ Homework Test</h1>
     <div class="meta">Edexcel GCSE Chemistry &nbsp;&bull;&nbsp; Separate Science (1CH0) &nbsp;&bull;&nbsp; Paper 2 &nbsp;&bull;&nbsp; Foundation + Higher</div>
     <div class="tier-note">Covers Group 1 alkali metals, Group 7 halogens, and Group 0 noble gases &nbsp;&middot;&nbsp; Questions marked <span class="h-badge-hdr">H</span> are Higher tier only</div>
   </div>
@@ -20,7 +20,7 @@
     <div class="field"><label for="stu-date">Date:</label><input type="text" id="stu-date" placeholder="e.g. 30 Jul" style="width:110px"></div>
   </div>
   <div class="name-warn" id="name-warn">&#9888; Please enter your name before submitting so your teacher can see your score.</div>
-  <div class="attempts-panel"><h3>Your Attempts &nbsp;<span style="font-weight:400;color:#a0aec0;font-size:9pt;">(max 3 &mdash; saved automatically)</span></h3><div class="attempt-slots" id="attempt-slots"></div></div>
+  <div class="attempts-panel"><h3>Your Attempts &nbsp;<span style="font-weight:400;color:#a0aec0;font-size:9pt;">(max 3 | saved automatically)</span></h3><div class="attempt-slots" id="attempt-slots"></div></div>
   <div class="instructions"><strong>Instructions:</strong> Select one answer per question. Click <strong>Submit Answers</strong> once all 25 are answered. Wrong answers will show an explanation. You have <strong>3 attempts</strong>.</div>
   <div class="progress-bar-wrap"><div class="progress-label" id="progress-label">0 of 25 answered</div><div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div></div>
   <div id="quiz-container"></div>
@@ -59,7 +59,7 @@ const questions=[
 let chosen=[...Array(questions.length)].fill(null),submitted=false;
 function getAttempts(){try{return JSON.parse(localStorage.getItem(TEST_KEY)||'[]')}catch{return[]}}
 function saveAttempt(s){const a=getAttempts();if(a.length>=MAX_ATT)return;const d=new Date();a.push({score:s,total:questions.length,date:d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})});localStorage.setItem(TEST_KEY,JSON.stringify(a))}
-function renderAttempts(){const a=getAttempts(),w=document.getElementById('attempt-slots');w.innerHTML='';const b=a.length?Math.max(...a.map(x=>x.score)):-1,bi=a.length?a.reduce((i,x,j)=>x.score===b?j:i,-1):-1;for(let i=0;i<MAX_ATT;i++){const x=a[i],d=document.createElement('div');d.className='attempt-slot'+(x?(i===bi?' best':''):' empty');d.innerHTML=x?`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">${x.score}/${x.total}</div><div class="slot-date">${Math.round(x.score/x.total*100)}% &middot; ${x.date}</div>`:`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">&mdash;</div><div class="slot-date">&nbsp;</div>`;w.appendChild(d)}}
+function renderAttempts(){const a=getAttempts(),w=document.getElementById('attempt-slots');w.innerHTML='';const b=a.length?Math.max(...a.map(x=>x.score)):-1,bi=a.length?a.reduce((i,x,j)=>x.score===b?j:i,-1):-1;for(let i=0;i<MAX_ATT;i++){const x=a[i],d=document.createElement('div');d.className='attempt-slot'+(x?(i===bi?' best':''):' empty');d.innerHTML=x?`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">${x.score}/${x.total}</div><div class="slot-date">${Math.round(x.score/x.total*100)}% &middot; ${x.date}</div>`:`<div class="slot-label">Attempt ${i+1}</div><div class="slot-score">|</div><div class="slot-date">&nbsp;</div>`;w.appendChild(d)}}
 function buildQuiz(){const c=document.getElementById('quiz-container');c.innerHTML='';questions.forEach((q,qi)=>{const d=document.createElement('div');d.className='question';d.id='q'+qi;d.innerHTML=`<div class="q-header"><span class="q-num">${qi+1}.</span><span class="q-text">${q.text}</span><span class="q-marks">(1 mark)</span></div><div class="options" id="opts${qi}">${q.options.map((o,oi)=>`<button class="opt-btn" id="opt${qi}_${oi}" onclick="selectOpt(${qi},${oi})"><span class="opt-letter">${LETTERS[oi]}.</span><span>${o}</span></button>`).join('')}</div><div class="q-feedback" id="fb${qi}"></div><div class="q-explain" id="ex${qi}"></div>`;c.appendChild(d)});updateProgress()}
 function selectOpt(qi,oi){if(submitted)return;chosen[qi]=oi;for(let i=0;i<questions[qi].options.length;i++){const b=document.getElementById('opt'+qi+'_'+i);b.className='opt-btn'+(i===oi?' selected-opt':'')}document.getElementById('q'+qi).className='question selected-q';updateProgress()}
 function updateProgress(){const done=chosen.filter(c=>c!==null).length,total=questions.length;document.getElementById('progress-label').textContent=done+' of '+total+' answered';document.getElementById('progress-fill').style.width=(done/total*100)+'%';const btn=document.getElementById('submit-btn');btn.disabled=done<total;document.getElementById('submit-hint').textContent=done<total?'Answer all '+total+' questions to submit':''}
