@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>4.5 Haloalkanes - spark &mdash; ChemIgnite</title>
+<title>4.5 Haloalkanes | ChemIgnite</title>
 <style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
@@ -43,13 +43,13 @@ main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
 <body>
 <header class="site-header">
   <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
-  <h1>4.5 &mdash; Haloalkanes</h1>
+  <h1>4.5 Haloalkanes</h1>
   <span class="tier-badge spark">&#x1F525; Spark</span>
 </header>
 <main>
   <div class="quiz-meta">
     <span>10 questions</span>
-    <span>Spark &mdash; Recall &amp; definitions</span>
+    <span>Spark: Recall &amp; definitions</span>
   </div>
   <div id="score-banner" class="score-banner"></div>
   <div id="questions"></div>
@@ -97,15 +97,15 @@ function submitQuiz(){
     }else{
       card.classList.add('wrong');
       if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
-      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      var ans=sel?'Incorrect. Correct answer: <strong>'+q.correct+'</strong>':'Not answered. Correct answer: <strong>'+q.correct+'</strong>';
       res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
     }
     res.style.display='block';ex.style.display='block';
   });
   var pct=Math.round(score/total*100);
-  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var msg=score===total?'Full marks, excellent work!':score>=Math.round(total*0.7)?'Good work. Check the explanations for any you missed.':'Keep practising. Work through all the explanations below.';
   var banner=document.getElementById('score-banner');
-  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'%: '+msg+'</p>';
   (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
   banner.style.display='block';
   banner.scrollIntoView({behavior:'smooth'});
