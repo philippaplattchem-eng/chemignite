@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.6 Transition Elements - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.6 &mdash; Transition Elements</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"What is the correct electron configuration for Fe³⁺?","A":"[Ar] 3d⁵ 4s¹","B":"[Ar] 3d⁵","C":"[Ar] 3d³ 4s²","D":"[Ar] 3d⁶","correct":"B","explain":"Iron (Z = 26) has configuration [Ar] 3d⁶ 4s². To form Fe³⁺, remove the two 4s electrons first (giving Fe²⁺ = [Ar] 3d⁶), then one further 3d electron (giving Fe³⁺ = [Ar] 3d⁵). The result is a half-filled d sub-shell, which carries extra stability — one reason Fe³⁺ is common and relatively stable in many environments. Option A ([Ar] 3d⁵ 4s¹) is the anomalous ground state of the chromium atom. Option C ([Ar] 3d³ 4s²) retains the 4s electrons, violating the rule that 4s electrons are always removed before 3d when forming cations. Option D ([Ar] 3d⁶) is Fe²⁺. In a question asking for Fe³⁺, obtaining [Ar] 3d⁶ is the error of forming Fe²⁺ instead."},{"stem":"What is the overall charge on the complex [CuCl₄]²⁻, and what is the coordination number of copper?","A":"Charge = 2+; coordination number = 4","B":"Charge = 2−; coordination number = 6","C":"Charge = 2−; coordination number = 4","D":"Charge = 0; coordination number = 4","correct":"C","explain":"Overall charge = metal oxidation state + sum of ligand charges. Cu²⁺ contributes +2; four Cl⁻ contribute 4 × (−1) = −4; total = +2 + (−4) = −2. Coordination number = total coordinate bonds = 4 (four monodentate Cl⁻, each donating one lone pair). [CuCl₄]²⁻ is tetrahedral with bond angles of 109.5°. Option A (charge = 2+) confuses the metal-ion charge with the complex-ion charge — the ligand charges must be included. Option B (coordination number = 6) confuses [CuCl₄]²⁻ with a hexaaqua complex; four chloride ligands cannot give a coordination number of 6. Option D (charge = 0) would require Cu to be in the 0 oxidation state, which does not apply here."},{"stem":"What product forms and what colour change is observed when concentrated hydrochloric acid is added to [Cu(H₂O)₆]²⁺(aq)?","A":"Deep blue [Cu(NH₃)₄(H₂O)₂]²⁺; pale blue → deep blue","B":"Yellow [CuCl₄]²⁻; pale blue → yellow, with a change from octahedral to tetrahedral geometry","C":"Green CuCl₂(aq) as the aqua complex is replaced by a soluble Cu(II) salt","D":"Orange [CuCl₄]²⁻; coordination number stays at 6","correct":"B","explain":"The equation is [Cu(H₂O)₆]²⁺(aq) + 4Cl⁻(aq) → [CuCl₄]²⁻(aq) + 6H₂O(l). All six water ligands are replaced by four chloride ions; coordination number drops from 6 to 4; geometry changes from octahedral to tetrahedral; colour changes from pale blue to yellow. Concentrated HCl is required because a high Cl⁻ concentration is needed to drive the equilibrium towards [CuCl₄]²⁻ — with dilute HCl the pale-blue aqua complex dominates. The reaction is reversible: diluting the yellow solution shifts the equilibrium back to pale blue. In practice, mixtures of both species appear green, which is why the \"yellow\" result is only seen clearly in concentrated conditions. Option A describes the NH₃ reaction, not the HCl reaction."},{"stem":"Which statement uses the correct OCR-approved language to explain why carbon monoxide is toxic?","A":"Carbon monoxide has a higher affinity for haemoglobin iron than oxygen has","B":"Carbon monoxide forms a stronger coordinate bond to Fe²⁺ in haem than O₂ does, making the substitution effectively irreversible so that haemoglobin can no longer transport O₂","C":"Carbon monoxide oxidises Fe²⁺ to Fe³⁺, forming methaemoglobin which cannot carry O₂","D":"Carbon monoxide displaces O₂ by forming an ionic bond with the iron centre","correct":"B","explain":"OCR's June 2019 mark scheme explicitly ignored the word \"affinity\" — biological vocabulary is not credited. The required chemical language is: CO donates a lone pair to Fe²⁺ to form a coordinate (dative covalent) bond; this bond is stronger than the Fe–O₂ bond; the substitution is therefore effectively irreversible on a physiological timescale; carboxyhaemoglobin cannot transport O₂, causing oxygen deprivation. Key points: Fe remains as Fe²⁺ throughout (no redox), and the mechanism is ligand substitution. Option C is incorrect: CO does not oxidise the iron; Fe²⁺ is retained in both oxyhaemoglobin and carboxyhaemoglobin. Option D is wrong: both O₂ and CO form coordinate (covalent) bonds to Fe²⁺, not ionic bonds."},{"stem":"Iron(III) ions are reduced to iron(II) ions by iodide. Given E°(Fe³⁺/Fe²⁺) = +0.77 V and E°(I₂/I⁻) = +0.54 V, which answer correctly states the observation and explains feasibility?","A":"Solution turns purple; E°cell = +0.23 V; I₂ is the oxidising agent","B":"Solution turns brown; E°(Fe³⁺/Fe²⁺) is more positive than E°(I₂/I⁻), so Fe³⁺ is reduced and I⁻ is oxidised to I₂; E°cell = +0.23 V","C":"Solution turns brown; E°(I₂/I⁻) is more positive, so I₂ is the oxidising agent and is itself reduced","D":"No reaction occurs; E°cell = −0.23 V, so the reaction is non-feasible","correct":"B","explain":"The equation is 2Fe³⁺(aq) + 2I⁻(aq) → 2Fe²⁺(aq) + I₂(aq). Fe³⁺/Fe²⁺ (E° = +0.77 V) is more positive, so this couple is the positive electrode: Fe³⁺ is reduced (it is the oxidising agent). I₂/I⁻ (E° = +0.54 V) is less positive and runs in reverse: I⁻ is oxidised to I₂ (I⁻ is the reducing agent). E°cell = (+0.77) − (+0.54) = +0.23 V > 0, confirming feasibility. The pale-yellow Fe³⁺ becomes pale-green Fe²⁺, while the colourless I⁻ is oxidised to brown I₂ — the dominant observation is a brown solution. Option C incorrectly identifies I₂ as the oxidising agent and claims it is reduced — if this were true the I₂/I⁻ couple would need to be more positive, not less positive, than the Fe couple."},{"stem":"When dilute sulfuric acid is added to a yellow solution of potassium chromate(VI), K₂CrO₄, the solution turns orange. Which statement correctly describes this change?","A":"Chromium is oxidised from +6 to +7 in the acidic environment","B":"Chromium is reduced from +6 to +3, forming Cr³⁺ ions","C":"An acid-base equilibrium shifts: 2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O; chromium stays at +6 in both species","D":"The colour change indicates a redox reaction where O²⁻ is oxidised by H⁺","correct":"C","explain":"Both CrO₄²⁻ (yellow, chromate(VI)) and Cr₂O₇²⁻ (orange, dichromate(VI)) contain chromium in the +6 oxidation state. The yellow → orange interconversion is an acid-base equilibrium shift, not a redox reaction. Adding H⁺ pushes the equilibrium to the right (forming dichromate); adding OH⁻ pushes it left (restoring chromate). This is a critical distinction: the Cr³⁺ → Cr(VI) transition is a genuine redox change (using H₂O₂/OH⁻), but the CrO₄²⁻ ↔ Cr₂O₇²⁻ interconversion is not. A common exam error is to identify the yellow → orange change as reduction, or to assign different oxidation states to the two species."},{"stem":"Which of the following correctly defines disproportionation?","A":"A reaction in which a species is simultaneously oxidised by one reagent and reduced by a different reagent","B":"A reaction in which the same element in a single species is simultaneously oxidised and reduced to two different oxidation states","C":"A reaction in which one species is oxidised by another species in a 1:1 molar ratio","D":"A reaction in which the oxidation state of a metal increases during hydrolysis","correct":"B","explain":"Disproportionation is a redox reaction in which a single species undergoes both oxidation and reduction simultaneously, and it is the same element that changes to two different oxidation states. Example: 2Cu⁺(aq) → Cu²⁺(aq) + Cu(s); Cu is +1 in the reactant, +2 in one product (oxidised), and 0 in the other (reduced). The OCR mark scheme (H032/01 June 2017 examiner report) explicitly required \"the same element\" and noted that \"species\" was not credited. Option A describes a different scenario — two external reagents causing oxidation and reduction — not a self-redox process. Disproportionation is a self-contained reaction within a single chemical species."},{"stem":"Which complex shows cis-trans isomerism?","A":"[CoCl₄]²⁻ — tetrahedral, four identical Cl⁻ ligands","B":"[Cu(H₂O)₆]²⁺ — octahedral, six identical H₂O ligands","C":"[Co(NH₃)₄Cl₂]⁺ — octahedral, four NH₃ and two Cl⁻","D":"[Ni(en)₃]²⁺ — octahedral, three identical bidentate en ligands","correct":"C","explain":"Cis-trans isomerism requires both the correct geometry and two different types of ligand. In an octahedral MA₄B₂ complex, the two B ligands can be adjacent (cis, 90°) or opposite (trans, 180°). [Co(NH₃)₄Cl₂]⁺ is exactly this type: two Cl⁻ ligands can be cis or trans to each other. Option A (tetrahedral): tetrahedral complexes do not show cis-trans isomerism — all four positions are equivalent and there is no meaningful distinction between \"adjacent\" and \"opposite.\" Option B (six identical ligands): only one arrangement is possible. Option D: three identical bidentate ligands — no A/B distinction, so no cis-trans; however, [Ni(en)₃]²⁺ does show optical isomerism because the helical wrapping of three en ligands produces a chiral structure."},{"stem":"When NaOH(aq) is added to a pale blue solution, a pale blue precipitate forms that is insoluble in excess NaOH but dissolves in excess NH₃(aq) to give a deep blue solution. Which cation is present?","A":"Cr³⁺","B":"Fe²⁺","C":"Fe³⁺","D":"Cu²⁺","correct":"D","explain":"The four observations together identify Cu²⁺ unambiguously: (1) pale blue aqueous solution = [Cu(H₂O)₆]²⁺; (2) pale blue precipitate with NaOH = Cu(OH)₂; (3) insoluble in excess NaOH — Cu(OH)₂ is not amphoteric; (4) dissolves in excess NH₃ to give deep blue = ligand substitution to [Cu(NH₃)₄(H₂O)₂]²⁺. Option A (Cr³⁺) would give a grey-green precipitate and would dissolve in both excess NaOH and excess NH₃. Option B (Fe²⁺) gives a green precipitate that is insoluble in both excess reagents and turns brown on standing in air. Option C (Fe³⁺) gives a rust-brown precipitate. No other OCR-listed cation gives a blue precipitate that selectively dissolves only in excess NH₃."},{"stem":"In qualitative analysis, why is the test for CO₃²⁻ carried out before the test for halide ions using acidified AgNO₃?","A":"CO₃²⁻ would be destroyed by AgNO₃ before it could be identified","B":"CO₃²⁻ reacts with Ag⁺ to form pale Ag₂CO₃, which could be mistaken for AgCl or AgBr; removing carbonate first by adding acid eliminates this false positive","C":"AgNO₃ dissolves carbonate into CO₂, making subsequent carbonate detection impossible","D":"The carbonate test reagent (dilute acid) is simpler and cheaper, so it is done first by convention","correct":"B","explain":"If carbonate is present when acidified AgNO₃ is added, Ag⁺ precipitates Ag₂CO₃ — a pale solid that could be confused with white AgCl or cream AgBr, giving a false halide result. By adding dilute acid to a separate portion first, carbonate is identified (effervescence, limewater turns milky) and removed as CO₂. The acid also prevents carbonate from interfering with the subsequent sulfate test (BaCl₂ would give white BaCO₃, confused with BaSO₄). The strict order — carbonate first, sulfate second, halide last — is chemically necessary, not arbitrary. Option D is wrong: the order is determined by interference chemistry, not cost."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

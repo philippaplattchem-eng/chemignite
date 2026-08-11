@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.4 Alcohols - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.4 &mdash; Alcohols</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Classify each of the following alcohols as primary (1°), secondary (2°), or tertiary (3°). *(i) Methanol (CH₃OH) (ii) Propan-2-ol ((CH₃)₂CHOH) (iii) 2-Methylbutan-2-ol ((CH₃)₂C(OH)CH₂CH₃) (iv) Butan-1-ol (CH₃CH₂CH₂CH₂OH)*","A":"(i) tertiary, (ii) secondary, (iii) tertiary, (iv) primary","B":"(i) primary, (ii) secondary, (iii) tertiary, (iv) primary","C":"(i) primary, (ii) primary, (iii) secondary, (iv) primary","D":"(i) secondary, (ii) secondary, (iii) tertiary, (iv) secondary","correct":"B","explain":"Count the C atoms bonded to C* (the C bearing –OH). (i) Methanol: C* has zero other C atoms. By OCR convention methanol is classified as primary (the \"0 or 1 C neighbours\" definition). (ii) Propan-2-ol: C* (the middle C) is bonded to two CH₃ groups → secondary. (iii) 2-Methylbutan-2-ol: C* (C2) is bonded to CH₃, CH₃, and CH₂CH₃ — three C neighbours → tertiary. (iv) Butan-1-ol: C* (C1, the end C bearing –OH) is bonded to one CH₂CH₂CH₃ chain → primary. Classification is the prerequisite step for every oxidation question: getting it wrong here cascades into wrong products throughout."},{"stem":"Methanol is fully miscible with water, while hexan-1-ol is only sparingly soluble. Explain this trend in terms of molecular structure.","A":"Hexan-1-ol is a larger molecule so it is less able to fit between water molecules, reducing solubility","B":"The –OH group of the alcohol (hydrophilic) can hydrogen-bond to water, driving dissolution; as the alkyl chain grows (hydrophobic), it disrupts water's H-bonded network without forming new attractive interactions. In hexan-1-ol the hydrophobic C₆ chain outweighs the hydrophilic –OH head, making the overall interaction with water energetically unfavourable","C":"Methanol has a lower Mr so it evaporates more readily, allowing it to mix with water","D":"Hexan-1-ol cannot hydrogen-bond to water because its –OH group is blocked by the long chain","correct":"B","explain":"Every alcohol has a hydrophilic –OH head and a hydrophobic alkyl tail. When the short-chain alcohol dissolves, energy is released as alcohol–water hydrogen bonds form, roughly balancing the energy needed to break alcohol–alcohol and water–water hydrogen bonds. As the chain lengthens, the hydrophobic tail disrupts water's extensive hydrogen-bond network when it tries to insert itself: water molecules must reorganise around the non-polar chain, which is entropically costly and gives no new H-bonds in return. By hexan-1-ol (six carbons), the hydrophobic contribution overwhelms the hydrophilic one, and solubility collapses to ~0.6 g per 100 g water. Option D is wrong: hexan-1-ol can still hydrogen-bond via its –OH group; the problem is the tail, not blockage of the head."},{"stem":"Write a balanced equation for the complete combustion of propan-1-ol (CH₃CH₂CH₂OH).","A":"CH₃CH₂CH₂OH + 4O₂ → 3CO₂ + 4H₂O","B":"2CH₃CH₂CH₂OH + 9O₂ → 6CO₂ + 8H₂O","C":"CH₃CH₂CH₂OH + 3O₂ → 3CO₂ + 3H₂O","D":"2CH₃CH₂CH₂OH + 7O₂ → 6CO₂ + 6H₂O","correct":"B","explain":"Balance systematically: (1) Carbon: propan-1-ol has 3 C → 3CO₂ on the right. (2) Hydrogen: propan-1-ol has 7 H in the propyl chain + 1 H on the –OH = 8 H total → 4H₂O on the right. (3) Oxygen: right side has 3×2 + 4×1 = 10 O atoms; propan-1-ol already contributes 1 O, so O₂ must supply 9 O atoms = 9/2 O₂ = 4½ O₂. Multiplying through by 2 to clear the fraction: 2C₃H₇OH + 9O₂ → 6CO₂ + 8H₂O ✓. Atom check: left = 6C, 16H, 2O + 18O = 20O; right = 6C, 16H, 12O + 8O = 20O ✓. Option A uses only 4O₂: left O = 1 (from –OH) + 8 (from 4O₂) = 9; right O = 6 + 4 = 10. Unbalanced — 9 ≠ 10. Option C has only 6H₂O but 8 H on the left — unbalanced. The equivalent fractional form C₃H₇OH + 4½O₂ → 3CO₂ + 4H₂O is also accepted by OCR unless \"whole numbers only\" is specified."},{"stem":"Write the balanced equation, using [O] notation, for the full oxidation of ethanol to ethanoic acid under reflux with excess K₂Cr₂O₇/H₂SO₄. Verify that the atom count balances.","A":"CH₃CH₂OH + [O] → CH₃CHO + H₂O","B":"CH₃CH₂OH + 2[O] → CH₃COOH + H₂O","C":"CH₃CH₂OH + 3[O] → CH₃COOH + 2H₂O","D":"CH₃CH₂OH + 2[O] → CH₃CH₂COOH + H₂O","correct":"B","explain":"Full oxidation of a primary alcohol to a carboxylic acid uses 2[O]. Left side: C₂H₅OH + 2[O] = 2C, 6H, 1O + 2O = 3O total. Right side (option B): CH₃COOH (2C, 4H, 2O) + H₂O (2H, 1O) = 2C, 6H, 3O. Both sides balance ✓. Option A is the first (partial) oxidation step only — it stops at the aldehyde ethanal (CH₃CHO), which occurs under distillation conditions. Option C uses 3[O] unnecessarily. Option D is a common exam error: the product CH₃CH₂COOH is propanoic acid (3C), not ethanoic acid (2C). The C that bore the –OH in ethanol becomes the COOH carbon in ethanoic acid — it does not gain a new carbon atom. Carbon count: left = 2C, right in D = 3C. Unbalanced, no marks."},{"stem":"Explain why distillation conditions give the aldehyde when a primary alcohol is oxidised, whereas reflux conditions give the carboxylic acid.","A":"Reflux is hotter than distillation, so the higher temperature drives the reaction to form the acid","B":"The aldehyde has a lower boiling point than the alcohol (no O–H bond, so no H-bonding to itself) and is distilled out of the reaction vessel before it can react further with the oxidant; under reflux, a vertical condenser returns the aldehyde vapour to the flask where excess oxidant converts it to the carboxylic acid","C":"Reflux conditions use more concentrated K₂Cr₂O₇, which is a more powerful oxidant and can oxidise the aldehyde further","D":"Distillation conditions use excess oxidant, which immediately oxidises the aldehyde; reflux uses excess alcohol to protect the aldehyde from further reaction","correct":"B","explain":"The key is not the strength of the oxidant but whether the aldehyde remains in contact with it. An aldehyde cannot hydrogen-bond to itself (no O–H group) so its boiling point is significantly lower than the parent alcohol: ethanal (bp 20°C) vs ethanol (bp 78.5°C). Under distillation, the aldehyde volatilises and leaves the flask as soon as it forms, condensing in a separate cooled receiver — protected from further oxidation. Under reflux, a condenser mounted vertically above the flask condenses all vapours and returns them to the flask; the aldehyde cannot escape and is held in contact with the excess oxidant until it is fully oxidised to the carboxylic acid. The apparatus, not the oxidant concentration, controls the product."},{"stem":"Explain, in terms of structure, why 2-methylpropan-2-ol does not react with acidified K₂Cr₂O₇.","A":"Tertiary alcohols are insoluble in acidic dichromate solution","B":"Tertiary alcohols do not react because the C–O bond in a tertiary alcohol is too strong to break","C":"Tertiary alcohols have no C–H bond on the carbon bearing the –OH group. Oxidation requires removing a H from that carbon along with the H from the –OH; with no C–H available, the oxidising agent cannot initiate the reaction, so no colour change occurs","D":"The molecule reacts with H₂SO₄ instead of with the dichromate","correct":"C","explain":"In primary and secondary alcohol oxidation, the oxidising agent removes two H atoms per [O] consumed: the H from C* and the H from the –OH itself. In a tertiary alcohol, C* carries three alkyl groups and no H. There is no H on C* for the oxidant to abstract. Without this initial step, the entire oxidation pathway is blocked. The H from the –OH alone (with no C–H to pair with it) cannot be removed by dichromate under standard lab conditions. The orange dichromate remains unreacted and its colour does not change to green. This structural reasoning — not simply \"tertiary alcohols don't react\" — is what OCR examiner reports reward."},{"stem":"A student draws a hydrogen-bond diagram for ethanol and places the δ⁺ symbol on the H of a C–H bond rather than on the H of the O–H bond. Why does this lose marks in OCR examinations?","A":"There is no H atom on a carbon of ethanol","B":"The C–H bond in ethanol is essentially non-polar (carbon electronegativity ~2.5, hydrogen 2.1 — a difference of only 0.4). The H of a C–H bond carries no significant δ⁺ charge and cannot act as a hydrogen-bond donor. Placing δ⁺ on a C–H hydrogen implies hydrogen-bond donation where none exists. Only the H of the O–H bond (O electronegativity 3.5) carries a meaningful δ⁺","C":"The symbol δ⁺ should only be placed on the oxygen atom, not on hydrogen","D":"OCR requires Greek letters to be handwritten; a typed δ is penalised regardless of its position","correct":"B","explain":"The OCR H432/02 June 2024 examiner report explicitly states: \"DO NOT ALLOW δ⁺ on H atom of C–H.\" Carbon and hydrogen have very similar electronegativities (C: 2.5, H: 2.1 on Pauling scale); the C–H bond dipole is negligible. By contrast, O (3.5) vs H (2.1) gives a significant difference of 1.4, creating a genuine δ⁺ on the O–H hydrogen large enough to attract a lone pair from a neighbouring electronegative atom. Placing δ⁺ on a C–H hydrogen is a common misconception: students assume that \"any H on the molecule can hydrogen-bond\" — but only O–H, N–H, or H–F hydrogens qualify as donors."},{"stem":"Butan-2-ol (CH₃CH(OH)CH₂CH₃) is dehydrated with concentrated H₃PO₄ and heat. Which statement correctly identifies the major and minor organic products?","A":"Major: but-1-ene; Minor: but-2-ene (and water)","B":"Major: but-2-ene (disubstituted alkene); Minor: but-1-ene (monosubstituted alkene), along with water","C":"Only but-2-ene is produced; but-1-ene cannot form because the –OH is on C2","D":"Only but-1-ene is produced; the more substituted alkene is always the minor product","correct":"B","explain":"Butan-2-ol has the –OH on C2. The β-carbons (adjacent to C*=C2) are C1 and C3. Loss of –OH from C2 with H from C1 gives but-1-ene (CH₂=CHCH₂CH₃): a monosubstituted alkene (one alkyl group on the C=C). Loss of –OH from C2 with H from C3 gives but-2-ene (CH₃CH=CHCH₃): a disubstituted alkene (two alkyl groups on the C=C). The more substituted alkene is more thermodynamically stable (more alkyl groups stabilise the C=C via inductive effects) and is the major product. But-2-ene is also chiral at neither carbon of the C=C (both carbons have different groups: H and CH₃), so it exists as E and Z stereoisomers — see Inferno Q3."},{"stem":"Write the equation for the two-step conversion of propan-1-ol to 1-bromopropane using NaBr and concentrated H₂SO₄.","A":"Step 1: NaBr + H₂SO₄ → NaHSO₄ + HBr; Step 2: CH₃CH₂CH₂OH + HBr → CH₃CH₂CH₂Br + H₂O","B":"Step 1: CH₃CH₂CH₂OH + Br₂ → CH₃CH₂CH₂Br + HBr; Step 2: HBr + NaOH → NaBr + H₂O","C":"Step 1: NaBr → Na⁺ + Br⁻; Step 2: Br⁻ attacks the carbon of the C–O bond directly","D":"A single-step: CH₃CH₂CH₂OH + NaBr → CH₃CH₂CH₂Br + NaOH","correct":"A","explain":"NaBr alone cannot substitute the –OH, because the hydroxide ion (OH⁻) that would be displaced is a poor leaving group. The role of concentrated H₂SO₄ is to generate HBr in situ: NaBr + H₂SO₄ → NaHSO₄ + HBr. The HBr then protonates the alcohol to form R–OH₂⁺, making water (H₂O) the leaving group — a much better choice than OH⁻. The bromide ion then displaces the water in a substitution step: CH₃CH₂CH₂OH + HBr → CH₃CH₂CH₂Br + H₂O. Note that the product 1-bromopropane is an oil that can be separated from the aqueous by-products by distillation. Option D wrongly implies NaOH is produced, which would be a neutralisation of an acid — not what happens here."},{"stem":"Explain why ethanol (Mr 46) has a boiling point of +78.5°C while propane (Mr 44) has a boiling point of −42°C, a difference of over 120°C.","A":"Ethanol has a larger molecule, so its London forces are stronger","B":"Ethanol forms hydrogen bonds between its –OH group (δ⁺ H as donor, lone pair on O as acceptor) and those of neighbouring molecules. These hydrogen bonds are stronger than the London forces between propane molecules. More energy is needed to overcome the intermolecular forces in liquid ethanol and separate the molecules into the gas phase, giving ethanol a much higher boiling point","C":"Ethanol has stronger covalent bonds than propane, so more energy is needed to break them during boiling","D":"Propane is a gas at room temperature because its molecules are smaller and move faster than ethanol","correct":"B","explain":"Boiling a liquid does not break covalent bonds (they remain intact in the vapour). It overcomes only the intermolecular forces between molecules. Propane is non-polar and can only form London (induced dipole) forces between its molecules — relatively weak for a 3-carbon chain. Ethanol has a polar –OH group and can form hydrogen bonds: intermolecular attractions of 5–40 kJ mol⁻¹ each, several times stronger than the London forces between similarly sized alkane molecules. Because more energy is required to break these hydrogen bonds and vaporise ethanol, its boiling point is dramatically higher than propane's, despite the two molecules having nearly identical Mr (46 vs 44). Option C is a very common error in examiner reports — never say \"stronger bonds\" when referring to intermolecular forces; it implies covalent bonds break on boiling, which is wrong."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.6 Chemical Equilibrium - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.6 &mdash; Chemical Equilibrium</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"For the Contact process equilibrium 2SO₂(g) + O₂(g) ⇌ 2SO₃(g), what happens to the equilibrium position when pressure is increased?","A":"Shifts to the left (towards more SO₂ and O₂), as there are fewer moles of gas on the left","B":"No shift, as the number of moles of gas is the same on both sides","C":"Shifts to the right (towards more SO₃), as there are fewer moles of gas on the right","D":"Shifts to the right, but only if a catalyst is present","correct":"C","explain":"Count moles of gas: left = 2 + 1 = 3 moles; right = 2 moles. Increasing pressure shifts the equilibrium towards the side with fewer moles of gas, which is the right (product) side. This increases the yield of SO₃. The Contact process therefore benefits from higher pressure, though the modest difference (3 vs 2 moles) means the economic case for very high pressure is less strong than for the Haber process (4 vs 2 moles). In practice, the Contact process runs at near-atmospheric pressure because SO₃ already forms in good yield at lower pressure."},{"stem":"For N₂(g) + 3H₂(g) ⇌ 2NH₃(g), ΔH = −92 kJ mol⁻¹. What happens to the yield of ammonia and the value of Kc when the temperature is increased?","A":"Yield increases; Kc increases","B":"Yield decreases; Kc is unchanged (temperature does not change Kc)","C":"Yield decreases; Kc decreases","D":"Yield increases; Kc decreases","correct":"C","explain":"The forward reaction is exothermic (ΔH = −92 kJ mol⁻¹). Increasing temperature adds thermal energy to the system; by Le Chatelier's principle, equilibrium shifts in the endothermic direction (to the left, the reverse reaction) to absorb some of the added heat. This means less NH₃ at equilibrium: yield decreases. Because temperature is the only factor that changes Kc, and the equilibrium shifts left (favouring reactants), Kc = [NH₃]²/([N₂][H₂]³) decreases. Both effects (yield and Kc) move in the same direction for a temperature change."},{"stem":"Write the Kc expression for N₂(g) + 3H₂(g) ⇌ 2NH₃(g) and state the units.","A":"Kc = [N₂][H₂]³/[NH₃]²; units = mol² dm⁻⁶","B":"Kc = [NH₃]²/([N₂][H₂]³); units = mol⁻² dm⁶","C":"Kc = [NH₃]/([N₂][H₂]); units = no units","D":"Kc = [NH₃]²/([N₂][H₂])³; units = mol⁻² dm⁶","correct":"B","explain":"Kc = products over reactants, each raised to the stoichiometric coefficient. Products: 2NH₃ → [NH₃]². Reactants: N₂ and 3H₂ → [N₂]¹[H₂]³. So Kc = [NH₃]²/([N₂][H₂]³). Units: (mol dm⁻³)² / ((mol dm⁻³)(mol dm⁻³)³) = (mol dm⁻³)² / (mol dm⁻³)⁴ = (mol dm⁻³)⁻² = mol⁻² dm⁶. Option A is the reciprocal (the reverse reaction). Option D has the denominator written as ([N₂][H₂])³ instead of [N₂][H₂]³, giving incorrect stoichiometric powers."},{"stem":"At 500 K, a 1.00 dm³ flask contains an equilibrium mixture with [H₂] = 0.20 mol dm⁻³, [I₂] = 0.30 mol dm⁻³, and [HI] = 1.50 mol dm⁻³. For H₂(g) + I₂(g) ⇌ 2HI(g), calculate Kc.","A":"Kc = 1.50 / (0.20 × 0.30) = 25.0 (no units)","B":"Kc = (1.50)² / (0.20 × 0.30) = 37.5 (no units)","C":"Kc = (1.50)² / (0.20 + 0.30) = 4.50 (no units)","D":"Kc = 0.20 × 0.30 / (1.50)² = 0.0267 (no units)","correct":"B","explain":"Kc = [HI]² / ([H₂][I₂]) = (1.50)² / (0.20 × 0.30) = 2.25 / 0.060 = 37.5. Units: (mol dm⁻³)² / ((mol dm⁻³)(mol dm⁻³)) = dimensionless (no units), because Δn = 2 − 2 = 0. Option A forgot to square [HI]. Option D has reactants over products (the reverse Kc = 1/37.5). The large Kc (37.5 >> 1) tells us that HI is strongly favoured at this temperature."},{"stem":"In a Kc calculation, why must concentrations (in mol dm⁻³) be substituted rather than amounts in moles?","A":"Because moles are not measurable; only concentrations can be determined experimentally","B":"Because Kc is defined in terms of concentrations, and using moles only gives the correct Kc when the volume happens to be 1.00 dm³","C":"Because concentrations are always smaller than moles, giving a more accurate answer","D":"The choice is arbitrary; moles and concentrations give the same Kc","correct":"B","explain":"Kc is defined by the expression with square brackets [X], which denotes concentration in mol dm⁻³. The concentration c = n/V, where V is the volume of the container. If V = 1.00 dm³, then c = n numerically, so substituting moles gives the same answer by coincidence. But if V ≠ 1.00 dm³, using moles directly gives the wrong answer. For example, 0.50 mol in a 2.00 dm³ flask gives a concentration of 0.25 mol dm⁻³, not 0.50. OCR mark schemes explicitly credit the step where moles are divided by volume to obtain concentrations before substitution into Kc."},{"stem":"More NH₃ is added to a Haber equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g) at constant temperature. What happens to the equilibrium position and what happens to Kc?","A":"Equilibrium shifts right; Kc increases","B":"Equilibrium shifts left; Kc decreases","C":"Equilibrium shifts left; Kc is unchanged","D":"No shift; Kc increases","correct":"C","explain":"Adding more NH₃ increases [NH₃], which disrupts the equilibrium ratio [NH₃]²/([N₂][H₂]³). The reaction quotient Q becomes greater than Kc. To restore the ratio back to Kc, the system must reduce [NH₃] by shifting the equilibrium to the left (converting some NH₃ back to N₂ and H₂). However, the temperature is unchanged, so Kc itself is unchanged: the new equilibrium has the same Kc ratio, just with different actual concentrations. Concentration changes shift position but never change Kc."},{"stem":"Why is it essential that a dynamic equilibrium can only be established in a closed system?","A":"Open systems have higher temperatures, which change the value of Kc","B":"In an open system, products can escape, preventing the reverse reaction from reaching the same rate as the forward reaction, so the forward reaction simply continues to completion","C":"Open systems allow catalysts to evaporate, preventing equilibrium","D":"Closed systems are required to keep the pressure constant, which is necessary for equilibrium","correct":"B","explain":"Dynamic equilibrium requires the rate of the reverse reaction to equal the rate of the forward reaction. For the reverse reaction to proceed, the products must be present in sufficient concentration. In an open system, gaseous or volatile products escape to the surroundings as fast as they form: their concentration in the reaction vessel never builds up enough for the reverse rate to match the forward rate. The forward reaction therefore drives to completion. Only in a closed system can product concentrations accumulate until the reverse rate matches the forward rate and equilibrium is established."},{"stem":"On a concentration-time graph for the approach to equilibrium starting from pure reactants, which description is correct?","A":"Reactant concentration stays constant throughout; product concentration rises then levels off","B":"Reactant concentration falls, product concentration rises, then both level off at constant values when equilibrium is reached","C":"Both concentrations fall to zero as the reaction goes to completion","D":"Reactant and product concentrations oscillate before settling at equilibrium values","correct":"B","explain":"Starting from pure reactants: at t = 0, [reactant] = initial value and [product] = 0. The forward reaction proceeds faster than the reverse (no product yet). As [reactant] falls and [product] rises, the forward rate decreases and the reverse rate increases. Eventually both rates become equal: concentrations stop changing and become flat horizontal lines. The system remains in this state (constant, not zero concentrations) indefinitely while conditions are unchanged. Oscillation (option D) does not occur in simple homogeneous equilibria."},{"stem":"Describe the effect on the equilibrium position when a catalyst is added to the equilibrium 2SO₂(g) + O₂(g) ⇌ 2SO₃(g).","A":"Equilibrium shifts to the right, increasing the yield of SO₃","B":"Equilibrium shifts to the left, decreasing the yield of SO₃","C":"The equilibrium position does not change; only the time to reach equilibrium is reduced","D":"The equilibrium shifts right at first, then returns to the original position","correct":"C","explain":"A catalyst lowers the activation energy for both the forward and reverse reactions by the same amount, since both pass through the same transition state. Both rates increase by the same factor, so the ratio of forward to reverse rates remains 1: the system is still at equilibrium at the same composition. The equilibrium position (and Kc) are unchanged. The only practical benefit is that equilibrium is reached more quickly, which is economically important in industrial processes. In the Contact process, vanadium(V) oxide (V₂O₅) is used for this reason."},{"stem":"For the equilibrium N₂O₄(g) ⇌ 2NO₂(g), which set of changes would both shift the equilibrium to the left?","A":"Decrease temperature; increase pressure","B":"Increase temperature; increase pressure","C":"Decrease temperature; decrease pressure","D":"Increase temperature; decrease pressure","correct":"A","explain":"N₂O₄ → 2NO₂ is endothermic (forward reaction absorbs energy). Decreasing temperature shifts the equilibrium in the exothermic direction (left, forming N₂O₄) to release heat and oppose the temperature decrease. Increasing pressure shifts the equilibrium toward the side with fewer moles of gas: left has 1 mole, right has 2 moles, so higher pressure favours N₂O₄ (left). Both changes independently shift the equilibrium to the left (back to reactants), so option A is correct. This produces the colourless N₂O₄ at the expense of the brown NO₂, visible as a colour fading in a sealed tube when it is cooled or compressed."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

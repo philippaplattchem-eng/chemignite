@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.7 Carbon-Carbon Bond Formation - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.7 &mdash; Carbon-Carbon Bond Formation</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"By how many carbon atoms does the chain increase when a haloalkane reacts with KCN in ethanol?","A":"No change — the CN group replaces a halogen on the same carbon.","B":"+1 carbon","C":"+2 carbons","D":"The change depends on how large the haloalkane is.","correct":"B","explain":"The <b>cyanide ion (CN⁻)</b> is the nucleophile in this reaction. When CN⁻ substitutes the halide, the <b>carbon of the C≡N</b> becomes part of the product's carbon chain. For example: bromoethane (2 C) + KCN → propanenitrile (3 C). The CN contributes its own carbon — so the product has <b>one more carbon</b> than the starting haloalkane. This is the standard aliphatic chain-extension reaction in OCR A Level synthesis. The only other OCR chain-extension method is Friedel–Crafts acylation/alkylation (aromatic)."},{"stem":"What type of reaction converts a nitrile into a primary amine?","A":"Oxidation","B":"Nucleophilic substitution","C":"Elimination","D":"Reduction","correct":"D","explain":"Converting a nitrile (R–C≡N) into a primary amine (R–CH₂–NH₂) requires adding hydrogen across both π bonds of the C≡N triple bond: RCN + 2H₂ → RCH₂NH₂. This is a <b>reduction</b> reaction — the carbon gains H atoms and the nitrogen is reduced from an oxidation state consistent with C≡N to –NH₂. The reagents for this OCR-required step are <b>H₂(g) with a Ni catalyst</b> at high temperature (and pressure), or <b>LiAlH₄ in dry ether</b>. The carbon skeleton is preserved — the number of carbons in the amine equals the number in the nitrile."},{"stem":"What is the product when ethanal (CH₃CHO) reacts with hydrogen cyanide (HCN)?","A":"Ethanoic acid (CH₃COOH)","B":"2-hydroxypropanenitrile (CH₃CH(OH)CN)","C":"Propanenitrile (CH₃CH₂CN)","D":"Hydroxyethanal (HOCH₂CHO)","correct":"B","explain":"HCN reacts with the carbonyl compound by <b>nucleophilic addition</b>: the CN⁻ attacks the δ⁺ carbonyl carbon of ethanal, the C=O π bond breaks (both electrons go to O), and the resulting alkoxide is protonated by H⁺. The product is a <b>2-hydroxynitrile</b>: the OH on the carbon that was formerly the carbonyl carbon, and the CN group also on that carbon → <b>CH₃CH(OH)CN = 2-hydroxypropanenitrile</b>. Note the chain length: ethanal has 2 C; the product has 3 C (the CN carbon adds one). Option (C) propanenitrile would form if a haloalkane (not an aldehyde) reacted with CN⁻."},{"stem":"What is the role of anhydrous AlCl₃ in Friedel–Crafts reactions?","A":"It is an oxidising agent that converts the arene to a carbocation.","B":"It is a Lewis acid (halogen carrier) that polarises the C–Cl bond of the haloalkane or acyl chloride, generating the electrophile.","C":"It is a Brønsted–Lowry acid that donates a proton to the benzene ring.","D":"It acts as a base, abstracting HCl from the product to prevent side reactions.","correct":"B","explain":"AlCl₃ is a <b>Lewis acid</b> — it accepts a lone pair from the chlorine of the haloalkane or acyl chloride, forming AlCl₄⁻ and releasing the electrophile: RCl + AlCl₃ → R⁺ + AlCl₄⁻ (alkylation) or RCOCl + AlCl₃ → RCO⁺ + AlCl₄⁻ (acylation). The term \"<b>halogen carrier</b>\" is widely used in OCR mark schemes — it describes AlCl₃'s function of \"carrying\" the halide away from the substrate. AlCl₃ is regenerated at the end of the catalytic cycle: H⁺ + AlCl₄⁻ → HCl + AlCl₃. It must be <b>anhydrous</b> — it reacts violently with water and would be destroyed by moisture."},{"stem":"What small molecule is released as a by-product in both Friedel–Crafts alkylation and acylation?","A":"Water (H₂O)","B":"Hydrogen chloride (HCl)","C":"Ammonia (NH₃)","D":"Carbon dioxide (CO₂)","correct":"B","explain":"In both Friedel–Crafts reactions, the electrophile is generated by AlCl₃ abstracting Cl⁻ from the haloalkane or acyl chloride. At the end of the mechanism, H⁺ is lost from the Wheland intermediate and combines with AlCl₄⁻: <b>H⁺ + AlCl₄⁻ → HCl + AlCl₃</b>. Therefore <b>HCl</b> is the by-product. Overall: C₆H₆ + RCl → C₆H₅R + HCl (alkylation); C₆H₆ + RCOCl → C₆H₅COR + HCl (acylation). The evolution of HCl vapour is observable in these reactions and explains why anhydrous conditions and careful ventilation are required."},{"stem":"What is the product when benzene reacts with ethanoyl chloride (CH₃COCl) in the presence of anhydrous AlCl₃?","A":"Ethylbenzene (C₆H₅CH₂CH₃)","B":"Chlorobenzene (C₆H₅Cl)","C":"Phenylethanone (C₆H₅COCH₃)","D":"Benzaldehyde (C₆H₅CHO)","correct":"C","explain":"This is a <b>Friedel–Crafts acylation</b>. The acyl chloride (CH₃COCl) reacts with AlCl₃ to generate the acylium ion (CH₃CO⁺); this electrophile attacks the benzene ring by electrophilic substitution; the product is an <b>aryl ketone — phenylethanone (C₆H₅COCH₃)</b>, also known as acetophenone. The C=O group is in the product because acylation, unlike alkylation, retains the carbonyl. Option (A) ethylbenzene would be the product of <b>Friedel–Crafts alkylation</b> (benzene + CH₃CH₂Cl/AlCl₃). Option (D) benzaldehyde (C₆H₅CHO) is an aldehyde — it would require a different synthesis route."},{"stem":"What is the correct solvent for the reaction of a haloalkane with KCN to form a nitrile?","A":"Water (aqueous KCN)","B":"Concentrated sulfuric acid","C":"Ethanol","D":"Dichloromethane (DCM)","correct":"C","explain":"The haloalkane–KCN reaction must be carried out in <b>ethanol</b> (not water). The OCR June 2024 mark scheme explicitly states: *\"DO NOT ALLOW H₂O / (aq).\"* Using aqueous KCN introduces competing reactions: the hydroxide ion (OH⁻) from water would compete with CN⁻ as a nucleophile, giving the alcohol as a by-product; or elimination could occur to give an alkene. Ethanol dissolves both the haloalkane (non-polar) and KCN (ionic) without introducing competing nucleophiles. The conditions are: <b>KCN dissolved in ethanol, heat under reflux</b>."},{"stem":"What are the products of the complete acid hydrolysis of a nitrile (RCN) using dilute aqueous hydrochloric acid under reflux?","A":"An amine and water","B":"An amide and water","C":"A carboxylic acid and an ammonium ion (NH₄⁺)","D":"A carboxylate salt and ammonia","correct":"C","explain":"The overall equation for acid hydrolysis of a nitrile is: <b>RCN + 2H₂O + H⁺ → RCOOH + NH₄⁺</b>. The C≡N bond is broken in two stages (first to the amide RCONH₂, then to the carboxylic acid), but OCR expects the overall equation. The nitrogen leaves as the <b>ammonium ion (NH₄⁺)</b> — it is protonated in the acidic medium. The carbon of the former CN becomes the carboxyl <b>–COOH</b> carbon, so the chain length is preserved. Both H₂O and H⁺ are required: OCR mark schemes specifically note that omitting \"(aq)\" or water loses a mark."},{"stem":"What mechanism class applies when a primary haloalkane reacts with CN⁻ in ethanolic KCN?","A":"Electrophilic substitution","B":"Nucleophilic addition","C":"Nucleophilic substitution","D":"Radical substitution","correct":"C","explain":"The cyanide ion (CN⁻) is a <b>nucleophile</b> — it has a lone pair on its carbon end available to donate to an electrophile. The δ⁺ carbon of the C–X bond in a primary haloalkane is the electrophile. CN⁻ attacks the δ⁺ carbon, forming a new C–C bond as the halide ion (X⁻) leaves. This is <b>nucleophilic substitution</b> — the CN⁻ replaces (substitutes) the halide group. For a primary haloalkane the mechanism is SN2: a single concerted transition state with CN⁻ approaching from the back. The curly-arrow notation: one arrow from the lone pair (or negative charge) on the <b>carbon</b> of :CN⁻ to the δ⁺C; a second arrow from the C–X bond to X."},{"stem":"Propanenitrile (CH₃CH₂CN) is reduced with H₂/Ni. What is the product?","A":"Ethylamine (CH₃CH₂NH₂)","B":"Propylamine / propan-1-amine (CH₃CH₂CH₂NH₂)","C":"Propanamide (CH₃CH₂CONH₂)","D":"Propanoic acid (CH₃CH₂COOH)","correct":"B","explain":"Reduction of propanenitrile: CH₃CH₂C≡N + 2H₂ → CH₃CH₂<b>CH₂</b>NH₂. The <b>nitrile carbon (C≡N) is in the carbon chain</b> — it becomes C1 (the carbon bearing the –NH₂ group) in the product. Propanenitrile has 3 carbons (CH₃–CH₂–CN); the amine product also has 3 carbons (propylamine, CH₃CH₂CH₂NH₂). Option (A) ethylamine (2 C) is the most common mistake — students forget that the CN carbon is counted as part of the chain and belongs in the amine product. The examiner report flagged this specifically (June 2024): \"many gave an incorrect structure here either with a missing C (i.e. ethylamine).\""}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

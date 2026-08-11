@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.4 Electrons, Bonding and Structure - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>2.4 &mdash; Electrons, Bonding and Structure</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>6 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Copper (Z = 29) adopts the electron configuration [Ar]3d¹⁰4s¹ rather than the Aufbau prediction of [Ar]3d⁹4s². Which explanation is correct?","A":"The 4s orbital fills after the 3d orbital in Period 4, so 4s has fewer electrons","B":"The Pauli exclusion principle prevents two electrons from occupying the same 4s orbital in copper","C":"A completely filled d sub-shell (3d¹⁰) is especially stable; promoting one 4s electron into 3d lowers the overall energy","D":"Copper's high nuclear charge forces all valence electrons into the 3d sub-shell first","correct":"C","explain":"The Aufbau principle predicts [Ar]3d⁹4s², but a fully filled d sub-shell (3d¹⁰) has extra stability due to exchange interactions between electrons of parallel spin. Promoting one 4s electron into the 3d sub-shell achieves 3d¹⁰, lowering the total electronic energy. The same logic explains Cr: [Ar]3d⁵4s¹ (half-full d sub-shell stability) is preferred over [Ar]3d⁴4s². Both Cr and Cu must be memorised as exceptions for OCR."},{"stem":"Using average bond enthalpies (C–H = 413, O=O = 498, C=O = 805, O–H = 464 kJ mol⁻¹), calculate ΔH for: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)","A":"+818 kJ mol⁻¹","B":"−656 kJ mol⁻¹","C":"−818 kJ mol⁻¹","D":"−890 kJ mol⁻¹","correct":"C","explain":"Bonds broken: 4 × C–H (4 × 413 = 1652) + 2 × O=O (2 × 498 = 996) = 2648 kJ mol⁻¹. Bonds made: 2 × C=O in CO₂ (2 × 805 = 1610) + 4 × O–H in 2H₂O (4 × 464 = 1856) = 3466 kJ mol⁻¹. ΔH = 2648 − 3466 = −818 kJ mol⁻¹. Distractor A has the sign wrong. Distractor D (−890 kJ mol⁻¹) is the experimental standard enthalpy of combustion — it differs because that value uses liquid water as product, whereas bond enthalpy calculations are gas-phase only, and because \"average\" bond enthalpies are not exact for any specific molecule."},{"stem":"What is the electron configuration of Fe³⁺ (Z = 26)?","A":"[Ar]3d⁴4s¹","B":"[Ar]3d⁵4s¹","C":"[Ar]3d⁵","D":"[Ar]3d⁶","correct":"C","explain":"Fe is [Ar]3d⁶4s². When forming Fe²⁺, both 4s electrons are removed first → [Ar]3d⁶. When forming Fe³⁺, one further 3d electron is removed → [Ar]3d⁵. This gives Fe³⁺ a half-full 3d sub-shell (one electron in each of the five d orbitals), which has extra stability. Distractor D is Fe²⁺, not Fe³⁺ — a very common error. The rule \"lose 4s before 3d\" is essential and non-intuitive, since 4s fills before 3d during atom-building."},{"stem":"In NH₄⁺, one N–H bond was formed by a dative mechanism (when NH₃ accepted H⁺). A student claims that this bond is weaker and longer than the other three N–H bonds. Evaluate this claim.","A":"Correct — the dative bond uses only one atom's electrons, so it is weaker than a normal bond","B":"Correct — the positive charge concentrates on the dative N–H bond, stretching and weakening it","C":"Incorrect — once formed, a dative bond is indistinguishable from an ordinary covalent bond; all four N–H bonds in NH₄⁺ are identical in length, strength, and properties","D":"Incorrect — the dative bond is actually stronger because both electrons came from N, which holds them more tightly","correct":"C","explain":"The word \"dative\" describes only the origin of the electrons (both from the donor N), not any continuing difference in the bond. Once the shared pair is between N and H, it is attracted by both nuclei equally — the same as in any other N–H bond. All four N–H bonds in NH₄⁺ are identical in every measurable property; the ion is perfectly tetrahedral with bond angle 109.5°. OCR mark schemes reward the explicit statement that \"the dative bond is identical to an ordinary covalent bond once formed\" (H032/01 June 2023 mark scheme)."},{"stem":"Solid magnesium oxide (MgO) does not conduct electricity, but molten MgO does. Which explanation is correct?","A":"Solid MgO contains covalent bonds that break on melting, releasing free electrons","B":"In solid MgO, ions are fixed in the lattice and cannot move to carry charge; on melting, ions become free to move","C":"In solid MgO, Mg²⁺ ions carry the current; on melting, O²⁻ ions also become mobile and assist conduction","D":"Solid MgO conducts poorly because Mg²⁺ is smaller than Na⁺ and moves more slowly","correct":"B","explain":"Electrical conduction requires charged particles that are free to move. In a solid ionic lattice, both cations and anions are held in fixed positions by strong electrostatic forces — they can vibrate but not flow. On melting, these forces are overcome: the ions become mobile and can carry charge toward an electrode. This conductivity test is a classic experimental criterion for distinguishing ionic from covalent substances. Note that conduction does NOT require breaking covalent bonds — option A describes a metallic or graphitic conductor."},{"stem":"The giant ionic lattice of NaCl has coordination number 6 : 6, while CsCl has coordination number 8 : 8. Why do they differ?","A":"CsCl has a higher charge density than NaCl, so more counter-ions can pack around each centre","B":"CsCl has a 1 : 2 stoichiometry, requiring more Cl⁻ per formula unit","C":"Cs⁺ has a much larger ionic radius than Na⁺; more Cl⁻ ions can surround the larger Cs⁺ without touching each other, making 8 : 8 packing geometrically possible","D":"The 8 : 8 arrangement lowers the lattice energy of CsCl because opposite charges are further apart","correct":"C","explain":"Both NaCl and CsCl have 1 : 1 stoichiometry (same charge ratio). In NaCl, Na⁺ is small: exactly 6 Cl⁻ can pack octahedrally around it before the Cl⁻ ions begin touching each other, and a 7th cannot fit. Cs⁺ is much larger (the largest common alkali metal cation) — 8 Cl⁻ can sit at the corners of a cube surrounding Cs⁺ without touching. The higher coordination number of 8 is favoured where possible because it increases the total number of attractive interactions. Distractor D has the reasoning backwards: higher coordination number actually increases lattice energy (more stable)."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

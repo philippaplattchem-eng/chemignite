@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.1 Basic Concepts - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.1 &mdash; Basic Concepts</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"What is the IUPAC name for CH₃CH(CH₃)CH₂OH?","A":"2-methylpropan-1-ol","B":"3-methylpropan-1-ol","C":"2-methylbutan-1-ol","D":"1-methylpropan-2-ol","correct":"A","explain":"Step 1: longest chain containing the principal group (–OH): the longest chain that includes the carbon bearing –OH is 3 carbons (not 4, since the CH₃ branch comes off the second carbon). Root = prop–. Step 2: number to give –OH the lowest locant. Numbering from the –OH end: OH is at C1, the methyl branch is at C2. Step 3: suffix –ol → propan-1-ol; prefix 2-methyl. Full name: 2-methylpropan-1-ol. Option B wrongly places the methyl at C3 (impossible on a 3-carbon chain with methyl on C2). Option C uses a 4-carbon root, which would be correct only if the longest continuous chain was 4 carbons."},{"stem":"Ethanol (CH₃CH₂OH) and methoxymethane (CH₃OCH₃) both have the molecular formula C₂H₆O. What type of structural isomerism do they show?","A":"Chain isomerism","B":"Positional isomerism","C":"Functional group isomerism","D":"Geometric isomerism","correct":"C","explain":"Ethanol contains an –OH (hydroxyl) group: it is an alcohol. Methoxymethane contains a C–O–C linkage: it is an ether. The functional groups are different, so these are functional group isomers. They have completely different chemistry: ethanol forms hydrogen bonds (high b.p. 78°C), reacts with sodium metal, and can be oxidised; methoxymethane cannot form hydrogen bonds (b.p. −24°C), does not react with sodium, and is resistant to oxidation. Same molecular formula, radically different properties — the hallmark of functional group isomerism."},{"stem":"In 3-hydroxypropanoic acid (HOCH₂CH₂COOH), which functional group takes the suffix in the IUPAC name, and why?","A":"The –OH group, because it appears first in the chain","B":"The –COOH group, because carboxylic acid outranks alcohol in the functional-group priority order","C":"Both groups share the suffix because they are of equal priority","D":"Neither: the compound is named as a hydroxy ester","correct":"B","explain":"When a molecule contains more than one functional group, only one takes the suffix: the one with the highest priority in the OCR functional-group hierarchy (carboxylic acid > ester > acyl chloride > nitrile > aldehyde > ketone > alcohol > amine). Carboxylic acid outranks alcohol, so –COOH becomes the suffix (-oic acid) and –OH is named as the prefix \"hydroxy\". The –COOH carbon is always C1 by convention, giving the –OH at C3 of the propanoic acid chain. Mis-ranking the priority order renames the entire molecule."},{"stem":"A student draws a curly arrow in a mechanism that starts from the carbon atom itself rather than from a bond. Why does this lose the mark?","A":"The arrow should point in the opposite direction","B":"Curly arrows must start from electrons (a bond or a lone pair), not from an atom symbol; starting from an atom implies the atom is moving, not the electrons","C":"The arrow should be single-headed, not double-headed","D":"Curly arrows can only start from lone pairs, never from bonds","correct":"B","explain":"A curly arrow represents the movement of electrons, not atoms. The tail of the arrow must be placed on the electron source: either on an existing bond (showing that bond breaks) or on a lone pair (showing that pair forms a new bond). Placing the tail on the atom symbol itself is ambiguous and technically incorrect. OCR examiner reports (H432/02 Nov 2021) specifically penalised \"ambiguous placement\" of curly arrows. Option D is also wrong: curly arrows can start from bonds as well as lone pairs."},{"stem":"How many structural isomers does butane (C₄H₁₀) have in total (including itself)?","A":"1","B":"2","C":"3","D":"4","correct":"B","explain":"C₄H₁₀ has exactly two chain isomers: (1) n-butane — a straight 4-carbon chain (CH₃CH₂CH₂CH₃); and (2) 2-methylpropane — a 3-carbon chain with a methyl branch at C2 (CH₃CH(CH₃)CH₃). There is no third arrangement: moving the methyl to C1 or C3 of the 3-carbon chain simply regenerates the 4-carbon chain. Alkane isomers are chain isomers only (no functional group to move, no alternative functional group with formula CₙH₂ₙ₊₂). The next homologue, pentane (C₅H₁₂), has three chain isomers."},{"stem":"Why does n-pentane (b.p. 36°C) have a higher boiling point than 2,2-dimethylpropane (b.p. 10°C), despite both having the molecular formula C₅H₁₂?","A":"n-pentane has a higher relative molecular mass than 2,2-dimethylpropane","B":"n-pentane can form hydrogen bonds; 2,2-dimethylpropane cannot","C":"n-pentane's elongated chain maximises surface contact between neighbouring molecules, giving stronger London (induced dipole–induced dipole) forces; 2,2-dimethylpropane is near-spherical, minimising surface contact and London forces","D":"2,2-dimethylpropane is more polar than n-pentane, which weakens intermolecular attractions","correct":"C","explain":"Both compounds have the same Mr (72 g mol⁻¹) and neither can form hydrogen bonds (no O, N, or F). The only intermolecular forces are London forces, which depend on the surface area available for contact between molecules. The straight chain of n-pentane lies alongside neighbouring chains along most of its length: large surface area, strong London forces, higher boiling point. 2,2-dimethylpropane is roughly spherical: minimal contact area, weaker London forces, boiling point 26°C lower. Branching consistently lowers boiling points within an isomeric group."},{"stem":"Which statement correctly distinguishes an aldehyde from a ketone?","A":"An aldehyde has C=O in the middle of the chain; a ketone has C=O at the chain end","B":"A ketone has C=O bonded to two carbon atoms (internal); an aldehyde has C=O at the terminal position, with one hydrogen attached to the carbonyl carbon","C":"An aldehyde has a C–OH group; a ketone has a C=O group","D":"An aldehyde and a ketone have C=O in different positions and are not isomers of each other","correct":"B","explain":"Both aldehydes and ketones contain the C=O (carbonyl) group. The difference is position: in an aldehyde (suffix –al), the carbonyl carbon is at the end of the chain and carries one H atom (giving the –CHO group); in a ketone (suffix –one), the carbonyl carbon is internal and bonded to two other carbon atoms (no H on the carbonyl C). This structural difference explains the different reactivity: the H on the aldehyde carbonyl makes it susceptible to oxidation (Tollens' reagent gives silver mirror with aldehydes, not with ketones)."},{"stem":"In electrophilic addition of HBr to propene, where does the first curly arrow start and where does it end?","A":"Starts from the δ+ hydrogen of HBr; ends at the C=C double bond","B":"Starts from the π electrons of the C=C bond; ends at the δ+ hydrogen of HBr","C":"Starts from the lone pairs on Br; ends at the C=C bond","D":"Starts from the C=C bond; ends at the bromine atom","correct":"B","explain":"In electrophilic addition, the alkene acts as the electron-pair donor (nucleophile) and the electrophile (HBr) acts as the acceptor. The π electron pair in the C=C bond attacks the δ+ H of HBr: the first curly arrow therefore starts from the π bond (the pair of electrons) and ends at the H (the destination). A second curly arrow shows the H–Br bond breaking, with the pair going to Br to form Br⁻. Both arrows are double-headed because electron pairs move. Showing the δ+/δ− dipole on H–Br before drawing the arrows is a separate, explicitly awarded OCR mark."},{"stem":"A skeletal formula of butane shows a zig-zag with four vertices. How many hydrogen atoms are implied on each terminal (end) carbon?","A":"1","B":"2","C":"3","D":"4","correct":"C","explain":"In a skeletal formula each carbon has exactly 4 bonds. A terminal carbon in a straight-chain skeleton has one bond shown (to the adjacent carbon in the chain). It therefore needs 4 − 1 = 3 hydrogen atoms (implied, not drawn). Each terminal carbon is a –CH₃ group. An internal carbon in butane shows 2 bonds (one to each neighbour); it needs 4 − 2 = 2 H atoms: each is a –CH₂– group. Total H in butane: (2 × 3) + (2 × 2) = 10, giving C₄H₁₀ ✓. Mis-counting implied H atoms was flagged as a major source of molar mass errors in H432/02 June 2024."},{"stem":"Which is the best description of cyclohexane?","A":"Aromatic, because it contains a six-membered carbon ring","B":"Aliphatic and alicyclic, because it is a non-aromatic ring compound","C":"Unsaturated, because the ring constrains the bond angles","D":"Aromatic, because it has the same number of carbon atoms as benzene","correct":"B","explain":"Aromatic has a specific requirement: the molecule must contain a benzene ring with a delocalised π electron system. Cyclohexane is a six-membered ring of sp³ carbons joined entirely by C–C single bonds: there are no π electrons and no delocalisation. It is therefore aliphatic (straight, branched, or non-aromatic ring). Because it is a ring, it is also classified as alicyclic (a sub-category of aliphatic). Cyclohexane is saturated (all single bonds), so option C is wrong. Having six carbons does not make a compound aromatic — benzene's aromaticity comes from its delocalised electrons, not the ring size or carbon count."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

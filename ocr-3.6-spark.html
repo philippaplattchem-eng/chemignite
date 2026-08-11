@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.6 Chemical Equilibrium - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.6 &mdash; Chemical Equilibrium</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Which statement gives a complete definition of dynamic equilibrium?","A":"A state in which the concentrations of reactants and products are equal","B":"A state in which the reaction has stopped and nothing is changing","C":"A state in a closed system in which the rate of the forward reaction equals the rate of the reverse reaction and the concentrations of all species remain constant","D":"A state in which only the forward reaction continues at the same rate as before","correct":"C","explain":"All three components of the definition are needed by OCR mark schemes: (1) closed system (no species can enter or leave); (2) rate of forward reaction = rate of reverse reaction (this is why it is called dynamic: both reactions continue); (3) concentrations remain constant (this is the observable consequence). Missing any one of these three typically loses a mark. \"Equal concentrations\" (option A) confuses constant with equal: concentrations are constant in time, but reactant and product concentrations are not usually equal to each other."},{"stem":"State Le Chatelier's principle.","A":"The equilibrium constant Kc is independent of concentration and pressure","B":"When a system at dynamic equilibrium is disturbed, the position of equilibrium shifts to minimise (oppose) the change","C":"Increasing the temperature of an equilibrium always increases the rate of the forward reaction more than the reverse","D":"Adding a catalyst shifts the equilibrium position to the right","correct":"B","explain":"Le Chatelier's principle: when a system at dynamic equilibrium is disturbed by a change in concentration, temperature, or pressure, the position of equilibrium shifts in the direction that partially opposes (minimises) the change. \"Minimises\" is the key word: the system does not completely cancel the change, only partially opposes it until a new equilibrium is established. The principle predicts direction of shift without needing to know Kc."},{"stem":"For the exothermic forward reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), what happens to Kc when temperature is increased?","A":"Kc increases, as higher temperature provides more energy for bond breaking","B":"Kc is unchanged, as it only depends on concentration","C":"Kc decreases","D":"Kc increases then decreases above 400°C","correct":"C","explain":"Temperature is the only factor that changes the value of Kc itself. For an exothermic forward reaction, heat is \"released\" on the product side. Increasing temperature adds heat to the system; Le Chatelier's principle predicts the equilibrium shifts left (the endothermic direction) to absorb the extra heat. This means relatively less product at equilibrium, so Kc = [products]/[reactants] decreases. For an endothermic forward reaction, the opposite is true: Kc increases with temperature."},{"stem":"What does a large value of Kc (Kc >> 1) tell you about the equilibrium position?","A":"The reaction is fast","B":"The reaction is exothermic","C":"Products are favoured at equilibrium; the equilibrium lies to the right","D":"The concentrations of all species are very large","correct":"C","explain":"Kc = [products]/[reactants]. If Kc >> 1, the numerator (product concentrations) is much larger than the denominator (reactant concentrations), so products dominate at equilibrium. This is what \"lies to the right\" means. Conversely, Kc << 1 means reactants dominate. Kc says nothing directly about reaction rate (which depends on Ea) or whether the reaction is exothermic (which depends on ΔH). A reaction can have Kc >> 1 and still proceed slowly if Ea is high."},{"stem":"Which is the correct expression for Kc for the equilibrium H₂(g) + I₂(g) ⇌ 2HI(g)?","A":"Kc = [HI] / ([H₂][I₂])","B":"Kc = [HI]² / ([H₂][I₂])","C":"Kc = ([H₂][I₂]) / [HI]²","D":"Kc = [HI]² / ([H₂]²[I₂]²)","correct":"B","explain":"The general Kc expression for aA + bB ⇌ cC + dD is Kc = [C]^c[D]^d / ([A]^a[B]^b). Products go in the numerator, reactants in the denominator, and each concentration is raised to the power of its stoichiometric coefficient. Here: products are 2HI (stoichiometric coefficient 2), so [HI]² in the numerator; reactants are H₂ and I₂ (each coefficient 1), so [H₂]¹[I₂]¹ in the denominator. Option A forgot the squared power on [HI]. Option C is the reciprocal (correct expression for the reverse reaction 2HI → H₂ + I₂)."},{"stem":"At equilibrium, the concentrations of all species are described as \"constant.\" What does this mean?","A":"All species are at equal concentration","B":"The concentrations do not change with time, but different species may be at very different concentrations","C":"The concentrations are exactly half the initial values","D":"The concentrations are increasing at the same rate as they are decreasing","correct":"B","explain":"\"Constant\" means unchanging with time, not equal to each other. In most equilibria, one side is heavily favoured: in the Haber process at typical conditions, reactant H₂ and N₂ concentrations far exceed NH₃; in a weak acid equilibrium, undissociated acid greatly exceeds the ions. The ratio of product to reactant concentrations is determined by Kc, which is rarely 1, so equality of all concentrations at equilibrium is a special (rare) case, not the rule."},{"stem":"Which of the following changes would increase the value of Kc for an exothermic equilibrium reaction?","A":"Increasing the concentration of a reactant","B":"Increasing the pressure","C":"Decreasing the temperature","D":"Adding a catalyst","correct":"C","explain":"Kc can only be changed by temperature. For an exothermic forward reaction, decreasing the temperature shifts the equilibrium to the right (in the exothermic direction, to release heat), so [products]/[reactants] increases and Kc increases. Increasing concentration, pressure, or adding a catalyst all shift the position of equilibrium but do not change the actual value of Kc: the system simply adjusts to new concentrations (or partial pressures) that still satisfy the same Kc expression at the same temperature."},{"stem":"For the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g), what effect does increasing the pressure have on the equilibrium position?","A":"No effect, as the number of moles of gas is the same on both sides","B":"Shifts to the left, favouring N₂ and H₂","C":"Shifts to the right, favouring NH₃","D":"Shifts to the right for the forward reaction but not the reverse","correct":"C","explain":"Count moles of gas on each side: left = 1 + 3 = 4 moles; right = 2 moles. Increasing pressure shifts equilibrium to the side with fewer moles of gas (right), to reduce the total number of gas particles and partially lower the pressure. This favours the formation of NH₃. This is one reason why the industrial Haber process uses high pressure (about 200 atm), though economic and safety considerations limit how high the pressure can go in practice."},{"stem":"For the equilibrium H₂(g) + I₂(g) ⇌ 2HI(g), what effect does increasing pressure have?","A":"Shifts to the right, increasing [HI]","B":"Shifts to the left, decreasing [HI]","C":"No effect on the equilibrium position","D":"Doubles the rate of the forward reaction without affecting the reverse","correct":"C","explain":"Count moles of gas: left = 1 + 1 = 2; right = 2. The number of moles of gas is equal on both sides, so there is no side with fewer moles to shift toward. Le Chatelier's principle predicts no shift: the system cannot oppose the change in pressure by shifting the position of equilibrium. Increasing pressure does increase collision frequency (raising the rate), but since it affects both forward and reverse equally, the equilibrium position and Kc are unchanged."},{"stem":"Does adding a catalyst to a reaction at dynamic equilibrium change the equilibrium position?","A":"Yes, it shifts the equilibrium to the right, increasing product yield","B":"Yes, it shifts the equilibrium to the left, as it lowers the activation energy of the reverse reaction","C":"No","D":"Yes, but only if the catalyst is homogeneous","correct":"C","explain":"A catalyst provides an alternative pathway with a lower activation energy. Crucially, it lowers Ea for both the forward and reverse reactions by the same amount (since both pass through the same transition state). Both forward and reverse rates increase by the same factor, so the ratio of rates remains equal: the equilibrium position is unchanged and Kc is unchanged. The catalyst only affects how quickly equilibrium is reached, not where that equilibrium lies. This is why a catalyst is used in the Haber process to achieve commercial ammonia production at an acceptable rate, without changing the percentage yield at equilibrium."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

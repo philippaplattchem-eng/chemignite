@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.2 Organic and Inorganic Practicals &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>1.2 &mdash; Organic and Inorganic Practicals</h1>
+  <span class="tier-badge mcq">MCQ Practice</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>15 questions</span>
+    <span>Practical skills MCQ practice</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"In PAG 4 qualitative analysis of anions, a student wishes to test for carbonate, sulfate and halide in the same unknown solution. In which order should the tests be performed? A. Halide → sulfate → carbonate B. Sulfate → halide → carbonate C. Carbonate → sulfate → halide D. The order is irrelevant provided fresh portions are used for each test","A":"","B":"","C":"","D":"","correct":"","explain":"Carbonate must be tested and removed first because CO₃²⁻ gives false-positive precipitates with both Ba²⁺ (BaCO₃, white) and Ag⁺ (Ag₂CO₃, pale), which would contaminate the sulfate and halide tests respectively. Sulfate is confirmed before halide because residual Ba²⁺ from the sulfate test would give false-positive precipitates with Ag⁺ in the halide test. Using fresh portions is essential but does not remove the need for correct test ordering."},{"stem":"A student tests for NH₄⁺ by warming a solution with aqueous NaOH and holding dry red litmus paper above the flask. No colour change is observed. What is the most likely reason for the failed test? A. The NaOH was too dilute to drive the equilibrium toward ammonia B. The solution should have been acidified before adding NaOH C. The litmus paper must be damp — ammonia gas dissolves in the moisture on damp paper to form an alkaline solution that turns red litmus blue D. Blue litmus should be used, not red litmus","A":"","B":"","C":"","D":"","correct":"","explain":"NH₃ gas is produced but it has no acid–base action in the absence of water. When NH₃ dissolves in the moisture on damp red litmus, it forms an alkaline aqueous solution (NH₃ + H₂O ⇌ NH₄⁺ + OH⁻) that turns the indicator blue. Dry paper gives no result because the gas-phase reaction cannot change a solid indicator. The correct observation is: pungent gas evolved; damp red litmus turns blue."},{"stem":"A flame test on a solid gives a lilac colour. Which cation is present? A. Na⁺ (yellow/orange flame) B. Ca²⁺ (brick-red flame) C. Ba²⁺ (apple-green flame) D. K⁺ (lilac flame)","A":"","B":"","C":"","D":"","correct":"","explain":"Potassium (K⁺) gives a lilac or pale mauve colour in a Bunsen flame. The colour arises from the emission of photons at specific wavelengths as excited electrons in K⁺ fall back to lower energy levels. Potassium flame colours are best viewed through cobalt-blue glass to filter out any interfering yellow sodium contamination, which is much brighter and can mask the lilac."},{"stem":"Dilute aqueous ammonia is added to a cream-coloured precipitate formed when silver nitrate solution (acidified with dilute HNO₃) was added to an unknown solution. The precipitate does not dissolve in dilute ammonia but dissolves in concentrated ammonia. Which halide is present? A. Chloride (AgCl, white — dissolves in dilute NH₃) B. Iodide (AgI, yellow — insoluble in both dilute and concentrated NH₃) C. Bromide (AgBr, cream — dissolves only in concentrated NH₃) D. Fluoride (no precipitate with AgNO₃)","A":"","B":"","C":"","D":"","correct":"","explain":"The colour (cream) and ammonia-solubility pattern uniquely identify bromide. AgCl is white and dissolves in dilute NH₃; AgBr is cream and requires concentrated NH₃ to dissolve; AgI is yellow and is insoluble in both dilute and concentrated NH₃. The solubility decreases down the group because the Ksp of the silver halide decreases (AgI has the smallest Ksp), and the silver–ammonia complex [Ag(NH₃)₂]⁺ cannot compete with the increasingly stable lattice."},{"stem":"Why must the unknown solution be acidified with dilute nitric acid before silver nitrate is added in the halide test? A. Nitric acid stabilises the silver halide precipitate once it forms B. HNO₃ increases the concentration of Ag⁺ ions, ensuring a visible precipitate C. HNO₃ oxidises the halide ions so they react more readily with Ag⁺ D. Dilute HNO₃ removes carbonate and hydroxide ions that would give interfering precipitates with Ag⁺, and does not introduce any halide ions of its own","A":"","B":"","C":"","D":"","correct":"","explain":"CO₃²⁻, OH⁻ and SO₃²⁻ all give pale or white precipitates with Ag⁺. Adding dilute HNO₃ converts carbonate to CO₂ and neutralises hydroxide, eliminating these interferences. HCl cannot be used (it would add Cl⁻ to a test for Cl⁻); H₂SO₄ would precipitate Ag₂SO₄; HNO₃ is the only suitable acid for this acidification step."},{"stem":"In the preparation of 1-bromobutane, HBr is generated in situ from NaBr and concentrated H₂SO₄. Why is HBr generated in situ rather than purchased as a solution? A. In situ generation produces purer HBr with fewer aqueous impurities B. Concentrated aqueous HBr is not commercially available C. HBr is a fuming, toxic, corrosive gas at room temperature; generating it inside the sealed reflux flask from NaBr and H₂SO₄ is far safer than storing or handling bottles of the gas D. In situ generation avoids the need for a reflux condenser","A":"","B":"","C":"","D":"","correct":"","explain":"HBr gas has a pungent, highly irritating smell and is corrosive to the respiratory tract; concentrated HBr solution is also corrosive. Generating HBr in situ inside the sealed reaction flask means the dangerous gas never needs to be stored, transported or transferred — it is produced and consumed at the point of reaction. Concentrated H₂SO₄ also protonates the alcohol –OH group, activating it for nucleophilic substitution by Br⁻."},{"stem":"During simple distillation to isolate the crude haloalkane product, the thermometer bulb is positioned at the junction of the still head and the side-arm. Why? A. To monitor the temperature of the boiling liquid to prevent overheating B. To keep the thermometer away from the heating mantle C. To measure the temperature of vapour entering the condenser — this reading equals the boiling point of the substance currently distilling D. To prevent the thermometer bulb from shattering on contact with the hot liquid","A":"","B":"","C":"","D":"","correct":"","explain":"The boiling point of the vapour at the side-arm identifies which component is distilling over at each moment. If the bulb is submerged in the liquid it reads liquid temperature (which may be elevated by superheating or high-boiling impurities); if too high it reads room temperature. At the side-arm it reads the vapour temperature — the only meaningful value for identifying the distilling fraction and deciding when to start and stop collecting."},{"stem":"After distillation, the crude haloalkane is shaken with aqueous sodium carbonate in a separating funnel. The funnel must be vented regularly. Why? A. To allow fresh air in and prevent a partial vacuum B. To release heat produced by the exothermic neutralisation C. CO₂ gas is evolved as Na₂CO₃ neutralises residual acid (HBr, H₂SO₄); if the funnel is not vented the pressure build-up will force out the stopper D. To allow the two immiscible layers to separate more quickly","A":"","B":"","C":"","D":"","correct":"","explain":"Na₂CO₃ + 2HBr → 2NaBr + H₂O + CO₂. The CO₂ produced raises the pressure inside the sealed separating funnel. Venting — inverting the funnel and carefully opening the tap pointing away from people — releases the pressure. Failing to vent risks the stopper being blown out with force. This is a standard safety step for any carbonate or bicarbonate wash in organic synthesis."},{"stem":"Anhydrous MgSO₄ is added to the washed haloalkane to dry it. How is drying judged to be complete? A. The liquid turns from cloudy to bright orange B. A pH indicator strip placed in the liquid reads neutral C. The drying agent flows freely as a dry powder and no longer forms clumps; the organic liquid becomes clear rather than cloudy D. No further heat is produced when additional drying agent is added","A":"","B":"","C":"","D":"","correct":"","explain":"MgSO₄ absorbs water by forming hydrated crystals (MgSO₄·7H₂O) that clump at the bottom of the flask. When the liquid is fully dry, additional drying agent remains as a free-flowing powder that does not aggregate. The organic liquid simultaneously changes from cloudy (water droplets dispersed in the organic phase) to clear. These two visual cues — free-flowing drying agent plus a clear liquid — indicate that drying is complete and the drying agent can be filtered off."},{"stem":"A student reacts 7.40 g of butan-1-ol (Mr = 74.0) with excess HBr and obtains 8.55 g of 1-bromobutane (Mr = 137.0). What is the percentage yield? A. 58.4% B. 62.4% C. 69.5% D. 87.1%","A":"","B":"","C":"","D":"","correct":"","explain":"n(butan-1-ol) = 7.40 / 74.0 = 0.100 mol. From 1:1 stoichiometry, theoretical n(1-bromobutane) = 0.100 mol. Theoretical mass = 0.100 × 137.0 = 13.70 g. Percentage yield = (8.55 / 13.70) × 100 = 62.4% (3 s.f.). Typical school yields for this preparation are 40–70%; a result above ~80% should prompt checking for residual water or unreacted alcohol contaminating the product."},{"stem":"In the preparation of cyclohexene from cyclohexanol, the crude distillate is washed with aqueous Na₂CO₃ and then water in a separating funnel. Cyclohexene has density 0.81 g cm⁻³. Which layer contains the organic product and should be retained? A. The lower (denser) layer B. The upper layer — cyclohexene (0.81 g cm⁻³) is less dense than water (1.00 g cm⁻³) and floats on the aqueous phase C. Both layers — cyclohexene is partially miscible with water D. It is impossible to determine without a separate identification test","A":"","B":"","C":"","D":"","correct":"","explain":"Because cyclohexene is less dense than water, it forms the upper organic layer; the aqueous wash (containing dissolved Na₂CO₃, sodium phosphate, and any water-soluble impurities) forms the lower layer. The lower aqueous layer is run off through the tap and discarded. Confusing the layers and discarding the upper (organic) layer would mean losing the entire product — always verify which layer is organic before running any layer to waste."},{"stem":"Which test confirms that the product collected is cyclohexene rather than unreacted cyclohexanol? A. Add Na₂CO₃(aq) — effervescence confirms an alkene B. Warm with acidified K₂Cr₂O₇ — orange to green confirms the alkene C. Compare the boiling point to the literature value of 83 °C D. Add orange bromine water — rapid decolourisation to colourless confirms the C=C double bond (alkene); cyclohexanol does not decolourise bromine water","A":"","B":"","C":"","D":"","correct":"","explain":"Cyclohexene undergoes electrophilic addition with Br₂: C₆H₁₀ + Br₂ → C₆H₁₀Br₂, decolourising the orange bromine water to colourless rapidly at room temperature. Cyclohexanol lacks a C=C bond and does not decolourise bromine water under these conditions. Acidified K₂Cr₂O₇ would also oxidise cyclohexanol (alcohol) — turning orange to green — but would not react with cyclohexene cleanly, making it unsuitable as a discriminating test here."},{"stem":"Why is concentrated H₃PO₄ often preferred over concentrated H₂SO₄ as the acid catalyst for the dehydration of cyclohexanol? A. H₃PO₄ protonates the –OH group more efficiently, giving a higher equilibrium yield B. H₃PO₄ has a lower boiling point and does not contaminate the distillate C. Concentrated H₂SO₄ is a strong oxidising agent that can oxidise the alcohol to CO₂ and SO₂, producing a darker, more contaminated crude product; H₃PO₄ gives a cleaner reaction D. H₂SO₄ would dissolve into the organic layer, making it impossible to wash out in a separating funnel","A":"","B":"","C":"","D":"","correct":"","explain":"Both acids catalyse the dehydration by protonating –OH, activating it as a leaving group. However, concentrated H₂SO₄ can also oxidise organic substrates — producing SO₂, CO₂ and charred by-products — which darken the crude distillate and make purification more difficult. Concentrated H₃PO₄ is a weaker oxidising agent, giving a paler, cleaner crude product and therefore a purer final alkene."},{"stem":"Effervescence is observed when dilute HCl is added to an unknown solution, but a student is not sure whether CO₃²⁻ is present. What additional step is needed to confirm? A. Add excess NaOH to the unknown solution and test for ammonia B. Add aqueous BaCl₂ and observe whether a white precipitate forms C. Repeat the test with dilute H₂SO₄ to confirm the same effervescence D. Bubble the evolved gas through limewater — CO₂ turns limewater milky as CaCO₃ precipitates, confirming carbonate","A":"","B":"","C":"","D":"","correct":"","explain":"Fizzing with dilute acid is not specific to carbonate — sulfite produces SO₂, and reactive metals (if present as impurities) produce H₂. To confirm CO₂, the evolved gas must be bubbled through limewater: Ca(OH)₂(aq) + CO₂(g) → CaCO₃(s) + H₂O(l). The milky white CaCO₃ suspension is the diagnostic observation. Without the limewater step, OCR mark schemes do not award the confirmation mark."},{"stem":"A student tests for sulfate in a solution that may also contain carbonate. They add dilute HCl first, then add aqueous BaCl₂ and observe a white precipitate that remains insoluble on adding more dilute acid. Which conclusion is valid, and why? A. Invalid — BaCl₂ can also precipitate with chloride from the HCl B. Invalid — HNO₃ must be used for the acidification step, not HCl C. Invalid — the precipitate could still be BaCO₃ if insufficient acid was added D. Valid — BaSO₄ is white and insoluble in dilute acid; acidification beforehand removed carbonate as CO₂, ruling out BaCO₃ (which is acid-soluble) as the precipitate","A":"","B":"","C":"","D":"","correct":"","explain":"BaCO₃ is also a white precipitate with Ba²⁺, but it dissolves readily in dilute acid. By acidifying with dilute HCl before adding BaCl₂, any carbonate is removed as CO₂. The white precipitate that then forms and remains insoluble on adding more acid must be BaSO₄. Note that HCl is acceptable for this acidification step (unlike the halide test, where HCl cannot be used because Cl⁻ would contaminate the result; Cl⁻ does not precipitate with Ba²⁺)."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

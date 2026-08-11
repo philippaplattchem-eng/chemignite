@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.4 Nitrogen Compounds - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.4 &mdash; Nitrogen Compounds</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Alanine (H₂N–CH(CH₃)–COOH) shows optical isomerism but glycine (H₂N–CH₂–COOH) does not. Which statement gives the correct explanation?","A":"Alanine has a higher molecular mass than glycine, which causes it to rotate plane-polarised light.","B":"Glycine is symmetrical overall, so its enantiomers can be superimposed; alanine's molecule is unsymmetrical overall so it cannot.","C":"In alanine, the α-carbon has four different substituents (H, NH₂, COOH, CH₃), making it a chiral centre; in glycine, the α-carbon carries two identical H substituents (H, H, NH₂, COOH), so it has only three different groups and is not a chiral centre.","D":"Alanine has a methyl group that absorbs polarised light differently from glycine's structure.","correct":"C","explain":"Chirality requires a carbon bonded to <b>four different groups</b>. In alanine: the α-carbon bears H, –NH₂, –COOH, and –CH₃ — all four groups are different → <b>chiral centre</b> → optical isomers exist. In glycine: the α-carbon bears H, H, –NH₂, and –COOH — the two H atoms are identical, so there are only three different groups → <b>no chiral centre</b> → no optical isomers. Option (B) is a vague restatement using \"symmetrical\" — examiners want the four-different-groups explanation, not a general appeal to symmetry. Option (A) conflates mass with optical activity. Option (D) is physically incorrect — it is the chiral centre, not any chromophore, that causes optical activity."},{"stem":"An OCR mark scheme (June 2017) states the following about drawing the product of ethylamine + HCl: *\"Charges not required. IF charges are shown both need to be present. ALLOW charge either on N atom or NH₃⁺.\"* What does this mean in practice?","A":"You must always draw charges — omitting them loses the mark.","B":"Drawing only the negative charge (Cl⁻) without the positive charge on N will lose the mark if charges are shown, but omitting both is acceptable.","C":"You must place the positive charge specifically on the N atom, not on the NH₃⁺ group as a whole.","D":"The ionic formula RNH₃⁺Cl⁻ is not acceptable — the mark scheme requires a dot-and-cross diagram.","correct":"B","explain":"The June 2017 mark scheme rule has three practical implications: (1) <b>Omitting all charges is fine</b> — the structure of the salt can be drawn without any + or − signs and still scores full marks. (2) <b>If you choose to show a charge, you must show both</b> — drawing the Cl⁻ but forgetting the + on the ammonium ion will lose the mark (and vice versa). (3) <b>The + charge may sit either on the N atom (as N⁺) or bracket the whole NH₃ group as (NH₃)⁺</b> — both representations are explicitly allowed. Common student error: drawing the structure with a Cl⁻ written separately but forgetting any positive indication on the nitrogen — this loses the mark."},{"stem":"0.060 mol of ethylamine (CH₃CH₂NH₂) is reacted with 0.025 mol of dilute sulfuric acid (H₂SO₄). What is the required mole ratio of amine to acid, and which reagent is in excess?","A":"1:1 ratio required; ethylamine is in excess by 0.035 mol.","B":"2:1 ratio required (amine:acid); ethylamine is in excess by 0.010 mol.","C":"2:1 ratio required (amine:acid); H₂SO₄ is in excess.","D":"3:1 ratio required (amine:acid); ethylamine is limiting.","correct":"B","explain":"Sulfuric acid is <b>diprotic</b> — it donates two protons — so it requires <b>2 moles of amine per mole of H₂SO₄</b>: 2CH₃CH₂NH₂ + H₂SO₄ → (CH₃CH₂NH₃⁺)₂SO₄²⁻. To react fully with 0.025 mol H₂SO₄, the required amount of ethylamine = 2 × 0.025 = <b>0.050 mol</b>. Available ethylamine = 0.060 mol > 0.050 mol → <b>ethylamine is in excess by 0.010 mol</b>. H₂SO₄ is the limiting reagent. Common trap (option A): using a 1:1 ratio and thinking 0.060 − 0.025 = 0.035 mol excess — this ignores the diprotic nature of H₂SO₄. The 2:1 stoichiometry for any diprotic acid + monobasic amine is a standard calculation trap in OCR exams."},{"stem":"A student preparing phenylamine from nitrobenzene writes in their lab report: *\"Step 1: react nitrobenzene with H₂/Ni at room temperature to reduce the nitro group to an amine.\"* What error does this contain, and what is the OCR-specified alternative?","A":"H₂/Ni is too reactive and would reduce the benzene ring as well as the nitro group; use dilute HCl instead.","B":"H₂/Ni is an industrially used method but is NOT creditworthy in OCR A Level examinations; the specification requires Sn + concentrated HCl under reflux (followed by NaOH for the work-up).","C":"H₂/Ni must be used at above 200 °C and under high pressure to work for nitrobenzene; \"room temperature\" is the only error.","D":"H₂/Ni cannot reduce nitro groups at all; the student is confusing this with alkene hydrogenation.","correct":"B","explain":"H₂/Ni (catalytic hydrogenation) <b>does</b> reduce –NO₂ to –NH₂ and is used industrially. However, the OCR H432 specification requires candidates to know the <b>Sn + concentrated HCl method</b>. The June 2017 examiner report is explicit: *\"IGNORE H₂\"* — any answer citing H₂ or H₂/catalyst for this step scores zero. Fe/HCl is similarly ignored. The mark-scoring answer is <b>\"Sn AND concentrated HCl, heat under reflux\"</b> for the reduction, followed by <b>\"NaOH(aq)\"</b> for the work-up. Option (D) is factually wrong — H₂/Ni can reduce nitro groups, it's just not the OCR specification method."},{"stem":"A molecule has the structural formula CH₃CH₂CO–N(CH₃)₂. How many N–H bonds does this compound contain, and what type of amide is it?","A":"2 N–H bonds; primary amide","B":"1 N–H bond; secondary amide","C":"0 N–H bonds; tertiary amide","D":"3 N–H bonds; quaternary amide","correct":"C","explain":"In CH₃CH₂CO–N(CH₃)₂, the nitrogen is bonded to the acyl group (CH₃CH₂CO–) plus <b>two methyl groups</b> — that accounts for all three non-lone-pair bonds from N. There is <b>no N–H bond</b> in this structure. An amide where N carries the acyl group plus two other organic groups (and no H) is a <b>tertiary amide</b>. Name: N,N-dimethylpropanamide. This is important to distinguish: a <b>secondary amide</b> has 1 N–H (N carries acyl + one organic substituent + one H); a <b>primary amide</b> has 2 N–H (N carries acyl + 2 H). The OCR spec only requires primary and secondary amides, but tertiary amides appear in Section A MCQ distractors — recognising \"zero N–H bonds = tertiary\" is the key rule."},{"stem":"The C–N bond in an amide is shorter than a typical C–N single bond and rotation about it is restricted. What is the correct explanation?","A":"The carbon and nitrogen in an amide are both sp³ hybridised, making the C–N bond shorter.","B":"The nitrogen lone pair is delocalised into the C=O π-system, giving the C–N bond partial double-bond character and restricting rotation because rotation would break this overlap.","C":"The nitrogen lone pair forms a co-ordinate bond back to the carbonyl carbon, creating a direct N→C double bond.","D":"The amide C–N bond is short because nitrogen is smaller than carbon and the bond length simply reflects atomic radius.","correct":"B","explain":"In an amide, the nitrogen lone pair is in a p-orbital that overlaps sideways with the π-system of the adjacent C=O bond. This gives rise to two resonance forms: [R–CO–NH₂ ↔ R–C(O⁻)=NH₂⁺]. The true structure is intermediate — the C–N bond has <b>partial double-bond character</b> (shorter than a true C–N single bond, closer to a C–N double bond). A double bond has restricted rotation because rotation would require the two p-orbitals to move out of parallel alignment, breaking the π-overlap. This rigidity of the amide (peptide) bond is directly responsible for the <b>planar peptide bond</b> in proteins, which in turn enables the formation of α-helices and β-sheets in secondary protein structure. Option (A) is wrong — the carbonyl carbon is sp² and nitrogen in an amide is also approximately sp² (not sp³)."},{"stem":"A student wants to make N-propylpropanamide. They react propanoyl chloride (CH₃CH₂COCl) with propylamine (CH₃CH₂CH₂NH₂). How many moles of propylamine are needed per mole of propanoyl chloride, and why?","A":"1 mol of propylamine per 1 mol of propanoyl chloride.","B":"2 mol of propylamine per 1 mol of propanoyl chloride — one acts as the nucleophile, the other neutralises the HCl by-product.","C":"3 mol of propylamine per 1 mol of propanoyl chloride — extra equivalents are needed to push the reversible reaction to completion.","D":"0.5 mol of propylamine per 1 mol of propanoyl chloride because two amide bonds form per propylamine.","correct":"B","explain":"CH₃CH₂COCl + CH₃CH₂CH₂NH₂ → CH₃CH₂CONHCH₂CH₂CH₃ + HCl. This looks like 1:1 stoichiometry, but the <b>HCl</b> produced would immediately protonate any unreacted propylamine (which is basic) to give the propylammonium chloride salt (CH₃CH₂CH₂NH₃⁺Cl⁻). To ensure the free amine is available to act as nucleophile and to neutralise the HCl by-product without the desired amide product being protonated, <b>2 equivalents of propylamine</b> are used: one as the nucleophile, one as the base. The second equivalent ends up as propylammonium chloride (a by-product). This mirrors the NH₃ case: acyl chloride + 2NH₃ → primary amide + NH₄Cl."},{"stem":"A student plans a two-step synthesis of phenylamine from benzene. They correctly complete step 1 but then select \"LiAlH₄ in dry ether\" for step 2. Which of the following analyses is correct?","A":"LiAlH₄ is acceptable for step 2 because it is a powerful reducing agent that reduces –NO₂ to –NH₂.","B":"Step 2 is wrong: LiAlH₄ is not the OCR-specified reagent for this reduction, and it is dangerously reactive with any aqueous solvent. The correct reagent is Sn + concentrated HCl (reflux), followed by NaOH(aq) for the work-up.","C":"Step 2 is wrong because LiAlH₄ reduces –NO₂ all the way to the N–H bond of the amine AND reduces the benzene ring, giving cyclohexylamine.","D":"Step 2 is correct — LiAlH₄ is the OCR specification reagent for nitroarene reduction.","correct":"B","explain":"Step 1 is nitration (benzene + conc. HNO₃ + conc. H₂SO₄ at ~50 °C → nitrobenzene). Step 2 is the reduction of nitrobenzene to phenylamine: the OCR specification requires <b>Sn + concentrated HCl (heat under reflux)</b>, then NaOH(aq) to liberate the free amine. LiAlH₄ in dry ether is the reagent for reducing <b>nitriles</b> (R–CN → RCH₂NH₂) — a different preparation covered elsewhere. Even though LiAlH₄ can reduce nitro groups in some lab contexts, it is NOT the OCR A Level specification reagent for this step, and answers citing it would score zero. Option (C)'s claim that the benzene ring itself is reduced is also wrong in this context — catalytic hydrogenation (H₂/Pt) reduces the ring, not LiAlH₄ under normal conditions."},{"stem":"A student draws the two optical isomers of alanine and the examiner awards 1 mark out of 2. The examiner's comment is: *\"Correct groups present, but the two structures drawn can be superimposed by rotation — they are not true mirror images.\"* What specific error has the student made?","A":"The student omitted the hydrogen atom on the α-carbon.","B":"The student drew both structures as flat 2D formulae without using wedge/dash bonds to show the 3D geometry, so the spatial arrangement could not be verified as a mirror image.","C":"The student wrote the wrong R group for alanine (should be CH₃, not CH₂CH₃).","D":"The student correctly drew the optical isomers but forgot to add the name \"L-alanine\" and \"D-alanine\".","correct":"B","explain":"OCR October 2021 mark scheme (H432/02) requires that optical isomers of alanine are drawn as <b>3D wedge/dash structures</b> with <b>at least two wedge/dash bonds on each structure</b> to indicate the spatial arrangement around the chiral centre. Without wedges and dashes, a 2D structure cannot distinguish between the two enantiomers — any flat structure can be trivially \"rotated\" onto its mirror image on paper. The examiners specifically award one mark for \"correct groups attached to chiral C\" and a separate mark for \"two 3D structures that are mirror images AND correct connectivity in both.\" Getting the groups right but drawing them flat only earns the first mark. Option (D): naming the enantiomers is never required on OCR mark schemes for drawing optical isomers."},{"stem":"Compound Y gives these observations: (1) reacts with Na₂CO₃ to give effervescence; (2) reacts with NaOH to give a salt; (3) reacts with dilute HCl to give a positively charged ion; (4) the compound has a chiral centre; (5) the compound is a solid at room temperature with a melting point above 200 °C. What type of compound is Y, and which specific structural feature explains observation (5)?","A":"Y is a carboxylic acid; the high melting point is due to extensive hydrogen bonding between the –COOH groups.","B":"Y is an α-amino acid (not glycine); the high melting point is due to the zwitterionic structure creating an ionic lattice with strong electrostatic attractions between adjacent molecules.","C":"Y is a secondary amide; the high melting point reflects the planar structure of the amide bond, which allows efficient packing.","D":"Y is a phenol; the high melting point is due to aromatic π-stacking.","correct":"B","explain":"Working through the observations: (1) CO₂ with Na₂CO₃ → <b>–COOH group</b> present; (2) reacts with NaOH → consistent with –COOH (carboxylic acid group); (3) reacts with HCl to give cation → <b>–NH₂ group</b> present (lone pair accepts H⁺); (4) chiral centre → cannot be glycine (which has two H atoms on α-C); (5) solid above 200 °C. Combining (1), (2), (3): the compound has BOTH –COOH and –NH₂ → <b>α-amino acid</b> (not glycine, given (4)). Observation (5): the high melting point is explained by the <b>zwitterionic form</b> (RCH(NH₃⁺)COO⁻) creating an <b>ionic lattice</b> in the solid state — the positively charged –NH₃⁺ end of one molecule electrostatically attracts the negatively charged –COO⁻ end of the adjacent molecule, just like a crystal of an ionic salt. This requires far more energy to break than a molecular lattice, hence mp > 200 °C. Simple carboxylic acids (option A) typically melt at much lower temperatures because they form only hydrogen-bonded molecular lattices."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

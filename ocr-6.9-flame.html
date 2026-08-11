@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.9 Analytical Chemistry (A2) - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.9 &mdash; Analytical Chemistry (A2)</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A TLC plate is developed and the solvent front moves 9.0 cm from the baseline. Three components show spots at 7.2 cm, 4.5 cm, and 1.8 cm from the baseline. What is the Rf of each component, and which is the most polar?","A":"Rf = 0.80, 0.50, 0.20; the component at 7.2 cm (Rf = 0.80) is the most polar.","B":"Rf = 0.80, 0.50, 0.20; the component at 1.8 cm (Rf = 0.20) is the most polar.","C":"Rf = 8.0, 5.0, 2.0; the component at 1.8 cm is the most polar.","D":"Rf = 0.80, 0.50, 0.20; all three have the same polarity since they are on the same plate.","correct":"B","explain":"Rf calculations: spot at 7.2 cm: <b>7.2/9.0 = 0.80</b>; spot at 4.5 cm: <b>4.5/9.0 = 0.50</b>; spot at 1.8 cm: <b>1.8/9.0 = 0.20</b>. Polarity interpretation: the silica stationary phase is strongly polar. A <b>more polar</b> component forms stronger intermolecular attractions (hydrogen bonds, dipole–dipole) with the polar silica –OH groups, is adsorbed more strongly, spends more time stuck to the stationary phase, and travels the shortest distance → <b>smallest Rf = most polar</b>. The spot at 1.8 cm (Rf = 0.20) is the most polar. The spot at 7.2 cm (Rf = 0.80) barely interacts with the silica (non-polar), stays in the mobile phase, and travels almost as far as the solvent front → least polar. Option (C) divides the wrong way round."},{"stem":"A GC analysis of a three-component mixture gives the following peak areas (supplied by the data system): component A = 120 units, component B = 80 units, component C = 40 units. What is the percentage of each component?","A":"A = 50%, B = 33.3%, C = 16.7%","B":"A = 120%, B = 80%, C = 40% (cannot divide by 1)","C":"A = 40%, B = 40%, C = 20% (incorrect allocation)","D":"The percentage composition cannot be determined without molar mass data.","correct":"A","explain":"Total peak area = 120 + 80 + 40 = <b>240 units</b>. Percentage of each component = (peak area / total area) × 100: component A: (120/240) × 100 = <b>50.0%</b>; component B: (80/240) × 100 = <b>33.3%</b>; component C: (40/240) × 100 = <b>16.7%</b>. Check: 50.0 + 33.3 + 16.7 = 100% ✓. This calculation assumes the detector responds equally to each component — at A Level, OCR supplies peak integration values and treats them as directly proportional to amount. Molar masses (option D) are not needed for the percentage composition calculation; they would only be needed if you wanted to convert percentages to mole fractions or masses."},{"stem":"A student has two unknown colourless liquids, X and Y. X is propanal (an aldehyde) and Y is propanone (a ketone). Which reagent distinguishes them, and what are the expected observations?","A":"2,4-DNP: X gives an orange precipitate; Y gives no precipitate.","B":"Acidified K₂Cr₂O₇: X turns the solution green; Y does not change colour.","C":"Tollens' reagent (ammoniacal AgNO₃), warmed in a water bath: X gives a silver mirror; Y gives no reaction.","D":"Bromine water: X decolourises the orange bromine water; Y does not.","correct":"C","explain":"Options (A) and (B) are both wrong as written: (A) 2,4-DNP gives an orange precipitate for <b>both</b> aldehydes and ketones — it detects any C=O and does not distinguish the two; (B) acidified dichromate turns green with <b>both</b> propanal (aldehyde) and any primary/secondary alcohol — ketone propanone does NOT react (stays orange), so dichromate does separate them, but the question asks for the canonical aldehyde/ketone test. <b>Tollens' reagent</b> is the OCR-prescribed test: warmed with an aldehyde → <b>silver mirror</b> (Ag⁺ reduced to Ag by the aldehyde being oxidised); no reaction with propanone. Option (D) bromine water decolourises with alkenes (C=C), not with aldehydes or ketones. The H432/02 Nov 2021 mark scheme made the Tollens' / silver mirror combination the required answer for this distinction."},{"stem":"Why does phenol (C₆H₅OH) dissolve in NaOH(aq) but not react with Na₂CO₃(aq) to give CO₂?","A":"Phenol reacts with Na₂CO₃ but the CO₂ produced is reabsorbed immediately by the NaOH already present.","B":"NaOH is a stronger base than Na₂CO₃. The phenoxide ion (pKa ~10) is too weakly acidic to donate a proton to CO₃²⁻ (conjugate base of carbonic acid, pKa₂ ~10.3), but is acidic enough to react with the stronger base OH⁻.","C":"Phenol reacts with both NaOH and Na₂CO₃, but the CO₂ produced in the carbonate reaction condenses back to liquid and is not visible.","D":"Phenol is a non-acidic compound that reacts with NaOH through a non-acid–base mechanism.","correct":"B","explain":"Phenol has <b>pKa ≈ 10</b>. For a reaction to occur with a base, the acid must be stronger than the conjugate acid of that base. NaOH provides OH⁻ (conjugate acid = water, pKa ~16) → phenol (pKa 10) <b>is</b> a stronger acid than water → reaction occurs. Na₂CO₃ provides CO₃²⁻ (conjugate acid = HCO₃⁻, pKa₂ ~10.3) → phenol (pKa 10) is <b>marginally weaker</b> than H₂CO₃ (pKa 6.35) but is of <b>similar strength to HCO₃⁻</b> (pKa ~10.3). The equilibrium does NOT strongly favour products → <b>no observable CO₂ evolution</b>. By contrast, <b>carboxylic acids</b> (pKa ≈ 4–5) are much stronger acids than H₂CO₃ (pKa 6.35) → proton transfer is favoured → CO₂ is released. This pKa argument is the mechanistic basis for the Na₂CO₃ diagnostic test."},{"stem":"Propan-2-ol has the structure (CH₃)₂CHOH. How many peaks would appear in its proton-decoupled ¹³C NMR spectrum, and why?","A":"4 peaks — one for each carbon atom in the molecule.","B":"3 peaks — one for each of the three different structural environments (CH₃, CH, OH).","C":"2 peaks — the two CH₃ groups are equivalent (related by the mirror plane through the C–OH bond), giving one peak; the central CH–OH carbon is unique, giving a second peak.","D":"1 peak — all three carbons are equivalent because they are all sp³.","correct":"C","explain":"Propan-2-ol is (CH₃)₂CHOH. Drawing it out: the <b>two CH₃ groups</b> are identical by the mirror plane through the C–O bond and C–H axis — they experience the same magnetic environment and together give <b>one peak</b> in the ¹³C NMR spectrum (around 25 ppm, alkyl region). The <b>central C</b> (bearing –OH, –H, and two –CH₃ groups) is in a unique environment — it is bonded to an oxygen — giving a <b>second peak</b> (around 65 ppm, C–O region). Total: <b>2 peaks</b>. Option (A) is wrong — it assumes no symmetry. Option (B) includes the –OH separately, but the oxygen is not a carbon, so it does not give a ¹³C peak. The OH hydrogen may appear in ¹H NMR but not in ¹³C NMR."},{"stem":"In the ¹H NMR spectrum of ethanol (CH₃CH₂OH), the CH₂ peak appears as a quartet. Explain the origin of this splitting using the n + 1 rule.","A":"The CH₂ is split by the 1 proton on the OH group: n = 1, so n + 1 = 2 → doublet.","B":"The CH₂ is split by the 3 protons on the adjacent CH₃ group: n = 3, so n + 1 = 4 → quartet.","C":"The CH₂ is split by both the CH₃ (3 H) and the OH (1 H), giving n = 4, so n + 1 = 5 → quintet.","D":"The CH₂ appears as a quartet because it has 4 protons in total (2 on CH₂ + 2 from neighbouring groups).","correct":"B","explain":"The <b>n + 1 rule</b> considers the number of <b>non-equivalent protons on the directly adjacent carbon atoms</b>. For the CH₂ in ethanol: the adjacent carbon on one side is the CH₃ (3 equivalent protons); the adjacent group on the other side is the –OH (whose proton does NOT reliably split the CH₂ because it exchanges rapidly between molecules through hydrogen bonding and effectively decouples itself). So n = 3 (from the CH₃ only) → n + 1 = <b>4 → quartet</b>. Similarly, the CH₃ group is adjacent to the CH₂ (2 protons, n = 2) → n + 1 = 3 → <b>triplet</b>. The classic CH₃CH₂– triplet/quartet pair is the most important splitting pattern in OCR ¹H NMR."},{"stem":"A compound has a strong IR absorption at 1715 cm⁻¹ and no broad absorption in the region 2500–3550 cm⁻¹. The molecular formula is C₃H₆O. What can be concluded from the IR data alone?","A":"The compound is propan-1-ol, with an alcohol O–H absorption hidden by the C–H peaks.","B":"The compound contains a C=O group (carbonyl) consistent with an aldehyde or ketone; the absence of a broad O–H band in the 2500–3550 cm⁻¹ region rules out an alcohol and a carboxylic acid. The compound is likely propanone or propanal.","C":"The compound is propanal — the band at 1715 cm⁻¹ is specific to aldehyde C=O.","D":"The absorption at 1715 cm⁻¹ indicates a carboxylic acid.","correct":"B","explain":"IR interpretation rules: (1) <b>1715 cm⁻¹ = C=O</b> stretch — this falls in the carbonyl region (1640–1750 cm⁻¹). A ketone C=O absorbs around ~1715 cm⁻¹; an aldehyde ~1720 cm⁻¹; an ester ~1735 cm⁻¹; an acid ~1715 cm⁻¹. (2) <b>Absence</b> of a broad O–H band at 2500–3550 cm⁻¹ rules out <b>alcohol</b> (broad 3200–3550 cm⁻¹) and <b>carboxylic acid</b> (very broad 2500–3300 cm⁻¹). So: C=O is present; no O–H → not an alcohol, not a carboxylic acid → likely an aldehyde or ketone. Molecular formula C₃H₆O: degree of unsaturation = (2×3 + 2 − 6)/2 = 1, consistent with one C=O. The isomers are propanal (CH₃CH₂CHO) and propanone (CH₃COCH₃) — IR alone cannot distinguish them; Tollens' or ¹H NMR would be needed."},{"stem":"A mass spectrum shows M⁺ = 72, with significant fragment peaks at m/z = 57 and m/z = 43. What can be deduced from the losses?","A":"Loss of 15 (72 → 57) = loss of •CH₃; loss of 29 (72 → 43) = loss of •CHO or •C₂H₅.","B":"Loss of 57 = loss of a very large fragment; loss of 43 = loss of 43 mass units from somewhere.","C":"The losses of 15 and 29 indicate an ester with an ethyl group: M − 15 = loss of –OEt, M − 29 = loss of –COOH.","D":"M⁺ = 72 means the compound has M_r = 72/2 = 36, since the ion is doubly charged.","correct":"A","explain":"Fragment interpretation: (1) <b>M − 15 = 72 − 15 = 57</b>: loss of •CH₃ → confirms a methyl group directly attached to the rest of the molecule. (2) <b>M − 29 = 72 − 29 = 43</b>: loss of 29 mass units — the two neutral losses with mass 29 are <b>•CHO</b> (aldehyde group lost) or <b>•C₂H₅</b> (ethyl group lost). Given the fragment at m/z = 43, that ion itself could be <b>CH₃CO⁺</b> (m/z = 43, acyl cation from a methyl ketone) or <b>C₃H₇⁺</b> (propyl, from an alkane). m/z = 43 as CH₃CO⁺ is the signature of a <b>methyl ketone (RCOCH₃)</b> — this is the acylium ion formed when the molecule loses R•. Combined with M⁺ = 72: if the fragment m/z 43 is CH₃CO⁺, then the lost group is R• = M − 43 = 29 mass units = C₂H₅•. So the compound would be <b>butanone (CH₃COCH₂CH₃, M_r = 72, C₄H₈O)</b>."},{"stem":"How can TLC be used to monitor whether a chemical reaction has gone to completion in an organic synthesis?","A":"Run a GC trace of the reaction mixture and check the retention time.","B":"Spot the starting material and the reaction mixture on the same TLC plate, develop in the same solvent, and compare the Rf values. If no spot matching the starting material's Rf appears in the reaction mixture lane, the starting material has been fully consumed.","C":"Measure the melting point of the crude product and compare with the literature value.","D":"The reaction mixture is filtered under reduced pressure and the filtrate is tested with 2,4-DNP.","correct":"B","explain":"TLC is ideal for monitoring reaction progress because it is rapid (5–20 min), requires only tiny amounts of material, and gives an immediate visual result. The procedure: spot (i) a sample of the pure starting material and (ii) a sample of the reaction mixture on the <b>same plate</b> alongside each other; develop in the same solvent system; visualise. If the reaction has gone to completion, the lane from the reaction mixture will show <b>no spot at the starting material's Rf</b> — only the product spot (at a different Rf). If reaction is incomplete, both the starting material and product spots appear in the reaction lane. This is called a <b>co-spotting</b> experiment. Advantage over GC (option A): TLC requires no expensive instrumentation and can be done on the bench."},{"stem":"The ¹H NMR spectrum of methyl ethanoate (CH₃COOCH₃) shows two singlet peaks with integration ratio 3:3. Explain why both peaks are singlets and why the integration ratio is 3:3.","A":"Both CH₃ groups are equivalent and both appear as a single combined singlet at the same chemical shift; the ratio 3:3 reduces to 1:1.","B":"The CH₃ on the acyl carbon has no adjacent C–H protons → singlet; the OCH₃ also has no adjacent C–H protons → singlet. The two CH₃ groups have 3H each, giving integration ratio 3:3 (1:1). Both are singlets because neither group has any neighbouring C–H protons to split them.","C":"Both peaks are singlets because the molecule has a plane of symmetry making both CH₃ groups equivalent.","D":"Both are singlets because OCR rules specify that all methyl groups appear as singlets.","correct":"B","explain":"Methyl ethanoate: <b>CH₃–CO–O–CH₃</b>. The acyl CH₃ (bonded to the carbonyl carbon –CO–) has no adjacent carbon carrying H atoms — the carbonyl carbon itself has no H atoms on it. Therefore the acyl CH₃ has n = 0 neighbours → n + 1 = 1 → <b>singlet</b> (~2.0 ppm). The ester O–CH₃ (bonded directly to oxygen) likewise has no adjacent carbon with H atoms — the O connects directly to the acyl C=O, which has no H. So O–CH₃ also has n = 0 → <b>singlet</b> (~3.6 ppm). The two groups are non-equivalent (one is next to a carbonyl, one is bonded to an oxygen), so they give two <b>separate</b> singlets at different chemical shifts — and each CH₃ contributes 3H, giving an integration ratio of 3:3 = 1:1. Option (A) is wrong — the two CH₃ groups are non-equivalent (different environments)."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

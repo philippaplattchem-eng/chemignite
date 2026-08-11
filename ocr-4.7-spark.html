@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.7 Analytical Techniques (AS) - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.7 &mdash; Analytical Techniques (AS)</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"In an infrared spectrum, what does a lower percentage transmittance (a deeper trough) indicate?","A":"The sample allows more radiation to pass through at that wavenumber","B":"The sample absorbs more IR radiation at that wavenumber — a stronger absorption by the corresponding bond","C":"The bond at that wavenumber is broken by the IR radiation","D":"The wavenumber is too high for the detector to measure reliably","correct":"B","explain":"The y-axis of an IR spectrum plots <b>% transmittance</b> — the fraction of IR radiation that passes through the sample without being absorbed. A reading of 100% means no absorption at that wavenumber; a reading near 0% means almost complete absorption. A <b>deeper trough</b> (lower % transmittance) therefore means <b>stronger absorption</b> — more of the incoming IR is being taken up by the vibrating bond. Students often confuse themselves by thinking \"deeper = more signal\", when in fact deeper = more absorption (which appears as less light getting through). The IR spectrum is essentially a plot of where energy is absorbed, with absorptions shown as downward troughs from the 100% baseline rather than upward peaks as in UV-visible spectroscopy."},{"stem":"Which bond type is responsible for the broad absorption between 3200 and 3550 cm⁻¹ in the IR spectrum of an alcohol?","A":"C–H bond stretching","B":"C=O bond stretching","C":"O–H bond stretching","D":"C–O bond stretching","correct":"C","explain":"The O–H bond of an alcohol absorbs IR radiation in the range <b>3200–3550 cm⁻¹</b> and produces a <b>broad</b> absorption. The breadth is caused by hydrogen bonding: in a liquid alcohol, the O–H vibrational frequency is spread over a range because molecules in different hydrogen-bonding environments have slightly different O–H bond strengths and lengths. The C–H bond absorbs at 2850–3100 cm⁻¹ (sharp, and present in virtually every organic compound). The C=O bond absorbs at 1630–1820 cm⁻¹ (strong and sharp). The C–O bond absorbs at 1000–1300 cm⁻¹ (in the fingerprint region). When interpreting a spectrum, if you see a broad absorption centred around 3200–3550 cm⁻¹ with no corresponding C=O trough, the compound is an alcohol."},{"stem":"How does the O–H absorption in a carboxylic acid differ from the O–H absorption in an alcohol?","A":"The carboxylic acid O–H appears at a lower wavenumber (1000–1300 cm⁻¹) compared to the alcohol","B":"The carboxylic acid O–H is a sharp, narrow peak, unlike the broad alcohol O–H","C":"The carboxylic acid O–H is very broad, spanning 2500–3300 cm⁻¹, and is accompanied by a strong C=O peak at ~1710 cm⁻¹, whereas the alcohol O–H is broad but narrower (3200–3550 cm⁻¹) and has no C=O peak","D":"The carboxylic acid O–H and the alcohol O–H absorb at exactly the same wavenumber; only the C=O peak differs","correct":"C","explain":"Carboxylic acids exist predominantly as <b>hydrogen-bonded dimers</b> in the liquid and solid state — two –COOH groups link through two C=O···H–O hydrogen bonds. This extensive hydrogen-bonding network spreads the O–H vibrational frequency over an even wider range than in alcohols, producing a <b>very broad</b> absorption from ~2500 to ~3300 cm⁻¹ — one that is noticeably wider and extends to lower wavenumber than the alcohol O–H. Furthermore, a carboxylic acid's spectrum <b>always</b> shows a strong C=O stretching peak at ~1710 cm⁻¹ alongside the broad O–H. The combination of very broad O–H (2500–3300 cm⁻¹) plus strong C=O (~1710 cm⁻¹) is the diagnostic pair for a carboxylic acid. An alcohol has a broad O–H (3200–3550 cm⁻¹) but <b>no</b> C=O peak — this absence is as important as the presence of the O–H."},{"stem":"Why do N₂ and O₂, which together make up ~99% of the atmosphere, have no greenhouse effect despite being present in large quantities?","A":"They are transparent to IR because they are too small to absorb radiation at these energies","B":"They do not absorb IR radiation because stretching of a homonuclear diatomic bond does not change the dipole moment, so no IR photon can be absorbed by the vibrating bond","C":"They do absorb IR but immediately re-emit all the energy back to space, unlike CO₂","D":"N₂ and O₂ absorb UV radiation, not IR, and the UV wavelengths are too short to trap heat","correct":"B","explain":"For a bond vibration to absorb IR radiation, the vibration must cause a <b>change in dipole moment</b> during the oscillation. N₂ (N≡N) and O₂ (O=O) are <b>homonuclear diatomics</b> — identical atoms joined by a covalent bond. By symmetry, the bond has zero dipole moment at any bond length, so stretching the bond (making it longer or shorter) does not create or change any dipole. There is no oscillating electric field component for the IR photon to couple to, so no absorption occurs. In contrast, CO₂ (O=C=O) is linear but its asymmetric stretching mode breaks the symmetry and creates an oscillating dipole; its bending mode also creates an oscillating dipole. H₂O and CH₄ are asymmetric molecules with permanent or instantaneous dipoles whose vibrations change the dipole moment — all three greenhouse gases absorb IR strongly."},{"stem":"In a mass spectrum, the molecular ion (M⁺) peak is found at m/z = 60. What does this tell you directly?","A":"The compound contains 60 carbon atoms","B":"The relative molecular mass of the compound is 60","C":"The most abundant ion in the spectrum is at m/z = 60","D":"The compound is ethanol (C₂H₅OH, Mr = 46)","correct":"B","explain":"The <b>molecular ion (M⁺)</b> is formed when one electron is knocked from the intact parent molecule: M → M⁺ + e⁻. Its m/z value (for singly charged ions, where z = +1) equals the mass of the ion, which is equal to the mass of the parent molecule. Therefore, <b>m/z of M⁺ = Mr of the compound</b>. A peak at m/z = 60 means Mr = 60, which is consistent with several possible molecular formulae (C₃H₈O = propanol, C₂H₄O₂ = ethanoic acid or methyl methanoate, etc.) — the molecular formula and structure require further analysis (fragmentation pattern, IR, elemental analysis). The M⁺ peak is not necessarily the base peak (the tallest peak — option C would be the base peak definition). Ethanol has Mr = 46, not 60 (option D)."},{"stem":"What does a small peak at m/z = M + 1 in a mass spectrum indicate?","A":"Loss of one hydrogen atom from M⁺ to give M − 1, which is incorrectly assigned","B":"A molecule containing one ¹³C atom in place of the more common ¹²C — natural carbon is ~1.1% ¹³C, so for every 100 molecules containing only ¹²C there are about 1.1 molecules with one ¹³C","C":"The presence of a chlorine atom in the molecule (chlorine has two isotopes differing by 2 mass units)","D":"An error in the mass spectrometer — the M + 1 peak should be ignored","correct":"B","explain":"Natural carbon is approximately <b>98.9% ¹²C and 1.1% ¹³C</b>. For a molecule containing *n* carbon atoms, the probability that at least one of them is ¹³C increases proportionally with *n*. The height of the M+1 peak relative to M⁺ is therefore approximately 1.1% × n. A small M+1 peak is expected for any organic compound and is not an artefact. It can be used analytically: (abundance of M+1) / (abundance of M⁺) ÷ 1.1% = number of carbon atoms n. For chlorine (option C), the relevant isotope peak is at <b>M + 2</b> (³⁵Cl vs ³⁷Cl differ by 2 mass units) in a ~3 : 1 ratio, not M + 1. A genuine M − 1 peak (loss of H•) is a separate feature sometimes seen in aldehydes; it is distinct from the M + 1 isotope satellite."},{"stem":"What is the diagnostic IR absorption used by evidential breathalysers to measure ethanol concentration in breath?","A":"The O–H stretch of ethanol at ~3300 cm⁻¹","B":"The C–H stretch at ~2950 cm⁻¹","C":"The C–O stretch of ethanol at ~1050 cm⁻¹","D":"The C=O stretch at ~1715 cm⁻¹","correct":"C","explain":"Modern evidential IR breathalysers measure the <b>C–O stretching vibration</b> of ethanol at approximately <b>1050 cm⁻¹</b>. This absorption sits in a region of the spectrum that is relatively clear of strong absorptions from CO₂ and water vapour in breath. The absorbance at 1050 cm⁻¹ is proportional to the concentration of ethanol in the breath sample, allowing a quantitative reading calibrated against blood-alcohol concentration. Cross-checks using the C–H region (~2950 cm⁻¹) confirm the identity of the absorbing species and help distinguish ethanol from potential interferents such as acetone (which is present in higher concentrations in some diabetic patients' breath). The O–H stretch at 3300 cm⁻¹ could also detect ethanol but falls in a region shared by water vapour in breath, making it less suitable as a specific measurement wavelength."},{"stem":"A compound gives M⁺ at m/z = 72 and an intense fragment at m/z = 43. What is the most likely identity of the m/z = 43 fragment?","A":"C₃H₇⁺ (propyl cation, mass = 43) or CH₃CO⁺ (acylium / ethanoyl cation, mass = 43)","B":"CHO⁺ (mass = 29, not 43)","C":"COOH⁺ (mass = 45, not 43)","D":"C₂H₅⁺ (mass = 29, not 43)","correct":"A","explain":"The fragment at m/z = 43 can arise from two common sources: (1) <b>CH₃CO⁺</b> (the acylium or ethanoyl cation): mass = 12 + 3(1) + 12 + 16 = 43. This is the classic base peak of methyl ketones — butan-2-one (Mr = 72) loses •C₂H₅ from the ethyl side of the carbonyl, giving CH₃CO⁺ at m/z = 43. It is also prominent in esters containing a CH₃CO– unit. (2) <b>C₃H₇⁺</b> (propyl cation): mass = 3(12) + 7(1) = 43. This appears from loss of •CH₃ from a butyl-containing compound. For Mr = 72, butan-2-one (CH₃COCH₂CH₃) would give a dominant 43 peak from CH₃CO⁺ (α-cleavage on the ethyl side) and a 57 peak from C₂H₅CO⁺ (α-cleavage on the methyl side). The 72 → 43 difference is 29 (loss of •C₂H₅ or •CHO). This is among the most important fragments to recognise on the OCR AS course."},{"stem":"A compound shows equal-intensity peaks at M⁺ and M + 2. What does this pattern indicate?","A":"The compound contains one chlorine atom (³⁵Cl : ³⁷Cl in a 3 : 1 ratio, not 1 : 1)","B":"The compound contains one bromine atom (⁷⁹Br : ⁸¹Br in approximately 1 : 1 ratio)","C":"The compound contains two carbon atoms in the ¹³C form","D":"The compound has been contaminated with its structural isomer","correct":"B","explain":"The two naturally occurring isotopes of bromine are <b>⁷⁹Br (~50%) and ⁸¹Br (~50%)</b>. When a compound contains one bromine atom, the molecular ion cluster shows two peaks of nearly <b>equal intensity</b> at M (containing ⁷⁹Br) and M + 2 (containing ⁸¹Br), in an approximately <b>1 : 1 ratio</b>. This is one of the most distinctive isotope patterns in mass spectrometry — the twin peaks of equal height are immediately recognisable as the signature of a single bromine atom. By contrast, a single chlorine atom gives a <b>3 : 1</b> M : M+2 ratio (³⁵Cl ~75%, ³⁷Cl ~25%). Two chlorines give a ~9 : 6 : 1 pattern at M, M+2, M+4. The M+1 peak from ¹³C is a very minor feature (~1.1% per carbon) and would never give two peaks of equal intensity."},{"stem":"Which of the following compounds would give both a strong sharp C=O peak around 1700–1720 cm⁻¹ AND a very broad O–H absorption spanning ~2500–3300 cm⁻¹ in its IR spectrum?","A":"Propanone (CH₃COCH₃)","B":"Propan-1-ol (CH₃CH₂CH₂OH)","C":"Propanal (CH₃CH₂CHO)","D":"Propanoic acid (CH₃CH₂COOH)","correct":"D","explain":"The diagnostic pair \"strong sharp C=O at ~1710 cm⁻¹ PLUS very broad O–H spanning 2500–3300 cm⁻¹\" is the unambiguous fingerprint of a <b>carboxylic acid</b>. Propanoic acid (CH₃CH₂COOH) contains both a C=O group (the carbonyl of the –COOH) and an O–H group (the acidic hydroxyl). In the liquid phase, propanoic acid exists predominantly as hydrogen-bonded dimers, producing the characteristic very-broad O–H absorption that spans all the way from ~2500 cm⁻¹ to ~3300 cm⁻¹, often partially obscuring the C–H peak. Propanone (ketone) has a sharp C=O at ~1715 cm⁻¹ but NO O–H absorption. Propan-1-ol has a broad O–H at 3200–3550 cm⁻¹ but NO C=O. Propanal has a sharp C=O at ~1720 cm⁻¹ but NO broad O–H. Only the carboxylic acid shows both simultaneously."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

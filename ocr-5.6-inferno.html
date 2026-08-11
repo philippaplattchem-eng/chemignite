@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.6 Transition Elements - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.6 &mdash; Transition Elements</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student claims the coordination number of cobalt in [Co(NH₃)₄Cl₂]⁺ is 2, because \"there are two different types of ligand.\" What is the correct coordination number and geometry?","A":"2 — the student is correct; coordination number counts types of ligand","B":"4 — only the NH₃ ligands contribute to coordination","C":"6, octahedral — the total number of coordinate bonds is 4 (from NH₃) + 2 (from Cl⁻) = 6","D":"8 — each ligand has multiple lone pairs so all contribute","correct":"C","explain":"Coordination number = total number of coordinate (dative covalent) bonds from all ligands to the central metal, regardless of how many types of ligand are present. In [Co(NH₃)₄Cl₂]⁺: four NH₃ are monodentate (one bond each) and two Cl⁻ are also monodentate (one bond each), giving 4 + 2 = 6 coordinate bonds. Coordination number = 6 and geometry = octahedral with bond angles of 90°. This complex shows cis-trans isomerism because the two Cl⁻ ligands (the \"B\" ligands in an MA₄B₂ arrangement) can be adjacent (cis, 90°) or opposite (trans, 180°). The student's error of counting types of ligand is among the most common misconceptions in this topic. The number of lone pairs a ligand possesses is also irrelevant — only the lone pairs actually donated to the metal count."},{"stem":"Cisplatin (cis-Pt(NH₃)₂Cl₂) is an anti-cancer drug; the trans isomer is inactive. Which explanation is correct?","A":"The trans isomer has a different molecular formula and therefore different chemistry","B":"In the cis isomer, the two reactive Pt sites (after Cl⁻ displacement) are 90° apart, allowing simultaneous binding to two adjacent guanine N7 atoms on the same DNA strand; in the trans isomer the sites are 180° apart, making this crosslink geometrically impossible","C":"The cis isomer is more water-soluble and reaches tumour cells more efficiently","D":"The trans isomer has Pt in the +3 oxidation state and cannot undergo ligand substitution","correct":"B","explain":"Cisplatin's mechanism: inside the cell (where Cl⁻ concentration is lower than in blood), the Cl⁻ ligands are displaced by water, generating a reactive species that binds to N7 of guanine bases in DNA. The cis geometry places the two reactive Pt sites 90° apart, exactly the right distance and angle for simultaneously coordinating to two adjacent guanine residues on the same strand — a 1,2-intrastrand crosslink that kinks the helix, blocks DNA replication, and triggers apoptosis. In trans-Pt(NH₃)₂Cl₂, the reactive sites are at 180° — this geometry physically cannot form the same adjacent crosslink. The trans isomer is biologically inert for purely geometric reasons, not because of differences in oxidation state or solubility. Option A is wrong: both isomers have the same molecular formula (Pt(NH₃)₂Cl₂)."},{"stem":"[CuCl₄]²⁻ is tetrahedral (4-coordinate) while [Cu(H₂O)₆]²⁺ is octahedral (6-coordinate). Which explanation is most complete?","A":"Cl⁻ has a smaller ionic radius than H₂O, so fewer Cl⁻ can fit around Cu²⁺","B":"Water is neutral; six neutral ligands are always preferred over four anionic ones","C":"Cl⁻ is significantly larger than H₂O and carries a negative charge; only four Cl⁻ can fit around a small Cu²⁺ without prohibitive steric clash or excessive negative charge build-up","D":"H₂O has two lone pairs while Cl⁻ has four; the greater lone-pair supply drives 6-coordination for H₂O","correct":"C","explain":"The dominant factor is ligand size: Cl⁻ has an ionic radius ≈ 0.18 nm, far larger than the O-donor site of water (≈ 0.07 nm). Packing six Cl⁻ around a small Cu²⁺ cation (~0.07 nm radius) creates severe ligand–ligand steric clash and also builds up a 4− charge on the complex ([CuCl₆]⁴⁻), which is electrostatically very unfavourable. The complex relieves both strains by adopting four-coordination (tetrahedral, bond angles 109.5°), giving [CuCl₄]²⁻ with a manageable 2− charge. Six small, neutral H₂O ligands sit comfortably at octahedral positions with minimal steric clash and give a complex with a reasonable 2+ charge. Option A reverses the size comparison — Cl⁻ is larger, not smaller. Option D is incorrect: the number of lone pairs a ligand possesses does not determine coordination number; it is the lone pairs donated to the metal that matter, not spare lone pairs."},{"stem":"Given E°(Cu²⁺/Cu⁺) = +0.15 V and E°(Cu⁺/Cu) = +0.52 V, calculate E°cell for the disproportionation of Cu⁺(aq) and state whether it is feasible.","A":"E°cell = +0.37 V; feasible","B":"E°cell = +0.67 V; feasible","C":"E°cell = −0.37 V; not feasible","D":"E°cell = +0.37 V; not feasible because disproportionation always produces a mixture","correct":"A","explain":"For 2Cu⁺(aq) → Cu²⁺(aq) + Cu(s): the Cu⁺/Cu couple (E° = +0.52 V) is more positive, so it runs as the positive electrode (Cu⁺ is reduced to Cu). The Cu²⁺/Cu⁺ couple (E° = +0.15 V) is less positive, so it runs in reverse as the negative electrode (Cu⁺ is oxidised to Cu²⁺). E°cell = E°(positive) − E°(negative) = (+0.52) − (+0.15) = +0.37 V. Because E°cell > 0, the disproportionation is thermodynamically feasible — Cu⁺(aq) is unstable in water. Option B (+0.67 V) arises from adding rather than subtracting the two E° values. Option D: a positive E°cell always indicates feasibility regardless of the nature of the products — the presence of a mixture is not a criterion for non-feasibility."},{"stem":"Starting with Cr³⁺(aq), what sequence of colour changes is observed when: (1) excess NaOH(aq) is added, (2) H₂O₂(aq) is added, then (3) dilute H₂SO₄ is added?","A":"Violet → grey-green precipitate → orange → yellow","B":"Violet/green → grey-green precipitate (dissolves to dark green) → yellow → orange","C":"Orange → yellow → grey-green → violet","D":"Green → pale blue → yellow → orange","correct":"B","explain":"Step 1: Cr³⁺(aq) (violet or green) + NaOH → grey-green Cr(OH)₃ precipitate, which dissolves in excess NaOH to give dark green [Cr(OH)₆]³⁻ (chromite, amphoteric dissolution). Step 2: H₂O₂ in alkaline medium oxidises Cr(III) to Cr(VI): 2Cr³⁺ + 3H₂O₂ + 10OH⁻ → 2CrO₄²⁻ + 8H₂O. CrO₄²⁻ is yellow. Step 3: Acidification converts yellow chromate to orange dichromate via the acid-base equilibrium 2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O (this is NOT a further redox change). The yellow → orange step is often confused with a redox reaction, but both CrO₄²⁻ and Cr₂O₇²⁻ contain Cr(VI). Option A omits the dark green chromite stage and reverses the orange and yellow."},{"stem":"When NaOH(aq) is added to Fe²⁺(aq), a green precipitate forms. This precipitate slowly turns rust-brown on standing in air. Which explanation is correct?","A":"Fe(OH)₂ is reduced by CO₂ in air, converting Fe²⁺ to the brown Fe³⁺ form","B":"Fe(OH)₂ is oxidised by atmospheric oxygen, converting Fe²⁺ to Fe³⁺ and forming rust-brown Fe(OH)₃","C":"Fe(OH)₂ undergoes ligand substitution with atmospheric water vapour, producing a new green-brown complex","D":"Fe(OH)₂ decomposes to black FeO and is subsequently oxidised to red-brown Fe₂O₃","correct":"B","explain":"The green precipitate is Fe(OH)₂ (iron(II) hydroxide). O₂ dissolved in the surrounding water slowly oxidises Fe²⁺ to Fe³⁺ in an aerial oxidation: 4Fe(OH)₂(s) + O₂(g) + 2H₂O(l) → 4Fe(OH)₃(s). Fe(OH)₃ is rust-brown. This colour change is diagnostically useful: a green precipitate that gradually turns brown around the surface indicates Fe²⁺. Mn(OH)₂ (off-white/pale pink) also slowly darkens in air but less distinctively. Fe(OH)₃ itself, Cu(OH)₂, and Cr(OH)₃ do not show this green→brown transition. Option A is wrong: CO₂ is not responsible for this oxidation; it would require a stronger oxidant than atmospheric CO₂. The mechanism is simple aerial oxidation of Fe(II) to Fe(III)."},{"stem":"NaOH(aq) is added to a solution suspected to contain NH₄⁺. At room temperature no gas is detected, but after warming, a gas is evolved that turns damp red litmus paper blue. Which statement correctly explains both observations?","A":"At room temperature, the equilibrium NH₄⁺ + OH⁻ ⇌ NH₃ + H₂O lies too far left to release detectable NH₃; warming shifts it right. NH₃ dissolves in the water film on the litmus paper to form an alkaline solution, turning it blue","B":"Warming decomposes NH₄⁺ directly to N₂ and H₂; the gas reduces the litmus dye to give a blue colour","C":"Warming concentrates the NaOH; dry litmus would work equally well because NH₃ is an anhydrous base","D":"Warming oxidises NH₄⁺ to NH₃; because NH₃ is acidic it would normally turn litmus red, but the excess NaOH reverses this","correct":"A","explain":"The test reaction NH₄⁺(aq) + OH⁻(aq) ⇌ NH₃(g) + H₂O(l) is an equilibrium that lies to the left at room temperature: insufficient NH₃ escapes into the gas phase for detection. Warming shifts the equilibrium to the right (Le Chatelier) and increases the volatility of NH₃, releasing enough gas to be detected. Damp (not dry) litmus paper is essential because NH₃ must dissolve in a water film to ionise: NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, giving an alkaline solution that turns red litmus blue. Dry litmus paper would show no response. Option C is incorrect: the issue is not the concentration of NaOH but the position of the equilibrium and the volatility of NH₃. Option D is wrong: the reaction is acid-base (proton transfer from NH₄⁺ to OH⁻), not an oxidation."},{"stem":"Using the half-equations Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O and Zn → Zn²⁺ + 2e⁻, which is the correct overall ionic equation for the reduction of dichromate(VI) by zinc in acid?","A":"Cr₂O₇²⁻ + 14H⁺ + Zn → 2Cr³⁺ + 7H₂O + Zn²⁺","B":"Cr₂O₇²⁻ + 14H⁺ + 3Zn → 2Cr³⁺ + 7H₂O + 3Zn²⁺","C":"Cr₂O₇²⁻ + 14H⁺ + 6Zn → 2Cr³⁺ + 7H₂O + 6Zn²⁺","D":"2Cr₂O₇²⁻ + 28H⁺ + 3Zn → 4Cr³⁺ + 14H₂O + 3Zn²⁺","correct":"B","explain":"The Cr₂O₇²⁻ half-equation requires 6e⁻; the Zn half-equation provides 2e⁻ per Zn. LCM(6, 2) = 6, so the Zn half-equation must be multiplied by 3 (giving 3Zn → 3Zn²⁺ + 6e⁻). Adding and cancelling 6e⁻: Cr₂O₇²⁻ + 14H⁺ + 3Zn → 2Cr³⁺ + 7H₂O + 3Zn²⁺. Charge check: left = −2 + 14 + 0 = +12; right = +6 + 0 + 6 = +12 ✓. Colour change: orange (Cr₂O₇²⁻) → green (Cr³⁺). Option A provides only 2e⁻ (1 Zn), leaving 4e⁻ unbalanced — electrons remain in the equation. Option C uses 6 Zn (12e⁻) and doubles everything unnecessarily. OCR June 2023 examiner notes: the final equation must not contain any electrons — leaving electrons in the final answer scores zero for that mark point."},{"stem":"A solution gives a blue-green colour with water. Adding NaOH(aq) gives a grey-green precipitate that dissolves in excess NaOH to give a dark green solution, and also dissolves in excess NH₃(aq) to give a violet/purple solution. What is most likely present in the original solution?","A":"A compound containing the CrO₂⁻ ion","B":"A chromium(III) compound, such as CrCl₃ or Cr₂(SO₄)₃","C":"An organic amine compound","D":"A cobalt(II) compound","correct":"B","explain":"The four observations uniquely identify Cr³⁺: (1) green/blue-green aqueous solution = [Cr(H₂O)₆]³⁺; (2) grey-green precipitate with NaOH = Cr(OH)₃; (3) precipitate dissolves in excess NaOH → dark green [Cr(OH)₆]³⁻ (amphoteric); (4) precipitate dissolves in excess NH₃ → violet [Cr(NH₃)₆]³⁺ (ligand substitution). Only Cr(OH)₃ dissolves in both excess reagents — this is its unique diagnostic signature. The H432/03 June 2024 examiner report directly warned: \"Many candidates seem to expect to only give organic species in their responses on this paper\" — when test data describe coloured precipitates and ammonia/hydroxide behaviour, think transition-metal cation, not organic compound. Option D (Co²⁺) gives a pink Co(OH)₂ precipitate that does not dissolve in excess NaOH or NH₃."},{"stem":"[Ni(en)₃]²⁺ shows optical isomerism but not cis-trans isomerism. Which explanation is correct?","A":"Three identical bidentate ligands mean there are no distinct A and B positions for cis-trans isomerism; but the three en ligands wrap helically around Ni²⁺ with no plane of symmetry, giving two non-superimposable mirror-image enantiomers","B":"The complex is tetrahedral; tetrahedral complexes show only optical isomerism, not cis-trans","C":"Bidentate ligands are intrinsically chiral molecules, so any complex containing them is automatically optically active","D":"The complex is square planar; square planar complexes cannot show cis-trans isomerism when all ligands are identical","correct":"A","explain":"[Ni(en)₃]²⁺ is octahedral (3 × bidentate = 6 coordinate bonds). All three en ligands are identical (no A/B distinction), so there is no basis for cis-trans isomerism — there are not two different ligand types to be arranged adjacent or opposite. However, each en ligand wraps across two adjacent octahedral positions, and with three en ligands the overall arrangement is helical. The helix can be \"left-handed\" (Λ, lambda) or \"right-handed\" (Δ, delta). These two forms are non-superimposable mirror images (enantiomers): they rotate plane-polarised light by equal amounts in opposite directions and cannot be interconverted by rotation alone. OCR requires 3D drawings with correct wedge convention (2 out-wedges + 2 in-wedges + 2 lines, or 4 lines + 1 out-wedge + 1 in-wedge) and a dashed mirror line between the two structures. Option B is wrong: [Ni(en)₃]²⁺ is octahedral, not tetrahedral. Option C is wrong: en is not itself a chiral molecule; the chirality arises from the arrangement of the ligands around the metal centre."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

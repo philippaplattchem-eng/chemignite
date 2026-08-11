@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.5 Haloalkanes - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.5 &mdash; Haloalkanes</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student argues that 1-fluorobutane should hydrolyse faster than 1-iodobutane because the C–F bond is more polar, making the carbon more attractive to nucleophiles. Identify the flaw in this argument.","A":"The student is correct; C–F is the most reactive bond towards nucleophiles","B":"The argument is flawed: the rate of hydrolysis is controlled by C–X <b>bond enthalpy</b>, not by bond polarity. C–F has a high bond enthalpy (~485 kJ mol⁻¹) giving a high activation energy; C–I has a low bond enthalpy (~240 kJ mol⁻¹) giving a low activation energy. Despite C–I being barely polar, iodoalkanes hydrolyse far faster","C":"The argument is flawed because the δ⁺ on carbon is zero for all haloalkanes","D":"The argument is correct for SN1 mechanisms but wrong for SN2","correct":"B","explain":"The polarity argument has surface plausibility — a more positive carbon should attract a nucleophile more strongly — but it ignores the <b>energy cost of breaking the C–X bond</b> in the transition state. The rate-determining step involves simultaneous C–X bond cleavage and new C–Nu bond formation. The activation energy is dominated by how much energy must be supplied to stretch and break the C–X bond. C–F is by far the strongest C–X bond and requires ~485 kJ mol⁻¹ to break; C–I requires only ~240 kJ mol⁻¹. The enormous difference in bond enthalpy (≈245 kJ mol⁻¹) swamps any polarity advantage. In practice, fluoroalkanes are essentially inert under normal aqueous hydrolysis conditions — this inertness is the basis of PTFE's chemical resistance. Bond enthalpy sets the activation energy floor; polarity governs only the initial approach geometry."},{"stem":"Write the ionic equation for the hydrolysis of 1-bromopropane with aqueous sodium hydroxide, and state the conditions.","A":"CH₃CH₂CH₂Br + H₂O → CH₃CH₂CH₂OH + HBr; warm in a water bath with AgNO₃","B":"CH₃CH₂CH₂Br + OH⁻ → CH₃CH₂CH₂OH + Br⁻; heat under reflux with ethanol as co-solvent","C":"CH₃CH₂CH₂Br + NaOH → CH₃CH₂CH₂OH + NaBr; room temperature in water","D":"CH₃CH₂CH₂Br + OH⁻ → CH₃CH₂CH₂Br(OH) + Br⁻; reflux in aqueous solution","correct":"B","explain":"The ionic equation uses OH⁻ (the active nucleophile) and shows Br⁻ as the leaving group: CH₃CH₂CH₂Br + OH⁻ → CH₃CH₂CH₂OH + Br⁻. The conditions are <b>heat under reflux</b> (needed because the reaction is slow at room temperature and reflux prevents loss of the volatile haloalkane) with <b>ethanol as co-solvent</b> (needed because 1-bromopropane is insoluble in water alone). Option A describes the comparative AgNO₃ experiment (water as nucleophile), not alkaline hydrolysis. Option C uses the molecular equation — acceptable on OCR but using NaOH in the ionic equation with Na⁺ as a spectator ion is less precise than the ionic form. Option D is incorrect: the product is the alcohol (one –OH replaces one –Br), not an addition product."},{"stem":"Write the two propagation equations for the destruction of ozone by Cl•, including all radical dots. Then write the overall equation by summing them.","A":"Cl• + O₂ → ClO• + O; ClO• + O₃ → Cl• + 2O₂; overall: O₂ + O₃ → 3O₂","B":"Cl• + O₃ → ClO• + O₂; ClO• + O₃ → Cl• + 2O₂; overall: 2O₃ → 3O₂","C":"Cl₂ + O₃ → 2ClO + O₂; 2ClO + O → Cl₂ + O₂; overall: O₃ + O → 2O₂","D":"Cl• + O₃ → Cl₂O₃•; Cl₂O₃• → Cl• + 3O; overall: O₃ → 3O","correct":"B","explain":"The two propagation steps are: (1) <b>Cl• + O₃ → ClO• + O₂</b> — the Cl radical attacks an ozone molecule, producing the intermediate ClO radical and releasing oxygen; (2) <b>ClO• + O₃ → Cl• + 2O₂</b> — the ClO radical attacks a second ozone molecule, releasing Cl• (regenerated) and oxygen. Summing: Cl• + O₃ + ClO• + O₃ → ClO• + O₂ + Cl• + 2O₂. Cancelling ClO• and Cl• from both sides: <b>2O₃ → 3O₂</b>. OCR mark schemes require radical dots on Cl•, ClO•, and (in the alternative second step) •O in the propagation equations. Option C uses Cl₂ (molecules), which is wrong — the active species is the Cl <b>atom</b> (radical), not a Cl₂ molecule. Option A uses O₂ in step 1 instead of O₃ — wrong substrate."},{"stem":"In the AgNO₃/ethanol experiment, 1-fluorobutane produces no precipitate even after prolonged heating. Explain why, referring to both bond enthalpy and the nature of the silver halide formed.","A":"C–F is the most polar bond so the F is too tightly bound to the carbon to leave; also AgF is insoluble","B":"C–F has the highest bond enthalpy (~485 kJ mol⁻¹) giving an extremely high activation energy, so hydrolysis is negligibly slow under these conditions. Even if some F⁻ were released, AgF is <b>soluble</b> in water and would not form a visible precipitate","C":"Fluorine is too small to fit into the AgNO₃ precipitate lattice, so no colour is observed","D":"Fluorobutane is itself insoluble in the ethanol/water mixture, so it cannot react","correct":"B","explain":"Two separate reasons combine to prevent any observable change with 1-fluorobutane: (1) <b>Kinetic</b>: the C–F bond enthalpy is ~485 kJ mol⁻¹ — far higher than C–Cl (~340), C–Br (~280) or C–I (~240 kJ mol⁻¹). The activation energy for hydrolysis of the C–F bond is so high that under normal lab conditions (50 °C, dilute aqueous AgNO₃) essentially no F⁻ is released within any practical timeframe. (2) <b>Solubility</b>: even if a tiny amount of F⁻ were liberated, AgF is soluble in water (unlike AgCl, AgBr and AgI which are all insoluble). No insoluble precipitate would form regardless. These two effects reinforce one another: no reaction, and even if reaction occurred, no visible product. This double effect explains why the fluoroalkane tube is effectively a \"no change\" control in the experiment."},{"stem":"A primary haloalkane R–Br is treated with KCN in ethanol under reflux. What organic product is formed, and how does the carbon chain length change?","A":"R–CN is formed; the chain length is unchanged","B":"R–CN is formed; the chain gains one carbon compared to the original haloalkane","C":"R–NC is formed (isocyanide); the chain is unchanged","D":"R–OH is formed by hydrolysis of the CN⁻; the chain length increases by two carbons","correct":"B","explain":"KCN provides the cyanide ion CN⁻ as a nucleophile. The carbon of CN⁻ (which carries the lone pair and negative formal charge) attacks the δ⁺ carbon of R–Br. The C–C bond forms between the substrate carbon and the cyanide carbon, with Br⁻ leaving: R–Br + CN⁻ → R–CN + Br⁻. The product is a <b>nitrile</b> (R–C≡N). Because the new bond is C–C, the carbon skeleton of the haloalkane gains <b>one extra carbon</b> (the carbon of the CN group). For example, 1-bromopropane (3 carbons) → butanenitrile (4 carbons). This is why the reaction with KCN/ethanol is a key step in organic synthesis when the aim is to increase the chain length. Note: CN⁻ attacks through carbon (not nitrogen); the product is a nitrile (R–CN), not an isocyanide (R–NC, where nitrogen attacks)."},{"stem":"State the reagents and conditions for converting 1-chlorobutane into butan-1-amine (a primary amine). What is the key practical requirement?","A":"Aqueous NaOH, room temperature; no special equipment needed","B":"Excess ethanolic ammonia (NH₃ in ethanol), heated in a sealed tube under pressure","C":"Ethanolic KCN, reflux; the product is a nitrile which must then be reduced","D":"Aqueous KOH, reflux with nitrogen gas bubbled through","correct":"B","explain":"The direct conversion of a haloalkane to a <b>primary amine</b> uses <b>excess ethanolic ammonia</b> (NH₃ dissolved in ethanol): CH₃CH₂CH₂CH₂Cl + NH₃ → CH₃CH₂CH₂CH₂NH₂ + HCl. The reaction is heated in a <b>sealed tube</b> because ammonia has a boiling point of −33 °C — heating an open tube would simply evaporate the NH₃ before it could react. Excess NH₃ is used to push the equilibrium towards the primary amine: the product amine is itself a nucleophile and can react further with excess haloalkane to give secondary and tertiary amines and the quaternary ammonium salt. Excess NH₃ suppresses these over-alkylation products. Note that option C describes a two-step route via a nitrile — correct in principle but the question asks for direct conversion and a different type of product (amine vs nitrile)."},{"stem":"A student draws the mechanism of 1-bromopropane with OH⁻ and places the first curly arrow from the H of OH⁻ pointing to the carbon of the C–Br bond. Identify and explain the error.","A":"There is no error — the H of OH⁻ can form a bond to carbon in this mechanism","B":"The error is that the arrow should be double-headed, not single-headed","C":"The arrow must start from a lone pair on the <b>oxygen</b> of OH⁻, or from the − charge on the oxygen — the H of OH⁻ has no lone pair and carries a slight δ⁺ charge; an arrow from H implies H is donating electrons to carbon, which is the opposite of what happens","D":"The error is minor and would not lose marks on OCR mark schemes","correct":"C","explain":"In OH⁻, the oxygen carries two lone pairs and the negative formal charge. The hydrogen is covalently bonded to oxygen and sits on an electronegative atom — it carries a slight δ⁺ charge, not electron density available for donation. An arrow from H implies that the H is the electron pair donor attacking the δ⁺ carbon — mechanistically nonsensical. The correct first arrow starts from: (a) a lone pair on the O of HO⁻, or (b) the − charge on the O of HO⁻. Both are explicitly allowed by the H032/01 June 2018 mark scheme; an arrow from H is explicitly disallowed. This is, according to OCR examiner reports, the <b>most common curly arrow error</b> in the entire AS organic course and costs a mark every time it appears."},{"stem":"Why were HCFCs introduced as transitional replacements for CFCs, and why are HFCs considered better (but not perfect) alternatives?","A":"HCFCs have no chlorine and therefore zero ozone-depleting potential; HFCs also deplete ozone but less severely","B":"HCFCs retain some C–H bonds, so tropospheric •OH radicals can destroy them before they reach the stratosphere, reducing — but not eliminating — chlorine release into the stratosphere. HFCs contain no chlorine at all, giving zero ozone-depleting potential, but many are potent greenhouse gases","C":"HCFCs are inert like CFCs and reach the stratosphere just as easily; HFCs also reach the stratosphere unchanged","D":"HCFCs were better because they had no F atoms; HFCs were introduced to restore the F","correct":"B","explain":"The difference between CFCs, HCFCs and HFCs comes down to structure: CFCs (C, F, Cl only) have no C–H bonds so nothing reacts with them in the troposphere; they survive for 50–100 years and reach the stratosphere, where C–Cl bonds photolyse to give Cl•. <b>HCFCs</b> (C, H, F, Cl) retain some C–H bonds: the tropospheric hydroxyl radical (•OH) reacts with C–H bonds, removing HCFCs from the atmosphere in 1–20 years — far fewer chlorine atoms ever reach the stratosphere per kilogram released. However, HCFCs still contain chlorine, so they still have some (much lower) ozone-depleting potential. <b>HFCs</b> (C, H, F only) contain no chlorine — no Cl• can be formed — so their ozone-depleting potential is <b>zero</b>. Their drawback is that many are powerful greenhouse gases; the Kigali Amendment (2016) now phases them down for that reason."},{"stem":"Write a balanced equation for the homolytic fission of CFC-12 (CCl₂F₂) in the stratosphere, and state what type of fission this is and why the products must be described as atoms or radicals rather than molecules.","A":"CCl₂F₂ → CCl₂F₂²⁻ + 2e⁻; ionic dissociation producing a doubly charged anion","B":"CCl₂F₂ → •CClF₂ + Cl•; homolytic fission — the C–Cl bond breaks so that one bonding electron goes to each atom, forming radicals (species with unpaired electrons). The products are atoms/radicals because each fragment has an unpaired electron; Cl₂ molecules are not produced","C":"CCl₂F₂ → :CCl₂F + F⁻; heterolytic fission releasing a fluoride ion","D":"CCl₂F₂ → CF₂ + Cl₂; the two chlorine atoms combine to form a chlorine molecule immediately","correct":"B","explain":"UV photons in the stratosphere supply enough energy to break the C–Cl bond (~339 kJ mol⁻¹) <b>homolytically</b>: each bonding electron goes to one atom. The C atom retains one electron (forming •CClF₂, a carbon-centred radical) and the Cl atom retains one electron (Cl•, a chlorine atom). The equation is: CCl₂F₂ → •CClF₂ + Cl•. The products are <b>atoms</b> or <b>radicals</b> — species with a single unpaired electron. They are emphatically not Cl₂ molecules: combining two Cl atoms to form Cl₂ would require a third-body collision and would terminate the chain, not propagate it. OCR mark schemes (H032/02 June 2017) explicitly state: \"DO NOT ALLOW molecule or compound for atom.\" Always describe the products as atoms or radicals."},{"stem":"The nitric oxide radical (•NO) acts as a catalyst in a cycle that destroys stratospheric ozone. Write the two propagation equations for the •NO cycle and identify the analogy with the Cl• cycle.","A":"•NO + O₂ → •NO₂ + O; •NO₂ + O → •NO + O₂; overall: 2O₂ → 2O + O₂","B":"•NO + O₃ → •NO₂ + O₂; •NO₂ + O → •NO + O₂; overall: O₃ + O → 2O₂","C":"•NO + O₃ → •NO₃ + O₂; •NO₃ → •NO + O₂; overall: O₃ → O₂","D":"•NO + O₃ → NO₂ + O; NO₂ → •NO + O; overall: O₃ → 3O","correct":"B","explain":"The •NO catalytic cycle mirrors the Cl• cycle in every structural feature: (1) <b>•NO + O₃ → •NO₂ + O₂</b> — the nitric oxide radical destroys an ozone molecule, becoming nitrogen dioxide radical. (2) <b>•NO₂ + O → •NO + O₂</b> — the •NO₂ radical reacts with an oxygen atom (present in the stratosphere from O₂ photolysis), regenerating •NO. Summing: O₃ + O → 2O₂; the •NO appears in neither the reactants nor the products — it is catalytic. Sources of stratospheric •NO include high-altitude aircraft burning fuel in the lower stratosphere, lightning, and decomposition of nitrous oxide (N₂O) from agricultural soils. The analogy with Cl•: both cycles use a radical to attack O₃ (step 1), both form an intermediate radical (ClO• or •NO₂), and both regenerate the original radical (step 2), making each catalytic with enormous amplification potential."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.7 Carbon-Carbon Bond Formation - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.7 &mdash; Carbon-Carbon Bond Formation</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"The OCR June 2024 mark scheme for the haloalkane → nitrile step states: *\"DO NOT ALLOW HCN OR CN⁻/H⁺. DO NOT ALLOW H₂O / (aq).\"* What does each exclusion prevent, and what is the correct reagent/conditions statement?","A":"HCN is excluded because it is corrosive; CN⁻/H⁺ is excluded because it forms an amine; H₂O is excluded because nitriles are insoluble in water.","B":"HCN is excluded because that is the reagent for carbonyl addition (not haloalkane substitution); CN⁻/H⁺ is excluded because H⁺ protonates CN⁻ and destroys the nucleophile; H₂O is excluded because it introduces competing nucleophiles (OH⁻) and enables elimination. The correct statement is: KCN (or NaCN) dissolved in ethanol, heat under reflux.","C":"HCN is excluded because it only works for primary haloalkanes; CN⁻/H⁺ is excluded because it gives the carboxylic acid product; H₂O is excluded because it causes nitrile hydrolysis.","D":"All exclusions simply reflect that the examiner wants KCN not NaCN; no other distinction matters.","correct":"B","explain":"Each exclusion maps to a specific chemical error: (1) <b>HCN excluded</b> — HCN is the reagent for nucleophilic <b>addition</b> to <b>carbonyls</b> (6.7.1(ii)). Using HCN on a haloalkane is mechanistically wrong — HCN is a weak acid and mostly undissociated; the actual nucleophile that reacts with haloalkanes is CN⁻ from KCN/NaCN. Candidates who write HCN have muddled the two routes. (2) <b>CN⁻/H⁺ excluded</b> — H⁺ immediately protonates the cyanide ion (CN⁻ + H⁺ → HCN), destroying the nucleophile. The haloalkane step requires CN⁻ in the absence of acid. (3) <b>H₂O/(aq) excluded</b> — water introduces OH⁻ (competing nucleophile → alcohol product) and enables E2 elimination (→ alkene). The correct answer: <b>KCN (or NaCN) dissolved in ethanol, heat under reflux</b>."},{"stem":"A student starts with 1-chloropropane (CH₃CH₂CH₂Cl, 3 C) and carries out two steps: (i) reaction with KCN in ethanol, reflux; (ii) the nitrile product is reduced with H₂/Ni. What is the final product and its carbon count?","A":"Propylamine (CH₃CH₂CH₂NH₂, 3 C)","B":"Butylamine / butan-1-amine (CH₃CH₂CH₂CH₂NH₂, 4 C)","C":"Propanamide (CH₃CH₂CH₂CONH₂, 4 C)","D":"Butanoic acid (CH₃CH₂CH₂COOH, 4 C)","correct":"B","explain":"Step (i): CH₃CH₂CH₂Cl + KCN (ethanol, reflux) → CH₃CH₂CH₂CN + KCl. 1-chloropropane (3 C) → butanenitrile (4 C). The CN group adds 1 carbon. Step (ii): CH₃CH₂CH₂CN + 2H₂ (Ni catalyst, heat) → CH₃CH₂CH₂CH₂NH₂. Butanenitrile (4 C) → <b>butan-1-amine (4 C)</b>. The reduction preserves the carbon count. Overall: 3 C haloalkane → 4 C primary amine. Key counts: nitrile carbon is in the chain (not lost) → after reduction the amine has the same C count as the nitrile. If you picked (A), you forgot to count the CN carbon in the nitrile product. If you picked (D), you did hydrolysis (step iv), not reduction (step iii)."},{"stem":"A student wants to convert benzene into 1-phenylpropan-1-one (C₆H₅COCH₂CH₃). They plan to use Friedel–Crafts acylation. Which acyl chloride is required, and what would be the product of Friedel–Crafts alkylation with 1-chloropropane instead — and why is it a less useful synthesis?","A":"Acyl chloride: ethanoyl chloride (CH₃COCl); direct alkylation would give propylbenzene cleanly.","B":"Acyl chloride: propanoyl chloride (CH₃CH₂COCl); direct alkylation with 1-chloropropane would give a mixture of n-propylbenzene and isopropylbenzene (plus polysubstitution products) due to carbocation rearrangement and ring activation.","C":"Acyl chloride: butanoyl chloride (CH₃CH₂CH₂COCl); direct alkylation is equally good and gives the same product.","D":"Acyl chloride: methanoyl chloride (HCOCl); direct alkylation gives only propylbenzene due to chain shortening.","correct":"B","explain":"1-phenylpropan-1-one (C₆H₅COCH₂CH₃) is an aryl ketone where the 3-carbon propanoyl group (CH₃CH₂CO–) is attached to benzene. This requires <b>propanoyl chloride (CH₃CH₂COCl)</b> in Friedel–Crafts acylation: C₆H₆ + CH₃CH₂COCl → C₆H₅COCH₂CH₃ + HCl. (The product is also called phenyl ethyl ketone.) Direct alkylation with 1-chloropropane fails cleanly because: (i) the primary carbocation CH₃CH₂CH₂⁺ rearranges to the secondary (CH₃)₂CH⁺, giving isopropylbenzene (cumene) instead of propylbenzene; (ii) the alkyl group activates the ring toward further alkylation (polysubstitution). Acylation avoids both because the acylium ion CH₃CH₂CO⁺ does not rearrange (resonance-stabilised) and the electron-withdrawing acyl product deactivates the ring."},{"stem":"Compare the nucleophilic addition of CN⁻ to a carbonyl compound with the nucleophilic substitution of CN⁻ with a haloalkane. Which statement correctly identifies a key mechanistic difference?","A":"In both reactions, the first curly arrow goes from the lone pair of CN⁻ to the electrophilic carbon, and the second curly arrow shows a bond breaking to give an anion leaving group.","B":"In the carbonyl addition, the first curly arrow goes from CN⁻ to the C of C=O, and the second shows the C=O π bond breaking (both electrons to O), giving an alkoxide; in the haloalkane substitution, the first curly arrow goes from CN⁻ to the δ⁺C, and the second shows the C–X σ bond breaking (both electrons to X), giving a halide ion.","C":"Both reactions proceed by the same mechanism — only the solvent differs (water for carbonyl, ethanol for haloalkane).","D":"In the carbonyl reaction, CN⁻ attacks through its nitrogen end; in the haloalkane reaction, CN⁻ attacks through its carbon end.","correct":"B","explain":"The mechanisms are analogous in structure but differ in the bond being broken: (1) <b>Carbonyl</b>: CN⁻ attacks the δ⁺ C of C=O → first arrow from C of CN⁻ to the carbonyl C; second arrow from the <b>C=O π bond</b> (not a σ bond) to O, generating an <b>alkoxide (O⁻)</b> intermediate → then protonation gives the –OH. (2) <b>Haloalkane</b>: CN⁻ attacks the δ⁺ C of C–X → first arrow from C of CN⁻ to the C–X carbon; second arrow from the <b>C–X σ bond</b> to X (the halide leaving group), generating the halide anion X⁻. In both cases the <b>carbon</b> of CN⁻ is the attacking atom (not the nitrogen — option D is wrong). Both curly arrows 1 are from CN⁻ to the electrophilic C, but the second arrow is from a π bond (addition) vs a σ bond (substitution)."},{"stem":"A student wants to synthesise 2-hydroxypropanoic acid (lactic acid, CH₃CH(OH)COOH) from ethanal (CH₃CHO). Which two-step route is correct?","A":"Ethanal + HCN → 2-hydroxypropanenitrile; then dilute H₂SO₄(aq), reflux → 2-hydroxypropanoic acid.","B":"Ethanal + KCN (ethanol, reflux) → propanenitrile; then dilute H₂SO₄(aq), reflux → propanoic acid (missing –OH group).","C":"Ethanal + NaBH₄ → propan-1-ol; then K₂Cr₂O₇/H₂SO₄, reflux → propanoic acid (wrong connectivity).","D":"Ethanal + H₂/Ni → propan-1-ol; then HCN/NaOH → 2-hydroxypropanoic acid.","correct":"A","explain":"Step 1: <b>Nucleophilic addition of HCN</b> to ethanal (CH₃CHO) gives <b>2-hydroxypropanenitrile</b> (CH₃CH(OH)CN, 3 C). The CN⁻ attacks the C=O; the resulting alkoxide is protonated to give –OH; the CN becomes attached at the same carbon as –OH. Step 2: <b>Acid hydrolysis</b> of the nitrile with <b>dilute H₂SO₄(aq)</b>, heat under reflux converts –CN to –COOH: CH₃CH(OH)CN + 2H₂O + H⁺ → <b>CH₃CH(OH)COOH</b> + NH₄⁺ = <b>lactic acid</b>. The key: use HCN (not KCN/ethanol) for the carbonyl step, because the reaction is nucleophilic <b>addition</b> not substitution. Also: the racemate is expected unless a chiral catalyst is present (both enantiomers of lactic acid form). Option (B) uses KCN on an aldehyde — wrong mechanism for the first step; also the nitrile lacks the –OH."},{"stem":"A student claims that NaBH₄ can be used to reduce a nitrile to a primary amine. Is this correct, and which of the following correctly explains the situation?","A":"Yes — NaBH₄ is a versatile reducing agent that reduces both carbonyl compounds and nitriles.","B":"No — NaBH₄ is too mild to reduce a C≡N triple bond; for nitrile → amine, only H₂/Ni (with heat and pressure) or LiAlH₄ (in dry ether) are effective.","C":"Yes — NaBH₄ works for nitrile reduction, but only in the presence of a nickel catalyst.","D":"No — NaBH₄ instead converts nitriles into amides (not amines).","correct":"B","explain":"<b>NaBH₄</b> (sodium borohydride) is a <b>mild reducing agent</b> that delivers hydride (H⁻) to <b>C=O</b> groups (aldehydes → primary alcohols; ketones → secondary alcohols). It does <b>not</b> reduce C≡N, C=C (alkenes), or C≡C. The C≡N bond requires a stronger reductant. <b>H₂/Ni</b> (high temperature and pressure — heterogeneous catalytic hydrogenation) and <b>LiAlH₄</b> (in dry ether, a powerful hydride-transfer agent) are both effective for nitrile → amine. OCR June 2023 mark scheme confirmed: *\"ALLOW LiAlH₄\"* for the nitrile → amine step, and explicitly does not include NaBH₄. Writing NaBH₄ for nitrile reduction would score zero."},{"stem":"For the Friedel–Crafts acylation of benzene with CH₃COCl/AlCl₃, the OCR mark scheme assigns marks independently to each of five steps. A student correctly draws the Wheland intermediate (step 3) and correctly shows H⁺ loss restoring aromaticity (step 4), but omits the electrophile-generation equation (step 1) and the catalyst-regeneration equation (step 5). How many marks out of 5 do they score?","A":"5/5 — the Wheland intermediate and loss of H⁺ are the key steps; the equations are implicit.","B":"2/5 — the mark scheme independently credits each of the five steps: electrophile generation, curly arrow from π-system to electrophile, Wheland intermediate, H⁺ loss restoring aromaticity, and catalyst regeneration.","C":"0/5 — without the electrophile-generation equation the whole mechanism makes no chemical sense.","D":"3/5 — the curly arrow (step 2) is implied by drawing the Wheland intermediate, so it is also credited.","correct":"B","explain":"OCR Friedel–Crafts mechanism marks are awarded <b>independently</b> for each step. The five separately creditable steps are: (1) Electrophile-generation equation (CH₃COCl + AlCl₃ → CH₃CO⁺ + AlCl₄⁻); (2) Curly arrow from the benzene π-system to the acylium ion; (3) Correct Wheland intermediate drawn (sp³ at the attacked carbon, delocalised positive charge shown); (4) H⁺ lost from the sp³ carbon, restoring aromaticity; (5) Catalyst-regeneration equation (H⁺ + AlCl₄⁻ → HCl + AlCl₃). The student drew steps 3 and 4 correctly → <b>2 marks</b>. Without step 1 (the electrophile) and step 5 (the regeneration), 3 marks are lost. Note: step 2 (the curly arrow) is a separate mark from step 3 (the intermediate), so it is not implied — 2/5 is the correct score."},{"stem":"A student is asked: *\"Starting from methyl bromide (CH₃Br), suggest a two-step synthesis of ethanoic acid (CH₃COOH).\"* Which route is correct?","A":"CH₃Br + NaOH(aq) → CH₃OH; CH₃OH + K₂Cr₂O₇/H₂SO₄ (reflux) → CH₃COOH (wrong: would give HCOOH from methanol, not CH₃COOH)","B":"CH₃Br + KCN (ethanol, reflux) → CH₃CN; CH₃CN + dilute HCl(aq) (reflux) → CH₃COOH + NH₄⁺","C":"CH₃Br + AlCl₃ → CH₃⁺ (reacts with CO gas) → CH₃COOH (Gattermann–Koch, not on spec)","D":"CH₃Br + Mg (dry ether) → CH₃MgBr; + CO₂ → CH₃COOH (Grignard, not on spec)","correct":"B","explain":"Option (B) is the OCR route: (i) <b>CH₃Br + KCN (ethanol, reflux) → CH₃CN</b> (ethanenitrile, 2 C — CH₃Br is 1 C, CN adds 1 C → total 2 C); (ii) <b>CH₃CN + dilute HCl(aq), reflux → CH₃COOH + NH₄⁺</b> (acid hydrolysis of nitrile → carboxylic acid, same 2 C). The net result: <b>1-carbon starting material → 2-carbon carboxylic acid</b>. Option (A) is wrong because oxidising methanol (CH₃OH) with Cr₂O₇²⁻ would give methanoic acid (HCOOH, 1 C) — methanol only has 1 carbon. Options (C) and (D) use Gattermann–Koch and Grignard chemistry respectively, neither of which are on the OCR H432 specification."},{"stem":"A student is performing a Friedel–Crafts reaction in a fume cupboard. When they add the acyl chloride to the benzene + AlCl₃ mixture, they observe the evolution of a dense white acidic fume. They note the fume is likely HCl. Which experimental observation and precaution are correct?","A":"The white fume is SO₂; only anhydrous conditions are needed.","B":"The white fume is HCl gas; the reaction must be performed in an anhydrous environment (AlCl₃ reacts violently with water) and in a fume cupboard because HCl is toxic and corrosive.","C":"The white fume is NH₄Cl; the AlCl₃ has reacted with the amide by-product.","D":"The white fume is AlCl₃ vapour subliming under the heat; this is normal and no precautions are needed.","correct":"B","explain":"In Friedel–Crafts acylation, HCl is produced at every step of the catalytic cycle: the catalyst-regeneration step H⁺ + AlCl₄⁻ → <b>HCl</b> + AlCl₃ generates HCl gas, which escapes from the reaction mixture as a dense, white, acidic gas. The observation of \"white acidic fumes\" is characteristic of HCl vapour — it fumes in moist air because it reacts instantly with water to give a hydrochloric acid mist (white fume). The precautions: (1) <b>Fume cupboard</b> — HCl is toxic and irritant. (2) <b>Anhydrous conditions</b> — AlCl₃ reacts violently with water (including atmospheric moisture), destroying the catalyst and generating intense heat. AlCl₃ must be stored in sealed containers and added quickly."},{"stem":"In a multi-step synthesis, a student starts from benzene and aims to make 4-aminophenyl ethyl ketone (a compound with an aryl ketone C=O, a methylene CH₂ bridge, and a terminal –NH₂). They propose: (i) Friedel–Crafts acylation of benzene with ClCO–CH₂–Cl (chloroacetyl chloride), using AlCl₃; (ii) reaction of the ketone's –CH₂Cl with KCN (ethanol, reflux) → –CH₂CN; (iii) reduction with H₂/Ni → –CH₂NH₂. Which statement correctly analyses this route?","A":"This route is impossible because Friedel–Crafts acylation cannot be performed on benzene with a bifunctional acyl chloride.","B":"This route would work in principle: step (i) installs the –COCH₂Cl group via Friedel–Crafts acylation; step (ii) converts the –CH₂Cl into –CH₂CN (extending by 1 C); step (iii) converts –CH₂CN to –CH₂CH₂NH₂ by reduction. The final product would be a 4-substituted aryl compound with a –CO– and an –CH₂CH₂NH₂ chain.","C":"Step (ii) fails because KCN reacts with the ketone C=O instead of the C–Cl bond.","D":"Step (iii) would reduce both the nitrile AND the aryl ketone, giving a completely different product.","correct":"B","explain":"Analysing step by step: (i) Benzene + ClCO–CH₂–Cl / AlCl₃ → C₆H₅–CO–CH₂–Cl + HCl. Valid Friedel–Crafts acylation — the product is an aryl ketone bearing a –CH₂Cl handle. (ii) –CH₂Cl + KCN (ethanol, reflux) → –CH₂CN. This is standard nucleophilic substitution of the aliphatic –CH₂Cl (not the aromatic ring C–Cl, which would not undergo this reaction). The ketone C=O does not react with KCN under these conditions (no polarised C–X for CN⁻ to displace; KCN in ethanol is selective for aliphatic C–X, not C=O). (iii) H₂/Ni would normally reduce the C≡N to –CH₂NH₂, but under forcing conditions may also reduce the aryl ketone C=O. The question asks to analyse the route, and option (B) correctly describes the intended pathway. In practice, chemists would protect the ketone or use selective conditions to avoid step (iii) reducing the C=O."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

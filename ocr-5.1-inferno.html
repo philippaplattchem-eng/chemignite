@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.1 Rates of Reaction - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.1 &mdash; Rates of Reaction</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Initial rate data for 2X + Y + Z → products: | Run | \\[X\\] / mol dm⁻³ | \\[Y\\] / mol dm⁻³ | \\[Z\\] / mol dm⁻³ | Rate / mol dm⁻³ s⁻¹ | |-----|-----------------|-----------------|-----------------|---------------------| | 1 | 0.10 | 0.20 | 0.10 | 1.5 × 10⁻³ | | 2 | 0.20 | 0.20 | 0.10 | 3.0 × 10⁻³ | | 3 | 0.10 | 0.40 | 0.10 | 6.0 × 10⁻³ | | 4 | 0.10 | 0.20 | 0.20 | 1.5 × 10⁻³ | What is the correct rate equation and overall order?","A":"rate = k[X][Y]²; overall order 3","B":"rate = k[X][Y]; overall order 2","C":"rate = k[X]²[Y]; overall order 3","D":"rate = k[X][Y][Z]; overall order 3","correct":"A","explain":"Runs 1 & 2: [X] doubles (0.10 → 0.20); rate doubles (1.5 → 3.0 × 10⁻³). Rate doubles when [X] doubles → <b>order in X = 1</b>. Runs 1 & 3: [Y] doubles (0.20 → 0.40); rate quadruples (1.5 → 6.0 × 10⁻³; factor = 4 = 2²). Rate quadruples when [Y] doubles → <b>order in Y = 2</b>. Runs 1 & 4: [Z] doubles (0.10 → 0.20); rate unchanged (both 1.5 × 10⁻³). <b>Order in Z = 0</b>. Rate equation: rate = k[X][Y]². Overall order = 1 + 2 + 0 = <b>3</b>. Although Z appears in the balanced equation, it is zero order — a direct demonstration that orders cannot be read from stoichiometric coefficients."},{"stem":"Using Run 1 from Q21, calculate k including its units.","A":"k = 0.38 mol⁻¹ dm³ s⁻¹","B":"k = 0.38 mol⁻² dm⁶ s⁻¹","C":"k = 7.5 × 10⁻² mol⁻² dm⁶ s⁻¹","D":"k = 7.5 × 10⁻³ mol⁻² dm⁶ s⁻¹","correct":"B","explain":"Rate = k[X][Y]². From Run 1: 1.5 × 10⁻³ = k × (0.10) × (0.20)² = k × 0.10 × 0.040 = k × 4.0 × 10⁻³. So k = 1.5 × 10⁻³ / 4.0 × 10⁻³ = <b>0.375 ≈ 0.38</b>. Units: k = rate / ([X][Y]²) = (mol dm⁻³ s⁻¹) / (mol dm⁻³ × (mol dm⁻³)²) = (mol dm⁻³ s⁻¹) / (mol³ dm⁻⁹) = <b>mol⁻² dm⁶ s⁻¹</b>. Option A has the correct number but units of a second-order constant (mol⁻¹ dm³ s⁻¹), which would arise from an overall order of 2. Options C and D have wrong numerical values (from arithmetic errors)."},{"stem":"An Arrhenius plot has its x-axis labelled \"1/T × 10⁻³ / K⁻¹\". The gradient measured from the printed graph is −8.5. What is the activation energy in kJ mol⁻¹?","A":"Eₐ = 0.071 kJ mol⁻¹","B":"Eₐ = −70.7 kJ mol⁻¹","C":"Eₐ = 70.7 kJ mol⁻¹","D":"Eₐ = 70 700 kJ mol⁻¹","correct":"C","explain":"The x-axis label \"1/T × 10⁻³ / K⁻¹\" means each printed x-unit represents 10⁻³ K⁻¹. The true gradient (in the SI-consistent unit of K) is therefore −8.5 × 10³ K = −8500 K (multiply the printed gradient by 10³ to undo the scaling). Eₐ = −gradient × R = −(−8500 K) × 8.314 J K⁻¹ mol⁻¹ = 70 700 J mol⁻¹ = <b>70.7 kJ mol⁻¹</b>. The ×10⁻³ scaling error is the single most commonly penalised error in Arrhenius graph questions (H432/01 June 2018): forgetting the scaling gives Eₐ = 8.5 × 8.314 = 70.7 J mol⁻¹ = 0.071 kJ mol⁻¹ (Option A — 1000× too small). Option B reports a negative Eₐ — non-physical and explicitly not allowed (H432/01 November 2020). Option D forgets to convert from J mol⁻¹ to kJ mol⁻¹."},{"stem":"For the reaction NO₂ + CO → NO + CO₂ with rate = k[NO₂]², which two-step mechanism is consistent with both the rate equation and the overall equation?","A":"Step 1 (slow): NO₂ + CO → NO + CO₂ (single elementary step)","B":"Step 1 (slow): NO₂ → NO + O; Step 2 (fast): O + CO → CO₂","C":"Step 1 (slow): 2NO₂ → NO + NO₃; Step 2 (fast): NO₃ + CO → NO₂ + CO₂","D":"Step 1 (slow): NO₂ + CO → NO₂CO; Step 2 (fast): NO₂CO → NO + CO₂","correct":"C","explain":"rate = k[NO₂]² means the RDS is second order in NO₂ — the slow step involves exactly <b>2 molecules of NO₂</b> and no CO. CO must react in a fast step after the RDS. Option C satisfies all three constraints: (1) slow step 2NO₂ → NO + NO₃ involves two NO₂ molecules → rate = k[NO₂]²; (2) CO appears only in the fast step; (3) the intermediate NO₃ cancels when the steps are summed: 2NO₂ + NO₃ + CO → NO + NO₃ + NO₂ + CO₂, which simplifies to NO₂ + CO → NO + CO₂, matching the overall equation. Option A is just the overall equation with no mechanism. Option B has unbalanced atoms in Step 2 (no accounting for second N or O atoms). Option D invents a species (NO₂CO) not needed and is atomically inconsistent."},{"stem":"A student performs an experiment and obtains a graph with concentration [A] on the y-axis and time on the x-axis showing a straight line with a negative gradient. The student states \"this confirms first-order kinetics.\" Is the student correct?","A":"Yes — a straight line with negative gradient on any kinetics graph means first order","B":"No — a straight line on a concentration–time graph indicates zero-order kinetics","C":"No — a straight line on a concentration–time graph indicates second-order kinetics","D":"Yes — the straight line is consistent with rate = k[A] if k is large","correct":"B","explain":"This question hinges on identifying the correct graph type before applying shape rules. On a <b>concentration–time</b> graph, a straight line (constant negative gradient) means the rate is constant — that is, the rate does not depend on [A] — which is the definition of <b>zero-order kinetics</b> (rate = k). A first-order reaction on a concentration–time graph produces an *exponential decay* curve with a constant half-life. The first-order straight-line is found on a *rate–concentration* graph (straight line through origin). Students who mix up these two graphs consistently lose marks in H432/01 Section B; the fix is always to read the axis labels before deciding which shape rules apply."},{"stem":"In an experiment, the rate equation is determined as rate = k[A][B]². Reactant C is present in the balanced equation but absent from the rate equation. What can be deduced about C?","A":"C is an intermediate formed within the mechanism","B":"C reacts only in a fast step after the rate-determining step","C":"C is in the rate-determining step but was overlooked","D":"C does not participate in the reaction at all","correct":"B","explain":"A species that appears in the balanced overall equation but is absent from the experimentally determined rate equation is <b>zero order</b> — changing [C] has no effect on rate. This means C reacts only in a <b>fast step after the RDS</b>: the slow step is the kinetic bottleneck, and any subsequent fast step simply processes whatever the RDS has produced, regardless of how much C is available. Option A is wrong: an intermediate appears in *neither* the balanced equation *nor* the rate equation — it is produced in one mechanistic step and consumed in another, so it cancels from the overall equation. If C were in the RDS, it would appear in the rate equation. C clearly participates in the overall reaction (it is in the balanced equation), ruling out Option D."},{"stem":"Rate constant data for a first-order reaction: k₁ = 1.2 × 10⁻³ s⁻¹ at T₁ = 300 K; k₂ = 6.5 × 10⁻³ s⁻¹ at T₂ = 320 K. Using ln(k₂/k₁) = −(Eₐ/R)(1/T₂ − 1/T₁), calculate Eₐ in kJ mol⁻¹.","A":"Eₐ ≈ 34 kJ mol⁻¹","B":"Eₐ ≈ −67 kJ mol⁻¹","C":"Eₐ ≈ 67 kJ mol⁻¹","D":"Eₐ ≈ 217 kJ mol⁻¹","correct":"C","explain":"Step 1 — ln(k₂/k₁) = ln(6.5 × 10⁻³ / 1.2 × 10⁻³) = ln(5.417) = <b>1.689</b>. Step 2 — 1/T₂ − 1/T₁ = 1/320 − 1/300 = 0.003125 − 0.003333 = <b>−2.083 × 10⁻⁴ K⁻¹</b>. Step 3 — Eₐ = −R × ln(k₂/k₁) / (1/T₂ − 1/T₁) = −8.314 × 1.689 / (−2.083 × 10⁻⁴) = <b>67 400 J mol⁻¹ ≈ 67 kJ mol⁻¹</b>. Option B gives a negative Eₐ — from inverting k₂/k₁ to k₁/k₂ before taking ln, making ln negative and propagating a sign error. Option D (217 kJ mol⁻¹) results from substituting k₂/k₁ = 5.42 directly without first taking the natural logarithm — a critical oversight. Option A could arise from arithmetic errors in the 1/T difference term."},{"stem":"A student justifies first-order kinetics from a rate–concentration graph by writing: \"The graph is linear.\" An examiner does not award the mark. What additional information was required?","A":"The gradient must be stated as equal to k with appropriate units","B":"The student must state the graph passes through the origin","C":"The student must state the graph has a negative gradient","D":"The student must calculate the half-life to confirm first order","correct":"B","explain":"Per the H432/01 June 2019 examiner report, when justifying first-order kinetics from a rate–concentration graph, accepted phrasing is \"straight line through (0, 0)\" <b>or</b> \"rate directly proportional to [concentration].\" Stating \"the graph is linear\" (or \"straight line\") alone does not score, because a straight line that does not pass through the origin would imply rate = k[A] + c, a different relationship. The line through the origin is critical: it confirms the y-intercept is zero, meaning rate is zero when [A] is zero, consistent with rate = k[A]. The gradient is indeed equal to k, but stating the origin is the required justification for the order."},{"stem":"The rate equation for a reaction is rate = k[X]²[Y]⁰. What happens to the rate if [X] is halved and [Y] is simultaneously doubled?","A":"Rate doubles","B":"Rate halves","C":"Rate is unchanged","D":"Rate becomes one quarter","correct":"D","explain":"Rate = k[X]²[Y]⁰. Halving [X]: the [X]² term becomes (½X)² = X²/4, so rate becomes ¼ of its original value. Doubling [Y]: [Y]⁰ = 1 regardless of [Y], so any change to [Y] has zero effect on rate (Y is zero order). Combined: rate_new = k(X/2)²(2Y)⁰ = k(X²/4)(1) = rate_original / 4. The common error is applying the [Y] doubling to produce a further factor of 2, giving rate = ½. Recognising [Y]⁰ = 1 regardless of [Y] is the key analytical step; zero-order species are invisible to the rate equation."},{"stem":"Which statement correctly distinguishes a reaction intermediate from a catalyst?","A":"Both intermediates and catalysts appear in the balanced overall equation","B":"A catalyst appears in both the balanced equation and the rate equation; an intermediate appears in neither","C":"An intermediate is formed and consumed within the mechanism and cancels from the overall equation; a catalyst is regenerated and absent from the overall equation, but can appear in the rate equation","D":"An intermediate lowers the activation energy; a catalyst does not","correct":"C","explain":"An <b>intermediate</b> is formed in one mechanistic step and consumed in a later step. When elementary steps are added together, the intermediate cancels — it appears as a product in one step and as a reactant in the next — so it is absent from both the balanced overall equation and the rate equation. A <b>catalyst</b> is added at the start, consumed in an early step, and regenerated in a later step: it is therefore also absent from the overall equation. However, unlike an intermediate, a catalyst exists at a known initial concentration in the reaction mixture. If the catalyst participates in or before the rate-determining step, its concentration appears in the rate equation. This is why acid [H⁺] appears in many rate equations for acid-catalysed reactions, even though H⁺ is regenerated and absent from the overall equation. Option D has it backwards — catalysts (not intermediates) lower Eₐ by providing an alternative reaction pathway."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

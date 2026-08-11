@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.2 Group 2 - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.2 &mdash; Group 2</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"4.86 g of magnesium is heated in excess steam: Mg(s) + H₂O(g) → MgO(s) + H₂(g). Calculate the mass of MgO produced. (Ar: Mg = 24.3; Mr: MgO = 40.3)","A":"4.86 g","B":"6.46 g","C":"8.06 g","D":"9.72 g","correct":"C","explain":"Mole ratio Mg : MgO = 1 : 1. n(Mg) = 4.86 ÷ 24.3 = 0.200 mol. n(MgO) = 0.200 mol. m(MgO) = 0.200 × 40.3 = 8.06 g. Distractor A (4.86 g) assumes mass is conserved without adding oxygen, but each MgO contains one O atom gained from steam. Distractor D (9.72 g) results from using a 2:1 ratio. The product mass must account for atoms from all reactants."},{"stem":"A student claims: \"The solubility of Group 2 hydroxides increases down the group because larger cations hydrate more strongly and release more energy when surrounded by water molecules.\" Evaluate this claim.","A":"Fully correct, as larger ions attract more water molecules","B":"Correct trend, but wrong reasoning: hydration enthalpy becomes less exothermic as cations get larger, not more. The real reason is that lattice enthalpy falls more rapidly than hydration enthalpy, making dissolving increasingly favourable","C":"Both the trend and the reasoning are incorrect, as solubility decreases and lattice enthalpy is the only relevant factor","D":"Correct reasoning but wrong trend, as solubility actually decreases down the group for hydroxides","correct":"B","explain":"The trend (increasing solubility) is correct. The reasoning is wrong. Larger cations have lower charge density, weaker ion-dipole attraction to water, and hydration enthalpy that becomes less exothermic going down the group, the opposite of what the student claimed. The real driver is that lattice enthalpy decreases more steeply than hydration enthalpy for hydroxides, making the overall enthalpy of solution less endothermic going down the group."},{"stem":"CaCO₃ (chalk or limestone) is used as an antacid, not CaO (quicklime). Which pair of reasons best justifies this?","A":"CaO has no effect on stomach acid, CaCO₃ is more effective","B":"CaO reacts exothermically with stomach moisture, causing tissue damage; CaCO₃ neutralises gently and safely","C":"CaCO₃ is a stronger base and neutralises more acid per gram than CaO","D":"CaO is too expensive, CaCO₃ is freely available from quarries","correct":"B","explain":"CaO reacts with water in an exothermic reaction (CaO + H₂O → Ca(OH)₂) and could harm the oesophagus and stomach lining. CaCO₃ reacts gently with HCl: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Option C is incorrect because CaO is actually a stronger base than CaCO₃ per mole, but this makes it more corrosive, not better as an antacid. Safety, not neutralising power, is the deciding factor here."},{"stem":"Calcium is found in Group 2 and reacts vigorously with water to give a slightly cloudy solution. When this solution is filtered and the filtrate is tested with dilute HCl, no effervescence is observed. What does this confirm?","A":"The filtered solid is CaCO₃, the solution contains Ca²⁺ and OH⁻","B":"The filtered solid is Ca(OH)₂, the filtrate contains Ca²⁺ and OH⁻ with no carbonate present","C":"The original calcium sample contained impurities of a Group 2 carbonate","D":"The reaction produced H₂O₂, which gives a cloudy suspension","correct":"B","explain":"Ca + 2H₂O → Ca(OH)₂ + H₂. The cloudy suspension is undissolved Ca(OH)₂. Filtering separates undissolved Ca(OH)₂ as the solid; the filtrate contains dissolved Ca²⁺ and OH⁻. No effervescence with HCl confirms no CO₃²⁻ is present (CO₃²⁻ would produce CO₂ with acid). Everything is consistent with a pure Ca + H₂O reaction giving only Ca(OH)₂ and H₂."},{"stem":"The reactivity of Group 2 metals with water increases in the order Mg < Ca < Sr < Ba. Explain this trend in terms of atomic radius, shielding, and ionisation energy.","A":"Atomic radius decreases down the group, making it easier to pull the outer electrons away from the nucleus","B":"Ionisation energy decreases down the group because nuclear charge increases, and more protons attract water molecules more strongly","C":"Atomic radius increases and shielding increases down the group; the outer ns² electrons are progressively further from the nucleus and more shielded, so ionisation energies decrease, outer electrons are more easily removed, the metal is oxidised more readily, and reactivity increases","D":"All Group 2 metals have the same reactivity, as they all form 2+ ions by the same mechanism","correct":"C","explain":"Going down Group 2, each successive element has an additional electron shell (larger atomic radius) and more filled inner shells (greater shielding). Both factors reduce the effective nuclear charge felt by the outer ns² electrons, making them easier to remove (lower IE). Lower IE means outer electrons are donated more readily, the metal is oxidised more easily, and reactivity increases. This explains why Ba reacts almost explosively while Mg requires high-temperature steam."},{"stem":"A 5.00 g sample of a Group 2 carbonate (MCO₃) is fully decomposed by heating. The CO₂ produced has a mass of 2.20 g. Identify the Group 2 metal M. (Mr: CO₂ = 44.0; Ar: C = 12.0, O = 16.0; possible Ar(M): Mg = 24.3, Ca = 40.1, Sr = 87.6, Ba = 137.3)","A":"Magnesium","B":"Calcium","C":"Strontium","D":"Barium","correct":"B","explain":"MCO₃(s) → MO(s) + CO₂(g) gives a 1:1 mole ratio. n(CO₂) = 2.20 ÷ 44.0 = 0.0500 mol. n(MCO₃) = 0.0500 mol. Mr(MCO₃) = 5.00 ÷ 0.0500 = 100 g mol⁻¹. Mr(CO₃²⁻) = 12.0 + 3(16.0) = 60.0 g mol⁻¹. Ar(M) = 100 − 60.0 = 40.0 g mol⁻¹, which matches calcium (Ca, Ar = 40.1). This question works backwards from product mass to identify the unknown element."},{"stem":"Group 2 sulfates become less soluble down the group while Group 2 hydroxides become more soluble. Which explanation correctly accounts for both contrasting trends?","A":"Sulfates are ionic but hydroxides are covalent, so different bonding explains the difference","B":"SO₄²⁻ is much larger than OH⁻. As M²⁺ gets larger down the group, lattice enthalpy decreases only slightly for sulfates (as the large anion dominates) but more significantly for hydroxides (small OH⁻ anion). Hydration enthalpy of M²⁺ decreases for both. For sulfates, the decrease in hydration enthalpy is not offset by a large enough decrease in lattice enthalpy, so dissolving becomes less favourable and solubility decreases. For hydroxides, lattice enthalpy decreases more rapidly, so dissolving becomes increasingly favourable and solubility increases.","C":"Sulfates have larger lattice enthalpies than hydroxides at every point in the group, so they are always less soluble regardless of the cation","D":"The trend reflects changes in the hydration enthalpy of the anion only, as SO₄²⁻ hydrates more strongly than OH⁻ down the group","correct":"B","explain":"The key variable is the relative size of the anion. With a small anion (OH⁻), cation size dominates changes in lattice enthalpy, which decreases significantly as M²⁺ gets larger, making hydroxides more soluble. With a large anion (SO₄²⁻), the lattice enthalpy changes little as M²⁺ increases; the decrease in M²⁺ hydration enthalpy then outweighs the lattice enthalpy change, so sulfate solubility decreases. This is a standard OCR A Level comparison question."},{"stem":"Group 2 carbonates decompose: MCO₃(s) → MO(s) + CO₂(g). The temperature required for decomposition increases down the group. Which explanation is correct?","A":"Larger carbonates have more electrons, so more energy is needed to break all the bonds in the lattice","B":"The CO₃²⁻ ion is more strongly polarised by the smaller, more charge-dense cation higher in the group, weakening C–O bonds and making decomposition easier. Larger cations lower in the group are less polarising, so CO₃²⁻ is less distorted, C–O bonds are stronger, and a higher temperature is required.","C":"Larger Group 2 metals have higher ionisation energies, so their carbonates require more energy to decompose","D":"CO₂ is less stable at higher temperatures, so higher temperatures are needed to produce it from more stable carbonates","correct":"B","explain":"Cation polarising power = charge/size ratio. Higher in the group, Mg²⁺ is small and has high charge density, distorting the electron cloud of CO₃²⁻ and weakening C–O bonds within the carbonate, lowering the decomposition temperature. Lower in the group, Ba²⁺ is large and has low charge density, barely polarising CO₃²⁻, leaving C–O bonds stronger and requiring a higher decomposition temperature."},{"stem":"An unknown Group 2 element X shows these properties: (i) it reacts vigorously with cold water to give a slightly soluble white precipitate and colourless gas; (ii) its sulfate gives a white precipitate with acidified BaCl₂; (iii) its carbonate decomposes at approximately 840°C; (iv) its hydroxide solution has pH ≈ 12. Identify X.","A":"Magnesium","B":"Calcium","C":"Strontium","D":"Barium","correct":"B","explain":"Clue (i): vigorous reaction with cold water plus a slightly soluble precipitate rules out Mg (too slow with cold water) and Ba (Ba(OH)₂ is freely soluble, no precipitate). Candidates narrow to Ca or Sr. Clue (ii): both CaSO₄ and SrSO₄ are sparingly or insoluble, so this does not distinguish them. Clue (iii): CaCO₃ decomposes at approximately 840°C while SrCO₃ decomposes at approximately 1100°C, so the 840°C value matches calcium. Clue (iv): pH ≈ 12 for saturated Ca(OH)₂ is consistent. All four criteria converge on calcium."},{"stem":"Magnesium reacts with steam: Mg(s) + H₂O(g) → MgO(s) + H₂(g). Calcium reacts with cold water: Ca(s) + 2H₂O(l) → Ca(OH)₂(aq) + H₂(g). Using oxidation states and knowledge of Group 2 trends, explain why calcium is more reactive than magnesium, and identify the oxidising agent in each reaction.","A":"Ca is more reactive because it has a larger nuclear charge; H₂O is the reducing agent in both reactions","B":"Ca is more reactive because it has lower ionisation energies due to its larger radius and greater shielding; H₂O is the oxidising agent in both reactions, as H goes from +1 to 0","C":"Ca is more reactive because Ca²⁺ is more stable than Mg²⁺ in solution; O₂ is the oxidising agent","D":"Reactivity is the same; the different products (MgO versus Ca(OH)₂) result only from different stoichiometry","correct":"B","explain":"In both reactions, H in H₂O goes from +1 to 0 in H₂: H is reduced, so H₂O is the oxidising agent. M goes from 0 to +2: M is oxidised, so M is the reducing agent. Ca is more reactive than Mg because Ca has a larger atomic radius, greater electron shielding, and lower 1st and 2nd ionisation energies, meaning the outer 4s² electrons are easier to remove than Mg's 3s² electrons. Ca is therefore a better reducing agent, capable of reacting with cold water rather than requiring high-temperature steam."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

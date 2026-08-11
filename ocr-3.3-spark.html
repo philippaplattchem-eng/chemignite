@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.3 The Halogens - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.3 &mdash; The Halogens</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"What is the outer-shell electron configuration of every Group 17 (halogen) atom?","A":"ns²np³","B":"ns²np⁵","C":"ns²np⁶","D":"ns¹np⁵","correct":"B","explain":"Each halogen has 7 valence electrons: 2 in the s sub-shell and 5 in the p sub-shell, giving ns²np⁵. This means each atom is one electron short of a noble-gas configuration, which is why halogens exist as diatomic molecules (X₂), sharing one pair of electrons to achieve an octet. The ns²np⁵ pattern is the defining feature of Group 17 and underpins the oxidising behaviour and the 1 electron transfer in displacement reactions."},{"stem":"What is the physical state of bromine at room temperature and pressure?","A":"Colourless gas","B":"Pale yellow solid","C":"Reddish brown liquid","D":"Grey solid that sublimes to a purple vapour","correct":"C","explain":"At room temperature, F₂ and Cl₂ are gases, Br₂ is the only liquid non-metal element, and I₂ is a dark grey solid that sublimes to a purple vapour. The reddish brown colour of Br₂ (and its orange-brown vapour) is the expected description for OCR exam purposes. This physical state trend reflects increasing London force strength down the group as the number of electrons increases."},{"stem":"What is the trend in boiling point of the halogens going from Cl₂ to Br₂ to I₂?","A":"Decreases, as bond length increases","B":"Stays constant, as all halogens are diatomic","C":"Increases","D":"Increases then decreases at bromine","correct":"C","explain":"Boiling points increase: Cl₂ (−34°C) < Br₂ (+59°C) < I₂ (+184°C). All three are non-polar diatomic molecules, so the only intermolecular forces are London forces (induced dipole interactions). Going from Cl₂ to I₂, the number of electrons increases (34, 70, 106), so instantaneous dipoles are larger and more easily induced, making London forces stronger. Stronger intermolecular forces require more energy to overcome, hence higher boiling points."},{"stem":"What is the trend in reactivity (oxidising power) of the halogens going down Group 17?","A":"Increases, as larger atoms have more electrons to donate","B":"Stays constant, as all halogens form X⁻ ions","C":"Decreases","D":"Increases then decreases at bromine","correct":"C","explain":"Reactivity decreases: Cl₂ > Br₂ > I₂. Each halogen molecule acts as an oxidising agent by gaining one electron per atom (X₂ + 2e⁻ → 2X⁻). Going down the group, atomic radius increases and shielding increases, so the nuclear attraction on an incoming electron weakens, and the ability to gain an electron decreases. Chlorine is the strongest oxidising agent of the three; iodine is the weakest. OCR examiners explicitly penalise explanations that mention electronegativity or bond enthalpy for this trend."},{"stem":"What is the definition of disproportionation?","A":"A reaction in which two different elements are both oxidised","B":"A reaction in which the same element is both oxidised and reduced","C":"A reaction in which a compound breaks down into two simpler compounds","D":"A reaction in which atoms are rearranged without any change in oxidation number","correct":"B","explain":"Disproportionation is a redox reaction in which atoms of the same element undergo both oxidation and reduction simultaneously. The word \"element\" is critical: OCR mark schemes do not accept \"species\", \"atom\", or \"particle\" as substitutes. In the chlorine + water reaction (Cl₂ + H₂O ⇌ HClO + HCl), chlorine is both oxidised (0 to +1 in HClO) and reduced (0 to −1 in HCl), making this a disproportionation of the element chlorine."},{"stem":"What is the oxidation number of chlorine in chloric(I) acid, HClO?","A":"−1","B":"0","C":"+1","D":"+2","correct":"C","explain":"Apply the rules: H = +1, O = −2, sum = 0 for a neutral compound. (+1) + Cl + (−2) = 0, so Cl = +1. The Roman numeral in the name \"chloric(I) acid\" tells you directly that Cl is in the +1 oxidation state. OCR examiners (H032/02 June 2023) flagged \"+2 and −2\" as the most common error for chlorine oxidation numbers in HClO and HCl, so take care to work from the rules rather than guessing."},{"stem":"What is the active disinfectant species when chlorine is used to treat drinking water?","A":"Cl₂","B":"Cl⁻","C":"HClO","D":"HCl","correct":"C","explain":"When Cl₂ dissolves in water it disproportionates: Cl₂ + H₂O ⇌ HClO + HCl. The chloric(I) acid (HClO) is the species that kills bacteria. HClO is a powerful oxidising agent that penetrates microbial cell walls and oxidises essential cellular components (enzymes, membrane proteins), destroying the bacterium. HCl, the other product, is not the active disinfectant. Cl₂ itself can kill but is much less effective than HClO at the low concentrations used in water treatment."},{"stem":"What is the active bleaching agent in household bleach made by reacting Cl₂ with cold dilute NaOH?","A":"NaCl","B":"HClO","C":"NaClO","D":"Cl₂","correct":"C","explain":"When chlorine is bubbled through cold dilute NaOH: Cl₂ + 2NaOH → NaCl + NaClO + H₂O. The sodium chlorate(I), NaClO, is the active bleaching agent. NaClO oxidises coloured organic molecules, breaking the conjugated π-systems responsible for colour. NaCl is a spectator (table salt). HClO is the acid form of the same ion and is the active disinfectant in water, but the product of the NaOH reaction is the chlorate(I) salt, not the acid."},{"stem":"What colours are the precipitates formed when acidified silver nitrate is added to solutions of chloride, bromide, and iodide ions respectively?","A":"Yellow, cream, white","B":"White, yellow, cream","C":"White, cream, yellow","D":"Cream, white, yellow","correct":"C","explain":"The order Cl⁻ → Br⁻ → I⁻ gives precipitate colours white (AgCl) → cream (AgBr) → yellow (AgI). The trend reflects increasing covalent character in the Ag–X bond down Group 17, as the larger, more polarisable halide ions are increasingly distorted by the Ag⁺ cation. The yellow colour of AgI is very distinctive and easily remembered; the difference between \"white\" and \"cream\" for AgCl and AgBr is subtle in practice, which is why the ammonia solubility step is used to confirm the identity."},{"stem":"Why must the silver nitrate reagent used to test for halide ions be acidified with dilute nitric acid and not dilute hydrochloric acid?","A":"HNO₃ is a stronger acid and reacts faster with the halide","B":"HCl would introduce Cl⁻ ions, which would react with Ag⁺ to form a white AgCl precipitate regardless of the halide present, giving a false positive","C":"HCl reacts with AgNO₃ to form a toxic gas","D":"HNO₃ makes the AgI precipitate more yellow, improving the colour test","correct":"B","explain":"The purpose of acidifying AgNO₃ is to remove CO₃²⁻ ions (which would form a cream Ag₂CO₃ precipitate and mimic AgBr). The acid must be HNO₃ because NO₃⁻ does not react with Ag⁺ under these conditions. Using HCl instead would introduce Cl⁻ into every sample, causing AgCl to form immediately regardless of which halide (or no halide) is present, making the test completely useless as a diagnostic."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

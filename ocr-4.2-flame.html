@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.2 Alkanes - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.2 &mdash; Alkanes</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Three isomers of hexane (C₆H₁₄) have boiling points of 50°C, 60°C and 69°C. Which statement correctly identifies and explains why 2,2-dimethylbutane (two methyl branches on C2) has the lowest boiling point?","A":"It has the fewest electrons, so London forces are weakest","B":"It is the most branched isomer, giving the most compact shape, the smallest surface area of contact between molecules, and therefore the weakest London forces","C":"It is the most polar isomer, so permanent dipole–dipole forces are smallest","D":"It has the largest Mr, so more energy is needed for molecules to separate","correct":"B","explain":"All three C₆H₁₄ isomers have the same molecular formula, the same Mr (86 g mol⁻¹), and the same number of electrons (50). Option A is wrong: electron count cannot differ for isomers. Options C and D are factually incorrect (all alkane isomers are non-polar; all have the same Mr). The correct variable is shape, which controls surface area. 2,2-Dimethylbutane is most branched: its compact, roughly spherical shape means neighbouring molecules touch it over a small area. Fewer simultaneous London-force contacts means weaker total attraction: less energy is needed to vaporise it, so it has the lowest boiling point."},{"stem":"Write the balanced equation for the complete combustion of heptane (C₇H₁₆). How many moles of O₂ are required per mole of heptane?","A":"C₇H₁₆ + 9O₂ → 7CO₂ + 8H₂O","B":"C₇H₁₆ + 11O₂ → 7CO₂ + 8H₂O","C":"C₇H₁₆ + 14O₂ → 7CO₂ + 8H₂O","D":"2C₇H₁₆ + 11O₂ → 7CO₂ + 8H₂O","correct":"B","explain":"Balance in order: C first: 7 carbons → 7CO₂. H next: 16 hydrogens → 8H₂O. O last: right side has 7×2 + 8×1 = 14 + 8 = 22 O atoms. O₂ on the left: 22 ÷ 2 = 11. Equation: C₇H₁₆ + 11O₂ → 7CO₂ + 8H₂O ✓. Option A has 9 O₂ which gives only 18 O atoms on the left vs 22 needed. Option C has 14 O₂ (28 O atoms, too many). Option D has a coefficient of 2 on heptane but only 11 O₂, which would give only 11 O₂ for 2 mol heptane — not balanced. The 11 coefficient on O₂ was specifically highlighted in the OCR notes as a balancing example for this alkane."},{"stem":"A student says alkanes are unreactive because \"they are saturated and have only single bonds.\" Why would this answer not receive full marks in an OCR exam?","A":"It is wrong; alkanes are actually reactive with most reagents","B":"Saturation (absence of a π-bond) correctly explains unreactivity by itself; the student is correct","C":"The OCR mark scheme requires two specific reasons: high bond enthalpy of C–C and C–H σ-bonds (so large activation energy needed), and very low polarity (Δχ C–H ≈ 0.4, so no δ⁺/δ⁻ centres to attract nucleophiles or electrophiles)","D":"The student should say \"all bonds are σ-bonds\" instead of \"single bonds\"","correct":"C","explain":"\"Saturated\" and \"single bonds only\" describe the structure but do not explain the consequence — two distinct mechanisms for low reactivity. (1) High bond enthalpy: C–H ≈ 412 kJ mol⁻¹ and C–C ≈ 348 kJ mol⁻¹ require a very large activation energy input before any reaction can start. (2) Very low polarity: Δχ C–H ≈ 0.4, Δχ C–C = 0, so there are no δ⁺ centres for nucleophiles to attack and no δ⁻ centres or exposed π-electrons for electrophiles to attack. OCR mark schemes award these as two separate marks; an answer that only says \"saturated\" or \"single bonds\" typically receives 0 marks."},{"stem":"Write the two propagation steps for the reaction of methane with chlorine gas in UV light. Which step produces the monochlorinated product?","A":"Cl• + CH₄ → CH₃Cl + H• (step 1); H• + Cl₂ → HCl + Cl• (step 2)","B":"Cl₂ → 2Cl• (step 1); Cl• + CH₄ → CH₃Cl + H• (step 2)","C":"Cl• + CH₄ → CH₃• + HCl (step 1); CH₃• + Cl₂ → CH₃Cl + Cl• (step 2, produces product)","D":"Cl• + CH₄ → CH₃Cl + HCl (step 1); CH₄ + Cl₂ → CH₃Cl + HCl (step 2)","correct":"C","explain":"Propagation step 1: a Cl• abstracts a hydrogen atom from CH₄ to form the methyl radical and HCl. Propagation step 2: the methyl radical CH₃• attacks a Cl₂ molecule; the Cl–Cl bond breaks homolytically — one Cl bonds to CH₃• forming CH₃Cl (chloromethane, the product), and the other Cl becomes a fresh Cl•. The Cl• produced in step 2 re-enters step 1, sustaining the chain. CH₃Cl is produced in step 2, not step 1. Option A wrongly forms H•; option B shows initiation as a propagation step. All radical species must be written with a dot (•): equations without dots are penalised by OCR."},{"stem":"State the two limitations of free radical substitution that make it unsuitable for the industrial preparation of a single pure haloalkane.","A":"The reaction requires expensive UV equipment; the halogen is too corrosive to handle safely","B":"Further substitution produces a mixture of polychlorinated products (CH₂Cl₂, CHCl₃, CCl₄), and substitution at different chain positions produces structural isomers, both making purification difficult","C":"The mechanism requires high pressure, which is dangerous industrially; separation of the radical intermediates is also necessary","D":"The yield is low because termination is fast, and the reaction requires a platinum catalyst","correct":"B","explain":"Two distinct limitations are required for full marks. (1) Further substitution: the first product, CH₃Cl, still has three C–H bonds that can be chlorinated again, giving CH₂Cl₂, CHCl₃, and CCl₄. Even using excess methane to suppress this, a mixture of chlorination products always forms. (2) Substitution at different positions: in longer alkanes (e.g. propane), radicals attack both primary and secondary C–H bonds, producing structural isomers (1-chloropropane and 2-chloropropane). Separating these isomers by fractional distillation is expensive and wastes starting material, making the process uneconomical for preparing a single specific compound."},{"stem":"Explain why carbon monoxide from a faulty gas boiler is particularly dangerous in a closed domestic space.","A":"CO reacts with the moisture in the lungs to form carbonic acid, which disrupts breathing","B":"CO is highly flammable and can ignite inside the lungs when inhaled","C":"CO is colourless and odourless, so it is undetected; it binds to the Fe²⁺ in haemoglobin approximately 200 times more strongly than O₂, preventing oxygen being carried to body tissues","D":"CO acts as an acid in the bloodstream, lowering blood pH and preventing enzyme function","correct":"C","explain":"The two key points OCR requires are: (1) CO is colourless and odourless — it cannot be detected by human senses, so exposure continues without warning. (2) CO binds irreversibly (under normal physiological conditions) to the Fe²⁺ centre of haemoglobin, which is the same site normally used to bind O₂. Because the CO–haemoglobin bond is about 200 times stronger than the O₂–haemoglobin bond, CO displaces oxygen even at low concentrations. The resulting carboxyhaemoglobin cannot transport O₂, causing cellular asphyxiation. In a closed room the CO concentration builds up rapidly, making the danger acute."},{"stem":"Why does the radical chlorination of methane require UV light, and not just visible light?","A":"Visible light causes photosynthesis in the reaction vessel; UV prevents this","B":"UV light provides greater energy per photon than visible light; it supplies enough energy to break the Cl–Cl bond (bond enthalpy ≈ 242 kJ mol⁻¹) homolytically, whereas visible light photons carry insufficient energy","C":"UV light converts Cl₂ into Cl⁻ ions, which are the reactive species; visible light cannot do this","D":"UV light heats the reaction vessel; visible light does not","correct":"B","explain":"The initiation step requires homolytic fission of the Cl–Cl bond (bond enthalpy ≈ 242 kJ mol⁻¹). UV photons (wavelengths 200–400 nm) carry roughly 300–600 kJ mol⁻¹ per mole of photons, which is sufficient. Visible light photons (wavelengths 400–700 nm) carry roughly 170–300 kJ mol⁻¹ — at the red/orange end this is not enough energy to break the Cl–Cl bond. This is why the reaction does not proceed in white light (unless the UV component in sunlight is present). UV light does not make ions: homolytic fission produces neutral radicals (Cl•), not Cl⁻."},{"stem":"When propane (CH₃CH₂CH₃) reacts with Cl₂ under UV light, two structural isomers of the monochloropropane product form. Which pair are these?","A":"1,2-dichloropropane and 1,3-dichloropropane","B":"1-chloropropane (CH₃CH₂CH₂Cl) and 2-chloropropane (CH₃CHClCH₃)","C":"Chloropropene and chloroethane","D":"Propan-1-ol and propan-2-ol","correct":"B","explain":"Propane has two types of C–H bond: six primary C–H bonds on the two terminal CH₃ groups and two secondary C–H bonds on the central CH₂ group. Radical attack on a primary C–H gives 1-chloropropane; radical attack on the secondary C–H gives 2-chloropropane. Both products form in significant amounts (the ratio is roughly 45:55, not 75:25 as a simple electron count would suggest, because secondary radicals are more stable than primary radicals). This demonstrates limitation 2 of radical substitution: substitution at different positions gives a mixture of structural isomers."},{"stem":"What reactions occur inside a modern catalytic converter to reduce pollutant emissions?","A":"SO₂ is oxidised to SO₃; NOₓ is reduced to NO","B":"CO is oxidised to CO₂; NO is reduced using CO as the reductant to give CO₂ and N₂","C":"CO₂ is reduced back to CO; NOₓ is oxidised to N₂O₅","D":"CO is converted to CO₂ using water; NOₓ dissolves in water to form nitric acid","correct":"B","explain":"Catalytic converters contain a fine coating of platinum, palladium, and rhodium on a ceramic honeycomb. Two key reactions run simultaneously: (1) oxidation of CO: 2CO + O₂ → 2CO₂, removing the toxic gas. (2) reduction of NO (using CO as reductant): 2CO + 2NO → 2CO₂ + N₂, converting both toxic species into relatively harmless ones. SO₂ (from sulfur impurities) is not efficiently removed by catalytic converters, which is why low-sulfur fuel is important. CO₂ itself is not reduced by catalytic converters — the greenhouse gas problem is not addressed by exhaust catalysts."},{"stem":"Explain why the boiling point of methane (−161°C) is much lower than that of decane (174°C). Which two factors must be cited in the explanation?","A":"Decane is more polar, so dipole–dipole forces are stronger; decane also has more electrons","B":"Decane has more electrons per molecule (strengthening London forces) and a greater surface area of contact between molecules, both giving stronger London forces; more energy is needed to separate decane molecules","C":"Decane can form hydrogen bonds; methane cannot","D":"Decane has more electrons, which means more van der Waals forces","correct":"B","explain":"Methane and decane are both non-polar alkanes with only London forces between molecules. Two factors both increase with chain length and both strengthen London forces: (1) More electrons per molecule: methane has 10 electrons; decane has 82. Larger, more polarisable electron clouds create stronger instantaneous dipoles and thus stronger London forces. (2) Greater surface area of contact: decane's long chain lies alongside neighbouring chains, maximising the area over which London forces act. For comparisons across different chain lengths (not isomers), both factors are valid and OCR mark schemes accept both. Option D wrongly uses \"van der Waals\" — the required term is \"London forces\" or \"induced dipole–dipole interactions.\""}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

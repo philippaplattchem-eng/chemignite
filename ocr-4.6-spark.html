@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.6 Organic Synthesis (AS) - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.6 &mdash; Organic Synthesis (AS)</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Which flask must be used when heating an organic liquid under reflux on the OCR specification?","A":"Conical flask","B":"Volumetric flask","C":"Flat-bottomed flask","D":"Round-bottomed flask","correct":"D","explain":"The H432/03 June 2023 mark scheme explicitly states \"DO NOT ALLOW flask, conical flask, volumetric flask\" — only a <b>round-bottomed</b> (or pear-shaped) flask is credited. Round-bottomed flasks sit safely in a heating mantle, distribute heat evenly across their curved surface, and withstand the pressure of prolonged boiling without cracking at sharp corners. Conical flasks have a flat bottom that develops stress cracks when heated, and a narrow neck that is poorly matched to the standard Quickfit ground-glass joints. Volumetric flasks have a very narrow neck and are calibrated for measuring volume at room temperature — they should never be heated. Flat-bottomed flasks also develop cracking under thermal stress."},{"stem":"In a correctly assembled reflux apparatus, where should cold water enter the condenser jacket?","A":"At the top of the condenser, flowing downward with gravity","B":"At the bottom of the condenser, flowing upward against gravity","C":"At the side, horizontally through a T-junction","D":"Water direction does not matter as long as the jacket is full","correct":"B","explain":"Water must enter at the <b>bottom</b> of the condenser jacket and exit at the top — this is counter-current flow. The logic: the hottest organic vapour rises from the flask and condenses at the lowest point of the condenser tube; the coolest incoming water should be in contact with this hottest point, maximising the rate of heat removal. Water flowing upward also ensures the jacket is always completely full with no air pockets — an air pocket would locally reduce cooling efficiency. Reversed flow (water in at top, out at bottom) would mean the warmest water contacts the hottest vapour and the coolest water contacts the already-cooled vapour — an inefficient arrangement that risks inadequate condensation of volatile organic solvents."},{"stem":"What is the role of anti-bumping granules added to a flask before reflux?","A":"They react with the organic liquid to absorb evolved gases and prevent pressure build-up","B":"They provide nucleation sites for bubble formation, preventing superheating and violent bumping","C":"They increase the rate of reaction by acting as a heterogeneous catalyst","D":"They absorb water from the reaction mixture during heating","correct":"B","explain":"Smooth-walled flasks superheat easily: the liquid passes its theoretical boiling point without nucleating any bubbles, then suddenly and explosively releases a large burst of vapour that ejects contents from the flask and can fracture the glassware. Anti-bumping granules (also called anti-bumping chips, boiling chips, or boiling stones) are rough, porous pieces of ceramic or other inert material. Their rough surfaces and trapped air pockets provide ready-made nucleation sites where small bubbles form continuously, maintaining smooth, even boiling throughout the heating period. They do not react with the mixture, are not catalysts, and do not absorb water."},{"stem":"Which drying agent must NOT be used to dry an organic liquid that is an alcohol?","A":"Anhydrous MgSO₄","B":"Anhydrous Na₂SO₄","C":"Anhydrous CaCl₂","D":"Anhydrous CaSO₄","correct":"C","explain":"Anhydrous CaCl₂ reacts with alcohols and amines to form coordination complexes (e.g. CaCl₂·4C₂H₅OH). This means that using CaCl₂ to dry an alcohol would absorb the product along with the water, resulting in a significant loss of yield. Anhydrous MgSO₄ is neutral and does not react with alcohols or any common functional groups — it is the default drying agent for OCR preparations and is safe to use with alcohols, haloalkanes, aldehydes, ketones, and esters. Anhydrous Na₂SO₄ is also neutral and safe with alcohols, though it is slower and has lower capacity than MgSO₄."},{"stem":"What observation confirms that an organic liquid has been dried sufficiently by an anhydrous drying agent?","A":"The colour of the drying agent changes from white to blue","B":"The mixture warms up as the drying agent releases heat of hydration","C":"Newly added drying agent granules flow freely and no longer clump together","D":"The boiling point of the liquid increases to the known boiling point of the product","correct":"C","explain":"A hydrated salt (e.g. MgSO₄·7H₂O) is sticky and forms damp clumps when water is still present and being absorbed. As drying proceeds, less water is available and the salt forms smaller, looser clumps. When drying is complete — either because all the water has been absorbed or because no more water is present — newly added granules remain as free-flowing powder rather than sticking together. This visual endpoint (loose, powdery granules) is the standard OCR-specification method for judging when drying is complete. No colour change occurs (option A describes a cobalt chloride indicator, not a drying agent). The liquid's boiling point is assessed during redistillation, not during the drying step."},{"stem":"What reagents and conditions convert propan-1-ol to propanal (by stopping at the aldehyde rather than oxidising to the carboxylic acid)?","A":"Acidified K₂Cr₂O₇, heat under reflux with excess dichromate","B":"Acidified K₂Cr₂O₇, with the alcohol in excess and the product distilled off as it forms","C":"Acidified KMnO₄, room temperature","D":"Concentrated H₂SO₄, 170 °C","correct":"B","explain":"Both routes to the aldehyde and to the carboxylic acid use the same oxidising agent — acidified K₂Cr₂O₇. The difference is in the conditions that control the second oxidation. Propanal has no O–H group and therefore cannot hydrogen-bond to itself; its boiling point is significantly lower than propan-1-ol. Under <b>distillation</b> conditions (alcohol in excess, product distilled off as it forms), propanal volatilises and leaves the flask before it contacts any more oxidant and is further oxidised to propanoic acid. Under <b>reflux</b> conditions (excess oxidant, condenser returns all vapour), propanal is returned to the flask and fully oxidised to propanoic acid. Concentrated H₂SO₄ at 170 °C would eliminate water from the alcohol to give propene — an entirely different reaction. KMnO₄ is a stronger oxidant and would give the carboxylic acid."},{"stem":"In the AS organic synthesis map, which reagent is the only one that converts a haloalkane into a nitrile and simultaneously extends the carbon chain by one carbon?","A":"Aqueous NaOH under reflux","B":"Excess ethanolic ammonia","C":"KCN in ethanol under reflux","D":"Concentrated H₂SO₄, heat","correct":"C","explain":"When KCN (ethanolic) reacts with a primary haloalkane under reflux, the cyanide ion (CN⁻) acts as a nucleophile through its carbon, forming a new C–C bond: R–Br + KCN → R–CN + KBr. The R group gains one extra carbon (from the CN), so the chain is extended by one: e.g. 1-bromopropane (C₃) → butanenitrile (C₄). This is the <b>only</b> reaction in the AS synthesis map that increases the carbon chain length. Aqueous NaOH gives substitution to form an alcohol (no chain change). Excess NH₃ gives a primary amine (no chain change). H₂SO₄/heat gives elimination to an alkene (no chain change). Recognising that KCN/ethanol is the sole chain-extension tool is essential for planning multi-step syntheses where starting material and target have different carbon counts."},{"stem":"A student has an organic product dissolved in an aqueous/ethanol mixture after a reflux reaction. What is the FIRST step of the standard purification procedure?","A":"Add anhydrous MgSO₄ to the mixture and filter","B":"Redistil the mixture and collect the product fraction","C":"Transfer the mixture to a separating funnel and drain off the aqueous layer","D":"Add concentrated H₂SO₄ to dry the mixture","correct":"C","explain":"The five-step purification sequence is: (1) <b>separate</b> in a separating funnel, (2) wash, (3) dry with anhydrous drying agent, (4) filter, (5) redistil. The separating funnel must come first because the product is an organic liquid immiscible with the aqueous reaction mixture; allowing the layers to separate and draining off the aqueous layer removes dissolved inorganic salts, unreacted NaOH or H₂SO₄, and water-soluble impurities. Only once the aqueous layer has been removed can the organic layer be dried. Adding MgSO₄ directly to a wet aqueous/organic mixture (option A) would require impractically large amounts of drying agent. Redistillation (option B) without prior separation would contaminate the fraction with aqueous impurities. Concentrated H₂SO₄ (option D) is not a drying agent used in purification — it is a reagent."},{"stem":"What reaction type and conditions are needed to convert bromoethane into ethylamine (the shortest route)?","A":"Aqueous NaOH, reflux → oxidation to give an amine","B":"KCN in ethanol, reflux, then reduce the nitrile with H₂/Ni","C":"Excess ethanolic NH₃, sealed tube, heat under pressure","D":"H₂/Ni catalyst, 150 °C","correct":"C","explain":"Direct conversion of a haloalkane to a primary amine uses <b>excess ethanolic ammonia</b> in a sealed tube (to prevent NH₃ evaporating, since its boiling point is −33 °C). The reaction is nucleophilic substitution: NH₃ donates a lone pair to the δ⁺ carbon of the C–Br bond, displacing Br⁻. Using excess NH₃ minimises over-alkylation (which produces secondary and tertiary amines and quaternary ammonium salts). This is the shortest one-step route. The KCN route (option B) gives a nitrile that must then be reduced — a two-step sequence that gives propylamine (one more carbon), not ethylamine. H₂/Ni (option D) is for hydrogenation of alkenes or reduction of nitriles, not for converting a haloalkane directly to an amine."},{"stem":"0.100 mol of butan-1-ol (Mr = 74.0) is oxidised with excess acidified K₂Cr₂O₇ under reflux. After purification, 6.23 g of butanoic acid (Mr = 88.0) is collected. What is the percentage yield?","A":"84.2%","B":"70.8%","C":"62.3%","D":"91.4%","correct":"B","explain":"Step 1 — theoretical moles of butanoic acid (1 : 1 stoichiometry): 0.100 mol. Step 2 — theoretical mass: 0.100 × 88.0 = 8.80 g. Step 3 — percentage yield: (6.23 / 8.80) × 100 = <b>70.8%</b> (to 3 significant figures). Common errors: using 74.0 instead of 88.0 for the product Mr (this gives 84.2%, which is too high and uses the wrong relative mass); or forgetting the 1 : 1 stoichiometry. Note that the question states 0.100 mol of <b>butan-1-ol</b> is the limiting reagent — dichromate is in excess so butanoic acid is the limiting product. The purified yield (70.8%) is realistic for an OCR-specification preparation involving reflux, separation, drying, and redistillation, each of which causes some product loss."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

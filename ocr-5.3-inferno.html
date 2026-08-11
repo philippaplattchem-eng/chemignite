@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.3 Acids, Bases and Buffers - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.3 &mdash; Acids, Bases and Buffers</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student uses Ka = [H⁺]² / [HA]initial to find the pH of 0.10 mol dm⁻³ iodic(V) acid (HIO₃), which has Ka = 0.17 mol dm⁻³. Why is the student's result unreliable?","A":"HIO₃ is a strong acid and does not have a Ka value","B":"Ka = 0.17 mol dm⁻³ is too small for the formula to apply","C":"The formula is only valid for dibasic acids","D":"The approximation [H⁺] << [HA]initial fails because HIO₃ dissociates too extensively","correct":"D","explain":"The weak acid approximation Ka ≈ [H⁺]²/[HA]initial relies on the assumption that the amount of dissociation is negligible compared to [HA]initial, i.e. [H⁺] << [HA]initial. For HIO₃, Ka = 0.17 mol dm⁻³ — a very large value for a nominally \"weak\" acid. Solving properly: [H⁺]² + 0.17[H⁺] − 0.17 × 0.10 = 0, giving [H⁺] ≈ 0.072 mol dm⁻³. This is 72% of [HA]initial — the approximation breaks down spectacularly. HIO₃ is not a strong acid (it does not fully dissociate), but its Ka is large enough that the approximation is invalid. OCR examiner reports specifically cite HIO₃ as a case where candidates must state that the approximation is not valid (H432/01 June 2019). Option B reverses the logic — a large Ka is precisely what makes the approximation fail."},{"stem":"200 cm³ of 0.300 mol dm⁻³ propanoic acid is mixed with 100 cm³ of 0.200 mol dm⁻³ NaOH. pKa(propanoic acid) = 4.87. Calculate the pH of the buffer formed.","A":"4.57","B":"5.17","C":"4.87","D":"4.39","correct":"A","explain":"<b>Step 1 — moles:</b> n(CH₃CH₂COOH) = 0.300 × 0.200 = 0.0600 mol; n(NaOH) = 0.200 × 0.100 = 0.0200 mol. <b>Step 2 — react (1:1):</b> NaOH neutralises 0.0200 mol of propanoic acid → n(HA) remaining = 0.0600 − 0.0200 = 0.0400 mol; n(A⁻) formed = 0.0200 mol. <b>Step 3 — Henderson–Hasselbalch:</b> pH = 4.87 + log(0.0200/0.0400) = 4.87 + log(0.500) = 4.87 − 0.301 = <b>4.57</b> (volume cancels in the ratio, so moles may be used directly). Option B (5.17) inverts the ratio: 4.87 + log(0.040/0.020) = 4.87 + 0.301 = 5.17. Option C (4.87) assumes [HA] = [A⁻], ignoring the 2:1 ratio. Option D (4.39) uses the original n(HA) = 0.060 mol without subtracting the moles neutralised by NaOH. Display all working — OCR November 2021 Examiner Report noted that marks are separately awarded for correct moles of HA and A⁻, correct substitution, and final pH to 2 d.p."},{"stem":"When lactic acid builds up in blood during intense exercise, the carbonic acid–hydrogencarbonate buffer system responds by:","A":"H₂CO₃ donating H⁺ to neutralise the lactic acid","B":"CO₂ dissolving to produce OH⁻ that removes the added H⁺","C":"HCO₃⁻ reacting with H⁺ to form H₂CO₃, which decomposes to H₂O and CO₂ exhaled by the lungs","D":"HCO₃⁻ donating H⁺ to H₂O to form H₃O⁺ and CO₃²⁻","correct":"C","explain":"Added H⁺ (from lactic acid) is removed by the conjugate base of the buffer: HCO₃⁻ + H⁺ → H₂CO₃. The carbonic acid then rapidly decomposes: H₂CO₃ → H₂O + CO₂(g), and the CO₂ is exhaled. This makes blood an <b>open buffer system</b> — continuous removal of CO₂ keeps the H₂CO₃ concentration low and primes the system to absorb more acid. Blood pH (7.35–7.45) is maintained within just 0.10 pH units. Option A has H₂CO₃ acting as a base (it is the acid of the pair). Option B reverses the CO₂/acid equilibrium. Option D gives HCO₃⁻ as an acid donating H⁺ (it acts as a base here). (H432/01 June 2024 Q19c: marks awarded for correct equilibrium expression and identification of HCO₃⁻ as the species that removes H⁺.)"},{"stem":"An indicator HIn has pKa = 5.0. It appears red when HIn predominates and yellow when In⁻ predominates. At pH = 4.0, the indicator appears:","A":"Yellow, because pH 4.0 is acidic","B":"Orange, because [HIn] = [In⁻] at pH 4.0","C":"Red, because high [H⁺] shifts the equilibrium HIn ⇌ H⁺ + In⁻ to the left, favouring HIn","D":"Yellow, because In⁻ is the conjugate base and more stable","correct":"C","explain":"An indicator is a weak acid where HIn and In⁻ absorb different wavelengths (different colours). The equilibrium HIn ⇌ H⁺ + In⁻ shifts according to Le Chatelier's principle. At pH 4.0, [H⁺] = 10⁻⁴ mol dm⁻³, which is greater than the [H⁺] at pKa = 5.0 (where [H⁺] = 10⁻⁵). The high [H⁺] suppresses ionisation, pushing equilibrium left → HIn predominates → <b>red</b>. The transition range is approximately pKa ± 1 = pH 4.0–6.0; at pH 4.0 the indicator is at the very edge of its transition, appearing predominantly red. Option B is wrong — [HIn] = [In⁻] only when pH = pKa = 5.0. Option A incorrectly assumes \"acidic = yellow\" without reference to which form is yellow. Option D ignores equilibrium position in favour of a vague stability argument."},{"stem":"A student titrates ethanoic acid with ammonia solution. Which feature of the titration curve distinguishes it from a strong acid–strong base curve?","A":"The equivalence point occurs at exactly pH 7","B":"The initial pH is approximately 1, matching a strong acid","C":"There is no clear vertical section, making no indicator suitable; a pH meter must be used","D":"The buffer region occurs only above the equivalence point","correct":"C","explain":"A weak acid–weak base (WA–WB) titration produces a gradual S-curve with <b>no distinct near-vertical region</b>. Without a vertical section, there is no pH region where the indicator's transition range can lie entirely within a sharp jump — so <b>no indicator gives a clean end point</b>. A pH meter must be used to find the equivalence point precisely. The equivalence pH for CH₃COOH + NH₃ is approximately 7 (it depends on the relative Ka and Kb values), but there is no sharp jump to mark it. By contrast, SA–SB produces a vertical jump of ~8 pH units (pH 3 to 11). Option B is wrong — ethanoic acid is a weak acid, starting at about pH 3, not pH 1. Option D is wrong — the buffer region on a WA–SB curve occurs before the equivalence point (during neutralisation), not after."},{"stem":"A student measures the pH of freshly boiled pure water and obtains pH = 6.63. She concludes that the water has become acidic. Is she correct, and why?","A":"Yes — pH below 7 always indicates an acidic solution","B":"No — neutral means [H⁺] = [OH⁻]; since Kw increases with temperature, the neutral pH falls below 7, but [H⁺] still equals [OH⁻]","C":"No — pure water is always exactly pH 7, so the student's measurement must be wrong","D":"Yes — heating drives the equilibrium H₂O ⇌ H⁺ + OH⁻ right, producing excess H⁺ over OH⁻","correct":"B","explain":"Neutrality is defined by <b>[H⁺] = [OH⁻]</b>, not by pH = 7. At higher temperatures, Kw increases (the autoionisation of water is endothermic, so K rises with T). At approximately 50°C, Kw ≈ 5.5 × 10⁻¹⁴ (pKw ≈ 13.26), so [H⁺] = [OH⁻] = 10⁻⁶·⁶³ → pH = 6.63. Both [H⁺] and [OH⁻] increase equally — the water is still neutral, just measured at a different temperature. Option A applies the \"pH < 7 = acidic\" rule without recognising that this rule holds only at 298 K. Option D is wrong because heating increases both [H⁺] and [OH⁻] equally — the water cannot become acidic, only more ionised. Option C is wrong — pH = 7 at 298 K only."},{"stem":"A solution of weak acid HA at 0.100 mol dm⁻³ has pH = 3.00 at 298 K. What is Ka?","A":"1.00 × 10⁻⁵ mol dm⁻³","B":"1.00 × 10⁻³ mol dm⁻³","C":"1.00 × 10⁻⁶ mol dm⁻³","D":"1.00 × 10⁻² mol dm⁻³","correct":"A","explain":"From pH = 3.00: [H⁺] = 10⁻³·⁰⁰ = 1.00 × 10⁻³ mol dm⁻³. Using the approximation Ka ≈ [H⁺]²/[HA]initial: Ka = (1.00 × 10⁻³)² / 0.100 = 1.00 × 10⁻⁶ / 0.100 = <b>1.00 × 10⁻⁵ mol dm⁻³</b>. Check the approximation: [H⁺] = 1.00 × 10⁻³ mol dm⁻³ = 1% of 0.100 mol dm⁻³ — well within the valid range. Option B (1.00 × 10⁻³) treats Ka = 10⁻pH, confusing Ka with [H⁺]. Option C (1.00 × 10⁻⁶) calculates [H⁺]² = 1.00 × 10⁻⁶ but forgets to divide by [HA]. Option D (1.00 × 10⁻²) uses Ka = [H⁺]/[HA] without squaring [H⁺]. The sequence [H⁺] = 10⁻pH → Ka = [H⁺]²/[HA] → check % dissociation must be performed in order."},{"stem":"A student titrates 25.0 cm³ of 0.100 mol dm⁻³ HCl with 0.100 mol dm⁻³ NH₃. Which statement about the equivalence point is correct?","A":"pH = 7.00 because moles of acid equal moles of base","B":"pH < 7.00 because the salt formed (NH₄Cl) contains NH₄⁺, a weak acid that donates H⁺ to water","C":"pH > 7.00 because ammonia is a base and raises the pH","D":"pH = pKa(NH₄⁺) because the half-equivalence point has been reached","correct":"B","explain":"At the equivalence point, all the HCl has reacted with NH₃ to form ammonium chloride (NH₄Cl). Cl⁻ is a spectator ion (conjugate base of the strong acid HCl — does not hydrolyse). However, NH₄⁺ is the <b>conjugate acid of the weak base NH₃</b> and is a weak acid itself: NH₄⁺ ⇌ NH₃ + H⁺. This partial dissociation releases H⁺, so [H⁺] > [OH⁻] at the equivalence point and the pH is <b>below 7</b>. Option A is the classic error — equimolar reaction does not guarantee pH = 7; it only guarantees stoichiometric completion. Option C confuses the reactant (NH₃ is a base) with the product at the equivalence point (NH₄⁺ is acidic). Option D applies the half-equivalence relationship to the wrong stage of the titration."},{"stem":"In the reaction CH₃COOH + H₂O ⇌ CH₃COO⁻ + H₃O⁺, which two conjugate acid–base pairs are present?","A":"CH₃COOH / CH₃COO⁻ and H₃O⁺ / H₂O","B":"CH₃COOH / H₂O and CH₃COO⁻ / H₃O⁺","C":"CH₃COOH / H₃O⁺ and CH₃COO⁻ / H₂O","D":"H₂O / OH⁻ and CH₃COOH / CH₃COO⁻","correct":"A","explain":"A conjugate pair differs by exactly one H⁺ and must appear <b>on opposite sides</b> of the equilibrium arrow. In CH₃COOH + H₂O ⇌ CH₃COO⁻ + H₃O⁺: CH₃COOH (left) loses H⁺ to give CH₃COO⁻ (right) — <b>Pair 1: CH₃COOH/CH₃COO⁻</b>; H₂O (left) gains H⁺ to give H₃O⁺ (right) — <b>Pair 2: H₃O⁺/H₂O</b> (H₃O⁺ is the acid, H₂O is the conjugate base). Each pair consists of an acid on one side and its conjugate base on the other. Option B incorrectly groups acid–acid and base–base pairs across the same side. Option C pairs species that are on the same side of the equilibrium. Option D invokes OH⁻ which is not a product in this equilibrium. (H432/01 November 2020: mark available for both pairs correctly identified even if the acid/base label directions were reversed, provided pairs were correctly matched.)"},{"stem":"A buffer is prepared from a weak acid HA (pKa = 5.20) and its sodium salt NaA. At what ratio of [A⁻] to [HA] is the buffer most effective, and what is the approximate pH range over which it operates?","A":"[A⁻]/[HA] = 10:1; pH range 5.20–6.20","B":"[A⁻]/[HA] = 1:10; pH range 4.20–5.20","C":"[A⁻]/[HA] = 1:1; pH range approximately 4.20–6.20 (pKa ± 1)","D":"[A⁻]/[HA] = 1:1; pH range 0–14","correct":"C","explain":"A buffer is most effective when [HA] ≈ [A⁻] (ratio 1:1), because it has the greatest capacity to absorb <b>either</b> added acid (using A⁻ reservoir) or added base (using HA reservoir). At 1:1, log([A⁻]/[HA]) = 0, so pH = pKa — and small changes in either concentration cause only small changes in the log term and therefore small pH shifts. The effective operating range is approximately <b>pKa ± 1 pH unit</b> (when [A⁻]/[HA] ranges from 10:1 to 1:10). For pKa = 5.20, this gives pH ≈ 4.20–6.20. Outside this range, one reservoir is too depleted and the buffer fails — pH changes sharply again. Options A and B describe the edges of the effective range, not the optimum. Option D overstates the working range — a 1:1 buffer operating from pH 0–14 would require infinite concentrations of each reservoir."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

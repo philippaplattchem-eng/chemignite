@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.6 Organic Synthesis (AS) - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.6 &mdash; Organic Synthesis (AS)</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>5 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A Level of Response (LoR) question asks for a \"detailed description of how to prepare and purify a sample of butanal from butan-1-ol.\" Write the complete six-step procedure in correct order, including all examiner-required details. What is the one most common reason candidates score Level 1 (0–2 marks) rather than Level 3 (5–6 marks)?","A":"The most common reason is using the wrong oxidising agent","B":"Procedure: (1) Reflux butan-1-ol with acidified K₂Cr₂O₇ (dichromate in excess would give butanoic acid — use alcohol in excess and distil product off as it forms). (2) Collect the distillate in a separate receiver flask. (3) Transfer to separating funnel; drain off and discard the aqueous layer; keep the organic layer. (4) Dry with anhydrous MgSO₄ until granules flow freely; filter to remove hydrated salt. (5) Redistil; collect fraction at 75–76 °C (bp of butanal). Level 1 reason: candidates state headline steps (\"separate, dry, redistil\") without naming the drying agent, stating the observation for drying completion, or specifying the collection temperature range","C":"The most common reason is not using a round-bottomed flask","D":"The most common reason is using reflux conditions; distillation must be used throughout","correct":"B","explain":"This is a synthesis + purification LoR question worth 6 marks. The key detail for making <b>butanal</b> (not butanoic acid) is using <b>distillation</b> conditions, not reflux, with the alcohol in excess — proaidal (lower bp) distils off as it forms before further oxidation. The H032/02 June 2022 examiner report specifically states that \"'use a separating funnel', dry, and 'redistil' on their own are <b>not</b> detailed descriptions.\" Level 3 requires: (1) named drying agent (anhydrous MgSO₄ — CaCl₂ should not be used for aldehydes as it can coordinate to the C=O group via the lone pair on oxygen), (2) observation of drying completion (granules free-flowing), (3) filtration step before redistillation, (4) temperature range collected during redistillation, and (5) correct organic synthesis conditions (distil off aldehyde as it forms). Missing the filtration step and failing to name the drying agent are the two most penalised omissions."},{"stem":"A student attempts to prepare ethyl ethanoate by mixing ethanol and ethanoic acid without any catalyst. They observe that very little ester is produced even after one hour of gentle heating. Explain why yield is so low, and state two ways the yield could be improved without changing the reactants.","A":"Yield is low because esterification is endothermic; heating must be stronger","B":"Esterification is a reversible equilibrium reaction (ethanol + ethanoic acid ⇌ ethyl ethanoate + water). Without a catalyst the reaction has a high activation energy and reaches equilibrium very slowly. Even at equilibrium the reaction is far from complete (Kc ≈ 4 in this system, not >> 1). Improvements: (1) Add concentrated H₂SO₄ as a catalyst to lower Ea; (2) Use Dean–Stark trap or remove water as it forms to shift equilibrium right; (3) Use excess of one reactant (ethanol or ethanoic acid) to drive equilibrium right","C":"Esterification is irreversible; the problem is that the student used too little ethanol","D":"Yield is low because ethyl ethanoate decomposes at room temperature; cool the flask","correct":"B","explain":"Esterification (Fischer esterification) is a reversible, equilibrium-controlled reaction: CH₃CH₂OH + CH₃COOH ⇌ CH₃COOC₂H₅ + H₂O. The equilibrium constant Kc ≈ 4 for this system, meaning at equilibrium only about 2/3 of the mixture is converted to ester even with equimolar starting materials. Without H₂SO₄ catalyst, the activation energy is high and the reaction is extremely slow — the student observes barely any product. Improvements: (1) <b>Concentrated H₂SO₄ catalyst</b> — protonates the carbonyl oxygen, activating the acid towards nucleophilic attack by ethanol; (2) <b>Remove water</b> using a Dean–Stark trap or drying agent — shifts equilibrium right by Le Chatelier's principle; (3) <b>Excess of one reactant</b> shifts equilibrium right. Note that option B correctly identifies H₂SO₄ as catalyst — it is regenerated, not consumed, and is properly a catalyst. Confusing a catalyst with a reagent is a common error in esterification questions."},{"stem":"A synthesis requires making a compound with 4 carbons from a compound with 3 carbons. List ALL single-step interconversions from the AS synthesis map that change the carbon number, and state whether each adds or removes carbon.","A":"KCN substitution (adds 1C); decarboxylation (removes 1C); Br₂ addition (adds 0C)","B":"At AS level, the <b>only</b> interconversion that changes carbon count is KCN nucleophilic substitution on a haloalkane, which adds <b>one carbon</b> (the C of the CN⁻). No AS-level reaction removes carbon from the chain (decarboxylation and retrosynthetic routes appear only at A Level). All other AS interconversions (oxidation, elimination, addition, hydration, esterification) preserve the carbon count","C":"KCN adds 1C; combustion removes carbon as CO₂; electrophilic addition adds 0C","D":"KCN adds 2C (CN is a two-atom group); HBr addition adds 1C; NaOH elimination removes 1C","correct":"B","explain":"Students commonly overestimate the number of chain-extending reactions available at AS. The definitive answer: <b>only KCN in ethanol</b> changes the carbon count at AS level, and it adds exactly <b>one carbon</b>. Every other AS organic reaction preserves the skeleton: (i) radical substitution replaces H with halogen — same carbon count; (ii) electrophilic addition to alkene — adds atoms across the C=C but both carbons are already in the chain; (iii) oxidation of alcohol — changes functional group, not chain length; (iv) elimination — gives an alkene from an alcohol or haloalkane, same carbon count; (v) nucleophilic substitution with OH⁻ or NH₃ — same carbon count. If a question asks for a 3C → 4C synthesis, KCN is the step, and the 3C compound must first be (or become) a haloalkane so CN⁻ can substitute."},{"stem":"An examiner report notes that a candidate wrote \"NaOH(aq)\" alongside \"NaOH(ethanol)\" in their answer to a question asking for the reagents to convert 1-bromopropane to propene. Why does this lose the mark, and what is the correct, unambiguous answer?","A":"The candidate loses the mark because aqueous NaOH also gives propene — both answers are wrong","B":"The candidate loses the mark because OCR cannot award the mark when contradictory conditions are presented — the candidate has stated both \"aqueous\" (which gives substitution → propan-1-ol) and \"ethanolic\" (which gives elimination → propene). Writing both implies the candidate is unsure; markers cannot credit an answer containing the correct and incorrect conditions simultaneously. Correct answer: NaOH in ethanol (or KOH in ethanol), heat under reflux","C":"The candidate loses the mark because NaOH is the wrong base; KOH should be used","D":"The candidate loses the mark because propene cannot be made from 1-bromopropane at all","correct":"B","explain":"This mirrors the H432/02 June 2024 examiner feedback: \"lower-attaining candidates were unable to clearly identify different functional groups or recall correct reagents/conditions required for different interconversions, sometimes including <b>contradictory reagents alongside correct ones</b>.\" When a candidate hedges by writing two alternatives — one correct and one wrong — the mark cannot be awarded because the candidate has demonstrated uncertainty rather than knowledge. The answer <b>must</b> be unambiguous: to get propene from 1-bromopropane by elimination, the <b>only</b> correct condition is <b>ethanolic NaOH</b> (or ethanolic KOH). Adding \"aqueous NaOH\" to the answer negates this, because aqueous NaOH gives propan-1-ol via substitution, not propene. Commit to one set of reagents per stage."},{"stem":"A student prepares 1-bromobutane from butan-1-ol. She starts with 3.00 g of butan-1-ol (Mr = 74.1) and obtains 3.56 g of 1-bromobutane (Mr = 137.0) after purification. (a) Calculate the percentage yield. (b) The theoretical yield assumes 1 : 1 stoichiometry. Write the balanced equation to confirm this is correct. (c) Suggest two specific reasons why the actual yield is less than 100%.","A":"44.4%; not 1:1; losses due to evaporation only","B":"(a) % yield = (3.56 / 5.55) × 100 = 64.1%. Calculation: moles of butan-1-ol = 3.00/74.1 = 0.04049 mol; theoretical moles of 1-bromobutane = 0.04049 mol; theoretical mass = 0.04049 × 137.0 = 5.547 g; % yield = (3.56/5.547) × 100 = 64.2%. (b) CH₃CH₂CH₂CH₂OH + HBr → CH₃CH₂CH₂CH₂Br + H₂O (1 : 1 : 1 : 1). (c) Losses during separating funnel (some product dissolves in aqueous layer); losses during redistillation (fore-runnings and tails discarded; product left on glassware)","C":"52.0%; 2 : 1 stoichiometry; the drying agent absorbed the product","D":"68.4%; 1 : 1 stoichiometry; loss entirely due to evaporation in the separating funnel","correct":"B","explain":"(a) Moles of butan-1-ol: 3.00 / 74.1 = 0.04049 mol. Theoretical moles of 1-bromobutane (1:1): 0.04049 mol. Theoretical mass: 0.04049 × 137.0 = 5.547 g ≈ 5.55 g. Percentage yield: (3.56 / 5.55) × 100 = <b>64.1%</b> (3 s.f.). (b) The balanced equation CH₃CH₂CH₂CH₂OH + HBr → CH₃CH₂CH₂CH₂Br + H₂O confirms 1:1 stoichiometry: one OH replaced by one Br. (c) Losses occur at every purification step: (i) <b>separating funnel</b>: some product dissolves in the aqueous wash, especially if shaking time is excessive; (ii) <b>redistillation</b>: fore-runnings below the product boiling point are discarded, and tails above it may be discarded; droplets remain on the condenser and flask walls; (iii) <b>filtration through filter paper</b>: product adsorbs to the paper. A 64% yield is realistic and should not be taken as evidence of a procedure error."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

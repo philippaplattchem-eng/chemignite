@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.1 Atoms and Reactions - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>2.1 &mdash; Atoms and Reactions</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>7 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A ²⁵Mg²⁺ ion has atomic number 12 and mass number 25. Which row correctly states its subatomic particle counts?","A":"Protons = 12, Neutrons = 13, Electrons = 14","B":"Protons = 25, Neutrons = 13, Electrons = 10","C":"Protons = 12, Neutrons = 13, Electrons = 10","D":"Protons = 12, Neutrons = 12, Electrons = 10","correct":"C","explain":"Protons = Z = 12. Neutrons = A − Z = 25 − 12 = 13. Electrons = Z − charge = 12 − 2 = 10. The most common trap is using A = 25 as the proton count. This exact ion appeared in H032/01 June 2024 Q2."},{"stem":"Boron has two isotopes: ¹⁰B (20% abundance) and ¹¹B (80% abundance). What is the relative atomic mass of boron?","A":"10.5","B":"10.8","C":"11.0","D":"10.2","correct":"B","explain":"Ar = (10 × 20 + 11 × 80) / 100 = (200 + 880) / 100 = 10.8. The weighted mean is pulled towards ¹¹B because it is four times more abundant. A simple average of 10.5 would be wrong — it ignores the different abundances."},{"stem":"Why is the relative atomic mass of chlorine 35.5 and not 36?","A":"Because some chlorine atoms have a mass of exactly 35.5","B":"Because ³⁵Cl (~75%) is three times more abundant than ³⁷Cl (~25%), pulling the weighted mean towards 35 rather than the midpoint of 36","C":"Because ³⁶Cl does not exist","D":"Because the mass defect reduces all chlorine masses below their mass numbers","correct":"B","explain":"A simple average of 35 and 37 gives 36, but the isotopes are not equally abundant. Ar = (35 × 75 + 37 × 25) / 100 = 35.5. The majority-abundant lighter isotope pulls the mean below the midpoint. This is the defining feature of a weighted mean."},{"stem":"What is the correct formula for aluminium sulfate?","A":"AlSO₄","B":"Al₂SO₄","C":"Al₂(SO₄)₃","D":"Al₃(SO₄)₂","correct":"C","explain":"Al³⁺ has charge 3+; SO₄²⁻ has charge 2−. Using the crossover rule: Al₂(SO₄)₃. Check: 2(+3) + 3(−2) = 0. ✓ Brackets are required around SO₄²⁻ because there are three sulfate groups — Al₂SO₄₃ is meaningless."},{"stem":"Strontium reacts with water. Which equation is correct?","A":"Sr(s) + H₂O(l) → SrO(s) + H₂(g)","B":"2Sr(s) + 2H₂O(l) → 2SrOH(aq) + H₂(g)","C":"Sr(s) + 2H₂O(l) → Sr(OH)₂(aq) + H₂(g)","D":"Sr(s) + H₂O(l) → Sr(OH)₂(aq) + H₂(g)","correct":"C","explain":"Group 2 metals react with water to form the metal hydroxide and hydrogen — not the oxide. Sr forms Sr²⁺ so needs two OH⁻: Sr(OH)₂. The equation must be balanced: 2H₂O provides 4 H (2 in Sr(OH)₂ + 2 in H₂) and 2 O. H032/02 June 2022 examiners reported that around half of all candidates wrote SrO instead of Sr(OH)₂."},{"stem":"Silver nitrate solution is added to sodium chloride solution. Write the ionic equation.","A":"AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)","B":"Ag⁺(aq) + Cl⁻(aq) → AgCl(s)","C":"Ag⁺(aq) + NO₃⁻(aq) → AgNO₃(s)","D":"Na⁺(aq) + Cl⁻(aq) → NaCl(s)","correct":"B","explain":"Split all aqueous ionic compounds into their ions: Ag⁺ + NO₃⁻ + Na⁺ + Cl⁻ → AgCl(s) + Na⁺ + NO₃⁻. Cancel spectator ions (Na⁺ and NO₃⁻ appear unchanged on both sides): Ag⁺(aq) + Cl⁻(aq) → AgCl(s). Charge check: (+1) + (−1) = 0 on both sides. ✓ Option A is the full molecular equation — correct but not an ionic equation."},{"stem":"An organic compound shows a mass spectrum with the base peak at m/z = 29 and the highest m/z peak at m/z = 46. What is the Mr of the compound?","A":"29","B":"17","C":"75","D":"46","correct":"D","explain":"The molecular ion peak (M⁺) is always at the highest m/z — it corresponds to the whole molecule losing one electron, so m/z = Mr. The base peak is simply the most abundant fragment, which need not be the molecular ion. Mr = 46 is consistent with ethanol (C₂H₅OH)."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

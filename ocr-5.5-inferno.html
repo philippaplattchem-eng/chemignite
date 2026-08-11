@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.5 Electrochemistry - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.5 &mdash; Electrochemistry</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student measures E° for the Fe³⁺/Fe²⁺ system. Why must a platinum electrode be used rather than, for example, an iron electrode?","A":"Platinum reacts rapidly with Fe³⁺ and Fe²⁺, helping the equilibrium to be established quickly","B":"Platinum is the only electrode material for which an E° value is listed in the data booklet, so its potential can be subtracted from the measured cell potential","C":"The Fe³⁺/Fe²⁺ couple contains no solid metal; platinum is electrically conductive and chemically inert, providing a surface for electron transfer without participating in the half-equation","D":"Platinum prevents the half-cell equilibrium from being established, ensuring the voltmeter reads a true potential difference rather than an equilibrium potential","correct":"C","explain":"A platinum electrode is required whenever the redox couple contains no solid metal that can act as a conductor. In the Fe³⁺/Fe²⁺ half-cell both species are aqueous ions with no solid metal present, so there is no natural conductor to dip into the solution. Platinum provides an electrically conductive, chemically inert surface: electrons can flow to or from the external circuit at the Pt surface while the equilibrium Fe³⁺(aq) + e⁻ ⇌ Fe²⁺(aq) is established in solution around the electrode. \"Inert\" means Pt does not appear in the half-equation and does not react with either Fe³⁺ or Fe²⁺. Using an iron electrode would introduce a competing Fe²⁺/Fe and Fe³⁺/Fe redox chemistry, giving a mixed, uninterpretable potential. Option A inverts the requirement for inertness. Option D contradicts the purpose of the electrode: the Pt facilitates the equilibrium rather than preventing it."},{"stem":"Why must a high-resistance (high-impedance) voltmeter rather than a conventional ammeter be used when measuring a standard electrode potential?","A":"A high-resistance voltmeter has a larger display range and can measure larger cell potentials without damage","B":"Drawing negligible current leaves both half-cell equilibria undisturbed, so the measured potential equals the true equilibrium E°","C":"A high-resistance voltmeter converts chemical energy to electrical energy with higher efficiency than an ammeter","D":"Low-resistance connections cause the salt bridge to dry out, blocking ion flow and giving an inaccurate reading","correct":"B","explain":"Each half-cell equilibrium (e.g., Cu²⁺(aq) + 2e⁻ ⇌ Cu(s)) depends on the ion concentration at the electrode surface. If significant current is drawn — as it would be through a low-resistance device — electrons flow out of one electrode, the equilibrium shifts to replenish them, the ion concentration at the surface changes, and the cell is no longer under standard conditions; the measured voltage falls below E°. A voltmeter with input impedance > 10 MΩ draws negligible current: both equilibria remain essentially undisturbed, concentrations stay at 1.00 mol dm⁻³, and the true equilibrium potential difference is measured. This is also why light bulbs and motors cannot be used to measure E° — as soon as the cell does useful work, current flows, the equilibria shift, and the voltage drops. Option D describes a real but separate practical issue that is unrelated to the voltmeter resistance."},{"stem":"A student performs four titrations of Fe²⁺ solution with KMnO₄ and records the following titres: 24.85 cm³ (rough), 24.70 cm³, 24.65 cm³, 24.72 cm³. Which values should be used to calculate the mean concordant titre, and what is that mean?","A":"All four values, mean = 24.73 cm³","B":"The three precise runs (24.70, 24.65, 24.72 cm³), mean = 24.69 cm³","C":"Only the two closest values (24.65 and 24.70 cm³), mean = 24.68 cm³","D":"The final two values only (24.65 and 24.72 cm³) because the first precise run may still contain rough-titre influence","correct":"B","explain":"The rough titre (24.85 cm³) is always excluded regardless of its value — it is used only to identify the approximate endpoint for subsequent precise runs. From the three precise titres, concordancy requires all selected values to fall within 0.10 cm³ of each other. Range = 24.72 − 24.65 = 0.07 cm³ < 0.10 cm³, so all three are concordant. Mean = (24.70 + 24.65 + 24.72)/3 = 74.07/3 = 24.69 cm³. Option A incorrectly includes the rough titre. Option C discards a concordant result unnecessarily, reducing precision. Option D has no procedural basis: the first precise run is just as valid as subsequent ones. The H432/03 June 2018 examiner report penalised candidates who reported 0.63% instead of 0.634% by rounding an intermediate titre — full precision should be maintained throughout the calculation until the final answer."},{"stem":"In a lithium-ion cell, E°(Li⁺/Li) = −3.04 V and E°(CoO₂/Li[CoO₂]) = +0.60 V. What is E°cell for discharge, and which electrode is oxidised?","A":"E°cell = +2.44 V; Li[CoO₂] is oxidised at the positive electrode","B":"E°cell = +3.64 V; Li is oxidised at the negative electrode","C":"E°cell = +3.64 V; CoO₂ is reduced at the negative electrode","D":"E°cell = −3.64 V; Li⁺ is reduced at the negative electrode during discharge","correct":"B","explain":"On discharge, the Li⁺/Li system (E° = −3.04 V) is more negative and therefore acts as the negative electrode where lithium is oxidised: Li(s) → Li⁺(aq) + e⁻. The CoO₂ system (E° = +0.60 V) is more positive and acts as the positive electrode where CoO₂ is reduced: Li⁺ + CoO₂ + e⁻ → Li[CoO₂]. E°cell = E°(positive) − E°(negative) = (+0.60) − (−3.04) = +0.60 + 3.04 = +3.64 V. The trap producing option A (+2.44 V) is computing +0.60 − 3.04 = −2.44 and taking the magnitude, dropping the second minus sign. The large positive E°cell (+3.64 V per cell) explains why lithium-ion technology dominates portable electronics and electric vehicles — a single Li-ion cell delivers ~3.6 V compared with ~2.0 V for lead-acid and ~1.2 V for nickel-metal hydride."},{"stem":"A hydrogen–oxygen fuel cell has E°(O₂/H₂O) = +1.23 V and E°(H⁺/H₂) = 0.00 V, giving E°cell = +1.23 V. Yet a 2:1 H₂/O₂ gas mixture at room temperature shows no reaction without a catalyst or spark. Which statement best explains this?","A":"E°cell < 0 means the reaction is non-feasible, which is why it does not proceed at room temperature","B":"The reaction is thermodynamically feasible (E°cell > 0) but has a high activation energy, so it is kinetically very slow without a catalyst or ignition source","C":"Non-standard gas pressures shift E to a negative value under typical conditions, making the reaction non-feasible","D":"A positive E°cell applies only to ionic solutions, not to gas-phase reactions","correct":"B","explain":"A positive E°cell (+1.23 V) confirms thermodynamic feasibility — the products (H₂O) are at lower free energy than the reactants (H₂ + ½O₂), and ΔG° = −nFE°cell < 0. However, feasibility is only a thermodynamic verdict; it says nothing about rate. The H₂/O₂ reaction requires breaking H–H bonds (436 kJ mol⁻¹) and O=O bonds (498 kJ mol⁻¹) before new O–H bonds can form. Without a catalyst or ignition, the activation energy is too high for any significant fraction of molecules at 298 K to possess sufficient energy for the reaction to proceed at a measurable rate. This is the standard kinetic limitation of electrode potential predictions, directly analogous to the thermodynamic feasibility/kinetic frozen distinction for diamond → graphite seen in thermodynamics. Option A is factually wrong: E°cell = +1.23 V is positive. Option C is incorrect: even at non-standard pressures the reaction remains thermodynamically strongly favoured."},{"stem":"Standard electrode potentials predict the reaction Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s) to be feasible (E°cell = +1.10 V). Under which non-standard conditions could the actual cell potential be significantly reduced (though for this large E°cell it would still remain positive)?","A":"Lowering the temperature to 0 °C — all spontaneous redox reactions become non-feasible below 25 °C","B":"Adding a heterogeneous catalyst — catalysts alter the equilibrium position and change E°","C":"Using very dilute Cu²⁺(aq) and very concentrated Zn²⁺(aq) simultaneously, shifting both half-cell equilibria away from the standard position","D":"Using anhydrous (water-free) conditions, which does not affect the electrode potentials of aqueous couples","correct":"C","explain":"E° values are defined at 1.00 mol dm⁻³ for all aqueous species. A very low [Cu²⁺] shifts the Cu²⁺/Cu equilibrium to the left (Le Chatelier), making E(Cu²⁺/Cu) less positive than +0.34 V. Simultaneously, a very high [Zn²⁺] shifts the Zn²⁺/Zn equilibrium to the right, making E(Zn²⁺/Zn) less negative — more positive — than −0.76 V, and therefore less favourable for oxidation. Both effects reduce E_cell below E°cell. For a reaction with a small positive E°cell (e.g., near zero), such concentration effects could make the actual E_cell ≤ 0, reversing the feasibility verdict. Option A is incorrect: lower temperature does not universally make redox reactions non-feasible; it changes the Nernst behaviour but doesn't abolish spontaneity for strongly negative ΔG° reactions. Option B is wrong: catalysts lower activation energy but have no effect on equilibrium position or E°. Option D is incorrect: removing water from an aqueous electrode system changes the chemistry fundamentally."},{"stem":"In the iodometric determination of Cu²⁺, 10.00 cm³ of Cu²⁺ solution was treated with excess KI. The liberated I₂ required 25.00 cm³ of 0.100 mol dm⁻³ Na₂S₂O₃ to reach the endpoint. Using: 2Cu²⁺ + 4I⁻ → 2CuI + I₂ and I₂ + 2S₂O₃²⁻ → S₄O₆²⁻ + 2I⁻, what is the concentration of Cu²⁺?","A":"0.0625 mol dm⁻³","B":"0.125 mol dm⁻³","C":"0.250 mol dm⁻³","D":"0.500 mol dm⁻³","correct":"C","explain":"Step 1: n(S₂O₃²⁻) = 0.100 × 0.02500 = 2.50 × 10⁻³ mol. Step 2: from I₂ + 2S₂O₃²⁻ ratio, n(I₂) = n(S₂O₃²⁻)/2 = 1.25 × 10⁻³ mol. Step 3: from 2Cu²⁺ + 4I⁻ → 2CuI + I₂, the Cu²⁺ : I₂ ratio is 2:1, so n(Cu²⁺) = 2 × n(I₂) = 2.50 × 10⁻³ mol. Step 4: c(Cu²⁺) = 2.50 × 10⁻³/0.01000 = 0.250 mol dm⁻³. Option B (0.125 mol dm⁻³) is the most common error — the candidate stops at n(I₂) = 1.25 × 10⁻³ mol and divides directly by the volume, forgetting that 2 mol Cu²⁺ produce 1 mol I₂. The H432/01 November 2021 examiner report identified confusion between the moles of I₂ and the moles of Cu²⁺ as the principal error in this type of calculation. No intermediate rounding should be applied: carrying full precision through all four steps and rounding only the final answer avoids the rounding penalties noted in H432/03 mark schemes."},{"stem":"What is the oxidation state of chromium in K₂Cr₂O₇, and what is the systematic name of the Cr₂O₇²⁻ ion?","A":"Chromium is +7; the ion is chromate(VII)","B":"Chromium is +6; the ion is dichromate(VI)","C":"Chromium is +3; the ion is dichromate(III)","D":"Chromium is +7; the ion is dichromate(VII)","correct":"B","explain":"In Cr₂O₇²⁻, each oxygen is −2, so 7 × (−2) = −14. The overall charge is −2, giving 2Cr + (−14) = −2, so 2Cr = +12 and each Cr = +6. The ion is therefore named dichromate(VI), where \"di\" indicates two chromium atoms and \"(VI)\" states the chromium oxidation state. The key confusion to avoid is conflating dichromate(VI) (Cr = +6) with manganate(VII) (Mn = +7). The H432/03 June 2023 examiner report flagged this as a widespread error: candidates wrote Cr as +7 by analogy with Mn in MnO₄⁻. In the reduction half-equation Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O, each Cr goes from +6 to +3, a change of 3 per atom; with 2 Cr atoms, 6 electrons are transferred in total — consistent with the 1:6 (Cr₂O₇²⁻ : Fe²⁺) molar ratio in titrations."},{"stem":"Which statement about lithium-ion cells is correct in the context of HSW9 (benefits and risks of electrochemical cells)?","A":"Lithium-ion cells are risk-free because the only discharge product is water, with no toxic by-products","B":"Thermal runaway is triggered by charging the cell too slowly, releasing excess heat over several hours","C":"The high energy density of Li-ion cells arises from lithium's very negative E° and its low molar mass, giving both a large cell voltage and high charge-to-mass ratio","D":"Li-ion cells are unsuitable for electric vehicles because their cell voltage (~1.2 V) is too low for traction motors","correct":"C","explain":"The high energy density of lithium-ion cells comes from two independent factors: (1) Lithium has the most negative standard electrode potential of any metal (E°(Li⁺/Li) ≈ −3.04 V), so pairing it with a suitable positive electrode gives a large E°cell (~3.6 V per cell). (2) Lithium has the lowest molar mass of any metal (6.94 g mol⁻¹), so more coulombs of charge can be stored per kilogram of electrode. Option A is incorrect — the only product being water is a property of hydrogen–oxygen fuel cells, not Li-ion cells; Li-ion cells contain cobalt oxide (toxic), an organic electrolyte (flammable), and lithium (reacts violently with moisture if the cell is breached). Option B reverses the trigger for thermal runaway: it is caused by rapid heat release from overcharging, physical damage (puncture), or internal short-circuiting, not slow charging. Option D gives the wrong cell voltage: Li-ion cells deliver ~3.6 V per cell (not 1.2 V, which is the voltage for NiMH cells) and are the dominant power source for commercial electric vehicles."},{"stem":"In an acidic methanol fuel cell, the negative electrode half-equation is CH₃OH + H₂O → CO₂ + 6H⁺ + 6e⁻ and the positive electrode half-equation is O₂ + 4H⁺ + 4e⁻ → 2H₂O. Which statement correctly identifies the overall cell equation and the key difference from a hydrogen–oxygen fuel cell?","A":"The overall equation is CH₃OH + O₂ → CO₂ + 2H₂O; both cells produce only water at the point of use","B":"The overall equation is 2CH₃OH + 3O₂ → 2CO₂ + 4H₂O; unlike the hydrogen–oxygen fuel cell, the methanol cell produces CO₂ as well as water","C":"The overall equation is CH₃OH + O₂ → CO₂ + 2H₂O; the methanol cell is identical in environmental impact to a hydrogen–oxygen fuel cell","D":"The overall equation is 2CH₃OH + 3O₂ → 2CO₂ + 4H₂O; both cells produce CO₂ because oxygen reduction always generates carbon dioxide","correct":"B","explain":"The electron counts must be equalised: the negative half-equation transfers 6e⁻ and the positive transfers 4e⁻. Multiply the negative half-equation by 2 (giving 12e⁻) and the positive by 3 (giving 12e⁻): 2CH₃OH + 2H₂O → 2CO₂ + 12H⁺ + 12e⁻ and 3O₂ + 12H⁺ + 12e⁻ → 6H₂O. Adding and cancelling 12e⁻, 12H⁺, and 2H₂O: 2CH₃OH + 3O₂ → 2CO₂ + 4H₂O. This matches the balanced combustion equation for methanol, confirming the fuel cell produces the same chemical change as burning methanol but extracts electrical energy instead of heat. Unlike a pure H₂/O₂ fuel cell (2H₂ + O₂ → 2H₂O, water only), the methanol cell releases CO₂ — a greenhouse gas — reducing its environmental advantage. Option A gives an unbalanced equation (the H count is wrong). Option D is incorrect: CO₂ comes from oxidising the carbon in the fuel, not from the O₂ reduction step; hydrogen fuel cells produce no CO₂ because H₂ contains no carbon."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

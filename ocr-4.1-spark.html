@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.1 Basic Concepts - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.1 &mdash; Basic Concepts</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Which statement gives the correct definition of a homologous series?","A":"A series of compounds that all have the same molecular formula","B":"A series of compounds with the same functional group, the same general formula, and consecutive members differing by CH₂","C":"A series of compounds that differ by exactly one CH₃ group and have the same functional group","D":"A series of compounds with the same empirical formula and the same physical properties","correct":"B","explain":"Three features must all be present: (1) the same functional group (so the same reactions), (2) the same general formula (so formulae are predictable from the carbon count), and (3) consecutive members differing by CH₂ (adding 14 to Mr each time). Option C is too narrow: \"one CH₃ group\" would imply adding C + 3H = 15 mass units, not the CH₂ = 14 mass units increment that defines a homologous series. Option A confuses homologous series with isomers, which share the same molecular formula."},{"stem":"What is the general formula for the alkene homologous series?","A":"CₙH₂ₙ₊₂","B":"CₙH₂ₙ","C":"CₙH₂ₙ₋₂","D":"CₙH₂ₙO","correct":"B","explain":"Alkenes contain one C=C double bond and no other functional groups. The general formula CₙH₂ₙ accounts for the two hydrogen atoms \"lost\" compared with the equivalent alkane (CₙH₂ₙ₊₂) when a C=C forms: ethene C₂H₄ (n=2 → 2×2=4 H ✓), propene C₃H₆ (n=3 → 2×3=6 H ✓). Option A is for alkanes (saturated, no double bond). Option D (CₙH₂ₙO) is for aldehydes and ketones. CₙH₂ₙ₋₂ would describe a diene (two C=C bonds) or a cyclic alkene."},{"stem":"Which IUPAC suffix is used for a ketone?","A":"-al","B":"-ol","C":"-one","D":"-oic acid","correct":"C","explain":"The suffix identifies the principal functional group: -al = aldehyde (CHO, terminal carbonyl), -ol = alcohol (OH), -one = ketone (C=O in the middle of the chain, flanked by two carbon atoms), -oic acid = carboxylic acid (COOH). Memorising the five most common suffixes (an, ene, ol, al, one, oic acid) is essential for naming questions across all Module 4 topics and beyond."},{"stem":"Which two functional group classes share the general formula CₙH₂ₙO?","A":"Alkanes and alkenes","B":"Alcohols and carboxylic acids","C":"Aldehydes and ketones","D":"Esters and carboxylic acids","correct":"C","explain":"Both aldehydes and ketones contain one C=O group and no other heteroatoms. Their general formula is CₙH₂ₙO. Ethanal CH₃CHO (n=2, M=2×2=4 H → C₂H₄O ✓) and propanone CH₃COCH₃ (n=3 → C₃H₆O ✓). Because they share a general formula, an aldehyde and a ketone with the same number of carbons are functional group isomers of each other. Alcohols are CₙH₂ₙ₊₂O (saturated, monohydric) and carboxylic acids are CₙH₂ₙO₂."},{"stem":"What does homolytic fission of a covalent bond produce?","A":"A cation and an anion","B":"Two radicals","C":"Two cations","D":"An ion and an uncharged molecule","correct":"B","explain":"In homolytic fission, the shared electron pair splits evenly: one electron goes to each atom (X–Y → X• + Y•). Each species that results has one unpaired electron and is called a radical. In heterolytic fission (which gives option A, a cation and an anion), one atom takes both electrons. The word \"homolytic\" comes from the Greek for \"same breaking\" — the pair breaks evenly. \"Heterolytic\" means \"different breaking\" — the pair breaks unevenly."},{"stem":"What is the correct definition of a radical?","A":"A negatively charged species formed by heterolytic fission","B":"A species with a lone pair of electrons available for donation","C":"A species with an unpaired electron","D":"A species with an even number of electrons and no charge","correct":"C","explain":"The OCR mark scheme requires the phrase \"unpaired electron\" (or \"single/lone electron\", meaning one not part of a pair). A radical is uncharged but highly reactive because the unpaired electron seeks to pair up with another electron from a neighbouring molecule. Common examples: Cl• (chlorine radical), CH₃• (methyl radical), •OH (hydroxyl radical). The dot notation placed next to the atom symbol represents one electron, not a negative charge and not a lone pair."},{"stem":"In which type of curly arrow mechanism is a single-headed (fish-hook) arrow used?","A":"Nucleophilic substitution of haloalkanes","B":"Electrophilic addition to alkenes","C":"Free radical substitution of alkanes","D":"Hydrolysis of esters","correct":"C","explain":"Single-headed (fish-hook) arrows show the movement of one electron. They are used in homolytic fission and in the propagation steps of free radical substitution, where one electron transfers at a time. The other three mechanisms listed all involve heterolytic processes (electron pairs move), so they use double-headed curly arrows. Mixing up arrow types is a commonly penalised error in OCR mechanism questions: using a double-headed arrow in a radical step implies two electrons go to the same atom (giving a cation and an anion rather than two radicals)."},{"stem":"What are structural isomers?","A":"Compounds with the same structural formula but different molecular formulae","B":"Compounds with the same molecular formula but different structural formulae","C":"Compounds with the same molecular formula arranged differently in three-dimensional space","D":"Compounds with the same empirical formula and the same functional group","correct":"B","explain":"The OCR two-keyword definition is: same molecular formula, different structural formulae. \"Molecular\" specifies the formula type (empirical or general alone is insufficient). \"Structural\" specifies what differs (spatial arrangement in 3D is different — that defines stereoisomers, not structural isomers). Option C describes stereoisomers, which OCR mark schemes explicitly distinguish from structural isomers; the mark scheme warns \"DO NOT ALLOW any reference to spatial/space/3D\" in a structural-isomer definition (H032/01 June 2018)."},{"stem":"Butan-1-ol and butan-2-ol both have the molecular formula C₄H₁₀O. What type of structural isomerism do they show?","A":"Chain isomerism","B":"Functional group isomerism","C":"Positional isomerism","D":"Geometric isomerism","correct":"C","explain":"Positional isomers have the same carbon skeleton and the same functional group, but the functional group is attached at different positions on the chain. Butan-1-ol has –OH at carbon 1 (CH₃CH₂CH₂CH₂OH); butan-2-ol has –OH at carbon 2 (CH₃CH(OH)CH₂CH₃). The 4-carbon skeleton and the –OH group are the same; only the position differs. Chain isomers would have different branching of the carbon skeleton. Functional group isomers would have a different functional group (e.g. an ether rather than an alcohol)."},{"stem":"Bromine water is shaken with an unknown organic compound and the orange colour disappears. What does this indicate?","A":"The compound is saturated","B":"The compound contains an aromatic ring","C":"The compound is unsaturated and contains a C=C bond","D":"The compound contains an –OH group","correct":"C","explain":"Bromine water is decolourised (orange to colourless) when bromine adds across a C=C double bond (electrophilic addition). This is a positive test for alkenes (and alkynes). Saturated compounds (option A) do not react with bromine water under normal conditions and the orange colour persists. Aromatic rings (option B) do not decolourise bromine water at room temperature without a catalyst — the delocalised π system is more stable than isolated C=C bonds. The –OH group (option D) does not react with bromine water."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

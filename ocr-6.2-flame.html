@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.2 Carbonyl Chemistry - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.2 &mdash; Carbonyl Chemistry</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"In the mechanism for nucleophilic addition of H⁻ to a carbonyl compound, what must be shown on the C=O bond before the curly arrows are drawn?","A":"A negative charge on the carbonyl carbon","B":"The dipole Cδ⁺=Oδ⁻","C":"A lone pair on the carbonyl carbon","D":"The label \"π-bond\" written next to the C=O","correct":"B","explain":"The C=O group has a permanent dipole because oxygen is more electronegative than carbon: the C=O π-electrons are pulled towards O, giving <b>Cδ⁺=Oδ⁻</b>. This dipole must be explicitly labelled on the C=O bond at the start of the mechanism — it identifies the carbonyl carbon as the electrophilic site and the oxygen as the site that accumulates the negative charge in the intermediate. OCR examiner reports repeatedly emphasise that Cδ⁺ and Oδ⁻ labels must be present; their absence loses the first mark. A lone pair on C (option C) would make it a nucleophile, which is wrong. Writing \"π-bond\" (option D) does not earn credit because it doesn't communicate the polarity."},{"stem":"In the NaBH₄ nucleophilic addition mechanism, where must the first curly arrow start and where must it end?","A":"From the C=O bond, ending at the O atom","B":"From H⁺ in solution, ending at the carbonyl carbon","C":"From the lone pair (or negative charge) on H⁻, ending at the carbonyl carbon (Cδ⁺)","D":"From the lone pair on the oxygen of the alkoxide, ending at H of H₂O","correct":"C","explain":"The first curly arrow represents the movement of H⁻'s lone pair (electron pair) towards the electrophilic carbonyl carbon. It must start from the <b>lone pair or negative charge on H⁻</b> and end at the <b>Cδ⁺ of the C=O</b>. OCR examiner reports (June 2019) explicitly require this. Option (A) describes the <b>second</b> curly arrow in step 1 (the C=O π-bond electrons moving to O to give the alkoxide). Option (D) describes the protonation step (step 2). Starting from H⁺ (option B) reverses the electron flow — the arrow would show H⁺ as an electron donor, which is incorrect."},{"stem":"A student has three unlabelled liquids: butanal (an aldehyde), butan-2-one (a ketone), and butan-2-ol (a secondary alcohol). Which sequence of tests correctly identifies all three?","A":"Use Tollens' first — positive = aldehyde; then K₂Cr₂O₇/H₂SO₄ to separate the ketone from the alcohol.","B":"Use 2,4-DNPH first: two give a precipitate (butanal and butan-2-one); then add Tollens' to separate those two (silver mirror = butanal; no reaction = butan-2-one); butan-2-ol gives no 2,4-DNPH precipitate.","C":"Use K₂Cr₂O₇/H₂SO₄ throughout: orange→green = butanal; stays orange = butan-2-one; stays orange = butan-2-ol (cannot separate the last two this way).","D":"Use 2,4-DNPH only; the colour of the precipitate distinguishes all three.","correct":"B","explain":"The logical strategy is: <b>Step 1 — 2,4-DNPH</b>: detects C=O; butanal and butan-2-one both give a precipitate; butan-2-ol does not → butan-2-ol is identified. <b>Step 2 — Tollens'</b> on the two precipitate-forming compounds: butanal gives a silver mirror (aldehyde → carboxylate, Ag⁺ → Ag); butan-2-one gives no reaction (ketone, no C–H on carbonyl C). Option (C) fails because both butan-2-one and butan-2-ol give no colour change with K₂Cr₂O₇ — you cannot distinguish them this way. Option (D) fails because OCR does not use the colour of the 2,4-DNPH precipitate to distinguish compounds — the melting point of the recrystallised derivative is used instead."},{"stem":"Ethanal (CH₃CHO) reacts with HCN (supplied as NaCN/dilute H⁺) at room temperature. Which compound is the organic product?","A":"Propanal (CH₃CH₂CHO)","B":"2-Hydroxypropanenitrile (CH₃CH(OH)CN)","C":"Propan-2-ol (CH₃CH(OH)CH₃)","D":"Propanenitrile (CH₃CH₂CN)","correct":"B","explain":"CN⁻ attacks the electrophilic carbonyl carbon of ethanal (C2 chain), and the resulting alkoxide is protonated to give <b>2-hydroxypropanenitrile</b> (CH₃CH(OH)CN, a 3-carbon chain). IUPAC name: the CN carbon is C1, the new stereocentre (bearing –OH and –CH₃) is C2, giving \"2-hydroxy\" prefix. HCN addition has extended the chain from 2 to <b>3 carbons</b>. Option (D) propanenitrile (CH₃CH₂CN) is a simple nitrile without the –OH group — that would arise from reaction of a different substrate (e.g., substitution of a halogenoalkane with CN⁻). Option (C) is the product of NaBH₄ reduction of propanal, not HCN addition to ethanal. Option (A) is propanal, an aldehyde — not the right product type."},{"stem":"What is the role of Ag⁺ in the Tollens' test when an aldehyde is present?","A":"Ag⁺ acts as a nucleophile, attacking the carbonyl carbon.","B":"Ag⁺ acts as an electrophile, polarising the C=O bond.","C":"Ag⁺ is the oxidising agent — it is reduced from Ag⁺ to Ag(s) while the aldehyde is oxidised to the carboxylate.","D":"Ag⁺ acts as a catalyst and is not consumed in the reaction.","correct":"C","explain":"In the Tollens' test, there is a <b>redox reaction</b>: the aldehyde (RCHO) is the <b>reducing agent</b> — it is oxidised to a carboxylate (RCOO⁻ in alkaline conditions). Ag⁺ in [Ag(NH₃)₂]⁺ is the <b>oxidising agent</b> — it gains one electron and is <b>reduced to silver metal (Ag⁰)</b>. The metallic Ag deposits as a silver mirror or grey/black precipitate. The overall equation: RCHO + 2[Ag(NH₃)₂]⁺ + 3OH⁻ → RCOO⁻ + 2Ag + 4NH₃ + 2H₂O. Ag⁺ is definitively consumed, not catalytic (option D). Options (A) and (B) misidentify Ag⁺'s role — it participates in redox, not as a nucleophile or electrophile in organic terms."},{"stem":"Why does Tollens' reagent not react with propanone (CH₃COCH₃)?","A":"Propanone is not miscible with the alkaline Tollens' solution.","B":"Propanone has no C–H bond on the carbonyl carbon, so it cannot be oxidised to a carboxylic acid under these mild conditions.","C":"Propanone reacts with Tollens' but produces a colourless product, so no silver mirror is visible.","D":"Propanone is a more powerful reducing agent than an aldehyde and reduces Ag⁺ too quickly to form a mirror.","correct":"B","explain":"The Tollens' test is positive for <b>aldehydes</b> because the aldehyde group (R–CHO) has a <b>C–H bond on the carbonyl carbon</b> that can be cleaved during oxidation, allowing conversion to R–COOH (or R–COO⁻). In propanone, the carbonyl carbon bears two methyl groups and <b>no H atom</b> — to oxidise propanone further, a C–C bond would have to break, which Tollens' cannot achieve. So propanone is unchanged, no Ag is deposited, and the solution remains colourless. This is the key distinction: <b>Tollens' tests for the aldehyde group</b>, not the carbonyl group in general."},{"stem":"After a positive 2,4-DNPH test, how is the specific carbonyl compound identified?","A":"By comparing the colour of the precipitate (yellow = aldehyde; red = ketone).","B":"By adding Tollens' reagent to the 2,4-DNPH precipitate.","C":"By recrystallising the derivative, measuring its melting point, and comparing with a database of known 2,4-dinitrophenylhydrazone melting points.","D":"By dissolving the precipitate in NaOH and measuring the resulting pH.","correct":"C","explain":"Each different carbonyl compound produces a <b>2,4-dinitrophenylhydrazone derivative</b> with its own characteristic, sharp melting point. To identify the original compound: (1) filter off the crude precipitate; (2) <b>recrystallise</b> from hot ethanol to purify the derivative; (3) dry the crystals; (4) <b>measure the melting point</b> in a melting-point apparatus; (5) <b>compare with a database</b> of known values — the match identifies the compound. Option (A) is incorrect — OCR does not use precipitate colour to distinguish individual compounds (yellow, orange, red are all valid positive results). Option (B) is wrong — Tollens' reagent tests whether a compound is an aldehyde or ketone; it cannot distinguish which specific carbonyl it is."},{"stem":"In the nucleophilic addition of HCN to a carbonyl compound, through which atom of CN⁻ does the cyanide ion attack the carbonyl carbon?","A":"Through the nitrogen of CN⁻","B":"Through the carbon of CN⁻","C":"Through either the carbon or nitrogen, depending on the carbonyl compound","D":"Through the oxygen of a water molecule acting as a bridge","correct":"B","explain":"CN⁻ is an ambident nucleophile (it has lone pairs on both C and N), but it attacks carbonyl compounds <b>through its carbon end</b>. This is important for mechanism marks and for naming the product: the new bond is C–C (between the carbonyl carbon and the C of CN), giving a hydroxynitrile with a –CN group. The –CN group is at the end of the chain (C1 in IUPAC nomenclature for nitriles). OCR examiner reports (Oct 2020) require the first curly arrow to start from the carbon lone pair/negative charge of CN⁻, pointing to the Cδ⁺ of C=O. Attack through N would give a different species (an imine, not relevant here)."},{"stem":"NaBH₄ is added to butanal (CH₃CH₂CH₂CHO). Which compound is the organic product?","A":"Butanoic acid (a carboxylic acid)","B":"Butan-2-ol (a secondary alcohol)","C":"Butan-1-ol (a primary alcohol)","D":"Butanone (a ketone)","correct":"C","explain":"NaBH₄ reduction of an <b>aldehyde</b> gives a <b>primary alcohol</b>: RCHO + 2[H] → RCH₂OH. Butanal (CH₃CH₂CH₂CHO) has the carbonyl group at C1; after H⁻ attack and protonation, the product is <b>butan-1-ol</b> (CH₃CH₂CH₂CH₂OH) — a primary alcohol with four carbons. Option (B) butan-2-ol would be the product of NaBH₄ reduction of butan-2-one (a ketone). Option (A) butanoic acid is the product of oxidation of butanal. Option (D) butanone would require an oxidation of a secondary alcohol — NaBH₄ is a reducing agent, not an oxidising agent."},{"stem":"Which compound gives the same result as a ketone when tested with 2,4-DNPH (Brady's reagent)?","A":"A primary alcohol","B":"An alkene","C":"An aldehyde","D":"A carboxylic acid","correct":"C","explain":"2,4-DNPH gives a <b>yellow/orange/red precipitate</b> with any compound containing a C=O carbonyl group — both <b>aldehydes and ketones</b>. Because both compound types give the same positive result, 2,4-DNPH <b>cannot distinguish between them</b>. Alcohols (primary, secondary, or tertiary), alkenes, carboxylic acids, esters, and amides do not give a precipitate with 2,4-DNPH. To distinguish an aldehyde from a ketone after a positive 2,4-DNPH result, a second test — Tollens' reagent — is needed."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

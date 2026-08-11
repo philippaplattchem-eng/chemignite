@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.3 The Halogens - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.3 &mdash; The Halogens</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student explains: \"Iodine is less reactive than chlorine because iodine has a lower electronegativity.\" Evaluate this explanation.","A":"Fully correct, electronegativity is the key variable","B":"Correct conclusion but wrong reasoning: the reactivity trend should be explained using atomic radius, shielding, and the resulting weaker nuclear attraction on an incoming electron, not electronegativity","C":"The conclusion is wrong, iodine is more reactive because it has a lower bond enthalpy","D":"Correct, and bond enthalpy should also be cited as evidence","correct":"B","explain":"OCR examiners consistently penalise \"electronegativity\" as an explanation for the reactivity trend down Group 17 (H432/01 Jun 2024; H032/02 Jun 2023). The accepted explanation is: going down Group 17, atomic radius increases and electron shielding increases, so the nuclear attraction on an incoming electron (the electron being gained from the reducing agent) weakens. A weaker ability to attract electrons means a weaker oxidising agent and lower reactivity. Electronegativity measures the same thing qualitatively but the OCR specification requires the mechanistic explanation: radius, shielding, nuclear attraction. Bond enthalpy and ionisation energy are not relevant here."},{"stem":"Bromine water is added to separate solutions of NaF, NaCl, NaBr, and NaI. In which solution(s) would a colour change be observed?","A":"NaF and NaCl only","B":"NaBr only","C":"NaI only","D":"NaCl and NaI","correct":"C","explain":"Br₂ can only displace a halide that is below it in oxidising power: it can displace I⁻ (Br₂ + 2I⁻ → 2Br⁻ + I₂) but not Cl⁻ or F⁻ (both more oxidising than Br₂). In the NaI solution, I₂ forms and the solution turns dark brown. In NaCl, no reaction occurs (Cl₂ is a stronger oxidising agent; Br₂ cannot remove electrons from Cl⁻). In NaF, no reaction occurs (F₂ is the most reactive halogen, so F⁻ is the hardest to oxidise). In NaBr, Br₂ is already present; a halogen cannot displace its own halide."},{"stem":"The equation for chlorine reacting with cold dilute calcium hydroxide is: 2Ca(OH)₂ + 2Cl₂ → Ca(ClO)₂ + CaCl₂ + 2H₂O. Show that this is a disproportionation reaction by assigning oxidation numbers to all chlorine-containing species.","A":"Cl₂ = 0; Ca(ClO)₂ each Cl = +2; CaCl₂ each Cl = −2. Disproportionation confirmed.","B":"Cl₂ = 0; Ca(ClO)₂ each Cl = +1; CaCl₂ each Cl = −1. One Cl is oxidised from 0 to +1 and another reduced from 0 to −1, confirming disproportionation","C":"Cl₂ = 0; Ca(ClO)₂ each Cl = +2; CaCl₂ each Cl = −1. Disproportionation confirmed.","D":"Cl₂ = +1; Ca(ClO)₂ each Cl = −1; CaCl₂ each Cl = 0. This shows reduction only.","correct":"B","explain":"Cl₂ is an element: Cl = 0. Ca(ClO)₂: Ca = +2, O = −2; for each ClO unit: (+2/2) + Cl + (−2) = 0 is not correct — treat Ca²⁺ as the cation and ClO⁻ as the anion. For ClO⁻: Cl + (−2) = −1, so Cl = +1. CaCl₂: Ca = +2, so 2 × Cl = −2, Cl = −1. Cl goes from 0 to +1 in Ca(ClO)₂ (oxidised) and from 0 to −1 in CaCl₂ (reduced). The same element, chlorine, is both oxidised and reduced. This is disproportionation. The most common error is writing +2 and −2 instead of +1 and −1."},{"stem":"Why must the strict testing order \"carbonate first, then sulfate, then halide\" be followed when identifying unknown ions in solution?","A":"The tests all give white precipitates and the order determines which one is white","B":"Testing for sulfate before carbonate gives a false negative for sulfate","C":"Testing for halide before removing carbonate and sulfate can give false positives: Ag₂CO₃ (cream) mimics AgBr, and Ag₂SO₄ (white) mimics AgCl","D":"Carbonate and sulfate tests use the same reagent, so one must be done before the other to save reagent","correct":"C","explain":"The order is dictated by false positive chemistry. If AgNO₃ is added before removing CO₃²⁻, silver carbonate (Ag₂CO₃) precipitates as a pale yellow-cream solid and could be mistaken for AgBr. If AgNO₃ is added before removing SO₄²⁻, silver sulfate (Ag₂SO₄) is sparingly soluble and may form a white precipitate mimicking AgCl. Adding dilute acid first (carbonate test) destroys CO₃²⁻; then acidified BaCl₂ removes SO₄²⁻ as BaSO₄. Only then can the sample be tested with AgNO₃ and the halide identified unambiguously. This question is OCR's most frequently examined qualitative analysis procedural point."},{"stem":"An unknown solution is treated as follows: (i) dilute HNO₃ is added, no effervescence is observed; (ii) acidified Ba(NO₃)₂ is added, no precipitate forms; (iii) acidified AgNO₃ is added, a yellow precipitate forms that remains insoluble when both dilute and concentrated NH₃ are added. Identify all ions confirmed and excluded, and state the identity of the halide.","A":"CO₃²⁻ absent, SO₄²⁻ absent, Cl⁻ present (white precipitate not correctly described)","B":"CO₃²⁻ absent, SO₄²⁻ absent, I⁻ present","C":"CO₃²⁻ present, SO₄²⁻ absent, Br⁻ present","D":"CO₃²⁻ absent, SO₄²⁻ present, I⁻ present","correct":"B","explain":"(i) No effervescence with dilute HNO₃ → no CO₃²⁻ present. (ii) No precipitate with acidified Ba(NO₃)₂ → no SO₄²⁻ present. (iii) Yellow precipitate with acidified AgNO₃ → AgI. Insoluble in dilute NH₃ (unlike AgCl, which dissolves easily) and insoluble in concentrated NH₃ (unlike AgBr, which dissolves in concentrated NH₃) → confirms I⁻. Note that Ba(NO₃)₂ is used rather than BaCl₂ in step (ii) to avoid introducing Cl⁻ before the halide test in step (iii). The yellow colour plus total insolubility in NH₃ uniquely identifies AgI."},{"stem":"A logic puzzle: unknown solid X gives effervescence when dissolved in dilute HNO₃ and the gas turns limewater milky. A solution of X in water gives a cream precipitate with acidified AgNO₃ that dissolves on addition of concentrated NH₃. Write the ionic equations for all reactions and identify the two ions in X.","A":"X contains SO₄²⁻ and Cl⁻; equations for BaSO₄ and AgCl formation","B":"X contains CO₃²⁻ and Br⁻; equations: CO₃²⁻ + 2H⁺ → H₂O + CO₂; CO₂ + Ca(OH)₂ → CaCO₃ + H₂O; Ag⁺ + Br⁻ → AgBr(s)","C":"X contains CO₃²⁻ and Cl⁻; cream precipitate is AgCl (wrong colour)","D":"X contains SO₄²⁻ and I⁻; yellow precipitate, not cream","correct":"B","explain":"Observation 1: effervescence with dilute acid and limewater turns milky → CO₂ produced → carbonate (CO₃²⁻) confirmed. Ionic equations: CO₃²⁻ + 2H⁺ → H₂O + CO₂; then CO₂ + Ca(OH)₂ → CaCO₃(s) + H₂O. Observation 2: cream precipitate with acidified AgNO₃, dissolves in concentrated NH₃ → AgBr → bromide (Br⁻) confirmed. (White AgCl dissolves in dilute NH₃; yellow AgI does not dissolve in either.) Ionic equation: Ag⁺ + Br⁻ → AgBr(s). X contains CO₃²⁻ and Br⁻; it could be a mixture such as Na₂CO₃ + NaBr."},{"stem":"Evaluate the decision to use chlorine to treat drinking water, considering both benefits and risks.","A":"Chlorination should be abandoned, as the risk of chlorinated hydrocarbon formation outweighs the benefit","B":"The benefits (killing pathogens, residual protection) significantly outweigh the risks (toxic Cl₂ handling, trace chlorinated hydrocarbons), and chlorination remains the dominant water treatment method globally","C":"Chlorination is effective only in developed countries, where pipes prevent recontamination","D":"The risks and benefits are equal; any other disinfection method (ozone or UV) would be preferable","correct":"B","explain":"Benefits: Cl₂ kills pathogenic bacteria (cholera, typhoid, dysentery) responsible for water-borne disease; HClO provides residual protection throughout the distribution network (preventing recontamination after treatment); cheap and easy to apply at scale. Risks: Cl₂ is a toxic gas (inhalation causes severe lung damage; it was used as a chemical weapon in WWI); chlorine can react with naturally occurring organic matter in raw water to form chlorinated hydrocarbons (e.g. CHCl₃, trichloromethane) that are suspected carcinogens. Public health consensus: the carcinogenic risk from trace CHCl₃ is many orders of magnitude smaller than the risk of dying from cholera or typhoid in untreated water. Chlorination has saved hundreds of millions of lives and remains the dominant method precisely because it provides residual protection that alternatives such as ozone and UV cannot."},{"stem":"Explain the trend in solubility of AgCl, AgBr, and AgI in ammonia solution, going from AgCl to AgI.","A":"Solubility increases from AgCl to AgI, as iodide ions form stronger complexes with Ag⁺","B":"Solubility decreases from AgCl to AgI, because the lattice energy of AgX increases as the halide gets larger and more polarisable, making it progressively harder for NH₃ to dissolve the precipitate","C":"Solubility is the same for all three, as the [Ag(NH₃)₂]⁺ complex is equally stable regardless of the halide","D":"Solubility decreases because the halide ion becomes less electronegative down the group, making the Ag–X bond stronger","correct":"B","explain":"Going from Cl⁻ to I⁻, the halide ion becomes larger and more polarisable. The small, highly polarising Ag⁺ cation distorts the electron cloud of the larger halide ions more strongly, introducing increasing covalent character into the Ag–X bond. This increases the lattice energy of AgX going from AgCl to AgI (AgI is much less soluble than AgCl, Ksp(AgI) ≈ 10⁻¹⁶ vs Ksp(AgCl) ≈ 10⁻¹⁰). Dissolving AgX in NH₃ requires breaking the lattice to form [Ag(NH₃)₂]⁺; the more stable the AgX lattice, the higher the concentration of NH₃ required. AgCl dissolves in dilute NH₃, AgBr only in concentrated NH₃, and AgI does not dissolve in either."},{"stem":"Two unknown Group 17 compounds, A and B, are both dissolved in water. When acidified AgNO₃ is added to both, A gives a white precipitate that dissolves in dilute NH₃, and B gives a yellow precipitate that is insoluble in concentrated NH₃. Which conclusion is correct?","A":"A contains Br⁻ and B contains Cl⁻","B":"A contains Cl⁻ and B contains I⁻","C":"A contains I⁻ and B contains Br⁻","D":"A contains Br⁻ and B contains I⁻","correct":"B","explain":"White precipitate dissolving in dilute NH₃ is the definitive test for AgCl → A contains Cl⁻. Yellow precipitate insoluble in both dilute and concentrated NH₃ is the definitive test for AgI → B contains I⁻. If B had been AgBr (cream), it would have dissolved in concentrated NH₃. The combination of precipitate colour and ammonia solubility gives an unambiguous identification: white + dissolves in dilute NH₃ = Cl⁻; cream + dissolves in concentrated NH₃ only = Br⁻; yellow + insoluble in both = I⁻."},{"stem":"Cl₂ is described as a stronger oxidising agent than I₂. Explain what this means in terms of electron transfer, using the displacement reaction of Cl₂ with KI solution as evidence. Then explain why Cl₂ has a greater ability to gain electrons than I₂, in terms of atomic radius and shielding.","A":"Cl₂ gains electrons more easily than I₂ because Cl₂ has a larger nuclear charge; Cl₂ + 2KI → 2KCl + I₂ shows I₂ formed, confirming Cl₂ oxidised I⁻","B":"Cl₂ gains electrons more easily than I₂ because Cl₂ has a smaller atomic radius and less shielding, so the incoming electron experiences greater nuclear attraction; Cl₂ + 2KI → 2KCl + I₂ confirms Cl₂ oxidised I⁻","C":"Cl₂ gains electrons more easily than I₂ because Cl₂ has a lower bond enthalpy and is easier to break apart; Cl₂ + 2KI → 2KCl + I₂","D":"Cl₂ gains electrons more easily than I₂ because Cl has a higher electronegativity; I₂ + 2KCl → 2KI + Cl₂","correct":"B","explain":"An oxidising agent gains electrons. Cl₂ + 2I⁻ → 2Cl⁻ + I₂ shows that each Cl atom gains one electron (Cl: 0 → −1) while each I atom loses one electron (I⁻: −1 → 0). Cl₂ oxidises I⁻, confirming Cl₂ is the stronger oxidising agent. Why Cl₂ gains electrons more readily: Cl is smaller than I (smaller atomic radius), and has fewer inner electron shells (less shielding). So the nucleus of Cl exerts a greater effective attraction on an incoming electron than the nucleus of I. Greater nuclear attraction on the incoming electron = stronger oxidising agent. Option A attributes the trend to nuclear charge alone, which is incomplete: nuclear charge increases down every group, but reactivity decreases, so shielding and radius must be invoked to explain the net effect."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

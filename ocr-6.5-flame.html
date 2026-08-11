@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.5 Stereoisomerism - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.5 &mdash; Stereoisomerism</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"An OCR mark scheme (June 2019) states: *\"DO NOT ALLOW same empirical formula OR same general formula. Reference to E/Z isomerism or optical isomerism is not sufficient.\"* What is the correct two-part definition of stereoisomerism that WOULD score the mark?","A":"\"Molecules with the same molecular formula but different bond arrangements\"","B":"\"Compounds that are mirror images of each other and cannot be superimposed\"","C":"\"Same structural formula AND different arrangement of atoms in space\"","D":"\"Optical isomers — they have the same molecular formula but rotate light differently\"","correct":"C","explain":"The two parts of the OCR-required definition are: <b>(1) same structural formula</b> (meaning the connectivity — which atoms are bonded to which — is the same) AND <b>(2) different arrangement of atoms in space</b> (meaning the 3D geometry differs). Both parts are required for the mark. Option (A) describes structural isomers (different bond arrangements = different structural formulae). Option (B) only describes optical isomers specifically, not stereoisomers in general — and naming the type is explicitly excluded (\"reference to optical isomerism is not sufficient\"). Option (D) names optical isomerism and mentions light rotation — this earns no marks for a \"definition of stereoisomerism\" question."},{"stem":"When hydrogen cyanide (HCN) is added to propanal (CH₃CH₂CHO), a chiral product is formed. Why does this reaction produce a racemic mixture?","A":"HCN is an achiral reagent, so only one enantiomer can be produced.","B":"The mechanism involves free radicals, which attack randomly.","C":"The carbonyl carbon in propanal is planar (sp²), so CN⁻ can attack from either face with equal probability, producing equal amounts of both enantiomers.","D":"Propanal reacts through a symmetric transition state, producing both enantiomers in the same step.","correct":"C","explain":"The carbonyl carbon (C=O) in propanal is <b>sp² hybridised</b> — it is planar with 120° bond angles and no preference for one face over the other. The CN⁻ nucleophile (or HCN) can approach from the <b>top face</b> or the <b>bottom face</b> of this flat C=O system with exactly equal probability (because there is no chiral influence from a catalyst or existing chiral centre). Attack from the top face gives one enantiomer of 2-hydroxybutanenitrile; attack from the bottom face gives the mirror-image enantiomer. In an achiral environment, both paths occur at equal rates → <b>50:50 racemate</b>. This same argument applies to NaBH₄ reduction of any unsymmetrical ketone, and to any nucleophilic addition to a carbonyl carbon that would create a new chiral centre."},{"stem":"A molecule with three chiral centres contains no other symmetry element. What is the maximum number of stereoisomers it can produce?","A":"3","B":"6","C":"8","D":"16","correct":"C","explain":"The formula for the maximum number of stereoisomers from n chiral centres is <b>2ⁿ</b>. For n = 3: 2³ = <b>8</b>. Each chiral centre can independently be in either of two configurations (called R or S, though OCR does not require R/S notation at A Level). With 3 independent chiral centres, there are 2 × 2 × 2 = 8 possible combinations of configurations. In practice, some of these may be identical due to internal symmetry (meso compounds), but in the absence of any plane of symmetry the maximum of 2ⁿ is reached. For glucose (4 chiral centres): 2⁴ = 16 theoretical stereoisomers, consistent with the existence of 16 aldohexose structures in organic chemistry."},{"stem":"Why can an sp² carbon atom (such as the carbonyl carbon, C=O) never be a chiral centre?","A":"sp² carbons are not bonded to any hydrogen atoms, so they cannot have four different substituents.","B":"sp² carbons are trigonal planar and have only three substituents; they cannot have four different groups and therefore cannot be chiral.","C":"sp² carbons are too reactive to remain in a fixed configuration for long enough to show optical activity.","D":"sp² carbons always carry a double bond to oxygen, which makes both substituents the same.","correct":"B","explain":"A chiral centre requires <b>four</b> bonds to four different groups, arranged tetrahedrally. An sp² carbon uses three of its four bonding orbitals in a trigonal planar arrangement (three σ-bonds at 120°) and the remaining p-orbital is involved in the π-bond of the double bond. As a result, an sp² carbon only has <b>three substituents</b> — it is impossible to have four. Also, an sp² carbon sits in a <b>flat plane</b> with no \"above\" or \"below\" arrangement — its mirror image can always be superimposed by simply flipping the molecule in the plane. The same reasoning applies to alkene C=C carbons and aromatic ring carbons (all sp²)."},{"stem":"An unknown alcohol W reacts with acidified K₂Cr₂O₇ under reflux to give a carboxylic acid (not an aldehyde, confirming it is primary). The carboxylic acid formed has the molecular formula C₃H₆O₂. Does the starting alcohol W have a chiral centre?","A":"Yes — the primary alcohol with 3 carbons must be chiral because it has a long chain.","B":"No — propan-1-ol (CH₃CH₂CH₂OH) is the only C₃ primary alcohol, and its chain carbons all lack four different groups.","C":"Yes — C3 primary alcohols always have a chiral centre at C2.","D":"Cannot determine without knowing the precise structure.","correct":"B","explain":"The carboxylic acid with formula C₃H₆O₂ is propanoic acid (CH₃CH₂COOH), so the original alcohol is <b>propan-1-ol (CH₃CH₂CH₂OH)</b> — the only straight-chain primary alcohol with 3 carbons. Checking each carbon of propan-1-ol: C1 (–CH₂OH): –H, –H, –OH, –CH₂CH₃ → <b>two H atoms, not chiral</b>. C2 (–CH₂–): –H, –H, –CH₂OH, –CH₃ → two H atoms, not chiral. C3 (–CH₃): terminal methyl, not chiral. <b>No chiral centre</b> in propan-1-ol. This is an important distinction from propan-2-ol (also achiral — two CH₃ groups on C2) and butan-2-ol (one chiral centre, C2)."},{"stem":"In lactic acid (2-hydroxypropanoic acid, CH₃CH(OH)COOH), which carbon atom is the chiral centre?","A":"C1 (the carboxyl carbon, –COOH)","B":"C2 (the central CH carbon)","C":"C3 (the methyl carbon, –CH₃)","D":"There is no chiral centre in lactic acid.","correct":"B","explain":"Working through the carbons: C1 is the carboxyl carbon (–COOH). The carboxyl carbon is sp² (it has a C=O) — <b>not chiral</b>. C3 is a terminal methyl (–CH₃) with three identical H atoms — <b>not chiral</b>. C2 (–CH(OH)–) has four substituents: –H, –OH, –CH₃ (to C3), and –COOH (to C1). All four are different → <b>C2 is the chiral centre</b>. Lactic acid is an important biological example: (+)-lactic acid is produced in muscles by anaerobic respiration; a racemic mixture is produced by many bacterial fermentations of sugars in milk."},{"stem":"Which pair of observations would confirm that a pure compound is optically active?","A":"The compound has a high melting point and gives a positive test with 2,4-DNPH.","B":"The compound rotates plane-polarised light in a polarimeter and gives a non-zero specific rotation.","C":"The compound does not react with achiral reagents and shows two peaks in a mass spectrum.","D":"The compound crystallises as two different crystal shapes (enantiomorphic crystals) and has an asymmetric molecular formula.","correct":"B","explain":"Optical activity is defined as the ability to rotate the plane of <b>plane-polarised light</b>. The instrument used is a <b>polarimeter</b>. A compound is confirmed to be optically active if: (1) it causes measurable rotation of the plane of polarised light when dissolved at a known concentration, and (2) the <b>specific rotation [α]</b> is non-zero (the direction, + or −, and the magnitude depend on the specific compound and conditions). A racemate has zero net rotation (optically inactive even though molecules are chiral). Option (A) describes a carbonyl compound, not an optical activity test. Option (D) — while historically important (Pasteur's crystal separation) — is not how optical activity is routinely confirmed in modern analysis."},{"stem":"Propanone (CH₃COCH₃) is reduced with NaBH₄. Does the product have a chiral centre, and if so, is the product optically active?","A":"No chiral centre is created; the product (propan-2-ol) is achiral and optically inactive.","B":"A chiral centre is created; the product is a single enantiomer of propan-2-ol and is optically active.","C":"A chiral centre is NOT created; propan-2-ol has no chiral centre because its central carbon carries two identical –CH₃ groups — so the product is optically inactive.","D":"No chiral centre is created because propanone is a symmetric molecule and NaBH₄ is achiral.","correct":"C","explain":"NaBH₄ reduces propanone to propan-2-ol: CH₃COCH₃ + 2[H] → CH₃CH(OH)CH₃. The product, propan-2-ol, has a central C2 that carries –H, –OH, –CH₃, and <b>–CH₃</b> — two identical methyl groups. This means C2 has only three different substituents and is <b>not a chiral centre</b>. Propan-2-ol is therefore <b>achiral and optically inactive</b>. This is the important contrast with, say, NaBH₄ reduction of butanone (CH₃COCH₂CH₃) → butan-2-ol, where the product DOES have a chiral centre (–CH₃ vs –CH₂CH₃ on either side of C2) and a racemate is produced."},{"stem":"How many chiral centres does the open-chain (aldehyde) form of glucose (HOCH₂(CHOH)₄CHO) contain?","A":"2","B":"3","C":"4","D":"5","correct":"C","explain":"In open-chain glucose (C₁ to C₆): C1 is the aldehyde carbon (sp²) — <b>not chiral</b>. C6 is –CH₂OH with two H atoms — <b>not chiral</b>. C2, C3, C4, and C5 are each –CH(OH)– groups. At each of these carbons the four substituents are: –H, –OH, and two different chain fragments extending up and down the chain. Because the chain is asymmetric (the CHO end differs from the CH₂OH end), all four of these CH(OH) carbons have four different groups → <b>4 chiral centres</b> (C2, C3, C4, C5). The 2ⁿ formula gives 2⁴ = 16 possible stereoisomers for a molecule with this many chiral centres — in practice these are the 16 possible aldohexose configurations, of which D-glucose is one."},{"stem":"Which statement about a pair of enantiomers is correct?","A":"Enantiomers have different boiling points because their molecular shapes differ in space.","B":"Enantiomers have the same boiling point, the same solubility in water, and differ only in their direction of rotation of plane-polarised light; they can also have very different biological activity.","C":"Enantiomers always have the same biological activity because enzymes cannot distinguish between them.","D":"Enantiomers are indistinguishable by all analytical techniques, including NMR spectroscopy and mass spectrometry.","correct":"B","explain":"Enantiomers have <b>identical physical properties</b> (melting point, boiling point, solubility, density, refractive index) because these bulk properties depend on intermolecular forces, and the force between two molecules of one enantiomer equals the force between two molecules of the other. They differ <b>only</b> in the direction of rotation of plane-polarised light. However, in a <b>chiral environment</b> (an enzyme's active site, a chiral receptor) the two enantiomers interact differently — one may fit the active site and be metabolised, the other may not fit at all or may trigger a different biological response (the basis of the thalidomide tragedy). Option (C) is wrong — enzymes are themselves chiral and <b>can</b> distinguish enantiomers; this is the source of biological specificity."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

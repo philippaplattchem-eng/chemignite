@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.3 The Halogens - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.3 &mdash; The Halogens</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Chlorine water is added to potassium bromide solution. Which equation correctly represents the reaction?","A":"Cl₂(aq) + 2KBr(aq) → 2KCl(aq) + Br₂(aq)","B":"Br₂(aq) + 2KCl(aq) → 2KBr(aq) + Cl₂(aq)","C":"Cl₂(aq) + KBr(aq) → KCl(aq) + BrCl(aq)","D":"No reaction, as chlorine and bromine are in the same group","correct":"A","explain":"Cl₂ is a stronger oxidising agent than Br₂, so it can oxidise Br⁻ ions to Br₂, while Cl₂ itself is reduced to Cl⁻. The ionic equation is Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂. The solution turns orange-brown as Br₂ is produced. Option B shows bromine displacing chloride, which does not occur because Br₂ is a weaker oxidising agent than Cl₂. This type of reaction is called a displacement reaction."},{"stem":"Bromine water is added separately to potassium chloride solution and potassium iodide solution. What is observed?","A":"Orange colour in both, as bromine displaces both chloride and iodide","B":"No change in either, as bromine is too weak an oxidising agent","C":"No change in KCl solution; the KI solution turns dark brown","D":"Both solutions turn pale green as iodine is formed","correct":"C","explain":"Br₂ is a stronger oxidising agent than I₂ but a weaker one than Cl₂. Br₂ can displace I⁻ (Br₂ + 2I⁻ → 2Br⁻ + I₂) because Br₂ is above I₂ in the reactivity series. The I₂ produced turns the solution dark brown. Br₂ cannot displace Cl⁻ because Cl₂ is above Br₂ in oxidising power; Br₂ is not a strong enough oxidising agent to oxidise Cl⁻ to Cl₂. So no change is observed with KCl."},{"stem":"Equal portions of bromine water are shaken with aqueous sodium chloride and aqueous sodium iodide separately, then a small volume of cyclohexane is added to each and the mixture is shaken. What colour is the organic (upper) layer in each case?","A":"Orange in both, as bromine dissolves in cyclohexane","B":"Colourless in both, as no reaction occurs","C":"Orange in the NaCl tube, purple/pink in the NaI tube","D":"Purple/pink in the NaCl tube, orange in the NaI tube","correct":"C","explain":"In the NaCl tube, no displacement occurs (Br₂ cannot oxidise Cl⁻); the cyclohexane layer extracts the original Br₂ and turns orange. In the NaI tube, Br₂ + 2I⁻ → 2Br⁻ + I₂; the I₂ produced dissolves preferentially in cyclohexane, giving a pink or purple organic layer. Cyclohexane is used because it separates the organic from aqueous phase and gives much clearer colours than the aqueous alone: I₂ in water is brown, but I₂ in cyclohexane is a distinctive pink or purple."},{"stem":"Chlorine is bubbled through water. Which equation and description are both correct?","A":"Cl₂ + H₂O → 2HCl + ½O₂; this is an oxidation reaction only","B":"Cl₂ + H₂O ⇌ HClO + HCl; this is a disproportionation reaction","C":"Cl₂ + H₂O → ClO⁻ + HCl; this is a neutralisation reaction","D":"Cl₂ + 2H₂O → 2HClO + H₂; this is a reduction reaction only","correct":"B","explain":"Chlorine dissolves in water in a reversible equilibrium: Cl₂ + H₂O ⇌ HClO + HCl. This is a disproportionation because the same element (chlorine) is simultaneously oxidised (0 to +1 in HClO) and reduced (0 to −1 in HCl). The reversibility (⇌) is correct; this is not a one-way reaction under normal conditions. The equilibrium lies to the left, but enough HClO is produced to be effective as a disinfectant."},{"stem":"Write the balanced equation for chlorine reacting with cold dilute aqueous sodium hydroxide.","A":"Cl₂ + NaOH → NaCl + HClO","B":"Cl₂ + 2NaOH → NaCl + NaClO + H₂O","C":"2Cl₂ + 2NaOH → 2NaCl + Cl₂O + H₂O","D":"Cl₂ + NaOH → NaClO + HCl","correct":"B","explain":"When chlorine reacts with cold dilute NaOH, the products are sodium chloride, sodium chlorate(I), and water: Cl₂ + 2NaOH → NaCl + NaClO + H₂O. Check: atoms balance (Cl: 2=2 ✓, Na: 2=2 ✓, O: 2=2 ✓, H: 2=2 ✓). NaOH appears twice on the left because 2 moles of base are needed. Option A incorrectly gives HClO (the acid form) rather than NaClO (the salt formed in alkaline conditions). The conditions \"cold and dilute\" are critical: hot concentrated NaOH gives a different product not required by the OCR spec."},{"stem":"In the reaction Cl₂ + 2NaOH → NaCl + NaClO + H₂O, what are the oxidation numbers of chlorine in Cl₂, NaCl, and NaClO?","A":"0, −2, +2","B":"0, −1, +1","C":"0, +1, −1","D":"+1, −1, +2","correct":"B","explain":"Cl₂ is an element: Cl = 0. NaCl: Na is +1, sum = 0, so Cl = −1. NaClO: Na is +1, O is −2, sum = 0, so (+1) + Cl + (−2) = 0, giving Cl = +1. Chlorine goes from 0 to −1 in NaCl (reduced) and from 0 to +1 in NaClO (oxidised). The most common errors are −2 and +2 — these arise from confusing the oxidation state of Cl with that of O, or from miscounting. Always work from the rules: Na = +1, O = −2, sum = 0."},{"stem":"A student is asked to give one benefit and one risk of using chlorine to treat drinking water. Which answer is correct?","A":"Benefit: makes water taste better; risk: makes water slightly acidic","B":"Benefit: kills pathogenic bacteria such as cholera and typhoid; risk: Cl₂ is a toxic gas and can form carcinogenic chlorinated hydrocarbons","C":"Benefit: removes heavy metal ions; risk: kills beneficial gut bacteria when consumed","D":"Benefit: provides residual colour indicator of water quality; risk: reacts with fluoride to reduce tooth protection","correct":"B","explain":"The primary benefit of chlorination is killing pathogenic microorganisms (cholera, typhoid, dysentery) responsible for water-borne disease. Chlorine also provides residual protection: HClO remains in the distribution network, suppressing recontamination. The main risks are the toxicity of Cl₂ gas itself (inhalation causes lung damage; Cl₂ was used as a chemical weapon in WWI) and the formation of chlorinated hydrocarbons (such as trichloromethane, CHCl₃) when chlorine reacts with organic matter in raw water. These trihalomethanes are suspected carcinogens."},{"stem":"A student tests an unknown solution with acidified barium chloride solution. A white precipitate forms that does not dissolve when more acid is added. What ion is present?","A":"CO₃²⁻","B":"SO₄²⁻","C":"Cl⁻","D":"OH⁻","correct":"B","explain":"The white precipitate is BaSO₄: Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s). BaSO₄ is extremely insoluble (Ksp ≈ 1 × 10⁻¹⁰ mol² dm⁻⁶) and does not dissolve in dilute acid. This insolubility distinguishes it from BaCO₃ (which would dissolve in acid, confirming carbonate). The test uses acidified BaCl₂ specifically to destroy any CO₃²⁻ present first, preventing a false positive from white BaCO₃ precipitate. If the BaCl₂ had not been acidified, both carbonate and sulfate would give a white precipitate."},{"stem":"How is the presence of ammonium ions (NH₄⁺) confirmed in an unknown solution?","A":"Add dilute HCl, warm, and observe white fumes","B":"Warm the solution with dilute H₂SO₄ and test gas with wet pH paper","C":"Warm the solution with aqueous NaOH and hold damp red litmus paper in the vapour above","D":"Add aqueous AgNO₃ and observe precipitate colour","correct":"C","explain":"NH₄⁺ + OH⁻ → NH₃(g) + H₂O. Warming is essential to drive NH₃ out of solution as a gas. The gas is identified by holding damp red litmus paper in the mouth of the tube: NH₃ dissolves in the water on the litmus and releases OH⁻ ions, turning red litmus blue. The litmus must be damp (dry litmus will not respond to a gas) and the solution must be warmed (at room temperature NH₃ stays dissolved). Any other alkaline gas would also turn the litmus blue, so this is a presumptive test, but NH₃ is the only gas produced from a warm ammonium salt with NaOH."},{"stem":"Three solutions labelled X, Y, and Z each contain a different halide ion. When acidified AgNO₃ is added to all three, X gives a white precipitate, Y gives a cream precipitate, and Z gives a yellow precipitate. When dilute NH₃ is added, which precipitate dissolves?","A":"Z (AgI) dissolves in dilute NH₃","B":"Y (AgBr) dissolves in dilute NH₃","C":"X (AgCl) dissolves in dilute NH₃","D":"None dissolve in dilute NH₃","correct":"C","explain":"White precipitate = AgCl, cream = AgBr, yellow = AgI. AgCl dissolves readily in dilute NH₃ because the low lattice energy of AgCl allows the diamminesilver(I) complex [Ag(NH₃)₂]⁺ to form at low NH₃ concentration: AgCl(s) + 2NH₃(aq) → [Ag(NH₃)₂]⁺(aq) + Cl⁻(aq). AgBr needs concentrated NH₃ to dissolve (higher lattice energy). AgI is insoluble in both dilute and concentrated NH₃, as the lattice energy is too large for the complex to overcome."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

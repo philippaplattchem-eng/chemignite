@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.4 Enthalpy Changes - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.4 &mdash; Enthalpy Changes</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Four reactions and their enthalpy changes are given. Which one is endothermic?","A":"Combustion of ethanol: ΔH = −1367 kJ mol⁻¹","B":"Neutralisation of HCl with NaOH: ΔH = −57 kJ mol⁻¹","C":"Thermal decomposition of calcium carbonate: ΔH = +178 kJ mol⁻¹","D":"Formation of water from hydrogen and oxygen: ΔH = −286 kJ mol⁻¹","correct":"C","explain":"A positive ΔH means the products have higher enthalpy than the reactants: the reaction absorbs energy from the surroundings and is endothermic. CaCO₃(s) → CaO(s) + CO₂(g) has ΔH = +178 kJ mol⁻¹, so it is endothermic. This makes physical sense: calcium carbonate must be strongly heated in a kiln to decompose. Options A, B, and D all have negative ΔH values: they are exothermic."},{"stem":"On an enthalpy profile diagram for an exothermic reaction, where does the activation energy arrow run from and to?","A":"From the top of the curve (transition state) down to the products","B":"From the reactants down to the products (the ΔH arrow)","C":"From the reactants upward to the top of the curve (transition state)","D":"From the products upward to the top of the curve","correct":"C","explain":"Activation energy (Ea) is the energy that must be supplied to the reactants before reaction can occur. On an enthalpy profile, it is represented by an upward arrow from the reactant enthalpy level to the peak (transition state) of the curve. The ΔH arrow is a separate arrow running from the reactant level down to the product level (downward for exothermic). A very common error is drawing Ea as the distance from the peak down to the products, which is not the activation energy but rather the enthalpy released in the forward reaction."},{"stem":"Which equation correctly represents the standard enthalpy change of combustion of ethanol?","A":"C₂H₅OH(g) + 3O₂(g) → 2CO₂(g) + 3H₂O(g)","B":"C₂H₅OH(l) + 3O₂(g) → 2CO₂(g) + 3H₂O(l)","C":"2C₂H₅OH(l) + 6O₂(g) → 4CO₂(g) + 6H₂O(l)","D":"C₂H₅OH(l) + O₂(g) → CO₂(g) + H₂O(l)","correct":"B","explain":"For ΔcH°, three requirements must be met: (1) exactly 1 mole of the substance combusted (rules out option C, which uses 2 moles of ethanol); (2) correct state symbols (ethanol is liquid at standard conditions, water product is H₂O(l) not H₂O(g)); (3) the equation must be balanced. Option A fails because it uses C₂H₅OH(g) — ethanol is liquid at 298 K — and H₂O(g). Option D is not balanced. Option B meets all three requirements."},{"stem":"50.0 cm³ of 1.00 mol dm⁻³ HCl is mixed with 50.0 cm³ of 1.00 mol dm⁻³ NaOH in a polystyrene cup. The temperature rises by 6.8°C. Calculate ΔH of neutralisation per mole of water formed. (c = 4.18 J g⁻¹ K⁻¹; density of solution = 1.00 g cm⁻³)","A":"−2.84 kJ mol⁻¹","B":"−56.8 kJ mol⁻¹","C":"−113.6 kJ mol⁻¹","D":"+56.8 kJ mol⁻¹","correct":"B","explain":"m = 100 g (50.0 + 50.0 cm³ × 1.00 g cm⁻³). q = mcΔT = 100 × 4.18 × 6.8 = 2842 J = 2.842 kJ. n(HCl) = n(NaOH) = 0.0500 mol, so n(H₂O) = 0.0500 mol. ΔH = −q/n = −2.842/0.0500 = −56.8 kJ mol⁻¹. The negative sign is essential: the surroundings (water) gained heat, so the system (reaction) lost enthalpy. Option A forgot to divide by n. Option C used n = 0.025 instead of 0.050."},{"stem":"In the polystyrene cup neutralisation experiment above, what mass is used for m in q = mcΔT?","A":"50.0 g (mass of just the acid solution)","B":"50.0 g (mass of just the alkali solution)","C":"100 g (total mass of the combined solution)","D":"The mass of NaCl formed in the reaction","correct":"C","explain":"In q = mcΔT, m is the mass of the substance whose temperature changes, which is the water (or solution) acting as the surroundings for the reaction. Once the acid and alkali are mixed, the total solution is the thermometer's surroundings. Its total mass is 50.0 + 50.0 = 100 cm³, and assuming density = 1.00 g cm⁻³, m = 100 g. Using only 50 g (just one of the solutions) would give an answer twice as exothermic as the true value, and using the mass of NaCl is completely unrelated to the heat capacity calculation."},{"stem":"Use the average bond enthalpies (H–H = 436 kJ mol⁻¹; Cl–Cl = 243 kJ mol⁻¹; H–Cl = 432 kJ mol⁻¹) to calculate ΔrH for H₂(g) + Cl₂(g) → 2HCl(g).","A":"+185 kJ mol⁻¹","B":"−185 kJ mol⁻¹","C":"−243 kJ mol⁻¹","D":"−432 kJ mol⁻¹","correct":"B","explain":"ΔrH = Σ(bonds broken) − Σ(bonds made). Bonds broken: 1 × H–H (+436) + 1 × Cl–Cl (+243) = +679 kJ mol⁻¹. Bonds made: 2 × H–Cl (+432) = +864 kJ mol⁻¹. ΔrH = 679 − 864 = −185 kJ mol⁻¹. The negative value confirms this reaction is exothermic; more energy is released forming the two strong H–Cl bonds than is absorbed breaking the weaker H–H and Cl–Cl bonds. Option A has the wrong sign (bonds made minus bonds broken, rather than the correct way around)."},{"stem":"Use the formation cycle formula (ΔrH = Σ(ΔfH° products) − Σ(ΔfH° reactants)) to calculate ΔrH for: 2CO(g) + O₂(g) → 2CO₂(g). (ΔfH°: CO(g) = −110 kJ mol⁻¹; CO₂(g) = −394 kJ mol⁻¹; O₂(g) = 0 kJ mol⁻¹)","A":"−284 kJ mol⁻¹","B":"−568 kJ mol⁻¹","C":"+568 kJ mol⁻¹","D":"−504 kJ mol⁻¹","correct":"B","explain":"ΔrH = Σ(ΔfH° products) − Σ(ΔfH° reactants). Products: 2 × ΔfH°(CO₂) = 2 × (−394) = −788 kJ mol⁻¹. Reactants: 2 × ΔfH°(CO) + 1 × ΔfH°(O₂) = 2 × (−110) + 0 = −220 kJ mol⁻¹. ΔrH = −788 − (−220) = −788 + 220 = −568 kJ mol⁻¹. Option A forgot to multiply by the stoichiometric coefficient of 2. Option D used +504 which would arise from adding rather than subtracting the reactant terms."},{"stem":"The bond enthalpy calculation gives ΔH(combustion of CH₄) = −698 kJ mol⁻¹, but the experimental standard value is −890 kJ mol⁻¹. Which explanation correctly accounts for the discrepancy?","A":"The calculation is wrong; bond enthalpies should be added, not subtracted","B":"Bond enthalpies are averages over many molecules, so they are not exact for the specific bonds in CH₄; also, the calculation uses H₂O(g) while the experimental ΔcH° uses H₂O(l)","C":"The experimental value is wrong because calorimeters are inaccurate","D":"CH₄ does not contain C–H bonds in the same ratio as the calculation assumes","correct":"B","explain":"Two reasons account for the discrepancy: (1) bond enthalpies are averages across many different molecular environments; the actual C–H bond strength in methane and the C=O bond strength in CO₂ differ slightly from the tabulated means, introducing errors across all bonds. (2) Bond enthalpy calculations strictly apply only to gaseous reactants and products. The calculation therefore uses H₂O(g), whereas the standard ΔcH° uses H₂O(l) as the product. Converting gaseous to liquid water is exothermic (ΔvapH = −44 kJ mol⁻¹ per mole H₂O), so the true ΔcH° is more exothermic (more negative) than the bond enthalpy calculation predicts."},{"stem":"What effect does a catalyst have on the enthalpy change (ΔH) of a reaction?","A":"A catalyst lowers ΔH by providing an exothermic alternative pathway","B":"A catalyst increases the magnitude of ΔH by making more bonds","C":"A catalyst has no effect on ΔH","D":"A catalyst makes ΔH positive for reactions that were previously exothermic","correct":"C","explain":"A catalyst provides an alternative reaction pathway with a lower activation energy (Ea). However, the reactants and products remain exactly the same, so their enthalpy levels are unchanged. Since ΔH = H(products) − H(reactants), and neither H(products) nor H(reactants) changes, ΔH is unaffected. The catalyst changes how quickly the reaction reaches the same destination, not what that destination is. On an enthalpy profile diagram, a catalyst lowers the peak of the curve (lower Ea) without moving either the reactant or product line."},{"stem":"Which equation correctly represents the standard enthalpy change of formation of water?","A":"H₂(g) + O(g) → H₂O(l)","B":"2H₂(g) + O₂(g) → 2H₂O(l)","C":"H₂(g) + ½O₂(g) → H₂O(l)","D":"H₂(g) + ½O₂(g) → H₂O(g)","correct":"C","explain":"ΔfH° equations must meet three criteria: (1) exactly 1 mole of the compound is formed (rules out option B, which forms 2 moles); (2) elements are in their standard states (H₂(g) and O₂(g), so O(g) in option A is wrong); (3) the product is in its standard state (H₂O is liquid at 298 K, so H₂O(g) in option D is wrong). A fractional coefficient on O₂ (½O₂(g)) is correct and required to ensure only 1 mole of H₂O is formed. The value is ΔfH°[H₂O(l)] = −286 kJ mol⁻¹."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

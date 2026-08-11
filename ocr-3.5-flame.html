@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.5 Reaction Rates - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.5 &mdash; Reaction Rates</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Magnesium ribbon reacts with dilute hydrochloric acid. Explain, in terms of collision theory, why increasing the concentration of HCl increases the rate of reaction.","A":"The higher [HCl] increases the temperature, giving H⁺ ions more kinetic energy","B":"The higher [HCl] means more H⁺ ions per unit volume, increasing the collision frequency between H⁺ and Mg atoms per unit time, giving more successful collisions per second","C":"The higher [HCl] lowers the activation energy for the reaction","D":"The higher [HCl] increases the proportion of H⁺ ions with energy ≥ Ea","correct":"B","explain":"Higher concentration means more H⁺ ions packed into the same volume. With more H⁺ per unit volume, Mg atoms at the surface encounter more H⁺ ions per second, so the collision frequency increases. Since the fraction of collisions with energy ≥ Ea is unchanged (temperature is constant), more collisions per second means more successful collisions per second, giving a higher rate. The answer must explicitly include \"per unit time\" or \"per second\" — OCR examiners penalise \"more collisions\" alone as too vague."},{"stem":"Calcium carbonate reacts more quickly with dilute HCl when ground into a powder than when used as a marble chip of the same mass. Explain this.","A":"Powdering CaCO₃ lowers its activation energy, making it easier to react","B":"Powdering CaCO₃ increases the surface area, exposing more CaCO₃ particles to HCl at the surface, giving more collision sites per unit time","C":"Powdering CaCO₃ releases heat energy, increasing the temperature of the acid","D":"The powdered form dissolves in HCl, whereas the marble chip cannot","correct":"B","explain":"Reactions between a solid and a solution can only occur at the solid's surface. Molecules inside the solid are inaccessible. Grinding the marble chip into powder dramatically increases the surface area: many more CaCO₃ units are exposed at the boundary between solid and liquid. This provides many more collision sites between H⁺ ions and CO₃²⁻ groups on the solid surface per unit time, resulting in more successful collisions per second and a higher rate. Neither Ea nor temperature has changed; only the available contact area."},{"stem":"A Boltzmann distribution is drawn for a reaction at temperature T. A catalyst is then added. How does the diagram change?","A":"The Boltzmann curve shifts right and becomes broader; the Ea line stays in the same position","B":"The Boltzmann curve is unchanged; a second, lower Ea line is drawn to the left of the original","C":"The Boltzmann curve shifts left and becomes taller; the Ea line stays in the same position","D":"The Boltzmann curve is unchanged; the Ea line shifts right, showing the higher energy pathway","correct":"B","explain":"A catalyst lowers the activation energy by providing an alternative pathway, but it does not change the temperature. Since the Boltzmann distribution depends only on temperature, the curve itself (its shape, peak position, and total area) is completely unchanged. The only change on the diagram is that a second Ea line, labelled Ea(cat), is drawn to the left of the original Ea line, showing the reduced energy barrier for the catalysed route. The area to the right of this new (lower) Ea line is larger, representing more molecules with sufficient energy to react. Drawing a new or different curve for the catalyst is a fundamental error."},{"stem":"Iron is used as a heterogeneous catalyst in the Haber process (N₂ + 3H₂ → 2NH₃). A small amount of H₂S gas accidentally enters the reactor and the reaction rate drops to near zero. Which explanation is correct?","A":"H₂S reacts with NH₃ to form an ionic solid, removing product and shifting equilibrium left","B":"H₂S adsorbs strongly onto the iron surface, blocking active sites so N₂ and H₂ can no longer adsorb and react","C":"H₂S raises the activation energy for the Haber process","D":"H₂S oxidises the iron catalyst to Fe₂O₃, which is not a catalyst for this reaction","correct":"B","explain":"Heterogeneous catalysts work by adsorbing reactant molecules onto their surfaces (active sites), which weakens the bonds and lowers Ea. Catalyst poisoning occurs when a foreign substance adsorbs so strongly to the active sites that it cannot be displaced, blocking the surface from the reactants. H₂S bonds very strongly to iron, covering the active sites and preventing N₂ and H₂ from adsorbing. Even a small amount of H₂S can poison a large fraction of the catalyst surface, dramatically reducing or eliminating its activity. This is why industrial Haber process feeds are carefully desulfurised before reaching the reactor."},{"stem":"For many reactions near room temperature, the rate approximately doubles for every 10 K rise in temperature. A student claims this is mainly because \"molecules move faster and collide more often.\" Is this correct?","A":"Yes, faster molecules collide more often and this fully explains the doubling","B":"No, the dominant effect is that a much greater proportion of molecules have kinetic energy ≥ Ea, not simply more collisions","C":"Yes, but only for gas-phase reactions where pressure also increases with temperature","D":"No, the doubling is explained by the catalyst formed when the flask is heated","correct":"B","explain":"A 10 K rise from, say, 298 K to 308 K is only a 3.4% increase in absolute temperature. This increases the average molecular speed (proportional to √T) by only about 1.7%, giving roughly a 3% increase in collision frequency. This alone cannot explain doubling the rate. The dominant effect is the exponential nature of the high-energy tail: as the distribution shifts slightly right, the area beyond Ea grows very rapidly because the tail decays exponentially. Even a small shift can dramatically increase the fraction of molecules with E ≥ Ea, which is why rate doubling is possible from such a small temperature change."},{"stem":"On a Boltzmann distribution, the mean kinetic energy of the molecules lies to the right of the peak (the most probable kinetic energy). Why?","A":"The x-axis is not linear, so the peak appears to the left of the true mean","B":"The mean is dragged rightward by the high-energy tail: a small number of very fast molecules raise the average above the most common value","C":"Temperature is measured on the x-axis and naturally lies to the right of the peak","D":"The mean equals the mode for all symmetric distributions; the Boltzmann curve is symmetric","correct":"B","explain":"The Boltzmann curve is not symmetric. It rises steeply from the origin to the peak, then decays slowly to the right through a long tail. There is no upper limit on kinetic energy, so a small fraction of molecules exist with very high KE values. The mean (average) is calculated by weighting each KE value by the number of molecules at that energy. The high-energy tail, though it represents few molecules, contributes large KE values and pulls the mean above the mode (peak). This means most molecules in the sample actually have less than the mean kinetic energy — a non-intuitive result that OCR examiners frequently test."},{"stem":"A reaction is carried out at 300 K (rate = r). The temperature is raised to 310 K. Using the approximate \"doubles per 10 K\" rule, predict the new rate and identify which effect is primarily responsible.","A":"Rate ≈ 1.03r; the collision frequency increased by 3%","B":"Rate ≈ 2r; the dominant cause is a much larger fraction of molecules having energy ≥ Ea","C":"Rate ≈ 4r; both collision frequency and proportion ≥ Ea have doubled","D":"Rate ≈ 2r; the dominant cause is that Ea has been lowered by the higher temperature","correct":"B","explain":"The empirical \"doubles per 10 K\" approximation predicts rate ≈ 2r at 310 K. The dominant cause is not the modest increase in collision frequency (~3%) but the disproportionately large increase in the fraction of molecules with E ≥ Ea. Because the high-energy tail of the Boltzmann curve decays exponentially, shifting the distribution slightly right greatly increases the area beyond Ea. This exponential sensitivity means a 3% rise in absolute temperature (300 → 310 K) can double the proportion of molecules above a typical Ea. Temperature does not lower Ea; only a catalyst can do that."},{"stem":"Explain why adding a catalyst increases the fraction of successful collisions but does not increase the total number of collisions per unit time.","A":"A catalyst reduces Ea, so a greater proportion of collisions exceed the energy threshold; collision frequency is unchanged because temperature (and hence molecular speed) is unchanged","B":"A catalyst increases molecular speed, so more collisions occur per second with the same fraction of those collisions being successful","C":"A catalyst removes molecules that would have been unsuccessful, leaving only successful ones","D":"A catalyst doubles the concentration of reactants, giving more collisions, but also doubles Ea, keeping the fraction constant","correct":"A","explain":"Collision frequency depends on molecular speed and concentration (how many molecules are in a given volume and how fast they are moving). Neither changes when a catalyst is added: temperature is constant, so average speed is constant, and the catalyst is not a reactant so its addition does not change the reactant concentration. What the catalyst does change is the energy threshold that must be exceeded for a collision to be productive. By lowering Ea, a greater proportion of the existing collisions already meet the energy requirement. More of the collisions that were already happening are now successful."},{"stem":"The rate of reaction between Mg and excess HCl decreases steadily over time. Explain this using collision theory (your answer must reference \"per unit time\").","A":"The activation energy increases over time as the products build up","B":"The temperature decreases over time, lowering the proportion of molecules with E ≥ Ea","C":"The concentration of HCl decreases as it is consumed, so there are fewer H⁺ ions per unit volume and the collision frequency between H⁺ and Mg decreases per unit time","D":"Mg becomes poisoned by the products MgCl₂ and H₂, blocking further reaction","correct":"C","explain":"As the reaction proceeds, HCl is consumed: [H⁺] falls. With fewer H⁺ ions per unit volume, Mg atoms at the surface are struck by H⁺ less often per unit time: the collision frequency decreases. A lower collision frequency means fewer successful collisions per second, so the rate falls. The fraction of collisions with E ≥ Ea is unchanged (temperature is constant), but fewer total collisions per second means fewer productive ones. The OCR H032/02 June 2023 examiner report flagged that answers saying \"fewer collisions\" without specifying \"per unit time\" or \"per second\" did not score the mark."},{"stem":"Which of the following statements about a homogeneous catalyst is correct?","A":"It is always a solid dispersed in a liquid reaction mixture","B":"It forms no intermediates during the catalytic cycle, passing energy directly to the reactants","C":"It is in the same phase as the reactants, forms intermediates that are regenerated at the end of the catalytic cycle, and increases rate without affecting ΔH","D":"It can only catalyse reactions with a negative ΔH","correct":"C","explain":"A homogeneous catalyst is in the same physical phase as the reactants (both commonly in solution or both gaseous). Unlike a heterogeneous catalyst, it works by forming chemical intermediates with one or more reactants, then these intermediates react further to give the product and regenerate the catalyst. For example, Fe²⁺/Fe³⁺ ions in aqueous solution catalyse the S₂O₈²⁻ + I⁻ reaction homogeneously by electron transfer through intermediate oxidation states. The catalyst takes part in the reaction but is regenerated overall, so it neither appears in the stoichiometric equation nor changes ΔH."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

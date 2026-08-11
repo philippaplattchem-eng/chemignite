@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.6 Polymers - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.6 &mdash; Polymers</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Which type of polymerisation involves no loss of any atoms from the monomers?","A":"Condensation polymerisation","B":"Addition polymerisation","C":"Hydrolysis polymerisation","D":"Elimination polymerisation","correct":"B","explain":"In <b>addition polymerisation</b>, alkene monomers join end-to-end by opening their C=C double bonds. Every atom in every monomer is incorporated into the polymer backbone — no small molecule is released. The atom economy of addition polymerisation is <b>100%</b>. In <b>condensation polymerisation</b>, a small molecule (usually H₂O or HCl) is eliminated at every new linkage formed, so the polymer has a lower mass than the total mass of all monomers, and atom economy is less than 100%."},{"stem":"What is the functional group (linkage) found in the backbone of a polyamide?","A":"Ester linkage, –CO–O–","B":"Amide linkage, –CO–NH–","C":"Ether linkage, –O–","D":"Urethane linkage, –O–CO–NH–","correct":"B","explain":"A <b>polyamide</b> is formed when a dicarboxylic acid (or diacyl chloride) reacts with a diamine. The reaction between the –COOH of the acid and the –NH₂ of the amine forms a <b>secondary amide linkage, –C(=O)–NH–</b>, with loss of H₂O (or HCl from an acyl chloride). This amide bond is the <b>peptide bond</b> found in proteins — natural polyamides. Option (A) describes a polyester. Option (C) an ether. Option (D) a polyurethane (a different type, not on OCR spec)."},{"stem":"What small molecule is released at each linkage when a diacyl chloride condenses with a diol to form a polyester?","A":"Water (H₂O)","B":"Carbon dioxide (CO₂)","C":"Hydrogen chloride (HCl)","D":"Sulfur dioxide (SO₂)","correct":"C","explain":"When an <b>acyl chloride (–COCl)</b> reacts with an <b>alcohol (–OH)</b> to form an ester linkage: –COCl + HO– → –CO–O– + <b>HCl</b>. The Cl from the acyl chloride and the H from the alcohol's –OH combine and leave as HCl gas. This is in contrast to the dicarboxylic acid route, where –COOH + HO– → –CO–O– + <b>H₂O</b>. Both routes produce the same polymer chain structure; only the by-product differs. The acyl chloride route is faster (the reaction is irreversible) and produces purer product because HCl gas escapes, but the diacyl chloride monomer is more hazardous to handle."},{"stem":"What is the functional group (linkage) found in the backbone of a polyester?","A":"Amide linkage, –CO–NH–","B":"Ester linkage, –CO–O–","C":"Carbon–carbon single bond, –C–C–","D":"Hydroxyl group, –OH","correct":"B","explain":"A <b>polyester</b> is formed when a dicarboxylic acid (or diacyl chloride) reacts with a diol. Each reaction between an acid end (–COOH) and an alcohol end (–OH) creates an <b>ester linkage, –C(=O)–O–</b>, with loss of H₂O. This ester bond is part of the polymer backbone — it links the diacid residue to the diol residue. PET (drinks bottles and polyester fibres) and Terylene both have this ester linkage. Option (A) describes a polyamide. Option (C) describes an addition polymer backbone."},{"stem":"Which naturally occurring substance is classified as a polyamide?","A":"Cellulose","B":"Starch","C":"Proteins (e.g. silk, hair, enzymes)","D":"Natural rubber (poly(isoprene))","correct":"C","explain":"<b>Proteins</b> are naturally occurring <b>polyamides</b> — the monomers are α-amino acids, and they are joined by <b>peptide bonds</b> (–CO–NH–) formed when the –COOH of one amino acid condenses with the –NH₂ of the next, releasing H₂O. The peptide bond is chemically identical to the synthetic amide linkage in nylon or Kevlar. Cellulose and starch are polysaccharides — their backbone contains ether (glycosidic) linkages, not amide linkages. Natural rubber is an addition polymer of 2-methylbuta-1,3-diene (isoprene)."},{"stem":"What are the two monomers used to make nylon-6,6?","A":"Benzene-1,4-dicarboxylic acid + benzene-1,4-diamine","B":"Hexanedioic acid + 1,6-diaminohexane","C":"Ethane-1,2-diol + hexanedioic acid","D":"Hexanedioic acid + hexan-1-ol","correct":"B","explain":"<b>Nylon-6,6</b> is named because both monomers contain <b>six carbon atoms</b>: (1) <b>hexanedioic acid</b> (adipic acid, HOOC–(CH₂)₄–COOH, 6 carbons) + (2) <b>1,6-diaminohexane</b> (H₂N–(CH₂)₆–NH₂, 6 carbons). The \"6,6\" refers to the carbon counts in the diacid and diamine respectively. Option (A) describes <b>Kevlar</b> (aromatic polyamide). Option (C) describes an aliphatic polyester. Option (D) is wrong because hexan-1-ol only has one alcohol group — it is not a diol and cannot form a polymer chain."},{"stem":"Why must each monomer in a condensation polymerisation have at least two reactive functional groups?","A":"Because only difunctional monomers can be soluble enough to react.","B":"Because having two groups makes each monomer more reactive towards condensation.","C":"Because a monomer with only one reactive group would stop chain growth after one condensation reaction, preventing formation of a polymer.","D":"Because two groups are needed to create the ring structure at the centre of the polymer chain.","correct":"C","explain":"In condensation polymerisation, chain growth requires that every new bond formed still leaves a reactive end group available for the next condensation step. If a monomer has only one reactive end (e.g. propanoic acid, a mono-acid), one condensation reaction forms a dimer but leaves no –COOH or –OH at the new-bond end — the chain cannot grow further. With <b>two reactive groups</b> (one at each end), forming a bond at one end still leaves a reactive group at the other end for continuation. This is the fundamental structural requirement for any condensation polymer chain: <b>bifunctionality</b> of all monomers."},{"stem":"According to OCR mark schemes, how many repeat units should be drawn inside the brackets when showing the repeat unit of a polymer?","A":"As many as needed to clearly show the pattern of the polymer.","B":"Two repeat units, to show the complete bonding on both sides.","C":"One repeat unit only, with end bonds extending out from the brackets on each side.","D":"The number is not specified — any number is acceptable.","correct":"C","explain":"OCR is strict: <b>exactly one repeat unit</b> should be shown inside the brackets, with <b>end bonds (extension bonds) extending outside the brackets</b> on each side to indicate chain continuation. The November 2021 examiner report explicitly stated: *\"DO NOT ALLOW > 1 repeat unit.\"* Drawing two or more repeat units in brackets loses the mark because it implies the repeat unit includes both units. Brackets and the subscript n are not penalised if absent or present — but the one-unit rule is absolute. End bonds must always be shown."},{"stem":"Chloroethene (CH₂=CHCl) undergoes addition polymerisation. What is the repeat unit of the product, poly(chloroethene) (PVC)?","A":"–[CH₂–CH₂]–","B":"–[CHCl–CHCl]–","C":"–[CH₂–CHCl]–","D":"–[CCl₂–CH₂]–","correct":"C","explain":"In addition polymerisation, the C=C double bond opens to form a C–C single bond, and the remaining bonds are preserved exactly as in the monomer. Chloroethene has the structure CH₂=CHCl: one carbon carries two H atoms (CH₂=), the other carries one H and one Cl (=CHCl). In the repeat unit, the C=C becomes a C–C single bond, giving –CH₂–CHCl– (C). Option (A) is poly(ethene) — no Cl. Option (B) would require the Cl to be on both carbons, which is wrong (only one Cl per monomer). Option (D) has two Cl on one carbon, also wrong."},{"stem":"Which statement about atom economy in polymerisation reactions is correct?","A":"Both addition and condensation polymerisation have 100% atom economy.","B":"Addition polymerisation has 100% atom economy; condensation polymerisation has less than 100% because a small molecule is lost at each linkage.","C":"Condensation polymerisation has 100% atom economy; addition polymerisation loses H₂ at each step.","D":"Neither type has 100% atom economy because some monomer is always wasted.","correct":"B","explain":"<b>Atom economy</b> = (mass of desired product / total mass of reactants) × 100%. In <b>addition polymerisation</b>, no atoms are lost — every monomer atom ends up in the polymer → <b>100% atom economy</b>. In <b>condensation polymerisation</b>, a small molecule (H₂O or HCl) is released at every linkage → the total mass of small molecules lost reduces the mass fraction that ends up in the polymer → <b>less than 100% atom economy</b>. For nylon-6,6 with 2n H₂O released per n repeat units, the water lost represents a significant mass fraction. Higher atom economy is generally preferred as it reduces waste."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.2 Chemical Equilibria - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.2 &mdash; Chemical Equilibria</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"An equilibrium mixture contains 0.40 mol N₂, 1.20 mol H₂, and 0.40 mol NH₃. What is the mole fraction of H₂?","A":"0.20","B":"0.40","C":"0.50","D":"0.60","correct":"D","explain":"Total moles = 0.40 + 1.20 + 0.40 = <b>2.00 mol</b>. x(H₂) = 1.20 / 2.00 = <b>0.60</b>. Check: x(N₂) = 0.20, x(NH₃) = 0.20; sum = 0.20 + 0.60 + 0.20 = 1.00 ✓. Option A (0.20) is the mole fraction of N₂ or NH₃. Options B and C arise from arithmetic errors in the totalling step (e.g. using 1.20/3.00 = 0.40 if the total were wrongly added as 3.00). The mole-fraction step must be completed before calculating partial pressures for substitution into *K*p (see Q12)."},{"stem":"Using the equilibrium mixture from Q11 at a total pressure of 200 kPa, what is the partial pressure of N₂?","A":"24 kPa","B":"40 kPa","C":"80 kPa","D":"120 kPa","correct":"B","explain":"From Q11, x(N₂) = 0.40 / 2.00 = 0.20. p(N₂) = xₐ × P_total = 0.20 × 200 = <b>40 kPa</b>. Check: p(N₂) + p(H₂) + p(NH₃) = 40 + 120 + 40 = 200 kPa ✓. Option D (120 kPa) is the partial pressure of H₂ (the largest component). Option C (80 kPa) would require x(N₂) = 0.40, which would only arise if the total moles were 1.00 — i.e. if the student forgot to include all three components when summing n_total. This step, partial pressure → *K*p, is where the most marks are available in H432/01 Section B equilibrium questions."},{"stem":"Which is the correct *K*c expression for 2NaHCO₃(s) ⇌ Na₂CO₃(s) + H₂O(g) + CO₂(g)?","A":"*K*c = [Na₂CO₃][H₂O][CO₂] / [NaHCO₃]²","B":"*K*c = [H₂O][CO₂]","C":"*K*c = [CO₂] / [NaHCO₃]","D":"*K*c = 1 / ([H₂O][CO₂])","correct":"B","explain":"NaHCO₃ and Na₂CO₃ are both pure solids — excluded from *K*c because their \"concentrations\" are constant at a given temperature and are absorbed into the equilibrium constant. Only the gaseous species remain: *K*c = [H₂O][CO₂]. Both gaseous products have stoichiometric coefficients of 1, so no powers greater than 1 appear. Option A wrongly includes both solids. Option C includes a solid in the denominator. Option D represents the reverse-reaction expression (products and reactants swapped) — it would give the reciprocal of *K*c for the forward reaction as written."},{"stem":"For H₂(g) + I₂(g) ⇌ 2HI(g), the equilibrium concentrations are \\[H₂\\] = \\[I₂\\] = 0.30 mol dm⁻³ and \\[HI\\] = 1.40 mol dm⁻³. What is *K*c and its units?","A":"*K*c = 0.046, no units","B":"*K*c = 4.67 mol dm⁻³","C":"*K*c = 21.8 mol dm⁻³","D":"*K*c = 21.8, no units","correct":"D","explain":"*K*c = [HI]² / ([H₂][I₂]) = (1.40)² / (0.30 × 0.30) = 1.96 / 0.090 = <b>21.8</b>. Units: Δn = 2 − (1 + 1) = 0, so units cancel entirely — *K*c is <b>dimensionless</b>. *K*c ≫ 1 indicates products are heavily favoured at this temperature. Option A is the reciprocal (common inversion error). Option C assigns units where none exist. Option B comes from calculating (1.40) / (0.30 × 0.30) — forgetting to square [HI]. Deriving units from Δn is faster and less error-prone than tracking them through the full expression."},{"stem":"What are the units of *K*c for the equilibrium N₂O₄(g) ⇌ 2NO₂(g)?","A":"mol⁻¹ dm³","B":"mol² dm⁻⁶","C":"mol dm⁻³","D":"no units","correct":"C","explain":"*K*c = [NO₂]² / [N₂O₄]. Units: (mol dm⁻³)² / (mol dm⁻³) = <b>mol dm⁻³</b>. Equivalently: Δn = 2 − 1 = +1; one positive step in Δn adds one factor of mol dm⁻³. Per H432/01 June 2017 examiner report, OCR accepts mol dm⁻³ but <b>not</b> dm³/mol (solidus notation not allowed — use negative exponent format: mol dm⁻³). Option D would require Δn = 0. Option A (mol⁻¹ dm³) corresponds to Δn = −1 (e.g. the reverse reaction). Option B (mol² dm⁻⁶) would arise from Δn = +2."},{"stem":"Starting from 1.00 mol H₂ and 1.00 mol I₂ in a sealed flask, equilibrium is reached with 0.30 mol H₂ remaining. What is the equilibrium amount of HI?","A":"0.35 mol","B":"0.70 mol","C":"1.00 mol","D":"1.40 mol","correct":"D","explain":"H₂ fallen from 1.00 to 0.30 mol → change = −0.70 mol. Balanced equation: H₂ + I₂ ⇌ 2HI, stoichiometric ratio H₂ : HI = 1 : 2. HI produced = 2 × 0.70 = <b>1.40 mol</b>. ICE table: I: 1.00, 1.00, 0; C: −0.70, −0.70, +1.40; E: 0.30, 0.30, 1.40. Option B (0.70) is the moles of H₂ that *reacted*, not the moles of HI produced. Option C (1.00) forgets the factor of 2. Always lay out the ICE table explicitly — H432/03 June 2022 examiner report praised candidates who showed clear tabulated working with stoichiometric adjustments."},{"stem":"The synthesis of ammonia N₂(g) + 3H₂(g) ⇌ 2NH₃(g) has ΔH = −92 kJ mol⁻¹. What happens to *K*p when the operating temperature is raised?","A":"*K*p increases — more NH₃ is produced at higher temperatures","B":"*K*p is unchanged — only changes in concentration affect position","C":"*K*p decreases — the equilibrium shifts backward","D":"*K*p first decreases then increases once the catalyst becomes active","correct":"C","explain":"The forward reaction is <b>exothermic</b> (ΔH = −92 kJ mol⁻¹). Raising temperature shifts equilibrium <b>backward</b> (Le Chatelier: the system absorbs the added heat by reversing the exothermic forward step). Less NH₃ and more N₂ + H₂ at equilibrium means the products-over-reactants ratio in *K*p falls — <b>K*p decreases</b>. This is the fundamental tension in the Haber process: higher T improves rate (via the Arrhenius equation and the iron catalyst becoming more active) but simultaneously reduces the equilibrium yield of NH₃. The operating temperature (~450 °C) is a compromise between these competing demands."},{"stem":"More SO₂ is injected into an equilibrium mixture of 2SO₂(g) + O₂(g) ⇌ 2SO₃(g). What is the immediate effect on Q, and does *K*p change?","A":"Q rises above *K*p; the reaction shifts backward; *K*p decreases","B":"Q falls below *K*p; the reaction shifts forward; *K*p is unchanged","C":"Q falls below *K*p; the reaction shifts forward; *K*p increases","D":"Q is unchanged immediately; no shift occurs; *K*p is unchanged","correct":"B","explain":"Adding SO₂ increases p(SO₂), which appears in the denominator of *K*p = p(SO₃)² / (p(SO₂)² × p(O₂)). The denominator grows while the numerator is momentarily unchanged → Q falls below *K*p. With Q < *K*p, the system shifts <b>forward</b> (making more SO₃) until Q = *K*p is restored. Temperature is unchanged throughout → <b>K*p is unchanged</b>. The equilibrium position shifts; the equilibrium constant does not change. Options A and C misidentify the direction or wrongly change *K*p."},{"stem":"Argon (inert gas) is added to the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g) at constant volume. What are the effects on the equilibrium position and on *K*p?","A":"Position shifts toward NH₃ (fewer moles of gas); *K*p unchanged","B":"Position shifts toward N₂ and H₂ (more moles of gas); *K*p unchanged","C":"No shift in position; *K*p unchanged","D":"No shift in position; *K*p decreases because total pressure increased","correct":"C","explain":"At constant volume, adding argon raises the total pressure but does <b>not</b> change the partial pressure of any reacting gas: pₐ = nₐRT/V, which depends only on the moles of that gas, not on what else is present. Q remains equal to *K*p — no shift occurs and *K*p is unchanged (temperature is constant). This is the classic OCR \"inert gas\" trap: students who confuse \"total pressure\" with \"partial pressures of the reacting gases\" predict a Le Chatelier shift. The key is that only *partial* pressures of reacting species appear in *K*p — not total pressure."},{"stem":"What are the units of *K*p for N₂(g) + 3H₂(g) ⇌ 2NH₃(g), with partial pressures in atm?","A":"atm²","B":"atm⁻¹","C":"atm⁻²","D":"no units","correct":"C","explain":"*K*p = p(NH₃)² / (p(N₂) × p(H₂)³). Units: atm² / (atm × atm³) = atm² / atm⁴ = <b>atm⁻²</b>. Alternatively, Δn_gas = 2 − (1 + 3) = −2; each unit of Δn contributes one power of the pressure unit, giving atm⁻². Option A (atm²) is the units of the inverted expression. Option B (atm⁻¹) corresponds to Δn = −1. Option D (no units) requires Δn = 0. Per H432/01 November 2020, units Pa⁻², kPa⁻², bar⁻², mmHg⁻² and PSI⁻² are all accepted if internally consistent."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

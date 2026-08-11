@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.5 Electrochemistry - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.5 &mdash; Electrochemistry</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Which statement correctly describes what OIL RIG summarises in redox chemistry?","A":"Oxidising agents Involve Loss; Reducing agents Involve Gain","B":"Oxidation Is Loss of hydrogen; Reduction Is Gain of hydrogen","C":"Oxidation Is Loss of electrons; Reduction Is Gain of electrons","D":"Oxidising Is from the Left; Reducing Is from the Right","correct":"C","explain":"OIL RIG is the standard mnemonic for electron transfer in redox: Oxidation Is Loss of electrons; Reduction Is Gain of electrons. This applies universally — whether a metal is oxidised (Zn → Zn²⁺ + 2e⁻) or a non-metal is reduced (Cu²⁺ + 2e⁻ → Cu). Option B tempts candidates who associate \"oxidation\" with hydrogen loss from organic chemistry, but the OCR A Level definition is always in terms of electrons. Option A inverts the mnemonic entirely. The distinction matters immediately when identifying oxidising and reducing agents: the species that loses electrons (is oxidised) is the reducing agent; the species that gains electrons (is reduced) is the oxidising agent."},{"stem":"Which statement correctly describes an oxidising agent?","A":"It donates electrons and is oxidised in the reaction","B":"It accepts electrons and is reduced in the reaction","C":"It donates electrons and is reduced in the reaction","D":"It accepts protons and is reduced in the reaction","correct":"B","explain":"An oxidising agent causes another species to be oxidised by accepting electrons from it; in doing so, the oxidising agent itself gains electrons and is therefore reduced. For example, MnO₄⁻ is a powerful oxidising agent because it accepts 5 electrons (MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O), and Mn is reduced from +7 to +2. Option A confuses oxidising with reducing agents — a reducing agent donates electrons and is itself oxidised. Option C is self-contradictory: donating electrons causes oxidation, not reduction. Option D conflates acid–base chemistry (proton transfer) with redox (electron transfer); OCR defines oxidation and reduction exclusively in terms of electrons, not protons."},{"stem":"What is the oxidation number of manganese in the manganate(VII) ion, MnO₄⁻?","A":"+4","B":"+5","C":"+6","D":"+7","correct":"D","explain":"Each oxygen has oxidation number −2, giving 4 × (−2) = −8. The overall charge of MnO₄⁻ is −1, so manganese must satisfy: x + (−8) = −1, therefore x = +7. This is why MnO₄⁻ is named manganate(VII) — the Roman numeral directly states the oxidation number of the central metal. The H432/03 June 2023 examiner report flagged Roman numeral nomenclature as a widespread weakness: candidates frequently confused manganate(VII) (Mn = +7) with dichromate(VI) (Cr = +6). Option A (+4) corresponds to MnO₂ (manganese(IV) oxide), the common black solid. Recognising the link between the systematic name and the oxidation state is a quick route to checking half-equations in the exam."},{"stem":"Which of the following is the best definition of the standard electrode potential, E°, of a half-cell?","A":"The voltage measured between the half-cell and any reference electrode under any conditions","B":"The potential difference between the half-cell and the standard hydrogen electrode, measured under standard conditions","C":"The energy released per mole of electrons when the half-cell reaction occurs","D":"The voltage measured when the half-cell is connected to another half-cell in a complete circuit with current flowing","correct":"B","explain":"The standard electrode potential E° is defined as the potential difference measured between the half-cell and the standard hydrogen electrode (SHE, E° = 0.00 V by convention) when both half-cells are operating under standard conditions (1.00 mol dm⁻³ aqueous species, 298 K, 100 kPa). Option A is incorrect because a specific reference — the SHE — must be used; without a universal reference no two laboratories could agree on a value. Option C confuses E° with an enthalpy change: E° is an intensive property in volts, not energy per mole. Option D describes an operating cell rather than an equilibrium measurement; once significant current flows the half-cell equilibria are disturbed and the reading is no longer the true E° — a high-resistance voltmeter drawing negligible current is essential."},{"stem":"Which set of conditions is required to measure a standard electrode potential?","A":"1.00 mol dm⁻³, 273 K, 100 kPa","B":"1.00 mol dm⁻³, 298 K, 101.325 kPa","C":"1.00 mol dm⁻³, 298 K, 100 kPa","D":"0.100 mol dm⁻³, 298 K, 100 kPa","correct":"C","explain":"OCR specifies standard conditions as: all aqueous ions at 1.00 mol dm⁻³, temperature 298 K (25 °C), and gas pressure 100 kPa. Option A uses 273 K (0 °C), which is STP (standard temperature and pressure) for gas law calculations, not the electrochemical standard. Option B gives 101.325 kPa (1 atm) — the older IUPAC convention; OCR mark schemes now consistently use 100 kPa, so this answer would lose marks. Option D uses 0.100 mol dm⁻³, which shifts the half-cell equilibrium (Le Chatelier) and gives a potential different from the data-book E° value. Any departure from standard conditions changes the measured value, which is why the standard conditions must be stated precisely."},{"stem":"Which description correctly identifies the standard hydrogen electrode (SHE)?","A":"A copper electrode in 1.00 mol dm⁻³ HCl(aq), with H₂(g) at 100 kPa, E° = +0.34 V","B":"A platinum electrode in 1.00 mol dm⁻³ H⁺(aq), with H₂(g) at 100 kPa, E° = 0.00 V","C":"A platinum electrode in 1.00 mol dm⁻³ H⁺(aq), with H₂(g) at 100 kPa, E° = −1.00 V","D":"A platinum electrode in 0.100 mol dm⁻³ H⁺(aq), with H₂(g) at 100 kPa, E° = 0.00 V","correct":"B","explain":"The SHE consists of a platinum electrode (coated with platinum black to catalyse the H⁺/H₂ equilibrium), immersed in 1.00 mol dm⁻³ H⁺(aq) with hydrogen gas at 100 kPa, all at 298 K. Its E° = 0.00 V is an international convention — a defined reference point, not a measured result. Option A specifies copper, which cannot catalyse the H⁺ ⇌ H₂ equilibrium and would itself react with the acid, corrupting the measurement. Option C gives E° = −1.00 V, which is not the convention; the SHE is uniquely defined as 0.00 V. Option D uses 0.100 mol dm⁻³, which violates the standard condition of 1.00 mol dm⁻³ and would give a reading that deviates from 0.00 V via the Nernst effect."},{"stem":"Which statement correctly relates E° values to the strength of oxidising or reducing agents?","A":"A species with a more negative E° is a stronger oxidising agent","B":"A species with a more positive E° is a stronger reducing agent","C":"A species with a more positive E° is a stronger oxidising agent, as written on the left of its reduction half-equation","D":"E° values apply only to metals and cannot indicate oxidising or reducing agent strength for non-metals","correct":"C","explain":"Standard electrode potentials are written in the reduction direction: oxidised species + ne⁻ ⇌ reduced species. A more positive E° means the equilibrium lies further to the right — the species on the left accepts electrons more readily, making it a stronger oxidising agent. For example, MnO₄⁻ (E° = +1.51 V) is a much stronger oxidising agent than Cu²⁺ (E° = +0.34 V). Conversely, a more negative E° means the reverse (oxidation) direction is favoured, so the reduced species on the right is a stronger reducing agent. Option A inverts the relationship. Option B confuses which half of the couple is relevant to each role. Option D is incorrect: E° values apply equally to non-metal redox couples (e.g., Cl₂/Cl⁻, F₂/F⁻) and are extremely useful for comparing their oxidising power."},{"stem":"A cell is constructed with the Cu²⁺/Cu half-cell (E° = +0.34 V) as the positive electrode and the Zn²⁺/Zn half-cell (E° = −0.76 V) as the negative electrode. What is E°cell?","A":"+0.42 V","B":"−0.42 V","C":"−1.10 V","D":"+1.10 V","correct":"D","explain":"E°cell = E°(positive electrode) − E°(negative electrode) = (+0.34) − (−0.76) = +0.34 + 0.76 = +1.10 V. The critical arithmetic step is subtracting a negative number: (+0.34) − (−0.76) ≠ (+0.34) − (+0.76). Option A (+0.42 V) is the most common error — candidates treat both E° values as positive magnitudes and compute 0.76 − 0.34 = 0.42 V, or compute +0.34 − 0.76 and then take the magnitude. Option B is the signed version of that same error. A correctly assigned E°cell for a working cell is always positive; obtaining a negative value means the positive and negative electrodes have been assigned the wrong way round."},{"stem":"In an electrochemical cell during discharge, at which electrode does oxidation occur?","A":"The electrode with the more positive E°","B":"The electrode with the larger absolute E° value regardless of sign","C":"The electrode with the more negative E°","D":"Both electrodes are oxidised simultaneously — one gains electrons, the other loses them","correct":"C","explain":"During cell discharge, the half-cell with the more negative (less positive) E° is the negative electrode, and it is where oxidation occurs (it is the anode). This half-cell has a greater tendency for the reverse direction (oxidation), and the competing half-cell with the more positive E° draws electrons from it. In the Zn/Cu cell, Zn (E° = −0.76 V) is oxidised at the negative electrode (Zn → Zn²⁺ + 2e⁻) while Cu²⁺ is reduced at the positive electrode (Cu²⁺ + 2e⁻ → Cu). Option A is the common reversal error — the more positive electrode is where reduction occurs. Option D is incorrect: in any cell, oxidation and reduction occur at separate electrodes simultaneously, but they are not both oxidised."},{"stem":"In a hydrogen–oxygen fuel cell, at which electrode does oxidation of H₂ occur, and what is the polarity of that electrode?","A":"Positive electrode (cathode)","B":"Negative electrode (anode)","C":"Positive electrode (anode)","D":"Negative electrode (cathode)","correct":"B","explain":"In a fuel cell, the fuel (H₂) is oxidised at the negative electrode, which is also called the anode because oxidation always occurs at the anode. In acidic conditions: 2H₂ → 4H⁺ + 4e⁻ (negative electrode); O₂ + 4H⁺ + 4e⁻ → 2H₂O (positive electrode/cathode). A common confusion arises because in electrolytic cells the anode is connected to the positive terminal of the external supply; in a galvanic cell (including fuel cells) the anode is the negative terminal because the cell itself drives the current. The underlying rule — oxidation at anode, reduction at cathode — is consistent for all electrochemical cells, but the polarity of the anode differs between galvanic and electrolytic contexts."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

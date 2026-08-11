@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.4 Enthalpy Changes - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.4 &mdash; Enthalpy Changes</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"0.920 g of ethanol (C₂H₅OH, Mr = 46.0 g mol⁻¹) is burned in a spirit burner and used to heat 200 g of water. The water temperature rises from 18.5°C to 29.9°C. Calculate the enthalpy change of combustion per mole of ethanol. (c = 4.18 J g⁻¹ K⁻¹)","A":"+477 kJ mol⁻¹","B":"−23.8 kJ mol⁻¹","C":"−477 kJ mol⁻¹","D":"−1367 kJ mol⁻¹","correct":"C","explain":"ΔT = 29.9 − 18.5 = 11.4°C. q = mcΔT = 200 × 4.18 × 11.4 = 9530 J = 9.530 kJ. n(C₂H₅OH) = 0.920 ÷ 46.0 = 0.0200 mol. ΔH = −q/n = −9.530 ÷ 0.0200 = −477 kJ mol⁻¹. The negative sign indicates exothermic. Option A has the wrong sign. Option B forgot to divide by n(ethanol). Option D is the literature value (−1367 kJ mol⁻¹), showing the measured value is far less exothermic because heat is lost to the surroundings and by incomplete combustion."},{"stem":"Using the average bond enthalpies (C–H = 412, O=O = 496, C=O in CO₂ = 743, O–H = 463, all in kJ mol⁻¹), calculate ΔrH for the combustion of methane with all species gaseous: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g).","A":"−698 kJ mol⁻¹","B":"+698 kJ mol⁻¹","C":"−890 kJ mol⁻¹","D":"−2640 kJ mol⁻¹","correct":"A","explain":"Bonds broken: 4 × C–H = 4 × 412 = 1648; 2 × O=O = 2 × 496 = 992. Σ(bonds broken) = 1648 + 992 = 2640 kJ mol⁻¹. Bonds made: 2 × C=O (in CO₂) = 2 × 743 = 1486; 4 × O–H (in 2H₂O, each has 2 O–H) = 4 × 463 = 1852. Σ(bonds made) = 1486 + 1852 = 3338 kJ mol⁻¹. ΔrH = 2640 − 3338 = −698 kJ mol⁻¹. Option C (−890) is the experimental ΔcH° which uses H₂O(l); the bond enthalpy value is less exothermic because bond enthalpies are averages and the calculation uses H₂O(g)."},{"stem":"Use a combustion cycle (Hess' law) to calculate ΔfH°(CO(g)). Given: ΔcH°(C(s)) = −394 kJ mol⁻¹ and ΔcH°(CO(g)) = −283 kJ mol⁻¹. Target equation: C(s) + ½O₂(g) → CO(g).","A":"−677 kJ mol⁻¹","B":"−111 kJ mol⁻¹","C":"+111 kJ mol⁻¹","D":"−283 kJ mol⁻¹","correct":"B","explain":"The cycle has C(s) and CO(g) both burning to CO₂(g). Applying Hess: ΔfH(CO) + ΔcH(CO) = ΔcH(C). So ΔfH(CO) = ΔcH(C) − ΔcH(CO) = −394 − (−283) = −394 + 283 = −111 kJ mol⁻¹. Using the formula for a combustion cycle: ΔrH = Σ(ΔcH reactants) − Σ(ΔcH products). Reactant of the target equation = C(s), ΔcH = −394. Product of the target equation = CO(g), ΔcH = −283. ΔrH = −394 − (−283) = −111 kJ mol⁻¹ ✓. This value cannot be measured directly (burning C always gives some CO₂ too), so Hess' law is the only route."},{"stem":"A student uses a polystyrene cup to measure the enthalpy of combustion of ethanol and obtains −477 kJ mol⁻¹. The literature value is −1367 kJ mol⁻¹. The measured value has a smaller magnitude. Give two reasons why.","A":"The student used too little ethanol and did not reach the boiling point of water","B":"Heat is lost to the surroundings from the open copper can, and some combustion is incomplete, producing CO rather than CO₂","C":"The polystyrene cup absorbed ethanol vapour, reducing the mass burned","D":"The standard conditions differ from room conditions, and the literature value assumes gaseous water","correct":"B","explain":"In a simple spirit burner experiment, the measured ΔcH is always less exothermic (smaller magnitude) than the literature value for two main reasons: (1) Heat loss to surroundings: the flame heats the air around the copper can as well as the water inside; convection, conduction, and radiation all carry energy away before it reaches the thermometer. A copper can without shielding may transfer only 30–60% of the combustion heat to the water. (2) Incomplete combustion: without an excess of oxygen (the setup is open to air), some ethanol produces CO or soot rather than CO₂. CO releases far less energy than CO₂ per mole of carbon, so less heat is transferred to the water. Both errors make the measured ΔH less exothermic than the true ΔcH°."},{"stem":"The ΔneutH° for ethanoic acid (a weak acid) reacting with sodium hydroxide (a strong base) is −55.2 kJ mol⁻¹, which is less exothermic than the −57 kJ mol⁻¹ expected for a strong acid/strong base pair. Explain why.","A":"Ethanoic acid is toxic and some energy is lost in its decomposition before it can neutralise","B":"Ethanoic acid is only partially ionised in solution; some of the energy released by the neutralisation reaction H⁺ + OH⁻ → H₂O is consumed in ionising the remaining undissociated CH₃COOH molecules","C":"NaOH is too strong a base to react with ethanoic acid fully, so less water is produced","D":"Ethanoic acid has a lower molar mass, so fewer moles react per gram, reducing the heat released","correct":"B","explain":"Strong acids (HCl, HNO₃, H₂SO₄) are fully ionised in dilute solution, so all the H⁺ ions are immediately available to react with OH⁻: H⁺(aq) + OH⁻(aq) → H₂O(l). The only energy change is from this reaction, giving the constant −57 kJ mol⁻¹. Weak acids like CH₃COOH are only partially ionised (CH₃COOH ⇌ CH₃COO⁻ + H⁺, Ka ≈ 1.8 × 10⁻⁵). When OH⁻ removes H⁺ from solution, the equilibrium shifts right, ionising more CH₃COOH. This ionisation step is endothermic (absorbs energy), which partially offsets the exothermic neutralisation, giving a less negative overall ΔH."},{"stem":"A student writes: \"Standard conditions in thermochemistry are 273 K and 100 kPa.\" Identify the error and explain its likely origin.","A":"The pressure should be 101 kPa, not 100 kPa","B":"The temperature is wrong: standard thermochemical conditions use 298 K (25°C), not 273 K. The 273 K value is used in gas law standard temperature and pressure (STP), which is a different convention","C":"The conditions should specify the concentration of any solutions (1 mol dm⁻³)","D":"The student is correct; 273 K and 100 kPa are the standard thermochemical conditions","correct":"B","explain":"273 K (0°C) is the temperature used in STP (Standard Temperature and Pressure) for ideal gas calculations (e.g., molar volume of a gas). Thermochemical standard conditions use 298 K (25°C) and 100 kPa. This is one of the most commonly lost single marks in OCR enthalpy questions, as confirmed by the H032/01 June 2023 examiner report. When solutions are involved, standard concentration is also 1 mol dm⁻³, but temperature and pressure are the key distinguishing facts for this question."},{"stem":"Using bond enthalpies (H–H = 436 kJ mol⁻¹; H–Cl = 432 kJ mol⁻¹) and the result ΔrH = −185 kJ mol⁻¹ for H₂(g) + Cl₂(g) → 2HCl(g), calculate the bond enthalpy of Cl–Cl.","A":"185 kJ mol⁻¹","B":"243 kJ mol⁻¹","C":"249 kJ mol⁻¹","D":"432 kJ mol⁻¹","correct":"B","explain":"ΔrH = Σ(bonds broken) − Σ(bonds made). Let x = Cl–Cl bond enthalpy. Bonds broken: H–H + Cl–Cl = 436 + x. Bonds made: 2 × H–Cl = 2 × 432 = 864. −185 = (436 + x) − 864. −185 = x − 428. x = 428 − 185 = 243 kJ mol⁻¹. This is a rearrangement of the standard calculation: given ΔrH and all bond enthalpies except one, solve for the unknown. The OCR H032/01 June 2024 examiner report specifically highlighted this type of \"reverse bond enthalpy\" question as one that \"many candidates found difficult\" when it involved several values."},{"stem":"Calculate ΔrH for 2CO(g) + O₂(g) → 2CO₂(g) using the formation cycle, given: ΔfH°(CO(g)) = −110 kJ mol⁻¹; ΔfH°(CO₂(g)) = −394 kJ mol⁻¹; ΔfH°(O₂(g)) = 0.","A":"−284 kJ mol⁻¹","B":"−504 kJ mol⁻¹","C":"−568 kJ mol⁻¹","D":"−788 kJ mol⁻¹","correct":"C","explain":"ΔrH = Σ(ΔfH° products) − Σ(ΔfH° reactants). Products: 2 × ΔfH°(CO₂) = 2 × (−394) = −788. Reactants: 2 × ΔfH°(CO) + 1 × ΔfH°(O₂) = 2 × (−110) + 0 = −220. ΔrH = −788 − (−220) = −788 + 220 = −568 kJ mol⁻¹. Option A forgot the stoichiometric coefficient of 2 on CO₂ and CO. Option D used only the product term (−788) without subtracting the reactant enthalpy. Option B arose from an arithmetic error."},{"stem":"A student needs to write an equation representing (i) the standard enthalpy of formation of methane and (ii) the standard enthalpy of combustion of methane. Which pair of equations is correct?","A":"(i) CH₄(g) → C(s) + 2H₂(g); (ii) CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)","B":"(i) C(s) + 2H₂(g) → CH₄(g); (ii) CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)","C":"(i) C(s) + 2H₂(g) → CH₄(g); (ii) CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)","D":"(i) C(s) + 2H₂(g) → CH₄(g); (ii) 2CH₄(g) + 4O₂(g) → 2CO₂(g) + 4H₂O(l)","correct":"B","explain":"For ΔfH°(CH₄): the equation must show 1 mole of CH₄ formed from elements (C and H₂) in their standard states: C(s) + 2H₂(g) → CH₄(g). Option A reverses this (the equation shows decomposition, not formation). For ΔcH°(CH₄): the equation must show 1 mole of CH₄ combusted with excess O₂ to give CO₂ and H₂O(l). Option C fails because H₂O(g) is used instead of H₂O(l). Option D fails because it uses 2 moles of CH₄ rather than 1 mole. Option B satisfies all requirements for both equations."},{"stem":"A multi-step Hess cycle is given: (i) A + B → C, ΔH₁ = −120 kJ mol⁻¹; (ii) C + D → E, ΔH₂ = −85 kJ mol⁻¹; (iii) A + B + D → F, ΔH₃ = −170 kJ mol⁻¹. Calculate ΔH for C + D → F and determine whether E and F are the same compound.","A":"ΔH = −50 kJ mol⁻¹; E and F are different compounds","B":"ΔH = −50 kJ mol⁻¹; E and F are the same compound because ΔH(C+D→E) = ΔH(C+D→F)","C":"ΔH = +50 kJ mol⁻¹; E and F are different compounds","D":"ΔH = −205 kJ mol⁻¹; E and F must be different","correct":"A","explain":"To find ΔH for C + D → F, use Hess' law. One indirect route from C + D to F uses the reverse of step (i) plus step (iii): reverse(i) gives C → A + B, ΔH = +120; then add step (iii), A + B + D → F, ΔH₃ = −170. Total for indirect route: +120 + (−170) = −50 kJ mol⁻¹. So ΔH(C + D → F) = −50 kJ mol⁻¹. Comparing with step (ii): ΔH₂ = −85 kJ mol⁻¹ for C + D → E. Since ΔH(C + D → E) ≠ ΔH(C + D → F), the two products E and F have different enthalpies and are therefore different compounds. This question tests applying Hess' law to an unfamiliar stepwise cycle rather than a standard combustion or formation type."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

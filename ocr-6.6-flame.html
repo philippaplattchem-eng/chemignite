@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.6 Polymers - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.6 &mdash; Polymers</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A polyester is treated with hot dilute sulfuric acid (acid hydrolysis). What are the organic products?","A":"A diol and a dicarboxylate salt","B":"A diol and a dicarboxylic acid","C":"A diamine and a dicarboxylic acid","D":"A diol and an acyl chloride","correct":"B","explain":"Acid hydrolysis of a polyester reverses the esterification reaction: –[CO–R–CO–O–R'–O]– + 2n H₂O ⇌ n HOOC–R–COOH + n HO–R'–OH. The products are the <b>original diol</b> (HO–R'–OH) and the <b>original dicarboxylic acid</b> (HOOC–R–COOH) — both as the free, protonated forms. Under acidic conditions, carboxylate anions are protonated back to –COOH, which is why the dicarboxylic acid (not its salt) is produced. Acid hydrolysis is <b>reversible</b> (equilibrium can be shifted to the right by excess water). Option (A) gives a salt, which is the product of alkaline (not acid) hydrolysis. Option (C) gives a diamine — wrong monomer (polyamide product, not polyester)."},{"stem":"A polyamide is treated with aqueous NaOH under reflux (alkaline hydrolysis). What are the organic products?","A":"A diamine salt and a dicarboxylate salt","B":"A free diamine and a dicarboxylate salt","C":"A diamine salt and a dicarboxylic acid","D":"A diol and a dicarboxylate salt","correct":"B","explain":"Alkaline hydrolysis of a polyamide: –[CO–R–CO–NH–R'–NH]– + 2n NaOH → n ⁻OOC–R–COO⁻ 2Na⁺ + n H₂N–R'–NH₂. The amide C–N bond is broken; NaOH deprotonates the carboxylic acid to give the <b>dicarboxylate salt</b> (e.g. disodium salt). The amine end is released as the <b>free diamine</b> (H₂N–R'–NH₂) — under alkaline conditions the amine is NOT protonated (only acid conditions protonate amines). Compare with acid hydrolysis, where the diamine is protonated to –NH₃⁺ (the diamine salt). Alkaline hydrolysis is <b>irreversible</b>. Option (A) is wrong — the diamine is free, not salted, under alkaline conditions."},{"stem":"PET (poly(ethylene terephthalate)) is a polyester found in drinks bottles and polyester fabric. Which pair of monomers forms PET?","A":"Ethane-1,2-diol + hexanedioic acid","B":"Ethane-1,2-diol + benzene-1,4-dicarboxylic acid (terephthalic acid)","C":"Benzene-1,4-diamine + benzene-1,4-dicarboxylic acid","D":"Propane-1,2-diol + benzene-1,2-dicarboxylic acid","correct":"B","explain":"PET is formed from: (1) <b>ethane-1,2-diol</b> (HO–CH₂–CH₂–OH, the diol monomer) + (2) <b>benzene-1,4-dicarboxylic acid</b> (terephthalic acid, HOOC–C₆H₄–COOH, the diacid monomer with –COOH groups para to each other on the ring). The repeat unit is –O–CH₂–CH₂–O–CO–C₆H₄–CO–. The aromatic ring between the two ester groups stiffens the chain, giving PET its high melting point and strength. Option (A) is an aliphatic polyester (no aromatic ring). Option (C) would give an aromatic polyamide (Kevlar structure) — wrong linkage and wrong monomer type (diamine instead of diol)."},{"stem":"A polymer has the following chain section: –CH₂–CH(CH₃)–CH₂–CH(CH₃)–CH₂–CH(CH₃)–. What is the type of polymerisation and the name of the monomer?","A":"Condensation polymerisation; monomer is propan-1-ol.","B":"Addition polymerisation; monomer is propene (CH₂=CHCH₃).","C":"Addition polymerisation; monomer is ethene (CH₂=CH₂).","D":"Condensation polymerisation; monomer is propanoic acid.","correct":"B","explain":"The backbone contains <b>only C–C single bonds</b> (no O or N in the chain) and the pattern repeats every two carbons (–CH₂–CH(CH₃)–). These are hallmarks of <b>addition polymerisation</b>. To find the monomer, find the repeating two-carbon unit (–CH₂–CH(CH₃)–) and replace the C–C with a C=C: this gives <b>CH₂=CH(CH₃) = propene</b>. The methyl group (CH₃) was a side-group on the monomer and is unchanged in the polymer. The absence of any ester or amide linkage in the backbone confirms addition, not condensation."},{"stem":"Why is a polyester potentially biodegradable in the environment, whereas poly(ethene) is not?","A":"Polyesters have a higher melting point than poly(ethene) and therefore break down more easily by melting.","B":"The ester linkages (–CO–O–) in the polyester backbone are hydrolysable — bacteria and enzymes can break these C–O bonds using water, returning the polymer to its monomers; poly(ethene) has only C–C bonds in its backbone which are not hydrolysed.","C":"Polyesters are biodegradable because they dissolve in rainwater, whereas poly(ethene) is hydrophobic.","D":"Poly(ethene) contains chlorine (from the chloroethene synthesis), which prevents biodegradation.","correct":"B","explain":"The ester linkage (–CO–O–) can be hydrolysed — it undergoes the reverse of esterification when water reacts with it (under acid, alkaline, or enzymatic conditions). Bacteria possess esterase enzymes that catalyse this hydrolysis, gradually breaking the polymer chain into smaller fragments and ultimately regenerating the diol and dicarboxylic acid monomers. Poly(ethene) has only <b>C–C σ-bonds</b> in its backbone. Carbon–carbon single bonds are very strong and essentially inert to hydrolysis under environmental conditions. No common bacterial enzyme can break C–C bonds efficiently, so poly(ethene) persists in the environment for hundreds of years. Option (D) is wrong — standard poly(ethene) does not contain chlorine (that is PVC)."},{"stem":"In the laboratory synthesis of nylon-6,6, hexanedioyl dichloride (ClOC–(CH₂)₄–COCl) is used instead of hexanedioic acid as one of the monomers. Which statement correctly explains why the diacyl chloride route is preferred?","A":"The diacyl chloride route is preferred because it produces water as the only by-product, which is easily removed.","B":"The diacyl chloride route is preferred because the reaction is faster and irreversible — the acyl chloride is more electrophilic than the carboxylic acid, and HCl gas escapes, driving the reaction to completion.","C":"The diacyl chloride route is preferred because it has 100% atom economy and wastes no material.","D":"The diacyl chloride route must be used because carboxylic acids cannot react with amines under any conditions.","correct":"B","explain":"The acyl chloride route is kinetically faster because: (i) the <b>carbonyl carbon of –COCl</b> is more electrophilic than in –COOH (Cl is a better leaving group than OH⁻); (ii) the reaction is <b>irreversible</b> — HCl gas escapes the reaction mixture, preventing the reverse reaction and driving the equilibrium completely to the product side. The dicarboxylic acid route (–COOH + –NH₂ → amide + H₂O) is reversible and slower. Option (A) is wrong — the diacyl chloride route produces HCl, not water. Option (C) is wrong — HCl is lost as a by-product, so atom economy is not 100%. Option (D) is wrong — carboxylic acids do react with amines, but at elevated temperature and over longer timescales."},{"stem":"Acid hydrolysis of a polyamide gives a diamine plus a dicarboxylic acid, but the diamine is in the form of its salt. Why?","A":"The diamine has been oxidised to a carboxylic acid under the reflux conditions.","B":"The acidic medium protonates the –NH₂ groups on the diamine as fast as they are formed, giving the dialkylammonium salt (R–NH₃⁺).","C":"The diamine reacts with the excess dicarboxylic acid to form an ionic compound.","D":"The diamine is released as a free amine in acid hydrolysis, not as a salt.","correct":"B","explain":"When the amide (–CO–NH–) linkage is hydrolysed in acidic conditions, the nitrogen receives an H atom, regenerating the –NH₂ group of the diamine. However, the <b>acid medium immediately protonates the amine</b>: –NH₂ + H⁺ → –NH₃⁺. Since the medium is acidic throughout, the diamine product exists as the <b>dialkylammonium salt</b> (both amine groups protonated), not as the free diamine. To recover the free diamine after acid hydrolysis you would need to basify the solution (add NaOH). Contrast with alkaline hydrolysis (NaOH): the amine is liberated as the free diamine because the alkaline conditions suppress protonation."},{"stem":"A student draws the repeat unit of a polyamide and shows –NH– at the left end of the unit (extending out of the brackets on the left side). The teacher marks this correct. The same student's classmate draws the same unit with –CO– at the left end. Which of these is acceptable to OCR?","A":"Only the version with –NH– on the left is correct.","B":"Only the version with –CO– on the left is correct.","C":"Both versions are correct — the orientation of the repeat unit (–NH– or –CO– at either end) is accepted by OCR mark schemes.","D":"Neither is correct; OCR requires the complete repeat unit to start and end with –CH₂– groups.","correct":"C","explain":"The November 2021 examiner report (H432/02) explicitly states: *\"ALLOW –NH– at either end.\"* Because a polymer chain is infinite and the repeat unit can be \"cut\" starting at any point in the repeating sequence, either orientation is a valid representation of the same polymer. Similarly, the June 2022 report noted that side-groups (like –CH₃) can be drawn above or below the chain in any consistent arrangement. The two things that are NOT flexible are: (1) the repeat unit must be drawn with the correct <b>linkage</b> (–CO–NH– for polyamides, not –CO–O–); and (2) exactly <b>one</b> repeat unit with <b>end bonds</b> is required."},{"stem":"How many molecules of water are released per repeat unit formed when hexanedioic acid polymerises with 1,6-diaminohexane to form nylon-6,6?","A":"1 molecule of H₂O per repeat unit","B":"2 molecules of H₂O per repeat unit","C":"4 molecules of H₂O per repeat unit","D":"0 molecules — no small molecule is released in this polymerisation.","correct":"B","explain":"The nylon-6,6 repeat unit contains <b>two amide linkages</b> (one formed from the –COOH at each end of the diacid, one from the –NH₂ at each end of the diamine). Each amide linkage formation releases one molecule of H₂O: –COOH + H₂N– → –CO–NH– + H₂O. Therefore <b>2 molecules of H₂O</b> are released per repeat unit (one per amide bond). This is why the balanced equation is written: n HOOC–(CH₂)₄–COOH + n H₂N–(CH₂)₆–NH₂ → polymer + <b>2n H₂O</b>. Option (D) is wrong — this is a condensation polymerisation, which by definition releases a small molecule."},{"stem":"A section of polymer is shown: –O–CH₂–CH₂–O–CO–C₆H₄–CO–. Identify the type of polymerisation and the TWO monomers it came from.","A":"Addition polymerisation; monomer: CH₂=CH(C₆H₄OH)","B":"Condensation polymerisation; monomers: ethane-1,2-diol (HO–CH₂–CH₂–OH) and benzene-1,4-dicarboxylic acid (HOOC–C₆H₄–COOH)","C":"Condensation polymerisation; monomers: ethene-1,2-diol and hexanedioic acid","D":"Condensation polymerisation; monomers: propane-1,2-diol and benzene-1,2-dicarboxylic acid","correct":"B","explain":"Clues: –O– in the backbone (inside the –CO–O– ester linkage) → <b>condensation polymerisation</b>. Two distinct –CO–O– ester linkages visible → <b>polyester</b>. To find the monomers, mentally hydrolyse each ester linkage (add H₂O across –CO–O–): the –CO– gets back an –OH → –COOH, and the –O– gets back an –H → –OH. One monomer is therefore <b>ethane-1,2-diol (HO–CH₂–CH₂–OH)</b> and the other is <b>benzene-1,4-dicarboxylic acid (HOOC–C₆H₄–COOH)</b>. This is PET. Note the para (1,4) placement on the benzene ring (the –COOH groups are directly opposite each other) — option (D) incorrectly states ortho (1,2) placement."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

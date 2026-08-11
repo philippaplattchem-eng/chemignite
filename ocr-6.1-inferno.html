@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.1 Aromatic Chemistry - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.1 &mdash; Aromatic Chemistry</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Benzene undergoes electrophilic substitution rather than addition. Which explanation is most complete?","A":"Benzene reacts more slowly than alkenes and therefore kinetically cannot complete an addition reaction.","B":"Electrophilic addition would permanently convert ring carbons to sp³, destroying the ~150 kJ mol⁻¹ delocalisation energy; substitution passes through a non-aromatic Wheland intermediate but restores full aromaticity in the product when H⁺ is lost.","C":"Benzene cannot react with electrophiles by addition because all six C–C bonds are identical.","D":"The Wheland intermediate is aromatic and is too stable to lose a second group via addition.","correct":"B","explain":"The thermodynamic driver is the ~150 kJ mol⁻¹ of delocalisation energy stored in the aromatic ring. <b>Electrophilic addition</b> would convert ring carbons permanently to sp³, destroying aromaticity — the product would be thermodynamically uphill from benzene. <b>Electrophilic substitution</b> passes through a non-aromatic Wheland intermediate (high-energy), but the final product restores full aromaticity by losing H⁺, making the overall reaction thermodynamically favourable. Option (A) confuses kinetics with thermodynamics. Option (C) is irrelevant — bond identity does not prevent addition chemistry in general. Option (D) is incorrect: the Wheland intermediate is NOT aromatic (it has only four π-electrons on five carbons; the sp³ carbon disrupts the ring)."},{"stem":"A student wants to synthesise 1,3-diaminobenzene from benzene. Which sequence of steps gives the correct product?","A":"Nitrate benzene twice (conc. HNO₃/conc. H₂SO₄) to give 1,3-dinitrobenzene, then reduce both –NO₂ groups using Sn/conc. HCl followed by NaOH.","B":"React benzene with NH₃ under high temperature and pressure to attach the first –NH₂, then nitrate and reduce.","C":"Nitrate benzene once (→ nitrobenzene), reduce to phenylamine, then nitrate phenylamine and reduce the second –NO₂ group.","D":"Use Friedel-Crafts alkylation twice to attach nitrogen-containing side chains.","correct":"A","explain":"The key insight is that <b>–NO₂ is 3-directing</b>. First nitration of benzene → nitrobenzene. Second nitration: the existing –NO₂ directs the new electrophile to position 3 (meta) → <b>1,3-dinitrobenzene</b>. Reduction of both –NO₂ groups (Sn/conc. HCl, then NaOH) gives <b>1,3-diaminobenzene</b>. Option (C) is the classic trap: after the first reduction, phenylamine has –NH₂ which is <b>2,4-directing</b>. The second nitration of phenylamine attacks positions 2 and 4, ultimately giving 1,2- or 1,4-diaminobenzene — NOT the 1,3-isomer. Both nitrations must be completed before any reduction. Option (B) is not viable — benzene does not react directly with NH₃ to give phenylamine. Option (D) is wrong — Friedel-Crafts introduces alkyl groups, not amino groups."},{"stem":"A student argues that phenol should react with aqueous sodium carbonate (Na₂CO₃) to produce CO₂, because phenol is an acid. Which explanation correctly refutes this argument?","A":"Phenol is insoluble in water and cannot contact carbonate ions in solution.","B":"Carbonic acid (H₂CO₃, pKa ≈ 6.4) is a stronger acid than phenol (pKa ≈ 10), so phenol cannot displace H₂CO₃ from its salt — the equilibrium C₆H₅OH + CO₃²⁻ ⇌ C₆H₅O⁻ + HCO₃⁻ lies far to the left.","C":"Phenol reacts with carbonate only when heated — no reaction occurs at room temperature.","D":"Sodium carbonate does not react with any organic acid.","correct":"B","explain":"An acid HA₁ can displace a weaker acid HA₂ from its salt only if HA₁ is <b>stronger</b> than HA₂. Phenol (pKa ≈ 10) is weaker than carbonic acid (pKa ≈ 6.4), so it cannot drive the equilibrium to the right and no CO₂ is produced. Phenol does react with the strong base NaOH because water (pKa ≈ 15.7), the conjugate acid of NaOH, is much weaker than phenol — strongly favouring products. This acid–base pKa reasoning distinguishes phenols (no reaction with Na₂CO₃) from carboxylic acids (pKa ~4.8, stronger than H₂CO₃ → do produce CO₂ with Na₂CO₃). Option (A) is wrong — phenol is partially soluble in water. Option (D) is incorrect — carboxylic acids readily react with Na₂CO₃."},{"stem":"An OCR mark scheme states \"IGNORE charge density\" and \"IGNORE electronegativity\" for a question asking why phenol undergoes electrophilic substitution more readily than benzene. Which answer would gain the available marks?","A":"The oxygen is electronegative, creating a partial positive charge on the ring that attracts nucleophiles.","B":"The high charge density around the oxygen in phenol activates the ring by drawing electrophiles towards it.","C":"A lone pair on the oxygen of the –OH group is partially delocalised into the π-system of the ring, increasing the ring's electron density and making it more susceptible to electrophilic attack.","D":"The O–H bond dipole pushes electron density through the σ-bond framework (+I effect), activating all ring positions equally.","correct":"C","explain":"OCR examiner reports (June 2022, June 2018) explicitly state that \"charge density\" and \"electronegativity\" are <b>ignored</b> and gain no credit. The three creditworthy points are: <b>(1)</b> a lone pair on O is partially <b>delocalised/donated into the ring/π-system</b>, <b>(2)</b> the <b>electron density of the ring is higher</b> than in benzene, <b>(3)</b> phenol is <b>more susceptible to electrophilic attack</b> / attracts or polarises the electrophile more. Option (A) misapplies electronegativity and incorrectly states phenol attracts nucleophiles (it is attacked by electrophiles). Option (B) uses the excluded \"charge density\" language. Option (D) describes the +I mechanism for alkyl groups — correct for –CH₃, but not the principal effect for –OH, where +M lone-pair donation dominates and is the only OCR-credited mechanism."},{"stem":"In the mechanism for bromination of benzene, where must the first curly arrow start and end?","A":"It starts from the Br–Br bond and ends at a ring carbon.","B":"It starts from a C–H bond on the ring and ends at the Br⁺ electrophile.","C":"It starts from the circle (or from inside/close to the benzene ring) representing the delocalised π-system, and ends at the Br⁺ electrophile.","D":"It starts from the AlBr₄⁻ ion and ends at the ring, carrying Br to the ring surface.","correct":"C","explain":"OCR June 2022 examiner report (Q20a(iii)) is explicit: \"the first curly arrow must start from, or close to, the circle of the benzene ring AND go to Cl⁺/Br⁺.\" The arrow represents a pair of <b>π-electrons</b> moving from the ring's delocalised system to form a new σ-bond with the electrophile. Option (B) is wrong — C–H electrons are σ-electrons uninvolved in this step; the deprotonation curly arrow (loss of H⁺) is the <b>second</b> arrow, not the first. Option (A) reverses the electron flow — Br–Br electrons move towards the ring, not from it. Option (D) is incorrect — AlBr₄⁻ is a product of Lewis acid action, not the electron source for ring attack."},{"stem":"In the Friedel-Crafts acylation of benzene with CH₃COCl using anhydrous AlCl₃, why can AlCl₃ be described as a catalyst?","A":"AlCl₃ is converted stoichiometrically to AlCl₄⁻ and is not recovered at the end of the reaction.","B":"AlCl₃ lowers the energy of the Wheland intermediate by stabilising it with its empty orbital.","C":"AlCl₃ is regenerated at the end of the mechanism when H⁺ (lost from the ring during deprotonation) combines with AlCl₄⁻ to give HCl + AlCl₃.","D":"AlCl₃ acts as an oxidising agent, oxidising the ring so that electrophilic substitution becomes possible.","correct":"C","explain":"In step 1 of the mechanism, AlCl₃ abstracts Cl⁻ from CH₃COCl to give the acylium ion CH₃CO⁺ and AlCl₄⁻. In step 4, the H⁺ lost from the sp³ carbon (to restore aromaticity) is accepted by AlCl₄⁻: <b>H⁺ + AlCl₄⁻ → HCl + AlCl₃</b>. AlCl₃ is regenerated and can catalyse further reaction cycles — confirming it is a catalyst. Option (A) is a common misconception; AlCl₄⁻ forms in step 1 but AlCl₃ is regenerated in step 4. In practice, slight complex formation makes AlCl₃ slightly sub-stoichiometric in practice, but mechanistically it is a catalyst. Option (D) is chemically incorrect — AlCl₃ is a Lewis acid, not an oxidising agent."},{"stem":"A student wants to prepare 4-nitromethylbenzene (para-nitrotoluene) from benzene. Which order of steps gives the correct product?","A":"Nitrate benzene first (conc. HNO₃/H₂SO₄, 50 °C) to give nitrobenzene, then carry out Friedel-Crafts alkylation with chloromethane and anhydrous AlCl₃.","B":"Carry out Friedel-Crafts alkylation with chloromethane and anhydrous AlCl₃ first (→ methylbenzene), then nitrate with conc. HNO₃/H₂SO₄ at 50 °C.","C":"The order of steps does not matter because 4-nitromethylbenzene is produced regardless of which substituent is introduced first.","D":"Methylbenzene cannot be nitrated directly and requires a protecting group first.","correct":"B","explain":"The order determines the <b>regiochemistry</b>. –CH₃ is <b>2,4-directing</b> (+I effect). If methylbenzene is formed first, subsequent nitration places NO₂ at the 2- and 4-positions — the 4-nitromethylbenzene isomer can be isolated from this mixture. Option (A) fails: if benzene is nitrated first, the resulting <b>nitrobenzene</b> has –NO₂ which is <b>3-directing</b>. Friedel-Crafts alkylation of nitrobenzene would place –CH₃ at position 3 relative to –NO₂, giving <b>3-nitromethylbenzene</b> — not the target. Option (C) is therefore wrong — the order critically affects the product. Option (D) is incorrect — methylbenzene can be nitrated directly."},{"stem":"A student compares the bromination of benzene with the bromination of phenol. Which statement correctly summarises the key differences in conditions and products?","A":"Both benzene and phenol require a halogen carrier (FeBr₃) and give a monobromo product.","B":"Benzene reacts with anhydrous Br₂/FeBr₃ at room temperature to give bromobenzene (one substitution); phenol reacts with Br₂(aq) at room temperature without any catalyst to give a white precipitate of 2,4,6-tribromophenol (three substitutions).","C":"Phenol gives bromobenzene (one substitution); benzene gives 2,4,6-tribromobenzene (three substitutions) with FeBr₃.","D":"Both reactions require anhydrous conditions; phenol gives 2-bromophenol and 4-bromophenol as a mixture.","correct":"B","explain":"The contrast between benzene and phenol bromination is a classic OCR comparison. <b>Benzene</b>: needs anhydrous Br₂ + Lewis acid halogen carrier (FeBr₃ or AlBr₃); product is <b>bromobenzene</b> (one substitution). <b>Phenol</b>: needs only <b>Br₂(aq)</b> (bromine water) at room temperature, no catalyst; product is <b>2,4,6-tribromophenol</b> (three substitutions) as a <b>white precipitate</b> (C₆H₅OH + 3Br₂ → C₆H₂Br₃OH + 3HBr). The –OH group activates all three ortho/para positions simultaneously. Option (C) reverses the products entirely. Option (D) wrongly claims phenol needs anhydrous conditions. Option (A) is wrong about both the catalyst and the product for phenol."},{"stem":"Which equation represents the regeneration of H₂SO₄ in the final step of the nitration mechanism of benzene?","A":"NO₂⁺ + H₂O → HNO₃","B":"H⁺ + HSO₄⁻ → H₂SO₄","C":"AlCl₃ + HCl → H⁺ + AlCl₄⁻","D":"HSO₄⁻ → SO₃ + OH⁻","correct":"B","explain":"In the final step of nitration, the sp³ carbon of the Wheland intermediate loses <b>H⁺</b> to restore aromaticity. This H⁺ is accepted by the <b>HSO₄⁻</b> that was generated when H₂SO₄ protonated HNO₃ to form NO₂⁺ (see: HNO₃ + 2H₂SO₄ → NO₂⁺ + 2HSO₄⁻ + H₃O⁺). The step <b>H⁺ + HSO₄⁻ → H₂SO₄</b> regenerates sulfuric acid, confirming its role as a <b>catalyst</b>. Option (A) describes the reverse of nitric acid ionisation. Option (C) describes the regeneration step in Friedel-Crafts chlorination — correct for that reaction but wrong here (AlCl₃ not involved in nitration). Option (D) is the reaction for generating SO₃ in oleum, not relevant to this mechanism."},{"stem":"A student proposes the route: benzene → nitrobenzene → phenylamine → nitration → reduction to give 1,3-diaminobenzene. A classmate correctly objects that this route gives the wrong isomer. Why?","A":"Phenylamine cannot undergo electrophilic nitration because the –NH₂ group deactivates the ring.","B":"The reduction of nitrobenzene to phenylamine using Sn/conc. HCl is not possible.","C":"Phenylamine has an –NH₂ group, which is 2,4-directing; the second nitration therefore places the new –NO₂ at position 2 or 4 (not 3), ultimately giving 1,2- or 1,4-diaminobenzene after reduction — not the 1,3-isomer.","D":"The second reduction step cannot convert a –NO₂ group adjacent to an –NH₂ group.","correct":"C","explain":"The correct route to 1,3-diaminobenzene requires <b>two consecutive nitrations before any reduction</b>: benzene → nitrobenzene → 1,3-dinitrobenzene (–NO₂ is 3-directing, so the second –NO₂ goes meta to the first) → both reduced to give 1,3-diaminobenzene. The proposed route reduces the first –NO₂ to –NH₂ <b>before</b> the second nitration. The –NH₂ group in phenylamine is strongly <b>2,4-directing</b> (+M). Second nitration of phenylamine places the new –NO₂ at position 2 or 4 relative to –NH₂, so after the second reduction the product is <b>1,2- or 1,4-diaminobenzene</b>. This is a classic OCR multi-step synthesis trap: you must preserve the 3-directing effect of –NO₂ for <b>both</b> nitrations before converting any –NO₂ to –NH₂. Option (A) is wrong — –NH₂ strongly <b>activates</b> the ring."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

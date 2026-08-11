@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.6 Polymers - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.6 &mdash; Polymers</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A student draws a repeat unit for a polyester and is awarded 0 marks. The OCR mark scheme comment reads: *\"DO NOT ALLOW > 1 repeat unit. End bonds must be shown.\"* The student's diagram shows exactly two ester groups inside the brackets. Which of the following is the most likely cause of the zero mark?","A":"The student has drawn exactly one repeat unit but has placed the ester linkage on the wrong side.","B":"The student has drawn two repeat units inside the brackets, but if \"two ester groups\" were shown the unit was drawn twice.","C":"The student has correctly drawn one repeat unit but has forgotten the subscript n — this costs the mark.","D":"The student has used a solid line for the end bonds instead of dotted lines, which OCR requires.","correct":"B","explain":"A typical condensation repeat unit for a polyester made from a diacid + diol contains <b>two ester linkages</b> (one at each end of the repeat unit). However, if a student drew \"two ester groups\" sequentially inside the brackets — showing diol–ester–diacid–ester–diol — they have drawn <b>two full repeat units</b>, not one. The mark scheme rule is absolute: <b>one repeat unit only</b>. \"Two ester groups\" in isolation would be consistent with one correct repeat unit, but the context suggests the student showed the junction twice (i.e. repeated the unit). OCR mark scheme note: *\"IGNORE brackets. IGNORE n.\"* End bonds (extension bonds) are required but do not have to be dotted. The subscript n is not required. Placing the ester linkage at either end of the repeat unit is acceptable."},{"stem":"Kevlar is a polyamide made from benzene-1,4-dicarboxylic acid + benzene-1,4-diamine. Nylon-6,6 is also a polyamide, made from hexanedioic acid + 1,6-diaminohexane. Kevlar has far greater tensile strength than nylon-6,6. What structural features of Kevlar explain this?","A":"Kevlar has more amide linkages per repeat unit than nylon-6,6, giving it more points of chemical crosslinking.","B":"The benzene rings in Kevlar make the chains rigid (aromatic rings cannot rotate like alkyl chains), and the amide N–H can hydrogen-bond with C=O groups on adjacent chains, leading to a highly ordered, stacked sheet-like structure.","C":"Kevlar chains are longer than nylon-6,6 chains, giving it more Van der Waals forces.","D":"The aromatic rings in Kevlar react with each other under tension, forming covalent crosslinks that resist stretching.","correct":"B","explain":"Kevlar's superior tensile strength arises from two structural features: (1) <b>Aromatic rigidity</b> — the benzene rings in the backbone prevent rotation about the bonds connecting them to the amide groups (unlike the flexible –(CH₂)₄– and –(CH₂)₆– chains in nylon-6,6). This rigidity keeps the polymer chains linear and well-aligned. (2) <b>Extensive hydrogen bonding</b> — the –N–H of one amide can H-bond to the C=O of an amide on a neighbouring chain. Because the Kevlar chains are rigid and flat, many adjacent chains can align in parallel sheets, maximising the number of inter-chain H-bonds. The result is a material with tensile strength comparable to steel at a fraction of the mass. Option (A) is wrong — both nylon-6,6 and Kevlar have the same number of amide linkages per repeat unit (two)."},{"stem":"A student attempts to hydrolyse nylon-6,6 with hot aqueous NaOH. They correctly break the amide bonds but write: \"The products are the diamine and the dicarboxylic acid.\" The teacher marks this 1/2. Why is the answer only half-correct, and what is the missing mark?","A":"The student forgot that alkaline hydrolysis also destroys the benzene ring in Kevlar.","B":"The student is correct about the diamine but wrong about the carboxylic acid product — under alkaline conditions the dicarboxylic acid is immediately deprotonated to give the dicarboxylate salt (sodium hexanedioate), not the free acid.","C":"The student is wrong about the diamine — it should be the diamine salt (the ammonium form) in alkaline conditions.","D":"The student should also have named the H₂O released during hydrolysis as a product.","correct":"B","explain":"In alkaline hydrolysis (NaOH): the amide bond is cleaved; the nitrogen retains its H to give the free <b>diamine</b> (H₂N–(CH₂)₆–NH₂) — this part is correct. However, the carboxylic acid that would form is immediately <b>deprotonated by OH⁻</b> (NaOH is a strong base): HOOC–R–COOH + 2NaOH → ⁻OOC–R–COO⁻ 2Na⁺ + 2H₂O. The product is the <b>disodium dicarboxylate salt</b>, not the free dicarboxylic acid. Under acid hydrolysis (H⁺), the free dicarboxylic acid is the product but the diamine is protonated to the salt. The student made the classic error of conflating acid and alkaline hydrolysis products."},{"stem":"A monomer has the structural formula H₂N–CH(CH₃)–COOH (alanine, an amino acid). This single bifunctional monomer can polymerise to form a condensation polymer. What type of condensation polymer does it form, and what is the small molecule released?","A":"A polyester; H₂O is released; the –OH of the carboxylic acid reacts with the –NH₂ of another monomer.","B":"A polyamide; H₂O is released; the –COOH of one monomer condenses with the –NH₂ of the next to form a peptide (amide) bond.","C":"A polyester; HCl is released; the –NH₂ group acts as an acyl chloride.","D":"A polyamide; HCl is released; the –COOH is activated by thionyl chloride before polymerisation.","correct":"B","explain":"Alanine (H₂N–CH(CH₃)–COOH) is bifunctional: it has an –NH₂ group (amine, potential nucleophile) and a –COOH group (carboxylic acid). The condensation reaction occurs between the –COOH of one alanine and the –NH₂ of the next, releasing H₂O and forming an <b>amide (peptide) bond</b>: –CO–NH–. The resulting polymer is a <b>polyamide</b> (specifically a peptide/protein if all natural L-amino acids are used). This is the same chemistry as nylon, except: (i) a single bifunctional monomer rather than two separate difunctional monomers; (ii) the side-group –CH(CH₃)– adds chirality and influences protein folding. Option (A) is wrong — amine and carboxylic acid form an amide bond, not an ester."},{"stem":"Poly(glycolic acid) is a biodegradable polyester used in medical sutures (dissolvable stitches). Its repeat unit is –[O–CH₂–CO]–. What are the products of the complete acid hydrolysis of this polymer in the human body?","A":"Ethanol and CO₂","B":"Glycollic acid (HOCH₂COOH)","C":"Methanol and ethanoic acid","D":"Water and carbon dioxide","correct":"B","explain":"To find the monomer(s) from the repeat unit –[O–CH₂–CO]–, mentally hydrolyse the ester linkage (–CO–O–): add H₂O across the bond. The –CO– carbon gets back –OH to give –COOH; the –O– gets back H to give –OH. This regenerates <b>HOCH₂COOH</b> = <b>glycollic acid (2-hydroxyethanoic acid)</b>. This is a single monomer with both –OH and –COOH, confirming it was made from one type of bifunctional monomer (rather than two different monomers). In the body, mild acid conditions and esterase enzymes hydrolyse the ester bonds, releasing glycollic acid which is metabolised naturally — explaining why these sutures dissolve without needing removal."},{"stem":"A polymer sample gives the following test results: (1) dilute H₂SO₄ + reflux → the organic fragments include a diol (identified by mass spectrum); (2) the backbone of a fragment contains –CO–O–; (3) the polymer has only C, H, and O in its composition. Which type of polymer is it, and what type of hydrolysis produces the diol?","A":"A polyamide; the diol forms from acid hydrolysis of amide linkages.","B":"A polyester; the diol forms from acid hydrolysis of ester linkages.","C":"An addition polymer; the diol forms from oxidation of the polymer.","D":"A polyamide; the diol forms from alkaline hydrolysis of amide linkages.","correct":"B","explain":"Working through the evidence: (1) Diol product from acid hydrolysis → one of the original monomers was a <b>diol</b>. (2) Backbone contains –CO–O– = <b>ester linkage</b> → it is a <b>polyester</b>. (3) Only C, H, O in composition → no nitrogen, ruling out polyamide (which would contain N in its amide linkages). Acid hydrolysis of the polyester (–[CO–R–CO–O–R'–O]– + H₂O ⇌ diol + dicarboxylic acid) is <b>reversible</b> and carried out under acidic reflux conditions. The diol is one hydrolysis product; the dicarboxylic acid is the other. Option (A) is eliminated by observation (3) — no nitrogen — and by the ester linkage in (2)."},{"stem":"An addition polymer of propene has the repeat unit –[CH₂–CH(CH₃)]–. A student suggests that to degrade this polymer, it could be treated with hot aqueous acid to hydrolyse the C–C bonds in the backbone. Is this a valid method, and why?","A":"Yes — all C–C bonds hydrolyse under acid conditions given enough heat.","B":"No — C–C single bonds cannot be hydrolysed because they are too strong and non-polar; acid hydrolysis only cleaves polar linkages such as ester or amide bonds.","C":"Yes — the methyl side-groups provide enough polarity for the acid to attack the backbone.","D":"No — the polymer would need alkaline conditions, not acid, to break C–C bonds.","correct":"B","explain":"Hydrolysis requires a <b>polar bond</b> (e.g. C–O in esters, C–N in amides) that a water molecule can attack. Carbon–carbon single bonds are <b>non-polar</b> (essentially the same electronegativity on both sides) and <b>very strong</b> (~347 kJ mol⁻¹). Water molecules cannot meaningfully polarise a C–C bond, and H⁺ or OH⁻ do not catalyse C–C cleavage under normal chemical conditions. This is exactly why addition polymers (poly(ethene), PVC, polypropene) are <b>not biodegradable</b> — their backbones have only C–C bonds, which are resistant to hydrolysis by water, acids, alkalis, and most environmental enzymes. Contrast with polyesters and polyamides, where the polar linkages in the backbone are readily hydrolysed."},{"stem":"The following pair of monomers is reacted: ClOC–(CH₂)₄–COCl (hexanedioyl dichloride) + H₂N–(CH₂)₆–NH₂ (1,6-diaminohexane). What is the by-product of this polymerisation, and what is the atom economy compared with using hexanedioic acid instead of the diacyl chloride?","A":"By-product = H₂O; atom economy is the same as the dicarboxylic acid route because the product is the same polymer.","B":"By-product = HCl; atom economy is lower than the dicarboxylic acid route because HCl (heavier than H₂O) is lost per linkage.","C":"By-product = HCl; atom economy is higher than the dicarboxylic acid route because HCl escapes easily.","D":"By-product = SO₂; the diacyl chloride route releases SO₂ as the side product.","correct":"B","explain":"The diacyl chloride route: ClOC–R–COCl + H₂N–R'–NH₂ → –[CO–R–CO–NH–R'–NH]– + 2<b>HCl</b>. Two HCl molecules (M = 36.5 g mol⁻¹ each) are lost per repeat unit. The dicarboxylic acid route instead loses 2H₂O (M = 18.0 g mol⁻¹ each). Since the same polymer is formed, the mass of polymer per mass of monomers is lower for the diacyl chloride route (heavier molecules lost as by-product), meaning <b>atom economy is lower</b>. However, the diacyl chloride route is faster, irreversible, and easier to control in the lab — practical advantages that outweigh the lower atom economy in many applications. The polymer chain is chemically identical regardless of which route is used."},{"stem":"A student correctly identifies a polymer as a polyester by spotting –CO–O– in the backbone. They then claim: *\"The monomer was a hydroxycarboxylic acid, such as lactic acid (CH₃CH(OH)COOH), because one monomer with both –OH and –COOH can form a polyester.\"* A second student says: *\"Or it could be two separate monomers — a diol and a dicarboxylic acid.\"* Which students are correct?","A":"Only the first student is correct — polyesters always come from a single hydroxycarboxylic acid monomer.","B":"Only the second student is correct — polyesters always require two different monomers.","C":"Both students are correct — polyesters can be made either from a single bifunctional hydroxycarboxylic acid OR from a diol + dicarboxylic acid.","D":"Neither student is correct — polyesters require a diol + diacyl chloride specifically.","correct":"C","explain":"Both routes are valid for making polyesters: (1) <b>Single bifunctional monomer</b> (hydroxycarboxylic acid): HO–R–COOH polymerises with itself, the –OH of one molecule reacting with the –COOH of the next, releasing H₂O at each linkage. The repeat unit is –[O–R–CO]–. Poly(lactic acid) (PLA) and poly(glycolic acid) are important examples. (2) <b>Two different monomers</b>: a diol (HO–R'–OH) + a dicarboxylic acid (HOOC–R–COOH) condense alternately, releasing 2H₂O per repeat unit. PET is the main example. OCR requires awareness of both routes. Diacyl chlorides can substitute for the dicarboxylic acid in route (2), releasing HCl rather than H₂O but giving the same polymer."},{"stem":"An exam question provides this polymer section: –NH–(CH₂)₅–CO–NH–(CH₂)₅–CO– and asks: (a) the type of polymerisation; (b) the monomer; (c) the small molecule eliminated. Which answer is completely correct?","A":"(a) Condensation polymerisation; (b) two monomers: H₂N–(CH₂)₅–COOH and HO–(CH₂)₅–COOH; (c) H₂O.","B":"(a) Condensation polymerisation; (b) one monomer: 6-aminohexanoic acid, H₂N–(CH₂)₅–COOH; (c) H₂O.","C":"(a) Addition polymerisation; (b) one monomer: H₂N–(CH₂)₅–COOH; (c) none.","D":"(a) Condensation polymerisation; (b) one monomer: H₂N–(CH₂)₅–COOH; (c) HCl.","correct":"B","explain":"(a) The backbone contains <b>–CO–NH–</b> (amide linkage) → <b>condensation polymerisation</b> (polyamide). (b) The repeat unit is –NH–(CH₂)₅–CO– : to find the monomer, hydrolyse this linkage (add H₂O across –NH–CO–): the N gets back H → –NH₂; the C gets back OH → –COOH. This gives <b>H₂N–(CH₂)₅–COOH = 6-aminohexanoic acid</b>, a single bifunctional monomer with both –NH₂ and –COOH (similar to alanine but with a 5-CH₂ spacer). This is \"nylon-6\" — formed from a single monomer, not two separate ones (unlike nylon-6,6). (c) Each –NH– + –COOH → –CO–NH– + <b>H₂O</b> (not HCl, because the monomer is a carboxylic acid, not an acyl chloride). Option (A) is wrong — there is only one type of monomer (bifunctional), not two different ones."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

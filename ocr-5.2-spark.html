@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.2 Chemical Equilibria - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.2 &mdash; Chemical Equilibria</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"How is the mole fraction xₐ of component A in a gas mixture defined?","A":"xₐ = nₐ × n_total","B":"xₐ = pₐ / P_total","C":"xₐ = nₐ / P_total","D":"xₐ = nₐ / n_total","correct":"D","explain":"The mole fraction is the number of moles of a component divided by the total number of moles in the mixture: xₐ = nₐ / n_total. It is <b>dimensionless</b> — moles cancel in the ratio. For any mixture, the mole fractions of all components must sum to 1: this identity is the key arithmetic check in ICE-table calculations. Option B (pₐ / P_total) is numerically equivalent to xₐ but is the result of the calculation, not the definition. Option C puts P_total (a pressure) in the denominator — dimensionally inconsistent with a mole fraction. Option A gives a product of moles, not a ratio."},{"stem":"Which formula correctly gives the partial pressure of gas A in a mixture?","A":"pₐ = nₐ / P_total","B":"pₐ = xₐ / P_total","C":"pₐ = xₐ × P_total","D":"pₐ = nₐ × R × T","correct":"C","explain":"Dalton's law gives pₐ = xₐ × P_total — the partial pressure of a gas equals its mole fraction multiplied by the total pressure. The partial pressures of all components must sum to P_total; this is the quick-check at the partial-pressure stage, just as mole fractions must sum to 1. Option D (nₐRT) is missing the volume V — it gives the total pressure contribution of nₐ moles only if divided by V. Options A and B invert or misplace the total pressure. The two-step procedure — mole fraction first, then multiply by P_total — avoids every common error."},{"stem":"Which is always true for the mole fractions in any gas mixture?","A":"They sum to the total pressure","B":"They sum to the total number of moles in the mixture","C":"They sum to 1","D":"They are each equal to the partial pressure divided by the number of moles","correct":"C","explain":"Because xₐ = nₐ / n_total, the sum over all components is Σxₐ = Σnₐ / n_total = n_total / n_total = <b>1</b>. This identity is universal — it holds regardless of temperature, pressure, or the chemical identity of the gases. Use it as a mandatory arithmetic check at the mole-fraction step of every *K*p calculation. If your mole fractions do not sum to 1, go back to the ICE table and find the error before proceeding to partial pressures."},{"stem":"For the homogeneous equilibrium aA + bB ⇌ cC + dD, which correctly gives *K*c?","A":"*K*c = ([A]ᵃ[B]ᵇ) / ([C]ᶜ[D]ᵈ)","B":"*K*c = ([C]ᶜ[D]ᵈ) × ([A]ᵃ[B]ᵇ)","C":"*K*c = [C][D] / ([A][B])","D":"*K*c = ([C]ᶜ[D]ᵈ) / ([A]ᵃ[B]ᵇ)","correct":"D","explain":"*K*c is the ratio of equilibrium concentrations of <b>products</b> (numerator) to <b>reactants</b> (denominator), each raised to its stoichiometric coefficient: products on top, reactants on bottom, powers equal to coefficients. Option A is the inverted expression (reactants/products) — the most common error and one that OCR mark schemes catch by ECF. Option B multiplies rather than divides. Option C omits the stoichiometric powers, which would only be correct if every coefficient were 1. Always write out the balanced equation first before constructing the *K*c expression."},{"stem":"Which is the correct *K*c expression for the heterogeneous equilibrium CaCO₃(s) ⇌ CaO(s) + CO₂(g)?","A":"*K*c = [CaO][CO₂] / [CaCO₃]","B":"*K*c = [CaCO₃] / ([CaO][CO₂])","C":"*K*c = [CO₂]","D":"*K*c = [CaO] / [CaCO₃]","correct":"C","explain":"In a heterogeneous equilibrium, <b>pure solids and pure liquids are omitted</b> from *K*c (and *K*p). The \"concentration\" of a pure solid equals its density divided by its molar mass — a constant at a given temperature that is absorbed into *K*c itself. Both CaCO₃ and CaO are pure solids, so only the gaseous product CO₂ remains: *K*c = [CO₂]. This means that at a given temperature, the equilibrium concentration of CO₂ above a CaCO₃/CaO mixture is fixed, regardless of the amounts of solid present. The same rule omits pure liquid water as solvent in dilute aqueous equilibria."},{"stem":"Which is the ONLY change in conditions that alters the numerical value of an equilibrium constant?","A":"Adding a catalyst","B":"Changing the temperature","C":"Increasing the total pressure","D":"Adding more of a reactant","correct":"B","explain":"*K*c and *K*p are constants <b>at a given temperature</b> — temperature is the only variable that changes their numerical values. Fundamentally, *K* = k_f / k_b (ratio of rate constants), and rate constants depend on temperature via the Arrhenius equation. Adding a catalyst increases both k_f and k_b equally, leaving their ratio unchanged. Changing concentration or pressure shifts the position of equilibrium — the system re-equilibrates — but the final concentrations or partial pressures always satisfy the same *K* value at the same temperature. Catalysts, pressure, and concentration all leave *K* unchanged."},{"stem":"A catalyst is added to a sealed reaction vessel containing a gaseous mixture at equilibrium. Which statements are both correct?","A":"*K*p increases; equilibrium is reached faster on re-mixing","B":"*K*p is unchanged; the equilibrium position shifts toward products","C":"*K*p is unchanged; the equilibrium position does not shift","D":"*K*p decreases; the equilibrium position shifts toward reactants","correct":"C","explain":"A catalyst lowers the activation energy of the forward and reverse reactions by the same amount, increasing both k_f and k_b equally. *K* = k_f/k_b remains unchanged. Since temperature is unchanged, *K*p is unchanged. Moreover, since the mixture was already at equilibrium (Q = *K*p), adding a catalyst produces <b>no shift</b> in the position — the concentrations and partial pressures are already at the equilibrium ratio. The catalyst is only useful for reaching equilibrium faster when starting from non-equilibrium conditions."},{"stem":"What quantities appear in the *K*p expression for a gas-phase equilibrium?","A":"Concentrations of all species in mol dm⁻³","B":"Mole fractions of all gaseous species","C":"Partial pressures of all gaseous species only","D":"The total pressure raised to the power of Δn","correct":"C","explain":"*K*p is written in terms of <b>partial pressures of gaseous species only</b>, in any consistent pressure unit (Pa, kPa, atm, bar). Pure solids are excluded for the same reason as in *K*c. Concentrations (mol dm⁻³) appear in *K*c, not *K*p. Mole fractions are intermediate values used to *calculate* partial pressures via pₐ = xₐ × P_total, but they do not appear directly in the *K*p expression. The relationship between *K*c and *K*p is *K*p = *K*c(RT)^Δn, but you are not required to use this at OCR A Level."},{"stem":"For a reversible reaction with a positive ΔH (endothermic forward reaction), what happens to *K* when temperature increases?","A":"*K* decreases — the equilibrium shifts backward","B":"*K* is unchanged — only concentration affects position, not *K*","C":"*K* increases — the equilibrium shifts forward","D":"*K* increases then decreases, reaching a maximum at an optimal temperature","correct":"C","explain":"For an endothermic forward reaction, increasing temperature provides the energy the forward reaction needs. The equilibrium shifts forward — more products form — so the products-over-reactants ratio in the *K* expression grows. Therefore <b>K increases</b> with rising T. The rule: ΔH positive → raise T → K increases; ΔH negative → raise T → K decreases. Temperature is the only variable that changes K, and the direction of change depends entirely on the sign of ΔH for the forward reaction as written."},{"stem":"The reaction quotient Q is calculated and found to be greater than *K*. What occurs?","A":"The reaction shifts forward — toward products — to increase Q further","B":"The reaction is at equilibrium — Q > *K* is a normal stable state","C":"The reaction shifts backward — toward reactants — to decrease Q until Q = *K*","D":"The reaction shifts forward — toward products — to decrease Q until Q = *K*","correct":"C","explain":"Q is calculated with the same expression as *K* but using current (not necessarily equilibrium) concentrations. When Q > *K*, there are <b>too many products</b> relative to the equilibrium ratio: the reaction must proceed <b>backward</b> (toward reactants), decreasing the numerator and increasing the denominator of Q until Q = *K*. When Q < *K*, too few products are present and the reaction shifts forward. When Q = *K*, the system is at equilibrium. Comparing Q with *K* is the quantitative version of Le Chatelier's principle and is the correct way to justify a shift direction in OCR extended-response questions."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

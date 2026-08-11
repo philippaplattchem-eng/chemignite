@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.8 Organic Synthesis (A2) - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.8 &mdash; Organic Synthesis (A2)</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"According to OCR mark schemes, what is the accepted reason for heating a reaction mixture under reflux?","A":"To increase the rate of reaction by raising the temperature.","B":"To ensure the reaction goes to completion by maintaining temperature over time.","C":"To prevent loss of volatile reactants or products by evaporation, because the condenser returns vapour to the flask.","D":"To create a sealed system that raises the pressure and forces the equilibrium towards products.","correct":"C","explain":"The OCR June 2024 examiner report is explicit: *\"Idea that reflux is used to prevent loss by evaporation… e.g. prevents loss of (volatile) compounds/products/reactants… IGNORE responses related to rate of reaction. IGNORE responses related to ensuring complete reaction.\"* Heating any vessel increases rate — that is not what is specific about <b>reflux</b>. The unique feature of a reflux setup is the <b>vertical condenser</b> that condenses vapour and returns it to the flask. The correct OCR answer must refer to <b>preventing loss of volatiles by evaporation</b>. Candidates writing option (A) or (B) score zero on this mark, however correct those ideas may be as general truths."},{"stem":"In a distillation apparatus, where must the bulb of the thermometer be positioned, and why?","A":"Submerged in the liquid in the flask, so it measures the temperature of the reaction mixture.","B":"At the top of the condenser, so it measures the temperature of the cooling water.","C":"Level with the side-arm of the still-head, so it measures the temperature of the vapour leaving the apparatus.","D":"Positioned between the flask and the still-head, so it averages the liquid and vapour temperatures.","correct":"C","explain":"The thermometer in a distillation setup must measure the temperature of the <b>vapour</b> at the point where it exits toward the condenser — not the temperature of the liquid in the flask. If the thermometer bulb is submerged in the liquid, it reads the boiling temperature of the whole mixture, which may be significantly different from the boiling point of the pure product. By placing the bulb at the <b>side-arm junction</b> of the still-head, the thermometer reads the vapour temperature: when it matches the <b>literature boiling point</b> of the desired product, you start collecting. Distillate arriving before or after this temperature is rejected."},{"stem":"Why is an electric heating mantle used instead of a Bunsen burner when heating an organic reaction mixture under reflux?","A":"Heating mantles are cheaper and easier to obtain than Bunsen burners.","B":"The electric heating mantle does not produce CO₂, which would interfere with the reaction.","C":"Organic solvents are typically flammable — a naked Bunsen flame could ignite the vapour escaping from the flask, creating a fire hazard.","D":"The heating mantle provides more precise temperature control, which is essential for reflux.","correct":"C","explain":"Most organic solvents used in synthesis (ethanol, diethyl ether, DCM, hexane, etc.) are <b>highly flammable</b> and have low flash points. When a flask is heated, organic vapour may escape from joints or from the open top of the condenser. A naked Bunsen flame could ignite these vapours. An <b>electric heating mantle</b> cradles the round-bottomed flask and heats it electrically — there is no open flame and therefore no ignition risk. This is a standard health-and-safety requirement in OCR practical work (PAG6). Precision of temperature control (option D) is a bonus but not the primary reason — reflux self-regulates at the solvent's boiling point regardless of heat source."},{"stem":"A student sets up filtration under reduced pressure to collect a crystalline solid from a hot reaction mixture. Which combination of equipment is correct?","A":"Conical funnel + fluted filter paper + conical flask","B":"Porcelain Buchner funnel + circular filter paper + thick-walled side-arm (Buchner) flask + vacuum line","C":"Porcelain Buchner funnel + fluted filter paper + standard conical flask + vacuum line","D":"Sintered glass funnel + thick-walled flask only (no filter paper needed)","correct":"B","explain":"Filtration under reduced pressure uses: (1) a <b>porcelain Buchner funnel</b> with a flat perforated base; (2) a flat <b>circular filter paper</b> (not fluted — fluted paper would bypass the vacuum) that fully covers the perforated base and is sealed down with a few drops of cold solvent before suction starts; (3) a <b>thick-walled side-arm Buchner flask</b> that withstands the pressure difference; (4) a <b>vacuum line</b> connected via thick rubber tubing to the side-arm. The vacuum pulls the liquid through far faster than gravity filtration and leaves a drier filter cake. A standard thin-walled conical flask (option D) would implode under reduced pressure."},{"stem":"A student measures the melting point of a purified organic solid and records a melting range of 104–118 °C. The literature melting point is 121–122 °C. What can be concluded?","A":"The sample is pure, but the student's apparatus is incorrectly calibrated.","B":"The sample is a different compound from the one expected.","C":"The sample is impure — impurities have both depressed the onset of melting below the literature value and broadened the melting range.","D":"The sample is pure, but the literature value is wrong for this reaction.","correct":"C","explain":"A <b>pure</b> organic solid melts over a sharp, narrow range (typically 1–2 °C) at or very close to its literature melting point. When impurities are present, they: (1) <b>depress</b> the melting point — the onset begins below the literature value (here 104 °C vs lit. 121 °C); (2) <b>broaden</b> the melting range — the range extends over many degrees (here 14 °C instead of 1–2 °C). Both features together are the classic signature of an impure sample. The impurities disrupt the crystal lattice, requiring less energy (lower temperature) to begin melting, and different regions of the crystal (with different impurity levels) melt at different temperatures. The correct action is to recrystallise again."},{"stem":"Which sequence correctly describes the five-step recrystallisation procedure for purifying an organic solid?","A":"Cool → dissolve in minimum hot solvent → filter cold under reduced pressure → dry → measure melting point","B":"Dissolve in maximum volume of hot solvent → filter cold → cool → wash with warm solvent → dry","C":"Dissolve in minimum volume of hot solvent → filter hot if insoluble impurity present → cool → filter cold under reduced pressure (with cold solvent wash) → dry","D":"Dissolve in minimum volume of cold solvent → heat to dissolve → filter → cool → dry with MgSO₄","correct":"C","explain":"The OCR-required five steps (H432/03 June 2019 mark scheme): (1) <b>Dissolve</b> in the <b>minimum</b> volume of <b>hot</b> solvent — using the minimum keeps the cold solution close to saturation, maximising crystal recovery on cooling; (2) <b>Filter hot</b> (if insoluble impurity is present) through a warm filter/funnel to prevent premature crystallisation; (3) <b>Cool</b> the filtrate (slowly for larger, purer crystals); (4) <b>Filter under reduced pressure</b> with a Buchner funnel, washing with a small volume of <b>cold</b> solvent to remove soluble impurities on the crystal surface (cold so as not to re-dissolve the product); (5) <b>Dry</b> in a low-temperature oven, desiccator, or on filter paper. All three of cool, filter, and dry must be mentioned for full marks."},{"stem":"After recrystallising a solid organic product, a student adds anhydrous MgSO₄ to the dry crystals to remove traces of moisture. Will this procedure score marks in an OCR exam?","A":"Yes — MgSO₄ is the standard drying agent for all organic products, solid or liquid.","B":"No — MgSO₄ is used as a drying agent only for organic <b>liquids</b>, not solids. The OCR mark scheme explicitly states that using a chemical drying agent on a solid is NOT allowed.","C":"Yes — the H432/03 mark scheme specifically allows MgSO₄ as an alternative to an oven for drying solids.","D":"No — MgSO₄ should be replaced by CaCl₂, which is the correct drying agent for solids.","correct":"B","explain":"The H432/03 June 2019 examiner report is unambiguous: *\"DO NOT ALLOW use of drying agent (e.g. MgSO₄)\"* when describing purification of a solid. Chemical drying agents (MgSO₄, Na₂SO₄, CaCl₂) are intended for <b>organic liquids</b> — the liquid is shaken with the anhydrous salt, which absorbs water, and then the dried liquid is decanted or filtered away from the solid drying agent. With a <b>solid product</b>, mixing in MgSO₄ would contaminate the crystals and is mechanically impractical to remove. Solids are dried by physical means: <b>oven</b> (low temperature), <b>desiccator</b> (over silica gel or P₂O₅ under vacuum), or simply <b>air-dried on filter paper</b>. Never use a chemical drying agent on a solid."},{"stem":"Why are anti-bumping granules added to the flask before heating begins in a reflux or distillation?","A":"Anti-bumping granules catalyse the organic reaction, increasing yield.","B":"They are inert porous solids that provide nucleation sites for vapour bubbles, ensuring smooth boiling and preventing sudden, violent ejections of superheated liquid (bumping).","C":"They absorb moisture from the reaction mixture, acting as a drying agent.","D":"They prevent the organic vapour from condensing inside the flask, ensuring it rises into the condenser.","correct":"B","explain":"When a pure or nearly pure liquid is heated in a smooth-sided flask, it can superheat — the liquid rises above its boiling point without actually boiling because there are no nucleation sites for bubbles to form. When bubbling eventually starts, it does so violently: a sudden large burst of vapour erupts from the flask (called \"<b>bumping</b>\"), which can expel hot liquid up into the condenser and create a hazard. <b>Anti-bumping granules</b> (small pieces of porous ceramic or carborundum) provide many small cavities where vapour bubbles can form continuously and at low energy, ensuring smooth, steady boiling. They are chemically inert and do not dissolve or react with the mixture."},{"stem":"Which of the following is the only transformation in the OCR H432 specification that extends the carbon chain by one carbon in the aliphatic (non-aromatic) series?","A":"Haloalkane + NaOH(aq), reflux → alcohol","B":"Alcohol + K₂Cr₂O₇/H₂SO₄, reflux → carboxylic acid","C":"Haloalkane + KCN in ethanol, reflux → nitrile","D":"Alcohol + HBr → haloalkane","correct":"C","explain":"The reaction R–X + KCN (ethanol, reflux) → R–CN inserts the <b>carbon of CN</b> into the molecule, extending the chain by one. For example: bromoethane (2 C) + KCN → propanenitrile (3 C). All other non-aromatic spec transformations leave the carbon skeleton unchanged: (A) haloalkane → alcohol preserves the chain; (B) alcohol → carboxylic acid preserves the chain (the –COOH carbon was already there as –CH₂OH); (D) alcohol → haloalkane preserves the chain. The other aliphatic chain-extension route — addition of HCN to a carbonyl compound — also adds one carbon, but HCN addition is nucleophilic <b>addition</b> to a <b>carbonyl</b> rather than substitution of a haloalkane, and is the route in 6.7.1(ii)."},{"stem":"A student carries out a three-step synthesis where step 1 gives 80% yield, step 2 gives 70% yield, and step 3 gives 75% yield. What is the overall percentage yield?","A":"(80 + 70 + 75) / 3 = 75.0%","B":"80 × 70 × 75 = 420 000%","C":"0.80 × 0.70 × 0.75 = 42.0%","D":"The overall yield cannot be calculated without knowing the molar masses of the intermediates.","correct":"C","explain":"The overall yield of a multi-step synthesis is the <b>product</b> (multiplication) of the fractional step yields — not the average. At each step, the amount of material carried forward is the yield fraction of what entered that step: 0.80 of the original → 0.80 × 0.70 = 0.56 after step 2 → 0.56 × 0.75 = <b>0.420 = 42.0%</b> overall. Option (A) is the common error of averaging step yields rather than multiplying them. Option (B) is simply multiplying the percentages as if they were whole numbers. The molar masses of intermediates (option D) are not needed for this calculation — the stoichiometry is assumed 1:1 through each step (as is typical in OCR synthesis questions unless stated otherwise)."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

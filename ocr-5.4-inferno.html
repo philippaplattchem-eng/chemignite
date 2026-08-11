@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.4 Thermodynamics - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.4 &mdash; Thermodynamics</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Calculate ΔLEH° for MgCl₂ from the data: ΔfH°(MgCl₂) = −641; ΔatH°(Mg) = +148; IE₁(Mg) = +736; IE₂(Mg) = +1450; ΔatH°(Cl) = +122; EA₁(Cl) = −349 kJ mol⁻¹.","A":"−2521 kJ mol⁻¹","B":"−2748 kJ mol⁻¹","C":"−2870 kJ mol⁻¹","D":"−1071 kJ mol⁻¹","correct":"A","explain":"For MgCl₂ (1 Mg : 2 Cl), the formula is: ΔLEH = ΔfH° − ΔatH°(Mg) − IE₁(Mg) − IE₂(Mg) − <b>2×</b>ΔatH°(Cl) − <b>2×</b>EA₁(Cl). Substituting: ΔLEH = (−641) − 148 − 736 − 1450 − 2(+122) − 2(−349) = −641 − 148 − 736 − 1450 − 244 + 698 = −641 − 1880 = <b>−2521 kJ mol⁻¹</b>. Option B (−2748) results from using 1× (not 2×) for both Cl terms: −641 − 148 − 736 − 1450 − 122 + 349 = −2748. Option C (−2870) results from doubling ΔatH°(Cl) but not EA₁(Cl): −641 − 148 − 736 − 1450 − 244 + 349 = −2870. Option D (−1071) results from omitting IE₂(Mg) entirely. The H432/01 November 2020 examiner report identified failing to double the Cl terms as the most common error on this calculation."},{"stem":"ΔsolH°(CaCl₂) = −107 kJ mol⁻¹; ΔLEH°(CaCl₂, formation) = −2258 kJ mol⁻¹; ΔhydH°(Cl⁻) = −364 kJ mol⁻¹. Calculate ΔhydH°(Ca²⁺).","A":"−1637 kJ mol⁻¹","B":"−2001 kJ mol⁻¹","C":"−1530 kJ mol⁻¹","D":"+2879 kJ mol⁻¹","correct":"A","explain":"The Hess cycle gives: ΔsolH = −ΔLEH(formation) + ΔhydH(Ca²⁺) + 2×ΔhydH(Cl⁻). Reversing ΔLEH: −(−2258) = +2258. Substituting: −107 = +2258 + ΔhydH(Ca²⁺) + 2(−364); −107 = 2258 + ΔhydH(Ca²⁺) − 728; −107 = 1530 + ΔhydH(Ca²⁺); ΔhydH(Ca²⁺) = −107 − 1530 = <b>−1637 kJ mol⁻¹</b>. This lies between ΔhydH(Mg²⁺) ≈ −1926 (smaller ion, more exothermic) and ΔhydH(Sr²⁺) ≈ −1470 (larger ion, less exothermic) — consistent with the charge density trend. Option B (−2001) uses 1× ΔhydH(Cl⁻) instead of 2×: −107 = 2258 + ΔhydH − 364 → ΔhydH = −2001. Option C (−1530) sets ΔsolH = 0 (ignores the calorimetry result). Option D (+2879) fails to reverse the sign of ΔLEH(formation), using −2258 directly: −107 = −2258 + ΔhydH − 728 → ΔhydH = +2879 (a positive hydration enthalpy is physically impossible)."},{"stem":"Which explanation would score full marks for \"Explain why ΔLEH(MgO) is more exothermic than ΔLEH(MgS)\"?","A":"O²⁻ has a smaller ionic radius than S²⁻; the Mg²⁺–O²⁻ inter-ionic distance is therefore shorter, producing a stronger electrostatic attraction between the oppositely charged ions and a more exothermic lattice enthalpy","B":"O²⁻ has a smaller atomic radius than S²⁻; the electrostatic attraction between the ions in MgO is therefore greater","C":"Mg²⁺ has a higher charge density in MgO because oxygen has a larger ionisation energy than sulfur","D":"MgO has a higher melting point than MgS, which shows that its lattice enthalpy is more exothermic","correct":"A","explain":"Option A contains all three required components: (i) correct factor identified (<b>ionic radius</b>, not atomic radius), (ii) consequence for inter-ionic distance, and (iii) link to <b>stronger electrostatic attraction</b> between oppositely charged ions with the correct \"more exothermic\" conclusion. Option B uses \"atomic radius\" — examiners penalise this specifically (H432/01 Nov 2021: \"atomic radius is incorrect in this context\"). Option C introduces ionisation energy, which is completely irrelevant to lattice enthalpy — ionisation energy concerns removing electrons from isolated atoms, not attractions between ions in a lattice. Option D states an observable consequence (melting point) as if it were an explanation: the causal chain must run from ionic radius → electrostatic attraction → lattice enthalpy, not from a separate consequence."},{"stem":"A reaction has ΔH = +50 kJ mol⁻¹ and ΔS = −100 J K⁻¹ mol⁻¹. Which statement about its feasibility is correct?","A":"Feasible at high temperatures because the entropy term eventually dominates","B":"Feasible at all temperatures because ΔH is small","C":"Never feasible spontaneously, because both ΔH and −TΔS are positive at all temperatures","D":"Feasible when T < 500 K, because the enthalpy term is small enough","correct":"C","explain":"ΔG = ΔH − TΔS. With ΔS = −100 J K⁻¹ mol⁻¹ = −0.100 kJ K⁻¹ mol⁻¹: ΔG = +50 − T(−0.100) = +50 + 0.100T. Since both terms are positive (ΔH > 0 and −TΔS = +0.100T > 0 at any T > 0), ΔG is <b>always positive</b> — the reaction is <b>never</b> thermodynamically feasible at any temperature. This is Case D (ΔH positive, ΔS negative). Option A applies the wrong logic: at high T, the +0.100T term grows, making ΔG more positive, not less. Option D sets T < ΔH/ΔS = 50/0.100 = 500 K; but at T = 500 K, ΔG = 50 + 50 = +100 kJ mol⁻¹ — more positive, not zero. The threshold T = ΔH/ΔS formula gives zero only when both ΔH and ΔS have the same sign; here they have opposite signs, so there is no feasibility threshold."},{"stem":"A student dissolves 8.50 g of NaNO₃ (M = 85.0 g mol⁻¹) in 100.0 g of water. The temperature falls by 3.50°C. [c = 4.18 J g⁻¹ K⁻¹]. Calculate ΔsolH°(NaNO₃).","A":"+15.9 kJ mol⁻¹","B":"−15.9 kJ mol⁻¹","C":"+14.6 kJ mol⁻¹","D":"+1590 kJ mol⁻¹","correct":"A","explain":"<b>Step 1 — mass of solution:</b> m = 100.0 + 8.50 = 108.5 g. <b>Step 2 — energy:</b> q = mcΔT = 108.5 × 4.18 × 3.50 = 1587 J = 1.587 kJ. <b>Step 3 — moles:</b> n = 8.50/85.0 = 0.100 mol. <b>Step 4 — enthalpy:</b> The temperature <b>fell</b>, so the solution absorbed energy from the surroundings — the dissolution is <b>endothermic</b> and ΔsolH is <b>positive</b>: ΔsolH = +1.587/0.100 = <b>+15.9 kJ mol⁻¹</b>. Option B (−15.9) uses the correct magnitude but wrong sign — a temperature fall always indicates an endothermic process (positive ΔsolH). Option C (+14.6) uses mass of <b>water only</b> (100.0 g): q = 100.0 × 4.18 × 3.50 = 1463 J → ΔsolH = +14.6 kJ mol⁻¹ — this is the \"mass of water\" trap singled out in the H432/03 June 2023 examiner report. Option D (+1590) forgets to divide q in J by 1000 to get kJ before dividing by moles."},{"stem":"A reaction has ΔG° = −250 kJ mol⁻¹, yet it does not occur at a measurable rate at room temperature. Which explanation is accepted by OCR mark schemes?","A":"There is not enough activation energy for the reaction to proceed","B":"A negative ΔG° means the equilibrium constant K < 1, so products are not favoured","C":"The activation energy is too high, so molecules do not have sufficient energy to equal or exceed it","D":"The magnitude of ΔG° is too large for the reaction to occur at room temperature","correct":"C","explain":"ΔG° predicts thermodynamic feasibility — whether a reaction is energetically downhill — but tells you <b>nothing about rate</b>. Rate depends on the <b>activation energy (Ea)</b> and the Boltzmann distribution of molecular energies. If Ea is very high relative to the average thermal energy at room temperature, only an immeasurably small fraction of molecules have enough energy to react, and the reaction appears not to occur. Option C uses the OCR-accepted phrasing (H432/01 June 2024: \"molecules do not have sufficient energy to equal or exceed the activation energy\" — ALLOW). Option A uses the phrase \"there is not enough activation energy\" which the same mark scheme explicitly <b>rejects</b> (DO NOT ALLOW): activation energy is a property of the reaction (a barrier height), not a quantity that can be \"not enough.\" Option B is factually wrong: very negative ΔG° corresponds to a very large K >> 1 (products strongly favoured). The classic example: 2H₂(g) + O₂(g) → 2H₂O(l) has ΔG° ≈ −237 kJ mol⁻¹ but requires ignition because of the high Ea."},{"stem":"A reaction has ΔH° = −286 kJ mol⁻¹ and ΔS° = −163 J K⁻¹ mol⁻¹. Calculate the maximum temperature at which the reaction is feasible.","A":"1755 K","B":"1.75 K","C":"1482 K","D":"2028 K","correct":"A","explain":"For ΔH negative / ΔS negative (Case B), feasibility is lost above a threshold temperature. Set ΔG = 0: ΔH − TΔS = 0 → T = ΔH/ΔS. Convert ΔS: −163 J K⁻¹ mol⁻¹ = −0.163 kJ K⁻¹ mol⁻¹. T = −286 / −0.163 = <b>1755 K</b>. At T < 1755 K, ΔG = −286 − T(−0.163) = −286 + 0.163T < 0 (feasible). At T > 1755 K, ΔG turns positive. This is analogous to the combustion of hydrogen (2H₂ + O₂ → 2H₂O), which becomes thermodynamically unfavoured above ~1749 K. Option B (1.75 K) results from failing to convert ΔS from J to kJ: T = −286/−163 = 1.755. Option C (1482 K) subtracts 273 from the correct Kelvin answer, confusing the result with Celsius. Option D (2028 K) adds 273 unnecessarily. Always check: T must be in kelvin and positive; physically unreasonable answers (fractions of a kelvin) signal a unit error."},{"stem":"S° values: H₂(g) = 131; O₂(g) = 205; H₂O(l) = 70 J K⁻¹ mol⁻¹. Calculate ΔS° for 2H₂(g) + O₂(g) → 2H₂O(l).","A":"−327 J K⁻¹ mol⁻¹","B":"+327 J K⁻¹ mol⁻¹","C":"−397 J K⁻¹ mol⁻¹","D":"−196 J K⁻¹ mol⁻¹","correct":"A","explain":"ΔS = ΣS°(products) − ΣS°(reactants), multiplying each S° by its stoichiometric coefficient. ΔS = [2 × S°(H₂O, l)] − [2 × S°(H₂, g) + S°(O₂, g)] = [2 × 70] − [2 × 131 + 205] = 140 − 467 = <b>−327 J K⁻¹ mol⁻¹</b>. The large negative value is expected: 3 moles of gas (2 H₂ + 1 O₂) collapse to 0 moles of gas (water is liquid), representing a massive decrease in disorder. Option B (+327) reverses the subtraction order. Option C (−397) omits the coefficient of 2 on H₂O: 70 − [2×131 + 205] = 70 − 467 = −397. Option D (−196) applies ×2 to H₂O but not to H₂: [2×70] − [131 + 205] = 140 − 336 = −196. Remember: all coefficients from the balanced equation must be applied before summing. Units are J K⁻¹ mol⁻¹ — remember to divide by 1000 if this value is to be used in a ΔG = ΔH − TΔS calculation."},{"stem":"Which reaction has a negative entropy change (ΔS < 0)?","A":"CaCO₃(s) → CaO(s) + CO₂(g)","B":"H₂O(l) → H₂O(g)","C":"2H₂(g) + O₂(g) → 2H₂O(l)","D":"NH₄NO₃(s) → N₂O(g) + 2H₂O(g)","correct":"C","explain":"ΔS is dominated by the change in <b>moles of gas</b>. Option C: 3 mol gas (2H₂ + O₂) → 0 mol gas (liquid water) — a massive decrease in moles of gas → <b>large negative ΔS</b> ≈ −327 J K⁻¹ mol⁻¹. Option A: 0 mol gas → 1 mol gas (CO₂ produced) → positive ΔS. Option B: liquid → gas → positive ΔS (vaporisation always increases entropy). Option D: 0 mol gas → 3 mol gas → very large positive ΔS. The rule to remember: any reaction where the number of moles of gas <b>decreases</b> (including gas → liquid or gas → solid) has negative ΔS; any reaction where moles of gas <b>increase</b> has positive ΔS. When no gas is present, dissolution of an ionic solid (lattice → free aqueous ions) usually gives positive ΔS."},{"stem":"Aluminium oxide decomposes according to: 2Al₂O₃(s) → 4Al(s) + 3O₂(g). ΔH° = +3352 kJ mol⁻¹; ΔS° = +627 J K⁻¹ mol⁻¹. Calculate the minimum temperature at which the decomposition is thermodynamically feasible.","A":"5346 K","B":"5.3 K","C":"5073 K","D":"5619 K","correct":"A","explain":"This is a Case C reaction (ΔH positive, ΔS positive): feasible only above a minimum temperature. Set ΔG = 0 → T_min = ΔH/ΔS. Convert ΔS: 627 J K⁻¹ mol⁻¹ = 0.627 kJ K⁻¹ mol⁻¹. T_min = 3352 / 0.627 = <b>5346 K</b> (to 4 s.f.). Above 5346 K, TΔS > ΔH and ΔG becomes negative — but 5346 K is far above any practical temperature, which explains why aluminium is produced electrolytically (not by thermal decomposition). Option B (5.3 K) results from not converting ΔS from J to kJ: 3352/627 = 5.35. Option C (5073 K) subtracts 273 from the correct K answer, giving the Celsius equivalent. Option D (5619 K) adds 273 to the correct Kelvin answer. In both cases the student has correctly calculated 5346 K but then mistakenly converted — temperature limits must be given in kelvin when derived from T = ΔH/ΔS. This synoptic question links lattice enthalpy (5.4.1), entropy (5.4.6) and Gibbs energy (5.4.8) in a single context."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

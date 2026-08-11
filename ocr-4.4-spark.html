@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.4 Alcohols - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.4 &mdash; Alcohols</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"In the O–H bond of an alcohol, which atom carries the δ⁻ partial charge?","A":"The hydrogen atom (H is more electronegative than O)","B":"The oxygen atom, because oxygen (electronegativity 3.5) is more electronegative than hydrogen (2.1) and attracts the bonding pair towards itself","C":"Both atoms carry δ⁻ simultaneously","D":"Neither atom, because O–H bonds are non-polar","correct":"B","explain":"Electronegativity measures the power of an atom to attract a shared bonding pair. Oxygen (Pauling electronegativity 3.5) is substantially more electronegative than hydrogen (2.1). The shared pair in the O–H covalent bond is pulled closer to oxygen, creating a build-up of electron density on O (δ⁻) and a depletion on H (δ⁺). This permanent bond dipole is the foundation of all the physical properties in this subtopic: without δ⁻ on O and δ⁺ on H, hydrogen bonds could not form, boiling points would not be elevated, and short-chain alcohols would not dissolve readily in water."},{"stem":"A hydrogen bond requires two conditions to be met simultaneously. Which statement correctly states both?","A":"The H atom must be bonded to any electronegative atom, AND the acceptor must carry a full negative charge","B":"The H atom must be covalently bonded to N, O, or F, AND a lone pair must be present on a N, O, or F atom in a neighbouring molecule","C":"The H atom must be bonded to O only, AND the acceptor molecule must be polar","D":"The H atom must carry a full positive charge, AND the acceptor must be a metal atom","correct":"B","explain":"A hydrogen bond is not simply \"any interaction involving hydrogen.\" It has two strict requirements: (1) the H atom must be covalently bonded to a highly electronegative atom — only nitrogen, oxygen, or fluorine. The C–H bond is essentially non-polar so C–H hydrogens cannot form hydrogen bonds. (2) On a neighbouring molecule there must be a lone pair on a highly electronegative atom (again, only N, O, or F) for the δ⁺ H to attract. The –OH group in an alcohol satisfies both conditions: H is bonded to O (condition 1), and the oxygen carries two lone pairs (condition 2). This is why alcohols both donate and accept hydrogen bonds."},{"stem":"How many lone pairs does the oxygen atom in an alcohol (–OH bonded to a saturated carbon) carry?","A":"One lone pair","B":"Two lone pairs","C":"Three lone pairs","D":"Four lone pairs","correct":"B","explain":"Oxygen has six valence electrons. In an alcohol, the oxygen forms two covalent bonds: one to the C* (the carbon bearing the –OH) and one to the H of the hydroxyl. Each bond uses one electron from oxygen (in the shared pair). Six valence electrons − 2 bonding electrons = four remaining electrons = two lone pairs. This is the same as in water: both the O in R–OH and the O in H₂O have exactly two lone pairs. OCR mark schemes (H432/02 June 2024) penalise candidates who draw more than two lone pairs on an alcohol's oxygen — three or four lone pairs on a doubly-bonded O is factually wrong and loses the mark."},{"stem":"Which of the following alcohols is classified as tertiary?","A":"Propan-1-ol (CH₃CH₂CH₂OH)","B":"Propan-2-ol ((CH₃)₂CHOH)","C":"Butan-1-ol (CH₃CH₂CH₂CH₂OH)","D":"2-Methylpropan-2-ol ((CH₃)₃COH)","correct":"D","explain":"An alcohol is classified by counting the number of other carbon atoms bonded to the carbon bearing the –OH group (C*). In 2-methylpropan-2-ol, C* is the central carbon: it is bonded to three methyl groups and the –OH, and carries no H. Three C neighbours → tertiary. Propan-1-ol and butan-1-ol both have C* bonded to one other carbon (one C neighbour) → primary. Propan-2-ol has C* bonded to two CH₃ groups (two C neighbours) → secondary. Getting the class wrong is a common entry error that forces the rest of an oxidation question wrong."},{"stem":"What observation is made when acidified potassium dichromate(VI) (K₂Cr₂O₇/H₂SO₄) is added to 2-methylpropan-2-ol and gently warmed?","A":"The solution turns from orange to green, indicating oxidation","B":"A colourless gas is produced","C":"No colour change; the solution remains orange","D":"A white precipitate forms","correct":"C","explain":"2-Methylpropan-2-ol is a tertiary alcohol. Its C* has three methyl groups and no C–H bond. The mechanism of dichromate oxidation requires removal of the H from C* along with the H from the –OH group. Because there is no H on C*, the oxidation cannot proceed, and the Cr₂O₇²⁻ is not reduced. The orange colour of the unreacted Cr₂O₇²⁻ is unchanged: no orange → green transition occurs. This is the basis of a classification test: primary and secondary alcohols turn the dichromate from orange to green; tertiary alcohols give no colour change."},{"stem":"Propan-1-ol is oxidised using K₂Cr₂O₇/H₂SO₄ with the alcohol in excess and the product distilled off as it forms. What is the organic product?","A":"Propanoic acid (CH₃CH₂COOH)","B":"Propanal (CH₃CH₂CHO)","C":"Propanone (CH₃COCH₃)","D":"Propan-2-ol (the alcohol is inverted to its secondary isomer)","correct":"B","explain":"Propan-1-ol is a primary alcohol. It can be oxidised in two stages: first to propanal (an aldehyde) using 1[O], then on to propanoic acid (a carboxylic acid) using a second [O]. Using excess alcohol and distillation conditions ensures that the aldehyde, once formed, is removed from the reaction vessel before it can be oxidised further — the aldehyde has no O–H group, so it cannot hydrogen-bond to itself and has a lower boiling point than the alcohol, making it easy to distil off. The first oxidation step: CH₃CH₂CH₂OH + [O] → CH₃CH₂CHO + H₂O."},{"stem":"In a hydrogen-bond diagram, what type of line must be used to represent the hydrogen bond itself?","A":"A solid line (the hydrogen bond is a strong covalent-like bond)","B":"A dashed line (the hydrogen bond is an intermolecular attraction, not a covalent bond)","C":"A double line (because the hydrogen bond involves two electrons)","D":"A wavy line (to indicate the dynamic nature of the attraction)","correct":"B","explain":"The hydrogen bond is an intermolecular force — it is an electrostatic attraction between the δ⁺ H of one molecule and a lone pair on the electronegative atom of a neighbouring molecule. It is not a covalent bond, so it must not be drawn as a solid line. Solid lines in structural formulae represent covalent bonds, so drawing the H-bond as a solid line implies that the two molecules are covalently joined — this is factually wrong and loses the mark in OCR mark schemes. The dashed line should run from the lone pair on the acceptor O (or N or F) to the δ⁺ H atom. The O–H covalent bond itself, by contrast, must be a solid line."},{"stem":"What reagents and conditions are required to convert an alcohol into an alkene by elimination?","A":"Dilute HCl, room temperature","B":"Concentrated phosphoric acid (H₃PO₄) or concentrated sulfuric acid (H₂SO₄), with heat (~170°C)","C":"Sodium bromide and dilute sulfuric acid, reflux","D":"Nickel catalyst, 150°C","correct":"B","explain":"Dehydration (elimination) of an alcohol removes an H atom from a β-carbon (a carbon adjacent to C*) and the –OH group from C*, producing an alkene and water. The concentrated acid (H₃PO₄ or H₂SO₄) acts as a catalyst: it protonates the –OH to form –OH₂⁺, which is a far better leaving group than –OH itself (water is a good leaving group; a hydroxide ion is not). Heat (~170°C) provides the activation energy for C–O bond cleavage and drives the equilibrium forward by allowing the volatile alkene product to escape. Option D describes hydrogenation conditions (the reverse reaction, adding H₂ across an alkene)."},{"stem":"A secondary alcohol (R₂CHOH) is warmed with K₂Cr₂O₇/H₂SO₄. What organic product forms?","A":"A carboxylic acid (R₂CHCOOH)","B":"An aldehyde (R₂CHCHO)","C":"A ketone (R₂C=O)","D":"No reaction occurs; secondary alcohols are not oxidised by dichromate","correct":"C","explain":"A secondary alcohol has one H on C*. The oxidising agent removes this H and the H from the –OH group (together as H₂O, using 1[O]). The product is a ketone, in which the C* is doubly bonded to oxygen (C=O), flanked by two R groups on both sides. The ketone cannot be oxidised further by acidified dichromate: the C=O carbon of a ketone has no H that the oxidant can remove, and breaking a C–C bond requires far more powerful conditions. Whether distillation or reflux conditions are used, the secondary alcohol always gives the ketone as the sole product. The colour change is orange → green in both cases."},{"stem":"What two reagents are mixed to convert propan-1-ol to 1-bromopropane by the standard substitution method?","A":"Concentrated HBr gas and propan-1-ol, room temperature","B":"NaBr (sodium bromide) and concentrated H₂SO₄, with heating","C":"Br₂ water and propan-1-ol in UV light","D":"HBr gas and a nickel catalyst at 150°C","correct":"B","explain":"The OCR-specified method generates hydrogen bromide in situ rather than using HBr gas directly. Solid sodium bromide (NaBr) reacts with concentrated sulfuric acid to produce HBr: NaBr + H₂SO₄ → NaHSO₄ + HBr. The HBr then substitutes the –OH: CH₃CH₂CH₂OH + HBr → CH₃CH₂CH₂Br + H₂O. Generating HBr in situ avoids the hazards of handling fuming HBr gas (highly toxic, corrosive, difficult to store). Option C describes radical substitution conditions (UV + Br₂), which would attack C–H bonds and give a mixture of products rather than selectively replacing the –OH."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

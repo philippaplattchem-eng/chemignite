@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.3 Acids, Bases and Buffers - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.3 &mdash; Acids, Bases and Buffers</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Calculate the pH of 0.050 mol dm⁻³ HNO₃(aq) at 298 K.","A":"1.30","B":"1.00","C":"2.00","D":"0.30","correct":"A","explain":"HNO₃ is a strong monobasic acid that fully dissociates, so [H⁺] = 0.050 mol dm⁻³. pH = −log(0.050) = −log(5 × 10⁻²) = 2 − log 5 = 2 − 0.699 = <b>1.30</b> (to 2 d.p.). Option B corresponds to [H⁺] = 0.10 mol dm⁻³ (a factor of 2 error). Option C corresponds to [H⁺] = 0.010 mol dm⁻³ (a factor of 5 error). Option D would arise from −log(2) ≈ 0.30, which would only be the pH if [H⁺] = 2 mol dm⁻³ — not relevant here. Always present pH to 2 decimal places."},{"stem":"Calculate the pH of 0.0050 mol dm⁻³ NaOH(aq) at 298 K.","A":"2.30","B":"12.00","C":"11.70","D":"12.70","correct":"C","explain":"NaOH is a strong base that fully dissociates: [OH⁻] = 0.0050 mol dm⁻³. Use Kw to find [H⁺]: [H⁺] = Kw / [OH⁻] = (1.00 × 10⁻¹⁴) / 0.0050 = 2.00 × 10⁻¹² mol dm⁻³. pH = −log(2.00 × 10⁻¹²) = 12 − log 2 = 12 − 0.301 = <b>11.70</b>. Option B (pH 12.00) arises from [OH⁻] = 0.010 mol dm⁻³ (a factor-of-2 error — forgetting to use the given concentration). Option A (2.30) is pOH = −log(0.0050) = 2.30 — a common error of reporting pOH as pH. Option D (12.70) is 14 − 1.30 and has no straightforward chemical origin here."},{"stem":"Ka(CH₃COOH) = 1.74 × 10⁻⁵ mol dm⁻³. Calculate the pH of 0.100 mol dm⁻³ ethanoic acid.","A":"2.88","B":"5.76","C":"4.76","D":"3.76","correct":"A","explain":"Use the weak acid approximation: [H⁺] ≈ √(Ka × [HA]) = √(1.74 × 10⁻⁵ × 0.100) = √(1.74 × 10⁻⁶) = 1.32 × 10⁻³ mol dm⁻³. pH = −log(1.32 × 10⁻³) = <b>2.88</b>. Option B (5.76) is the classic \"forgot the square root\" error: if [H⁺] = Ka × [HA] = 1.74 × 10⁻⁶, pH = 5.76. This is the most frequently penalised error in OCR weak acid calculations (H432/01 June 2019: \"forgetting the square root gives pH 5.97\" in an analogous question). Option C (4.76) is the pKa value, not the pH. Option D (3.76) arises from using Ka/[HA] = 1.74 × 10⁻⁴ without squaring, then taking −log."},{"stem":"Which statement best defines a buffer solution?","A":"A solution that prevents any change in pH","B":"A solution that minimises the change in pH on addition of small amounts of acid or base","C":"A solution with a constant pH of 7","D":"A solution of a weak acid in water","correct":"B","explain":"A buffer <b>minimises</b> (not prevents) the change in pH. This precise wording is required by OCR — using \"prevents\" or \"stops\" loses the definition mark. The buffer does not keep pH perfectly fixed; it merely limits the change to a small amount when modest quantities of strong acid or base are added. Large additions overwhelm the buffer and cause a significant pH shift. Option C is wrong — acidic buffers (the most common type at A Level) have pH well below 7 (e.g. ethanoate buffer at pH ≈ 4.76). Option D describes only the weak acid component; a buffer requires both the weak acid HA and its conjugate base A⁻ to be present at appreciable concentrations."},{"stem":"An acidic buffer can be formed by:","A":"Mixing equal volumes of 1.0 mol dm⁻³ HCl and 1.0 mol dm⁻³ NaOH","B":"Dissolving NaCl in water","C":"Mixing 0.20 mol of ethanoic acid with 0.10 mol of sodium hydroxide","D":"Adding excess sodium hydroxide to 0.10 mol of ethanoic acid","correct":"C","explain":"Option C partially neutralises ethanoic acid: 0.10 mol NaOH reacts with 0.10 mol CH₃COOH → 0.10 mol CH₃COONa formed, with 0.10 mol CH₃COOH unreacted. The result is a mixture of weak acid and its conjugate base — an acidic buffer. Option A produces NaCl (a neutral salt) with no weak acid or conjugate base remaining. Option B gives NaCl solution — Na⁺ and Cl⁻ do not form a buffer. Option D uses excess NaOH, so all the ethanoic acid is neutralised, leaving only CH₃COONa with no HA reservoir — not a functional buffer (pH rises sharply on further base addition)."},{"stem":"A buffer contains 0.30 mol of ethanoic acid and 0.10 mol of sodium ethanoate in the same solution. pKa(CH₃COOH) = 4.76. Calculate the pH.","A":"4.28","B":"5.24","C":"4.76","D":"4.46","correct":"A","explain":"Use the Henderson–Hasselbalch equation: pH = pKa + log([A⁻]/[HA]). Both species are in the same solution so the volume cancels in the ratio — use moles directly. pH = 4.76 + log(0.10/0.30) = 4.76 + log(0.333) = 4.76 + (−0.477) = <b>4.28</b>. The buffer is more acidic than pKa because [HA] > [A⁻] — more acid reservoir than base reservoir. Option B (5.24) arises from inverting the log term: 4.76 + log(0.30/0.10) = 4.76 + 0.477 = 5.24. Option C (4.76) assumes [HA] = [A⁻], which is the 1:1 case. Option D (4.46) corresponds to a 2:1 acid:salt ratio — close but from a different set of amounts."},{"stem":"At the half-equivalence point of a weak acid–strong base titration:","A":"The equivalence point has just been passed","B":"pH = pKa of the weak acid","C":"pH = 7","D":"All of the weak acid has been converted to its conjugate base","correct":"B","explain":"At the half-equivalence point, exactly half the weak acid has been neutralised, so [HA] = [A⁻]. Substituting into Henderson–Hasselbalch: pH = pKa + log([A⁻]/[HA]) = pKa + log(1) = pKa + 0 = <b>pKa</b>. This is the standard experimental method for determining Ka from a titration curve: locate the equivalence point (centre of the vertical section), halve the volume of titrant added, and read pH from the curve at that half-volume. Option C (pH = 7) would only apply at the equivalence point for a strong acid–strong base titration. Option D describes the equivalence point, not the half-equivalence point. (H432/01 June 2024 Examiner Report: marks awarded for candidates who extracted pKa directly from the half-equivalence point on a plotted curve.)"},{"stem":"A weak acid is titrated with sodium hydroxide solution. Which indicator is most suitable?","A":"Methyl orange (pH range 3.1–4.4)","B":"Methyl red (pH range 4.2–6.3)","C":"Bromothymol blue (pH range 6.0–7.6)","D":"Phenolphthalein (pH range 8.3–10.0)","correct":"D","explain":"For a weak acid–strong base titration, the vertical section of the titration curve runs from approximately pH 7 to pH 11. An indicator is only suitable if its <b>entire transition range lies within the vertical section</b>. Phenolphthalein (8.3–10.0) falls inside the jump and gives a sharp, clear end point. Methyl orange (3.1–4.4) changes colour well below the equivalence point — it would give a colour change long before all the weak acid had reacted, producing an inaccurate titre. Methyl red and bromothymol blue also fall at or below the start of the vertical section for a WA–SB titration. Using methyl orange for a WA–SB titration is one of the most frequently penalised indicator errors in A Level Chemistry (H432/01 examiner guidance)."},{"stem":"25.0 cm³ of 0.100 mol dm⁻³ ethanoic acid is titrated with 0.100 mol dm⁻³ sodium hydroxide. At the equivalence point, the pH is:","A":"Exactly 7.00 because equal moles of acid and base have reacted","B":"Below 7.00 because some ethanoic acid remains","C":"Above 7.00 because CH₃COO⁻ is a weak base that partially accepts H⁺ from water","D":"Equal to pKa = 4.76 because the buffer is at its most efficient","correct":"C","explain":"At the equivalence point all the ethanoic acid has been converted to sodium ethanoate (CH₃COONa). The salt is fully ionic — Na⁺ is a spectator ion — but CH₃COO⁻ is the <b>conjugate base of a weak acid</b> and hydrolyses water slightly: CH₃COO⁻ + H₂O ⇌ CH₃COOH + OH⁻. This produces a small excess of OH⁻, so the pH is above 7. The stronger the weak acid (larger Ka), the less alkaline the equivalence point; but for CH₃COOH (Ka = 1.74 × 10⁻⁵), the equivalence pH is approximately 8.9. Option A is only correct for a strong acid–strong base titration (where the salt is neutral). Option D describes the half-equivalence point, not the equivalence point. (H432/01 June 2019: \"vertical section in range pH 5–12 and middle of vertical section above pH 7\" — mark scheme.)"},{"stem":"Calculate the pH of 0.010 mol dm⁻³ Ba(OH)₂(aq) at 298 K.","A":"2.00","B":"12.00","C":"11.70","D":"12.30","correct":"D","explain":"Ba(OH)₂ is a Group 2 hydroxide that fully dissociates: Ba(OH)₂ → Ba²⁺ + 2OH⁻. Each formula unit produces <b>two</b> hydroxide ions, so [OH⁻] = 2 × 0.010 = <b>0.020 mol dm⁻³</b>. [H⁺] = Kw / [OH⁻] = (1.00 × 10⁻¹⁴) / 0.020 = 5.00 × 10⁻¹³ mol dm⁻³. pH = −log(5.00 × 10⁻¹³) = 13 − log 5 = 13 − 0.699 = <b>12.30</b>. Option B (12.00) is the most common error — forgetting to multiply [OH⁻] by 2, treating Ba(OH)₂ as monobasic. Option C (11.70) results from dividing by 2 instead of multiplying. Option A (2.00) mistakes a base for an acid, using −log[0.010] directly. The ×2 factor for Group 2 hydroxides is a routinely penalised omission."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

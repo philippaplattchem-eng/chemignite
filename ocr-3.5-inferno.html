@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.5 Reaction Rates - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.5 &mdash; Reaction Rates</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Distinguish clearly between the effects of (a) increasing temperature and (b) adding a catalyst on the Boltzmann distribution curve. Which feature of the diagram is changed in each case?","A":"Both increasing temperature and adding a catalyst shift the Boltzmann curve to the right and lower the peak","B":"Increasing temperature shifts and broadens the Boltzmann curve (lower, rightward peak; same total area); adding a catalyst leaves the Boltzmann curve completely unchanged and only moves the Ea line to the left","C":"Increasing temperature lowers the Ea line; adding a catalyst shifts the Boltzmann curve","D":"Both effects lower the Ea line without changing the Boltzmann curve","correct":"B","explain":"These are the two most commonly confused changes on a Boltzmann diagram. Temperature controls the kinetic energy distribution: higher T shifts the curve right, broadens it, lowers the peak, and preserves total area. A larger area lies to the right of the unchanged Ea line. A catalyst does not change temperature, so the distribution of molecular energies is identical before and after. Only the activation energy marker (the vertical Ea line) shifts leftward to Ea(cat). Now more of the existing distribution lies beyond Ea(cat), but the curve itself has not changed shape, height, or position. Drawing a new curve for the catalyst effect is a fundamental, mark-losing error."},{"stem":"The rate of a reaction approximately doubles when temperature rises from 298 K to 308 K (a 3.4% increase in absolute temperature). Calculate the approximate increase in collision frequency and explain why this alone cannot account for the doubling.","A":"Collision frequency increases by ~50%; this is more than enough to explain doubling","B":"Collision frequency increases by ~1.7% (since speed ∝ √T, and √(308/298) ≈ 1.017); this 1.7% increase in collision frequency cannot alone explain a 100% increase in rate. The dominant cause is the exponential growth in the fraction of molecules with E ≥ Ea","C":"Collision frequency doubles alongside the rate, confirming it as the main cause","D":"Collision frequency is unchanged by temperature; the rate doubles solely because Ea is lowered","correct":"B","explain":"Average molecular speed is proportional to √T (from kinetic theory). Speed increases by a factor of √(308/298) ≈ 1.017, a 1.7% rise. This gives roughly a 3% increase in collision frequency (since rate ∝ speed ∝ √T approximately). A 3% increase in collision frequency cannot account for a 100% increase in rate. The actual doubling arises because the Boltzmann distribution is exponential in the tail: the area beyond Ea grows very steeply when the distribution shifts even slightly. Temperature does not lower Ea; the fraction above Ea increases because the entire distribution moves to higher energies."},{"stem":"A student evaluates two statements about catalysts and concludes: \"A catalyst speeds up only the forward reaction in an equilibrium, shifting the position of equilibrium toward the products.\" Evaluate this claim.","A":"Correct: catalysts reduce the activation energy for the forward reaction only, which speeds only the forward reaction","B":"Incorrect: a catalyst provides an alternative pathway with a lower activation energy for both the forward and reverse reactions equally, so the equilibrium position is unchanged and only the time to reach equilibrium is reduced","C":"Correct: in industry, catalysts are used specifically to maximise the yield of products by shifting equilibrium","D":"Incorrect: catalysts slow both the forward and reverse reactions equally, so the position is unchanged","correct":"B","explain":"In an equilibrium, the forward and reverse reactions proceed via the same transition state. A catalyst lowers the activation energy of the transition state, which is shared by both directions. Both the forward reaction (A → B) and the reverse reaction (B → A) are accelerated by the same factor. The equilibrium constant (Kc or Kp) is a thermodynamic quantity determined by ΔH and ΔS, not by kinetics: it is unchanged by a catalyst. The only effect is that equilibrium is reached more quickly. Industrial use of catalysts (Haber process, Contact process) is about achieving a commercially useful rate, not shifting equilibrium position."},{"stem":"A reaction has a large activation energy (Ea = 200 kJ mol⁻¹). At room temperature (298 K, average KE ≈ 3.7 kJ mol⁻¹), only an extremely tiny fraction of molecules have E ≥ Ea. Explain why this reaction is effectively zero at room temperature, and how an industrial catalyst addresses this.","A":"The catalyst supplies the missing 200 kJ mol⁻¹ to each molecule, enabling them all to react","B":"The reaction is zero at room temperature because almost no molecules have E ≥ 200 kJ mol⁻¹; an industrial catalyst (e.g. a transition metal surface) provides an alternative pathway with Ea significantly below 200 kJ mol⁻¹, making the fraction of molecules with sufficient energy much larger even at the same temperature","C":"The catalyst raises the temperature locally by 200 kJ mol⁻¹ at active sites, enabling reaction","D":"The catalyst converts endothermic reaction into exothermic, making it proceed spontaneously","correct":"B","explain":"At 298 K, the mean KE of molecules is approximately 3/2 RT ≈ 3.7 kJ mol⁻¹ per mole. For a reaction with Ea = 200 kJ mol⁻¹, the fraction of molecules with E ≥ 200 kJ mol⁻¹ is proportional to e^(−Ea/RT) = e^(−200000/8.314×298) ≈ e^(−80.7), which is astronomically small. The reaction is effectively zero. An industrial catalyst provides a lower-energy route: for example, a metal surface may bring Ea down to 50–80 kJ mol⁻¹, at which point a meaningful fraction of molecules at 298 K (or at the operating temperature) have sufficient energy. The catalyst does not supply energy to molecules; it changes the energy barrier they need to cross."},{"stem":"An unknown reaction X has the following observations: (i) it proceeds faster when [X] is doubled; (ii) it proceeds faster at 40°C than 20°C; (iii) it proceeds faster when a small amount of substance Y is added, and Y is found unchanged in the products. Identify what (i), (ii), and (iii) each tell you about the reaction mechanism and kinetics.","A":"(i) second-order in X; (ii) Ea is very large; (iii) Y is a reactant consumed stoichiometrically","B":"(i) rate depends on [X] (consistent with first-order in X but not proving it); (ii) higher T gives more molecules ≥ Ea, increasing rate; (iii) Y is a catalyst, providing an alternative lower-Ea pathway","C":"(i) concentration has no effect; (ii) rate increase proves Ea = 0; (iii) Y is a product formed in the reaction","D":"(i) doubling [X] halves the rate; (ii) temperature does not affect rate; (iii) Y is a reactant","correct":"B","explain":"(i) Rate increasing when [X] doubles means rate depends on [X]: this is consistent with first-order kinetics (rate ∝ [X]) but does not by itself prove first-order — this would require further experiments at different concentrations. (ii) Rate increasing with temperature is explained by the Boltzmann distribution: higher T shifts the curve right, more molecules have E ≥ Ea, more successful collisions per second, higher rate. (iii) Y increases the rate but is found unchanged in the products: by definition, Y is a catalyst. It provides an alternative pathway with lower Ea, is regenerated during the catalytic cycle, and does not appear in the net equation."},{"stem":"The Haber process operates at 450°C despite the equilibrium yield of NH₃ being higher at lower temperatures. Explain this compromise in terms of both collision theory (rate) and the Boltzmann distribution.","A":"450°C is chosen because the catalyst only functions above this temperature, regardless of equilibrium","B":"At lower temperatures, too few molecules have kinetic energy ≥ Ea (the Fe catalyst lowers Ea but not to zero); the Boltzmann distribution at low T has almost no area to the right of Ea(cat), making the rate unacceptably slow. 450°C balances a sufficient proportion of molecules ≥ Ea(cat) against a still-reasonable equilibrium yield","C":"450°C maximises both the rate and the yield; higher or lower temperatures give both a slower rate and a lower yield","D":"At 450°C, the activation energy for the reverse reaction is higher than for the forward, so only NH₃ forms","correct":"B","explain":"The equilibrium: N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ mol⁻¹. Because the forward reaction is exothermic, Le Chatelier's principle predicts that lower temperatures give higher equilibrium yield of NH₃. However, at low temperatures the Boltzmann distribution has very little area to the right of Ea (even with the Fe catalyst lowering Ea from ~280 to ~160 kJ mol⁻¹): the fraction of molecules capable of reacting is tiny and the rate is uneconomically slow (hours or days to reach equilibrium). At 450°C, the distribution has shifted enough that the rate is commercially acceptable. The equilibrium yield at 450°C is only ~15–25%, but this is recycled. The 450°C compromise gives an acceptable rate at a still-reasonable yield."},{"stem":"Two reactions A and B have the same reactant concentrations and temperature. Reaction A has Ea = 40 kJ mol⁻¹ and reaction B has Ea = 80 kJ mol⁻¹. Predict which is faster and explain using the Boltzmann distribution.","A":"Reaction B is faster, as the higher Ea means more energy is released and more bonds form","B":"Reaction A is faster, as more molecules have kinetic energy ≥ 40 kJ mol⁻¹ than ≥ 80 kJ mol⁻¹, so a greater fraction of collisions are successful per unit time","C":"Both reactions proceed at the same rate, as they have the same concentration and temperature","D":"Reaction B is faster at room temperature but A is faster at high temperature","correct":"B","explain":"At the same temperature, the Boltzmann distribution is identical for both reactions: the same curve, the same distribution of molecular kinetic energies. The only difference is where the Ea line sits on the x-axis. For reaction A, the Ea line at 40 kJ mol⁻¹ is further left (closer to the peak), so a larger area of the curve lies to its right: more molecules have E ≥ 40 kJ mol⁻¹ than have E ≥ 80 kJ mol⁻¹. The fraction of collisions that are successful is therefore higher for A, giving A a faster rate at the same temperature and concentration. This is the direct quantitative link between Ea and rate."},{"stem":"Explain why a catalyst that is effective for one reaction may be ineffective or even counterproductive for a different reaction.","A":"Each reaction has only one possible catalyst, determined by the stoichiometry of the balanced equation","B":"A catalyst works by providing an alternative pathway: it must be able to form specific intermediates with the particular reactants. Different reactions have different reactants and different transition-state geometries, so the catalyst must be chemically and geometrically matched to that specific reaction. A catalyst effective for one substrate may not bind the reactants of a different reaction, or may bind the products too strongly (catalyst poisoning equivalent)","C":"Catalysts only work for exothermic reactions; endothermic reactions require a different mechanism","D":"Each element acts as a catalyst for exactly one reaction in the periodic table","correct":"B","explain":"Catalysis is specific. A heterogeneous catalyst works by adsorbing reactant molecules on active sites on its surface: the electronic structure of the surface must interact favourably with the molecular orbitals of the reactant, and the geometry of the active site must match the shape of the molecule. If reactants bind too weakly, they don't react; if they bind too strongly, they block the surface (analogous to poisoning). This is why vanadium(V) oxide (V₂O₅) catalyses the SO₂ → SO₃ step in the Contact process but is ineffective for the Haber process, which uses iron. The principle of specificity is fundamental to enzyme catalysis in biology and to industrial catalytic processes."},{"stem":"A student adds a homogeneous catalyst to a reaction mixture and observes an increase in rate. She then proposes: \"The catalyst must have formed a new intermediate with a lower enthalpy than the original transition state.\" Evaluate this statement.","A":"Correct: the lower enthalpy of the intermediate is what lowers the activation energy and increases the rate","B":"Partially correct: a catalytic intermediate does form, but the key point is that this intermediate has a lower activation energy (lower Ea for its transition state) compared with the uncatalysed pathway, not necessarily a lower enthalpy than the original transition state","C":"Incorrect: homogeneous catalysts do not form intermediates; they only interact electromagnetically with the reactants","D":"Correct: the student has described the principle of Hess' law applied to catalysis","correct":"B","explain":"A homogeneous catalyst does form intermediates: it reacts with one or more reactants to produce a new species, which then reacts further to give the product and regenerate the catalyst. However, the student's description conflates enthalpy with activation energy. What matters kinetically is the activation energy (the height of the peak on an enthalpy profile), not the enthalpy of the intermediate itself. The catalysed pathway has a lower Ea for the rate-determining step, which means the peak of the enthalpy profile (the transition state, not the intermediate) is lower in energy. The intermediate may or may not have lower enthalpy than the original transition state; what is certain is that the highest energy point along the catalysed pathway is lower than the single peak of the uncatalysed pathway."},{"stem":"A research team tests five metal catalysts for a new industrial synthesis at 200°C and finds that only platinum gives a satisfactory rate. They note that platinum has the same Ea for this reaction as palladium but a different surface geometry. Explain, using collision theory and the concept of orientation, why platinum is more effective than palladium despite the identical Ea.","A":"Platinum has a higher atomic mass, giving each surface atom more kinetic energy and enabling more energetic collisions","B":"Platinum's surface geometry better matches the shape of the reacting molecules, providing the correct orientation for productive collisions more frequently than palladium, even though both surfaces lower Ea by the same amount","C":"Platinum forms stronger bonds with the reactants, permanently holding them in place so they cannot escape before reacting","D":"Platinum atoms transfer electrons more easily than palladium, lowering the ΔH for the reaction","correct":"B","explain":"Successful collisions require both sufficient energy (E ≥ Ea) and correct orientation. If both platinum and palladium give the same Ea, then equal fractions of collisions exceed the energy threshold on both surfaces. The difference must lie in orientation: the geometric arrangement of atoms at the platinum surface provides a better spatial match for the reactant molecules, meaning a higher fraction of the already-energetic encounters occur at the right angle for productive bond-making. A catalyst that lowers Ea but provides few correctly oriented encounters will still be ineffective. Both conditions (energy AND orientation) must be met for a collision to be successful, and surface geometry controls the orientation factor for heterogeneous catalysts."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

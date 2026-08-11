@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.5 Haloalkanes - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>4.5 &mdash; Haloalkanes</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"What is the OCR specification definition of a nucleophile?","A":"A species that accepts a lone pair of electrons to form a new bond","B":"A species with a partial negative charge that attacks positively charged atoms","C":"An electron pair donor — a species that donates a lone pair of electrons to form a new covalent bond with an electron-deficient atom","D":"A species that is negatively charged and attacks carbon atoms","correct":"C","explain":"The definition of a nucleophile has two essential parts: (1) it is an <b>electron pair donor</b>, and (2) it uses a lone pair to form a new covalent bond. The negative charge definition (option D) is incomplete — ammonia (NH₃) and water (H₂O) are nucleophiles yet carry no charge. Option A defines an electrophile (electron pair acceptor), not a nucleophile. Option B confuses the electrostatic description with the electronic definition: what matters is the lone pair donation, not simply the partial charge. On OCR mark schemes, \"electron pair donor\" is the accepted phrase; \"lone pair donor\" is also accepted but \"negative ion\" alone is not."},{"stem":"Four primary haloalkanes are warmed with ethanol and aqueous AgNO₃ at 50 °C. Which order correctly ranks them from fastest to slowest hydrolysis?","A":"1-fluorobutane > 1-chlorobutane > 1-bromobutane > 1-iodobutane","B":"1-iodobutane > 1-bromobutane > 1-chlorobutane > 1-fluorobutane","C":"1-chlorobutane > 1-bromobutane > 1-iodobutane > 1-fluorobutane","D":"1-fluorobutane > 1-iodobutane > 1-bromobutane > 1-chlorobutane","correct":"B","explain":"The rate of hydrolysis is controlled by the C–X bond enthalpy, not by bond polarity. Bond enthalpies decrease down Group 7: C–F (~485 kJ mol⁻¹) > C–Cl (~340 kJ mol⁻¹) > C–Br (~280 kJ mol⁻¹) > C–I (~240 kJ mol⁻¹). The weaker the C–X bond, the lower the activation energy for the rate-determining step (breaking the C–X bond), and the faster the hydrolysis. 1-Iodobutane therefore hydrolyses fastest (weakest bond), 1-fluorobutane slowest (strongest bond — essentially no reaction in normal lesson time). Option A is exactly backwards: it incorrectly ranks C–F as fastest because students assume the most polar bond reacts fastest — this is the classic misconception that the bond-enthalpy argument directly refutes."},{"stem":"In the comparative AgNO₃/ethanol hydrolysis experiment, what colours are the silver halide precipitates for AgCl, AgBr and AgI respectively?","A":"Yellow, cream, white","B":"Cream, white, yellow","C":"White, cream, yellow","D":"White, yellow, cream","correct":"C","explain":"The precipitate colours must be memorised: <b>AgCl is white</b>, <b>AgBr is cream</b> (pale yellow), and <b>AgI is yellow</b>. These colours are the observable endpoints of the comparative rate experiment — since 1-iodobutane hydrolyses fastest, the yellow AgI precipitate appears first; 1-bromobutane gives the cream AgBr precipitate next; 1-chlorobutane gives the white AgCl last. 1-Fluorobutane gives no precipitate at all because AgF is soluble in water (and C–F barely hydrolyses under these conditions). Confusing the colours — especially swapping cream and yellow — is a common error in both MCQ and practical questions."},{"stem":"Which bond in CFC-12 (CCl₂F₂) breaks when it reaches the upper atmosphere?","A":"The C–F bond, because fluorine is more electronegative and attracts UV energy","B":"The C–Cl bond, because it has a lower bond enthalpy than C–F and UV photons have enough energy to cleave it","C":"Both C–Cl and C–F bonds break simultaneously","D":"The C–C bonds of the CFC skeleton fragment first","correct":"B","explain":"CFC-12 contains two types of C–X bond: C–Cl (~339 kJ mol⁻¹) and C–F (~484 kJ mol⁻¹). Stratospheric UV photons have energies corresponding to wavelengths of roughly 200–320 nm, which equates to photon energies of about 370–600 kJ mol⁻¹. UV photons have enough energy to break the C–Cl bond but are not energetic enough under typical stratospheric conditions to cleave the much stronger C–F bond at any appreciable rate. Therefore the C–Cl bond breaks homolytically, releasing a Cl• radical. This is why CFCs containing chlorine deplete the ozone layer — only the Cl atoms are liberated, never the F atoms. If only C–F bonds were present (i.e. in a perfluorocarbon), the molecule would be entirely unreactive towards UV in the atmosphere."},{"stem":"Why is ethanol added to both haloalkane hydrolysis methods (aqueous NaOH and water/AgNO₃)?","A":"Ethanol reacts with the haloalkane to produce an ether, which is the true product","B":"Ethanol acts as a catalyst that lowers the activation energy for C–X bond breaking","C":"Haloalkanes are insoluble in water, so ethanol acts as a co-solvent to dissolve both the haloalkane and the aqueous reagent into a single homogeneous phase","D":"Ethanol is the nucleophile in both reactions; NaOH and AgNO₃ simply adjust the pH","correct":"C","explain":"Haloalkanes are predominantly non-polar organic liquids that are immiscible with water — they form a separate layer and only molecules at the interface can react. Ethanol has both a polar –OH group (which hydrogen-bonds with water) and a small non-polar ethyl group (which dissolves in the organic haloalkane). Adding ethanol creates a single-phase solution in which every haloalkane molecule is exposed to the aqueous reagents, allowing meaningful reaction rates. Ethanol itself is not consumed and does not appear in the equation. It plays exactly the same role — a <b>co-solvent</b> — in both methods. Confusing ethanol as a reagent (option D) is a frequent error: writing \"ethanolic NaOH\" when the question asks for the hydrolysis conditions risks implying an elimination reaction (which requires hot ethanolic KOH and gives an alkene, not an alcohol)."},{"stem":"What is the organic product when 1-bromopropane is heated under reflux with aqueous NaOH?","A":"Propanal (CH₃CH₂CHO)","B":"Propan-1-ol (CH₃CH₂CH₂OH)","C":"Propene (CH₃CH=CH₂)","D":"Propanenitrile (CH₃CH₂CN)","correct":"B","explain":"The hydroxide ion (OH⁻) in aqueous NaOH acts as a nucleophile. It donates a lone pair to the δ⁺ carbon of the C–Br bond in 1-bromopropane, forming a new C–O bond while the bromide leaves as Br⁻. The product is the alcohol <b>propan-1-ol</b>: CH₃CH₂CH₂Br + NaOH → CH₃CH₂CH₂OH + NaBr. The carbon count is preserved (3C in → 3C out). Propene (option C) is the product of <b>elimination</b> using hot <b>ethanolic</b> KOH/NaOH — the key distinction on the OCR specification is aqueous NaOH → alcohol, ethanolic NaOH → alkene. Propanal (option A) is the aldehyde obtained by oxidising propan-1-ol; propanenitrile (option D) would be the product of substitution with CN⁻."},{"stem":"Which of the following species acts as a nucleophile by using a lone pair on carbon?","A":"OH⁻ (hydroxide ion)","B":"NH₃ (ammonia)","C":"H₂O (water)","D":"CN⁻ (cyanide ion)","correct":"D","explain":"In the cyanide ion (CN⁻), the carbon atom carries the formal negative charge and has a lone pair pointing away from the nitrogen. When CN⁻ acts as a nucleophile it attacks through its <b>carbon</b> end — so the first curly arrow in the mechanism must start from the lone pair (or − charge) on <b>carbon</b>, not on nitrogen. This is why the cyanide product is a <b>nitrile</b> (R–C≡N) and why the carbon chain of the haloalkane is extended by <b>one carbon</b>: R–Br + CN⁻ → R–CN + Br⁻. In contrast, OH⁻ attacks through oxygen, NH₃ through nitrogen, and H₂O through oxygen. The carbon-attack distinction is what makes cyanide synthetically useful in chain-extension reactions."},{"stem":"In the mechanism of nucleophilic substitution of a primary haloalkane with OH⁻, which statement correctly describes the second curly arrow?","A":"It starts from the O of OH⁻ and points to the halogen atom","B":"It starts from the middle of the C–X bond and points to the halogen atom","C":"It starts from the C atom and points to the halogen atom, showing the C giving up the halogen","D":"It starts from the halogen and points to the C atom, showing the halogen returning","correct":"B","explain":"The second curly arrow represents the <b>heterolytic fission</b> of the C–X bond. Both bonding electrons of the C–X bond move to the halogen, so the arrow must start from the <b>centre of the C–X bond</b> (the bonding pair) and end on the <b>halogen atom</b>. Starting from the carbon (option C) would imply that carbon is pushing electrons towards the halogen — this is mechanistically wrong and would suggest the carbon acquires a positive charge after the arrow rather than the halogen gaining a negative charge. Starting from the halogen and pointing to carbon (option D) would show the halogen attacking carbon, which is the reverse process. The first arrow (nucleophile attack) and the second arrow (leaving group departure) must be kept distinct."},{"stem":"What properties made CFCs appear safe for widespread industrial use in the mid-twentieth century?","A":"CFCs were highly reactive with water, which decomposed them safely at ground level","B":"CFCs were chemically inert at ground level: non-toxic at normal concentrations, non-flammable, and stable towards air, water and common acids and bases","C":"CFCs had very short atmospheric lifetimes because they were destroyed by sunlight near the Earth's surface","D":"CFCs reacted rapidly with stratospheric oxygen before reaching the ozone layer","correct":"B","explain":"The original case for CFCs — refrigerants (replacing hazardous ammonia and SO₂), aerosol propellants, and foam-blowing agents — rested on their apparent safety: (1) <b>chemically inert</b> at ground level (no reaction with O₂, H₂O, acids, or bases), (2) <b>non-toxic</b> at concentrations encountered in consumer products, (3) <b>non-flammable</b> (unlike hydrocarbon propellants). Their inertness meant they were not removed by rain, soil, or oxidation in the troposphere and had atmospheric lifetimes of 50–100 years — exactly the property that made them dangerous. The apparent safety and the long-term hazard are two faces of the same coin: inertness makes them safe to handle but allows them to accumulate and eventually reach the stratosphere intact."},{"stem":"In the propagation step of ozone depletion by Cl•, what is the role of the chlorine radical?","A":"Cl• is a reactant — it is permanently consumed in the first propagation step","B":"Cl• is a product — it is newly created from CCl₂F₂ in the second step","C":"Cl• is a catalyst — it is consumed in step 1 but regenerated in step 2, enabling it to destroy many ozone molecules","D":"Cl• is a termination agent — it stops the chain reaction by combining with O₃","correct":"C","explain":"In the two propagation steps: Step 1: Cl• + O₃ → ClO• + O₂ (Cl• consumed, ClO• formed); Step 2: ClO• + O₃ → Cl• + 2O₂ (Cl• regenerated). The net result is 2O₃ → 3O₂, and the Cl• appears in neither the reactants nor the products of the overall equation — it is a <b>catalyst</b>. Because Cl• is regenerated each cycle, a single chlorine atom can destroy approximately <b>100,000 ozone molecules</b> before being terminated (e.g. by forming HCl with methane, or ClONO₂ with NO₂). This catalytic amplification is why releasing even small masses of CFCs caused dramatic stratospheric ozone depletion. Termination (option D) describes a different step where radicals are quenched rather than regenerated."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

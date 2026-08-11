@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.3 Carboxylic Acids and Derivatives - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.3 &mdash; Carboxylic Acids and Derivatives</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Which functional group defines a carboxylic acid?","A":"–CHO","B":"–COO–","C":"–COOH","D":"–CO–","correct":"C","explain":"The <b>carboxyl group –COOH</b> (also written –C(=O)OH) is the defining functional group of carboxylic acids: a carbonyl (C=O) and a hydroxyl (O–H) attached to the same carbon. General formula RCOOH. Named by replacing the final \"–e\" of the parent alkane with \"–oic acid\" (e.g. ethane → ethanoic acid). –CHO is the aldehyde functional group. –COO– is the ester linkage (middle part, with no free H). –CO– is the ketone carbonyl."},{"stem":"What is the IUPAC name of the salt formed when ethanoic acid (CH₃COOH) reacts with sodium hydroxide?","A":"Sodium ethanoate","B":"Sodium ethanol","C":"Ethyl hydroxide","D":"Ethanoyl oxide","correct":"A","explain":"Ethanoic acid reacts with NaOH in a neutralisation reaction: CH₃COOH + NaOH → CH₃COONa + H₂O. The salt is named by replacing \"–oic acid\" with \"–oate\" and adding the metal cation name: <b>sodium ethanoate</b> (CH₃COONa). \"Sodium acetate\" is an older trivial name; OCR expects \"sodium ethanoate.\" Sodium ethanol and ethyl hydroxide are not real compounds in this context."},{"stem":"Which gas is produced when a carboxylic acid reacts with sodium carbonate (Na₂CO₃)?","A":"Hydrogen (H₂)","B":"Carbon dioxide (CO₂)","C":"Sulfur dioxide (SO₂)","D":"Oxygen (O₂)","correct":"B","explain":"Carboxylic acids react with carbonates in an acid–base reaction: 2RCOOH + Na₂CO₃ → 2RCOONa + H₂O + <b>CO₂</b>. The CO₂ gas is released as effervescence and turns limewater milky. This reaction is a diagnostic test for the –COOH group: phenols (pKa ≈ 10) and alcohols do not react with Na₂CO₃ because they are weaker acids than carbonic acid. H₂ is produced when carboxylic acids react with reactive metals (e.g. Mg), not with carbonates."},{"stem":"What is the IUPAC name of the ester formed from propanoic acid (CH₃CH₂COOH) and methanol (CH₃OH)?","A":"Methyl ethanoate","B":"Propyl methanoate","C":"Ethyl propanoate","D":"Methyl propanoate","correct":"D","explain":"The name of an ester is always <b>alkyl alkanoate</b> — the alkyl portion comes from the <b>alcohol</b> (methanol → methyl) and the alkanoate portion comes from the <b>acid</b> (propanoic acid → propanoate). Combine: <b>methyl propanoate</b> (CH₃CH₂COOCH₃). The structural formula confirms: CH₃CH₂– (from propanoic acid) bonded through –COO– to –CH₃ (from methanol). A common error is to reverse the naming, giving \"propyl methanoate\" (option B) — always check which O is bonded to which R group."},{"stem":"According to the OCR specification, which reagent converts a carboxylic acid into the corresponding acyl chloride?","A":"SOCl₂ (thionyl chloride)","B":"HCl (hydrochloric acid)","C":"NaCl (sodium chloride)","D":"AlCl₃ (aluminium chloride)","correct":"A","explain":"OCR specifies <b>thionyl chloride (SOCl₂)</b> as the reagent for preparing acyl chlorides from carboxylic acids: RCOOH + SOCl₂ → RCOCl + SO₂ + HCl. The key advantage is that both by-products (SO₂ and HCl) are <b>gases</b>, leaving the acyl chloride as a pure liquid product requiring no aqueous work-up. PCl₃ and PCl₅ are accepted as alternatives in OCR mark schemes (June 2024, November 2020) but SOCl₂ is the spec route and the safest default answer. HCl and NaCl cannot insert Cl into a C=O bond."},{"stem":"What type of organic compound is the product when an acyl chloride reacts with excess ammonia?","A":"An ester","B":"A primary amide","C":"A secondary amide","D":"A carboxylic acid","correct":"B","explain":"R–COCl + 2NH₃ → <b>R–CONH₂</b> + NH₄Cl. The organic product is a <b>primary amide</b> — the nitrogen of the –CONH₂ group carries two H atoms and is bonded to one carbon (the carbonyl carbon). The second equivalent of ammonia acts as a base, neutralising the HCl by-product to form ammonium chloride (dense white fumes). A secondary amide (R–CONHR') would form if a primary <b>amine</b> (rather than ammonia) were used. An ester forms when an alcohol reacts with the acyl chloride. The carboxylic acid would be the product if <b>water</b> were the nucleophile."},{"stem":"What is the name of the reaction between a carboxylic acid and an alcohol to form an ester?","A":"Hydrolysis","B":"Saponification","C":"Esterification","D":"Acylation","correct":"C","explain":"<b>Esterification</b> is the reaction in which a carboxylic acid (or acid derivative) reacts with an alcohol to form an ester (and water or another by-product). Hydrolysis is the reverse — breaking an ester down with water. Saponification specifically refers to alkaline hydrolysis of esters (especially triglycerides to make soaps). Acylation is the transfer of an acyl group (R–CO–) to a nucleophile, which is a broader term that includes esterification but also amide and other formations."},{"stem":"What are the correct conditions for Fischer esterification of a carboxylic acid with an alcohol?","A":"Dilute H₂SO₄ catalyst, room temperature","B":"Concentrated H₂SO₄ catalyst, heat under reflux","C":"Aqueous NaOH, heat under reflux","D":"SOCl₂, room temperature","correct":"B","explain":"Fischer esterification requires: (1) a <b>concentrated H₂SO₄ catalyst</b> — it protonates the carbonyl oxygen, increasing the electrophilicity of the carbonyl carbon, and also acts as a dehydrating agent; (2) <b>heat under reflux</b> — to increase the reaction rate while retaining volatile components. The reaction is reversible (RCOOH + R'OH ⇌ RCOOR' + H₂O, K ≈ 1). Dilute H₂SO₄ is insufficient. NaOH would neutralise the acid rather than catalysing ester formation. SOCl₂ converts a carboxylic acid to an acyl chloride, not directly to an ester."},{"stem":"When an ester undergoes hydrolysis, which type is irreversible?","A":"Acid hydrolysis (hot dilute H₂SO₄)","B":"Alkaline hydrolysis (hot aqueous NaOH)","C":"Both acid and alkaline hydrolysis are reversible","D":"Both acid and alkaline hydrolysis are irreversible","correct":"B","explain":"<b>Alkaline hydrolysis</b> (saponification) is irreversible. OH⁻ is a strong nucleophile that rapidly attacks the carbonyl carbon; the carboxylic acid produced is immediately deprotonated to a carboxylate ion (RCOO⁻) by the alkaline medium. The carboxylate ion is resonance-stabilised and has no electrophilic carbonyl carbon — it cannot re-esterify with the alcohol. <b>Acid hydrolysis</b> is the <b>reverse</b> of Fischer esterification: it operates at the same equilibrium, with both ester hydrolysis and esterification competing; excess water drives the position to the right (Le Chatelier)."},{"stem":"What are the two gaseous by-products formed when a carboxylic acid reacts with thionyl chloride (SOCl₂)?","A":"CO₂ and H₂O","B":"HCl and H₂O","C":"SO₂ and HCl","D":"H₂ and SO₂","correct":"C","explain":"RCOOH + SOCl₂ → RCOCl + <b>SO₂</b> + <b>HCl</b>. Both by-products are gases at room temperature, which is the key advantage of the SOCl₂ route: as they escape, the product (the acyl chloride) is left as a pure liquid with no aqueous work-up needed. Compare with PCl₅ (gives POCl₃ as a liquid by-product, harder to separate) or PCl₃ (gives H₃PO₃, also not a gas). Options (A) and (B) confuse this with ester formation (which involves water) or with carbonyl hydration."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

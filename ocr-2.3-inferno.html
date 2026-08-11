@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.3 Acid-base and Redox Reactions - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>2.3 &mdash; Acid-base and Redox Reactions</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>6 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"The two half-equations for the reaction of iron(II) ions with manganate(VII) in acidic solution are: MnO₄⁻(aq) + 8H⁺(aq) + 5e⁻ → Mn²⁺(aq) + 4H₂O(l) Fe²⁺(aq) → Fe³⁺(aq) + e⁻ Which is the correct overall ionic equation?","A":"MnO₄⁻ + 8H⁺ + Fe²⁺ → Mn²⁺ + 4H₂O + Fe³⁺","B":"MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 4H₂O + 5Fe³⁺","C":"5MnO₄⁻ + 8H⁺ + Fe²⁺ → 5Mn²⁺ + 4H₂O + Fe³⁺","D":"MnO₄⁻ + 5Fe²⁺ → Mn²⁺ + 5Fe³⁺","correct":"B","explain":"MnO₄⁻ gains 5e⁻; Fe²⁺ loses 1e⁻. Multiply the Fe²⁺ half-equation by 5 to balance electron transfer: 5Fe²⁺ → 5Fe³⁺ + 5e⁻. Add to the MnO₄⁻ equation and cancel 5e⁻: MnO₄⁻(aq) + 8H⁺(aq) + 5Fe²⁺(aq) → Mn²⁺(aq) + 4H₂O(l) + 5Fe³⁺(aq). Charge check: LHS = −1 + 8 + 10 = +17; RHS = +2 + 0 + 15 = +17. ✓ Option A uses a 1:1 ratio (electrons not balanced). Option D omits the H⁺ and H₂O essential for balancing oxygen and hydrogen."},{"stem":"A standard solution was prepared by dissolving 1.325 g of anhydrous Na₂CO₃ (Mr = 106.0) and making up to 250.0 cm³. 25.00 cm³ aliquots were titrated against HCl; concordant titres were 19.95 cm³ and 20.05 cm³. The equation is Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂. What is the concentration of the HCl?","A":"0.0625 mol/dm³","B":"0.1000 mol/dm³","C":"0.1250 mol/dm³","D":"0.2500 mol/dm³","correct":"C","explain":"Step 1 — n(Na₂CO₃) = 1.325 ÷ 106.0 = 0.012500 mol; c(Na₂CO₃) = 0.012500 ÷ 0.2500 = 0.05000 mol/dm³. Step 2 — n(Na₂CO₃) in aliquot = 0.05000 × 0.02500 = 1.250 × 10⁻³ mol. Step 3 — n(HCl) = 2 × 1.250 × 10⁻³ = 2.500 × 10⁻³ mol (1:2 stoichiometry). Step 4 — mean titre = (19.95 + 20.05) ÷ 2 = 20.00 cm³ = 0.02000 dm³; c(HCl) = 2.500 × 10⁻³ ÷ 0.02000 = 0.1250 mol/dm³. Distractor A results from omitting the 1:2 stoichiometry. Distractor D results from using 1:1 stoichiometry."},{"stem":"The two half-equations for the reaction of hydrogen peroxide with manganate(VII) in acid are: MnO₄⁻(aq) + 8H⁺(aq) + 5e⁻ → Mn²⁺(aq) + 4H₂O(l) H₂O₂(aq) → O₂(g) + 2H⁺(aq) + 2e⁻ Which is the correct overall ionic equation?","A":"2MnO₄⁻ + 16H⁺ + 5H₂O₂ → 2Mn²⁺ + 8H₂O + 5O₂","B":"2MnO₄⁻ + 6H⁺ + 5H₂O₂ → 2Mn²⁺ + 8H₂O + 5O₂","C":"5MnO₄⁻ + 2H₂O₂ → 5Mn²⁺ + 5O₂ + H₂O","D":"2MnO₄⁻ + 6H⁺ + 5H₂O₂ → 2Mn²⁺ + 3H₂O + 5O₂","correct":"B","explain":"MnO₄⁻ gains 5e⁻; H₂O₂ loses 2e⁻. LCM = 10. Multiply MnO₄⁻ equation by 2 (gains 10e⁻): 2MnO₄⁻ + 16H⁺ + 10e⁻ → 2Mn²⁺ + 8H₂O. Multiply H₂O₂ equation by 5 (loses 10e⁻): 5H₂O₂ → 5O₂ + 10H⁺ + 10e⁻. Add and cancel 10e⁻ and 10H⁺ (16H⁺ consumed − 10H⁺ produced = 6H⁺ net): 2MnO₄⁻(aq) + 6H⁺(aq) + 5H₂O₂(aq) → 2Mn²⁺(aq) + 8H₂O(l) + 5O₂(g). Charge check: 2(−1) + 6(+1) = +4; 2(+2) = +4. ✓ Option A forgets to cancel the 10H⁺ produced by H₂O₂, leaving 16H⁺ instead of 6H⁺."},{"stem":"In the reaction 2Na₂S₂O₃(aq) + I₂(aq) → Na₂S₄O₆(aq) + 2NaI(aq), iodine is reduced. What are the oxidation states of iodine in I₂ and in NaI, respectively?","A":"+1 in I₂; 0 in NaI","B":"0 in I₂; −1 in NaI","C":"0 in I₂; +1 in NaI","D":"−1 in I₂; 0 in NaI","correct":"B","explain":"I₂ is an element in its standard state: oxidation state = 0. In NaI: Na = +1, compound is neutral, so I = −1. The change 0 → −1 is a decrease in oxidation state = reduction. RIG: Reduction Is Gain (of electrons) — each I atom gains one electron to form I⁻. This iodine-thiosulfate reaction is used in back-titrations to determine the concentration of oxidising agents, tested on OCR A Level papers (e.g. H432/02)."},{"stem":"A student titrates ethanoic acid against sodium hydroxide and selects methyl orange as the indicator. Which statement best explains why this will introduce an error?","A":"Methyl orange reacts chemically with ethanoic acid, destroying the indicator before the end point","B":"The equivalence point occurs at pH > 7, but methyl orange changes colour over pH 3.2–4.4, which is in the buffer region — far below the steep part of the curve","C":"Methyl orange is only suitable for strong acid-strong base titrations and cannot be used for any reaction involving a weak acid or weak base","D":"Methyl orange changes colour below pH 7, which is correct since acid-base reactions occur at pH < 7","correct":"B","explain":"CH₃COOH + NaOH is a weak acid-strong base titration. The equivalence point occurs at approximately pH 8.7 (the pH of sodium ethanoate solution). The steep, near-vertical region of the pH curve spans approximately pH 7–11. Methyl orange changes over pH 3.2–4.4, which lies in the buffer region where pH changes only slowly — giving a very gradual, indistinct colour change well before the equivalence point. The student would under-deliver acid. Phenolphthalein (pH 8.2–10) is the correct choice."},{"stem":"A sample of impure iron was dissolved completely in excess HCl(aq), producing only Fe²⁺(aq). The solution was made up to 250.0 cm³. A 25.00 cm³ aliquot required 18.75 cm³ of 0.0200 mol/dm³ KMnO₄(aq) for complete oxidation (MnO₄⁻ : Fe²⁺ = 1 : 5). Calculate the mass of iron in the original sample. (Ar of Fe = 55.8)","A":"0.105 g","B":"0.210 g","C":"1.05 g","D":"5.25 g","correct":"C","explain":"Step 1 — n(KMnO₄) = 0.0200 × 0.01875 = 3.750 × 10⁻⁴ mol. Step 2 — n(Fe²⁺) in aliquot = 5 × 3.750 × 10⁻⁴ = 1.875 × 10⁻³ mol (from 5:1 ratio). Step 3 — n(Fe) in full sample = 1.875 × 10⁻³ × (250.0 ÷ 25.00) = 1.875 × 10⁻² mol. Step 4 — m(Fe) = 1.875 × 10⁻² × 55.8 = 1.05 g. Distractor B (0.210 g) results from omitting the 5:1 stoichiometric ratio. Distractor D (5.25 g) results from forgetting to scale from the 25.00 cm³ aliquot to the full 250.0 cm³ sample. Distractor A makes both errors simultaneously."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

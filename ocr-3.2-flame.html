@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.2 Group 2 - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.2 &mdash; Group 2</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"Calcium reacts with cold water. Which equation is correct?","A":"Ca(s) + H₂O(l) → CaO(s) + H₂(g)","B":"2Ca(s) + O₂(g) → 2CaO(s)","C":"Ca(s) + 2H₂O(l) → Ca(OH)₂(aq) + H₂(g)","D":"Ca(s) + H₂O(l) → CaOH(aq) + ½H₂(g)","correct":"C","explain":"Group 2 metals with water give the metal hydroxide and hydrogen, not the oxide. Ca loses 2 electrons, 2H⁺ from 2H₂O are reduced to H₂, and 2OH⁻ remain in solution as Ca(OH)₂. Ca(OH)₂ is slightly soluble so appears partly as a suspension. Option A gives CaO, which is the product of Mg burning in steam. Option D has the wrong formula (CaOH⁺ does not exist) and is not balanced."},{"stem":"Magnesium burns in excess oxygen. 1.20 g of Mg reacts completely. Calculate the mass of MgO formed. (Ar: Mg = 24.3; Mr: MgO = 40.3)","A":"0.600 g","B":"1.20 g","C":"1.99 g","D":"4.80 g","correct":"C","explain":"2Mg + O₂ → 2MgO gives a 1:1 mole ratio of Mg to MgO. n(Mg) = 1.20 ÷ 24.3 = 0.0494 mol. n(MgO) = 0.0494 mol. m(MgO) = 0.0494 × 40.3 = 1.99 g. Distractor B (1.20 g) wrongly assumes mass of product equals mass of Mg used, ignoring the oxygen atoms added from O₂. The product must be heavier than the original Mg."},{"stem":"Which ionic equation correctly represents calcium oxide reacting with dilute hydrochloric acid?","A":"CaO(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l)","B":"Ca²⁺(aq) + 2Cl⁻(aq) → CaCl₂(s)","C":"CaO(s) + 2H⁺(aq) → Ca²⁺(aq) + H₂O(l)","D":"Ca(OH)₂(aq) + 2H⁺(aq) → Ca²⁺(aq) + 2H₂O(l)","correct":"C","explain":"CaO is insoluble, so it stays as (s). HCl ionises fully and Cl⁻ is a spectator ion that cancels. The O²⁻ in the lattice accepts 2H⁺ to form H₂O. Charge check: 0 + 2(+1) = +2; +2 + 0 = +2. ✓ Option A is the full molecular equation. Option D uses Ca(OH)₂ as the starting material, which is the product of CaO + H₂O, not the reactant here."},{"stem":"In the reaction Mg(s) + H₂SO₄(aq) → MgSO₄(aq) + H₂(g), what is the oxidation state of Mg before and after, and what role does Mg play?","A":"0 to −2, Mg is the oxidising agent","B":"+2 to 0, Mg is the reducing agent","C":"0 to +2, Mg is the oxidising agent","D":"0 to +2, Mg is the reducing agent","correct":"D","explain":"Mg starts as the element (oxidation state 0) and forms Mg²⁺ (oxidation state +2) in MgSO₄. An increase in oxidation state means oxidation. Mg loses 2 electrons, so it is oxidised and is therefore the reducing agent (donates electrons to H⁺). H in H₂SO₄ goes from +1 to 0 in H₂, so H⁺ is reduced and is the oxidising agent."},{"stem":"Write the balanced equation for the thermal decomposition of magnesium carbonate.","A":"MgCO₃(s) → Mg(s) + C(s) + 3O(g)","B":"MgCO₃(s) → MgO(s) + CO₂(g)","C":"2MgCO₃(s) + O₂(g) → 2MgO(s) + 2CO₂(g)","D":"MgCO₃(s) → MgO(s) + CO(g)","correct":"B","explain":"All Group 2 carbonates decompose thermally to the oxide plus CO₂: MCO₃(s) → MO(s) + CO₂(g). This is a simple decomposition, not a combustion, so option C incorrectly adds O₂. CO₂ is produced, not CO (option D). The temperature required increases down the group: MgCO₃ decomposes most easily, BaCO₃ requires the highest temperature, because the larger Ba²⁺ ion stabilises the carbonate lattice more effectively."},{"stem":"Write the balanced equation for strontium reacting with cold water.","A":"Sr(s) + H₂O(l) → SrO(s) + H₂(g)","B":"Sr(s) + 2H₂O(l) → Sr(OH)₂(aq) + H₂(g)","C":"2Sr(s) + 2H₂O(l) → 2SrO(s) + 2H₂(g)","D":"Sr(s) + H₂O(l) → Sr(OH)₂(aq) + H₂(g)","correct":"B","explain":"All Group 2 metals below Mg react with cold water: M(s) + 2H₂O(l) → M(OH)₂(aq/s) + H₂(g). Option A gives SrO, which is the product of burning Sr in oxygen. Option D is unbalanced: one H₂O cannot produce Sr(OH)₂ + H₂ because there are insufficient H and O atoms on the left. Option C also incorrectly gives SrO as the product."},{"stem":"A student adds acidified barium chloride solution to an unknown solution. A white precipitate forms. What does this confirm?","A":"The solution contains Cl⁻ ions","B":"The solution contains Ca²⁺ ions","C":"The solution contains SO₄²⁻ ions","D":"The solution contains CO₃²⁻ ions","correct":"C","explain":"Adding BaCl₂ acidified with dilute HCl tests for sulfate: Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s), a white precipitate insoluble in dilute HCl. The acid is added first to remove carbonate ions, since CO₃²⁻ would also give a white precipitate with Ba²⁺, but BaCO₃ dissolves in HCl whereas BaSO₄ does not. This makes the test specific for SO₄²⁻."},{"stem":"A saturated solution of Ca(OH)₂ has a concentration of 0.0200 mol dm⁻³. What is the pH of this solution at 25°C?","A":"1.70","B":"11.60","C":"12.60","D":"13.00","correct":"C","explain":"Ca(OH)₂ is a strong base that fully dissociates: Ca(OH)₂ → Ca²⁺ + 2OH⁻. Each mole of Ca(OH)₂ releases 2 moles of OH⁻, so [OH⁻] = 2 × 0.0200 = 0.0400 mol dm⁻³. pOH = −log(0.0400) = 1.40. pH = 14 − 1.40 = 12.60. Distractor D (pH 13) would require [OH⁻] = 0.100 mol dm⁻³. The key error students make is forgetting that Ca(OH)₂ releases 2 OH⁻ ions per formula unit."},{"stem":"A saturated Ba(OH)₂ solution has a pH of approximately 13, while a saturated Mg(OH)₂ solution has a pH of approximately 10. Explain the difference.","A":"Ba(OH)₂ is a stronger base, as it releases more OH⁻ per formula unit","B":"Mg²⁺ is acidic and neutralises OH⁻, reducing the pH","C":"Ba(OH)₂ is far more soluble, so its saturated solution has a much higher [OH⁻] than sparingly soluble Mg(OH)₂","D":"Ba(OH)₂ produces H⁺ ions that suppress the alkalinity of the OH⁻","correct":"C","explain":"Both Ba(OH)₂ and Mg(OH)₂ are strong bases that fully dissociate in the fraction that dissolves, both releasing 2 OH⁻ per formula unit. The difference is entirely in how much dissolves. Ba(OH)₂ is freely soluble, giving high [OH⁻] and high pH. Mg(OH)₂ is sparingly soluble, giving very low [OH⁻] and a much lower pH. Option A is incorrect: the 2 OH⁻ per formula unit is the same for both."},{"stem":"Why is BaSO₄ used as an oral contrast agent in X-ray imaging despite barium salts being generally toxic?","A":"BaSO₄ contains no free Ba²⁺ ions, as it is a covalent compound","B":"The SO₄²⁻ ion neutralises the toxicity of Ba²⁺","C":"BaSO₄ is extremely insoluble in water and stomach acid, so no significant Ba²⁺ is released into the body","D":"BaSO₄ is broken down by stomach enzymes into a harmless form of barium","correct":"C","explain":"Toxicity requires absorption, which requires dissolution and ion release. BaSO₄ has Ksp ≈ 1.1 × 10⁻¹⁰ mol² dm⁻⁶ and does not dissolve appreciably even in dilute HCl (stomach acid), so no significant [Ba²⁺] reaches the bloodstream. BaCl₂ and Ba(NO₃)₂ are soluble and release free Ba²⁺, which is highly toxic. This links Group 2 solubility chemistry directly to medicinal use."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

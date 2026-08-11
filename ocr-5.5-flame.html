@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.5 Electrochemistry - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.5 &mdash; Electrochemistry</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"How many electrons are transferred when MnO₄⁻ is reduced to Mn²⁺ in acidic solution?","A":"2","B":"3","C":"5","D":"7","correct":"C","explain":"The half-equation is MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O. Manganese changes from oxidation number +7 (in MnO₄⁻) to +2 (in Mn²⁺), a change of 5 — so 5 electrons are gained. Charge check: left side −1 + 8 − 5 = +2; right side +2 ✓. The 8H⁺ are required to convert the 4 oxygen atoms into 4H₂O. Option D (7) confuses the initial oxidation state of Mn (+7) with the electron count. Option A (2) matches the charge of Mn²⁺ product, a tempting but incorrect shortcut. Knowing that MnO₄⁻ accepts exactly 5 electrons is essential for molar ratio calculations: since Fe²⁺ → Fe³⁺ + e⁻ (1 electron per Fe²⁺), the MnO₄⁻ : Fe²⁺ ratio in titrations is 1 : 5."},{"stem":"How many H⁺ ions are required in the reduction of Cr₂O₇²⁻ to Cr³⁺ in acidic solution?","A":"6","B":"7","C":"12","D":"14","correct":"D","explain":"The half-equation is Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O. There are 7 oxygen atoms in Cr₂O₇²⁻; each becomes part of a water molecule, requiring 7H₂O; each H₂O needs 2H⁺, giving 14H⁺ on the left. Charge check: −2 + 14 − 6 = +6; right side 2 × (+3) = +6 ✓. Each Cr goes from +6 to +3 (change of 3) and with 2 Cr atoms the total electron transfer is 6. Option A (6) confuses the electron count with the H⁺ count. Option B (7) counts the H₂O molecules produced, not the H⁺ needed. Option C (12) is a common partial error from multiplying 6 electrons × 2 rather than counting H atoms correctly. OCR H432/03 June 2023 flagged Cr₂O₇²⁻ half-equations as poorly answered; the reliable method is: balance Cr → balance O with H₂O → balance H with H⁺ → balance charge with e⁻ → verify."},{"stem":"In the titration of iron(II) sulfate with acidified potassium manganate(VII), which acid should be used?","A":"Dilute hydrochloric acid, HCl(aq)","B":"Dilute nitric acid, HNO₃(aq)","C":"Dilute sulfuric acid, H₂SO₄(aq)","D":"Ethanoic acid, CH₃COOH(aq)","correct":"C","explain":"Dilute H₂SO₄ is the correct acid because it provides the H⁺ needed for the half-equation without introducing any species that interfere with the redox chemistry. HCl is unsuitable because Cl⁻ ions can be oxidised by MnO₄⁻ (E°(Cl₂/Cl⁻) = +1.36 V, which is below E°(MnO₄⁻/Mn²⁺) = +1.51 V), introducing a competing reaction and giving erroneously low results. HNO₃ is an oxidising acid that would independently oxidise Fe²⁺ to Fe³⁺ before any MnO₄⁻ is added, consuming the analyte prematurely and giving a falsely small titre. Ethanoic acid is a weak acid that only partially dissociates and would not provide sufficient H⁺ concentration; the half-equation requires 8 mol H⁺ per mol MnO₄⁻ and at inadequate [H⁺] the reaction would be slow or incomplete."},{"stem":"In the iodine–thiosulfate titration, at what point should starch indicator be added?","A":"At the very start of the titration, before any Na₂S₂O₃ is added","B":"When the solution has changed from dark brown/red-brown to pale yellow","C":"When the solution has become completely colourless","D":"When the blue-black colour first appears after adding the starch","correct":"B","explain":"Starch indicator must be added only when the solution has turned pale yellow — indicating that most of the I₂ has already been consumed by Na₂S₂O₃. If starch is added at the start, when I₂ concentration is high, the starch–I₂ complex is so stable that it does not dissociate readily; the blue colour persists well past the true equivalence point and the endpoint is over-titrated. Adding starch at the pale yellow stage means only a very small amount of I₂ remains; the next drop of Na₂S₂O₃ converts this residual I₂ to 2I⁻ and the blue colour disappears sharply (blue-black → colourless), giving a precise, reproducible endpoint. Option C (after the solution is already colourless) is too late — the endpoint has passed. Option D misrepresents the endpoint colour sequence; the blue-black appears on starch addition, then disappears at the endpoint."},{"stem":"Calculate E°cell for a cell built from a Zn²⁺/Zn half-cell (E° = −0.76 V) and a Cu²⁺/Cu half-cell (E° = +0.34 V). Which answer is correct?","A":"−0.42 V","B":"+0.42 V","C":"−1.10 V","D":"+1.10 V","correct":"D","explain":"The Cu²⁺/Cu half-cell is more positive (E° = +0.34 V), so it is the positive electrode (Cu²⁺ is reduced). The Zn²⁺/Zn half-cell is more negative (E° = −0.76 V), so it is the negative electrode (Zn is oxidised). E°cell = E°(positive) − E°(negative) = (+0.34) − (−0.76) = +0.34 + 0.76 = +1.10 V. The trap producing option B (+0.42 V) is computing +0.34 − 0.76 = −0.42 and taking the magnitude, or treating both values as positive and subtracting the smaller. Option C (−1.10 V) results from reversing the subtraction order. A correctly assigned E°cell is always positive; a negative result means the positive and negative electrode labels have been swapped. The overall spontaneous reaction is Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)."},{"stem":"What is the molar ratio of MnO₄⁻ to Fe²⁺ in the overall redox equation for the reaction of acidified manganate(VII) with iron(II) ions?","A":"1 : 1","B":"1 : 3","C":"1 : 5","D":"1 : 6","correct":"C","explain":"The overall equation is: MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O. Each MnO₄⁻ accepts 5 electrons (Mn: +7 → +2), and each Fe²⁺ donates 1 electron (Fe²⁺ → Fe³⁺ + e⁻), so 5 mol Fe²⁺ are needed per mol MnO₄⁻. This 1:5 ratio is essential for titration calculations: n(Fe²⁺) = 5 × n(MnO₄⁻). Option D (1:6) is the ratio for Cr₂O₇²⁻ to Fe²⁺ (Cr₂O₇²⁻ accepts 6 electrons; each Fe²⁺ gives 1) — the most common confusion in this topic, as candidates mix up the two common oxidising agents. Option A (1:1) has no basis in the half-equations. The ratio is determined entirely by matching total electrons lost to total electrons gained."},{"stem":"When excess potassium iodide solution is added to copper(II) sulfate solution, which products are observed?","A":"CuI₂(aq) (blue) and I₂(aq) (brown)","B":"CuI(s) (white precipitate) and I₂(aq) (brown)","C":"Cu(s) (pink solid) and I₂(aq) (brown)","D":"Cu₂O(s) (red solid) and I₂(aq) (brown)","correct":"B","explain":"The equation is 2Cu²⁺(aq) + 4I⁻(aq) → 2CuI(s) + I₂(aq). Copper(I) iodide (CuI) is a white, water-insoluble solid that precipitates immediately. Iodine (I₂) dissolves in the excess KI to give a characteristic dark brown solution. In this reaction Cu²⁺ is reduced to Cu⁺ (not Cu⁰), and I⁻ is oxidised to I₂. Option A is incorrect because CuI₂ is an unstable compound — Cu(II) would spontaneously oxidise I⁻ to I₂, so nominal CuI₂ immediately redox-decomposes to CuI + ½I₂. Option C requires further reduction of Cu⁺ to Cu⁰, which does not occur under these conditions. The white CuI precipitate in the brown I₂ solution can make visual assessment tricky, which is why starch indicator is added at the pale yellow stage to detect the residual I₂ precisely."},{"stem":"What is the endpoint observation in a correctly performed titration of iron(II) sulfate with acidified potassium manganate(VII)?","A":"The solution changes from pale pink to colourless","B":"The solution changes from colourless (or pale green) to the first permanent pale pink colour","C":"The solution changes from purple to dark green as Mn²⁺ and Fe³⁺ accumulate","D":"A white precipitate appears in a clear solution","correct":"B","explain":"KMnO₄ is self-indicating: the purple MnO₄⁻ is reduced to the near-colourless Mn²⁺ during the titration. The Fe²⁺ solution in the conical flask is essentially colourless (pale green at higher concentration), so the flask solution remains colourless throughout the titration as each drop of MnO₄⁻ is immediately decolorised by excess Fe²⁺. The endpoint is the first drop of MnO₄⁻ that is not immediately discharged — a faint but permanent pale pink that persists for at least 30 seconds. When reading the burette with a dark-coloured KMnO₄ solution, the meniscus should be read at the top of the liquid rather than the bottom (there is no visible bottom of the meniscus). Option A reverses the colour transition. Option C (green) arises from confusion with Cr³⁺ produced in dichromate titrations."},{"stem":"A student is explaining why MnO₄⁻ can oxidise Fe²⁺ (E°(MnO₄⁻/Mn²⁺) = +1.51 V; E°(Fe³⁺/Fe²⁺) = +0.77 V). Which answer uses OCR-approved language and gives a complete explanation?","A":"\"The E° of MnO₄⁻/Mn²⁺ is higher than the E° of Fe³⁺/Fe²⁺, so the reaction is feasible.\"","B":"\"The E° of MnO₄⁻/Mn²⁺ (+1.51 V) is more positive than the E° of Fe³⁺/Fe²⁺ (+0.77 V); the MnO₄⁻/Mn²⁺ equilibrium shifts right (MnO₄⁻ is reduced) and Fe³⁺/Fe²⁺ shifts left (Fe²⁺ is oxidised); E°cell = +0.74 V, so the reaction is feasible.\"","C":"\"E°cell = +1.51 − 0.77 = +0.74 V; because E°cell is positive, the reaction is feasible.\"","D":"\"The E° of MnO₄⁻/Mn²⁺ is greater in magnitude, so MnO₄⁻ is the stronger oxidising agent and the reaction proceeds.\"","correct":"B","explain":"OCR mark schemes (H432/01 November 2020 and November 2021 examiner reports) explicitly penalise the words \"higher\" or \"lower\" when comparing E° values; candidates must use \"more positive / less negative.\" For a 3-mark \"Explain, using electrode potentials\" question, the mark scheme requires three elements: (MP1) comparison of E° values with \"more positive/less negative\" language; (MP2) explicit statements about which equilibrium shifts right and which shifts left; (MP3) identification of species oxidised and reduced, and/or E°cell with sign. Option A uses \"higher\" — specifically flagged as insufficient by the November 2021 examiner. Option C correctly calculates E°cell but omits the E° comparison and equilibrium-shift language, so it would typically score only MP3. Option D uses \"greater in magnitude,\" which is ambiguous: −2.00 V has greater magnitude than +1.51 V but is less positive."},{"stem":"A cell is built with a Pt electrode in a solution containing both Fe²⁺(aq) and Fe³⁺(aq), connected via a salt bridge to a Cu²⁺(aq)/Cu(s) half-cell. How should the Fe³⁺/Fe²⁺ half-cell be correctly written in IUPAC cell notation?","A":"Pt(s) | Fe²⁺(aq) | Fe³⁺(aq) — vertical bars between all species","B":"Pt(s) | Fe²⁺(aq), Fe³⁺(aq) — comma between species in the same phase","C":"Fe²⁺(aq) | Fe³⁺(aq) | Pt(s) — Pt electrode placed at the far right","D":"Fe²⁺(aq) ‖ Fe³⁺(aq) | Pt(s) — double bar inside the half-cell","correct":"B","explain":"In IUPAC cell notation, a single vertical bar (|) represents a phase boundary and a double vertical bar (‖) represents the salt bridge between the two half-cells. When two species are in the same phase — as Fe²⁺ and Fe³⁺ are (both dissolved in the same aqueous solution) — they are separated by a comma, not a vertical bar. The correct notation for this half-cell is Pt(s) | Fe²⁺(aq), Fe³⁺(aq), with the reduced form written adjacent to the electrode and the oxidised form adjacent to the salt bridge. Option A incorrectly places a | between Fe²⁺ and Fe³⁺, implying they are in different phases. Option C places the Pt electrode at the wrong end. Option D incorrectly places a ‖ inside the half-cell — the double bar only ever represents the salt bridge between the two separate half-cells."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.9 Analytical Chemistry (A2) - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.9 &mdash; Analytical Chemistry (A2)</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"What is the stationary phase in thin layer chromatography (TLC)?","A":"An organic liquid solvent (such as ethyl acetate/hexane mixture) that moves up the plate.","B":"A thin layer of silica gel (or alumina) coated on a glass, plastic or aluminium backing plate.","C":"An inert carrier gas such as helium or nitrogen.","D":"Cellulose paper with water trapped in its fibres.","correct":"B","explain":"In TLC, the <b>stationary phase</b> is the phase that does not move — a thin coating of <b>silica gel (SiO₂) or alumina (Al₂O₃)</b> bonded to a rigid plate. These materials carry abundant –OH groups on the surface and are strongly polar. The <b>mobile phase</b> (option A) is the organic solvent that flows up the plate by capillary action, carrying the analyte. Option (C) describes the mobile phase in GC (not TLC). Option (D) describes paper chromatography, a related but different technique where water held in cellulose fibres acts as the stationary phase. The silica surface in TLC adsorbs polar molecules strongly (through H-bonding and dipole interactions with –OH groups), slowing their migration and giving them small Rf values."},{"stem":"How is the Rf value calculated in TLC?","A":"Rf = (distance moved by solvent front) ÷ (distance moved by component from baseline)","B":"Rf = (distance moved by component from baseline) ÷ (distance moved by solvent front from baseline)","C":"Rf = (distance from baseline to component) × (distance from baseline to solvent front)","D":"Rf = (total plate height) ÷ (distance moved by component)","correct":"B","explain":"The <b>retention factor Rf</b> is defined as: Rf = (distance moved by the component, measured from the baseline to the centre of the spot) ÷ (distance moved by the solvent front, measured from the baseline to the solvent front line). Rf is <b>dimensionless</b> and always lies between 0 (component did not move) and 1 (component moved with the solvent front). Both distances are measured from the <b>same starting point</b> (the baseline). Option (A) inverts the fraction (giving a value > 1 for most spots). The solvent front position must be marked in pencil <b>immediately</b> when the plate is removed from the developing tank, before the solvent evaporates and the front becomes invisible."},{"stem":"In a gas chromatography (GC) experiment with a non-polar stationary phase, which component of a hydrocarbon mixture elutes first?","A":"The longest-chain hydrocarbon, because it has the highest boiling point and evaporates most readily.","B":"The shortest-chain hydrocarbon, because it has weaker London forces with the non-polar stationary phase and spends less time held in it — it has the shortest retention time.","C":"The most polar hydrocarbon, because it dissolves most readily into the liquid stationary phase.","D":"All components elute simultaneously because the non-polar stationary phase cannot distinguish between non-polar hydrocarbons.","correct":"B","explain":"In GC, the component with the <b>weakest interaction</b> with the stationary phase elutes first (shortest retention time). For a non-polar stationary phase analysing a homologous series of alkanes: the <b>shortest-chain</b> alkane has the fewest electrons → weakest London dispersion forces → least interaction with the non-polar liquid coating → spends more time in the gas mobile phase → passes through the column fastest. Longer-chain hydrocarbons have stronger London forces with the stationary phase, spend more time dissolved in it, and elute later (longer retention time). Boiling point correlates with this trend but the mechanism is the partitioning between the gas phase and the stationary liquid, not simply volatility."},{"stem":"What is the positive result when an aldehyde is warmed with Tollens' reagent (ammoniacal silver nitrate)?","A":"An orange/red precipitate forms immediately at room temperature.","B":"The solution turns green as silver is oxidised to silver oxide.","C":"A shiny silver mirror forms on the inside of the test tube (or a grey/black precipitate of silver).","D":"Effervescence occurs, producing a colourless gas that turns limewater milky.","correct":"C","explain":"Tollens' reagent ([Ag(NH₃)₂]⁺) is a mild oxidising agent. When warmed gently with an <b>aldehyde</b> in a water bath (~60 °C), the aldehyde is oxidised to a carboxylate and Ag⁺ is reduced to elemental silver: RCHO + 2[Ag(NH₃)₂]⁺ + 3OH⁻ → RCOO⁻ + <b>2Ag(s)</b> + 4NH₃ + 2H₂O. If the test tube is clean, a <b>silver mirror</b> deposits on the glass. If the tube is dirty, finely divided silver appears as a grey/black precipitate. Tollens' must be warmed in a <b>water bath</b> (never directly over a flame) — ammoniacal silver mixtures can form shock-sensitive silver nitride or fulminate if concentrated and overheated. Option (A) describes a positive 2,4-DNP result (for any carbonyl). Ketones do <b>not</b> react with Tollens'."},{"stem":"What does a positive result with 2,4-dinitrophenylhydrazine (Brady's reagent) indicate?","A":"The compound contains a carboxylic acid (–COOH) group.","B":"The compound contains a carbonyl group (C=O) — either an aldehyde or a ketone.","C":"The compound contains a C=C double bond (alkene).","D":"The compound contains a primary amine (–NH₂).","correct":"B","explain":"2,4-DNP (Brady's reagent) is selective for the <b>carbonyl group C=O</b> in aldehydes and ketones. The lone pair on the hydrazine nitrogen attacks the carbonyl carbon in a condensation reaction, expelling water and forming a coloured <b>2,4-dinitrophenylhydrazone precipitate</b> (orange, yellow, or red depending on the extent of conjugation in the carbonyl compound). Crucially, 2,4-DNP does <b>not</b> distinguish aldehydes from ketones — both give a positive (precipitate) result. It also does <b>not</b> react with esters, amides, or carboxylic acids (whose carbonyls are too deactivated by adjacent electronegative groups). To distinguish aldehyde from ketone after a positive 2,4-DNP, you need the follow-up test: Tollens' reagent (positive = aldehyde; no reaction = ketone)."},{"stem":"In a proton-decoupled ¹³C NMR spectrum, what does each peak represent?","A":"One proton environment in the molecule.","B":"One unique carbon environment in the molecule.","C":"A pair of carbon atoms, since decoupling combines adjacent carbons into single peaks.","D":"The number of CH groups in the molecule.","correct":"B","explain":"In <b>proton-decoupled ¹³C NMR</b>, the sample is irradiated with a broadband frequency that removes all ¹H–¹³C spin–spin coupling. The result is that <b>every unique carbon environment in the molecule appears as a single sharp singlet peak</b>. Two carbon atoms are in the same environment if they are related by molecular symmetry (e.g. the two CH₃ groups in propan-2-ol are equivalent, giving one peak). Two non-equivalent carbons give two peaks. Therefore the <b>number of peaks = number of unique carbon environments</b>. This is the core rule for OCR ¹³C NMR. Note: peak heights and integrations are NOT meaningful in proton-decoupled ¹³C NMR (unlike ¹H NMR) — do not use them."},{"stem":"What is tetramethylsilane (TMS) used for in NMR spectroscopy?","A":"TMS is used as a deuterated solvent to dissolve the organic sample and prevent the solvent appearing in the spectrum.","B":"TMS is added to the sample as a proton-exchange reagent — it makes O–H and N–H peaks disappear.","C":"TMS is the agreed chemical shift reference standard, defined as δ = 0 ppm; all other chemical shifts are measured relative to it.","D":"TMS amplifies the signal from rare ¹³C nuclei, making the NMR spectrum more intense.","correct":"C","explain":"<b>TMS (tetramethylsilane, Si(CH₃)₄)</b> is the universal NMR reference standard. Its single peak is defined as <b>δ = 0 ppm</b>, and all other chemical shifts are reported relative to it. TMS is ideal because: all 12 of its H atoms (and all 4 C atoms) are equivalent, giving one sharp peak easy to identify; silicon is less electronegative than carbon, so TMS protons are highly shielded and the reference peak sits at the upfield end of the spectrum, clear of nearly all organic signals; it is chemically inert and volatile (easily removed). Option (A) describes <b>CDCl₃</b> (a deuterated solvent). Option (B) describes <b>D₂O</b> (the proton exchange reagent). These three substances have completely different roles — confusing them is the most commonly penalised error in OCR NMR questions (H432/02 June 2023 examiner report)."},{"stem":"A student adds a few drops of D₂O to an NMR sample and re-runs the spectrum. Which peaks disappear, and what does this confirm?","A":"All peaks disappear because D₂O exchanges all the hydrogen atoms.","B":"The peaks from carbon-bonded H atoms (C–H) disappear because D₂O reduces their signal.","C":"The peaks from O–H and N–H protons disappear because those labile protons exchange with deuterium (D), making them NMR-invisible. This confirms which peaks belong to –OH, –COOH, –NH₂, or –NH– groups.","D":"The TMS reference peak disappears because D₂O reacts with silicon.","correct":"C","explain":"The <b>D₂O shake test</b> works because O–H and N–H protons are <b>labile</b> — they can exchange rapidly with solvent: R–OH + D₂O ⇌ R–OD + HOD. Once the –OH proton is replaced by deuterium (D), it is no longer a ¹H nucleus and produces no signal in the ¹H NMR spectrum. The peak from that environment <b>disappears</b>. C–H protons are <b>not labile</b> and do not exchange — they remain in the spectrum. Therefore the peaks that vanish on adding D₂O are the O–H and N–H peaks. This is the OCR-required identification tool for distinguishing –OH and –NH signals from C–H signals — especially important when the O–H peak may be broad and at variable shift."},{"stem":"In ¹H NMR spectroscopy, a proton environment has 3 non-equivalent neighbouring protons on the adjacent carbon. What splitting pattern will it show?","A":"Doublet (2 lines)","B":"Triplet (3 lines)","C":"Quartet (4 lines)","D":"Singlet (1 line)","correct":"C","explain":"The <b>n + 1 rule</b>: a proton split by n non-equivalent neighbouring protons shows (n + 1) lines. With n = 3 neighbouring protons: 3 + 1 = <b>4 lines = quartet</b>. The classic example is the CH₂ group in an ethyl (–CH₂CH₃) system: the CH₂ is adjacent to the CH₃ (n = 3), so it appears as a <b>quartet</b>. The CH₃ in the same group is adjacent to the CH₂ (n = 2) and appears as a <b>triplet</b> (3 lines). This triplet–quartet pair with integration 3:2 is the diagnostic signature of an ethyl group and was specifically cited in the OCR June 2022 examiner report as a well-rehearsed pattern. The relative intensities within a quartet follow Pascal's triangle: 1:3:3:1."},{"stem":"What does the molecular ion peak (M⁺) in a mass spectrum tell you?","A":"The most abundant fragment produced by the compound under electron ionisation.","B":"The relative molecular mass (M_r) of the compound — the m/z value of the peak corresponding to the whole unfragmented molecule.","C":"The number of carbon atoms in the molecule (since each carbon contributes 12 mass units).","D":"The empirical formula of the compound.","correct":"B","explain":"When an organic molecule is ionised in a mass spectrometer (electron ionisation: the molecule loses an electron to form M⁺), the species can either be detected without fragmentation or can break apart into smaller fragments. The <b>molecular ion peak (M⁺)</b> is the signal at the <b>highest m/z value</b> in the spectrum (ignoring small (M+1) isotope peaks from ¹³C). Its m/z value equals the <b>relative molecular mass (M_r)</b> of the compound, because the ¹²C-containing species has mass equal to M_r and carries one positive charge (z = 1). This is the first and most direct piece of information from a mass spectrum: M_r is confirmed in one step. The molecular formula then requires additional information (elemental analysis or the spectrum's fragmentation pattern)."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

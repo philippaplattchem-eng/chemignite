@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.2 Chemical Equilibria - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>5.2 &mdash; Chemical Equilibria</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"For 2SO₂(g) + O₂(g) ⇌ 2SO₃(g), an equilibrium mixture at a total pressure of 4.00 atm has mole fractions x(SO₂) = 0.20, x(O₂) = 0.30, x(SO₃) = 0.50. Calculate *K*p, including correct units.","A":"*K*p = 0.192 atm⁻¹","B":"*K*p = 5.21 atm⁻²","C":"*K*p = 5.21 atm⁻¹","D":"*K*p = 5.21, no units","correct":"C","explain":"Step 1 — partial pressures: p(SO₂) = 0.20 × 4.00 = 0.80 atm; p(O₂) = 0.30 × 4.00 = 1.20 atm; p(SO₃) = 0.50 × 4.00 = 2.00 atm. Check: 0.80 + 1.20 + 2.00 = 4.00 atm ✓. Step 2 — *K*p: p(SO₃)² / (p(SO₂)² × p(O₂)) = (2.00)² / ((0.80)² × 1.20) = 4.00 / (0.64 × 1.20) = 4.00 / 0.768 = <b>5.21 atm⁻¹</b>. Units: Δn_gas = 2 − (2 + 1) = −1 → atm⁻¹. Option A (0.192 atm⁻¹) is the reciprocal — from inverting the *K*p expression. Option B assigns atm⁻² (from Δn = −2, correct for N₂ + 3H₂ ⇌ 2NH₃ but not for this equation). Option D omits units where Δn ≠ 0."},{"stem":"For the equilibrium N₂ + 3H₂ ⇌ 2NH₃, the initial amounts are 1.00 mol N₂ and 3.00 mol H₂ in a 10.0 dm³ container. At equilibrium, 0.20 mol NH₃ has formed. What are the equilibrium concentrations of N₂ and H₂?","A":"\\[N₂\\] = 0.10 mol dm⁻³; \\[H₂\\] = 0.30 mol dm⁻³","B":"\\[N₂\\] = 0.080 mol dm⁻³; \\[H₂\\] = 0.28 mol dm⁻³","C":"\\[N₂\\] = 0.090 mol dm⁻³; \\[H₂\\] = 0.27 mol dm⁻³","D":"\\[N₂\\] = 0.090 mol dm⁻³; \\[H₂\\] = 0.30 mol dm⁻³","correct":"C","explain":"0.20 mol NH₃ formed. Stoichiometry: N₂ : NH₃ = 1 : 2, so N₂ consumed = 0.20/2 = <b>0.10 mol</b>; H₂ : NH₃ = 3 : 2, so H₂ consumed = (3/2) × 0.20 = <b>0.30 mol</b>. Equilibrium amounts: N₂ = 1.00 − 0.10 = 0.90 mol; H₂ = 3.00 − 0.30 = 2.70 mol. Concentrations in 10.0 dm³: [N₂] = 0.90/10.0 = <b>0.090 mol dm⁻³</b>; [H₂] = 2.70/10.0 = <b>0.27 mol dm⁻³</b>. Option A gives the initial concentrations — forgetting to subtract the reacted amounts. Option D correctly calculates [N₂] but forgets to subtract the H₂ consumed. Laying out a full ICE table (H432/03 June 2022 exemplar) prevents these errors."},{"stem":"A student is asked to \"explain, in terms of *K*p, why increasing total pressure shifts the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g) toward NH₃.\" Which answer scores the discriminating marks?","A":"\"Le Chatelier's principle states the system opposes the increased pressure by moving to the side with fewer moles of gas — the NH₃ side (2 moles vs 4 moles), so equilibrium shifts forward.\"","B":"\"Increasing pressure increases the rate of the forward reaction more than the reverse reaction, so more NH₃ is produced.\"","C":"\"Increasing pressure reduces *K*p, so more NH₃ is produced to restore the equilibrium constant.\"","D":"\"Increasing total pressure raises the partial pressures of all gases. The denominator of *K*p (p(N₂) × p(H₂)³) rises more than the numerator (p(NH₃)²) because the denominator contains 4 moles of gas compared to 2 in the numerator, so Q falls below *K*p. The reaction shifts forward, producing more NH₃, which increases the numerator and decreases the denominator until Q = *K*p is restored.\"","correct":"D","explain":"Option D gives the two-stage ratio argument required for discriminating marks in H432/01 June 2018: (1) identify that the denominator grows more than the numerator when pressure increases (4 moles of gas reactant vs 2 moles of gas product), so Q < *K*p; (2) describe how the forward shift restores Q = *K*p without changing *K*p itself. Option A gives only the qualitative Le Chatelier reasoning — typically 1–2 marks out of 4 or 5. Option B is scientifically incorrect — K is unchanged with pressure, meaning the ratio k_f/k_b is unchanged; both rates increase equally. Option C wrongly states that *K*p decreases with pressure — only temperature changes *K*p."},{"stem":"*K*c for the reaction A(g) + B(g) ⇌ 2C(g) is 16.0 (no units) at 400 K and 4.0 (no units) at 500 K. What does this tell you about the enthalpy change of the forward reaction?","A":"ΔH is positive (endothermic) — *K*c increased as temperature rose","B":"ΔH is negative (exothermic) — *K*c decreased as temperature rose","C":"ΔH is positive (endothermic) — *K*c decreased as temperature rose","D":"ΔH cannot be determined from *K*c values alone","correct":"B","explain":"*K*c falls from 16.0 (400 K) to 4.0 (500 K) as temperature increases. A decreasing *K*c means the equilibrium shifts backward with rising T — the backward reaction is being favoured by the added heat, so the backward reaction is endothermic. Therefore the <b>forward reaction is exothermic</b> (ΔH negative). Rule: ΔH negative → raise T → K decreases; ΔH positive → raise T → K increases. Option C is wrong because a decrease in K corresponds to exothermic (not endothermic) forward. Option D is wrong — two K values at two temperatures are sufficient to determine the sign of ΔH, even without the magnitude."},{"stem":"For the equilibrium PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), *K*c = 0.19 mol dm⁻³ at a certain temperature. At a certain moment, \\[PCl₅\\] = 0.50, \\[PCl₃\\] = 0.20, \\[Cl₂\\] = 0.20 mol dm⁻³. Which statement is correct?","A":"Q = 0.080 mol dm⁻³; since Q < *K*c the reaction shifts backward to form more PCl₅","B":"Q = 0.19 mol dm⁻³; the system is at equilibrium, no change occurs","C":"Q = 0.080 mol dm⁻³; since Q < *K*c the reaction shifts forward, producing more PCl₃ and Cl₂","D":"Q = 0.24 mol dm⁻³; since Q > *K*c the reaction shifts backward","correct":"C","explain":"Q = [PCl₃][Cl₂] / [PCl₅] = (0.20 × 0.20) / 0.50 = 0.040 / 0.50 = <b>0.080 mol dm⁻³</b>. Since Q (0.080) < *K*c (0.19), there are too few products relative to the equilibrium ratio. The reaction shifts <b>forward</b> — PCl₅ dissociates further to produce more PCl₃ and Cl₂ — until Q = *K*c is reached. Option A gives the correct Q but the wrong direction (Q < K means forward, not backward — a sign-of-effect error). Option B is factually wrong — Q ≠ *K*c. Option D uses an incorrect Q value."},{"stem":"Which change would cause *K*p to increase for the reaction 2NO(g) + O₂(g) ⇌ 2NO₂(g), given ΔH = −114 kJ mol⁻¹?","A":"Adding more NO gas","B":"Increasing the total pressure","C":"Adding a platinum catalyst","D":"Decreasing the temperature","correct":"D","explain":"Only temperature changes *K*p. The forward reaction is exothermic (ΔH = −114 kJ mol⁻¹). Decreasing temperature means less heat is available; the equilibrium shifts forward (producing more NO₂) to release the heat the system now \"needs\". More products relative to reactants means the products-over-reactants ratio in *K*p grows — <b>K*p increases</b> when T is decreased for an exothermic forward reaction. Options A (concentration change), B (pressure change), and C (catalyst) all leave *K*p unchanged — they shift the equilibrium position but not the constant."},{"stem":"Which pair of statements about the heterogeneous equilibrium CaCO₃(s) ⇌ CaO(s) + CO₂(g) are BOTH correct?","A":"*K*c = [CO₂]; adding more CaCO₃ solid increases [CO₂] at equilibrium","B":"*K*c = [CaO][CO₂] / [CaCO₃]; pure solids cancel only if their amounts are equal","C":"*K*c = [CO₂]; the equilibrium CO₂ concentration is fixed at a given temperature regardless of how much CaCO₃ is present","D":"*K*c = [CO₂]; adding more CaCO₃ shifts the equilibrium forward and increases *K*c","correct":"C","explain":"*K*c = [CO₂] because both CaCO₃ and CaO are pure solids with constant \"concentration\" absorbed into *K*c. At a given temperature, *K*c is fixed — therefore [CO₂] at equilibrium is also fixed, regardless of the quantities of solid. Adding more CaCO₃ does <b>not</b> change [CO₂] because the system was already at equilibrium and *K*c does not change (temperature is unchanged). Option A correctly gives the expression but incorrectly states that adding CaCO₃ raises [CO₂]. Option B wrongly includes solids in the expression. Option D wrongly states that adding CaCO₃ changes *K*c — only temperature does that."},{"stem":"*K*c for N₂O₄(g) ⇌ 2NO₂(g) is 0.133 mol dm⁻³ at 298 K and 4.50 mol dm⁻³ at 400 K. What can be deduced about the enthalpy change of the forward reaction, and what is observed visually?","A":"Forward reaction is exothermic; the gas mixture becomes paler at 400 K","B":"Forward reaction is endothermic; the gas mixture becomes darker at 400 K","C":"Forward reaction is endothermic; the gas mixture becomes paler at 400 K","D":"Forward reaction is exothermic; the gas mixture becomes darker at 400 K","correct":"B","explain":"*K*c rises from 0.133 (298 K) to 4.50 (400 K) as temperature increases. An <b>increasing K with rising T</b> is the signature of an <b>endothermic</b> forward reaction — the system absorbs heat to shift equilibrium forward, producing more NO₂. More NO₂ at equilibrium is observable: NO₂ is deep brown/reddish-brown gas, so the mixture darkens. N₂O₄ is colourless. Heating drives N₂O₄ → 2NO₂ (the endothermic direction), producing more brown gas → darker mixture. Option A (exothermic, paler) contradicts both the K trend and the colour change. Option C (endothermic, paler) gets the ΔH correct but reverses the colour change."},{"stem":"A student writes the *K*c expression for A(g) + 2B(g) ⇌ C(g) as *K*c = \\[A\\]\\[B\\]² / \\[C\\] instead of \\[C\\] / (\\[A\\]\\[B\\]²). At equilibrium, \\[A\\] = 0.50, \\[B\\] = 0.40, \\[C\\] = 0.20 mol dm⁻³. What is the correct *K*c, and what ECF value does the examiner calculate from the student's inverted expression?","A":"Correct *K*c = 2.5 mol⁻² dm⁶; student's ECF value = 2.5 mol² dm⁻⁶ (correct number, wrong units)","B":"Correct *K*c = 2.5 mol⁻² dm⁶; student's ECF value = 0.40 mol² dm⁻⁶","C":"Correct *K*c = 0.40 mol² dm⁻⁶; student's ECF value = 2.5 mol⁻² dm⁶","D":"Correct *K*c = 2.5 mol⁻² dm⁶; ECF is not allowed for an inverted expression","correct":"B","explain":"Correct *K*c = [C] / ([A][B]²) = 0.20 / (0.50 × (0.40)²) = 0.20 / (0.50 × 0.16) = 0.20 / 0.080 = <b>2.5 mol⁻² dm⁶</b>. Units: (mol dm⁻³) / ((mol dm⁻³)(mol dm⁻³)²) = mol⁻² dm⁶ (Δn = 1 − 3 = −2). Student's inverted expression: [A][B]² / [C] = 0.080 / 0.20 = <b>0.40 mol² dm⁻⁶</b> (the reciprocal, with inverted units). Per H432/01 June 2017: if a candidate writes the *K*c expression upside down, ECF is allowed — the answer is the reciprocal of the correct *K*c and the units are inverted. The original-expression mark is lost, but the substitution and units marks are recoverable by ECF."},{"stem":"A catalyst is added to a reaction flask containing an equilibrium mixture of A(g) + B(g) ⇌ 2C(g). The flask is sealed at constant temperature. Which statement correctly describes what happens over time?","A":"The position of equilibrium shifts forward; *K*p increases; equilibrium is re-established at a new position","B":"The position of equilibrium shifts forward; *K*p is unchanged; but the shift is slight and temporary","C":"No shift in the equilibrium position occurs; *K*p is unchanged; the system remains at equilibrium","D":"No shift in the equilibrium position occurs; *K*p increases because the forward rate constant has increased","correct":"C","explain":"A catalyst lowers the activation energy of both forward and reverse reactions by exactly the same amount. Both k_f and k_b increase proportionally, so *K* = k_f/k_b is unchanged. Since the system was <b>already at equilibrium</b> when the catalyst was added (Q = *K*p before addition), adding the catalyst does not disturb the ratio Q/*K*p — both remain equal. No net shift occurs and *K*p does not change. The catalyst would only accelerate the approach to equilibrium if the system started from a non-equilibrium state. Option D is wrong because k_f and k_b both increase equally — their ratio *K* is unchanged."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.1 Physical Chemistry Practicals &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>1.1 &mdash; Physical Chemistry Practicals</h1>
+  <span class="tier-badge mcq">MCQ Practice</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>15 questions</span>
+    <span>Practical skills MCQ practice</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"A gas occupies 350 cm³ at 120 kPa and 30 °C. A student converts the volume to 350 × 10⁻³ before substituting into pV = nRT. What error has been made? A. The temperature has not been converted from °C to K B. The volume has been converted to dm³ instead of m³; 350 cm³ must be multiplied by 10⁻⁶ to give m³, not 10⁻³ C. The pressure has not been converted from kPa to Pa D. No error — dm³ is the correct SI unit of volume for this equation","A":"","B":"","C":"","D":"","correct":"","explain":"pV = nRT requires SI units throughout: p in Pa, V in m³, T in K. Converting cm³ to m³ requires multiplying by 10⁻⁶; multiplying by 10⁻³ gives dm³, making V 1000 times too large and the calculated n 1000 times too large. The H032/01 November 2020 Examiner Report identified this specific cm³ → m³ conversion error as the most frequently lost mark on mole-determination questions."},{"stem":"At which conditions is the shortcut n = V / 24.0 dm³ mol⁻¹ valid for a gas? A. Any temperature, provided pressure is 101 kPa B. Any pressure, provided temperature is 20 °C C. Room temperature and pressure only — 20 °C (293 K) and 101 kPa D. Standard temperature and pressure — 0 °C and 100 kPa","A":"","B":"","C":"","D":"","correct":"","explain":"The molar gas volume of 24.0 dm³ mol⁻¹ applies only at RTP (room temperature and pressure: 20 °C, 101 kPa). At any other temperature or pressure the molar volume changes and the full ideal gas equation pV = nRT must be used. Using 24.0 at 0 °C (where Vm ≈ 22.4 dm³ mol⁻¹) or at elevated pressure gives a significantly wrong answer."},{"stem":"A student records a burette reading as 24.8 cm³. What is wrong with this record? A. The initial reading should never be zero B. Burette readings must be recorded to two decimal places ending in .00 or .05 (e.g. 24.80 cm³), reflecting the half-graduation resolution of ±0.05 cm³ C. The titre is too large — accurate work requires volumes below 20 cm³ D. Nothing — 24.8 cm³ is correctly recorded","A":"","B":"","C":"","D":"","correct":"","explain":"A 50 cm³ burette is graduated every 0.10 cm³ and read to the nearest half-graduation, so every reading ends in .00 or .05 and carries two decimal places (e.g. 24.80, not 24.8). Recording to one decimal place was flagged in the H432/01 June 2022 Examiner Report as a discriminator between high-attaining and weaker responses, and was also highlighted in H432/01 June 2018."},{"stem":"Four titration results are recorded: Rough 24.80 cm³, Run 1: 23.30 cm³, Run 2: 23.25 cm³, Run 3: 23.20 cm³. Which titres should be averaged? A. All four, including the rough titre B. Runs 1, 2 and 3 — all three accurate results C. Runs 2 and 3 only — they differ by 0.05 cm³ and are the closest concordant pair D. Run 3 only — always use the single smallest value","A":"","B":"","C":"","D":"","correct":"","explain":"Concordant titres agree within ±0.10 cm³. The rough titre is always excluded. Runs 2 and 3 (23.25 and 23.20 cm³) differ by only 0.05 cm³ — the closest concordant pair — and give the most precise mean. Including Run 1 (23.30 cm³) inflates the mean. The H432/03 June 2018 Examiner Report specifically flagged \"taking the mean of all three titres instead of the concordant pair\" as a key mark-losing error."},{"stem":"Why must the burette be rinsed with the titrant solution before filling, rather than with distilled water? A. To sterilise the burette before use B. To warm the titrant to room temperature C. Residual water on the inner walls would dilute the first portions of titrant delivered, lowering its effective concentration and inflating the recorded titre D. To remove air bubbles trapped in the burette tip","A":"","B":"","C":"","D":"","correct":"","explain":"If the burette is rinsed only with distilled water, the dilute film on the inner surface lowers the concentration of the first aliquots of titrant delivered. More volume is then required to neutralise the same moles of analyte, giving a titre that is too large — a systematic positive error. Rinsing with titrant ensures the inner walls carry the same concentration as the bulk solution before filling begins."},{"stem":"A 250 cm³ volumetric flask contains a standard sodium carbonate solution. A 25.0 cm³ aliquot is titrated against 0.100 mol dm⁻³ HCl; the mean concordant titre is 22.50 cm³. The equation is Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂. What is the mass of Na₂CO₃ (Mr = 106.0) in the 250 cm³ flask? A. 0.119 g (scale-up step omitted) B. 2.39 g (1:1 stoichiometry used instead of 1:2) C. 1.19 g D. 11.9 g (volume not converted from cm³ to dm³)","A":"","B":"","C":"","D":"","correct":"","explain":"n(HCl) = 0.100 × (22.50/1000) = 2.25 × 10⁻³ mol. Using the 1:2 ratio, n(Na₂CO₃) in the 25.0 cm³ aliquot = 1.125 × 10⁻³ mol. Scale up ×10 (= 250/25): n in flask = 1.125 × 10⁻² mol. Mass = 1.125 × 10⁻² × 106.0 = 1.19 g. Failing to scale up (H432/03 June 2018: \"not scaling to 250 cm³\") and ignoring the 1:2 ratio are the two most flagged errors on this type of question."},{"stem":"Which indicator is appropriate for titrating ethanoic acid (weak acid) with sodium hydroxide (strong base)? A. Methyl orange (pH range 3.1–4.4) B. Phenolphthalein (pH range 8.3–10.0) C. Universal indicator D. Either — both give an equally sharp end point for any acid–base combination","A":"","B":"","C":"","D":"","correct":"","explain":"For a weak acid–strong base titration, the equivalence point lies above pH 7 (the sodium ethanoate salt hydrolyses to give an alkaline solution) and the vertical section of the curve spans approximately pH 7–11. Phenolphthalein (8.3–10.0) lies within this steep region and gives a sharp colour change. Methyl orange (3.1–4.4) changes colour during the early buffering region, far before the equivalence point, and gives a grossly incorrect titre for this combination."},{"stem":"In an enthalpy of neutralisation experiment, 50.0 cm³ of 1.00 mol dm⁻³ HCl is added to 50.0 cm³ of 1.00 mol dm⁻³ NaOH. The temperature rises by 6.7 °C. Which mass should be used for m in q = mcΔT (assuming density = 1.00 g cm⁻³)? A. 50.0 g — the mass of the HCl solution only B. 50.0 g — the mass of the NaOH solution only C. 100.0 g — the total mass of the combined solution whose temperature is changing D. The mass of the polystyrene cup, because that is what heats up","A":"","B":"","C":"","D":"","correct":"","explain":"In q = mcΔT, m is the mass of the substance whose temperature is being measured — the combined aqueous mixture in the calorimeter. Both solutions contribute: 50.0 + 50.0 = 100.0 cm³ × 1.00 g cm⁻³ = 100.0 g. Using only 50.0 g halves the calculated q and doubles the apparent ΔH magnitude. The H432/03 June 2022 Examiner Report flagged using only the solid or only one solution mass as a major and recurring error."},{"stem":"A student measures ΔH for a combustion reaction and obtains a value less exothermic than the literature value. Which explanation is most consistent with this result? A. The fuel was allowed to burn for too long, using up more moles than expected B. Heat was lost to the surroundings during the experiment, making the measured ΔT — and therefore q — smaller than the true value C. The moles of fuel were calculated using too large a value of molar mass D. Temperature was recorded in °C instead of K","A":"","B":"","C":"","D":"","correct":"","explain":"ΔH = −q/n; if heat escapes to the surroundings the measured ΔT is lower than the true temperature rise, so q is underestimated and |ΔH| is too small (less exothermic than reality). Heat loss is the dominant systematic error in open-calorimeter experiments. Option D is wrong because °C and K are identical for temperature differences, so the temperature rise in °C equals the rise in K."},{"stem":"Using standard enthalpies of combustion, the formula for ΔH°reaction is: A. ΔH°r = Σ ΔH°c(products) − Σ ΔH°c(reactants) B. ΔH°r = Σ ΔH°c(reactants) − Σ ΔH°c(products) C. ΔH°r = Σ ΔH°f(products) − Σ ΔH°f(reactants), using combustion data D. ΔH°r = Σ ΔH°f(reactants) − Σ ΔH°f(products)","A":"","B":"","C":"","D":"","correct":"","explain":"In a combustion-data Hess cycle, both reactants and products are routed downwards to CO₂(g) + H₂O(l). The arrows for the reactants run forward (their combustion ΔH values enter with their normal signs), while the products' arrow runs in reverse (so those values are subtracted). This gives ΔH°r = Σ ΔH°c(reactants) − Σ ΔH°c(products) — the reverse of the formation-data formula. Confusing the two conventions is one of the most penalised errors in Hess cycle questions."},{"stem":"The absolute uncertainty on a single 50 cm³ burette reading is ±0.05 cm³. What is the percentage uncertainty in a mean titre of 24.60 cm³? A. 0.20% B. 0.10% C. 0.41% D. 0.05%","A":"","B":"","C":"","D":"","correct":"","explain":"A titre = final reading − initial reading; each reading carries ±0.05 cm³, so the combined absolute uncertainty in the titre is ±0.10 cm³ (uncertainties add for a difference). Percentage uncertainty = (0.10 / 24.60) × 100 = 0.41%. Option A (0.20%) is the percentage uncertainty on a single reading; option B (0.10%) confuses the absolute and percentage values. Smaller titres give larger percentage uncertainties for the same absolute error."},{"stem":"A student forgets to convert the titre from cm³ to dm³ when calculating n(HCl) = c × V, using V = 23.60 (not 0.02360) with c = 0.100 mol dm⁻³. What erroneous answer do they obtain? A. 2.36 × 10⁻³ mol (correct answer) B. 2.36 mol (1000 times too large) C. 2.36 × 10⁻⁶ mol (1000 times too small) D. 0.236 mol (10 times too large)","A":"","B":"","C":"","D":"","correct":"","explain":"n = cV requires V in dm³. Correctly: n = 0.100 × 0.02360 = 2.36 × 10⁻³ mol. Entering 23.60 without converting gives n = 0.100 × 23.60 = 2.36 mol — a factor of 1000 too large. This is one of the highest-frequency arithmetic errors across all OCR chemistry papers: the volume must be divided by 1000 to convert cm³ to dm³ before substitution."},{"stem":"Which apparatus is most appropriate for delivering a precise, repeatable 25.00 cm³ volume of analyte into a conical flask for each titration run? A. A 50 cm³ measuring cylinder (±1 cm³) B. A 50 cm³ burette (used to deliver the variable titre) C. A 25 cm³ volumetric pipette (±0.05 cm³) D. A 100 cm³ graduated syringe (±1 cm³)","A":"","B":"","C":"","D":"","correct":"","explain":"A volumetric pipette is calibrated to deliver one precise, fixed volume — typically 25.00 cm³ to ±0.05 cm³. A burette delivers a variable volume (the titre being measured) and belongs on the other side of the titration. A measuring cylinder is far too imprecise (±1 cm³) for quantitative work. The pipette is rinsed with the analyte solution before use to prevent dilution."},{"stem":"Using standard enthalpies of formation, the formula for ΔH°reaction is: A. ΔH°r = Σ ΔH°f(reactants) − Σ ΔH°f(products) B. ΔH°r = Σ ΔH°f(products) − Σ ΔH°f(reactants) C. ΔH°r = Σ ΔH°c(reactants) − Σ ΔH°c(products), using formation data D. ΔH°r = Σ ΔH°f(products) + Σ ΔH°f(reactants)","A":"","B":"","C":"","D":"","correct":"","explain":"In a formation-data Hess cycle, elements (in standard states) are routed upwards to products (going forward) and upwards to reactants (going in reverse). The net result is ΔH°r = Σ ΔH°f(products) − Σ ΔH°f(reactants). This is the reverse of the combustion formula. Memorising one rule and applying it to both data types is the root of many sign errors in extended Hess cycle questions."},{"stem":"When preparing a standard solution, why must the transfer of dissolved solid from the beaker to the volumetric flask be quantitative (rinsing the beaker and stirring rod into the flask several times)? A. To speed up the dissolving process in the volumetric flask B. Any solid or dissolved solute left in the beaker reduces the actual moles in the flask below the intended value, making the standard solution less concentrated than calculated C. To prevent CO₂ from dissolving into the solution during transfer D. To cool the solution to 20 °C before making up to the graduation mark","A":"","B":"","C":"","D":"","correct":"","explain":"The moles in the volumetric flask are calculated from the mass weighed out. If any solute remains in the beaker or on the stirring rod, the actual moles in the flask are less than the calculated figure, and the true concentration is lower than the prepared concentration. All subsequent titrations using this standard solution will give results that are systematically lower than expected. Quantitative transfer — typically three or more rinses — ensures the weighed mass accurately represents what is in the flask."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

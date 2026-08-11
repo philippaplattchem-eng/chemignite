@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.3 Carboxylic Acids and Derivatives - inferno &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.3 &mdash; Carboxylic Acids and Derivatives</h1>
+  <span class="tier-badge inferno">&#x1F525;&#x1F525;&#x1F525; Inferno</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Inferno &mdash; Multi-step &amp; analyse</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"An OCR cross-paper examiner comment (June 2017) about hydrogen-bonding diagrams stated: \"Responses often omitted dipoles and lone pairs when depicting hydrogen bonding.\" Which specific error does this identify?","A":"Drawing the hydrogen bond with a solid line rather than a dashed line","B":"Drawing two lone pairs on the acceptor oxygen as dots","C":"Writing \"H-bond\" as a label on the diagram","D":"Omitting the δ⁺ and δ⁻ partial charges from the donor H and acceptor O","correct":"D","explain":"The June 2017 cross-paper examiner comment specifically identified the omission of <b>partial charges (δ⁺ on the donor H; δ⁻ on the acceptor O)</b> and lone pairs as the most common errors. For full marks on a hydrogen-bond diagram: (i) the H-bond must be a <b>dashed line</b> (solid = covalent bond — option A describes a real error, but it was not the one specifically flagged by OCR in 2017); (ii) δ⁺ on the H donor and δ⁻ on the acceptor O must both be shown; (iii) lone pairs must be shown explicitly on the acceptor O; (iv) the dashed line must start at a lone pair on the acceptor O and end at the δ⁺ H. The safe strategy: include <b>all</b> of these every time."},{"stem":"Why is alkaline hydrolysis of an ester irreversible, whereas acid hydrolysis is reversible?","A":"NaOH is a stronger reagent than dilute H₂SO₄, so the forward reaction is too fast to reverse.","B":"In alkaline conditions, the carboxylic acid product is immediately deprotonated to give the carboxylate ion (RCOO⁻); resonance-stabilisation means the carboxylate has no electrophilic carbonyl carbon for the alcohol to attack, removing the reverse pathway entirely.","C":"The alcohol product of alkaline hydrolysis is instantly deprotonated to an alkoxide, preventing it from being available for the reverse reaction.","D":"The ester C–O bond is permanently broken by OH⁻ and cannot reform under any conditions of temperature or pH.","correct":"B","explain":"In acid hydrolysis, the carboxylic acid (RCOOH) product retains its electrophilic carbonyl carbon — the alcohol can attack it in the reverse reaction, regenerating the ester. The system is in equilibrium. In alkaline hydrolysis, the RCOOH is immediately deprotonated by the alkaline medium: RCOOH + OH⁻ → RCOO⁻ + H₂O. The carboxylate ion (RCOO⁻) has the negative charge <b>delocalised over both oxygens</b> via resonance — neither oxygen has an electrophilic carbon centre. The alcohol therefore has nothing to attack; no reverse reaction is possible. Le Chatelier aside, the thermodynamic driving force (formation of a stable carboxylate) makes the reaction go to completion. To recover the free acid, the carboxylate must be acidified with dilute strong acid."},{"stem":"25.0 cm³ of 0.200 mol dm⁻³ ethanoic acid is added to excess Na₂CO₃. Using a molar volume of 24.0 dm³ mol⁻¹ at RTP, what volume of CO₂ (in cm³) is produced?","A":"30.0 cm³","B":"60.0 cm³","C":"120 cm³","D":"2.50 cm³","correct":"B","explain":"n(CH₃COOH) = 0.200 × 0.0250 = <b>5.00 × 10⁻³ mol</b>. Balanced equation: 2CH₃COOH + Na₂CO₃ → 2CH₃COONa + H₂O + CO₂ — <b>2:1</b> ratio of acid to CO₂. n(CO₂) = 5.00 × 10⁻³ / 2 = <b>2.50 × 10⁻³ mol</b>. V(CO₂) = 2.50 × 10⁻³ × 24.0 dm³ mol⁻¹ = 0.0600 dm³ = <b>60.0 cm³</b> (× 1000 to convert dm³ to cm³). Trap (C): using a 1:1 ratio gives n(CO₂) = 5.00 × 10⁻³ mol → V = 120 cm³ — the most common error. Trap (A): halving the answer a second time gives 30.0 cm³. Trap (D): using 1.0 dm³ mol⁻¹ instead of 24.0 dm³ mol⁻¹ as the molar volume."},{"stem":"Aspirin (2-(ethanoyloxy)benzoic acid) is synthesised by reacting 2-hydroxybenzoic acid with ethanoic anhydride. What is the organic by-product of this synthesis?","A":"Ethanol","B":"Ethanoic acid","C":"Water","D":"Ethanoyl chloride","correct":"B","explain":"(CH₃CO)₂O + 2-(HO)C₆H₄COOH → 2-(CH₃COO)C₆H₄COOH + <b>CH₃COOH</b>. In acid anhydride esterification, the acyl group (CH₃CO–) is transferred to the nucleophilic oxygen, and the leaving group is the carboxylate portion of the anhydride — which picks up H⁺ from the phenolic –OH to give <b>ethanoic acid</b> as the co-product. Option (C) is wrong: water would be produced in Fischer esterification (carboxylic acid + alcohol route), not from an anhydride. Option (A) and (D) have no role in this reaction. The ethanoic acid by-product is why ethanoic anhydride is preferred over ethanoyl chloride for aspirin synthesis — ethanoic acid is safer and less corrosive than HCl."},{"stem":"PCl₃ is an alternative reagent for converting a carboxylic acid to an acyl chloride. How many moles of propanoic acid (CH₃CH₂COOH) react with 0.10 mol of PCl₃, and what is the balanced equation?","A":"0.10 mol; CH₃CH₂COOH + PCl₃ → CH₃CH₂COCl + HPCl₂O","B":"0.30 mol; 3CH₃CH₂COOH + PCl₃ → 3CH₃CH₂COCl + H₃PO₃","C":"0.10 mol; CH₃CH₂COOH + PCl₃ → CH₃CH₂COCl + POCl₂ + H₂","D":"0.20 mol; 2CH₃CH₂COOH + PCl₃ → 2CH₃CH₂COCl + H₂PO₂ + HCl","correct":"B","explain":"PCl₃ reacts with carboxylic acids in a <b>3:1 ratio</b> (3 RCOOH per 1 PCl₃), because each PCl₃ molecule supplies three chlorine atoms, converting three –COOH groups: <b>3CH₃CH₂COOH + PCl₃ → 3CH₃CH₂COCl + H₃PO₃</b>. So 0.10 mol PCl₃ reacts with <b>0.30 mol</b> propanoic acid. Compare with SOCl₂ and PCl₅, which each transfer only one Cl per formula unit (1:1 ratio). OCR November 2020 examiner report specifically noted that candidates must handle this stoichiometry correctly when PCl₃ is chosen. Option (A) has wrong stoichiometry and wrong by-product."},{"stem":"In Fischer esterification (RCOOH + R'OH ⇌ RCOOR' + H₂O), the equilibrium constant Kc is approximately 1 for many simple esters. Which strategies correctly apply Le Chatelier's principle to improve the yield of ester?","A":"Use a stronger acid catalyst to shift Kc to a higher value at the same temperature.","B":"Cool the reaction mixture to prevent the ester hydrolysing back to starting materials.","C":"Use a large excess of one starting material (usually the cheaper reagent) and/or remove water as it forms by distillation or dehydrating agent (concentrated H₂SO₄).","D":"Increase the pressure to compress the equilibrium towards fewer moles of gas on the product side.","correct":"C","explain":"Kc ≈ 1 means the equilibrium position is close to 50:50 starting materials/products with equimolar reagents. Le Chatelier strategies to shift the equilibrium right: (1) <b>Excess of one reagent</b> (e.g. using excess alcohol if acid is expensive) increases the mole fraction of the other reagent and pushes conversion higher; (2) <b>Removal of water</b> (by distillation of the volatile ester, or by use of concentrated H₂SO₄ as a dehydrating agent) removes a product, shifting equilibrium right per Le Chatelier's principle. Option (A) is wrong: a catalyst does <b>not</b> change Kc or the equilibrium position — it only speeds up the attainment of equilibrium. Option (B) is impractical and unhelpful — cooling slows both forward and reverse reactions without changing the equilibrium position. Option (D) is irrelevant: all species in this esterification are liquids or dissolved, so pressure has negligible effect."},{"stem":"An ester is hydrolysed using hot aqueous NaOH and gives two products: sodium butanoate (CH₃CH₂CH₂COO⁻Na⁺) and ethanol (C₂H₅OH). What is the name of the original ester?","A":"Butyl ethanoate","B":"Ethyl propanoate","C":"Ethyl butanoate","D":"Propyl butanoate","correct":"C","explain":"Alkaline hydrolysis splits the ester into a <b>carboxylate salt</b> and an <b>alcohol</b>. The carboxylate ion (CH₃CH₂CH₂COO⁻) identifies the <b>acyl part</b>: butanoate → the acid component was butanoic acid (CH₃CH₂CH₂COOH), so the acyl group is butanoyl (4 carbons). The alcohol (C₂H₅OH = ethanol) identifies the <b>alkoxy part</b>: ethanol → the alkyl group is ethyl. Combining: the ester was <b>ethyl butanoate</b> (CH₃CH₂CH₂COOC₂H₅). Working backwards from hydrolysis products is a standard OCR synthesis route question — always identify the carboxylate as giving the alkanoate name, and the alcohol as giving the alkyl name."},{"stem":"A student wants to prepare N-methylethanamide (CH₃CONHCH₃) from ethanoic acid via a two-step route using an acyl chloride intermediate. Which sequence is correct?","A":"Ethanoic acid + SOCl₂ → ethanoyl chloride; ethanoyl chloride + methylamine (CH₃NH₂) → N-methylethanamide + HCl","B":"Ethanoic acid + HCl gas → ethanoyl chloride; ethanoyl chloride + dimethylamine ((CH₃)₂NH) → N-methylethanamide","C":"Ethanoic acid + SOCl₂ → ethanoyl chloride; ethanoyl chloride + excess NH₃ → N-methylethanamide + NH₄Cl","D":"Ethanoic acid + methylamine directly → N-methylethanamide + H₂O (no acyl chloride step needed)","correct":"A","explain":"Step 1: CH₃COOH + SOCl₂ → CH₃COCl + SO₂ + HCl. Step 2: CH₃COCl + CH₃NH₂ → <b>CH₃CONHCH₃</b> + HCl. Option (B) fails on two counts: HCl gas cannot convert –COOH to –COCl (it would only form a salt); dimethylamine ((CH₃)₂NH) would give an N,N-dimethyl amide, not N-methylethanamide. Option (C) fails because excess NH₃ gives a <b>primary amide</b> (CH₃CONH₂ — ethanamide), not N-methylethanamide; for an N-substituted amide, the N-substituent must come from a <b>primary amine</b> (CH₃NH₂), not from NH₃. Option (D) is unrealistic at room temperature — direct reaction of carboxylic acid with amine gives an ammonium salt initially; prolonged heating at >150 °C is needed to lose water and form an amide; acyl chlorides are used precisely to bypass this issue."},{"stem":"Benzoyl chloride (C₆H₅COCl) is added to ethanol in one experiment, and to excess ammonia in another. Which pair of products is correct?","A":"With ethanol: benzyl ethanoate; with NH₃: N-ethylbenzamide","B":"With ethanol: ethyl benzoate; with NH₃: benzamide (C₆H₅CONH₂)","C":"With ethanol: phenyl ethanoate; with NH₃: ethanamide (CH₃CONH₂)","D":"With ethanol: benzoic acid; with NH₃: benzonitrile (C₆H₅CN)","correct":"B","explain":"With ethanol: C₆H₅COCl + C₂H₅OH → <b>C₆H₅COOC₂H₅</b> + HCl = <b>ethyl benzoate</b> (benzoate from the acid part, ethyl from the alcohol). With excess NH₃: C₆H₅COCl + 2NH₃ → <b>C₆H₅CONH₂</b> + NH₄Cl = <b>benzamide</b> (a primary amide). Option (A) confuses \"benzyl\" (C₆H₅CH₂–, a group) with \"benzoyl\" (C₆H₅CO–, the acyl group from benzoyl chloride). Option (C) gives phenyl ethanoate — that would require ethanoyl chloride + phenol, completely different reagents. Option (D) gives benzoic acid — that is the product of benzoyl chloride + water, not + ethanol."},{"stem":"An unknown compound W gives the following test results: (1) reacts with aqueous Na₂CO₃ to give effervescence (CO₂ evolved); (2) gives an orange precipitate with 2,4-DNPH; (3) gives no reaction with Tollens' reagent. What is the minimum number of distinct functional groups that compound W must contain, and what are they?","A":"1 — a carboxylic acid group (which can account for all three observations)","B":"2 — a carboxylic acid (–COOH) and a ketone (C=O)","C":"3 — a carboxylic acid, a ketone, and a hydroxyl group","D":"It is impossible for a single compound to give all three results simultaneously","correct":"B","explain":"Each observation constrains W's structure. (1) Effervescence with Na₂CO₃ → <b>–COOH present</b> (carboxylic acid is stronger than H₂CO₃; pKa ~4.8 < 6.4). (2) Orange precipitate with 2,4-DNPH → a <b>C=O carbonyl group of an aldehyde or ketone</b> is present. But (3) No Tollens' reaction → <b>not an aldehyde</b> (aldehydes give a silver mirror). Therefore the carbonyl detected by 2,4-DNPH must be a <b>ketone (C=O group)</b>, not an aldehyde. W must contain <b>both a –COOH group and a ketone C=O group</b> — these are two distinct functional groups. A real example: 4-oxopentanoic acid (levulinic acid, CH₃COCH₂CH₂COOH). Option (A) is wrong: a carboxylic acid's C=O does not react with 2,4-DNPH. Option (C) adds a –OH group that is not required by any of the observations."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

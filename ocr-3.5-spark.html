@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.5 Reaction Rates - spark &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>3.5 &mdash; Reaction Rates</h1>
+  <span class="tier-badge spark">&#x1F525; Spark</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Spark &mdash; Recall &amp; definitions</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"For a collision between reactant molecules to result in a reaction, which two conditions must both be met?","A":"The molecules must be in the gas phase and the temperature must exceed 100°C","B":"The molecules must collide with energy greater than or equal to the activation energy, and with the correct relative orientation","C":"The molecules must be of the same type and must have the same kinetic energy","D":"The molecules must have energy greater than ΔH and must collide in the correct orientation","correct":"B","explain":"Simple collision theory states two simultaneous requirements: (1) the kinetic energy of the collision must be at or above the activation energy (Ea), so that enough energy is available to break the bonds in the reactants; and (2) the molecules must meet in the correct relative orientation so that the reactive parts align and productive orbital overlap can occur. A collision meeting only one condition fails. Even very energetic collisions at the wrong angle do not produce products, and correctly oriented collisions at low energy simply bounce apart."},{"stem":"How does increasing the concentration of a reactant increase the rate of reaction?","A":"It raises the activation energy, making collisions more energetic","B":"It increases the number of particles per unit volume, so the collision frequency per unit time increases","C":"It raises the temperature, giving particles more kinetic energy","D":"It increases the proportion of particles with energy greater than or equal to Ea","correct":"B","explain":"Increasing concentration packs more reactant molecules into the same volume, so any given molecule encounters more potential collision partners per second. The collision frequency (number of collisions per unit time per unit volume) rises in proportion to the concentration. A greater number of collisions per second means more successful collisions per second, even though the fraction of collisions that exceed Ea is unchanged. \"Per unit time\" is essential in the explanation: OCR examiners penalise answers that say \"more collisions\" without specifying the time context."},{"stem":"How does increasing the pressure of a gaseous reactant affect the rate of reaction?","A":"It lowers the activation energy, allowing more molecules to react","B":"It decreases the mean kinetic energy of the gas molecules","C":"It increases the concentration of gas molecules, increasing the collision frequency","D":"It has no effect, as pressure only affects the state of matter","correct":"C","explain":"For an ideal gas, concentration = n/V = p/RT, so at constant temperature, higher pressure means more gas molecules per unit volume. This is equivalent to increasing concentration: more molecules per unit volume leads to more frequent collisions per unit time, more successful collisions per second, and a higher rate of reaction. Pressure change does not alter Ea, does not change mean KE (temperature is constant), and the fraction of particles with E ≥ Ea is unchanged."},{"stem":"What is the definition of a catalyst?","A":"A substance that is consumed in the reaction to provide energy","B":"A substance that increases the rate of a chemical reaction without being used up overall","C":"A substance that lowers ΔH by providing a more stable intermediate","D":"A substance that only increases the rate of the forward reaction","correct":"B","explain":"A catalyst increases the rate without being consumed in the overall reaction. It does take part (forming intermediate species) but is regenerated in its original chemical form at the end of each catalytic cycle, so the net amount of catalyst is unchanged. \"Without being used up\" is the key phrase. Two common misconceptions: (1) a catalyst \"doesn't take part in the reaction\" (wrong; it forms intermediates) and (2) a catalyst only speeds up the forward reaction (wrong; in an equilibrium it speeds both directions equally, which is why it does not change the equilibrium position, only the time to reach it)."},{"stem":"How does a catalyst increase the rate of reaction?","A":"By increasing the kinetic energy of reactant molecules","B":"By providing an alternative reaction pathway with a lower activation energy","C":"By increasing the collision frequency between reactant molecules","D":"By increasing the enthalpy change of the reaction","correct":"B","explain":"A catalyst works by providing an alternative reaction pathway, a different sequence of bond-breaking and bond-making steps, whose transition state has a lower energy than the uncatalysed pathway. This means the activation energy of the catalysed route (Ea,cat) is lower than the uncatalysed Ea. At any given temperature, a greater proportion of molecules already have kinetic energy ≥ Ea,cat than ≥ Ea, so a greater fraction of collisions are successful and the rate is higher. The catalyst does not make molecules move faster (temperature is unchanged) or increase collision frequency."},{"stem":"Does a catalyst change the enthalpy change (ΔH) of a reaction?","A":"Yes, it lowers ΔH by providing a more stable product","B":"Yes, it raises ΔH by using energy to form the intermediate","C":"No","D":"It depends on whether the catalyst is homogeneous or heterogeneous","correct":"C","explain":"ΔH is a state function: it depends only on the enthalpies of the starting materials and the final products. A catalyst provides an alternative route between the same starting materials and the same final products, without itself appearing in the overall equation. Since the identities of reactants and products are unchanged, ΔH is unchanged. On an enthalpy profile diagram, both the catalysed and uncatalysed pathways begin at the same reactant enthalpy level and end at the same product level; only the height of the activation energy peak is lower for the catalysed path."},{"stem":"What are the axes on a Boltzmann distribution diagram?","A":"Temperature (x-axis) and number of molecules (y-axis)","B":"Time (x-axis) and kinetic energy (y-axis)","C":"Molecular kinetic energy (x-axis) and number of molecules with that energy (y-axis)","D":"Reaction progress (x-axis) and enthalpy (y-axis)","correct":"C","explain":"The Boltzmann distribution plots molecular kinetic energy on the x-axis against the number of molecules (or fraction of molecules) having that kinetic energy on the y-axis. This gives a curve that shows how the total kinetic energy in the sample is distributed across all the molecules at a given temperature. The activation energy (Ea) is marked as a vertical line on the x-axis; the area under the curve to the right of this line represents the proportion of molecules with enough energy to react."},{"stem":"On a Boltzmann distribution, what does the area under the curve to the right of the Ea line represent?","A":"The total number of molecules in the sample","B":"The average kinetic energy of the molecules","C":"The number (or fraction) of molecules with kinetic energy greater than or equal to Ea","D":"The activation energy of the reaction","correct":"C","explain":"The y-axis gives the number of molecules at each energy, so any area under the curve corresponds to a count (or fraction) of molecules within that energy range. The area to the right of the Ea line corresponds specifically to those molecules with kinetic energy ≥ Ea, which are the molecules capable of reacting on collision (given correct orientation). This area is typically small at room temperature, which is why reactions are slow unless temperature is raised or a catalyst lowers Ea."},{"stem":"What distinguishes a homogeneous catalyst from a heterogeneous catalyst?","A":"Homogeneous catalysts are more effective; heterogeneous catalysts can be poisoned","B":"A homogeneous catalyst is in the same phase as the reactants; a heterogeneous catalyst is in a different phase","C":"Homogeneous catalysts lower Ea more than heterogeneous catalysts","D":"Heterogeneous catalysts are used only in industrial processes","correct":"B","explain":"The distinction is purely based on phase. A homogeneous catalyst is in the same physical phase as the reactants: for example, aqueous H⁺ ions catalysing an esterification in aqueous solution. A heterogeneous catalyst is in a different phase from the reactants: for example, solid iron (Fe) catalysing the reaction of gaseous N₂ and H₂ in the Haber process. Heterogeneous catalysts work by adsorbing reactants onto their surface, which both orientates the molecules correctly and weakens the bonds that need to break."},{"stem":"What happens to the shape of the Boltzmann distribution curve when the temperature of a gas is increased?","A":"The peak moves to the right and is higher; the total area under the curve increases","B":"The curve remains exactly the same shape; only the Ea line moves left","C":"The peak moves to the right and is lower; the curve is broader and the total area is preserved","D":"The curve shifts left and the peak rises; more molecules have low kinetic energy","correct":"C","explain":"When temperature rises, molecules gain kinetic energy on average: the distribution shifts to higher energies, so the peak (most probable energy) moves to the right. However, the total number of molecules is fixed, so the total area under the curve must remain constant. A broader curve with the same total area must have a lower peak. The tail to the right of Ea grows substantially, meaning many more molecules now have energy ≥ Ea. Option B incorrectly describes what happens when a catalyst is added (not temperature change). Option A is wrong because the total area cannot increase without creating new molecules."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>

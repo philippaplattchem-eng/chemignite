@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.8 Organic Synthesis (A2) - flame &mdash; ChemIgnite</title>
+<style>:root{--pr:#2d6a4f;--pr-dk:#1b4332;--sp:#40916c;--fl:#2d6a4f;--inf:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(45,106,79,.10);--sh2:0 6px 24px rgba(45,106,79,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.spark{background:var(--sp)}.tier-badge.flame{background:var(--fl)}.tier-badge.inferno{background:var(--inf)}.tier-badge.mcq{background:#52b788}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--pr);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0fff4;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--pr)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px;display:none}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#f0fff4;border-left:4px solid var(--pr);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--pr);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,var(--pr));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="alevel-practice.html" class="back-link">&larr; All Topics</a>
+  <h1>6.8 &mdash; Organic Synthesis (A2)</h1>
+  <span class="tier-badge flame">&#x1F525;&#x1F525; Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>10 questions</span>
+    <span>Flame &mdash; Apply in context</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[{"stem":"In the reflux setup and in the condenser used during distillation, cold water enters at the bottom of the condenser jacket and exits at the top. Why is this counter-current arrangement important?","A":"It ensures the water drains out by gravity — water cannot flow uphill, so it must exit at the top.","B":"Counter-current flow ensures that the coolest water meets the coolest (already partially condensed) vapour at the top, while the warmer exit water still encounters warm vapour below. This means the condenser is cooling the vapour over its full length, maximising efficiency.","C":"Hot water from the exit at the bottom would re-vaporise the condensed liquid falling back into the flask.","D":"The arrangement is arbitrary — condenser water can flow in either direction.","correct":"B","explain":"In <b>counter-current cooling</b>, the rising vapour meets descending water flowing in the opposite direction. The cold inlet water (at the bottom) meets the coolest, nearly fully condensed vapour that has already been partially cooled — but the key benefit is that at the <b>top</b> of the condenser, where vapour enters hot, the water is also warm (from absorbing heat on its way up), creating a gentler initial cooling gradient. The warmest vapour meets water that still has cooling capacity; the cooled vapour drips down and meets increasingly colder water. If flow were co-current (both water and vapour moving the same direction), the cold water would be exhausted before it reached the top where hot vapour enters, making the top of the condenser ineffective. Counter-current design maximises heat exchange along the full condenser length."},{"stem":"During the purification of a crude liquid ester (ethyl ethanoate), a student shakes the organic layer with aqueous sodium carbonate solution (Na₂CO₃(aq)) in a separating funnel. What is removed by this step, and why must the funnel be vented frequently?","A":"The Na₂CO₃ removes the ester by saponification (alkaline hydrolysis). Venting is needed because the flask seals under pressure.","B":"The Na₂CO₃ removes unreacted ethanoic acid (a carboxylic acid impurity) by forming soluble sodium ethanoate (a carboxylate salt) which passes into the aqueous layer; CO₂ gas is produced which builds up pressure in the funnel.","C":"The Na₂CO₃ removes water from the organic phase by reacting with it; venting is needed to release H₂ gas produced.","D":"The Na₂CO₃ neutralises traces of H₂SO₄ catalyst but produces no gas; venting is unnecessary.","correct":"B","explain":"After Fischer esterification (RCOOH + R'OH → RCOOR' + H₂O), the product contains unreacted carboxylic acid impurity. Shaking with <b>Na₂CO₃(aq)</b> removes it: RCOOH + Na₂CO₃ → 2RCOONa (aqueous layer) + H₂O + <b>CO₂↑</b>. The CO₂ generated builds up pressure inside the stoppered separating funnel — without frequent venting (inverting the funnel with stopcock open), pressure can eject the stopper and spray corrosive liquid. The ester itself is mostly unaffected (esters are only slowly hydrolysed by weak base at room temperature). The Na₂CO₃ also neutralises any H₂SO₄ catalyst. The aqueous layer (lower, more dense) is run off, leaving the organic ester layer (upper, less dense) to be dried and redistilled."},{"stem":"In recrystallisation, why must the crude solid be dissolved in the <b>minimum</b> quantity of hot solvent?","A":"Using less solvent saves cost and reduces waste — this is purely an economy measure.","B":"A large volume of solvent would dissolve both the product and all impurities equally, destroying the purification.","C":"Dissolving in the minimum hot solvent means that on cooling the solution reaches saturation quickly, so a maximum proportion of the product crystallises out while soluble impurities (at low concentration) remain in solution.","D":"Using too much solvent would cause the product to decompose at the high temperature required.","correct":"C","explain":"Recrystallisation exploits the <b>difference in solubility between hot and cold solvent</b>. If you use a large excess of solvent, even the cold solution is far below saturation — so very little product crystallises out and most remains dissolved in the mother liquor (a small yield of crystals). If you use the <b>minimum</b> volume to just dissolve the solid when hot, the cooled solution becomes highly supersaturated and deposits the maximum quantity of crystals. Meanwhile, <b>impurities</b> (which are at low total concentration even in the minimum volume) remain dissolved in the cold mother liquor and are washed away. Using minimum solvent = maximum crystal recovery + effective removal of soluble impurities. Option (B) is wrong — the purification mechanism depends on the concentration difference, not equal solubility."},{"stem":"A student calculates the percentage yield after a preparation of ethyl ethanoate. They started with 4.60 g of ethanol (M = 46.0 g mol⁻¹), used excess ethanoic acid, and collected 5.28 g of pure ethyl ethanoate (M = 88.0 g mol⁻¹). What is the percentage yield to 3 significant figures?","A":"114% (more product than expected — student error)","B":"60.0%","C":"30.0%","D":"5.28 / 4.60 × 100 = 114.8%","correct":"B","explain":"Step 1 — moles of ethanol (limiting reagent): n = 4.60 / 46.0 = <b>0.100 mol</b>. Step 2 — theoretical moles of ester: the ratio is 1:1 (CH₃COOH + CH₃CH₂OH → CH₃COOCH₂CH₃ + H₂O), so max moles of ester = 0.100 mol. Step 3 — theoretical mass: 0.100 × 88.0 = <b>8.80 g</b>. Step 4 — percentage yield: (5.28 / 8.80) × 100 = <b>60.0%</b>. Option (A) or (D) divides actual mass by starting mass of the reagent (not theoretical product mass) — a common error that gives nonsensical >100% yield. Option (C) uses 2.64 g (half the actual) — this was the worked example in the source material with a different yield; here the actual yield is 5.28 g."},{"stem":"A student wants to convert propan-1-ol (CH₃CH₂CH₂OH) into propanoic acid (CH₃CH₂COOH) in a single step. What reagents and conditions are required?","A":"K₂Cr₂O₇ in dilute H₂SO₄, heat with distillation — this gives propanal (not propanoic acid) because the product is distilled away before further oxidation.","B":"K₂Cr₂O₇ in dilute H₂SO₄, heat under <b>reflux</b> — this gives propanoic acid because the propanal intermediate is retained in the flask and oxidised further.","C":"NaBH₄ in methanol/water — reduction of the alcohol to give propane.","D":"Conc. H₂SO₄, heat — dehydration to propene (not oxidation to propanoic acid).","correct":"B","explain":"A <b>primary alcohol</b> can be oxidised to either an aldehyde or a carboxylic acid using <b>K₂Cr₂O₇/dilute H₂SO₄</b>. The product depends on the conditions: (i) <b>Distillation</b>: the aldehyde (boiling point lower than the reaction mixture) is distilled away as soon as it forms, before it can be oxidised further → aldehyde product; (ii) <b>Reflux</b>: the aldehyde stays in the flask and is oxidised further to the carboxylic acid → acid product. To get propanoic acid (the carboxylic acid), you heat propan-1-ol with K₂Cr₂O₇/dilute H₂SO₄ under <b>reflux</b>. The colour change is orange → green (Cr⁶⁺, as Cr₂O₇²⁻ → Cr³⁺). This is a one-step transformation in the OCR toolkit."},{"stem":"Plan a two-step synthesis to convert benzene into phenylamine (aniline, C₆H₅NH₂). State the reagents and conditions for each step.","A":"Step 1: benzene + Cl₂/AlCl₃ → chlorobenzene; Step 2: chlorobenzene + excess ethanolic NH₃, sealed tube → phenylamine.","B":"Step 1: benzene + conc. HNO₃/conc. H₂SO₄, 50 °C → nitrobenzene; Step 2: nitrobenzene + Sn + conc. HCl, reflux → phenylammonium salt, then + NaOH(aq) → phenylamine.","C":"Step 1: benzene + conc. HNO₃/conc. H₂SO₄, 50 °C → nitrobenzene; Step 2: nitrobenzene + H₂/Ni → phenylamine.","D":"Step 1: benzene + NH₃/AlCl₃ → aminobenzene; Step 2: aminobenzene + NaOH → phenylamine.","correct":"B","explain":"The OCR-required two-step route from benzene to phenylamine: (1) <b>Nitration</b>: benzene + conc. HNO₃ + conc. H₂SO₄, <b>50 °C</b>, → nitrobenzene + H₂O. The electrophile is NO₂⁺ (nitronium ion). (2) <b>Reduction</b>: nitrobenzene + <b>Sn</b> + <b>conc. HCl</b>, reflux → phenylammonium salt → + NaOH(aq) → phenylamine + NaCl + H₂O. OCR mark scheme: Sn must be specified (Fe is IGNORED in OCR mark schemes as of June 2024); H₂ is also IGNORED (not awarded) as a reductant for this step; NaOH is needed to liberate the free amine from the salt. Option (C) uses H₂/Ni for the reduction — this is IGNORED by OCR: only Sn/HCl is credited for the nitro → amine step in aromatic chemistry."},{"stem":"A student has propan-1-ol (3 C) and wants to make butylamine (butan-1-amine, CH₃CH₂CH₂CH₂NH₂, 4 C). What is the minimum number of steps, and what is the correct sequence of transformations?","A":"2 steps: propan-1-ol → propanamide (using NH₃) → butylamine (using NaBH₄)","B":"3 steps: propan-1-ol → 1-bromopropane (HBr) → butanenitrile (KCN/ethanol, reflux) → butylamine (H₂/Ni or LiAlH₄)","C":"2 steps: propan-1-ol → propylamine (using excess ethanolic NH₃) → butylamine (methylation)","D":"3 steps: propan-1-ol → propanoic acid → butanoic acid (Friedel–Crafts) → butylamine (reduction)","correct":"B","explain":"Going from propan-1-ol (3 C) to butan-1-amine (4 C) requires <b>adding one carbon</b> and <b>installing an –NH₂ group</b>. The OCR-spec route: (1) Propan-1-ol + HBr → <b>1-bromopropane</b> (nucleophilic substitution of –OH by Br⁻); (2) 1-bromopropane + KCN in ethanol, reflux → <b>butanenitrile</b> (nucleophilic substitution, +1 C; the CN carbon becomes C4); (3) Butanenitrile + H₂/Ni (or LiAlH₄) → <b>butan-1-amine</b> (reduction of C≡N to CH₂NH₂, preserves 4 C). Total: <b>3 steps</b>. Option (A) is wrong — NH₃ + primary alcohol does not form an amide (it would require activation of the carboxylic acid group, not an alcohol). Option (D) is wrong — Friedel–Crafts is for aromatic chemistry and does not extend an aliphatic chain."},{"stem":"Which functional group in the multi-functional molecule HO–CH₂–CH₂–COOH (3-hydroxypropanoic acid) would react with Na₂CO₃(aq) to produce CO₂?","A":"The alcohol (–OH) group, because alcohols are weakly acidic.","B":"The carboxylic acid (–COOH) group, because it is sufficiently acidic (pKa ≈ 4–5) to donate H⁺ to CO₃²⁻, releasing CO₂.","C":"Both the –OH and –COOH groups react with Na₂CO₃ to give CO₂.","D":"Neither group reacts with Na₂CO₃; only strong acids react to release CO₂.","correct":"B","explain":"The diagnostic test with Na₂CO₃(aq): a <b>carboxylic acid</b> (pKa ≈ 4–5) is acidic enough to protonate CO₃²⁻ and release <b>CO₂</b>: 2RCOOH + Na₂CO₃ → 2RCOONa + H₂O + CO₂↑. An <b>alcohol</b> (pKa ≈ 16–18) is far too weakly acidic — it does not react with Na₂CO₃ and produces no CO₂. A <b>phenol</b> (pKa ≈ 10) reacts with NaOH but NOT with Na₂CO₃. This makes the CO₂ test with Na₂CO₃ specific for <b>carboxylic acids</b> and a powerful diagnostic in synthesis: it distinguishes –COOH from phenol, aldehyde, ketone, ester, and alcohol. In 3-hydroxypropanoic acid, only the –COOH group reacts; the –CH₂OH at the other end is inert to Na₂CO₃."},{"stem":"In designing a multi-step synthesis, a student's plan includes this sequence: \"Step 1 — convert the alkene to an amine using excess NH₃; Step 2 — add HBr to the intermediate to install a bromine atom.\" What is the flaw in this plan?","A":"There is no flaw — excess NH₃ can convert an alkene directly to an amine in a single step.","B":"The plan reverses the order — HBr should be added first. However, once the alkene has been converted to an amine, the subsequent HBr step cannot proceed. The sequence is therefore wrong: adding HBr after introducing the amine risks protonating the amine (–NH₂ + HBr → –NH₃⁺Br⁻) rather than reacting at the intended position.","C":"There is no issue because HBr adds to carbon–nitrogen double bonds, not amines.","D":"The plan is fine — the amine and HBr do not react with each other.","correct":"B","explain":"The H432/02 June 2023 examiner report specifically flagged this class of error: *\"Needs NH₃ before HBr — HBr would react with C=C.\"* The report identifies that if <b>HBr is introduced in the presence of a C=C double bond</b>, it will add across the alkene (electrophilic addition), not give the intended transformation. The correct order: <b>add HBr first</b> to the alkene to make the haloalkane, then use the haloalkane with excess ethanolic NH₃ to give the amine. Once the alkene is consumed (converted to haloalkane), there is no C=C for NH₃ to encounter. In the student's flawed plan (option A/D), adding NH₃ directly to an alkene is not a spec-approved step, and the subsequent HBr step would protonate the amine (–NH₂ is basic) rather than do useful chemistry."},{"stem":"A compound contains both an aldehyde (–CHO) and an ester (–COO–) group. A student adds NaBH₄ in methanol/water. Which functional group reacts, and what is the product at each site?","A":"Both groups react: –CHO → –CH₂OH (primary alcohol) AND –COO– → two separate –CH₂OH groups.","B":"Only the –CHO reacts: –CHO → –CH₂OH (primary alcohol). The ester –COO– is not reduced by NaBH₄ under mild conditions; NaBH₄ is selective for C=O of aldehydes and ketones only.","C":"Neither group reacts — NaBH₄ only reduces carboxylic acids and acyl chlorides.","D":"Only the –COO– reacts: ester hydrolysis occurs and the aldehyde is unaffected.","correct":"B","explain":"<b>NaBH₄</b> (sodium borohydride) is a mild, <b>selective</b> reducing agent. It reduces C=O groups in <b>aldehydes</b> (→ primary alcohols) and <b>ketones</b> (→ secondary alcohols) by delivering hydride (H⁻) to the carbonyl carbon. However, it does <b>not</b> reduce esters, carboxylic acids, amides, nitriles, or C=C bonds under standard conditions — these require the stronger reagent <b>LiAlH₄</b> (in dry ether). Therefore, in a molecule containing both –CHO and –COO–, <b>NaBH₄ selectively reduces the aldehyde</b> → –CH₂OH, leaving the ester intact. This selectivity makes NaBH₄ extremely useful in the synthesis of complex molecules where you want to reduce one carbonyl without affecting others."}];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    document.querySelectorAll('input[name="q'+n+'"]').forEach(function(r){r.disabled=true;});
+    document.getElementById('opt-'+n+'-'+q.correct).classList.add('hl-ok');
+    if(sel&&sel.value===q.correct){
+      score++;card.classList.add('correct');
+      res.innerHTML='&#10003; Correct';res.className='res-icon res-ok';
+    }else{
+      card.classList.add('wrong');
+      if(sel)document.getElementById('opt-'+n+'-'+sel.value).classList.add('hl-bad');
+      var ans=sel?'Incorrect â€” correct answer: <strong>'+q.correct+'</strong>':'Not answered â€” correct answer: <strong>'+q.correct+'</strong>';
+      res.innerHTML='&#10007; '+ans;res.className='res-icon res-bad';
+    }
+    res.style.display='block';ex.style.display='block';
+  });
+  var pct=Math.round(score/total*100);
+  var msg=score===total?'Full marks â€” excellent work!':score>=Math.round(total*0.7)?'Good work â€” check the explanations for any you missed.':'Keep practising â€” work through all the explanations below.';
+  var banner=document.getElementById('score-banner');
+  banner.innerHTML='<h2><span id="score-num">0</span> / '+total+'</h2><p>'+pct+'% â€” '+msg+'</p>';
+  (function(){if(score===0)return;var el=document.getElementById('score-num'),cur=0,t=setInterval(function(){el.textContent=++cur;if(cur>=score)clearInterval(t);},Math.min(120,Math.round(700/score)));})();
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+  document.getElementById('submit-btn').disabled=true;
+  document.getElementById('submit-btn').textContent='Submitted';
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>
