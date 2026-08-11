@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChemIgnite — Sequences</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#7c3aed;--pr-dk:#5b21b6;--pr-lt:#f3e8ff;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 12px rgba(124,58,237,.08);--sh2:0 8px 28px rgba(124,58,237,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;display:flex;flex-direction:column}
+
+.topbar{background:#0d1b3e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem}
+.topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s}
+.topbar-back:hover{background:rgba(255,255,255,.12)}
+.topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#2e1065 0%,#5b21b6 45%,#7c3aed 80%,#8b5cf6 100%);color:#fff;padding:2.2rem 1.5rem 4.8rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero h1{font-size:1.9rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.3rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.95rem;opacity:.87;font-weight:600}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:52px;pointer-events:none}
+
+main{flex:1;max-width:660px;margin:0 auto;padding:1.8rem 1.2rem 4rem;width:100%}
+
+/* Status bar */
+.status-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.3rem;gap:1rem}
+.progress-wrap{flex:1}
+.progress-label{font-size:.78rem;font-weight:700;color:var(--txm);margin-bottom:.35rem}
+.progress-bar{height:7px;background:var(--bdr);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--pr-dk),var(--pr));border-radius:10px;transition:width .4s ease}
+.score-badge{background:linear-gradient(135deg,#2e1065,#7c3aed);color:#fff;border-radius:12px;padding:.5rem 1.1rem;text-align:center;flex-shrink:0;min-width:70px}
+.score-num{font-size:1.5rem;font-weight:900;line-height:1}
+.score-lbl{font-size:.66rem;font-weight:700;opacity:.75;text-transform:uppercase;letter-spacing:.06em}
+
+/* Question card */
+.q-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh2);border:1.5px solid var(--bdr);padding:1.5rem 1.4rem 1.3rem}
+.q-type-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--pr);background:var(--pr-lt);border-radius:20px;padding:.22rem .8rem;margin-bottom:.85rem}
+.q-header{font-size:1.05rem;font-weight:900;color:var(--tx);margin-bottom:1.1rem;line-height:1.35}
+
+/* Sequence boxes */
+.seq-wrap{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin-bottom:1.2rem;padding:.7rem .8rem;background:var(--bg);border-radius:10px;border:1.5px solid var(--bdr)}
+.seq-box{display:flex;align-items:center;justify-content:center;min-width:72px;padding:.55rem .75rem;border-radius:8px;font-size:.87rem;font-weight:800;text-align:center;border:2px solid;line-height:1.3;transition:all .25s}
+.seq-box.revealed{background:#f0fdf4;border-color:#22c55e;color:#166534}
+.seq-box.hidden{background:#f8fafc;border-color:#cbd5e1;color:#94a3b8;font-size:1.3rem;min-width:52px}
+.seq-box.target{background:var(--pr-lt);border-color:var(--pr);color:var(--pr);font-size:.82rem;font-weight:900}
+.seq-box.answered-correct{background:#dcfce7;border-color:#22c55e;color:#166534}
+.seq-box.answered-wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.seq-arrow{font-size:1.1rem;color:#94a3b8;flex-shrink:0;line-height:1}
+
+/* Action row */
+.action-row{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin-bottom:.9rem}
+.btn-reveal{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:10px;padding:.55rem 1rem;font-size:.85rem;font-weight:800;cursor:pointer;transition:opacity .15s,transform .12s;font-family:inherit}
+.btn-reveal:hover:not(:disabled){transform:translateY(-1px);opacity:.9}
+.btn-reveal:disabled{opacity:.4;cursor:default;transform:none}
+.btn-hint{background:#fff;color:var(--txm);border:1.5px solid var(--bdr);border-radius:10px;padding:.55rem 1rem;font-size:.85rem;font-weight:700;cursor:pointer;transition:background .12s,border-color .12s;font-family:inherit}
+.btn-hint:hover:not(:disabled){background:var(--pr-lt);border-color:#c4b5fd;color:var(--pr)}
+.btn-hint:disabled{opacity:.4;cursor:default}
+.pts-pill{font-size:.76rem;font-weight:800;color:var(--pr);background:var(--pr-lt);border-radius:20px;padding:.22rem .7rem;margin-left:auto}
+.hint-reveal{font-size:.85rem;color:#5b21b6;font-weight:700;background:var(--pr-lt);border-radius:8px;padding:.4rem .8rem;margin-bottom:.85rem;display:none;border-left:3px solid var(--pr)}
+.hint-reveal.show{display:block}
+
+/* Options */
+.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.opt-btn{background:#fff;border:2px solid var(--bdr);border-radius:10px;padding:.65rem .9rem;font-size:.92rem;font-weight:700;color:var(--tx);cursor:pointer;text-align:center;transition:background .12s,border-color .12s,color .12s;font-family:inherit;line-height:1.3}
+.opt-btn:hover:not(:disabled){background:var(--pr-lt);border-color:#c4b5fd;color:var(--pr)}
+.opt-btn.correct{background:#dcfce7!important;border-color:#22c55e!important;color:#166534!important}
+.opt-btn.wrong{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important}
+.opt-btn:disabled{cursor:default}
+
+/* Feedback */
+.feedback{border-radius:10px;padding:.8rem 1rem;margin-top:.8rem;font-size:.88rem;font-weight:700;display:none;line-height:1.5}
+.feedback.show{display:block}
+.feedback.correct{background:#dcfce7;color:#166534;border:1.5px solid #86efac}
+.feedback.wrong{background:#fee2e2;color:#991b1b;border:1.5px solid #fca5a5}
+.full-seq{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;margin-top:.45rem}
+.fs-item{background:rgba(255,255,255,.7);border-radius:5px;padding:.12rem .4rem;font-size:.79rem;font-weight:700;line-height:1.4}
+.fs-arrow{font-size:.85rem;opacity:.55}
+.cat-label{margin-top:.4rem;font-size:.75rem;font-weight:600;opacity:.7}
+
+.btn-next{display:block;margin:.9rem 0 0 auto;background:linear-gradient(135deg,var(--pr-dk),var(--pr));color:#fff;border:none;border-radius:10px;padding:.62rem 1.5rem;font-size:.92rem;font-weight:800;cursor:pointer;transition:opacity .15s,transform .12s;font-family:inherit}
+.btn-next:hover{opacity:.9;transform:translateY(-1px)}
+
+/* End screen */
+.end-screen{display:none;text-align:center;padding:2.5rem 1rem 1rem}
+.end-screen.show{display:block}
+.end-trophy{font-size:3.5rem;margin-bottom:.7rem}
+.end-title{font-size:1.55rem;font-weight:900;margin-bottom:.5rem}
+.end-score{font-size:3.2rem;font-weight:900;color:var(--pr);line-height:1}
+.end-max{font-size:.88rem;color:var(--txm);margin-bottom:1.4rem;margin-top:.15rem}
+.end-msg{font-size:.95rem;font-weight:600;color:var(--txm);max-width:360px;margin:0 auto 2rem;line-height:1.55}
+.btn-play-again{background:linear-gradient(135deg,var(--pr-dk),var(--pr));color:#fff;border:none;border-radius:12px;padding:.85rem 2.2rem;font-size:1rem;font-weight:800;cursor:pointer;font-family:inherit;transition:opacity .15s,transform .12s}
+.btn-play-again:hover{opacity:.9;transform:translateY(-2px)}
+
+footer{text-align:center;padding:1.3rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600;margin-top:auto}
+footer a{color:var(--pr);text-decoration:none}
+
+@media(max-width:480px){.options-grid{grid-template-columns:1fr}.hero h1{font-size:1.5rem}.seq-box{min-width:60px;font-size:.8rem}.action-row{gap:.4rem}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../puzzles.html" class="topbar-back">&#8592; Puzzles</a>
+  <span class="topbar-title">Sequences</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg style="display:block;width:52px;height:52px;margin:0 auto .75rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="16" width="12" height="12" rx="3" fill="rgba(255,255,255,.25)" stroke="white"/>
+      <rect x="20" y="16" width="12" height="12" rx="3" fill="rgba(255,255,255,.25)" stroke="white"/>
+      <rect x="37" y="16" width="12" height="12" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.5)" stroke-dasharray="2.5 2"/>
+      <line x1="15" y1="22" x2="20" y2="22"/>
+      <line x1="32" y1="22" x2="37" y2="22"/>
+      <line x1="17" y1="19" x2="20" y2="22"/><line x1="17" y1="25" x2="20" y2="22"/>
+      <line x1="34" y1="19" x2="37" y2="22"/><line x1="34" y1="25" x2="37" y2="22"/>
+    </svg>
+    <h1>Sequences</h1>
+    <p>Spot the pattern early — the sooner you guess, the more points you score!</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,26 C240,52 480,0 720,26 C960,52 1200,0 1440,26 L1440,52 L0,52 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+<div id="game">
+  <div class="status-bar">
+    <div class="progress-wrap">
+      <div class="progress-label" id="progress-label">Question 1 of 10</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="score-badge">
+      <div class="score-num" id="score-num">0</div>
+      <div class="score-lbl">pts</div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-type-tag" id="q-type-tag">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <span id="q-type-label">Next in sequence</span>
+    </div>
+    <div class="q-header" id="q-header">What comes NEXT in the sequence?</div>
+
+    <div class="seq-wrap" id="seq-wrap"></div>
+
+    <div class="action-row" id="action-row">
+      <button class="btn-reveal" id="btn-reveal">Reveal next clue</button>
+      <button class="btn-hint" id="btn-hint">&#128161; Hint</button>
+      <span class="pts-pill" id="pts-pill">5 pts</span>
+    </div>
+
+    <div class="hint-reveal" id="hint-reveal"></div>
+
+    <div class="options-grid" id="options-grid"></div>
+
+    <div class="feedback" id="feedback"></div>
+    <button class="btn-next" id="btn-next" style="display:none">Next question &#8250;</button>
+  </div>
+</div>
+
+<div class="end-screen" id="end-screen">
+  <div class="end-trophy" id="end-trophy">&#127942;</div>
+  <div class="end-title">Sequence complete!</div>
+  <div class="end-score" id="end-score">0</div>
+  <div class="end-max" id="end-max">out of 50</div>
+  <div class="end-msg" id="end-msg"></div>
+  <button class="btn-play-again" onclick="startGame()">Play again &#8635;</button>
+</div>
+
+</main>
+
+<footer>
+  ChemIgnite Puzzles &nbsp;&bull;&nbsp; <a href="../puzzles.html">&#8592; Back to puzzles</a>
+</footer>
+
+<script>
+const ALL_Q = [
+  // NEXT type (21)
+  {type:'next',items:['Methane','Ethane','Propane'],ans:'Butane',opts:['Butane','Pentane','Propene','Methanol'],cat:'Alkane homologous series'},
+  {type:'next',items:['Methanol','Ethanol','Propanol'],ans:'Butanol',opts:['Butanol','Pentanol','Butane','Propanoic acid'],cat:'Alcohol homologous series'},
+  {type:'next',items:['Methanoic acid','Ethanoic acid','Propanoic acid'],ans:'Butanoic acid',opts:['Butanoic acid','Pentanoic acid','Butanol','Propane'],cat:'Carboxylic acid series'},
+  {type:'next',items:['Ethene','Propene','Butene'],ans:'Pentene',opts:['Pentene','Hexene','Butane','Pentane'],cat:'Alkene homologous series'},
+  {type:'next',items:['F','Cl','Br'],ans:'I',opts:['I','At','Ne','S'],cat:'Group 7 (halogens)'},
+  {type:'next',items:['He','Ne','Ar'],ans:'Kr',opts:['Kr','Xe','N','Rn'],cat:'Group 0 (noble gases)'},
+  {type:'next',items:['Li','Na','K'],ans:'Rb',opts:['Rb','Cs','Ca','Fr'],cat:'Group 1 (alkali metals)'},
+  {type:'next',items:['Be','Mg','Ca'],ans:'Sr',opts:['Sr','Ba','K','Ti'],cat:'Group 2 (alkaline earth metals)'},
+  {type:'next',items:['100 g','50 g','25 g'],ans:'12.5 g',opts:['12.5 g','10 g','20 g','5 g'],cat:'Radioactive decay (half-life)'},
+  {type:'next',items:['NaCl','MgCl&#8322;','AlCl&#8323;'],ans:'SiCl&#8324;',opts:['SiCl&#8324;','PCl&#8323;','SiCl&#8322;','NaCl&#8322;'],cat:'Period 3 chlorides'},
+  {type:'next',items:['Na&#8322;O','MgO','Al&#8322;O&#8323;'],ans:'SiO&#8322;',opts:['SiO&#8322;','SiO','Si&#8322;O&#8323;','SiO&#8323;'],cat:'Period 3 oxides'},
+  {type:'next',items:['CH&#8324;','C&#8322;H&#8326;','C&#8323;H&#8328;'],ans:'C&#8324;H&#8321;&#8320;',opts:['C&#8324;H&#8321;&#8320;','C&#8324;H&#8328;','C&#8325;H&#8321;&#8322;','C&#8324;H&#8321;&#8322;'],cat:'Alkane molecular formulae'},
+  {type:'next',items:['HF','HCl','HBr'],ans:'HI',opts:['HI','HAt','H&#8322;O','H&#8322;S'],cat:'Hydrogen halides'},
+  {type:'next',items:['Meth-','Eth-','Prop-'],ans:'But-',opts:['But-','Pent-','Oct-','Non-'],cat:'Carbon chain naming prefixes'},
+  {type:'next',items:['2','10','18'],ans:'36',opts:['36','32','54','28'],cat:'Noble gas atomic numbers'},
+  {type:'next',items:['Gas','Gas','Liquid'],ans:'Solid',opts:['Solid','Gas','Plasma','Liquid'],cat:'Halogen states at room temperature'},
+  {type:'next',items:['K','Na','Ca'],ans:'Mg',opts:['Mg','Al','Zn','Fe'],cat:'Reactivity series (most to least reactive)'},
+  {type:'next',items:['Mg','Al','Zn'],ans:'Fe',opts:['Fe','Cu','Ni','Pb'],cat:'Reactivity series (most to least reactive)'},
+  {type:'next',items:['CH&#8324;','NH&#8323;','H&#8322;O'],ans:'HF',opts:['HF','HCl','H&#8322;S','HBr'],cat:'Period 2 hydrides'},
+  {type:'next',items:['Na<sup>+</sup>','Mg<sup>2+</sup>','Al<sup>3+</sup>'],ans:'Si<sup>4+</sup>',opts:['Si<sup>4+</sup>','P<sup>3+</sup>','Si<sup>2+</sup>','S<sup>6+</sup>'],cat:'Period 3 ion charges'},
+  {type:'next',items:['2,1','2,8,1','2,8,8,1'],ans:'2,8,18,8,1',opts:['2,8,18,8,1','2,8,8,8,1','2,8,18,1','2,18,8,1'],cat:'Group 1 electron configurations'},
+
+  // MID type (11)
+  {type:'mid',items:['CH&#8324;',null,'C&#8323;H&#8328;','C&#8324;H&#8321;&#8320;'],ans:'C&#8322;H&#8326;',opts:['C&#8322;H&#8326;','C&#8322;H&#8324;','C&#8322;H&#8322;','C&#8323;H&#8326;'],cat:'Alkane molecular formulae'},
+  {type:'mid',items:['K',null,'Ca','Mg'],ans:'Na',opts:['Na','Li','Cs','Rb'],cat:'Reactivity series'},
+  {type:'mid',items:['F',null,'Br','I'],ans:'Cl',opts:['Cl','At','N','S'],cat:'Group 7 (halogens)'},
+  {type:'mid',items:['He',null,'Ar','Kr'],ans:'Ne',opts:['Ne','N','Xe','Rn'],cat:'Noble gases'},
+  {type:'mid',items:['Na&#8322;O',null,'Al&#8322;O&#8323;','SiO&#8322;'],ans:'MgO',opts:['MgO','Mg&#8322;O','MgO&#8322;','Mg&#8322;O&#8323;'],cat:'Period 3 oxides'},
+  {type:'mid',items:['100 g',null,'25 g','12.5 g'],ans:'50 g',opts:['50 g','40 g','75 g','30 g'],cat:'Radioactive decay (half-life)'},
+  {type:'mid',items:['Mg',null,'Zn','Fe'],ans:'Al',opts:['Al','Cu','Na','Ca'],cat:'Reactivity series'},
+  {type:'mid',items:['HF',null,'HBr','HI'],ans:'HCl',opts:['HCl','HAt','H&#8322;O','HF'],cat:'Hydrogen halides'},
+  {type:'mid',items:['Methane',null,'Propane','Butane'],ans:'Ethane',opts:['Ethane','Ethene','Methanol','Propene'],cat:'Alkane homologous series'},
+  {type:'mid',items:['Li',null,'K','Rb'],ans:'Na',opts:['Na','Be','Ca','Cs'],cat:'Group 1 (alkali metals)'},
+  {type:'mid',items:['NaCl',null,'AlCl&#8323;','SiCl&#8324;'],ans:'MgCl&#8322;',opts:['MgCl&#8322;','Mg&#8322;Cl','MgCl','MgCl&#8323;'],cat:'Period 3 chlorides'},
+];
+
+const GAME_SIZE = 10;
+const PTS_NEXT = {1:5, 2:3, 3:2};
+
+let gameQs, qi, totalScore, curPts, cluesShown, hintUsed, answered;
+
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+
+function startGame(){
+  gameQs = shuffle(ALL_Q).slice(0, GAME_SIZE);
+  qi = 0; totalScore = 0;
+  document.getElementById('score-num').textContent = '0';
+  document.getElementById('game').style.display = '';
+  document.getElementById('end-screen').classList.remove('show');
+  renderQ();
+}
+
+function renderQ(){
+  const q = gameQs[qi];
+  const isNext = q.type === 'next';
+
+  cluesShown = isNext ? 1 : q.items.length;
+  curPts = isNext ? PTS_NEXT[1] : 3;
+  hintUsed = false;
+  answered = false;
+
+  // Progress
+  document.getElementById('progress-label').textContent = `Question ${qi+1} of ${GAME_SIZE}`;
+  document.getElementById('progress-fill').style.width = (qi / GAME_SIZE * 100) + '%';
+
+  // Type tag + header
+  document.getElementById('q-type-label').textContent = isNext ? 'Next in sequence' : 'Missing in the middle';
+  document.getElementById('q-header').textContent = isNext ? 'What comes NEXT in the sequence?' : "What's MISSING from the sequence?";
+
+  // Actions row
+  const btnReveal = document.getElementById('btn-reveal');
+  btnReveal.style.display = isNext ? '' : 'none';
+  btnReveal.disabled = false;
+  document.getElementById('btn-hint').disabled = false;
+  document.getElementById('pts-pill').textContent = curPts + ' pts';
+
+  // Hint
+  const hintEl = document.getElementById('hint-reveal');
+  hintEl.classList.remove('show');
+  hintEl.innerHTML = '';
+
+  // Reset feedback
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback';
+  fb.innerHTML = '';
+  document.getElementById('btn-next').style.display = 'none';
+
+  buildSeq();
+  buildOpts();
+}
+
+function buildSeq(){
+  const q = gameQs[qi];
+  const wrap = document.getElementById('seq-wrap');
+  wrap.innerHTML = '';
+
+  const arrow = () => { const s = document.createElement('span'); s.className = 'seq-arrow'; s.textContent = '→'; return s; };
+
+  if(q.type === 'next'){
+    q.items.forEach((item, i) => {
+      if(i > 0) wrap.appendChild(arrow());
+      const box = document.createElement('div');
+      if(i < cluesShown){
+        box.className = 'seq-box revealed'; box.innerHTML = item;
+      } else {
+        box.className = 'seq-box hidden'; box.textContent = '?';
+      }
+      wrap.appendChild(box);
+    });
+    wrap.appendChild(arrow());
+    const target = document.createElement('div');
+    target.className = 'seq-box target'; target.textContent = '?';
+    wrap.appendChild(target);
+  } else {
+    q.items.forEach((item, i) => {
+      if(i > 0) wrap.appendChild(arrow());
+      const box = document.createElement('div');
+      if(item === null){
+        box.className = 'seq-box target'; box.textContent = '?';
+      } else {
+        box.className = 'seq-box revealed'; box.innerHTML = item;
+      }
+      wrap.appendChild(box);
+    });
+  }
+}
+
+function buildOpts(){
+  const q = gameQs[qi];
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  shuffle(q.opts).forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.innerHTML = opt;
+    btn.dataset.val = opt;
+    btn.addEventListener('click', () => pick(btn, q.ans, grid));
+    grid.appendChild(btn);
+  });
+}
+
+function pick(btn, correct, grid){
+  if(answered) return;
+  answered = true;
+
+  grid.querySelectorAll('.opt-btn').forEach(b => {
+    b.disabled = true;
+    if(b.dataset.val === correct) b.classList.add('correct');
+  });
+
+  const isCorrect = btn.dataset.val === correct;
+  if(!isCorrect) btn.classList.add('wrong');
+
+  if(isCorrect) totalScore += curPts;
+  document.getElementById('score-num').textContent = totalScore;
+
+  document.getElementById('btn-reveal').disabled = true;
+  document.getElementById('btn-hint').disabled = true;
+
+  // Show full sequence
+  const q = gameQs[qi];
+  const allItems = q.type === 'next'
+    ? [...q.items, q.ans]
+    : q.items.map(x => x === null ? q.ans : x);
+
+  const seqHtml = allItems.map((x,i) =>
+    (i > 0 ? '<span class="fs-arrow">→</span>' : '') + `<span class="fs-item">${x}</span>`
+  ).join('');
+
+  const fb = document.getElementById('feedback');
+  fb.classList.add('show', isCorrect ? 'correct' : 'wrong');
+  fb.innerHTML = isCorrect
+    ? `&#10003; Correct! +${curPts} pt${curPts !== 1 ? 's' : ''}`
+    : `&#10007; The answer was <strong>${correct}</strong>`;
+  fb.innerHTML += `<div class="full-seq">${seqHtml}</div><div class="cat-label">Category: ${q.cat}</div>`;
+
+  // Update target box colour
+  const targets = document.querySelectorAll('.seq-box.target');
+  targets.forEach(t => {
+    t.classList.remove('target');
+    t.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+    if(isCorrect) t.innerHTML = correct; else t.innerHTML = correct;
+  });
+
+  document.getElementById('btn-next').style.display = '';
+}
+
+document.getElementById('btn-reveal').addEventListener('click', function(){
+  const q = gameQs[qi];
+  if(q.type !== 'next' || cluesShown >= q.items.length || answered) return;
+  cluesShown++;
+  const rawPts = PTS_NEXT[cluesShown] || 2;
+  curPts = hintUsed ? Math.max(1, rawPts - 1) : rawPts;
+  document.getElementById('pts-pill').textContent = curPts + ' pts';
+  this.disabled = cluesShown >= q.items.length;
+  buildSeq();
+});
+
+document.getElementById('btn-hint').addEventListener('click', function(){
+  if(hintUsed || answered) return;
+  hintUsed = true;
+  this.disabled = true;
+  curPts = Math.max(1, curPts - 1);
+  document.getElementById('pts-pill').textContent = curPts + ' pts';
+  const hintEl = document.getElementById('hint-reveal');
+  hintEl.innerHTML = '&#128161; Category: <strong>' + gameQs[qi].cat + '</strong>';
+  hintEl.classList.add('show');
+});
+
+document.getElementById('btn-next').addEventListener('click', function(){
+  qi++;
+  if(qi >= GAME_SIZE) showEnd(); else renderQ();
+});
+
+function showEnd(){
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('end-screen').classList.add('show');
+  const max = GAME_SIZE * 5;
+  const pct = totalScore / max;
+  document.getElementById('end-score').textContent = totalScore;
+  document.getElementById('end-max').textContent = 'out of ' + max;
+  let trophy = '&#127942;', msg;
+  if(pct >= 0.9){ trophy = '&#129351;'; msg = 'Outstanding! You spotted every pattern early — brilliant chemistry instincts!'; }
+  else if(pct >= 0.7){ trophy = '&#127942;'; msg = 'Great work! You\'re spotting patterns quickly. Keep it up!'; }
+  else if(pct >= 0.5){ trophy = '&#129353;'; msg = 'Good effort! Review the sequences you found tricky and try again.'; }
+  else { trophy = '&#128170;'; msg = 'Keep practising — spotting patterns is a really useful exam skill!'; }
+  document.getElementById('end-trophy').innerHTML = trophy;
+  document.getElementById('end-msg').textContent = msg;
+}
+
+startGame();
+</script>
+</body>
+</html>
