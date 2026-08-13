@@ -1,0 +1,820 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChemIgnite — OCR A Level Spec List</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#2d6a4f;--pr-dk:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:12px;--sh:0 2px 10px rgba(45,106,79,.09);--p1:#1565c0;--p2:#6a1b9a;--p12:#0d5c3a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,#2d6a4f);color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15)}
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d2e1e 0%,#1b4332 45%,#2d6a4f 80%,#40916c 100%);color:#fff;padding:2.5rem 1.5rem 5rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(64,145,108,.35) 0%,transparent 70%);pointer-events:none}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3));position:relative;z-index:1}
+.hero h1{font-size:1.8rem;font-weight:800;margin-bottom:.35rem;position:relative;z-index:1}
+.hero p{opacity:.88;font-size:.97rem;max-width:520px;margin:0 auto;position:relative;z-index:1}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+.controls{max-width:980px;margin:1.5rem auto .5rem;padding:0 1.2rem;display:flex;flex-direction:column;gap:.7rem}
+.controls-row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.filter-label{font-size:.8rem;font-weight:700;color:var(--txm);text-transform:uppercase;letter-spacing:.05em;margin-right:.3rem;white-space:nowrap}
+.filter-btn{padding:.38rem .9rem;border-radius:20px;border:2px solid var(--bdr);background:var(--card);font-size:.83rem;font-weight:700;cursor:pointer;color:var(--txm);transition:all .15s}
+.filter-btn:hover{border-color:#74c69d;color:var(--pr)}
+.filter-btn.active{border-color:var(--pr);background:var(--pr);color:#fff}
+.filter-btn.m2.active{background:#1565c0;border-color:#1565c0}
+.filter-btn.m3.active{background:#c62828;border-color:#c62828}
+.filter-btn.m4.active{background:#e65100;border-color:#e65100}
+.filter-btn.m5.active{background:#4a148c;border-color:#4a148c}
+.filter-btn.m6.active{background:#00695c;border-color:#00695c}
+.filter-btn.p1.active{background:#1565c0;border-color:#1565c0}
+.filter-btn.p2.active{background:#6a1b9a;border-color:#6a1b9a}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem;max-width:980px;margin:0 auto 1.2rem;padding:0 1.2rem;font-size:.78rem}
+.leg-item{display:flex;align-items:center;gap:.35rem;color:var(--txm);font-weight:600}
+.paper-pill{display:inline-block;font-size:.7rem;font-weight:700;padding:.18rem .55rem;border-radius:10px;color:#fff;white-space:nowrap}
+.pp1{background:#1565c0}.pp2{background:#6a1b9a}.pp12{background:linear-gradient(90deg,#1565c0 40%,#6a1b9a)}
+main{max-width:980px;margin:0 auto;padding:.5rem 1.2rem 5rem}
+.module-section{margin-bottom:1.8rem}
+.module-heading{display:flex;align-items:center;gap:.7rem;padding:.8rem 1.1rem;border-radius:var(--r) var(--r) 0 0;border-bottom:2px solid rgba(255,255,255,.2);box-shadow:var(--sh)}
+.module-heading.m2{background:linear-gradient(135deg,#1565c0,#1976d2)}
+.module-heading.m3{background:linear-gradient(135deg,#b71c1c,#c62828)}
+.module-heading.m4{background:linear-gradient(135deg,#bf360c,#e64a19)}
+.module-heading.m5{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.module-heading.m6{background:linear-gradient(135deg,#004d40,#00695c)}
+.module-id{background:rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:800;padding:.2rem .6rem;border-radius:6px;white-space:nowrap}
+.module-title{font-weight:800;font-size:1rem;flex:1;color:#fff}
+.module-paper-tags{display:flex;gap:.4rem}
+.spec-table{width:100%;background:var(--card);border-radius:0 0 var(--r) var(--r);box-shadow:var(--sh);border-collapse:collapse;overflow:hidden}
+.spec-table tr{border-bottom:1px solid var(--bdr);transition:background .1s}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table tr:hover{background:#f0f9f4}
+.spec-table tr.hidden{display:none}
+.col-num{padding:.65rem 1rem .5rem;font-size:.78rem;font-weight:700;color:var(--txm);white-space:nowrap;width:80px;vertical-align:top}
+.col-name{padding:.65rem .5rem .2rem;font-size:.9rem;font-weight:700;vertical-align:top;color:var(--tx)}
+.col-desc{padding:0 .5rem .6rem;font-size:.8rem;color:var(--txm);line-height:1.5;font-weight:600}
+.col-paper{padding:.65rem 1rem;width:90px;text-align:center;vertical-align:top}
+.module-notice{background:#f0f9f4;border:1.5px solid #b7e4c7;border-radius:var(--r);padding:.8rem 1.1rem;margin-bottom:1.5rem;font-size:.86rem;color:#1b4332;font-weight:600}
+.module-notice strong{color:#0d2e1e}
+@media print{.controls,.back-link{display:none}.module-section{break-inside:avoid}}
+@media(max-width:600px){.col-num{width:60px}.col-paper{width:70px}}
+</style>
+</head><body>
+
+<header class="site-header">
+  <a href="alevel-home.html" class="back-link">&larr; A Level home</a>
+  <h1>OCR A Level Chemistry — Specification List</h1>
+</header>
+
+<div class="hero">
+  <svg class="hero-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+  </svg>
+  <h1>What's on each paper?</h1>
+  <p>All specification topics for OCR A Level Chemistry H432 — Modules 2 to 6, filtered by module and paper</p>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<div class="controls">
+  <div class="controls-row">
+    <span class="filter-label">Module:</span>
+    <button class="filter-btn active" data-type="module" data-filter="all">All</button>
+    <button class="filter-btn m2" data-type="module" data-filter="m2">Module 2</button>
+    <button class="filter-btn m3" data-type="module" data-filter="m3">Module 3</button>
+    <button class="filter-btn m4" data-type="module" data-filter="m4">Module 4</button>
+    <button class="filter-btn m5" data-type="module" data-filter="m5">Module 5</button>
+    <button class="filter-btn m6" data-type="module" data-filter="m6">Module 6</button>
+  </div>
+  <div class="controls-row">
+    <span class="filter-label">Paper:</span>
+    <button class="filter-btn active" data-type="paper" data-filter="all">All</button>
+    <button class="filter-btn p1" data-type="paper" data-filter="p1">Paper 1</button>
+    <button class="filter-btn p2" data-type="paper" data-filter="p2">Paper 2</button>
+  </div>
+</div>
+
+<div class="legend">
+  <span class="leg-item"><span class="paper-pill pp1">P1</span> Paper 1 — Breadth in Chemistry (Modules 1, 2, 3, 5)</span>
+  <span class="leg-item"><span class="paper-pill pp2">P2</span> Paper 2 — Depth in Chemistry (Modules 1, 2, 4, 6)</span>
+  <span class="leg-item"><span class="paper-pill pp12">P1 + P2</span> Appears on both papers</span>
+</div>
+
+<div class="module-notice">
+  <strong>Module 1 — Development of Practical Skills</strong> is assessed across all three papers through practical-based questions and the Practical Endorsement (PAG). It is not listed separately below as its content is embedded throughout all modules.
+</div>
+
+<main>
+
+<!-- ==================== MODULE 2 ==================== -->
+<div class="module-section" data-module="m2" data-paper="p1 p2">
+  <div class="module-heading m2">
+    <span class="module-id">Module 2</span>
+    <span class="module-title">Foundations in Chemistry</span>
+    <div class="module-paper-tags">
+      <span class="paper-pill pp12">P1 + P2</span>
+    </div>
+  </div>
+  <table class="spec-table">
+
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.1.1</td>
+      <td class="col-name">Atomic Structure &amp; Isotopes<div class="col-desc">Protons, neutrons, electrons — charge, mass, location. Atomic number, mass number. Isotopes: same element, different neutrons. Relative isotopic mass and relative atomic mass (weighted mean, ¹²C standard).</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.1.2</td>
+      <td class="col-name">Atomic Structure &amp; Mass Spectrometry<div class="col-desc">How a mass spectrometer works (ionisation, acceleration, deflection, detection). Calculating Ar from mass spectrum data. Molecular ion peak and fragmentation.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.1.3</td>
+      <td class="col-name">Compounds, Formulae &amp; Equations<div class="col-desc">Writing ionic and molecular formulae. Balancing equations. State symbols. Empirical and molecular formulae from data.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.2.1</td>
+      <td class="col-name">Amount of Substance<div class="col-desc">The mole and Avogadro's constant. Molar mass. Calculating moles from mass. Concentration in mol dm⁻³. Moles of gases at RTP.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.2.2</td>
+      <td class="col-name">Determining Formulae<div class="col-desc">Calculating empirical formula from percentage composition or combustion data. Determining molecular formula from Mr and empirical formula.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.2.3</td>
+      <td class="col-name">Reaction Calculations<div class="col-desc">Stoichiometric calculations from equations. Limiting reagents. Calculations involving solutions and titrations.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.2.4</td>
+      <td class="col-name">The Ideal Gas Equation<div class="col-desc">pV = nRT. Using the equation to calculate moles, volume, pressure or temperature. Units: Pa, m³, K. Molar volume at RTP.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.2.5</td>
+      <td class="col-name">Percentage Yield &amp; Atom Economy<div class="col-desc">Calculating percentage yield. Atom economy = (Mr of desired product / sum of Mr of all products) × 100. Importance for green chemistry.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.3.1</td>
+      <td class="col-name">Acids<div class="col-desc">Brønsted–Lowry acids and bases. Conjugate acid–base pairs. Strong and weak acids. Reactions of acids with metals, metal oxides, hydroxides and carbonates.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.3.2</td>
+      <td class="col-name">Acid-base Titrations<div class="col-desc">Carrying out and calculating results from acid-base titrations. Choosing appropriate indicators. Back titration calculations.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.3.3</td>
+      <td class="col-name">Redox<div class="col-desc">Oxidation numbers: rules and calculation. Oxidation and reduction in terms of electron transfer and oxidation number change. Writing half-equations. Identifying oxidising and reducing agents.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.4.1</td>
+      <td class="col-name">Electron Structure<div class="col-desc">Shells, sub-shells (s, p, d) and orbitals. Electron configuration notation. Aufbau principle, Hund's rule, Pauli exclusion. Ionisation energy evidence for sub-shells.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.4.2</td>
+      <td class="col-name">Ionic Bonding &amp; Structure<div class="col-desc">Formation of ionic bonds by electron transfer. Giant ionic lattice structure. Properties: high melting point, electrical conductivity when molten/dissolved.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.4.3</td>
+      <td class="col-name">Covalent Bonding &amp; Structure<div class="col-desc">Covalent bonds by electron sharing. Single, double and triple bonds. Dative covalent (coordinate) bonds. Simple molecular vs giant covalent structures. Metallic bonding.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.5.1</td>
+      <td class="col-name">Shapes of Simple Molecules &amp; Ions<div class="col-desc">VSEPR theory. Shapes and bond angles: linear, trigonal planar, tetrahedral, trigonal pyramidal, bent/V-shaped, octahedral. Effect of lone pairs on bond angles.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.5.2</td>
+      <td class="col-name">Electronegativity &amp; Bond Polarity<div class="col-desc">Electronegativity and the Pauling scale. Polar covalent bonds. Dipole moments. Whether a molecule is polar overall — symmetry and bond polarity.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+    <tr data-module="m2" data-paper="p1 p2">
+      <td class="col-num">2.5.3</td>
+      <td class="col-name">Intermolecular Forces<div class="col-desc">London dispersion forces. Permanent dipole–dipole forces. Hydrogen bonding (conditions: N/O/F with H). Relative strengths and effect on boiling points. Anomalous properties of water.</div></td>
+      <td class="col-paper"><span class="paper-pill pp12">P1+P2</span></td>
+    </tr>
+
+  </table>
+</div>
+
+<!-- ==================== MODULE 3 ==================== -->
+<div class="module-section" data-module="m3" data-paper="p1">
+  <div class="module-heading m3">
+    <span class="module-id">Module 3</span>
+    <span class="module-title">The Periodic Table and Energy</span>
+    <div class="module-paper-tags">
+      <span class="paper-pill pp1">P1</span>
+    </div>
+  </div>
+  <table class="spec-table">
+
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.1.1</td>
+      <td class="col-name">Periodicity<div class="col-desc">Structure of the periodic table: periods, groups, s/p/d blocks. Trends across Period 3: atomic radius, electronegativity, melting point. Oxide character (acidic/basic/amphoteric).</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.1.2</td>
+      <td class="col-name">Ionisation Energy<div class="col-desc">First ionisation energy: definition and trend across a period and down a group. Successive ionisation energies — evidence for shell structure and group number. Explaining anomalies (Be vs B, N vs O).</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.1.3</td>
+      <td class="col-name">Structure &amp; Physical Properties<div class="col-desc">Giant metallic, giant ionic, giant covalent and simple molecular structures. Relating melting/boiling points, electrical conductivity and solubility to structure and bonding.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.2.1</td>
+      <td class="col-name">Group 2 Elements<div class="col-desc">Reactions of Group 2 metals (Mg–Ba) with water and oxygen. Trend in reactivity down the group. Products and equations for each reaction.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.2.2</td>
+      <td class="col-name">Group 2 Compounds<div class="col-desc">Solubility trends of Group 2 hydroxides and sulfates. Uses of Group 2 compounds: CaO (quicklime), Ca(OH)₂ (limewater, agriculture), CaCO₃, MgO (antacids). Flame colours.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.3.1</td>
+      <td class="col-name">The Halogens<div class="col-desc">Properties and trends down Group 7: electronegativity, boiling point, colour, reactivity. Reactions of halogens with halide ions (displacement). Disproportionation of chlorine in water and alkali.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.3.2</td>
+      <td class="col-name">Uses of Chlorine<div class="col-desc">Chlorine in water treatment: killing bacteria, forming HClO. Risks and benefits. Fluoride in toothpaste/water. Environmental concerns of halogenated compounds (CFCs, ozone depletion).</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.3.3</td>
+      <td class="col-name">Qualitative Analysis<div class="col-desc">Tests for cations: flame tests (Li⁺ crimson, Na⁺ yellow, K⁺ lilac, Ca²⁺ brick-red, Ba²⁺ pale green, Cu²⁺ blue-green). Hydroxide precipitate tests. Tests for anions: CO₃²⁻, SO₄²⁻, halides (AgNO₃). Gas tests: H₂, O₂, CO₂, Cl₂, NH₃, HCl.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.4.1</td>
+      <td class="col-name">Enthalpy Changes<div class="col-desc">Exothermic and endothermic reactions. Standard enthalpy of combustion, formation, neutralisation and atomisation. Standard conditions (298 K, 100 kPa). Enthalpy profile diagrams.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.4.2</td>
+      <td class="col-name">Calorimetry<div class="col-desc">Measuring enthalpy changes using q = mcΔT. Calculating ΔH per mole. Limitations of calorimetry (heat loss, incomplete combustion). Experiment design and error analysis.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.4.3</td>
+      <td class="col-name">Bond Enthalpies<div class="col-desc">Average bond enthalpies. Calculating ΔH from bonds broken and formed. Limitations of using average bond enthalpies. Endothermic = more energy to break bonds; exothermic = more energy released forming bonds.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.4.4</td>
+      <td class="col-name">Hess's Law<div class="col-desc">Hess's Law: enthalpy change is independent of route. Constructing Hess cycles. Calculating unknown enthalpy changes from standard enthalpies of combustion or formation.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.5.1</td>
+      <td class="col-name">Simple Collision Theory<div class="col-desc">Collision theory: particles must collide with sufficient energy (≥ Ea) and correct orientation. Effect of concentration, pressure, temperature and surface area on rate. Maxwell–Boltzmann distribution.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.5.2</td>
+      <td class="col-name">Catalysis<div class="col-desc">Homogeneous and heterogeneous catalysts. How catalysts lower activation energy. Industrial examples (Fe in Haber process, V₂O₅ in Contact process). Autocatalysis.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.5.3</td>
+      <td class="col-name">The Boltzmann Distribution<div class="col-desc">Shape of the Maxwell–Boltzmann distribution. Effect of temperature on the distribution. Why a small temperature rise causes a large increase in rate. Activation energy on the distribution curve.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.6.1</td>
+      <td class="col-name">Dynamic Equilibrium<div class="col-desc">Reversible reactions and dynamic equilibrium. Conditions for equilibrium (closed system, constant macroscopic properties). Forward and reverse reaction rates equal at equilibrium.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.6.2</td>
+      <td class="col-name">Le Chatelier's Principle<div class="col-desc">Le Chatelier's principle: effect of changing concentration, pressure and temperature on equilibrium position. Industrial applications: Haber process, Contact process — compromise conditions and reasons.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m3" data-paper="p1">
+      <td class="col-num">3.6.3</td>
+      <td class="col-name">The Equilibrium Constant, Kc<div class="col-desc">Writing Kc expressions from equations. Calculating Kc from equilibrium concentrations. Units of Kc. Effect of temperature on Kc. Kc unaffected by pressure, concentration or catalyst.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+
+  </table>
+</div>
+
+<!-- ==================== MODULE 4 ==================== -->
+<div class="module-section" data-module="m4" data-paper="p2">
+  <div class="module-heading m4">
+    <span class="module-id">Module 4</span>
+    <span class="module-title">Core Organic Chemistry</span>
+    <div class="module-paper-tags">
+      <span class="paper-pill pp2">P2</span>
+    </div>
+  </div>
+  <table class="spec-table">
+
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.1.1</td>
+      <td class="col-name">Chemical Names &amp; Formulae<div class="col-desc">IUPAC nomenclature for alkanes, alkenes, alcohols, haloalkanes. Structural, displayed and skeletal formulae. Homologous series. Functional groups.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.1.2</td>
+      <td class="col-name">Functional Groups<div class="col-desc">Identifying functional groups: alkene (C=C), alcohol (–OH), haloalkane (C–X), aldehyde (–CHO), ketone (C=O), carboxylic acid (–COOH), amine (–NH₂), ester (–COO–).</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.1.3</td>
+      <td class="col-name">Structural Isomerism<div class="col-desc">Types of structural isomerism: chain, positional, functional group. Drawing and naming structural isomers. Counting isomers for simple molecules.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.1.4</td>
+      <td class="col-name">Reaction Mechanisms<div class="col-desc">Types of mechanism: radical, electrophilic addition, electrophilic substitution, nucleophilic substitution, elimination. Curly arrows showing electron pair movement. Homolytic and heterolytic fission.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.2.1</td>
+      <td class="col-name">Introduction to Alkanes<div class="col-desc">General formula CₙH₂ₙ₊₂. Naming and structure of alkanes up to C8. Physical properties (boiling points, London forces). Complete and incomplete combustion.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.2.2</td>
+      <td class="col-name">Reactions of Alkanes<div class="col-desc">Combustion (complete and incomplete). Thermal cracking and catalytic cracking. Products and conditions. Uses of fractions from fractional distillation of crude oil.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.2.3</td>
+      <td class="col-name">Free Radical Substitution<div class="col-desc">Mechanism of free radical substitution: initiation, propagation (×2 steps), termination. Conditions: UV light. Products — mixture of mono- and polyhalogenated products.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.3.1</td>
+      <td class="col-name">Introduction to Alkenes<div class="col-desc">General formula CₙH₂ₙ. Structure of C=C double bond (σ and π bonds). Physical properties. Testing for unsaturation (bromine water, acidified KMnO₄).</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.3.2</td>
+      <td class="col-name">Stereoisomerism in Alkenes<div class="col-desc">E/Z isomerism arising from restricted rotation about C=C. Conditions for E/Z isomers (two different groups on each carbon). Cahn–Ingold–Prelog priority rules for E/Z assignment.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.3.3</td>
+      <td class="col-name">Addition Reactions of Alkenes<div class="col-desc">Addition of H₂ (hydrogenation), HX (hydrohalogenation), X₂ (halogenation), H₂O (hydration). Conditions for each. Markovnikov's rule for unsymmetrical addition of HX.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.3.4</td>
+      <td class="col-name">Electrophilic Addition<div class="col-desc">Mechanism of electrophilic addition using curly arrows. Bromine water decolourisation mechanism. Carbocation intermediates — primary, secondary, tertiary stability and Markovnikov's rule.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.3.5</td>
+      <td class="col-name">Polymers from Alkenes<div class="col-desc">Addition polymerisation mechanism. Repeating unit from monomer structure and vice versa. Properties of addition polymers. Disposal issues (non-biodegradable, combustion products).</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.4.1</td>
+      <td class="col-name">Properties of Alcohols<div class="col-desc">Naming primary, secondary and tertiary alcohols. Hydrogen bonding and its effect on boiling points. Solubility in water. Reactions with sodium (effervescence, H₂ produced).</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.4.2</td>
+      <td class="col-name">Reactions of Alcohols<div class="col-desc">Combustion of alcohols. Oxidation: primary → aldehyde → carboxylic acid; secondary → ketone; tertiary — not oxidised. Dehydration to alkenes (elimination). Esterification.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.5.1</td>
+      <td class="col-name">Reactions of Haloalkanes<div class="col-desc">Nucleophilic substitution: hydrolysis with NaOH(aq) → alcohol; with KCN → nitrile; with NH₃ → amine. Elimination with KOH/ethanol → alkene. Relative rates: R–F &lt; R–Cl &lt; R–Br &lt; R–I.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.5.2</td>
+      <td class="col-name">Nucleophilic Substitution of Haloalkanes<div class="col-desc">SN2 mechanism (curly arrows). Effect of carbon chain branching on reaction rate. Primary haloalkanes favour SN2. Steric hindrance in tertiary haloalkanes.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.5.3</td>
+      <td class="col-name">Hydrolysis of Primary Haloalkanes<div class="col-desc">Comparing rates of hydrolysis of primary haloalkanes with AgNO₃(aq)/ethanol. Relative C–X bond enthalpies and their effect on reactivity. Experimental technique and observations.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.5.4</td>
+      <td class="col-name">Environmental Concerns of Organohalogen Use<div class="col-desc">CFCs and ozone depletion: free radical mechanism. HFCs as replacements. PCBs and persistence in food chains. Green chemistry principles and atom economy in context.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.6.1</td>
+      <td class="col-name">Techniques in Organic Chemistry<div class="col-desc">Reflux, distillation, fractional distillation, recrystallisation, filtration under reduced pressure. Separating funnel. Drying agents. Measuring purity by melting point.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.6.2</td>
+      <td class="col-name">Synthetic Routes<div class="col-desc">Planning multi-step syntheses using Module 4 reactions. Selecting reagents, conditions and apparatus for each step. Considering yield and purity.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.7.1</td>
+      <td class="col-name">Infrared Spectroscopy<div class="col-desc">IR absorption due to bond vibrations. Key absorptions: O–H (broad, 2500–3300 cm⁻¹ acid; sharp, 3200–3550 cm⁻¹ alcohol), C=O (1700 cm⁻¹), N–H, C–H. Fingerprint region (&lt;1500 cm⁻¹).</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.7.2</td>
+      <td class="col-name">Mass Spectrometry (Organic)<div class="col-desc">Molecular ion peak (M⁺) for Mr. Fragmentation pattern analysis. Common fragments: loss of 15 (CH₃), 17 (OH), 29 (CHO), 45 (OEt). Base peak and relative abundance.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m4" data-paper="p2">
+      <td class="col-num">4.7.3</td>
+      <td class="col-name">Combined Techniques<div class="col-desc">Using IR and MS data together to identify organic compounds. Systematic approach: Mr from M⁺, functional groups from IR, confirm structure from fragments.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+
+  </table>
+</div>
+
+<!-- ==================== MODULE 5 ==================== -->
+<div class="module-section" data-module="m5" data-paper="p1">
+  <div class="module-heading m5">
+    <span class="module-id">Module 5</span>
+    <span class="module-title">Physical Chemistry and Transition Elements</span>
+    <div class="module-paper-tags">
+      <span class="paper-pill pp1">P1</span>
+    </div>
+  </div>
+  <table class="spec-table">
+
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.1</td>
+      <td class="col-name">Rates &amp; Orders<div class="col-desc">Rate equations: rate = k[A]ᵐ[B]ⁿ. Orders of reaction (0, 1, 2) from experimental data. Units of k. Overall order. Initial rate method from tabulated data.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.2</td>
+      <td class="col-name">Concentration–Time Graphs<div class="col-desc">Shape of [A] vs time for zero, first and second order. Half-life: constant for first order. Calculating k from half-life (k = ln2 / t½). Tangent method for rate at a point.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.3</td>
+      <td class="col-name">Rate–Concentration Graphs<div class="col-desc">Rate vs [A] graphs for zero (horizontal), first (straight line through origin), second order (curve). Determining order and k from gradient of rate–concentration graph.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.4</td>
+      <td class="col-name">Investigating Reaction Rates<div class="col-desc">Clock reactions, colorimetry, gas collection, conductance. Continuous monitoring vs initial rate methods. Sources of error and how to minimise them. Processing data to determine order.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.5</td>
+      <td class="col-name">Rate-determining Step<div class="col-desc">Multi-step reactions and rate-determining step (slowest step). Deducing the rate equation from the mechanism. Molecularity. Proposing mechanisms consistent with a given rate equation.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.6</td>
+      <td class="col-name">Temperature &amp; Rate Constants<div class="col-desc">Effect of temperature on k. Calculating k at different temperatures. The relationship between k, Ea and T qualitatively and using the Arrhenius equation.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.1.7</td>
+      <td class="col-name">The Arrhenius Equation<div class="col-desc">k = Ae^(−Ea/RT). Using ln k = ln A − Ea/RT. Graphical method: ln k vs 1/T — gradient = −Ea/R. Calculating Ea from two temperatures.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.2.1</td>
+      <td class="col-name">Equilibrium Terms<div class="col-desc">Mole fractions. Partial pressures. Total pressure = sum of partial pressures. Calculating mole fractions and partial pressures from equilibrium amounts.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.2.2</td>
+      <td class="col-name">Kc &amp; Kp<div class="col-desc">Writing Kp expressions using partial pressures. Relationship between Kc and Kp: Kp = Kc(RT)^Δn. Units of Kp. Calculating Kp from equilibrium amounts and total pressure.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.2.3</td>
+      <td class="col-name">Equilibrium Constants &amp; Changing Conditions<div class="col-desc">Effect of temperature on K (endothermic: K increases with T; exothermic: K decreases). Pressure and concentration changes do not affect K. Predicting direction of shift using Q vs K.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.3.1</td>
+      <td class="col-name">Acids &amp; Bases<div class="col-desc">Brønsted–Lowry and Lewis definitions. Strong vs weak acids — degree of dissociation. Ka as equilibrium constant for weak acid dissociation. pKa = −log Ka.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.3.2</td>
+      <td class="col-name">Ka, pH &amp; Kw<div class="col-desc">pH = −log[H⁺]. [H⁺] from pH. Kw = [H⁺][OH⁻] = 1.00 × 10⁻¹⁴ at 298 K. pKw = 14. pH of water and neutral solutions at different temperatures.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.3.3</td>
+      <td class="col-name">pH Calculations<div class="col-desc">pH of strong acids and strong bases. pH of weak acids using Ka approximation: [H⁺] = √(Ka × c). pH changes during acid–base titrations. Shape of titration curves for all four combinations.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.3.4</td>
+      <td class="col-name">Buffers<div class="col-desc">Buffer action: mixture of weak acid and its conjugate base (or excess weak acid + salt). How a buffer resists pH change. Henderson–Hasselbalch equation. Calculating pH of a buffer.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.3.5</td>
+      <td class="col-name">Neutralisation<div class="col-desc">Enthalpy of neutralisation. Titration curves — identifying equivalence point and buffer region. Choosing indicators (pKin within steep region). Half-equivalence point: pH = pKa.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.1</td>
+      <td class="col-name">Lattice Enthalpy<div class="col-desc">Definition of lattice enthalpy (formation). Factors affecting lattice enthalpy: ionic charge and ionic radius. Comparison of theoretical and experimental values — polarisation and covalent character.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.2</td>
+      <td class="col-name">Building Born–Haber Cycles<div class="col-desc">Stages of a Born–Haber cycle: atomisation, ionisation, electron affinity, lattice enthalpy. Drawing the cycle for ionic compounds (NaCl, MgO etc).</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.3</td>
+      <td class="col-name">Calculations Using Born–Haber Cycles<div class="col-desc">Using Hess's Law to calculate unknown enthalpy terms (commonly lattice enthalpy or electron affinity) from a Born–Haber cycle. Successive ionisation energies in cycles for 2+ cations.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.4</td>
+      <td class="col-name">Enthalpy of Solution &amp; Hydration<div class="col-desc">Enthalpy of solution = lattice enthalpy (dissociation) + enthalpy of hydration. Why some ionic compounds dissolve endothermically. Hydration enthalpy depends on charge density of ion.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.5</td>
+      <td class="col-name">Effect of Ionic Charge &amp; Radius on Enthalpy<div class="col-desc">Higher charge → more exothermic lattice enthalpy and hydration enthalpy. Smaller radius → greater charge density → more exothermic hydration. Explaining solubility trends.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.6</td>
+      <td class="col-name">Entropy<div class="col-desc">Entropy (S) as a measure of disorder. Units: J K⁻¹ mol⁻¹. Predicting sign of ΔS for reactions (gases increase entropy; dissolving usually increases entropy). Standard entropy values.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.7</td>
+      <td class="col-name">The Feasibility of a Reaction<div class="col-desc">ΔG = ΔH − TΔS. Feasibility when ΔG &lt; 0. Effect of temperature on feasibility for different sign combinations of ΔH and ΔS. Temperature at which reaction becomes feasible: T = ΔH / ΔS.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.4.8</td>
+      <td class="col-name">Gibbs Free Energy, ΔG<div class="col-desc">Calculating ΔG from ΔH, T and ΔS. Relationship between ΔG and equilibrium constant: ΔG° = −RT ln K. Interpreting the sign of ΔG in terms of spontaneity and equilibrium position.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.5.1</td>
+      <td class="col-name">Redox<div class="col-desc">Oxidation numbers in transition metal compounds. Balancing redox equations using half-equations (acidic and alkaline conditions). Disproportionation reactions.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.5.2</td>
+      <td class="col-name">Redox Titrations<div class="col-desc">Carrying out redox titrations (MnO₄⁻ and Cr₂O₇²⁻ as oxidising agents). Calculations to find concentration or percentage purity. Iodine–thiosulfate titrations.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.5.3</td>
+      <td class="col-name">Electrode Potentials<div class="col-desc">Standard electrode potential E°: definition, standard hydrogen electrode. Measuring E° using a standard cell. Electrochemical series. Predicting feasibility of redox reactions using E° values.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.5.4</td>
+      <td class="col-name">Electrode Potential Calculations<div class="col-desc">Calculating EMF of a cell: E°cell = E°cathode − E°anode. Predicting direction of electron flow. Limitations of E° predictions (kinetics, concentration, temperature effects).</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.5.5</td>
+      <td class="col-name">Electrochemical Cells<div class="col-desc">Cells and batteries: non-rechargeable (Zn/C), rechargeable (Li-ion), fuel cells (H₂/O₂). Half-equations at anode and cathode. Advantages and disadvantages of fuel cells.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.1</td>
+      <td class="col-name">Transition Elements<div class="col-desc">Definition: d-block elements that form at least one ion with an incomplete d sub-shell. Electron configurations of Sc–Zn (including exceptions: Cr, Cu). General properties: variable oxidation states, coloured ions, catalytic activity.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.2</td>
+      <td class="col-name">Ligands &amp; Complex Ions<div class="col-desc">Ligands as Lewis bases donating a lone pair to a central metal ion. Monodentate, bidentate and polydentate ligands. Coordination number (commonly 4 or 6). Naming complexes (IUPAC). Shape: octahedral, tetrahedral, square planar.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.3</td>
+      <td class="col-name">Isomerism in Transition Element Complexes<div class="col-desc">Cis–trans (geometric) isomerism in square planar and octahedral complexes. Optical isomerism in octahedral complexes with bidentate ligands. Identifying chiral centres in complexes.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.4</td>
+      <td class="col-name">Ligand Substitution Reactions<div class="col-desc">Ligand substitution reactions — competing ligand strengths. Haem and CO poisoning. EDTA as a chelating agent. Stability constants (Kstab) — definition and use in comparing complex stability.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.5</td>
+      <td class="col-name">Iron in Haemoglobin<div class="col-desc">Role of Fe²⁺ in haemoglobin — reversible binding of O₂. CO poisoning: preferential binding of CO over O₂. Fe²⁺/Fe³⁺ in electron transfer in cytochromes.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.6</td>
+      <td class="col-name">Redox Reactions of Transition Elements<div class="col-desc">Colours and oxidation states of vanadium (V, IV, III, II), chromium (Cr²⁺/³⁺/VI), manganese (II/IV/VII), iron (II/III), copper (I/II). Qualitative analysis using oxidation state changes and colour changes.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+    <tr data-module="m5" data-paper="p1">
+      <td class="col-num">5.6.7</td>
+      <td class="col-name">Qualitative Analysis of Transition Element Ions<div class="col-desc">Tests using NaOH(aq) and NH₃(aq): precipitate colours for Fe²⁺, Fe³⁺, Cu²⁺, Mn²⁺, Cr³⁺, Co²⁺. Distinguishing between ions. Solubility of precipitates in excess NH₃.</div></td>
+      <td class="col-paper"><span class="paper-pill pp1">P1</span></td>
+    </tr>
+
+  </table>
+</div>
+
+<!-- ==================== MODULE 6 ==================== -->
+<div class="module-section" data-module="m6" data-paper="p2">
+  <div class="module-heading m6">
+    <span class="module-id">Module 6</span>
+    <span class="module-title">Organic Chemistry and Analysis</span>
+    <div class="module-paper-tags">
+      <span class="paper-pill pp2">P2</span>
+    </div>
+  </div>
+  <table class="spec-table">
+
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.1.1</td>
+      <td class="col-name">Benzene<div class="col-desc">Kekulé vs delocalised model of benzene. Evidence for delocalisation: equal bond lengths, hydrogenation enthalpy less than expected, stability. Representation using skeletal formula.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.1.2</td>
+      <td class="col-name">Electrophilic Substitution<div class="col-desc">Mechanism of electrophilic aromatic substitution. Nitration (HNO₃/H₂SO₄, 50°C): nitrobenzene. Halogenation (Br₂/FeBr₃ catalyst). Friedel–Crafts alkylation and acylation (AlCl₃ catalyst).</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.1.3</td>
+      <td class="col-name">Phenol<div class="col-desc">Phenol structure and acidity (weaker than carboxylic acids but stronger than alcohols). Reactions: with Na, NaOH (unlike alcohols). Electrophilic substitution — ring activated by –OH group. Bromination without catalyst.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.1.4</td>
+      <td class="col-name">Directing Effects<div class="col-desc">2,4-directing groups (activating: –OH, –NH₂, –CH₃) vs 3-directing groups (deactivating: –NO₂, –COOH, –CHO). Predicting the major product of electrophilic substitution on substituted benzene rings.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.2.1</td>
+      <td class="col-name">Reactions of Carbonyl Compounds<div class="col-desc">Nucleophilic addition to aldehydes and ketones with NaBH₄ (reduction) and HCN/KCN (cyanohydrin formation). Mechanism of nucleophilic addition. Testing with Brady's reagent (DNPH): orange precipitate.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.2.2</td>
+      <td class="col-name">Testing for Carbonyl Compounds<div class="col-desc">Distinguishing aldehydes from ketones: Tollens' reagent (silver mirror with aldehyde), Fehling's/Benedict's solution (brick-red precipitate with aldehyde). Iodoform reaction for CH₃CO– group.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.3.1</td>
+      <td class="col-name">Carboxylic Acids<div class="col-desc">Properties of carboxylic acids: acidity, hydrogen bonding. Reactions: with Na, NaOH, NaHCO₃ (effervescence — CO₂), alcohols (esterification). Reduction to primary alcohol with LiAlH₄.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.3.2</td>
+      <td class="col-name">Esters<div class="col-desc">Naming esters. Formation by esterification (acid + alcohol, H₂SO₄ catalyst, reversible). Hydrolysis: acid hydrolysis (reversible → acid + alcohol) and base hydrolysis/saponification (irreversible → salt + alcohol). Uses of esters.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.3.3</td>
+      <td class="col-name">Acyl Chlorides<div class="col-desc">Reactions of acyl chlorides with water, alcohols, ammonia and amines. Comparing reactivity with carboxylic acids and esters. Mechanism of nucleophilic addition–elimination.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.4.1</td>
+      <td class="col-name">Amines<div class="col-desc">Primary, secondary and tertiary amines. Naming. Basicity of amines: lone pair on N. Comparing basicity of aliphatic amines, ammonia, and aryl amines (phenylamine). Reactions with acids to form salts.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.4.2</td>
+      <td class="col-name">Preparing Amines<div class="col-desc">Reduction of nitriles (LiAlH₄). Reduction of nitrobenzene to phenylamine (Sn/HCl). Nucleophilic substitution of haloalkanes with excess NH₃. Reactions of phenylamine.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.4.3</td>
+      <td class="col-name">Amino Acids<div class="col-desc">Structure of α-amino acids: –NH₂ and –COOH on the same carbon. Zwitterions and isoelectric point. Peptide bond formation (condensation). Hydrolysis of peptides. Optical isomerism.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.4.4</td>
+      <td class="col-name">Amides<div class="col-desc">Formation of amides from acyl chlorides + amines/ammonia, or from carboxylic acids + amines (condensation). Hydrolysis of amides (acid or base conditions). Link to peptide/protein structure.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.5.1</td>
+      <td class="col-name">Optical Isomers<div class="col-desc">Optical isomers (enantiomers) from chiral (asymmetric) carbon atoms. Mirror images — non-superimposable. Plane-polarised light: optical activity, racemic mixture. Biological importance of chirality.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.5.2</td>
+      <td class="col-name">Identification of Chiral Centres<div class="col-desc">Identifying chiral (asymmetric) carbons: bonded to four different groups. Drawing enantiomers. Racemic mixtures formed in reactions involving carbocation or radical intermediates.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.6.1</td>
+      <td class="col-name">Condensation Polymers<div class="col-desc">Polyesters (e.g. Terylene): from diols + dicarboxylic acids or hydroxyacids. Polyamides (e.g. nylon, Kevlar): from diamines + dicarboxylic acids or amino acids. Repeat units and linkages.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.6.2</td>
+      <td class="col-name">Polymer Repeat Units<div class="col-desc">Deducing repeat unit from monomer structure. Deducing monomers from polymer structure. Hydrolysis of condensation polymers. Biodegradability vs addition polymers. Sustainability.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.7.1</td>
+      <td class="col-name">Nitriles<div class="col-desc">Formation of nitriles from nucleophilic substitution of haloalkanes with KCN. Hydrolysis of nitriles to carboxylic acids (acid/base conditions). Reduction to primary amines (LiAlH₄). Chain lengthening.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.7.2</td>
+      <td class="col-name">Substituted Aromatic Compounds<div class="col-desc">Reactions forming C–C bonds on the benzene ring: Friedel–Crafts. Diazonium salt chemistry: formation from phenylamine + HNO₂/HCl at 0–5°C. Coupling reactions to form azo dyes.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.8.1</td>
+      <td class="col-name">Techniques in Advanced Organic Chemistry<div class="col-desc">Multi-step synthesis techniques. Selecting appropriate conditions and reagents for each functional group transformation across Modules 4 and 6. Yield optimisation.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.8.2</td>
+      <td class="col-name">Synthetic Routes<div class="col-desc">Planning multi-step organic syntheses using all reactions from Modules 4 and 6. Converting between functional groups via appropriate intermediates. Retrosynthetic analysis.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.9.1</td>
+      <td class="col-name">Thin Layer Chromatography<div class="col-desc">TLC: stationary phase (silica), mobile phase (solvent). Rf values. Uses: monitoring reaction progress, checking purity, identifying compounds. Ninhydrin for amino acids.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.9.2</td>
+      <td class="col-name">Gas Chromatography<div class="col-desc">GC: vaporised sample carried through column by inert gas. Retention time for identification. Peak area for relative amounts. GC-MS: combining GC with mass spectrometry for identification.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.9.3</td>
+      <td class="col-name">Qualitative Analysis<div class="col-desc">Systematic tests for functional groups: aldehydes vs ketones, carboxylic acids, alcohols, phenols, amines, alkenes. Combining tests to identify an unknown organic compound.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.9.4</td>
+      <td class="col-name">Carbon-13 NMR<div class="col-desc">¹³C NMR: number of peaks = number of different carbon environments. Chemical shift values for different C environments. No integration or splitting in ¹³C NMR. DEPT to distinguish CH, CH₂, CH₃.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.9.5</td>
+      <td class="col-name">Proton NMR<div class="col-desc">¹H NMR: chemical shift (δ), integration (relative number of H), splitting pattern (n+1 rule). Common environments and shifts. TMS as reference (δ = 0). Identifying exchangeable protons using D₂O.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+    <tr data-module="m6" data-paper="p2">
+      <td class="col-num">6.9.6</td>
+      <td class="col-name">Combined Techniques<div class="col-desc">Using MS, IR, ¹³C NMR and ¹H NMR together to determine the structure of an unknown compound. Systematic approach: Mr from MS, functional groups from IR, environments from NMR.</div></td>
+      <td class="col-paper"><span class="paper-pill pp2">P2</span></td>
+    </tr>
+
+  </table>
+</div>
+
+</main>
+
+<footer style="text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600">
+  OCR A Level Chemistry H432 &nbsp;&bull;&nbsp; <a href="alevel-home.html" style="color:var(--pr);text-decoration:none">&#8592; Back to A Level home</a>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var activeModule = 'all';
+  var activePaper  = 'all';
+
+  function applyFilters() {
+    document.querySelectorAll('.module-section').forEach(function(section) {
+      var mod   = section.getAttribute('data-module');
+      var paper = section.getAttribute('data-paper');
+      var modOk   = (activeModule === 'all' || activeModule === mod);
+      var paperOk = (activePaper === 'all' || paper.includes(activePaper));
+      section.style.display = (modOk && paperOk) ? '' : 'none';
+    });
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var type   = btn.getAttribute('data-type');
+      var filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('.filter-btn[data-type="' + type + '"]').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      if (type === 'module') activeModule = filter;
+      if (type === 'paper')  activePaper  = filter;
+      applyFilters();
+    });
+  });
+});
+</script>
+</body></html>
