@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Booklet · A Level ChemIgnite</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#2d6a4f;--pr-dk:#1b4332;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 12px rgba(45,106,79,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+
+.topbar{background:#0d2e1e;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;z-index:10}
+.topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.topbar-back:hover{background:rgba(255,255,255,.12)}
+.topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
+
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d2e1e 0%,#1b4332 45%,#2d6a4f 80%,#40916c 100%);color:#fff;padding:2.5rem 1.5rem 5rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{display:block;width:50px;height:50px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.8rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.95rem;opacity:.87;max-width:460px;margin:0 auto;font-weight:600}
+.hero-sub{margin-top:.4rem;font-size:.83rem;opacity:.65;font-weight:400}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+main{flex:1;max-width:960px;margin:2rem auto 4rem;padding:0 1.2rem;width:100%;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+
+.info-bar{width:100%;max-width:820px;background:#fff;border:1.5px solid var(--bdr);border-radius:var(--r);padding:.9rem 1.2rem;display:flex;align-items:center;gap:1rem;box-shadow:var(--sh);flex-wrap:wrap}
+.info-bar-text{flex:1;font-size:.85rem;color:var(--txm);font-weight:600;min-width:180px}
+.info-bar-text strong{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;border-radius:30px;font-size:.83rem;font-weight:800;text-decoration:none;transition:filter .15s,transform .15s;white-space:nowrap}
+.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(135deg,#2d6a4f,#40916c);color:#fff}
+.btn-outline{background:#fff;color:var(--pr);border:1.5px solid var(--pr)}
+
+.pdf-wrap{width:100%;max-width:820px;background:#fff;border-radius:var(--r);box-shadow:var(--sh);border:1.5px solid var(--bdr);overflow:hidden}
+.pdf-wrap iframe{display:block;width:100%;height:75vh;min-height:500px;border:none}
+
+.fallback{display:none;padding:3rem 2rem;text-align:center}
+.fallback p{color:var(--txm);font-size:.9rem;font-weight:600;margin-bottom:1rem}
+
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600}
+footer a{color:var(--pr);text-decoration:none}
+
+@media(max-width:600px){
+  .hero h1{font-size:1.45rem}
+  .pdf-wrap iframe{height:60vh}
+  .info-bar{flex-direction:column;align-items:flex-start;gap:.7rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="alevel-home.html" class="topbar-back">&#8592; A Level home</a>
+  <span class="topbar-title">Data Booklet</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg class="hero-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="6" width="34" height="44" rx="4" stroke="white" stroke-width="2.4"/>
+      <rect x="6" y="10" width="34" height="44" rx="4" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.4"/>
+      <line x1="14" y1="22" x2="34" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <line x1="14" y1="29" x2="34" y2="29" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <line x1="14" y1="36" x2="26" y2="36" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <h1>Data Booklet</h1>
+    <p>OCR A Level Chemistry H032 &amp; H432</p>
+    <p class="hero-sub">Official data sheet provided in all OCR A Level Chemistry exams</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+  <div class="info-bar">
+    <div class="info-bar-text">
+      <strong>Official OCR data sheet</strong> — this is the exact booklet given in your exams. Familiarise yourself with the layout so you can find data quickly under exam conditions.
+    </div>
+    <a href="https://www.ocr.org.uk/Images/363792-unit-h032-and-h432-data-sheet.pdf" target="_blank" class="btn btn-primary">
+      &#8681; Download PDF
+    </a>
+    <a href="https://www.ocr.org.uk/Images/363792-unit-h032-and-h432-data-sheet.pdf" target="_blank" class="btn btn-outline">
+      &#x29C9; Open in new tab
+    </a>
+  </div>
+
+  <div class="pdf-wrap">
+    <iframe
+      src="https://www.ocr.org.uk/Images/363792-unit-h032-and-h432-data-sheet.pdf"
+      title="OCR A Level Chemistry Data Sheet"
+      id="pdf-frame">
+    </iframe>
+    <div class="fallback" id="fallback">
+      <p>The PDF could not be displayed in your browser. Use the buttons above to download or open it directly.</p>
+      <a href="https://www.ocr.org.uk/Images/363792-unit-h032-and-h432-data-sheet.pdf" target="_blank" class="btn btn-primary">&#8681; Download PDF</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  OCR A Level Chemistry H432 &nbsp;&bull;&nbsp; <a href="alevel-home.html">&#8592; Back to A Level home</a>
+</footer>
+
+<script>
+  const frame = document.getElementById('pdf-frame');
+  frame.addEventListener('error', () => {
+    frame.style.display = 'none';
+    document.getElementById('fallback').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
