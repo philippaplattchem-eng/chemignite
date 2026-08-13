@@ -1,0 +1,494 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What's on Each Paper? | OCR A Level ChemIgnite</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:12px;--sh:0 2px 10px rgba(45,106,79,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;min-height:100vh}
+
+/* ── Header ── */
+.site-header{background:linear-gradient(135deg,#0d2e1e,#1b4332 50%,#2d6a4f);color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15)}
+
+/* ── Hero ── */
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#0d2e1e 0%,#1b4332 45%,#2d6a4f 80%,#40916c 100%);color:#fff;padding:2.5rem 1.5rem 5rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero-icon{display:block;width:52px;height:52px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3));position:relative;z-index:1}
+.hero h1{font-size:1.8rem;font-weight:900;margin-bottom:.35rem;position:relative;z-index:1}
+.hero p{opacity:.88;font-size:.95rem;max-width:520px;margin:0 auto;position:relative;z-index:1;font-weight:600}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+/* ── Tabs ── */
+.tabs-wrap{max-width:900px;margin:2rem auto 0;padding:0 1.2rem}
+.tabs{display:flex;gap:.5rem;border-bottom:2px solid var(--bdr)}
+.tab{padding:.65rem 1.4rem;border-radius:var(--r) var(--r) 0 0;font-size:.92rem;font-weight:800;cursor:pointer;border:2px solid transparent;border-bottom:none;color:var(--txm);background:var(--card);transition:all .15s;margin-bottom:-2px}
+.tab:hover{color:var(--tx)}
+.tab.active.p1{color:#fff;background:#1565c0;border-color:#1565c0}
+.tab.active.p2{color:#fff;background:#6a1b9a;border-color:#6a1b9a}
+.tab.active.p3{color:#fff;background:#2d6a4f;border-color:#2d6a4f}
+
+/* ── Panel ── */
+main{max-width:900px;margin:0 auto;padding:0 1.2rem 5rem}
+.panel{display:none;padding-top:1.5rem}
+.panel.active{display:block}
+
+/* ── Paper info bar ── */
+.paper-info{border-radius:var(--r);padding:1rem 1.3rem;color:#fff;margin-bottom:1.4rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.paper-info.p1{background:linear-gradient(135deg,#154360,#1a5276,#2471a3)}
+.paper-info.p2{background:linear-gradient(135deg,#4a235a,#7b241c,#6c3483)}
+.paper-info.p3{background:linear-gradient(135deg,#0d2e1e,#1b4332,#2d6a4f)}
+.paper-info-title{font-size:1.2rem;font-weight:900;flex:1;min-width:180px}
+.paper-info-title small{display:block;font-size:.78rem;font-weight:600;opacity:.8;margin-top:.15rem}
+.info-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{background:rgba(255,255,255,.18);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;font-weight:700;white-space:nowrap}
+
+/* ── Module cards grid ── */
+.modules-grid{display:flex;flex-direction:column;gap:1rem}
+
+/* ── Module block ── */
+.mod-block{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;border:1.5px solid var(--bdr)}
+.mod-header{padding:.75rem 1.1rem;color:#fff;display:flex;align-items:center;gap:.7rem}
+.mod-header.m1{background:linear-gradient(135deg,#263238,#37474f,#546e7a)}
+.mod-header.m2{background:linear-gradient(135deg,#7d6608,#b7950b,#d4ac0d)}
+.mod-header.m3{background:linear-gradient(135deg,#154360,#1a5276,#2471a3)}
+.mod-header.m4{background:linear-gradient(135deg,#145a32,#1e8449,#27ae60)}
+.mod-header.m5{background:linear-gradient(135deg,#0a4d41,#0e6655,#17a589)}
+.mod-header.m6{background:linear-gradient(135deg,#6c3483,#7d3c98,#9b59b6)}
+.mod-id{background:rgba(255,255,255,.2);font-size:.72rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;white-space:nowrap}
+.mod-title{font-weight:800;font-size:.97rem}
+.mod-body{padding:.8rem 1.1rem}
+.mod-desc{font-size:.83rem;color:var(--txm);font-weight:600;margin-bottom:.8rem;line-height:1.5}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem}
+.topic-chip{background:var(--bg);border:1.5px solid var(--bdr);border-radius:8px;padding:.45rem .75rem;font-size:.8rem;font-weight:700;color:var(--tx);line-height:1.4}
+.topic-chip span{display:block;font-size:.72rem;color:var(--txm);font-weight:600;margin-top:.1rem}
+
+/* Colour accents on topic chips per module */
+.m2-chip{border-left:3px solid #d4ac0d}
+.m3-chip{border-left:3px solid #2471a3}
+.m4-chip{border-left:3px solid #27ae60}
+.m5-chip{border-left:3px solid #17a589}
+.m6-chip{border-left:3px solid #9b59b6}
+.m1-chip{border-left:3px solid #546e7a}
+
+/* ── P3 note ── */
+.p3-note{background:#f0f9f4;border:1.5px solid #b7e4c7;border-radius:var(--r);padding:.9rem 1.1rem;font-size:.86rem;color:#1b4332;font-weight:600;margin-bottom:1.2rem}
+.p3-note strong{color:#0d2e1e}
+
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600}
+footer a{color:#2d6a4f;text-decoration:none}
+@media(max-width:600px){.tabs{flex-wrap:wrap}.tab{font-size:.82rem;padding:.55rem .9rem}.topics-grid{grid-template-columns:1fr}}
+</style>
+</head><body>
+
+<header class="site-header">
+  <a href="alevel-home.html" class="back-link">&larr; A Level home</a>
+  <h1>What's on each paper?</h1>
+</header>
+
+<div class="hero">
+  <svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </svg>
+  <h1>What's on each paper?</h1>
+  <p>OCR A Level Chemistry H432 — tap a paper to see which modules and topics are examined</p>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <div class="tab p1 active" data-panel="p1">Paper 1 — Breadth</div>
+    <div class="tab p2" data-panel="p2">Paper 2 — Depth</div>
+    <div class="tab p3" data-panel="p3">Paper 3 — Unified</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════════ PAPER 1 ══════════ -->
+<div class="panel active" id="panel-p1">
+
+  <div class="paper-info p1">
+    <div class="paper-info-title">Paper 1 — Breadth in Chemistry
+      <small>H432/01</small>
+    </div>
+    <div class="info-chips">
+      <span class="chip">100 marks</span>
+      <span class="chip">2 hrs 15 min</span>
+      <span class="chip">15 MCQ + structured Qs</span>
+      <span class="chip">37% of A Level</span>
+    </div>
+  </div>
+
+  <div class="modules-grid">
+
+    <div class="mod-block">
+      <div class="mod-header m1">
+        <span class="mod-id">Module 1</span>
+        <span class="mod-title">Development of Practical Skills</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Practical skills are assessed across all papers through practical-based questions. Paper 1 includes questions on planning, implementing, analysis and evaluation of experiments.</div>
+        <div class="topics-grid">
+          <div class="topic-chip m1-chip">Planning experiments<span>Variables, method design, risk assessment</span></div>
+          <div class="topic-chip m1-chip">Implementing<span>Carrying out procedures accurately</span></div>
+          <div class="topic-chip m1-chip">Analysis<span>Processing and presenting data</span></div>
+          <div class="topic-chip m1-chip">Evaluation<span>Conclusions, errors, improvements</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m2">
+        <span class="mod-id">Module 2</span>
+        <span class="mod-title">Foundations in Chemistry</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Module 2 appears on both Paper 1 and Paper 2 — it underpins all other modules.</div>
+        <div class="topics-grid">
+          <div class="topic-chip m2-chip">2.1.1 Atomic Structure &amp; Isotopes<span>Subatomic particles, isotopes, relative mass</span></div>
+          <div class="topic-chip m2-chip">2.1.2 Mass Spectrometry<span>How a mass spectrometer works, calculating Ar</span></div>
+          <div class="topic-chip m2-chip">2.1.3 Compounds, Formulae &amp; Equations<span>Formulae, balancing equations, state symbols</span></div>
+          <div class="topic-chip m2-chip">2.2.1 Amount of Substance<span>Mole, Avogadro's constant, concentration</span></div>
+          <div class="topic-chip m2-chip">2.2.2 Determining Formulae<span>Empirical and molecular formulae</span></div>
+          <div class="topic-chip m2-chip">2.2.3 Reaction Calculations<span>Stoichiometry, limiting reagents, titrations</span></div>
+          <div class="topic-chip m2-chip">2.2.4 The Ideal Gas Equation<span>pV = nRT, molar volume</span></div>
+          <div class="topic-chip m2-chip">2.2.5 Percentage Yield &amp; Atom Economy<span>Green chemistry calculations</span></div>
+          <div class="topic-chip m2-chip">2.3.1 Acids<span>Brønsted–Lowry, strong/weak acids, reactions</span></div>
+          <div class="topic-chip m2-chip">2.3.2 Acid-base Titrations<span>Indicators, calculations, back titrations</span></div>
+          <div class="topic-chip m2-chip">2.3.3 Redox<span>Oxidation numbers, half-equations, redox reactions</span></div>
+          <div class="topic-chip m2-chip">2.4.1 Electron Structure<span>Shells, sub-shells, orbitals, configurations</span></div>
+          <div class="topic-chip m2-chip">2.4.2 Ionic Bonding &amp; Structure<span>Ionic lattice, properties</span></div>
+          <div class="topic-chip m2-chip">2.4.3 Covalent Bonding &amp; Structure<span>Single, double, triple bonds; giant/simple molecular</span></div>
+          <div class="topic-chip m2-chip">2.5.1 Shapes of Molecules &amp; Ions<span>VSEPR theory, bond angles</span></div>
+          <div class="topic-chip m2-chip">2.5.2 Electronegativity &amp; Bond Polarity<span>Polar bonds, dipole moments</span></div>
+          <div class="topic-chip m2-chip">2.5.3 Intermolecular Forces<span>London forces, dipole–dipole, hydrogen bonding</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m3">
+        <span class="mod-id">Module 3</span>
+        <span class="mod-title">The Periodic Table and Energy</span>
+      </div>
+      <div class="mod-body">
+        <div class="topics-grid">
+          <div class="topic-chip m3-chip">3.1.1 Periodicity<span>Trends across Period 3, oxide character</span></div>
+          <div class="topic-chip m3-chip">3.1.2 Ionisation Energy<span>First IE trends, successive IEs, anomalies</span></div>
+          <div class="topic-chip m3-chip">3.1.3 Structure &amp; Physical Properties<span>Relating structure to melting point, conductivity</span></div>
+          <div class="topic-chip m3-chip">3.2.1 Group 2 Elements<span>Reactions with water and oxygen, reactivity trend</span></div>
+          <div class="topic-chip m3-chip">3.2.2 Group 2 Compounds<span>Solubility trends, uses (limewater, antacids)</span></div>
+          <div class="topic-chip m3-chip">3.3.1 The Halogens<span>Trends, displacement reactions, disproportionation</span></div>
+          <div class="topic-chip m3-chip">3.3.2 Uses of Chlorine<span>Water treatment, CFCs, ozone depletion</span></div>
+          <div class="topic-chip m3-chip">3.3.3 Qualitative Analysis<span>Flame tests, precipitate tests, gas tests</span></div>
+          <div class="topic-chip m3-chip">3.4.1 Enthalpy Changes<span>Standard enthalpies, profile diagrams</span></div>
+          <div class="topic-chip m3-chip">3.4.2 Calorimetry<span>q = mcΔT, calculating ΔH per mole</span></div>
+          <div class="topic-chip m3-chip">3.4.3 Bond Enthalpies<span>Average bond enthalpies, ΔH calculations</span></div>
+          <div class="topic-chip m3-chip">3.4.4 Hess's Law<span>Hess cycles, unknown enthalpy changes</span></div>
+          <div class="topic-chip m3-chip">3.5.1 Simple Collision Theory<span>Concentration, pressure, temperature, surface area</span></div>
+          <div class="topic-chip m3-chip">3.5.2 Catalysis<span>Homogeneous/heterogeneous, industrial examples</span></div>
+          <div class="topic-chip m3-chip">3.5.3 The Boltzmann Distribution<span>Effect of temperature on rate</span></div>
+          <div class="topic-chip m3-chip">3.6.1 Dynamic Equilibrium<span>Closed system, equal forward/reverse rates</span></div>
+          <div class="topic-chip m3-chip">3.6.2 Le Chatelier's Principle<span>Effect of conditions; Haber &amp; Contact processes</span></div>
+          <div class="topic-chip m3-chip">3.6.3 The Equilibrium Constant, Kc<span>Writing Kc, calculating Kc, units, effect of T</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m5">
+        <span class="mod-id">Module 5</span>
+        <span class="mod-title">Physical Chemistry and Transition Elements</span>
+      </div>
+      <div class="mod-body">
+        <div class="topics-grid">
+          <div class="topic-chip m5-chip">5.1.1 Rates &amp; Orders<span>Rate equations, orders, rate constant k</span></div>
+          <div class="topic-chip m5-chip">5.1.2 Concentration–Time Graphs<span>Half-life, first-order reactions</span></div>
+          <div class="topic-chip m5-chip">5.1.3 Rate–Concentration Graphs<span>Determining order from graphs</span></div>
+          <div class="topic-chip m5-chip">5.1.4 Investigating Reaction Rates<span>Clock reactions, colorimetry, continuous monitoring</span></div>
+          <div class="topic-chip m5-chip">5.1.5 Rate-determining Step<span>Mechanisms, molecularity, proposing mechanisms</span></div>
+          <div class="topic-chip m5-chip">5.1.6 Temperature &amp; Rate Constants<span>Effect of T on k</span></div>
+          <div class="topic-chip m5-chip">5.1.7 The Arrhenius Equation<span>k = Ae^(−Ea/RT), ln k vs 1/T graph</span></div>
+          <div class="topic-chip m5-chip">5.2.1 Equilibrium Terms<span>Mole fractions, partial pressures</span></div>
+          <div class="topic-chip m5-chip">5.2.2 Kc &amp; Kp<span>Kp expressions, relationship Kp = Kc(RT)^Δn</span></div>
+          <div class="topic-chip m5-chip">5.2.3 Equilibrium Constants &amp; Conditions<span>Effect of T on K, Q vs K</span></div>
+          <div class="topic-chip m5-chip">5.3.1 Acids &amp; Bases<span>Ka, pKa, strong vs weak</span></div>
+          <div class="topic-chip m5-chip">5.3.2 Ka, pH &amp; Kw<span>pH calculations, Kw, neutral pH at different T</span></div>
+          <div class="topic-chip m5-chip">5.3.3 pH Calculations<span>Strong/weak acids, bases, titration curves</span></div>
+          <div class="topic-chip m5-chip">5.3.4 Buffers<span>Buffer action, Henderson–Hasselbalch</span></div>
+          <div class="topic-chip m5-chip">5.3.5 Neutralisation<span>Enthalpy of neutralisation, indicators</span></div>
+          <div class="topic-chip m5-chip">5.4.1 Lattice Enthalpy<span>Definition, factors: charge and radius</span></div>
+          <div class="topic-chip m5-chip">5.4.2 Born–Haber Cycles<span>Drawing cycles for ionic compounds</span></div>
+          <div class="topic-chip m5-chip">5.4.3 Born–Haber Calculations<span>Finding unknown terms using Hess's Law</span></div>
+          <div class="topic-chip m5-chip">5.4.4 Enthalpy of Solution &amp; Hydration<span>ΔHsol = ΔHlatt + ΔHhyd</span></div>
+          <div class="topic-chip m5-chip">5.4.5 Ionic Charge &amp; Radius Effects<span>Charge density, solubility trends</span></div>
+          <div class="topic-chip m5-chip">5.4.6 Entropy<span>Entropy as disorder, predicting sign of ΔS</span></div>
+          <div class="topic-chip m5-chip">5.4.7 Feasibility of a Reaction<span>ΔG = ΔH − TΔS, feasibility when ΔG &lt; 0</span></div>
+          <div class="topic-chip m5-chip">5.4.8 Gibbs Free Energy<span>ΔG°= −RT ln K, spontaneity</span></div>
+          <div class="topic-chip m5-chip">5.5.1 Redox<span>Oxidation numbers, balancing redox equations</span></div>
+          <div class="topic-chip m5-chip">5.5.2 Redox Titrations<span>MnO₄⁻, Cr₂O₇²⁻, iodine–thiosulfate</span></div>
+          <div class="topic-chip m5-chip">5.5.3 Electrode Potentials<span>E°, standard hydrogen electrode, electrochemical series</span></div>
+          <div class="topic-chip m5-chip">5.5.4 Electrode Potential Calculations<span>E°cell = E°cathode − E°anode</span></div>
+          <div class="topic-chip m5-chip">5.5.5 Electrochemical Cells<span>Batteries, fuel cells, half-equations</span></div>
+          <div class="topic-chip m5-chip">5.6.1 Transition Elements<span>Definition, electron config, variable oxidation states</span></div>
+          <div class="topic-chip m5-chip">5.6.2 Ligands &amp; Complex Ions<span>Coordination number, shapes, naming</span></div>
+          <div class="topic-chip m5-chip">5.6.3 Isomerism in Complexes<span>Cis–trans, optical isomerism</span></div>
+          <div class="topic-chip m5-chip">5.6.4 Ligand Substitution<span>Competing ligands, EDTA, Kstab</span></div>
+          <div class="topic-chip m5-chip">5.6.5 Iron in Haemoglobin<span>O₂ binding, CO poisoning, cytochromes</span></div>
+          <div class="topic-chip m5-chip">5.6.6 Redox Reactions of Transition Elements<span>Colours and oxidation states: V, Cr, Mn, Fe, Cu</span></div>
+          <div class="topic-chip m5-chip">5.6.7 Qualitative Analysis<span>NaOH/NH₃ precipitate tests for transition metal ions</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end panel p1 -->
+
+
+<!-- ══════════ PAPER 2 ══════════ -->
+<div class="panel" id="panel-p2">
+
+  <div class="paper-info p2">
+    <div class="paper-info-title">Paper 2 — Depth in Chemistry
+      <small>H432/02</small>
+    </div>
+    <div class="info-chips">
+      <span class="chip">100 marks</span>
+      <span class="chip">2 hrs 15 min</span>
+      <span class="chip">15 MCQ + structured Qs</span>
+      <span class="chip">37% of A Level</span>
+    </div>
+  </div>
+
+  <div class="modules-grid">
+
+    <div class="mod-block">
+      <div class="mod-header m1">
+        <span class="mod-id">Module 1</span>
+        <span class="mod-title">Development of Practical Skills</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Paper 2 includes practical-based questions with a focus on organic chemistry techniques and analysis.</div>
+        <div class="topics-grid">
+          <div class="topic-chip m1-chip">Planning experiments<span>Variables, method design, risk assessment</span></div>
+          <div class="topic-chip m1-chip">Implementing<span>Organic techniques: reflux, distillation, recrystallisation</span></div>
+          <div class="topic-chip m1-chip">Analysis<span>Processing data, yield calculations</span></div>
+          <div class="topic-chip m1-chip">Evaluation<span>Sources of error, improving experiments</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m2">
+        <span class="mod-id">Module 2</span>
+        <span class="mod-title">Foundations in Chemistry</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Module 2 appears on both Paper 1 and Paper 2 — all 17 topics may be assessed on either paper.</div>
+        <div class="topics-grid">
+          <div class="topic-chip m2-chip">2.1.1 Atomic Structure &amp; Isotopes<span>Subatomic particles, isotopes, relative mass</span></div>
+          <div class="topic-chip m2-chip">2.1.2 Mass Spectrometry<span>How a mass spectrometer works, calculating Ar</span></div>
+          <div class="topic-chip m2-chip">2.1.3 Compounds, Formulae &amp; Equations<span>Formulae, balancing equations, state symbols</span></div>
+          <div class="topic-chip m2-chip">2.2.1 Amount of Substance<span>Mole, Avogadro's constant, concentration</span></div>
+          <div class="topic-chip m2-chip">2.2.2 Determining Formulae<span>Empirical and molecular formulae</span></div>
+          <div class="topic-chip m2-chip">2.2.3 Reaction Calculations<span>Stoichiometry, limiting reagents, titrations</span></div>
+          <div class="topic-chip m2-chip">2.2.4 The Ideal Gas Equation<span>pV = nRT, molar volume</span></div>
+          <div class="topic-chip m2-chip">2.2.5 Percentage Yield &amp; Atom Economy<span>Green chemistry calculations</span></div>
+          <div class="topic-chip m2-chip">2.3.1 Acids<span>Brønsted–Lowry, strong/weak acids, reactions</span></div>
+          <div class="topic-chip m2-chip">2.3.2 Acid-base Titrations<span>Indicators, calculations, back titrations</span></div>
+          <div class="topic-chip m2-chip">2.3.3 Redox<span>Oxidation numbers, half-equations, redox reactions</span></div>
+          <div class="topic-chip m2-chip">2.4.1 Electron Structure<span>Shells, sub-shells, orbitals, configurations</span></div>
+          <div class="topic-chip m2-chip">2.4.2 Ionic Bonding &amp; Structure<span>Ionic lattice, properties</span></div>
+          <div class="topic-chip m2-chip">2.4.3 Covalent Bonding &amp; Structure<span>Single, double, triple bonds; giant/simple molecular</span></div>
+          <div class="topic-chip m2-chip">2.5.1 Shapes of Molecules &amp; Ions<span>VSEPR theory, bond angles</span></div>
+          <div class="topic-chip m2-chip">2.5.2 Electronegativity &amp; Bond Polarity<span>Polar bonds, dipole moments</span></div>
+          <div class="topic-chip m2-chip">2.5.3 Intermolecular Forces<span>London forces, dipole–dipole, hydrogen bonding</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m4">
+        <span class="mod-id">Module 4</span>
+        <span class="mod-title">Core Organic Chemistry</span>
+      </div>
+      <div class="mod-body">
+        <div class="topics-grid">
+          <div class="topic-chip m4-chip">4.1.1 Chemical Names &amp; Formulae<span>IUPAC nomenclature, structural/skeletal formulae</span></div>
+          <div class="topic-chip m4-chip">4.1.2 Functional Groups<span>Identifying key functional groups</span></div>
+          <div class="topic-chip m4-chip">4.1.3 Structural Isomerism<span>Chain, positional, functional group isomerism</span></div>
+          <div class="topic-chip m4-chip">4.1.4 Reaction Mechanisms<span>Radical, electrophilic, nucleophilic; curly arrows</span></div>
+          <div class="topic-chip m4-chip">4.2.1 Introduction to Alkanes<span>General formula, naming, combustion</span></div>
+          <div class="topic-chip m4-chip">4.2.2 Reactions of Alkanes<span>Combustion, cracking, crude oil fractions</span></div>
+          <div class="topic-chip m4-chip">4.2.3 Free Radical Substitution<span>Initiation, propagation, termination</span></div>
+          <div class="topic-chip m4-chip">4.3.1 Introduction to Alkenes<span>C=C bond, testing for unsaturation</span></div>
+          <div class="topic-chip m4-chip">4.3.2 Stereoisomerism in Alkenes<span>E/Z isomerism, CIP priority rules</span></div>
+          <div class="topic-chip m4-chip">4.3.3 Addition Reactions of Alkenes<span>H₂, HX, X₂, H₂O; Markovnikov's rule</span></div>
+          <div class="topic-chip m4-chip">4.3.4 Electrophilic Addition<span>Mechanism, carbocation intermediates</span></div>
+          <div class="topic-chip m4-chip">4.3.5 Polymers from Alkenes<span>Addition polymerisation, repeat units, disposal</span></div>
+          <div class="topic-chip m4-chip">4.4.1 Properties of Alcohols<span>Primary/secondary/tertiary, hydrogen bonding</span></div>
+          <div class="topic-chip m4-chip">4.4.2 Reactions of Alcohols<span>Oxidation, dehydration, esterification</span></div>
+          <div class="topic-chip m4-chip">4.5.1 Reactions of Haloalkanes<span>Nucleophilic substitution, elimination</span></div>
+          <div class="topic-chip m4-chip">4.5.2 Nucleophilic Substitution<span>SN2 mechanism, steric hindrance</span></div>
+          <div class="topic-chip m4-chip">4.5.3 Hydrolysis of Haloalkanes<span>AgNO₃ test, bond enthalpies, relative rates</span></div>
+          <div class="topic-chip m4-chip">4.5.4 Environmental Concerns<span>CFCs, ozone layer, PCBs, green chemistry</span></div>
+          <div class="topic-chip m4-chip">4.6.1 Techniques<span>Reflux, distillation, recrystallisation, separating funnel</span></div>
+          <div class="topic-chip m4-chip">4.6.2 Synthetic Routes<span>Multi-step synthesis using Module 4 reactions</span></div>
+          <div class="topic-chip m4-chip">4.7.1 Infrared Spectroscopy<span>Key absorptions, fingerprint region</span></div>
+          <div class="topic-chip m4-chip">4.7.2 Mass Spectrometry (Organic)<span>M⁺ peak, fragmentation patterns</span></div>
+          <div class="topic-chip m4-chip">4.7.3 Combined Techniques<span>Using IR and MS together to identify compounds</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m6">
+        <span class="mod-id">Module 6</span>
+        <span class="mod-title">Organic Chemistry and Analysis</span>
+      </div>
+      <div class="mod-body">
+        <div class="topics-grid">
+          <div class="topic-chip m6-chip">6.1.1 Benzene<span>Delocalised model, evidence, stability</span></div>
+          <div class="topic-chip m6-chip">6.1.2 Electrophilic Substitution<span>Nitration, halogenation, Friedel–Crafts</span></div>
+          <div class="topic-chip m6-chip">6.1.3 Phenol<span>Acidity, reactions, ring activation</span></div>
+          <div class="topic-chip m6-chip">6.1.4 Directing Effects<span>2,4- vs 3-directing groups</span></div>
+          <div class="topic-chip m6-chip">6.2.1 Reactions of Carbonyl Compounds<span>Nucleophilic addition, NaBH₄, HCN, Brady's reagent</span></div>
+          <div class="topic-chip m6-chip">6.2.2 Testing for Carbonyl Compounds<span>Tollens', Fehling's, iodoform test</span></div>
+          <div class="topic-chip m6-chip">6.3.1 Carboxylic Acids<span>Acidity, reactions with Na/NaOH/NaHCO₃</span></div>
+          <div class="topic-chip m6-chip">6.3.2 Esters<span>Naming, esterification, hydrolysis, saponification</span></div>
+          <div class="topic-chip m6-chip">6.3.3 Acyl Chlorides<span>Reactions with water, alcohols, ammonia, amines</span></div>
+          <div class="topic-chip m6-chip">6.4.1 Amines<span>Primary/secondary/tertiary, basicity, salts</span></div>
+          <div class="topic-chip m6-chip">6.4.2 Preparing Amines<span>Reduction of nitriles, nitrobenzene, haloalkane + NH₃</span></div>
+          <div class="topic-chip m6-chip">6.4.3 Amino Acids<span>Structure, zwitterions, peptide bonds, optical isomerism</span></div>
+          <div class="topic-chip m6-chip">6.4.4 Amides<span>Formation, hydrolysis, link to proteins</span></div>
+          <div class="topic-chip m6-chip">6.5.1 Optical Isomers<span>Chiral centres, enantiomers, plane-polarised light</span></div>
+          <div class="topic-chip m6-chip">6.5.2 Identifying Chiral Centres<span>Four different groups, racemic mixtures</span></div>
+          <div class="topic-chip m6-chip">6.6.1 Condensation Polymers<span>Polyesters (Terylene), polyamides (nylon, Kevlar)</span></div>
+          <div class="topic-chip m6-chip">6.6.2 Polymer Repeat Units<span>Monomers from polymers, hydrolysis, biodegradability</span></div>
+          <div class="topic-chip m6-chip">6.7.1 Nitriles<span>Formation, hydrolysis, reduction, chain lengthening</span></div>
+          <div class="topic-chip m6-chip">6.7.2 Substituted Aromatics<span>Friedel–Crafts, diazonium salts, azo dyes</span></div>
+          <div class="topic-chip m6-chip">6.8.1 Techniques<span>Advanced organic chemistry practical techniques</span></div>
+          <div class="topic-chip m6-chip">6.8.2 Synthetic Routes<span>Multi-step synthesis using Modules 4 and 6</span></div>
+          <div class="topic-chip m6-chip">6.9.1 Thin Layer Chromatography<span>Rf values, monitoring reactions, identifying compounds</span></div>
+          <div class="topic-chip m6-chip">6.9.2 Gas Chromatography<span>Retention time, GC-MS</span></div>
+          <div class="topic-chip m6-chip">6.9.3 Qualitative Analysis<span>Systematic functional group tests</span></div>
+          <div class="topic-chip m6-chip">6.9.4 Carbon-13 NMR<span>Carbon environments, chemical shifts, DEPT</span></div>
+          <div class="topic-chip m6-chip">6.9.5 Proton NMR<span>Chemical shift, integration, splitting (n+1 rule)</span></div>
+          <div class="topic-chip m6-chip">6.9.6 Combined Techniques<span>MS + IR + NMR to determine unknown structures</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end panel p2 -->
+
+
+<!-- ══════════ PAPER 3 ══════════ -->
+<div class="panel" id="panel-p3">
+
+  <div class="paper-info p3">
+    <div class="paper-info-title">Paper 3 — Unified Chemistry
+      <small>H432/03</small>
+    </div>
+    <div class="info-chips">
+      <span class="chip">70 marks</span>
+      <span class="chip">1 hr 30 min</span>
+      <span class="chip">15 MCQ + structured Qs</span>
+      <span class="chip">26% of A Level</span>
+    </div>
+  </div>
+
+  <div class="p3-note">
+    <strong>Paper 3 is synoptic</strong> — it draws on content from <strong>all modules (1–6)</strong> and links topics together in a single scenario or question. You may be asked to apply knowledge from multiple modules in one answer. Any topic from Papers 1 or 2 can appear here, often in combination.
+  </div>
+
+  <div class="modules-grid">
+
+    <div class="mod-block">
+      <div class="mod-header m1">
+        <span class="mod-id">Module 1</span>
+        <span class="mod-title">Development of Practical Skills</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Paper 3 has a strong emphasis on practical skills — questions often require you to plan, analyse or evaluate experimental data across multiple topic areas.</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m2">
+        <span class="mod-id">Module 2</span>
+        <span class="mod-title">Foundations in Chemistry</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">All Module 2 topics (moles, bonding, structure, redox, acids) may appear synoptically — often as the calculation or quantitative part of a longer question.</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m3">
+        <span class="mod-id">Module 3</span>
+        <span class="mod-title">The Periodic Table and Energy</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Enthalpy, equilibrium, rates and periodicity topics from Module 3 frequently appear alongside Module 5 content in synoptic questions (e.g. Kc linked to Kp, or Boltzmann distribution linked to Arrhenius).</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m4">
+        <span class="mod-id">Module 4</span>
+        <span class="mod-title">Core Organic Chemistry</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Organic mechanisms, synthesis routes and analytical techniques from Module 4 may be tested in combination with Module 6 content — e.g. identifying a compound using MS, IR and NMR together.</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m5">
+        <span class="mod-id">Module 5</span>
+        <span class="mod-title">Physical Chemistry and Transition Elements</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Arrhenius, Kp, Born–Haber, ΔG, electrode potentials and transition metal chemistry all appear synoptically — often combined with thermodynamic or equilibrium reasoning from other modules.</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-header m6">
+        <span class="mod-id">Module 6</span>
+        <span class="mod-title">Organic Chemistry and Analysis</span>
+      </div>
+      <div class="mod-body">
+        <div class="mod-desc">Advanced organic synthesis, spectroscopic analysis (NMR, MS, IR, GC) and chromatography are common synoptic contexts — often linked to biochemistry or materials science scenarios.</div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end panel p3 -->
+
+</main>
+
+<footer>
+  OCR A Level Chemistry H432 &nbsp;&bull;&nbsp; <a href="alevel-home.html">&#8592; Back to A Level home</a>
+</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.getAttribute('data-panel')).classList.add('active');
+  });
+});
+</script>
+</body></html>
