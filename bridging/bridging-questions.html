@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OCR A Level Chemistry Bridging Questions — H032/H432</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: A4 portrait; margin: 15mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito', 'Segoe UI', Arial, sans-serif; font-size: 11pt; color: #111; background: #fff; line-height: 1.6; }
+:root { --navy: #0c2461; --blue: #1565c0; --light: #e3f2fd; --mid: #1976d2; }
+
+.print-note { background: #f5f5f5; border: 1px dashed #bbb; padding: 6px 14px; font-size: 9pt; color: #666; text-align: center; margin-bottom: 12px; border-radius: 3px; }
+@media print { .print-note { display: none; } }
+
+.cover { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250mm; text-align: center; page-break-after: always; }
+.cover h1 { font-size: 44pt; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+.cover .subtitle { font-size: 17pt; color: #444; margin-bottom: 10px; }
+.cover .tagline { font-size: 11pt; color: #666; margin-bottom: 28px; max-width: 440px; }
+.cover .test-info { font-size: 11pt; color: #333; margin-bottom: 60px; line-height: 2; }
+.cover .test-info strong { color: var(--navy); font-weight: 800; }
+.cover .school-block { font-size: 11pt; color: #555; line-height: 2; }
+.cover .school-block strong { color: var(--blue); display: block; font-size: 13pt; font-weight: 800; }
+
+.section { padding: 16px 0 18px; border-bottom: 3px solid var(--light); }
+.section h2 { font-size: 16pt; font-weight: 800; color: var(--navy); border-bottom: 3px solid var(--navy); padding-bottom: 6px; margin-bottom: 12px; }
+.section h3 { font-size: 12pt; font-weight: 700; color: var(--blue); margin: 14px 0 6px; }
+.section p { margin: 5px 0; font-size: 11pt; }
+.section ul { padding-left: 22px; margin: 6px 0; }
+.section li { margin-bottom: 4px; font-size: 11pt; }
+
+.how-to { background: #fff8e1; border-left: 5px solid #fb8c00; padding: 11px 15px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.how-to strong { color: #e65100; }
+
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+th { background: var(--navy); color: #fff; padding: 7px 10px; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+td { padding: 6px 10px; border-bottom: 1px solid #dde; }
+tr:nth-child(even) td { background: var(--light); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.mcq { margin: 14px 0; page-break-inside: avoid; }
+.mcq-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.mcq-text { font-size: 11pt; flex: 1; }
+.mcq-text b { color: var(--blue); }
+.mark { font-weight: 800; color: var(--navy); font-size: 10.5pt; white-space: nowrap; padding-top: 2px; }
+.options { margin: 8px 0 0 10px; }
+.option { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 5px; font-size: 10.5pt; }
+.opt-box { width: 15px; height: 15px; border: 2px solid #555; flex-shrink: 0; margin-top: 3px; }
+.opt-label { font-weight: 700; min-width: 22px; }
+
+/* MCQ with inline table options */
+.opt-table { margin: 8px 0 0 0; font-size: 10pt; }
+.opt-table th { background: var(--navy); color: #fff; text-align: center; padding: 5px 10px; }
+.opt-table td { text-align: center; padding: 5px 10px; }
+.opt-table .row-label { font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.opt-table tr:nth-child(even) td { background: var(--light); }
+
+.sq { margin: 14px 0; page-break-inside: avoid; }
+.sq-title { font-size: 13pt; font-weight: 800; color: var(--blue); border-bottom: 2px solid var(--light); padding-bottom: 5px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; }
+.sq-part { margin: 12px 0; }
+.sq-part-row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.sq-part-label { font-weight: 800; color: var(--navy); min-width: 30px; }
+.sq-part-text { font-size: 11pt; flex: 1; }
+.answer-line { border-bottom: 1px solid #aaa; margin: 8px 0; min-height: 24px; }
+.divider { border: none; border-top: 2px dashed #ccc; margin: 14px 0; }
+
+.halogen-table { max-width: 420px; }
+.halogen-table th { text-align: center; }
+.halogen-table td { text-align: center; }
+.halogen-table td:first-child { text-align: left; font-weight: 700; }
+
+.total-bar { background: var(--navy); color: #fff; padding: 10px 16px; text-align: right; font-size: 11pt; font-weight: 800; border-radius: 4px; margin: 14px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.ms-q-box { background: var(--light); border-left: 5px solid var(--blue); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.ms-q-box h4 { color: var(--navy); font-size: 11pt; font-weight: 800; margin-bottom: 10px; }
+.ms-q-box table { font-size: 10pt; }
+.ms-q-box table th { font-size: 10pt; }
+.ms-note { font-size: 9.5pt; color: #444; margin-top: 8px; }
+.ms-note strong { color: #e65100; }
+.ms-note em { color: var(--blue); font-style: normal; font-weight: 700; }
+
+footer { margin-top: 28px; padding-top: 10px; border-top: 2px solid var(--light); text-align: center; font-size: 9pt; color: #999; }
+sub, sup { font-size: 0.76em; line-height: 0; }
+</style>
+</head>
+<body>
+
+<div class="print-note">To save as PDF: press Ctrl+P &rarr; "Save as PDF" &rarr; A4 &rarr; tick "Background graphics"</div>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>Chemistry</h1>
+  <div class="subtitle">OCR A Level Bridging Questions</div>
+  <div class="tagline">These questions cover OCR A Level (H032/H432) content that is built directly on GCSE knowledge. Work through them before your first lessons to refresh the essential skills.</div>
+  <div class="test-info">
+    Section A: 16 multiple-choice questions [16 marks]<br>
+    Section B: 10 structured questions [44 marks]<br>
+    <strong>Total: 60 marks</strong>
+  </div>
+  <div class="school-block">
+    <strong>OCR A Level Chemistry A (H032 / H432)</strong>
+    Chemistry Department
+  </div>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="section">
+  <h2>Instructions</h2>
+  <ul>
+    <li>You may use a calculator and a Periodic Table.</li>
+    <li>Answer <strong>all</strong> questions in both sections.</li>
+    <li>For Section A, put a cross in the box next to your chosen answer.</li>
+    <li>Where calculations are required, show all working.</li>
+    <li>The marks available are shown in <strong>[square brackets]</strong>.</li>
+  </ul>
+  <div class="how-to">
+    <strong>Purpose:</strong> these questions are designed to consolidate the GCSE knowledge you will need in Year 12. Work through them at your own pace; the mark scheme is at the back. If there are topics you find difficult, use your GCSE revision materials or the transition booklet before your first lesson.
+  </div>
+  <h3>Data you will need</h3>
+  <table style="max-width: 440px;">
+    <tr><th>Quantity</th><th>Value</th></tr>
+    <tr><td>Avogadro's constant, <em>N</em><sub>A</sub></td><td>6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup></td></tr>
+    <tr><td>Molar gas volume at rtp (25 °C, 100 kPa), <em>V</em><sub>m</sub></td><td>24.0 dm<sup>3</sup> mol<sup>&minus;1</sup></td></tr>
+  </table>
+  <p style="font-size: 10pt; color: #555; margin-top: 6px;">Relative atomic masses are given in questions where needed. Use the Periodic Table for all other values.</p>
+</div>
+
+<!-- SECTION A -->
+<div class="section">
+  <h2>Section A: Multiple Choice [16 marks]</h2>
+  <p>Choose the <strong>one</strong> best answer (A, B, C or D) for each question. Each question is worth 1 mark.</p>
+
+  <!-- Q1: Atomic structure table MCQ -->
+  <div class="mcq">
+    <div class="mcq-row">
+      <div class="mcq-text"><b>1.</b> An atom of iron has atomic number 26 and mass number 56. Which row in the table correctly shows the numbers of protons, neutrons, and electrons in this atom?</div>
+      <div class="mark">[1]</div>
+    </div>
+    <table class="opt-table" style="max-width: 340px; margin: 10px 0 0 10px;">
+      <tr><th></th><th>Protons</th><th>Neutrons</th><th>Electrons</th></tr>
+      <tr>
+        <td><div class="row-label"><div class="opt-box"></div><strong>A</strong></div></td>
+        <td>26</td><td>30</td><td>26</td>
+      </tr>
+      <tr>
+        <td><div class="row-label"><div class="opt-box"></div><strong>B</strong></div></td>
+        <td>26</td><td>26</td><td>30</td>
+      </tr>
+      <tr>
+        <td><div class="row-label"><div class="opt-box"></div><strong>C</strong></div></td>
+        <td>30</td><td>26</td><td>26</td>
+      </tr>
+      <tr>
+        <td><div class="row-label"><div class="opt-box"></div><strong>D</strong></div></td>
+        <td>26</td><td>56</td><td>26</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>2.</b> Which statement correctly describes two isotopes of the same element?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> They have different numbers of protons and different numbers of neutrons.</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> They have different numbers of electrons.</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> They have the same number of protons but different numbers of neutrons.</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> They have different chemical properties.</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>3.</b> Chlorine exists as two isotopes: <sup>35</sup>Cl (abundance 75.0%) and <sup>37</sup>Cl (abundance 25.0%). What is the relative atomic mass of chlorine?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> 35.0</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> 35.5</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> 36.0</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> 36.5</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>4.</b> How many moles of atoms are in 5.6 g of iron? (<em>A</em><sub>r</sub>(Fe) = 56.0)</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> 0.10 mol</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> 1.0 mol</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> 5.6 mol</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> 56 mol</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>5.</b> In the reaction 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O, what is the molar ratio of H<sub>2</sub> : O<sub>2</sub> : H<sub>2</sub>O?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> 1 : 2 : 2</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> 2 : 1 : 1</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> 2 : 1 : 2</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> 1 : 1 : 1</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>6.</b> What is the correct formula for aluminium sulfate?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> AlSO<sub>4</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Al<sub>3</sub>(SO<sub>4</sub>)<sub>2</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> Al<sub>2</sub>SO<sub>4</sub></div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>7.</b> Which equation is correctly balanced?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> Ca + 2HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> 2Ca + HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Ca + HCl &rarr; CaCl + H<sub>2</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> Ca + HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub></div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>8.</b> What is the ionic equation for the precipitation of silver chloride when silver nitrate solution is added to a solution containing chloride ions?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> AgNO<sub>3</sub>(aq) + NaCl(aq) &rarr; AgCl(s) + NaNO<sub>3</sub>(aq)</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> Ag<sup>+</sup>(aq) + NO<sub>3</sub><sup>&minus;</sup>(aq) + Cl<sup>&minus;</sup>(aq) &rarr; AgCl(s) + NO<sub>3</sub><sup>&minus;</sup>(aq)</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Ag<sup>+</sup>(aq) + Cl<sup>&minus;</sup>(aq) &rarr; AgCl(s)</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> Ag(s) + Cl<sub>2</sub>(g) &rarr; AgCl(s)</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>9.</b> A solution is tested with acidified silver nitrate and gives a <strong>cream</strong> precipitate. The solution contains:</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> Cl<sup>&minus;</sup> ions</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> F<sup>&minus;</sup> ions</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Br<sup>&minus;</sup> ions</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> I<sup>&minus;</sup> ions</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>10.</b> A colourless gas turns damp red litmus paper blue. The gas is:</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> carbon dioxide</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> hydrogen chloride</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> sulfur dioxide</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> ammonia</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>11.</b> Which Group 2 element reacts most vigorously with cold water?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> Magnesium</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> Calcium</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Strontium</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> Barium</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>12.</b> But-1-ene reacts with bromine water. What is the type of reaction taking place?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> Substitution</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> Elimination</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Addition</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> Oxidation</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>13.</b> What are the products of the <strong>complete</strong> combustion of a hydrocarbon?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> Carbon monoxide and water</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> Carbon and steam</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> Carbon dioxide and water</div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> Carbon dioxide and hydrogen</div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>14.</b> A compound contains 85.7% carbon and 14.3% hydrogen by mass. What is its empirical formula? (<em>A</em><sub>r</sub>: C = 12.0, H = 1.0)</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> CH<sub>2</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> C<sub>2</sub>H<sub>3</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> CH<sub>3</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> C<sub>6</sub>H<sub>14</sub></div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>15.</b> A solution of 0.040 mol of HCl is made up to 200 cm<sup>3</sup>. What is its concentration?</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> 0.0080 mol dm<sup>&minus;3</sup></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> 0.20 mol dm<sup>&minus;3</sup></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> 0.040 mol dm<sup>&minus;3</sup></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> 2.0 mol dm<sup>&minus;3</sup></div>
+    </div>
+  </div>
+
+  <div class="mcq">
+    <div class="mcq-row"><div class="mcq-text"><b>16.</b> A compound has the empirical formula CH<sub>2</sub>O and a molar mass of 180 g mol<sup>&minus;1</sup>. What is its molecular formula? (<em>M</em>(CH<sub>2</sub>O) = 30.0 g mol<sup>&minus;1</sup>)</div><div class="mark">[1]</div></div>
+    <div class="options">
+      <div class="option"><div class="opt-box"></div><span class="opt-label">A.</span> C<sub>3</sub>H<sub>6</sub>O<sub>3</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">B.</span> C<sub>4</sub>H<sub>8</sub>O<sub>4</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">C.</span> C<sub>5</sub>H<sub>10</sub>O<sub>5</sub></div>
+      <div class="option"><div class="opt-box"></div><span class="opt-label">D.</span> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></div>
+    </div>
+  </div>
+
+  <div class="total-bar">Total for Section A: 16 marks</div>
+</div>
+
+<!-- SECTION B -->
+<div class="section">
+  <h2>Section B: Structured Questions [44 marks]</h2>
+
+  <!-- Q17: Atomic structure and isotopes -->
+  <div class="sq">
+    <div class="sq-title"><span>17. Atomic structure and isotopes</span><span class="mark">[4]</span></div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">The most abundant isotope of iron is <sup>56</sup>Fe. Complete the table below for this isotope. (<em>Atomic number of Fe = 26</em>)</div><div class="mark">[2]</div></div>
+      <table style="max-width: 360px; margin: 8px 0;">
+        <tr><th>Particle</th><th>Number in <sup>56</sup>Fe</th></tr>
+        <tr><td>Protons</td><td style="min-width: 100px;">&nbsp;</td></tr>
+        <tr><td>Neutrons</td><td>&nbsp;</td></tr>
+        <tr><td>Electrons</td><td>&nbsp;</td></tr>
+      </table>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Iron also contains the isotope <sup>54</sup>Fe with a natural abundance of 5.85%, and <sup>56</sup>Fe with a natural abundance of 91.75%. Assuming these are the only two significant isotopes, calculate the relative atomic mass of iron. Give your answer to 3 significant figures.</div><div class="mark">[2]</div></div>
+      <div class="answer-line" style="margin-top: 12px;"></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q18: Concentration -->
+  <div class="sq">
+    <div class="sq-title"><span>18. Concentration of a solution</span><span class="mark">[5]</span></div>
+    <p style="margin-bottom: 8px;">4.24 g of anhydrous sodium carbonate, Na<sub>2</sub>CO<sub>3</sub>, is dissolved in water and the solution is made up to exactly 250 cm<sup>3</sup> in a volumetric flask.</p>
+    <p style="margin-bottom: 10px; font-size: 10.5pt; color: #444;">(<em>A</em><sub>r</sub>: Na = 23.0, C = 12.0, O = 16.0)</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Calculate the molar mass of Na<sub>2</sub>CO<sub>3</sub>.</div><div class="mark">[1]</div></div>
+      <div class="answer-line" style="margin-top: 10px;"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Calculate the number of moles of Na<sub>2</sub>CO<sub>3</sub> in 4.24 g.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">Calculate the concentration of the solution in mol dm<sup>&minus;3</sup>.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(d)</div><div class="sq-part-text">Calculate the number of Na<sub>2</sub>CO<sub>3</sub> formula units in 4.24 g of sodium carbonate. (<em>N</em><sub>A</sub> = 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup>)</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q19: Writing chemical formulae -->
+  <div class="sq">
+    <div class="sq-title"><span>19. Writing chemical formulae</span><span class="mark">[3]</span></div>
+    <p style="margin-bottom: 10px;">Write the correct chemical formula for each of the following ionic compounds.</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Lithium oxide (Li<sup>+</sup> and O<sup>2&minus;</sup>)</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Ammonium phosphate (NH<sub>4</sub><sup>+</sup> and PO<sub>4</sub><sup>3&minus;</sup>)</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">Iron(III) hydroxide (Fe<sup>3+</sup> and OH<sup>&minus;</sup>)</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q20: Precipitation reactions -->
+  <div class="sq">
+    <div class="sq-title"><span>20. Precipitation reactions</span><span class="mark">[4]</span></div>
+    <p style="margin-bottom: 10px;">Lead(II) nitrate solution is added to potassium iodide solution. A yellow precipitate of lead(II) iodide forms.</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Write the formula of lead(II) iodide.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Write a balanced full equation, including state symbols, for the reaction between lead(II) nitrate and potassium iodide solutions.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">Write the ionic equation for this precipitation reaction.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q21: Qualitative analysis -->
+  <div class="sq">
+    <div class="sq-title"><span>21. Qualitative analysis of an unknown compound</span><span class="mark">[6]</span></div>
+    <p style="margin-bottom: 8px;">A student is given a solution of an unknown compound containing a single cation and a single anion. The following tests are carried out:</p>
+    <table style="max-width: 500px; margin: 10px 0;">
+      <tr><th>Test</th><th>Observation</th></tr>
+      <tr><td>Flame test</td><td>Brick-red colour</td></tr>
+      <tr><td>Add dilute hydrochloric acid</td><td>Effervescence; gas turns limewater milky</td></tr>
+      <tr><td>Add excess dilute HCl then AgNO<sub>3</sub>(aq)</td><td>No precipitate forms</td></tr>
+    </table>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Identify the cation present, giving a reason.</div><div class="mark">[2]</div></div>
+      <div class="answer-line" style="margin-top: 10px;"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Identify the anion present, giving a reason.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">Give the formula of the unknown compound and write an ionic equation for its reaction with dilute HCl.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q22: CaCO3 + HCl calculation -->
+  <div class="sq">
+    <div class="sq-title"><span>22. Stoichiometric calculation</span><span class="mark">[5]</span></div>
+    <p style="margin-bottom: 8px;">0.500 g of calcium carbonate, CaCO<sub>3</sub>, is added to excess dilute hydrochloric acid.</p>
+    <p style="margin-bottom: 10px; font-size: 10.5pt;">CaCO<sub>3</sub>(s) + 2HCl(aq) &rarr; CaCl<sub>2</sub>(aq) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)</p>
+    <p style="margin-bottom: 10px; font-size: 10.5pt; color: #444;">(<em>M</em>(CaCO<sub>3</sub>) = 100.0 g mol<sup>&minus;1</sup>; <em>V</em><sub>m</sub> = 24.0 dm<sup>3</sup> mol<sup>&minus;1</sup> = 24 000 cm<sup>3</sup> mol<sup>&minus;1</sup>)</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Calculate the number of moles of CaCO<sub>3</sub> used.</div><div class="mark">[1]</div></div>
+      <div class="answer-line" style="margin-top: 10px;"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Using the equation, state the number of moles of CO<sub>2</sub> produced.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">Calculate the volume of CO<sub>2</sub> produced at rtp. Give your answer in cm<sup>3</sup>.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(d)</div><div class="sq-part-text">The student collects only 110 cm<sup>3</sup> of CO<sub>2</sub>. Calculate the percentage yield.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q23: Group 2 reactivity -->
+  <div class="sq">
+    <div class="sq-title"><span>23. Group 2 reactivity</span><span class="mark">[4]</span></div>
+    <p style="margin-bottom: 10px;">Strontium, Sr, reacts with cold water in a similar way to calcium.</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Write a balanced equation, including state symbols, for the reaction of strontium with water.</div><div class="mark">[2]</div></div>
+      <div class="answer-line" style="margin-top: 10px;"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Explain why strontium reacts more vigorously with water than calcium does. Your answer should refer to atomic structure.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q24: Halogen displacement -->
+  <div class="sq">
+    <div class="sq-title"><span>24. Halogen displacement reactions</span><span class="mark">[4]</span></div>
+    <p style="margin-bottom: 8px;">A student adds aqueous solutions of chlorine, bromine, and iodine separately to solutions of sodium chloride, sodium bromide, and sodium iodide. She observes whether or not a reaction takes place and records the results in the table below. Complete the table using <strong>R</strong> (reaction) or <strong>NR</strong> (no reaction).</p>
+    <table class="halogen-table" style="max-width: 420px; margin: 10px 0;">
+      <tr><th>Halogen added</th><th>NaCl(aq)</th><th>NaBr(aq)</th><th>NaI(aq)</th></tr>
+      <tr><td>Cl<sub>2</sub>(aq)</td><td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td>Br<sub>2</sub>(aq)</td><td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td></tr>
+      <tr><td>I<sub>2</sub>(aq)</td><td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td></tr>
+    </table>
+    <p style="font-size: 10.5pt; margin-top: 8px; margin-bottom: 8px;">[3]</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Write the ionic equation for the reaction between chlorine solution and sodium bromide solution.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q25: Alkenes -->
+  <div class="sq">
+    <div class="sq-title"><span>25. Alkenes</span><span class="mark">[4]</span></div>
+    <p style="margin-bottom: 10px;">But-1-ene (CH<sub>2</sub>=CHCH<sub>2</sub>CH<sub>3</sub>) reacts with bromine.</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">State the observation when but-1-ene is shaken with bromine water.</div><div class="mark">[1]</div></div>
+      <div class="answer-line" style="margin-top: 10px;"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Draw the displayed formula of the organic product formed when but-1-ene reacts with Br<sub>2</sub>.</div><div class="mark">[2]</div></div>
+      <div style="border: 1px solid #ccc; min-height: 70px; margin: 8px 0; border-radius: 4px; padding: 6px;"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">Name the product formed in (b).</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Q26: Combustion and % yield -->
+  <div class="sq">
+    <div class="sq-title"><span>26. Combustion and percentage yield</span><span class="mark">[5]</span></div>
+    <p style="margin-bottom: 8px;">Methane, CH<sub>4</sub>, undergoes complete combustion according to the equation:</p>
+    <p style="text-align: center; margin: 10px 0; font-size: 11pt;">CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)</p>
+    <p style="margin-bottom: 10px; font-size: 10.5pt; color: #444;">(<em>M</em>(CH<sub>4</sub>) = 16.0 g mol<sup>&minus;1</sup>; <em>M</em>(CO<sub>2</sub>) = 44.0 g mol<sup>&minus;1</sup>)</p>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(a)</div><div class="sq-part-text">Calculate the number of moles in 1.60 g of methane.</div><div class="mark">[1]</div></div>
+      <div class="answer-line" style="margin-top: 10px;"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(b)</div><div class="sq-part-text">Calculate the theoretical mass of CO<sub>2</sub> produced from 1.60 g of methane.</div><div class="mark">[2]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(c)</div><div class="sq-part-text">In practice, 3.75 g of CO<sub>2</sub> is collected. Calculate the percentage yield of CO<sub>2</sub>.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+    <div class="sq-part">
+      <div class="sq-part-row"><div class="sq-part-label">(d)</div><div class="sq-part-text">Suggest one reason why the yield is less than 100%.</div><div class="mark">[1]</div></div>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+
+  <div class="total-bar">Total for Section B: 44 marks &nbsp;&middot;&nbsp; Total for paper: 60 marks</div>
+</div>
+
+<!-- MARK SCHEME -->
+<div class="section">
+  <h2>Mark scheme</h2>
+  <p style="margin-bottom: 10px;">OCR conventions: <strong>ALLOW</strong> = acceptable alternative wording or format; <strong>REJECT</strong> = commonly seen error that does not earn the mark; <strong>ECF</strong> = error carried forward from an earlier part; <strong>AW</strong> = answer in other words.</p>
+
+  <h3>Section A answer grid</h3>
+  <table style="max-width: 540px;">
+    <tr><th>Q</th><th>Answer</th><th>Q</th><th>Answer</th><th>Q</th><th>Answer</th><th>Q</th><th>Answer</th></tr>
+    <tr><td>1</td><td><strong>A</strong></td><td>5</td><td><strong>C</strong></td><td>9</td><td><strong>C</strong></td><td>13</td><td><strong>C</strong></td></tr>
+    <tr><td>2</td><td><strong>C</strong></td><td>6</td><td><strong>B</strong></td><td>10</td><td><strong>D</strong></td><td>14</td><td><strong>A</strong></td></tr>
+    <tr><td>3</td><td><strong>B</strong></td><td>7</td><td><strong>A</strong></td><td>11</td><td><strong>D</strong></td><td>15</td><td><strong>B</strong></td></tr>
+    <tr><td>4</td><td><strong>A</strong></td><td>8</td><td><strong>C</strong></td><td>12</td><td><strong>C</strong></td><td>16</td><td><strong>D</strong></td></tr>
+  </table>
+
+  <h3>Working for selected MCQs</h3>
+  <table>
+    <tr><th>Q</th><th>Reasoning</th></tr>
+    <tr><td><strong>1</strong></td><td><sup>56</sup>Fe: mass number = 56, atomic number = 26. Protons = 26; neutrons = 56 &minus; 26 = 30; electrons = 26 (neutral atom). Answer: <strong>A</strong>.</td></tr>
+    <tr><td><strong>3</strong></td><td>RAM = (0.750 &times; 35) + (0.250 &times; 37) = 26.25 + 9.25 = <strong>35.5</strong>. Answer: B.</td></tr>
+    <tr><td><strong>4</strong></td><td><em>n</em> = <em>m</em>/<em>M</em> = 5.6/56.0 = <strong>0.10 mol</strong>. Answer: A.</td></tr>
+    <tr><td><strong>6</strong></td><td>Al<sup>3+</sup> and SO<sub>4</sub><sup>2&minus;</sup>: to balance charges, 2 Al<sup>3+</sup> (+6 total) needs 3 SO<sub>4</sub><sup>2&minus;</sup> (&minus;6 total) &rarr; <strong>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></strong>. Answer: B.</td></tr>
+    <tr><td><strong>9</strong></td><td>AgBr is a cream/pale yellow precipitate. AgCl is white; AgI is yellow. Answer: C (Br<sup>&minus;</sup>).</td></tr>
+    <tr><td><strong>14</strong></td><td>C: 85.7/12.0 = 7.14; H: 14.3/1.0 = 14.3. Ratio 7.14 : 14.3 = 1 : 2 &rarr; empirical formula <strong>CH<sub>2</sub></strong>. Answer: A.</td></tr>
+    <tr><td><strong>15</strong></td><td>200 cm<sup>3</sup> = 0.200 dm<sup>3</sup>. <em>c</em> = 0.040/0.200 = <strong>0.20 mol dm<sup>&minus;3</sup></strong>. Answer: B.</td></tr>
+    <tr><td><strong>16</strong></td><td>Multiplier = 180/30 = 6. Molecular formula = 6 &times; CH<sub>2</sub>O = <strong>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></strong>. Answer: D.</td></tr>
+  </table>
+
+  <h3>Section B structured questions</h3>
+
+  <div class="ms-q-box">
+    <h4>Question 17: Atomic structure and isotopes [4 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td>Protons = 26, Electrons = 26 <strong>(1)</strong>; Neutrons = 56 &minus; 26 = 30 <strong>(1)</strong></td><td>2</td></tr>
+      <tr><td>(b)</td><td>Correct setup: (0.0585 &times; 54) + (0.9175 &times; 56) <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>= 3.159 + 51.38 = <strong>54.5</strong> (3 sf) <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> ECF in (b) for correct method with wrong values from (a).</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 18: Concentration of a solution [5 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td><em>M</em>(Na<sub>2</sub>CO<sub>3</sub>) = 2(23.0) + 12.0 + 3(16.0) = <strong>106.0 g mol<sup>&minus;1</sup></strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td><em>n</em> = 4.24 / 106.0 = <strong>0.0400 mol</strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(c)</td><td>Convert volume: 250 cm<sup>3</sup> = 0.250 dm<sup>3</sup> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td><em>c</em> = 0.0400 / 0.250 = <strong>0.160 mol dm<sup>&minus;3</sup></strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(d)</td><td><em>N</em> = 0.0400 &times; 6.02 &times; 10<sup>23</sup> = <strong>2.41 &times; 10<sup>22</sup> formula units</strong> <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> ECF throughout. <strong>REJECT</strong> <em>n</em> = 4.24/106 without unit. <strong>ALLOW</strong> 2.4 &times; 10<sup>22</sup> (2 sf).</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 19: Writing chemical formulae [3 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td><strong>Li<sub>2</sub>O</strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td><strong>(NH<sub>4</sub>)<sub>3</sub>PO<sub>4</sub></strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(c)</td><td><strong>Fe(OH)<sub>3</sub></strong> <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>REJECT</strong> Fe(OH<sub>3</sub>) in (c) — brackets must enclose OH, not H only.</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 20: Precipitation reactions [4 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td><strong>PbI<sub>2</sub></strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td>Balanced: Pb(NO<sub>3</sub>)<sub>2</sub>(aq) + 2KI(aq) &rarr; PbI<sub>2</sub>(s) + 2KNO<sub>3</sub>(aq) <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>All state symbols correct <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(c)</td><td>Pb<sup>2+</sup>(aq) + 2I<sup>&minus;</sup>(aq) &rarr; PbI<sub>2</sub>(s) <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> equation without state symbols in (b) for 1/2 marks only. <strong>REJECT</strong> ionic equation in (c) that retains K<sup>+</sup> or NO<sub>3</sub><sup>&minus;</sup> spectator ions.</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 21: Qualitative analysis [6 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td>Cation: Ca<sup>2+</sup> <strong>(1)</strong>; reason: brick-red flame test colour <strong>(1)</strong></td><td>2</td></tr>
+      <tr><td>(b)</td><td>Anion: CO<sub>3</sub><sup>2&minus;</sup> (carbonate) <strong>(1)</strong>; reason: effervescence with acid and gas turns limewater milky (CO<sub>2</sub> produced) <strong>(1)</strong></td><td>2</td></tr>
+      <tr><td>(c)</td><td>Formula: CaCO<sub>3</sub> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>Ionic equation: CO<sub>3</sub><sup>2&minus;</sup>(aq) + 2H<sup>+</sup>(aq) &rarr; H<sub>2</sub>O(l) + CO<sub>2</sub>(g) <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> "CaCO<sub>3</sub> + 2HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>" as the full equation in (c) but only the ionic equation earns the second mark. The absence of AgNO<sub>3</sub> precipitate rules out halide anions; this supports carbonate but is not required for full marks.</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 22: Stoichiometric calculation [5 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td><em>n</em>(CaCO<sub>3</sub>) = 0.500 / 100.0 = <strong>5.00 &times; 10<sup>&minus;3</sup> mol</strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td><em>n</em>(CO<sub>2</sub>) = <em>n</em>(CaCO<sub>3</sub>) = <strong>5.00 &times; 10<sup>&minus;3</sup> mol</strong> (1 : 1 ratio) <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(c)</td><td><em>V</em> = 5.00 &times; 10<sup>&minus;3</sup> &times; 24 000 <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>= <strong>120 cm<sup>3</sup></strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(d)</td><td>% yield = (110/120) &times; 100 = <strong>91.7%</strong> <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> ECF for (d): correct method with value from (c). <strong>ALLOW</strong> <em>n</em> = 0.005 mol in (a).</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 23: Group 2 reactivity [4 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td>Balanced equation: Sr(s) + 2H<sub>2</sub>O(l) &rarr; Sr(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g) <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>All state symbols correct <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td>Sr has more electron shells / outer electrons are further from the nucleus <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>Outer electrons are more easily lost / less energy needed to remove them / ionisation energy is lower <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> AW for (b) as long as the student connects: greater distance from nucleus &rarr; weaker attraction &rarr; easier to lose electrons. <strong>REJECT</strong> "larger atom" without further explanation.</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 24: Halogen displacement reactions [4 marks]</h4>
+    <table>
+      <tr><th>Halogen</th><th>NaCl(aq)</th><th>NaBr(aq)</th><th>NaI(aq)</th></tr>
+      <tr><td>Cl<sub>2</sub>(aq)</td><td>NR</td><td><strong>R</strong></td><td><strong>R</strong></td></tr>
+      <tr><td>Br<sub>2</sub>(aq)</td><td>NR</td><td>NR</td><td><strong>R</strong></td></tr>
+      <tr><td>I<sub>2</sub>(aq)</td><td>NR</td><td>NR</td><td>NR</td></tr>
+    </table>
+    <p style="font-size: 10pt; margin-top: 6px; margin-bottom: 10px;">3 marks: all 9 cells correct. Deduct 1 mark for each incorrect cell (min 0).</p>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(b)</td><td>Cl<sub>2</sub>(aq) + 2Br<sup>&minus;</sup>(aq) &rarr; 2Cl<sup>&minus;</sup>(aq) + Br<sub>2</sub>(aq) <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>REJECT</strong> equations retaining Na<sup>+</sup> as a spectator ion in (b).</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 25: Alkenes [4 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td>Bromine water turns from orange/brown to <strong>colourless</strong> (decolourised) <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td>Displayed formula showing CH<sub>2</sub>BrCHBrCH<sub>2</sub>CH<sub>3</sub> with both C&ndash;Br bonds shown correctly <strong>(2)</strong></td><td>2</td></tr>
+      <tr><td>(c)</td><td><strong>1,2-dibromobutane</strong> <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> (1) in (b) for the correct connectivity if the displayed formula is not fully drawn. <strong>REJECT</strong> "dibromobut-1-ene" — the product is a saturated compound.</p>
+  </div>
+
+  <div class="ms-q-box">
+    <h4>Question 26: Combustion and percentage yield [5 marks]</h4>
+    <table>
+      <tr><th>Part</th><th>Marking point</th><th>Marks</th></tr>
+      <tr><td>(a)</td><td><em>n</em>(CH<sub>4</sub>) = 1.60 / 16.0 = <strong>0.100 mol</strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(b)</td><td><em>n</em>(CO<sub>2</sub>) = <em>n</em>(CH<sub>4</sub>) = 0.100 mol (1 : 1 from equation) <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td></td><td>Mass = 0.100 &times; 44.0 = <strong>4.40 g</strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(c)</td><td>% yield = (3.75 / 4.40) &times; 100 = <strong>85.2%</strong> <strong>(1)</strong></td><td>1</td></tr>
+      <tr><td>(d)</td><td>Any one valid reason: incomplete combustion / gas escaping before collection / reaction vessel not sealed / measurement error / some product remains dissolved in water / AW <strong>(1)</strong></td><td>1</td></tr>
+    </table>
+    <p class="ms-note"><strong>ALLOW</strong> ECF throughout. <strong>ALLOW</strong> 85% (2 sf). <strong>REJECT</strong> "the experiment went wrong" — must be a chemically specific reason for (d).</p>
+  </div>
+
+  <div class="total-bar">Section B total: 44 marks &nbsp;&middot;&nbsp; Overall total: 60 marks</div>
+</div>
+
+<footer>
+  Chemistry Department &nbsp;&middot;&nbsp; OCR A Level Chemistry Bridging Questions &nbsp;&middot;&nbsp; H032/H432
+</footer>
+
+</body>
+</html>

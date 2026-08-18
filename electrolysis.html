@@ -1,0 +1,1031 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Electrolysis Guide | Chemistry Cracked GCSE</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#9333ea;--pr-dk:#6d28d9;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:12px;--sh:0 2px 10px rgba(147,51,234,.09);--sh2:0 6px 24px rgba(147,51,234,.16);--acc:#eef1ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;min-height:100vh}
+
+/* Topbar */
+.topbar{background:#4a1d96;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem}
+.topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.topbar-back:hover{background:rgba(255,255,255,.12)}
+.topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#4a1d96 0%,#6d28d9 45%,#9333ea 80%,#c084fc 100%);color:#fff;padding:2.8rem 1.5rem 5.2rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(192,132,252,.35) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{font-size:2.9rem;display:block;margin-bottom:.55rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.95rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.97rem;opacity:.88;max-width:480px;margin:0 auto;font-weight:600}
+.hero-sub{margin-top:.35rem;font-size:.85rem;opacity:.65;font-weight:400}
+.hero-pills{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.95rem}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:.18rem .65rem;font-size:.78rem;font-weight:700}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+/* Main */
+main{max-width:860px;margin:0 auto;padding:1.5rem 1rem 5rem}
+
+/* Spec cards */
+.spec-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:1.2rem;overflow:hidden}
+.spec-header{display:flex;align-items:center;gap:.75rem;padding:.9rem 1.2rem;cursor:pointer;user-select:none;border-bottom:2px solid transparent;transition:border-color .15s}
+.spec-header:hover{border-bottom-color:var(--bdr)}
+.spec-header.open{border-bottom:2px solid var(--bdr)}
+.sec-icon{font-size:1.25rem;flex-shrink:0}
+.spec-num{background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.2rem .55rem;border-radius:6px;white-space:nowrap}
+.spec-name{font-weight:800;font-size:1rem;flex:1}
+.spec-tier{font-size:.7rem;font-weight:700;color:var(--txm);background:var(--bg);border:1px solid var(--bdr);padding:.15rem .5rem;border-radius:5px;white-space:nowrap}
+.spec-arrow{font-size:.8rem;color:var(--txm);transition:transform .25s;margin-left:.2rem}
+.spec-header.open .spec-arrow{transform:rotate(180deg)}
+.spec-body{display:none;padding:1.3rem 1.5rem 1.6rem}
+.spec-body.open{display:block}
+
+/* Body typography */
+.spec-body p{margin-bottom:.85rem;font-size:.93rem;line-height:1.72}
+.plain-english{font-size:.96rem;color:#374151;background:#f8faff;border-left:3px solid var(--pr);padding:.6rem 1rem;border-radius:0 7px 7px 0;margin-bottom:1.1rem!important;font-style:italic}
+.spec-body h3{font-size:1.01rem;color:var(--pr-dk);margin:1.25rem 0 .55rem;font-weight:800}
+.spec-body h4{font-size:.9rem;color:var(--tx);margin:.9rem 0 .4rem;font-weight:700}
+.spec-body ul,.spec-body ol{margin:.25rem 0 .9rem 1.5rem;font-size:.91rem}
+.spec-body li{margin-bottom:.3rem;line-height:1.65}
+.spec-body table{width:100%;border-collapse:collapse;font-size:.88rem;margin:.5rem 0 1.1rem}
+.spec-body th{background:var(--pr);color:#fff;padding:.45rem .8rem;text-align:left;font-weight:700}
+.spec-body td{padding:.42rem .8rem;border-bottom:1px solid var(--bdr);vertical-align:top}
+.spec-body tr:nth-child(even) td{background:#faf8ff}
+sup,sub{font-size:.74em}
+
+/* Info boxes */
+.pitfall-box{background:#fff8e1;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.9rem;line-height:1.6}
+.pitfall-box strong{color:#92400e}
+.takeaway-box{background:var(--acc);border-left:4px solid var(--pr);border-radius:0 8px 8px 0;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65}
+.takeaway-box strong{color:var(--pr-dk)}
+.tip-box{background:#f0fdf4;border-left:4px solid #16a34a;border-radius:0 8px 8px 0;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.9rem;line-height:1.6}
+.tip-box strong{color:#166534}
+.higher-box{background:#faf5ff;border:1.5px solid #c084fc;border-radius:8px;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.9rem;line-height:1.6}
+.higher-badge{display:inline-block;background:var(--pr);color:#fff;font-size:.68rem;font-weight:800;padding:.12rem .45rem;border-radius:4px;margin-right:.4rem;vertical-align:middle}
+
+/* Quick check */
+.quick-check{background:#fff;border:2px solid var(--pr);border-radius:10px;padding:1rem 1.25rem;margin:1.1rem 0}
+.quick-check-title{font-weight:800;color:var(--pr-dk);font-size:.9rem;margin-bottom:.5rem}
+.quick-check p{font-size:.9rem;margin-bottom:.45rem!important}
+.reveal-btn{background:var(--pr);color:#fff;border:none;border-radius:6px;padding:.35rem .9rem;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s}
+.reveal-btn:hover{background:var(--pr-dk)}
+.answer-reveal{display:none;background:var(--acc);border-radius:7px;padding:.6rem .95rem;margin-top:.6rem;font-size:.88rem;line-height:1.65}
+.answer-reveal.show{display:block}
+
+/* SVG diagrams */
+.diagram-wrap{margin:1.25rem auto;text-align:center}
+.diagram-wrap svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.diagram-cap{font-size:.78rem;color:var(--txm);margin-top:.45rem;font-style:italic;text-align:center}
+
+/* PANIC cards */
+.panic-grid{display:flex;gap:.55rem;flex-wrap:wrap;justify-content:center;margin:1rem 0}
+.panic-card{background:linear-gradient(135deg,#4a1d96,#9333ea);color:#fff;border-radius:10px;padding:.85rem .9rem;text-align:center;flex:1;min-width:90px;max-width:130px}
+.panic-letter{font-size:2.1rem;font-weight:900;display:block;line-height:1;text-shadow:0 2px 6px rgba(0,0,0,.25)}
+.panic-word{font-size:.76rem;font-weight:700;opacity:.88;margin-top:.3rem;display:block}
+
+/* Numbered steps */
+.steps{counter-reset:step;list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding-left:2.5rem;margin-bottom:.75rem;font-size:.91rem;line-height:1.65}
+.steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:.05rem;background:var(--pr);color:#fff;font-weight:800;font-size:.75rem;width:1.7rem;height:1.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* Two-column comparison */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.col-card{background:var(--bg);border:1.5px solid var(--bdr);border-radius:8px;padding:.95rem 1rem}
+.col-card h4{color:var(--pr-dk);margin:0 0 .5rem;font-size:.9rem}
+.col-card ul{margin-left:1.15rem;font-size:.88rem}
+.col-card li{margin-bottom:.28rem;line-height:1.55}
+
+/* Footer */
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600}
+footer a{color:var(--pr);text-decoration:none}
+
+@media(max-width:600px){
+  .hero h1{font-size:1.5rem}
+  .two-col{grid-template-columns:1fr}
+  .panic-card{max-width:80px;min-width:58px;padding:.65rem .4rem}
+  .panic-letter{font-size:1.6rem}
+  .spec-body{padding:1rem 1.1rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="home.html" class="topbar-back">&#8592; GCSE Chemistry</a>
+  <span class="topbar-title">Electrolysis Guide</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-icon">&#9889;</span>
+    <h1>Electrolysis</h1>
+    <p>Your complete guide — from the basics to exam technique</p>
+    <p class="hero-sub">Topic 3.2 &nbsp;·&nbsp; Edexcel GCSE Chemistry (1CH0) &nbsp;·&nbsp; Paper 1</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Foundation + Higher</span>
+      <span class="hero-pill">6 sections</span>
+      <span class="hero-pill">Diagrams included</span>
+      <span class="hero-pill">Quick checks</span>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 1 — WHAT IS ELECTROLYSIS?
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header open">
+    <span class="sec-icon">&#128267;</span>
+    <span class="spec-num">3.22–3.24</span>
+    <span class="spec-name">What is electrolysis?</span>
+    <span class="spec-tier">F + H</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body open">
+
+    <p class="plain-english">Electrolysis means using electricity to break apart an ionic compound. The compound has to be melted or dissolved in water first — so the ions can move freely.</p>
+
+    <h3>The basic setup</h3>
+    <p>Every electrolysis setup has the same five parts:</p>
+
+    <div class="diagram-wrap">
+      <!-- SVG: Basic electrolysis cell -->
+      <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" style="max-width:460px">
+        <defs>
+          <marker id="arrB" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3b82f6"/></marker>
+          <marker id="arrR" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+          <marker id="arrDk" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#374151"/></marker>
+        </defs>
+        <!-- Beaker walls -->
+        <rect x="90" y="118" width="320" height="170" rx="4" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+        <!-- Liquid fill -->
+        <rect x="92" y="140" width="316" height="146" rx="2" fill="#bae6fd" opacity="0.55"/>
+        <!-- Electrolyte label -->
+        <text x="250" y="156" text-anchor="middle" fill="#0369a1" font-family="Nunito,sans-serif" font-size="11" font-weight="700" font-style="italic">electrolyte</text>
+        <text x="250" y="170" text-anchor="middle" fill="#0369a1" font-family="Nunito,sans-serif" font-size="10" font-style="italic">(ionic compound, molten or dissolved)</text>
+
+        <!-- Cathode rod -->
+        <rect x="162" y="68" width="14" height="170" rx="3" fill="#374151"/>
+        <!-- Anode rod -->
+        <rect x="324" y="68" width="14" height="170" rx="3" fill="#374151"/>
+
+        <!-- Battery body -->
+        <rect x="184" y="16" width="132" height="44" rx="8" fill="#1c1f3a"/>
+        <text x="250" y="35" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700">&#8722; BATTERY +</text>
+        <text x="250" y="51" text-anchor="middle" fill="#c084fc" font-family="Nunito,sans-serif" font-size="9" font-weight="600">d.c. power supply</text>
+
+        <!-- Battery wires -->
+        <line x1="169" y1="38" x2="184" y2="38" stroke="#374151" stroke-width="2.5"/>
+        <line x1="169" y1="38" x2="169" y2="75" stroke="#374151" stroke-width="2.5"/>
+        <line x1="316" y1="38" x2="331" y2="38" stroke="#374151" stroke-width="2.5"/>
+        <line x1="331" y1="38" x2="331" y2="75" stroke="#374151" stroke-width="2.5"/>
+
+        <!-- Electron flow arrow across battery top -->
+        <path d="M310,12 L190,12" stroke="#a78bfa" stroke-width="1.8" fill="none" marker-end="url(#arrDk)" stroke-dasharray="4,3"/>
+        <text x="250" y="10" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="9" font-weight="600">electrons flow this way</text>
+
+        <!-- −/+ labels on wires -->
+        <circle cx="169" cy="56" r="9" fill="#6d28d9"/>
+        <text x="169" y="60" text-anchor="middle" fill="white" font-size="13" font-weight="900">&#8722;</text>
+        <circle cx="331" cy="56" r="9" fill="#9333ea"/>
+        <text x="331" y="61" text-anchor="middle" fill="white" font-size="12" font-weight="900">+</text>
+
+        <!-- Cation circles (blue) moving toward cathode -->
+        <circle cx="258" cy="195" r="13" fill="#3b82f6" opacity="0.88"/>
+        <text x="258" y="199" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10" font-weight="800">+</text>
+        <path d="M242,195 L215,195" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrB)"/>
+
+        <circle cx="240" cy="230" r="12" fill="#3b82f6" opacity="0.8"/>
+        <text x="240" y="234" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10" font-weight="800">+</text>
+        <path d="M225,230 L200,235" stroke="#3b82f6" stroke-width="1.8" fill="none" marker-end="url(#arrB)"/>
+
+        <!-- Anion circles (red) moving toward anode -->
+        <circle cx="270" cy="220" r="13" fill="#ef4444" opacity="0.85"/>
+        <text x="270" y="224" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10" font-weight="800">&#8722;</text>
+        <path d="M286,220 L308,220" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#arrR)"/>
+
+        <circle cx="288" cy="190" r="12" fill="#ef4444" opacity="0.8"/>
+        <text x="288" y="194" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10" font-weight="800">&#8722;</text>
+        <path d="M302,190 L320,185" stroke="#ef4444" stroke-width="1.8" fill="none" marker-end="url(#arrR)"/>
+
+        <!-- Ion legend -->
+        <circle cx="104" cy="248" r="10" fill="#3b82f6"/>
+        <text x="104" y="252" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="800">+</text>
+        <text x="118" y="252" fill="#374151" font-family="Nunito,sans-serif" font-size="10.5" font-weight="600">cations (positive)</text>
+        <circle cx="104" cy="268" r="10" fill="#ef4444"/>
+        <text x="104" y="272" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="800">&#8722;</text>
+        <text x="118" y="272" fill="#374151" font-family="Nunito,sans-serif" font-size="10.5" font-weight="600">anions (negative)</text>
+
+        <!-- Electrode labels -->
+        <text x="169" y="303" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="13" font-weight="800">CATHODE</text>
+        <text x="169" y="317" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="10.5" font-weight="600">(negative &#8722;)</text>
+        <text x="331" y="303" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="13" font-weight="800">ANODE</text>
+        <text x="331" y="317" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="10.5" font-weight="600">(positive +)</text>
+      </svg>
+      <p class="diagram-cap">Figure 1 — Basic electrolysis cell. Cations (blue) move to the cathode; anions (red) move to the anode.</p>
+    </div>
+
+    <h3>The PANIC mnemonic — never mix them up again!</h3>
+    <p>The biggest cause of lost marks in electrolysis is getting the cathode and anode the wrong way round. Use <strong>PANIC</strong>:</p>
+
+    <div class="panic-grid">
+      <div class="panic-card"><span class="panic-letter">P</span><span class="panic-word">Positive</span></div>
+      <div class="panic-card"><span class="panic-letter">A</span><span class="panic-word">Anode</span></div>
+      <div class="panic-card"><span class="panic-letter">N</span><span class="panic-word">Negative</span></div>
+      <div class="panic-card"><span class="panic-letter">I</span><span class="panic-word">Is</span></div>
+      <div class="panic-card"><span class="panic-letter">C</span><span class="panic-word">Cathode</span></div>
+    </div>
+    <p style="text-align:center;font-size:.86rem;color:var(--txm);margin-top:.15rem">&#8594; The <strong>Anode is positive (+)</strong> &nbsp;&nbsp;·&nbsp;&nbsp; The <strong>Cathode is negative (&#8722;)</strong></p>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Watch out!</strong> The June 2019 examiner report said electrode confusion was the <em>single biggest source of lost marks</em> in electrolysis questions. Write PANIC at the top of any electrolysis answer!
+    </div>
+
+    <h3>Key vocabulary</h3>
+    <table>
+      <tr><th>Word</th><th>What it means</th></tr>
+      <tr><td><strong>Electrolysis</strong></td><td>Using electricity to break down (decompose) an ionic compound</td></tr>
+      <tr><td><strong>Electrolyte</strong></td><td>The ionic substance being broken down — must be molten or dissolved in water</td></tr>
+      <tr><td><strong>Electrode</strong></td><td>A conductor (usually graphite or metal) that electricity enters or leaves through</td></tr>
+      <tr><td><strong>Cathode</strong></td><td>The negative (&#8722;) electrode — cations move here and gain electrons</td></tr>
+      <tr><td><strong>Anode</strong></td><td>The positive (+) electrode — anions move here and lose electrons</td></tr>
+      <tr><td><strong>Cation</strong></td><td>A positively charged ion (e.g. Na<sup>+</sup>, Cu<sup>2+</sup>) — moves toward the cathode</td></tr>
+      <tr><td><strong>Anion</strong></td><td>A negatively charged ion (e.g. Cl<sup>&#8722;</sup>, OH<sup>&#8722;</sup>) — moves toward the anode</td></tr>
+      <tr><td><strong>Discharge</strong></td><td>When an ion gains or loses electrons at an electrode to become a neutral atom or molecule</td></tr>
+      <tr><td><strong>Inert electrode</strong></td><td>An electrode (usually graphite/carbon) that does not react with the products</td></tr>
+    </table>
+
+    <h3>Why must the compound be molten or dissolved?</h3>
+    <p>In a solid ionic compound, the ions are locked in a lattice — they can't move. Electricity is carried by moving charges, so we need free-moving ions. We can free them by:</p>
+    <ul>
+      <li><strong>Melting</strong> the compound — the lattice breaks down and ions become mobile</li>
+      <li><strong>Dissolving in water</strong> — water molecules pull the ions apart, freeing them to move</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>&#128161; Tip:</strong> "Electrolyte" is the liquid between the electrodes, not the electrodes themselves. Students sometimes call the electrodes the electrolyte — they're not!
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Which electrode do negative ions move towards — cathode or anode?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">The <strong>anode</strong> — it is positive (+), so it attracts negative ions. Remember PANIC: Positive Anode, Negative Is Cathode.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 2 — MOLTEN COMPOUNDS
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#128293;</span>
+    <span class="spec-num">3.25–3.26</span>
+    <span class="spec-name">Electrolysis of molten compounds</span>
+    <span class="spec-tier">F + H</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+
+    <p class="plain-english">Melt an ionic compound, pass electricity through it, and you always get the metal at the cathode and the non-metal at the anode. Simple rule — no competition!</p>
+
+    <h3>The classic example: molten lead bromide (PbBr<sub>2</sub>)</h3>
+    <p>Lead bromide is an ionic compound made of Pb<sup>2+</sup> and Br<sup>&#8722;</sup> ions. When you melt it, those ions become free to move. Connect a power supply and electrolysis happens.</p>
+
+    <div class="diagram-wrap">
+      <!-- SVG: Molten lead bromide cell -->
+      <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="max-width:460px">
+        <defs>
+          <marker id="arrGrey" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#6b7280"/></marker>
+          <marker id="arrRed2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#dc2626"/></marker>
+        </defs>
+        <!-- Crucible -->
+        <path d="M70,108 L70,268 Q70,278 80,278 L420,278 Q430,278 430,268 L430,108 Z" fill="none" stroke="#d97706" stroke-width="2.5"/>
+        <!-- Liquid (molten PbBr2) -->
+        <path d="M72,140 L428,140 L428,276 Q428,276 418,276 L82,276 Q72,276 72,276 Z" fill="#fcd34d" opacity="0.6"/>
+        <!-- Liquid surface line -->
+        <line x1="72" y1="140" x2="428" y2="140" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="250" y="133" text-anchor="middle" fill="#92400e" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700" font-style="italic">molten lead bromide (PbBr&#8322;)</text>
+
+        <!-- Cathode rod -->
+        <rect x="154" y="62" width="14" height="150" rx="3" fill="#374151"/>
+        <!-- Anode rod -->
+        <rect x="332" y="62" width="14" height="150" rx="3" fill="#374151"/>
+
+        <!-- Power supply -->
+        <rect x="178" y="16" width="144" height="40" rx="8" fill="#1c1f3a"/>
+        <text x="250" y="33" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700">&#8722; POWER SUPPLY +</text>
+        <text x="250" y="48" text-anchor="middle" fill="#c084fc" font-family="Nunito,sans-serif" font-size="9" font-weight="600">d.c. electricity</text>
+        <line x1="161" y1="36" x2="178" y2="36" stroke="#374151" stroke-width="2.5"/>
+        <line x1="161" y1="36" x2="161" y2="69" stroke="#374151" stroke-width="2.5"/>
+        <line x1="322" y1="36" x2="339" y2="36" stroke="#374151" stroke-width="2.5"/>
+        <line x1="339" y1="36" x2="339" y2="69" stroke="#374151" stroke-width="2.5"/>
+        <circle cx="161" cy="54" r="9" fill="#6d28d9"/><text x="161" y="58" text-anchor="middle" fill="white" font-size="13" font-weight="900">&#8722;</text>
+        <circle cx="339" cy="54" r="9" fill="#9333ea"/><text x="339" y="59" text-anchor="middle" fill="white" font-size="12" font-weight="900">+</text>
+
+        <!-- Pb2+ ions (grey) moving left toward cathode -->
+        <circle cx="252" cy="185" r="15" fill="#6b7280" opacity="0.9"/>
+        <text x="252" y="190" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">Pb&#178;&#8314;</text>
+        <path d="M234,185 L206,185" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrGrey)"/>
+
+        <circle cx="278" cy="222" r="14" fill="#6b7280" opacity="0.85"/>
+        <text x="278" y="227" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="800">Pb&#178;&#8314;</text>
+
+        <!-- Br- ions (red) moving right toward anode -->
+        <circle cx="236" cy="220" r="14" fill="#dc2626" opacity="0.88"/>
+        <text x="236" y="225" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">Br&#8315;</text>
+        <path d="M252,220 L278,220" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrRed2)"/>
+
+        <circle cx="270" cy="190" r="13" fill="#dc2626" opacity="0.82"/>
+        <text x="270" y="195" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">Br&#8315;</text>
+
+        <!-- Product at cathode: lead metal blob -->
+        <ellipse cx="161" cy="218" rx="22" ry="12" fill="#9ca3af" opacity="0.95"/>
+        <text x="161" y="222" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="800">Pb (l)</text>
+
+        <!-- Product at anode: bromine gas bubbles -->
+        <circle cx="339" cy="122" r="6" fill="#f97316" opacity="0.75"/>
+        <circle cx="349" cy="110" r="5" fill="#f97316" opacity="0.65"/>
+        <circle cx="332" cy="106" r="5" fill="#ea580c" opacity="0.7"/>
+        <circle cx="342" cy="96" r="4" fill="#f97316" opacity="0.55"/>
+
+        <!-- Product labels -->
+        <rect x="72" y="230" width="78" height="22" rx="4" fill="#4a1d96" opacity="0.9"/>
+        <text x="111" y="245" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10" font-weight="700">lead metal</text>
+
+        <rect x="356" y="98" width="68" height="22" rx="4" fill="#ea580c" opacity="0.9"/>
+        <text x="390" y="113" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10" font-weight="700">Br&#8322; gas</text>
+
+        <!-- Electrode labels -->
+        <text x="161" y="293" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="12.5" font-weight="800">CATHODE (&#8722;)</text>
+        <text x="339" y="293" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="12.5" font-weight="800">ANODE (+)</text>
+      </svg>
+      <p class="diagram-cap">Figure 2 — Electrolysis of molten lead bromide. Lead metal forms at the cathode; orange-brown bromine gas forms at the anode.</p>
+    </div>
+
+    <h3>What happens at each electrode?</h3>
+    <table>
+      <tr><th>Electrode</th><th>Ion attracted</th><th>Product</th><th>What happens</th></tr>
+      <tr><td><strong>Cathode (&#8722;)</strong></td><td>Pb<sup>2+</sup></td><td>Lead metal (grey liquid)</td><td>Pb<sup>2+</sup> ions gain 2 electrons each → become neutral Pb atoms</td></tr>
+      <tr><td><strong>Anode (+)</strong></td><td>Br<sup>&#8722;</sup></td><td>Bromine gas (Br<sub>2</sub>)</td><td>Br<sup>&#8722;</sup> ions lose 1 electron each → pairs join to form Br<sub>2</sub> molecules</td></tr>
+    </table>
+
+    <h3>The general rule — easy!</h3>
+    <p>For <strong>any molten binary ionic compound</strong> (one metal + one non-metal):</p>
+    <ul>
+      <li>&#128309; <strong>Cathode (&#8722;):</strong> always the <strong>metal element</strong></li>
+      <li>&#128992; <strong>Anode (+):</strong> always the <strong>non-metal element</strong></li>
+    </ul>
+
+    <table>
+      <tr><th>Compound</th><th>Formula</th><th>Cathode product</th><th>Anode product</th></tr>
+      <tr><td>Lead bromide</td><td>PbBr<sub>2</sub></td><td>Lead (Pb)</td><td>Bromine (Br<sub>2</sub>)</td></tr>
+      <tr><td>Copper chloride</td><td>CuCl<sub>2</sub></td><td>Copper (Cu)</td><td>Chlorine (Cl<sub>2</sub>)</td></tr>
+      <tr><td>Sodium chloride</td><td>NaCl</td><td>Sodium (Na)</td><td>Chlorine (Cl<sub>2</sub>)</td></tr>
+      <tr><td>Aluminium oxide</td><td>Al<sub>2</sub>O<sub>3</sub></td><td>Aluminium (Al)</td><td>Oxygen (O<sub>2</sub>)</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>&#128161; Tip:</strong> Notice Cl<sub>2</sub>, Br<sub>2</sub>, O<sub>2</sub> — the non-metal gases form as <em>diatomic molecules</em>. Always write the subscript 2. Writing just "Cl" or "O" will lose you a mark!
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Molten copper(II) chloride is electrolysed using inert electrodes. What is produced at each electrode?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal"><strong>Cathode:</strong> Copper (Cu) — Cu<sup>2+</sup> ions are attracted to the negative electrode, gain 2 electrons each, and become copper metal.<br><strong>Anode:</strong> Chlorine gas (Cl<sub>2</sub>) — Cl<sup>&#8722;</sup> ions are attracted to the positive electrode, each loses 1 electron, and pairs join to form Cl<sub>2</sub>.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 3 — AQUEOUS SOLUTIONS
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#128167;</span>
+    <span class="spec-num">3.25</span>
+    <span class="spec-name">Electrolysis of aqueous solutions</span>
+    <span class="spec-tier">F + H</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+
+    <p class="plain-english">When an ionic compound is dissolved in water, you have extra ions from the water itself — H<sup>+</sup> and OH<sup>&#8722;</sup>. You need to decide <em>which</em> ions get discharged at each electrode using a simple set of rules.</p>
+
+    <h3>Why aqueous solutions are trickier</h3>
+    <p>Water itself partly splits up: &nbsp;H<sub>2</sub>O &#8652; H<sup>+</sup> + OH<sup>&#8722;</sup></p>
+    <p>So any aqueous solution always has <strong>at least four competing ions</strong>:</p>
+    <ul>
+      <li>From the dissolved salt: a metal cation (e.g. Na<sup>+</sup>, Cu<sup>2+</sup>) and an anion (e.g. Cl<sup>&#8722;</sup>, SO<sub>4</sub><sup>2&#8722;</sup>)</li>
+      <li>From the water: H<sup>+</sup> ions and OH<sup>&#8722;</sup> ions</li>
+    </ul>
+
+    <div class="diagram-wrap">
+      <!-- SVG: 4-ion competition in aqueous solution -->
+      <svg viewBox="0 0 500 270" xmlns="http://www.w3.org/2000/svg" style="max-width:460px">
+        <defs>
+          <marker id="arrB2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3b82f6"/></marker>
+          <marker id="arrLB" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#60a5fa"/></marker>
+          <marker id="arrO" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#f97316"/></marker>
+          <marker id="arrR3" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+        </defs>
+        <!-- Cell -->
+        <rect x="72" y="92" width="356" height="155" rx="4" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+        <rect x="74" y="110" width="352" height="135" rx="2" fill="#bae6fd" opacity="0.45"/>
+        <!-- Cathode -->
+        <rect x="138" y="55" width="13" height="155" rx="3" fill="#374151"/>
+        <!-- Anode -->
+        <rect x="349" y="55" width="13" height="155" rx="3" fill="#374151"/>
+        <!-- Power supply strip -->
+        <rect x="164" y="16" width="172" height="33" rx="7" fill="#1c1f3a"/>
+        <text x="250" y="36" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700">&#8722; POWER SUPPLY +</text>
+        <line x1="144" y1="32" x2="164" y2="32" stroke="#374151" stroke-width="2"/>
+        <line x1="144" y1="32" x2="144" y2="62" stroke="#374151" stroke-width="2"/>
+        <line x1="336" y1="32" x2="356" y2="32" stroke="#374151" stroke-width="2"/>
+        <line x1="356" y1="32" x2="356" y2="62" stroke="#374151" stroke-width="2"/>
+        <circle cx="144" cy="48" r="8" fill="#6d28d9"/><text x="144" y="52" text-anchor="middle" fill="white" font-size="12" font-weight="900">&#8722;</text>
+        <circle cx="356" cy="48" r="8" fill="#9333ea"/><text x="356" cy="48" y="52" text-anchor="middle" fill="white" font-size="11" font-weight="900">+</text>
+
+        <!-- 4 types of ions -->
+        <!-- Metal cation, e.g. Na+ (dark blue) -->
+        <circle cx="200" cy="160" r="13" fill="#1d4ed8" opacity="0.9"/>
+        <text x="200" y="165" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">Na&#8314;</text>
+        <path d="M184,160 L165,160" stroke="#1d4ed8" stroke-width="1.8" fill="none" marker-end="url(#arrB2)"/>
+
+        <circle cx="222" cy="198" r="12" fill="#1d4ed8" opacity="0.85"/>
+        <text x="222" y="202" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="800">Na&#8314;</text>
+
+        <!-- H+ from water (light blue) -->
+        <circle cx="210" cy="178" r="11" fill="#60a5fa" opacity="0.92"/>
+        <text x="210" y="182" text-anchor="middle" fill="#1e3a5f" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">H&#8314;</text>
+        <path d="M196,178 L170,178" stroke="#60a5fa" stroke-width="1.8" fill="none" marker-end="url(#arrLB)"/>
+
+        <circle cx="195" cy="210" r="11" fill="#60a5fa" opacity="0.88"/>
+        <text x="195" y="214" text-anchor="middle" fill="#1e3a5f" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">H&#8314;</text>
+
+        <!-- Anion e.g. Cl- (orange) -->
+        <circle cx="298" cy="162" r="13" fill="#f97316" opacity="0.9"/>
+        <text x="298" y="167" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">Cl&#8315;</text>
+        <path d="M314,162 L335,162" stroke="#f97316" stroke-width="1.8" fill="none" marker-end="url(#arrO)"/>
+
+        <circle cx="278" cy="198" r="12" fill="#f97316" opacity="0.85"/>
+        <text x="278" y="202" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="800">Cl&#8315;</text>
+
+        <!-- OH- from water (red) -->
+        <circle cx="310" cy="185" r="12" fill="#ef4444" opacity="0.88"/>
+        <text x="310" y="189" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="8.5" font-weight="800">OH&#8315;</text>
+        <path d="M324,185 L342,185" stroke="#ef4444" stroke-width="1.8" fill="none" marker-end="url(#arrR3)"/>
+
+        <circle cx="292" cy="215" r="11" fill="#ef4444" opacity="0.82"/>
+        <text x="292" y="219" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="8.5" font-weight="800">OH&#8315;</text>
+
+        <!-- Competition label -->
+        <text x="250" y="108" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700" font-style="italic">Which ions win the competition?</text>
+
+        <!-- Legend box -->
+        <rect x="74" y="230" width="352" height="32" rx="4" fill="#f8faff" stroke="#dde1f0" stroke-width="1"/>
+        <circle cx="92" cy="246" r="7" fill="#1d4ed8"/>
+        <text x="103" y="250" fill="#374151" font-family="Nunito,sans-serif" font-size="9.5" font-weight="600">metal cation</text>
+        <circle cx="173" cy="246" r="7" fill="#60a5fa"/>
+        <text x="184" y="250" fill="#374151" font-family="Nunito,sans-serif" font-size="9.5" font-weight="600">H&#8314; (water)</text>
+        <circle cx="253" cy="246" r="7" fill="#f97316"/>
+        <text x="264" y="250" fill="#374151" font-family="Nunito,sans-serif" font-size="9.5" font-weight="600">anion (salt)</text>
+        <circle cx="333" cy="246" r="7" fill="#ef4444"/>
+        <text x="344" y="250" fill="#374151" font-family="Nunito,sans-serif" font-size="9.5" font-weight="600">OH&#8315; (water)</text>
+
+        <!-- Electrode labels -->
+        <text x="144" y="262" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="11" font-weight="800">CATHODE (&#8722;)</text>
+        <text x="356" y="262" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="11" font-weight="800">ANODE (+)</text>
+      </svg>
+      <p class="diagram-cap">Figure 3 — Four ions compete in aqueous NaCl. The decision rules below tell you which ones win.</p>
+    </div>
+
+    <h3>The decision flowchart</h3>
+
+    <div class="diagram-wrap">
+      <!-- SVG: Decision flowchart -->
+      <svg viewBox="0 0 500 295" xmlns="http://www.w3.org/2000/svg" style="max-width:480px">
+        <defs>
+          <marker id="arrFC" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#374151"/></marker>
+        </defs>
+
+        <!-- CATHODE side (left) -->
+        <rect x="12" y="8" width="208" height="30" rx="6" fill="#4a1d96"/>
+        <text x="116" y="28" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="13" font-weight="800">CATHODE (&#8722;)</text>
+
+        <!-- Diamond decision -->
+        <polygon points="116,68 196,108 116,148 36,108" fill="#eef1ff" stroke="#6d28d9" stroke-width="2"/>
+        <text x="116" y="102" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="9.5" font-weight="700">Is the metal ion less</text>
+        <text x="116" y="116" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="9.5" font-weight="700">reactive than hydrogen?</text>
+
+        <!-- YES left branch -->
+        <line x1="36" y1="108" x2="14" y2="108" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <line x1="14" y1="108" x2="14" y2="180" stroke="#374151" stroke-width="1.8"/>
+        <line x1="14" y1="180" x2="44" y2="180" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <text x="5" y="148" fill="#16a34a" font-family="Nunito,sans-serif" font-size="10" font-weight="800">YES</text>
+        <rect x="44" y="162" width="144" height="40" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+        <text x="116" y="183" text-anchor="middle" fill="#166534" font-family="Nunito,sans-serif" font-size="11" font-weight="800">Metal deposits &#10003;</text>
+        <text x="116" y="196" text-anchor="middle" fill="#166534" font-family="Nunito,sans-serif" font-size="9">(e.g. Cu&#178;&#8314; + 2e&#8315; &#8594; Cu)</text>
+
+        <!-- NO right branch -->
+        <line x1="196" y1="108" x2="218" y2="108" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <line x1="218" y1="108" x2="218" y2="235" stroke="#374151" stroke-width="1.8"/>
+        <line x1="218" y1="235" x2="188" y2="235" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <text x="226" y="175" fill="#dc2626" font-family="Nunito,sans-serif" font-size="10" font-weight="800">NO</text>
+        <rect x="44" y="217" width="144" height="40" rx="7" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+        <text x="116" y="238" text-anchor="middle" fill="#be185d" font-family="Nunito,sans-serif" font-size="11" font-weight="800">Hydrogen gas &#10003;</text>
+        <text x="116" y="251" text-anchor="middle" fill="#be185d" font-family="Nunito,sans-serif" font-size="9">(2H&#8314; + 2e&#8315; &#8594; H&#8322;)</text>
+        <line x1="116" y1="202" x2="116" y2="217" stroke="#374151" stroke-width="1.5"/>
+
+        <!-- Reactivity note -->
+        <rect x="14" y="267" width="210" height="22" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+        <text x="119" y="282" text-anchor="middle" fill="#166534" font-family="Nunito,sans-serif" font-size="9" font-weight="600">Cu, Ag, Au &#8594; metal &nbsp;|&nbsp; Na, K, Mg, Al &#8594; H&#8322;</text>
+
+        <!-- ANODE side (right) -->
+        <rect x="280" y="8" width="208" height="30" rx="6" fill="#7c3aed"/>
+        <text x="384" y="28" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="13" font-weight="800">ANODE (+)</text>
+
+        <!-- Diamond decision -->
+        <polygon points="384,68 464,108 384,148 304,108" fill="#eef1ff" stroke="#9333ea" stroke-width="2"/>
+        <text x="384" y="102" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="9.5" font-weight="700">Are there halide ions</text>
+        <text x="384" y="116" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="9.5" font-weight="700">present (Cl&#8315;, Br&#8315;, I&#8315;)?</text>
+
+        <!-- YES left branch of anode -->
+        <line x1="304" y1="108" x2="282" y2="108" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <line x1="282" y1="108" x2="282" y2="180" stroke="#374151" stroke-width="1.8"/>
+        <line x1="282" y1="180" x2="312" y2="180" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <text x="273" y="148" fill="#16a34a" font-family="Nunito,sans-serif" font-size="10" font-weight="800">YES</text>
+        <rect x="312" y="162" width="144" height="40" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+        <text x="384" y="183" text-anchor="middle" fill="#166534" font-family="Nunito,sans-serif" font-size="11" font-weight="800">Halogen gas &#10003;</text>
+        <text x="384" y="196" text-anchor="middle" fill="#166534" font-family="Nunito,sans-serif" font-size="9">(e.g. 2Cl&#8315; &#8594; Cl&#8322; + 2e&#8315;)</text>
+
+        <!-- NO right branch of anode -->
+        <line x1="464" y1="108" x2="486" y2="108" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <line x1="486" y1="108" x2="486" y2="235" stroke="#374151" stroke-width="1.8"/>
+        <line x1="486" y1="235" x2="456" y2="235" stroke="#374151" stroke-width="1.8" marker-end="url(#arrFC)"/>
+        <text x="488" y="175" fill="#dc2626" font-family="Nunito,sans-serif" font-size="10" font-weight="800">NO</text>
+        <rect x="312" y="217" width="144" height="40" rx="7" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+        <text x="384" y="238" text-anchor="middle" fill="#be185d" font-family="Nunito,sans-serif" font-size="11" font-weight="800">Oxygen gas &#10003;</text>
+        <text x="384" y="251" text-anchor="middle" fill="#be185d" font-family="Nunito,sans-serif" font-size="9">(4OH&#8315; &#8594; O&#8322; + 2H&#8322;O + 4e&#8315;)</text>
+        <line x1="384" y1="202" x2="384" y2="217" stroke="#374151" stroke-width="1.5"/>
+
+        <!-- Halide note -->
+        <rect x="282" y="267" width="210" height="22" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+        <text x="387" y="282" text-anchor="middle" fill="#166534" font-family="Nunito,sans-serif" font-size="9" font-weight="600">Cl&#8315;, Br&#8315;, I&#8315; &#8594; halogen &nbsp;|&nbsp; SO&#8324;&#178;&#8315;, NO&#8323;&#8315; &#8594; O&#8322;</text>
+      </svg>
+      <p class="diagram-cap">Figure 4 — Decision flowchart for predicting products in aqueous electrolysis. Use it every time!</p>
+    </div>
+
+    <h3>The four key aqueous electrolytes you need to know</h3>
+    <table>
+      <tr><th>Electrolyte</th><th>Cathode (&#8722;) product</th><th>Anode (+) product</th></tr>
+      <tr><td>Copper(II) chloride (CuCl<sub>2</sub>)</td><td>Copper (Cu) deposits</td><td>Chlorine gas (Cl<sub>2</sub>)</td></tr>
+      <tr><td>Sodium chloride (NaCl)</td><td>Hydrogen gas (H<sub>2</sub>)</td><td>Chlorine gas (Cl<sub>2</sub>)</td></tr>
+      <tr><td>Sodium sulfate (Na<sub>2</sub>SO<sub>4</sub>)</td><td>Hydrogen gas (H<sub>2</sub>)</td><td>Oxygen gas (O<sub>2</sub>)</td></tr>
+      <tr><td>Sulfuric acid (H<sub>2</sub>SO<sub>4</sub>)</td><td>Hydrogen gas (H<sub>2</sub>)</td><td>Oxygen gas (O<sub>2</sub>)</td></tr>
+    </table>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Common mistake:</strong> Students often say "oxygen comes from SO<sub>4</sub><sup>2&#8722;</sup>" or "sulfate is discharged at the anode." This is wrong! Sulfate ions are <em>never</em> discharged. The oxygen actually comes from OH<sup>&#8722;</sup> ions (from water).
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Aqueous sodium chloride is electrolysed using inert electrodes. State the product at the anode and explain why.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal"><strong>Chlorine gas (Cl<sub>2</sub>).</strong> Chloride ions (Cl<sup>&#8722;</sup>) are halide ions, so they are preferentially discharged at the anode over OH<sup>&#8722;</sup> ions. Each Cl<sup>&#8722;</sup> loses one electron and pairs join to form Cl<sub>2</sub> molecules.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 4 — HALF-EQUATIONS [H]
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9879;&#65039;</span>
+    <span class="spec-num">3.27–3.29</span>
+    <span class="spec-name">Half-equations and redox</span>
+    <span class="spec-tier">Higher only</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+
+    <div class="higher-box">
+      <span class="higher-badge">H</span> <strong>Higher tier only.</strong> Foundation students can skip this section — but it's great extension if you want a challenge!
+    </div>
+
+    <p class="plain-english">Half-equations show exactly which electrons move where at each electrode. At the cathode, ions gain electrons (reduction). At the anode, ions lose electrons (oxidation). Remember: OIL RIG!</p>
+
+    <h3>OIL RIG — your electron mnemonic</h3>
+    <div class="panic-grid" style="max-width:380px;margin:0.8rem auto 1.1rem">
+      <div class="panic-card" style="background:linear-gradient(135deg,#1e40af,#3b82f6);max-width:175px">
+        <span class="panic-letter" style="font-size:1.7rem">OIL</span>
+        <span class="panic-word">Oxidation Is Loss (of electrons)</span>
+      </div>
+      <div class="panic-card" style="background:linear-gradient(135deg,#dc2626,#f97316);max-width:175px">
+        <span class="panic-letter" style="font-size:1.7rem">RIG</span>
+        <span class="panic-word">Reduction Is Gain (of electrons)</span>
+      </div>
+    </div>
+    <ul>
+      <li>&#128309; <strong>Cathode (&#8722;):</strong> ions <strong>gain</strong> electrons &#8594; <strong>REDUCTION</strong></li>
+      <li>&#128992; <strong>Anode (+):</strong> ions <strong>lose</strong> electrons &#8594; <strong>OXIDATION</strong></li>
+    </ul>
+
+    <h3>The 4-step method for writing any half-equation</h3>
+    <ol class="steps">
+      <li>Write the ion on the left and the product on the right, separated by &#8594;</li>
+      <li>Add electrons (e<sup>&#8722;</sup>) to balance the charges — they go on the left for cathode, right for anode</li>
+      <li>Balance atoms if needed (especially H<sub>2</sub>, O<sub>2</sub> and H<sub>2</sub>O)</li>
+      <li>Check: same number of atoms <em>and</em> same total charge on each side</li>
+    </ol>
+
+    <h3>All the half-equations you need</h3>
+    <table>
+      <tr><th>Electrode</th><th>Ion</th><th>Half-equation</th><th>Type</th></tr>
+      <tr><td>Cathode</td><td>Cu<sup>2+</sup></td><td>Cu<sup>2+</sup> + 2e<sup>&#8722;</sup> &#8594; Cu</td><td>Reduction</td></tr>
+      <tr><td>Cathode</td><td>H<sup>+</sup></td><td>2H<sup>+</sup> + 2e<sup>&#8722;</sup> &#8594; H<sub>2</sub></td><td>Reduction</td></tr>
+      <tr><td>Cathode</td><td>Na<sup>+</sup></td><td>Na<sup>+</sup> + e<sup>&#8722;</sup> &#8594; Na</td><td>Reduction</td></tr>
+      <tr><td>Cathode</td><td>Pb<sup>2+</sup></td><td>Pb<sup>2+</sup> + 2e<sup>&#8722;</sup> &#8594; Pb</td><td>Reduction</td></tr>
+      <tr><td>Cathode</td><td>Al<sup>3+</sup></td><td>Al<sup>3+</sup> + 3e<sup>&#8722;</sup> &#8594; Al</td><td>Reduction</td></tr>
+      <tr><td>Anode</td><td>Cl<sup>&#8722;</sup></td><td>2Cl<sup>&#8722;</sup> &#8594; Cl<sub>2</sub> + 2e<sup>&#8722;</sup></td><td>Oxidation</td></tr>
+      <tr><td>Anode</td><td>Br<sup>&#8722;</sup></td><td>2Br<sup>&#8722;</sup> &#8594; Br<sub>2</sub> + 2e<sup>&#8722;</sup></td><td>Oxidation</td></tr>
+      <tr><td>Anode</td><td>OH<sup>&#8722;</sup></td><td>4OH<sup>&#8722;</sup> &#8594; O<sub>2</sub> + 2H<sub>2</sub>O + 4e<sup>&#8722;</sup></td><td>Oxidation</td></tr>
+    </table>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; The 5 most common exam errors (from examiners):</strong>
+      <ol style="margin:.5rem 0 0 1.2rem;font-size:.88rem;line-height:1.65">
+        <li>Putting electrons on the <em>wrong side</em> (cathode needs e<sup>&#8722;</sup> on the left; anode needs e<sup>&#8722;</sup> on the right)</li>
+        <li>Writing Cl instead of Cl<sub>2</sub> — forgetting atoms are diatomic</li>
+        <li>Leaving out the minus sign — writing "e" instead of "e<sup>&#8722;</sup>"</li>
+        <li>Unbalanced charges — always check both sides add up to the same number</li>
+        <li>Writing × instead of &#8594; in the equation</li>
+      </ol>
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Write the half-equation for the discharge of bromide ions at the anode.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>2Br<sup>&#8722;</sup> &#8594; Br<sub>2</sub> + 2e<sup>&#8722;</sup></strong><br>
+        Charge check: Left = 2&#215;(&#8722;1) = &#8722;2 &nbsp;&nbsp;|&nbsp;&nbsp; Right = 0 + 2&#215;(&#8722;1) = &#8722;2 &nbsp;&#10003;<br>
+        Atom check: 2 Br each side &#10003;
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 5 — CORE PRACTICAL: CuSO4
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#129514;</span>
+    <span class="spec-num">3.30–3.31</span>
+    <span class="spec-name">Core Practical — electrolysis of copper sulfate</span>
+    <span class="spec-tier">F + H</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+
+    <p class="plain-english">You need to know what happens when copper sulfate solution is electrolysed with (a) inert carbon electrodes, and (b) copper electrodes. The results are completely different — and both come up in exams!</p>
+
+    <div class="diagram-wrap">
+      <!-- SVG: Side-by-side comparison -->
+      <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="max-width:480px">
+
+        <!-- === LEFT: Inert electrodes === -->
+        <rect x="16" y="82" width="220" height="18" rx="3" fill="#4a1d96"/>
+        <text x="126" y="95" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700">Inert (carbon) electrodes</text>
+        <!-- Cell -->
+        <rect x="16" y="100" width="220" height="170" rx="3" fill="none" stroke="#94a3b8" stroke-width="2"/>
+        <rect x="18" y="118" width="216" height="150" fill="#60a5fa" opacity="0.35"/>
+        <!-- Solution label -->
+        <text x="126" y="165" text-anchor="middle" fill="#1e40af" font-family="Nunito,sans-serif" font-size="9.5" font-weight="700">CuSO&#8324; solution</text>
+        <text x="126" y="180" text-anchor="middle" fill="#1e40af" font-family="Nunito,sans-serif" font-size="9" font-style="italic">(fading — paler blue)</text>
+        <!-- Cathode rod (carbon) -->
+        <rect x="64" y="58" width="11" height="152" rx="2" fill="#1f2937"/>
+        <!-- Anode rod (carbon) -->
+        <rect x="181" y="58" width="11" height="152" rx="2" fill="#1f2937"/>
+        <!-- Power supply left -->
+        <rect x="78" y="18" width="100" height="34" rx="6" fill="#1c1f3a"/>
+        <text x="128" y="37" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="700">&#8722; SUPPLY +</text>
+        <line x1="69" y1="35" x2="78" y2="35" stroke="#374151" stroke-width="1.8"/>
+        <line x1="69" y1="35" x2="69" y2="65" stroke="#374151" stroke-width="1.8"/>
+        <line x1="178" y1="35" x2="186" y2="35" stroke="#374151" stroke-width="1.8"/>
+        <line x1="186" y1="35" x2="186" y2="65" stroke="#374151" stroke-width="1.8"/>
+        <circle cx="69" cy="50" r="7" fill="#6d28d9"/><text x="69" y="54" text-anchor="middle" fill="white" font-size="11" font-weight="900">&#8722;</text>
+        <circle cx="186" cy="50" r="7" fill="#9333ea"/><text x="186" y="54" text-anchor="middle" fill="white" font-size="10" font-weight="900">+</text>
+        <!-- Cu deposit on cathode -->
+        <rect x="53" y="180" width="34" height="55" rx="4" fill="#b45309" opacity="0.88"/>
+        <text x="70" y="205" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="700">Cu</text>
+        <text x="70" y="218" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="8">deposits</text>
+        <!-- O2 bubbles at anode -->
+        <circle cx="186" cy="107" r="5" fill="white" opacity="0.85"/>
+        <circle cx="194" cy="96" r="4" fill="white" opacity="0.75"/>
+        <circle cx="180" cy="89" r="4.5" fill="white" opacity="0.7"/>
+        <circle cx="188" cy="80" r="3.5" fill="white" opacity="0.6"/>
+        <text x="210" y="92" fill="#374151" font-family="Nunito,sans-serif" font-size="9" font-weight="600">O&#8322;</text>
+        <!-- Electrode labels -->
+        <text x="69" y="285" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="10" font-weight="800">cathode (&#8722;)</text>
+        <text x="186" y="285" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="10" font-weight="800">anode (+)</text>
+
+        <!-- === RIGHT: Copper electrodes === -->
+        <rect x="264" y="82" width="220" height="18" rx="3" fill="#b45309"/>
+        <text x="374" y="95" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700">Copper electrodes</text>
+        <!-- Cell -->
+        <rect x="264" y="100" width="220" height="170" rx="3" fill="none" stroke="#d97706" stroke-width="2"/>
+        <rect x="266" y="118" width="216" height="150" fill="#3b82f6" opacity="0.4"/>
+        <!-- Solution label -->
+        <text x="374" y="165" text-anchor="middle" fill="#1e40af" font-family="Nunito,sans-serif" font-size="9.5" font-weight="700">CuSO&#8324; solution</text>
+        <text x="374" y="180" text-anchor="middle" fill="#1e40af" font-family="Nunito,sans-serif" font-size="9" font-style="italic">(stays same blue!)</text>
+        <!-- Cathode rod (copper) -->
+        <rect x="312" y="58" width="11" height="152" rx="2" fill="#b45309"/>
+        <!-- Anode rod (copper, partly dissolved) -->
+        <rect x="429" y="58" width="11" height="100" rx="2" fill="#d97706"/>
+        <!-- Anode shorter to show dissolving -->
+        <text x="444" y="118" fill="#78350f" font-family="Nunito,sans-serif" font-size="8.5" font-weight="600">dissolves</text>
+        <!-- Power supply right -->
+        <rect x="326" y="18" width="100" height="34" rx="6" fill="#1c1f3a"/>
+        <text x="376" y="37" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="700">&#8722; SUPPLY +</text>
+        <line x1="317" y1="35" x2="326" y2="35" stroke="#374151" stroke-width="1.8"/>
+        <line x1="317" y1="35" x2="317" y2="65" stroke="#374151" stroke-width="1.8"/>
+        <line x1="426" y1="35" x2="434" y2="35" stroke="#374151" stroke-width="1.8"/>
+        <line x1="434" y1="35" x2="434" y2="65" stroke="#374151" stroke-width="1.8"/>
+        <circle cx="317" cy="50" r="7" fill="#6d28d9"/><text x="317" y="54" text-anchor="middle" fill="white" font-size="11" font-weight="900">&#8722;</text>
+        <circle cx="434" cy="50" r="7" fill="#9333ea"/><text x="434" y="54" text-anchor="middle" fill="white" font-size="10" font-weight="900">+</text>
+        <!-- Cu deposit on right cathode -->
+        <rect x="301" y="180" width="34" height="55" rx="4" fill="#b45309" opacity="0.9"/>
+        <text x="318" y="205" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="9" font-weight="700">Cu</text>
+        <text x="318" y="218" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="8">deposits</text>
+        <!-- Electrode labels right -->
+        <text x="317" y="285" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="10" font-weight="800">cathode (&#8722;)</text>
+        <text x="434" y="285" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="10" font-weight="800">anode (+)</text>
+
+        <!-- VS divider -->
+        <line x1="248" y1="90" x2="248" y2="280" stroke="#dde1f0" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <circle cx="248" cy="185" r="14" fill="#eef1ff" stroke="#dde1f0" stroke-width="1.5"/>
+        <text x="248" y="190" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="11" font-weight="900">VS</text>
+      </svg>
+      <p class="diagram-cap">Figure 5 — Left: inert carbon electrodes — solution loses Cu<sup>2+</sup> and fades. Right: copper electrodes — anode dissolves and solution stays blue.</p>
+    </div>
+
+    <h3>Key differences</h3>
+    <div class="two-col">
+      <div class="col-card">
+        <h4>&#9644; Inert (carbon/graphite) electrodes</h4>
+        <ul>
+          <li>Cathode: Cu<sup>2+</sup> deposits as copper (pink coating)</li>
+          <li>Anode: OH<sup>&#8722;</sup> discharged &#8594; O<sub>2</sub> gas forms</li>
+          <li>Blue colour <strong>fades</strong> — Cu<sup>2+</sup> ions are used up</li>
+          <li>Cathode gains mass; anode unchanged</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>&#129000; Copper electrodes</h4>
+        <ul>
+          <li>Cathode: Cu deposits (same as above)</li>
+          <li>Anode: copper <strong>dissolves</strong> &#8594; makes Cu<sup>2+</sup> ions</li>
+          <li>Blue colour <strong>stays the same</strong> throughout</li>
+          <li>Cathode gains mass; anode loses mass equally</li>
+          <li>Used industrially for copper purification!</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Method for the exam</h3>
+    <ol class="steps">
+      <li>Set up: CuSO<sub>4</sub> solution, two electrodes, power supply, ammeter, variable resistor</li>
+      <li>Dry and <strong>weigh both electrodes</strong> on a balance before starting</li>
+      <li>Set a fixed current (e.g. 0.5 A) and run for a fixed time (e.g. 20 minutes)</li>
+      <li>Remove electrodes carefully, rinse with distilled water, dry gently, then re-weigh</li>
+      <li>Calculate mass change: cathode should gain mass; anode loses mass if using copper</li>
+    </ol>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Examiner tip:</strong> Always dry the electrodes before weighing — wet electrodes give inaccurate results. Examiners ask about sources of error in this practical, and a wet electrode is the most common answer.
+    </div>
+
+    <div class="tip-box">
+      <strong>&#128161; Real-world link:</strong> The copper electrode version is exactly how industrial copper purification works. Impure copper is the anode; it dissolves away. Pure copper deposits on the cathode. Impurities sink to the bottom as "anode sludge" and are collected (they can contain valuable metals like gold and silver!).
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>In the copper sulfate practical using inert electrodes, why does the blue colour of the solution fade over time?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">The blue colour is due to Cu<sup>2+</sup> ions in solution. As the experiment runs, Cu<sup>2+</sup> ions are continually discharged at the cathode, depositing as copper metal. The concentration of Cu<sup>2+</sup> in solution decreases, so the blue colour fades. With inert anodes, no new Cu<sup>2+</sup> is added to replace what is lost.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 6 — INDUSTRIAL USES
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#127981;</span>
+    <span class="spec-num">3.22–3.31</span>
+    <span class="spec-name">Industrial uses of electrolysis</span>
+    <span class="spec-tier">F + H</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+
+    <p class="plain-english">Electrolysis isn't just a lab experiment — it's used on a massive industrial scale. You need to know three key applications: electroplating, the chlor-alkali process, and aluminium extraction.</p>
+
+    <h3>1. Electroplating &#9999;&#65039;</h3>
+    <p>Electroplating coats an object with a thin layer of metal using electrolysis. It's used for jewellery (gold-plated items), cutlery (silver-plated), car bumpers (chrome-plated) and circuit boards.</p>
+
+    <div class="diagram-wrap">
+      <!-- SVG: Electroplating -->
+      <svg viewBox="0 0 480 265" xmlns="http://www.w3.org/2000/svg" style="max-width:440px">
+        <defs>
+          <marker id="arrGold" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#d97706"/></marker>
+        </defs>
+        <!-- Tank -->
+        <rect x="55" y="98" width="370" height="150" rx="4" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+        <rect x="57" y="116" width="366" height="130" fill="#6ee7b7" opacity="0.38"/>
+        <!-- Electrolyte label -->
+        <text x="240" y="148" text-anchor="middle" fill="#064e3b" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700" font-style="italic">electrolyte: gold salt solution (Au&#179;&#8314; ions)</text>
+
+        <!-- Object to be plated (cathode) — ring/spoon shape -->
+        <ellipse cx="148" cy="195" rx="22" ry="58" fill="#9ca3af" stroke="#6b7280" stroke-width="2"/>
+        <rect x="137" y="58" width="11" height="82" rx="3" fill="#6b7280"/>
+        <!-- Gold coating shimmer -->
+        <ellipse cx="148" cy="195" rx="25" ry="61" fill="none" stroke="#fbbf24" stroke-width="4" opacity="0.65"/>
+        <ellipse cx="148" cy="195" rx="27" ry="63" fill="none" stroke="#fde68a" stroke-width="2" opacity="0.4"/>
+
+        <!-- Gold anode bar -->
+        <rect x="328" y="58" width="26" height="148" rx="5" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+        <text x="341" y="135" text-anchor="middle" fill="#78350f" font-family="Nunito,sans-serif" font-size="9" font-weight="700" transform="rotate(90,341,135)">GOLD ANODE (dissolves)</text>
+
+        <!-- Power supply -->
+        <rect x="174" y="16" width="132" height="38" rx="8" fill="#1c1f3a"/>
+        <text x="240" y="38" text-anchor="middle" fill="white" font-family="Nunito,sans-serif" font-size="10.5" font-weight="700">&#8722; SUPPLY +</text>
+        <line x1="143" y1="35" x2="174" y2="35" stroke="#374151" stroke-width="2"/>
+        <line x1="306" y1="35" x2="341" y2="35" stroke="#374151" stroke-width="2"/>
+        <circle cx="157" cy="35" r="8" fill="#6d28d9"/><text x="157" y="39" text-anchor="middle" fill="white" font-size="11" font-weight="900">&#8722;</text>
+        <circle cx="320" cy="35" r="8" fill="#9333ea"/><text x="320" y="39" text-anchor="middle" fill="white" font-size="10" font-weight="900">+</text>
+
+        <!-- Au3+ ions moving from anode to cathode -->
+        <circle cx="245" cy="175" r="13" fill="#fbbf24" opacity="0.92"/>
+        <text x="245" y="180" text-anchor="middle" fill="#78350f" font-family="Nunito,sans-serif" font-size="9.5" font-weight="800">Au&#179;&#8314;</text>
+        <path d="M229,175 L200,185" stroke="#d97706" stroke-width="1.8" fill="none" marker-end="url(#arrGold)"/>
+
+        <circle cx="274" cy="200" r="12" fill="#fbbf24" opacity="0.85"/>
+        <text x="274" y="205" text-anchor="middle" fill="#78350f" font-family="Nunito,sans-serif" font-size="9" font-weight="800">Au&#179;&#8314;</text>
+        <path d="M259,200 L222,205" stroke="#d97706" stroke-width="1.8" fill="none" marker-end="url(#arrGold)"/>
+
+        <!-- Labels -->
+        <text x="148" y="250" text-anchor="middle" fill="#4a1d96" font-family="Nunito,sans-serif" font-size="11.5" font-weight="800">CATHODE (&#8722;)</text>
+        <text x="148" y="263" text-anchor="middle" fill="#374151" font-family="Nunito,sans-serif" font-size="9.5">object to be plated</text>
+        <text x="341" y="250" text-anchor="middle" fill="#7c3aed" font-family="Nunito,sans-serif" font-size="11.5" font-weight="800">ANODE (+)</text>
+        <text x="341" y="263" text-anchor="middle" fill="#374151" font-family="Nunito,sans-serif" font-size="9.5">plating metal (gold)</text>
+      </svg>
+      <p class="diagram-cap">Figure 6 — Electroplating with gold. The object is the cathode; the plating metal is the anode; the electrolyte is a solution of gold ions.</p>
+    </div>
+
+    <div class="takeaway-box">
+      <strong>&#128204; The three things to know for electroplating:</strong>
+      <ul style="margin:.4rem 0 0 1.2rem;font-size:.9rem;line-height:1.7">
+        <li><strong>Cathode (&#8722;):</strong> the object you want to plate</li>
+        <li><strong>Anode (+):</strong> the metal you want to plate it with (it gradually dissolves)</li>
+        <li><strong>Electrolyte:</strong> a solution containing ions of the plating metal</li>
+      </ul>
+    </div>
+
+    <h3>2. The chlor-alkali process &#128167;</h3>
+    <p>Electrolysis of <strong>brine</strong> (concentrated sodium chloride solution) produces three very useful industrial chemicals from one process:</p>
+    <table>
+      <tr><th>Product</th><th>Where it forms</th><th>Industrial uses</th></tr>
+      <tr><td><strong>Chlorine (Cl<sub>2</sub>)</strong></td><td>Anode (+)</td><td>Disinfecting drinking water and swimming pools; making PVC plastic; making bleach</td></tr>
+      <tr><td><strong>Hydrogen (H<sub>2</sub>)</strong></td><td>Cathode (&#8722;)</td><td>Fuel cells; making margarine (food industry); Haber process (making ammonia)</td></tr>
+      <tr><td><strong>Sodium hydroxide (NaOH)</strong></td><td>Remains in solution</td><td>Making soap and detergents; paper manufacture; oven cleaner; ceramics</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>&#128161; Why does NaOH form?</strong> The Na<sup>+</sup> ions and OH<sup>&#8722;</sup> ions that aren't discharged at the electrodes stay in solution. Once Cl<sub>2</sub> and H<sub>2</sub> are removed, what's left is sodium hydroxide solution. Three useful products from electrolysing one simple salt!
+    </div>
+
+    <h3>3. Extraction of aluminium &#127918;</h3>
+    <p>Aluminium is too reactive to be extracted by carbon reduction — it sits above carbon in the reactivity series. Instead, we use electrolysis of <strong>molten aluminium oxide (Al<sub>2</sub>O<sub>3</sub>)</strong>.</p>
+    <ul>
+      <li>The ore (bauxite) is purified to get Al<sub>2</sub>O<sub>3</sub> (alumina)</li>
+      <li>Al<sub>2</sub>O<sub>3</sub> has a very high melting point (~2072°C), so it is dissolved in molten <strong>cryolite</strong> to lower the working temperature to ~950°C — saving huge amounts of energy</li>
+      <li><strong>Cathode (&#8722;):</strong> &nbsp;Al<sup>3+</sup> + 3e<sup>&#8722;</sup> &#8594; Al &nbsp; (liquid aluminium sinks to the bottom and is tapped off)</li>
+      <li><strong>Anode (+):</strong> &nbsp;2O<sup>2&#8722;</sup> &#8594; O<sub>2</sub> + 4e<sup>&#8722;</sup> &nbsp; (oxygen forms, then reacts with hot graphite anodes)</li>
+      <li>The carbon anodes burn away and must be <strong>replaced regularly</strong> — this adds to production costs</li>
+    </ul>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Common mistake:</strong> Students say the anode "erodes by electrolysis." It doesn't — the oxygen produced at the anode <em>reacts</em> with the hot graphite (carbon) to form CO<sub>2</sub> gas, burning the electrode away. This is a chemical reaction, not electrolysis.
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>In the electroplating of a copper bracelet with silver: (a) which is the cathode? (b) what is the electrolyte?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(a)</strong> The copper bracelet is the cathode — it is connected to the negative (&#8722;) terminal. Silver ions will be discharged here and deposit onto the bracelet.<br>
+        <strong>(b)</strong> A solution of a silver salt (e.g. silver nitrate, AgNO<sub>3</sub>) — it must contain Ag<sup>+</sup> ions so they can be discharged at the cathode.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     EXAM TECHNIQUE CARD
+═══════════════════════════════════════════════════ -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#127919;</span>
+    <span class="spec-num">Exam</span>
+    <span class="spec-name">Exam technique — electrolysis</span>
+    <span class="spec-tier">F + H</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+
+    <h3>The examiner's most common complaints</h3>
+    <ol class="steps">
+      <li><strong>Getting cathode and anode backwards.</strong> Use PANIC at the top of every answer — don't rely on memory alone.</li>
+      <li><strong>Saying "sulfate is discharged" at the anode.</strong> Sulfate (SO<sub>4</sub><sup>2&#8722;</sup>) is never discharged. Oxygen comes from OH<sup>&#8722;</sup> ions.</li>
+      <li><strong>Writing O instead of O<sub>2</sub></strong> (and Cl instead of Cl<sub>2</sub>, H instead of H<sub>2</sub>, Br instead of Br<sub>2</sub>). Non-metal gases are diatomic!</li>
+      <li><strong>Confusing molten and aqueous rules.</strong> The 4-ion competition only applies to aqueous solutions — not molten compounds.</li>
+      <li><strong>[H] Half-equation errors:</strong> electrons on the wrong side, unbalanced atoms, "e" written without the minus superscript.</li>
+    </ol>
+
+    <h3>Quick-revision summary table</h3>
+    <table>
+      <tr><th>Situation</th><th>Cathode (&#8722;) product</th><th>Anode (+) product</th></tr>
+      <tr><td>Any molten binary ionic compound</td><td>Metal element</td><td>Non-metal element</td></tr>
+      <tr><td>Aqueous, halide ions present</td><td>Metal (if below H in reactivity) or H<sub>2</sub></td><td>Halogen (Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub>)</td></tr>
+      <tr><td>Aqueous, no halide ions</td><td>Metal (if below H in reactivity) or H<sub>2</sub></td><td>Oxygen (O<sub>2</sub>)</td></tr>
+      <tr><td>CuSO<sub>4</sub> (aq), inert electrodes</td><td>Copper deposits</td><td>Oxygen gas (O<sub>2</sub>)</td></tr>
+      <tr><td>CuSO<sub>4</sub> (aq), copper electrodes</td><td>Copper deposits</td><td>Copper dissolves</td></tr>
+      <tr><td>Brine (NaCl aq.) — chlor-alkali</td><td>Hydrogen (H<sub>2</sub>)</td><td>Chlorine (Cl<sub>2</sub>)</td></tr>
+      <tr><td>Molten Al<sub>2</sub>O<sub>3</sub> in cryolite</td><td>Aluminium (Al)</td><td>Oxygen (burns carbon anodes)</td></tr>
+      <tr><td>Electroplating</td><td>Object being plated</td><td>Plating metal (dissolves)</td></tr>
+    </table>
+
+    <div class="takeaway-box">
+      <strong>&#127942; You've got this!</strong> Electrolysis is one of those topics where every extra example you work through makes it click a little more. Use the quick checks in each section to test yourself — and always draw a labelled diagram in longer exam answers. A clear diagram picks up method marks and helps you structure what to write.
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <a href="home.html">Chemistry Cracked GCSE</a> &nbsp;&middot;&nbsp; Edexcel 1CH0 &nbsp;&middot;&nbsp; Topic 3.2 Electrolysis &nbsp;&middot;&nbsp; <a href="home.html">Back to all resources</a>
+</footer>
+
+<script>
+document.querySelectorAll('.spec-header').forEach(function(h) {
+  h.addEventListener('click', function() {
+    var open = this.classList.contains('open');
+    this.classList.toggle('open', !open);
+    this.nextElementSibling.classList.toggle('open', !open);
+  });
+});
+
+function toggleAnswer(btn) {
+  var box = btn.nextElementSibling;
+  var shown = box.classList.contains('show');
+  box.classList.toggle('show', !shown);
+  btn.textContent = shown ? 'Show answer' : 'Hide answer';
+}
+</script>
+
+</body>
+</html>

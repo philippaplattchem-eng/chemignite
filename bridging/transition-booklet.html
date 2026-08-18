@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GCSE to A Level Chemistry Transition Booklet — OCR A H032/H432</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: A4 portrait; margin: 15mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito', 'Segoe UI', Arial, sans-serif; font-size: 11pt; color: #111; background: #fff; line-height: 1.6; }
+:root { --navy: #0c2461; --blue: #1565c0; --light: #e3f2fd; --mid: #1976d2; }
+
+.print-note { background: #f5f5f5; border: 1px dashed #bbb; padding: 6px 14px; font-size: 9pt; color: #666; text-align: center; margin-bottom: 12px; border-radius: 3px; }
+@media print { .print-note { display: none; } }
+
+/* Cover */
+.cover { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250mm; text-align: center; page-break-after: always; }
+.cover h1 { font-size: 44pt; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+.cover .subtitle { font-size: 17pt; color: #444; margin-bottom: 10px; }
+.cover .tagline { font-size: 12pt; color: #666; font-style: italic; margin-bottom: 70px; }
+.cover .school-block { font-size: 11pt; color: #555; line-height: 2; }
+.cover .school-block strong { color: var(--blue); display: block; font-size: 13pt; font-weight: 800; }
+
+/* Sections */
+.section { padding: 18px 0 20px; border-bottom: 3px solid var(--light); }
+.section h2 { font-size: 18pt; font-weight: 800; color: var(--navy); border-bottom: 3px solid var(--navy); padding-bottom: 6px; margin-bottom: 14px; }
+.section h3 { font-size: 12pt; font-weight: 700; color: var(--blue); margin: 18px 0 6px; }
+.section p { margin: 6px 0; font-size: 11pt; }
+.section ul, .section ol { padding-left: 22px; margin: 6px 0; }
+.section li { margin-bottom: 4px; }
+
+/* Practice boxes */
+.practice { background: var(--light); border-left: 5px solid var(--blue); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.practice h4 { color: var(--blue); font-size: 11pt; font-weight: 800; margin-bottom: 10px; }
+.practice ol { padding-left: 22px; }
+.practice li { margin-bottom: 5px; font-size: 10.5pt; }
+
+/* Answer boxes */
+.answer-box { background: #f0f5ff; border-left: 5px solid var(--mid); padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.answer-box h4 { color: var(--navy); font-size: 11pt; font-weight: 800; margin-bottom: 10px; }
+.answer-box ol { padding-left: 22px; }
+.answer-box li { margin-bottom: 5px; font-size: 10.5pt; }
+.answer-box p { margin: 4px 0; font-size: 10.5pt; }
+
+/* Callout boxes */
+.ocr-error { background: #fff8e1; border-left: 5px solid #f9a825; padding: 11px 15px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.ocr-error strong { color: #e65100; }
+.how-to { background: #fff3e0; border-left: 5px solid #fb8c00; padding: 11px 15px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.how-to strong { color: #e65100; }
+.watch-out { background: #fce4ec; border-left: 5px solid #e91e63; padding: 11px 15px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.watch-out strong { color: #b71c1c; }
+.why-matters { background: #e8f5e9; border-left: 5px solid #43a047; padding: 11px 15px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 10.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.why-matters strong { color: #2e7d32; }
+
+/* Intro / data box */
+.intro-box { background: var(--light); border-left: 5px solid var(--blue); padding: 11px 15px; margin: 12px 0; border-radius: 0 6px 6px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.intro-box strong { color: var(--blue); }
+
+/* Checklist */
+.checklist { list-style: none; padding: 0; margin: 8px 0; }
+.checklist li { padding: 4px 0 4px 30px; position: relative; font-size: 11pt; }
+.checklist li::before { content: '☐'; position: absolute; left: 0; color: var(--blue); font-size: 14pt; line-height: 1.1; }
+
+/* Contents */
+.contents ol { padding-left: 24px; margin: 8px 0; }
+.contents li { margin-bottom: 6px; font-size: 11pt; font-weight: 700; color: var(--navy); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10.5pt; }
+th { background: var(--navy); color: #fff; padding: 7px 10px; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+td { padding: 6px 10px; border-bottom: 1px solid #dde; }
+tr:nth-child(even) td { background: var(--light); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* Footer */
+footer { margin-top: 28px; padding-top: 10px; border-top: 2px solid var(--light); text-align: center; font-size: 9pt; color: #999; }
+
+sub, sup { font-size: 0.76em; line-height: 0; }
+strong { color: inherit; }
+</style>
+</head>
+<body>
+
+<div class="print-note">To save as PDF: press Ctrl+P &rarr; select "Save as PDF" &rarr; A4 paper &rarr; tick "Background graphics"</div>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <h1>Chemistry</h1>
+  <div class="subtitle">GCSE &rarr; A Level Transition Booklet</div>
+  <div class="tagline">The essential skills you need <em>before</em> starting Year 12</div>
+  <div class="school-block">
+    For students starting<br>
+    <strong>OCR A Level Chemistry A (H032 / H432)</strong>
+    Chemistry Department
+  </div>
+</div>
+
+<!-- HOW TO USE -->
+<div class="section">
+  <h2>How to use this booklet</h2>
+  <p>A Level Chemistry builds straight on top of GCSE. Your teachers will <strong>assume</strong> you can already:</p>
+  <ul class="checklist">
+    <li>rearrange equations and use standard form confidently</li>
+    <li>convert units between cm<sup>3</sup>, dm<sup>3</sup>, g, kg, °C, K</li>
+    <li>write the formulae of common ionic compounds from memory</li>
+    <li>balance symbol equations and ionic equations with state symbols</li>
+    <li>identify common ions and gases from their tests</li>
+    <li>recognise basic organic functional groups (alkane, alkene, alcohol, carboxylic acid)</li>
+  </ul>
+
+  <div class="how-to">
+    <strong>How to work through it:</strong> aim for roughly 30–45 minutes per section. Do every practice question with a pen — do not just read them. The answers are at the back; only look once you have tried. If you get something wrong, write a one-line note about why.
+  </div>
+
+  <h3>Data values you should know</h3>
+  <p>OCR provides a data sheet in every exam, but the following values come up so often that you should commit them to memory:</p>
+  <table>
+    <tr><th>Quantity</th><th>Symbol</th><th>Value</th></tr>
+    <tr><td>Avogadro's constant</td><td><em>N</em><sub>A</sub></td><td>6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup></td></tr>
+    <tr><td>Molar gas volume at rtp (25 °C, 100 kPa)</td><td><em>V</em><sub>m</sub></td><td>24.0 dm<sup>3</sup> mol<sup>&minus;1</sup></td></tr>
+    <tr><td>Molar gas volume at stp (0 °C, 100 kPa)</td><td><em>V</em><sub>m</sub></td><td>22.4 dm<sup>3</sup> mol<sup>&minus;1</sup></td></tr>
+    <tr><td>Gas constant</td><td><em>R</em></td><td>8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup></td></tr>
+  </table>
+
+  <h3>Contents</h3>
+  <div class="contents">
+    <ol>
+      <li>Mathematical skills</li>
+      <li>Writing chemical formulae</li>
+      <li>Balancing equations (full &amp; ionic)</li>
+      <li>Chemical tests: cations, anions and gases</li>
+      <li>Basic organic chemistry</li>
+      <li>Answers</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 1: MATHEMATICAL SKILLS -->
+<div class="section">
+  <h2>1. Mathematical skills</h2>
+  <p>You will use these every single lesson. Make sure they are second nature.</p>
+
+  <h3>1.1 Rearranging equations</h3>
+  <p>The key A Level equations all rearrange the same way. The triangle trick works, but learning to manipulate properly will save you in Year 13.</p>
+  <table>
+    <tr><th>Equation</th><th>Word form</th><th>Useful for</th></tr>
+    <tr><td><em>n</em> = <em>m</em> / <em>M</em><sub>r</sub></td><td>moles = mass &divide; relative formula mass</td><td>Solids</td></tr>
+    <tr><td><em>n</em> = <em>c</em> &times; <em>V</em></td><td>moles = concentration &times; volume (in dm<sup>3</sup>)</td><td>Solutions</td></tr>
+    <tr><td><em>n</em> = <em>V</em> / 24</td><td>moles = volume (dm<sup>3</sup>) &divide; 24 (at rtp)</td><td>Gases (GCSE level)</td></tr>
+  </table>
+
+  <div class="practice">
+    <h4>Practice 1A: Rearranging</h4>
+    <ol>
+      <li>Make <em>m</em> the subject of <em>n</em> = <em>m</em> / <em>M</em><sub>r</sub>.</li>
+      <li>Make <em>M</em><sub>r</sub> the subject of <em>n</em> = <em>m</em> / <em>M</em><sub>r</sub>.</li>
+      <li>Make <em>c</em> the subject of <em>n</em> = <em>c</em> &times; <em>V</em>.</li>
+      <li>Make <em>V</em> the subject of <em>n</em> = <em>c</em> &times; <em>V</em>.</li>
+      <li>Make <em>T</em> the subject of <em>pV</em> = <em>nRT</em>.</li>
+      <li>Make <em>n</em> the subject of <em>pV</em> = <em>nRT</em>.</li>
+    </ol>
+  </div>
+
+  <h3>1.2 Standard form</h3>
+  <p>Standard form is written as <em>A</em> &times; 10<sup><em>n</em></sup>, where 1 &le; <em>A</em> &lt; 10. You will use it constantly for Avogadro's constant, concentrations, and very small/large numbers.</p>
+
+  <div class="practice">
+    <h4>Practice 1B: Standard form</h4>
+    <ol>
+      <li>Write 0.00045 in standard form.</li>
+      <li>Write 602 200 000 000 000 000 000 000 in standard form (this is Avogadro's constant).</li>
+      <li>Write 2.5 &times; 10<sup>&minus;3</sup> as an ordinary number.</li>
+      <li>Write 7.1 &times; 10<sup>5</sup> as an ordinary number.</li>
+      <li>Calculate (2.5 &times; 10<sup>3</sup>) &times; (4.0 &times; 10<sup>2</sup>). Give your answer in standard form.</li>
+      <li>Calculate (6.0 &times; 10<sup>&minus;4</sup>) &divide; (2.0 &times; 10<sup>2</sup>). Give your answer in standard form.</li>
+      <li>Calculate (3.0 &times; 10<sup>8</sup>) + (4.5 &times; 10<sup>7</sup>). Give your answer in standard form.</li>
+    </ol>
+  </div>
+
+  <h3>1.3 Significant figures &amp; decimal places</h3>
+  <p>At A Level, marks are commonly lost for the wrong number of significant figures (sf). The default rule: give your final answer to the <em>same</em> number of sf as the least precise piece of data in the question. Round only at the end.</p>
+
+  <div class="practice">
+    <h4>Practice 1C: sf and dp</h4>
+    <ol>
+      <li>Round 0.045 73 to 3 significant figures.</li>
+      <li>Round 12 547 to 2 significant figures.</li>
+      <li>Round 0.6789 to 2 decimal places.</li>
+      <li>Round 100.456 to 4 significant figures.</li>
+      <li>Round 0.005 0501 to 3 significant figures.</li>
+      <li>A student measures a mass as 4.27 g (3 sf) and a volume as 25.0 cm<sup>3</sup> (3 sf). They calculate a density of 0.170 800 g cm<sup>&minus;3</sup>. Quote the answer to an appropriate number of sf.</li>
+    </ol>
+  </div>
+
+  <h3>1.4 Unit conversions</h3>
+  <table>
+    <tr><th>From</th><th>To</th><th>Conversion</th></tr>
+    <tr><td>cm<sup>3</sup></td><td>dm<sup>3</sup></td><td>&divide; 1000</td></tr>
+    <tr><td>dm<sup>3</sup></td><td>cm<sup>3</sup></td><td>&times; 1000</td></tr>
+    <tr><td>g</td><td>kg</td><td>&divide; 1000</td></tr>
+    <tr><td>kg</td><td>g</td><td>&times; 1000</td></tr>
+    <tr><td>°C</td><td>K</td><td>+ 273.15 (or + 273 to 3 sf)</td></tr>
+    <tr><td>K</td><td>°C</td><td>&minus; 273.15 (or &minus; 273 to 3 sf)</td></tr>
+    <tr><td>cm<sup>3</sup></td><td>m<sup>3</sup></td><td>&times; 10<sup>&minus;6</sup> (not &times; 10<sup>&minus;3</sup>, the most common OCR exam error)</td></tr>
+    <tr><td>kJ</td><td>J</td><td>&times; 1000</td></tr>
+  </table>
+
+  <div class="practice">
+    <h4>Practice 1D: Units</h4>
+    <ol>
+      <li>Convert 250 cm<sup>3</sup> to dm<sup>3</sup>.</li>
+      <li>Convert 0.045 dm<sup>3</sup> to cm<sup>3</sup>.</li>
+      <li>Convert 1500 g to kg.</li>
+      <li>Convert 0.025 kg to g.</li>
+      <li>Convert 25 °C to K.</li>
+      <li>Convert 373 K to °C.</li>
+      <li>Convert &minus;18 °C to K.</li>
+      <li>Convert 12.5 kJ to J.</li>
+      <li>Convert 4500 J to kJ.</li>
+      <li>Convert 750 mg to g.</li>
+    </ol>
+  </div>
+
+  <h3>1.5 Percentages and ratios</h3>
+
+  <div class="practice">
+    <h4>Practice 1E: Percentages and ratios</h4>
+    <ol>
+      <li>Calculate 15% of 240.</li>
+      <li>What percentage of 60 is 18?</li>
+      <li>A reaction has a theoretical yield of 12.0 g and an actual yield of 8.40 g. Calculate the percentage yield.</li>
+      <li>The desired product of a reaction has a relative formula mass of 44; the total relative formula mass of all reactants is 100. Calculate the atom economy.</li>
+      <li>A compound contains 40% carbon, 6.7% hydrogen and 53.3% oxygen by mass. Express the C : H : O mass ratio in its simplest whole-number form.</li>
+      <li>In the reaction N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, how many moles of H<sub>2</sub> react with 4.0 mol of N<sub>2</sub>?</li>
+      <li>How many moles of NH<sub>3</sub> are produced from 0.50 mol of N<sub>2</sub> in the equation above?</li>
+    </ol>
+  </div>
+
+  <h3>1.6 Calculating relative atomic mass (<em>A</em><sub>r</sub>)</h3>
+  <p>The relative atomic mass of an element is the <strong>weighted mean</strong> mass of its atoms, taking isotopic abundance into account, compared to &frac{1}{12} the mass of a <sup>12</sup>C atom. This is why most <em>A</em><sub>r</sub> values on the periodic table are not whole numbers — elements are mixtures of isotopes.</p>
+  <p style="margin: 10px 0; font-style: italic; text-align: center;"><em>A</em><sub>r</sub> = &Sigma;(isotope mass &times; % abundance) &divide; 100</p>
+  <p>You will use this constantly in Module 2 (mass spectrometry, isotopes) and again when interpreting mass spectra of organic compounds in Year 13. The abundance data usually comes from a mass spectrum — the peak height (or relative intensity) gives the % abundance and the m/z value gives the isotope mass.</p>
+  <p><strong>Worked example: chlorine.</strong> A mass spectrum shows two peaks: <sup>35</sup>Cl at 75.0% abundance and <sup>37</sup>Cl at 25.0% abundance.</p>
+  <p><em>A</em><sub>r</sub> = (75.0 &times; 35 + 25.0 &times; 37) &divide; 100 = (2625 + 925) &divide; 100 = <strong>35.5</strong></p>
+
+  <div class="ocr-error">
+    <strong>OCR examiner-flagged error (H432/01 June 2023):</strong> students confuse % abundance with relative abundance. If you are given <em>relative</em> abundances (e.g. peaks of height 3 and 1), the divisor is the <strong>sum of the abundances</strong> (here 4), not 100. Always check what the question gives you.
+  </div>
+
+  <div class="practice">
+    <h4>Practice 1F: Calculating <em>A</em><sub>r</sub></h4>
+    <ol>
+      <li>Bromine has two isotopes: <sup>79</sup>Br (50.5% abundance) and <sup>81</sup>Br (49.5% abundance). Calculate the <em>A</em><sub>r</sub> of bromine to 3 significant figures.</li>
+      <li>Copper has two isotopes: <sup>63</sup>Cu (69.2%) and <sup>65</sup>Cu (30.8%). Calculate the <em>A</em><sub>r</sub> of copper to 1 decimal place.</li>
+      <li>Boron exists as <sup>10</sup>B (19.9%) and <sup>11</sup>B (80.1%). Calculate the <em>A</em><sub>r</sub> of boron.</li>
+      <li>The mass spectrum of magnesium shows three peaks: m/z 24 (79.0%), m/z 25 (10.0%) and m/z 26 (11.0%). Calculate the <em>A</em><sub>r</sub> of magnesium.</li>
+      <li>An element X has two isotopes, <sup>69</sup>X (60.1% abundance) and <sup>71</sup>X (39.9% abundance). Calculate the <em>A</em><sub>r</sub> of X and use the periodic table to identify X.</li>
+      <li>The mass spectrum of an element shows two peaks of relative abundance 3 (at m/z 35) and 1 (at m/z 37). Calculate the <em>A</em><sub>r</sub> of the element and identify it.</li>
+      <li>The <em>A</em><sub>r</sub> of chlorine is 35.5. Chlorine has two isotopes, <sup>35</sup>Cl and <sup>37</sup>Cl. Calculate the percentage abundance of each isotope.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 2: WRITING CHEMICAL FORMULAE -->
+<div class="section">
+  <h2>2. Writing chemical formulae</h2>
+  <p>To write the formula of an ionic compound you need to know the <strong>charges</strong> on the common ions. Learn these — you will use them every lesson at A Level.</p>
+
+  <h3>2.1 Common ions to learn</h3>
+  <table>
+    <tr><th>+1 cations</th><th>+2 cations</th><th>+3 cations</th></tr>
+    <tr><td>H<sup>+</sup>, Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ag<sup>+</sup>, NH<sub>4</sub><sup>+</sup></td><td>Mg<sup>2+</sup>, Ca<sup>2+</sup>, Ba<sup>2+</sup>, Zn<sup>2+</sup>, Cu<sup>2+</sup>, Fe<sup>2+</sup>, Pb<sup>2+</sup></td><td>Al<sup>3+</sup>, Fe<sup>3+</sup></td></tr>
+  </table>
+  <table>
+    <tr><th>&minus;1 anions</th><th>&minus;2 anions</th><th>&minus;3 anions</th></tr>
+    <tr><td>F<sup>&minus;</sup>, Cl<sup>&minus;</sup>, Br<sup>&minus;</sup>, I<sup>&minus;</sup>, OH<sup>&minus;</sup>, NO<sub>3</sub><sup>&minus;</sup>, HCO<sub>3</sub><sup>&minus;</sup></td><td>O<sup>2&minus;</sup>, S<sup>2&minus;</sup>, SO<sub>4</sub><sup>2&minus;</sup>, CO<sub>3</sub><sup>2&minus;</sup></td><td>N<sup>3&minus;</sup>, PO<sub>4</sub><sup>3&minus;</sup></td></tr>
+  </table>
+
+  <h3>2.2 Building the formula: the crossover rule</h3>
+  <p>Ionic compounds are always neutral — the total positive charge must equal the total negative charge. The quickest method is the <strong>crossover rule</strong> (OCR's official terminology): the magnitude of one ion's charge becomes the subscript of the other. Simplify the ratio if both subscripts share a factor; drop subscripts of 1.</p>
+  <p><strong>Worked example 1: aluminium oxide:</strong> Al<sup>3+</sup> and O<sup>2&minus;</sup>. Crossover: Al<sub>2</sub>O<sub>3</sub>.</p>
+  <p><strong>Worked example 2: with compound ions:</strong> calcium nitrate: Ca<sup>2+</sup> and NO<sub>3</sub><sup>&minus;</sup> &rarr; Ca(NO<sub>3</sub>)<sub>2</sub>. Use brackets around the polyatomic ion when there are two or more.</p>
+  <p><strong>Worked example 3: simplification trap:</strong> barium sulfate: Ba<sup>2+</sup> and SO<sub>4</sub><sup>2&minus;</sup>. Crossover gives Ba<sub>2</sub>(SO<sub>4</sub>)<sub>2</sub>, but both subscripts share a factor of 2, simplify to <strong>BaSO<sub>4</sub></strong>. Always check your final formula is in its lowest ratio.</p>
+
+  <div class="ocr-error">
+    <strong>OCR examiner-flagged errors (H032/02 June 2022):</strong> writing element symbols in the wrong case ("br" instead of Br, "na" instead of Na), and writing "SrOH" instead of Sr(OH)<sub>2</sub> — Sr<sup>2+</sup> needs two OH<sup>&minus;</sup> to balance the charge. Always: one capital then one lowercase per symbol; bracket polyatomic ions when there is more than one.
+  </div>
+
+  <div class="practice">
+    <h4>Practice 2A: Write the formula</h4>
+    <ol>
+      <li>sodium chloride</li>
+      <li>potassium bromide</li>
+      <li>magnesium oxide</li>
+      <li>calcium chloride</li>
+      <li>aluminium fluoride</li>
+      <li>iron(II) oxide</li>
+      <li>iron(III) oxide</li>
+      <li>copper(II) sulfate</li>
+      <li>sodium carbonate</li>
+      <li>calcium carbonate</li>
+      <li>ammonium chloride</li>
+      <li>ammonium sulfate</li>
+      <li>ammonium nitrate</li>
+      <li>aluminium sulfate</li>
+      <li>sodium hydroxide</li>
+      <li>calcium hydroxide</li>
+      <li>aluminium hydroxide</li>
+      <li>iron(III) nitrate</li>
+      <li>magnesium nitrate</li>
+      <li>zinc carbonate</li>
+      <li>lead(II) iodide</li>
+      <li>silver nitrate</li>
+      <li>barium sulfate</li>
+      <li>potassium phosphate</li>
+      <li>calcium phosphate</li>
+    </ol>
+  </div>
+
+  <div class="watch-out">
+    <strong>Watch out:</strong> the Roman numeral (II), (III) in a name tells you the charge on the metal ion. So iron(II) = Fe<sup>2+</sup> and iron(III) = Fe<sup>3+</sup>. You will see this all over A Level transition-metal chemistry.
+  </div>
+
+  <div class="practice">
+    <h4>Practice 2B: Naming compounds from formulae</h4>
+    <p style="margin-bottom: 8px; font-size: 10.5pt;">Give the name of each compound:</p>
+    <ol>
+      <li>K<sub>2</sub>O</li>
+      <li>MgBr<sub>2</sub></li>
+      <li>Na<sub>2</sub>SO<sub>4</sub></li>
+      <li>FeCl<sub>3</sub></li>
+      <li>CuO</li>
+      <li>(NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub></li>
+      <li>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></li>
+      <li>Ca(NO<sub>3</sub>)<sub>2</sub></li>
+      <li>PbI<sub>2</sub></li>
+      <li>Ag<sub>2</sub>CO<sub>3</sub></li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 3: BALANCING EQUATIONS -->
+<div class="section">
+  <h2>3. Balancing equations</h2>
+  <p>A balanced equation has the <strong>same number of each type of atom</strong> on both sides. You can <em>only</em> change the big numbers in front (the stoichiometric coefficients). <em>Never</em> change a formula to balance an equation.</p>
+
+  <h3>3.1 A reliable method</h3>
+  <ol style="padding-left: 22px; margin: 8px 0;">
+    <li>Write the correct formulae for all reactants and products.</li>
+    <li>List the elements present and count atoms on both sides.</li>
+    <li>Balance metals first, then non-metals (other than H and O), then H, then O.</li>
+    <li>Check.</li>
+  </ol>
+
+  <h3>3.2 State symbols</h3>
+  <table>
+    <tr><th>Symbol</th><th>Meaning</th></tr>
+    <tr><td>(s)</td><td>solid</td></tr>
+    <tr><td>(l)</td><td>liquid (pure)</td></tr>
+    <tr><td>(g)</td><td>gas</td></tr>
+    <tr><td>(aq)</td><td>aqueous (dissolved in water)</td></tr>
+  </table>
+  <p style="margin-top: 8px; font-size: 10.5pt;">Note the space between formula and symbol: write HCl (aq) not HCl(aq).</p>
+
+  <div class="practice">
+    <h4>Practice 3A: Balance these symbol equations</h4>
+    <p style="margin-bottom: 8px; font-size: 10.5pt;">Add coefficients (do not change the formulae). State symbols not required here.</p>
+    <ol>
+      <li>H<sub>2</sub> + O<sub>2</sub> &rarr; H<sub>2</sub>O</li>
+      <li>Mg + O<sub>2</sub> &rarr; MgO</li>
+      <li>Na + Cl<sub>2</sub> &rarr; NaCl</li>
+      <li>Al + O<sub>2</sub> &rarr; Al<sub>2</sub>O<sub>3</sub></li>
+      <li>N<sub>2</sub> + H<sub>2</sub> &rarr; NH<sub>3</sub></li>
+      <li>CH<sub>4</sub> + O<sub>2</sub> &rarr; CO<sub>2</sub> + H<sub>2</sub>O</li>
+      <li>C<sub>2</sub>H<sub>6</sub> + O<sub>2</sub> &rarr; CO<sub>2</sub> + H<sub>2</sub>O</li>
+      <li>C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> &rarr; CO<sub>2</sub> + H<sub>2</sub>O</li>
+      <li>C<sub>4</sub>H<sub>10</sub> + O<sub>2</sub> &rarr; CO<sub>2</sub> + H<sub>2</sub>O</li>
+      <li>HCl + Mg &rarr; MgCl<sub>2</sub> + H<sub>2</sub></li>
+      <li>HCl + CaCO<sub>3</sub> &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub></li>
+      <li>H<sub>2</sub>SO<sub>4</sub> + NaOH &rarr; Na<sub>2</sub>SO<sub>4</sub> + H<sub>2</sub>O</li>
+      <li>HNO<sub>3</sub> + Ca(OH)<sub>2</sub> &rarr; Ca(NO<sub>3</sub>)<sub>2</sub> + H<sub>2</sub>O</li>
+      <li>Fe<sub>2</sub>O<sub>3</sub> + CO &rarr; Fe + CO<sub>2</sub></li>
+      <li>Al + Cl<sub>2</sub> &rarr; AlCl<sub>3</sub></li>
+      <li>Cu(NO<sub>3</sub>)<sub>2</sub> &rarr; CuO + NO<sub>2</sub> + O<sub>2</sub></li>
+      <li>Pb(NO<sub>3</sub>)<sub>2</sub> + KI &rarr; PbI<sub>2</sub> + KNO<sub>3</sub></li>
+      <li>NH<sub>3</sub> + O<sub>2</sub> &rarr; NO + H<sub>2</sub>O</li>
+      <li>FeS<sub>2</sub> + O<sub>2</sub> &rarr; Fe<sub>2</sub>O<sub>3</sub> + SO<sub>2</sub></li>
+      <li>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + O<sub>2</sub> &rarr; CO<sub>2</sub> + H<sub>2</sub>O</li>
+    </ol>
+  </div>
+
+  <h3>3.3 Writing word and symbol equations from descriptions</h3>
+
+  <div class="practice">
+    <h4>Practice 3B: Write a balanced symbol equation (include state symbols)</h4>
+    <ol>
+      <li>Solid calcium carbonate reacts with dilute hydrochloric acid to form aqueous calcium chloride, water and carbon dioxide gas.</li>
+      <li>Solid magnesium reacts with dilute sulfuric acid to form aqueous magnesium sulfate and hydrogen gas.</li>
+      <li>Aqueous sodium hydroxide neutralises dilute nitric acid to form aqueous sodium nitrate and water.</li>
+      <li>Solid zinc displaces copper from aqueous copper(II) sulfate, forming aqueous zinc sulfate and solid copper.</li>
+      <li>Aqueous lead(II) nitrate reacts with aqueous potassium iodide to form a yellow precipitate of lead(II) iodide and aqueous potassium nitrate.</li>
+    </ol>
+  </div>
+
+  <h3>3.4 Ionic equations</h3>
+  <p>An ionic equation shows only the ions that actually take part — the <em>spectator ions</em> are cancelled out. Charges as well as atoms must balance.</p>
+  <p><strong>Worked example:</strong> AgNO<sub>3</sub> (aq) + NaCl (aq) &rarr; AgCl (s) + NaNO<sub>3</sub> (aq)</p>
+  <p>Spectator ions are Na<sup>+</sup> and NO<sub>3</sub><sup>&minus;</sup>. The ionic equation is: Ag<sup>+</sup> (aq) + Cl<sup>&minus;</sup> (aq) &rarr; AgCl (s).</p>
+
+  <div class="practice">
+    <h4>Practice 3C: Write the ionic equation (with state symbols)</h4>
+    <ol>
+      <li>The reaction of aqueous silver nitrate with aqueous sodium bromide to form silver bromide precipitate.</li>
+      <li>The reaction of aqueous barium chloride with aqueous sodium sulfate to form barium sulfate precipitate.</li>
+      <li>The neutralisation of any strong acid by any strong alkali in aqueous solution.</li>
+      <li>The displacement of copper from copper(II) sulfate solution by zinc metal.</li>
+      <li>The reaction of solid magnesium with dilute hydrochloric acid.</li>
+      <li>The reaction of solid calcium carbonate with dilute nitric acid (write the full balanced symbol equation first, then the ionic equation).</li>
+      <li>The precipitation of lead(II) iodide from aqueous lead(II) nitrate and aqueous potassium iodide.</li>
+      <li>The reaction of aqueous iron(II) sulfate with aqueous sodium hydroxide to form an iron(II) hydroxide precipitate.</li>
+      <li>The reaction of solid strontium with water to form aqueous strontium hydroxide and hydrogen gas. (Half of the OCR June 2022 H032/02 cohort got this wrong by writing SrO — don't be one of them.)</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 4: CHEMICAL TESTS -->
+<div class="section">
+  <h2>4. Chemical tests</h2>
+  <p>You need to know the test, the observation, and (often) the ionic equation for the reaction taking place. OCR examines this in both Module 2 (PAG 4) and Module 3 (Group 17), and routinely sets 6-mark "logic puzzle" questions where you must identify an unknown from a sequence of test results.</p>
+
+  <div class="ocr-error">
+    <strong>The strict OCR anion test order: carbonate &rarr; sulfate &rarr; halide</strong>, on three <em>separate</em> portions of the unknown. Get the order wrong and you trigger false positives (carbonate would precipitate with both Ba<sup>2+</sup> and Ag<sup>+</sup>). This sequencing logic is itself a regular exam mark.
+  </div>
+
+  <h3>4.1 Tests for cations: flame tests (OCR PAG 4)</h3>
+  <p>Dip a clean nichrome (or platinum) wire into concentrated HCl, then into the solid, then into a roaring (blue) Bunsen flame.</p>
+  <table>
+    <tr><th>Ion</th><th>Flame colour</th></tr>
+    <tr><td>Li<sup>+</sup></td><td>crimson red</td></tr>
+    <tr><td>Na<sup>+</sup></td><td>yellow / orange</td></tr>
+    <tr><td>K<sup>+</sup></td><td>lilac (view through cobalt-blue glass to remove any Na<sup>+</sup> interference)</td></tr>
+    <tr><td>Ca<sup>2+</sup></td><td>brick red / orange-red</td></tr>
+    <tr><td>Sr<sup>2+</sup></td><td>red (slightly crimson)</td></tr>
+    <tr><td>Ba<sup>2+</sup></td><td>apple green</td></tr>
+    <tr><td>Cu<sup>2+</sup></td><td>blue-green</td></tr>
+  </table>
+
+  <h3>4.2 Test for ammonium ions, NH<sub>4</sub><sup>+</sup></h3>
+  <p>Warm the unknown with sodium hydroxide solution. Hold a piece of <strong>damp red litmus paper</strong> in the mouth of the test tube (do not let it touch the solution). If ammonia is given off, the litmus turns blue.</p>
+  <p>Ionic equation: NH<sub>4</sub><sup>+</sup> (aq) + OH<sup>&minus;</sup> (aq) &rarr; NH<sub>3</sub> (g) + H<sub>2</sub>O (l)</p>
+  <p style="font-size: 10pt; color: #444; margin-top: 4px;">The litmus must be <strong>damp</strong> — ammonia gas needs water to dissolve into and ionise. The mixture must be warmed to drive NH<sub>3</sub> out as a gas.</p>
+
+  <h3>4.3 Tests for cations with sodium hydroxide solution (GCSE foundation)</h3>
+  <p>You will have met these at GCSE. They are not on the OCR A Level spec for cations, but the chemistry underpins the chemistry of Group 2 and transition metals later in Year 12.</p>
+  <table>
+    <tr><th>Ion</th><th>Observation with NaOH (aq)</th></tr>
+    <tr><td>Cu<sup>2+</sup></td><td>blue precipitate</td></tr>
+    <tr><td>Fe<sup>2+</sup></td><td>green precipitate (turns brown on standing in air)</td></tr>
+    <tr><td>Fe<sup>3+</sup></td><td>orange-brown precipitate</td></tr>
+    <tr><td>Al<sup>3+</sup></td><td>white precipitate, <em>dissolves</em> in excess NaOH</td></tr>
+    <tr><td>Mg<sup>2+</sup></td><td>white precipitate, does not dissolve in excess</td></tr>
+    <tr><td>Ca<sup>2+</sup></td><td>white precipitate, does not dissolve in excess</td></tr>
+  </table>
+
+  <h3>4.4 Tests for anions</h3>
+
+  <h3 style="color: var(--navy);">(i) Carbonate, CO<sub>3</sub><sup>2&minus;</sup>: do this <em>first</em></h3>
+  <p>Add dilute acid (HCl or HNO<sub>3</sub>) to the unknown. If a carbonate is present, you will see <strong>effervescence</strong> — confirm the gas is CO<sub>2</sub> by bubbling it through <strong>limewater</strong>, which turns milky.</p>
+  <p>Ionic equation: CO<sub>3</sub><sup>2&minus;</sup> (aq) + 2H<sup>+</sup> (aq) &rarr; H<sub>2</sub>O (l) + CO<sub>2</sub> (g)</p>
+  <p>Limewater confirmation: Ca(OH)<sub>2</sub> (aq) + CO<sub>2</sub> (g) &rarr; CaCO<sub>3</sub> (s) + H<sub>2</sub>O (l)</p>
+  <p style="font-size: 10pt; color: #444;">Effervescence alone is not enough — the limewater step is what makes the test specific.</p>
+
+  <h3 style="color: var(--navy);">(ii) Sulfate, SO<sub>4</sub><sup>2&minus;</sup>: do this <em>second</em></h3>
+  <p>On a fresh portion, add a few drops of <strong>acidified</strong> barium chloride (acidified with dilute HCl or HNO<sub>3</sub>). A <strong>white precipitate</strong> of BaSO<sub>4</sub> confirms sulfate.</p>
+  <p>Ionic equation: Ba<sup>2+</sup> (aq) + SO<sub>4</sub><sup>2&minus;</sup> (aq) &rarr; BaSO<sub>4</sub> (s)</p>
+  <p style="font-size: 10pt; color: #444;">"Acidified" is a routine mark — the acid destroys any carbonate, which would otherwise give a white BaCO<sub>3</sub> false positive.</p>
+
+  <h3 style="color: var(--navy);">(iii) Halide, Cl<sup>&minus;</sup> / Br<sup>&minus;</sup> / I<sup>&minus;</sup>: do this <em>last</em></h3>
+  <p>On a fresh portion, add dilute <strong>nitric acid</strong> (not HCl — it would add Cl<sup>&minus;</sup> and give a false positive), then silver nitrate solution. The colour of the precipitate identifies the halide. To confirm, add first dilute then concentrated ammonia — this is OCR spec point 3.3.3(g).</p>
+  <table>
+    <tr><th>Halide</th><th>Precipitate</th><th>Colour</th><th>Dilute NH<sub>3</sub></th><th>Concentrated NH<sub>3</sub></th></tr>
+    <tr><td>Cl<sup>&minus;</sup></td><td>AgCl</td><td>white</td><td>dissolves</td><td>dissolves</td></tr>
+    <tr><td>Br<sup>&minus;</sup></td><td>AgBr</td><td>cream</td><td>insoluble</td><td>dissolves</td></tr>
+    <tr><td>I<sup>&minus;</sup></td><td>AgI</td><td>yellow</td><td>insoluble</td><td>insoluble</td></tr>
+  </table>
+  <p>Ionic equation (X = Cl, Br, I): Ag<sup>+</sup> (aq) + X<sup>&minus;</sup> (aq) &rarr; AgX (s)</p>
+  <p style="font-size: 10pt; color: #444;">The trend reflects decreasing solubility of the silver halide down Group 17 — AgI's lattice is too stable for even concentrated NH<sub>3</sub> to dissolve it.</p>
+
+  <h3>4.5 Tests for gases</h3>
+  <table>
+    <tr><th>Gas</th><th>Test</th><th>Positive observation</th></tr>
+    <tr><td>Hydrogen, H<sub>2</sub></td><td>Lit splint at mouth of tube</td><td>"Squeaky pop"</td></tr>
+    <tr><td>Oxygen, O<sub>2</sub></td><td>Glowing splint at mouth of tube</td><td>Splint relights</td></tr>
+    <tr><td>Carbon dioxide, CO<sub>2</sub></td><td>Bubble through limewater</td><td>Limewater turns milky</td></tr>
+    <tr><td>Chlorine, Cl<sub>2</sub></td><td>Hold damp blue litmus paper in the gas</td><td>Bleaches (after briefly turning red)</td></tr>
+    <tr><td>Ammonia, NH<sub>3</sub></td><td>Hold damp red litmus paper in the gas</td><td>Turns blue</td></tr>
+  </table>
+
+  <div class="practice">
+    <h4>Practice 4A: Identify the ion or gas</h4>
+    <ol>
+      <li>An unknown solution gives a lilac flame when tested. Identify the cation.</li>
+      <li>Adding sodium hydroxide solution to a solution produces a green precipitate. Identify the cation and predict what happens if the precipitate is left in air.</li>
+      <li>A white precipitate forms when sodium hydroxide is added; the precipitate dissolves when more NaOH is added. Identify the cation.</li>
+      <li>A solution gives a white precipitate with dilute HNO<sub>3</sub> and silver nitrate. Identify the anion and write the ionic equation.</li>
+      <li>Adding dilute HCl to a solid produces effervescence and the gas turns limewater milky. What ion is in the solid?</li>
+      <li>A solution gives a white precipitate when dilute HCl and barium chloride are added. Name the anion and write the ionic equation.</li>
+      <li>An unknown gas relights a glowing splint. Identify the gas.</li>
+      <li>An unknown gas turns damp red litmus paper blue. Identify the gas.</li>
+      <li>A solid is warmed with NaOH (aq). The gas produced turns damp red litmus paper blue. What cation was present in the solid?</li>
+      <li>A blue solution gives a blue precipitate with NaOH (aq) and a blue-green flame. Identify the compound.</li>
+    </ol>
+  </div>
+
+  <div class="practice">
+    <h4>Practice 4B: Whole-sample identification</h4>
+    <ol>
+      <li>A white solid X is soluble in water. The solution gives a yellow flame and a white precipitate with HCl (aq) + BaCl<sub>2</sub> (aq). Identify X.</li>
+      <li>A green solid Y dissolves in water to give a pale green solution. Adding NaOH (aq) produces a green precipitate. Adding dilute HNO<sub>3</sub> + AgNO<sub>3</sub> (aq) to another portion of the solution produces a white precipitate that dissolves in dilute aqueous ammonia. Identify Y.</li>
+      <li>A solid Z reacts with dilute nitric acid producing a colourless gas that turns limewater milky. The remaining solution gives a brick-red flame test. Identify Z and write a balanced equation.</li>
+    </ol>
+  </div>
+
+  <div class="practice">
+    <h4>Practice 4C: OCR halide + ammonia step</h4>
+    <ol>
+      <li>A solution gives a cream precipitate with acidified silver nitrate. The precipitate is insoluble in dilute ammonia but dissolves in concentrated ammonia. Identify the halide ion and write the ionic equation.</li>
+      <li>A solution gives a yellow precipitate with acidified silver nitrate. The precipitate is insoluble in both dilute and concentrated ammonia. Identify the halide ion.</li>
+      <li>Explain why dilute <strong>nitric</strong> acid (not hydrochloric acid) must be used to acidify the silver nitrate before testing for a halide.</li>
+      <li>Explain why the tests for unknown anions must be carried out in the order carbonate &rarr; sulfate &rarr; halide (rather than the other way round).</li>
+      <li>A student adds barium chloride solution to an unknown without acidifying it first, and observes a white precipitate. Explain why this is not enough to conclude that sulfate is present.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 5: BASIC ORGANIC CHEMISTRY -->
+<div class="section">
+  <h2>5. Basic organic chemistry</h2>
+  <p>You need to recognise the main GCSE functional groups and be able to draw and name short members of each family. At A Level you will build on this with mechanisms, isomerism and many more functional groups.</p>
+
+  <h3>5.1 Alkanes</h3>
+  <p>General formula: C<sub><em>n</em></sub>H<sub>2<em>n</em>+2</sub>. Single bonds only; saturated.</p>
+  <table>
+    <tr><th>n</th><th>Name</th><th>Formula</th></tr>
+    <tr><td>1</td><td>methane</td><td>CH<sub>4</sub></td></tr>
+    <tr><td>2</td><td>ethane</td><td>C<sub>2</sub>H<sub>6</sub></td></tr>
+    <tr><td>3</td><td>propane</td><td>C<sub>3</sub>H<sub>8</sub></td></tr>
+    <tr><td>4</td><td>butane</td><td>C<sub>4</sub>H<sub>10</sub></td></tr>
+    <tr><td>5</td><td>pentane</td><td>C<sub>5</sub>H<sub>12</sub></td></tr>
+    <tr><td>6</td><td>hexane</td><td>C<sub>6</sub>H<sub>14</sub></td></tr>
+  </table>
+
+  <h3>5.2 Alkenes</h3>
+  <p>General formula: C<sub><em>n</em></sub>H<sub>2<em>n</em></sub>. Contains a C=C double bond; unsaturated. Decolourises orange bromine water (orange &rarr; colourless) — this is the test for a C=C bond.</p>
+  <p>Names: ethene (C<sub>2</sub>H<sub>4</sub>), propene (C<sub>3</sub>H<sub>6</sub>), but-1-ene (C<sub>4</sub>H<sub>8</sub>), pent-1-ene (C<sub>5</sub>H<sub>10</sub>), hex-1-ene (C<sub>6</sub>H<sub>12</sub>).</p>
+  <p style="font-size: 10pt; color: #444;">From C<sub>4</sub> onwards a <strong>locant</strong> is required because the C=C can sit in different positions: but-1-ene has C=C between C1 and C2; but-2-ene has C=C between C2 and C3. OCR requires the locant in every IUPAC name where ambiguity is possible.</p>
+
+  <h3>5.3 Alcohols</h3>
+  <p>Functional group: <strong>&ndash;OH</strong>. Names end in <em>-ol</em>. Methanol (CH<sub>3</sub>OH), ethanol (C<sub>2</sub>H<sub>5</sub>OH), propan-1-ol (CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH), butan-1-ol (CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>OH).</p>
+  <p style="font-size: 10pt; color: #444;">As with alkenes, locants are required from C<sub>3</sub> onwards because the &ndash;OH could sit on different carbons (propan-1-ol vs propan-2-ol). Methanol and ethanol need no locant because only one isomer is possible.</p>
+  <p>Alcohols burn in oxygen, react with sodium to release hydrogen, and can be oxidised by acidified potassium dichromate(VI) to carbonyls or carboxylic acids (Year 12 work).</p>
+
+  <h3>5.4 Carboxylic acids</h3>
+  <p>Functional group: <strong>&ndash;COOH</strong>. Names end in <em>-oic acid</em>. Methanoic acid (HCOOH), ethanoic acid (CH<sub>3</sub>COOH), propanoic acid (CH<sub>3</sub>CH<sub>2</sub>COOH), butanoic acid (CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>COOH).</p>
+  <p>They are weak acids — they show all the typical acid reactions (with metals, carbonates, alkalis). No locant is needed because the &ndash;COOH carbon is C1 by convention.</p>
+
+  <div class="ocr-error">
+    <strong>Drawing rules (OCR examiner-flagged, H032/02 June 2024):</strong> C has <strong>4 bonds</strong>, O has <strong>2 bonds</strong>, H has <strong>1 bond</strong>. When drawing &ndash;OH, the O must be bonded to the C — never draw "OH&ndash;C" with the H pointing inwards. This loses the connectivity mark every time.
+  </div>
+
+  <div class="why-matters">
+    <strong>Why this matters:</strong> roughly half of OCR A Level Chemistry is organic. Year 12 starts with alkanes and alkenes, then haloalkanes and alcohols. Coming in fluent on the families above, with correct locants, will save you huge amounts of time.
+  </div>
+
+  <div class="practice">
+    <h4>Practice 5A: Names and formulae</h4>
+    <ol>
+      <li>Give the molecular formula of pentane.</li>
+      <li>Give the molecular formula of hex-1-ene.</li>
+      <li>Name the alcohol with the structural formula CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH.</li>
+      <li>Name the carboxylic acid with the formula CH<sub>3</sub>COOH.</li>
+      <li>State the general formula of an alkane.</li>
+      <li>State the general formula of an alkene.</li>
+      <li>Give the functional group of an alcohol.</li>
+      <li>Give the functional group of a carboxylic acid.</li>
+      <li>State the chemical test that distinguishes an alkane from an alkene, and the result for each.</li>
+      <li>Draw the displayed (full structural) formula of propane.</li>
+      <li>Draw the displayed formula of ethene.</li>
+      <li>Draw the displayed formula of ethanol.</li>
+      <li>Draw the displayed formula of ethanoic acid.</li>
+      <li>Give the IUPAC name of the alcohol with the structure (CH<sub>3</sub>)<sub>2</sub>CHOH.</li>
+    </ol>
+  </div>
+
+  <div class="practice">
+    <h4>Practice 5B: Equations</h4>
+    <ol>
+      <li>Write the balanced equation for the complete combustion of methane.</li>
+      <li>Write the balanced equation for the complete combustion of ethanol.</li>
+      <li>Write the balanced equation for the complete combustion of propane.</li>
+      <li>Write the balanced equation for the reaction of ethene with bromine water (Br<sub>2</sub>).</li>
+      <li>Write the balanced equation for the reaction of ethanoic acid with sodium hydroxide.</li>
+      <li>Write the balanced equation for the reaction of ethanoic acid with magnesium.</li>
+      <li>Write the balanced equation for the reaction of ethanoic acid with sodium carbonate.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 6: ANSWERS -->
+<div class="section">
+  <h2>6. Answers</h2>
+  <p>Check carefully — if you got something wrong, work out <em>why</em> before moving on.</p>
+
+  <div class="answer-box">
+    <h4>1A: Rearranging</h4>
+    <ol>
+      <li><em>m</em> = <em>n</em> &times; <em>M</em><sub>r</sub></li>
+      <li><em>M</em><sub>r</sub> = <em>m</em> / <em>n</em></li>
+      <li><em>c</em> = <em>n</em> / <em>V</em></li>
+      <li><em>V</em> = <em>n</em> / <em>c</em></li>
+      <li><em>T</em> = <em>pV</em> / (<em>nR</em>)</li>
+      <li><em>n</em> = <em>pV</em> / (<em>RT</em>)</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>1B: Standard form</h4>
+    <ol>
+      <li>4.5 &times; 10<sup>&minus;4</sup></li>
+      <li>6.022 &times; 10<sup>23</sup> (OCR uses 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup> on the data sheet)</li>
+      <li>0.0025</li>
+      <li>710 000</li>
+      <li>(2.5 &times; 4.0) &times; 10<sup>(3+2)</sup> = 10 &times; 10<sup>5</sup> = 1.0 &times; 10<sup>6</sup></li>
+      <li>(6.0 &divide; 2.0) &times; 10<sup>(&minus;4&minus;2)</sup> = 3.0 &times; 10<sup>&minus;6</sup></li>
+      <li>3.0 &times; 10<sup>8</sup> + 0.45 &times; 10<sup>8</sup> = 3.45 &times; 10<sup>8</sup></li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>1C: sf and dp</h4>
+    <ol>
+      <li>0.0457</li>
+      <li>13 000</li>
+      <li>0.68</li>
+      <li>100.5</li>
+      <li>0.005 05</li>
+      <li>0.171 g cm<sup>&minus;3</sup> (3 sf)</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>1D: Units</h4>
+    <ol>
+      <li>0.250 dm<sup>3</sup></li>
+      <li>45 cm<sup>3</sup></li>
+      <li>1.5 kg</li>
+      <li>25 g</li>
+      <li>298 K</li>
+      <li>100 °C</li>
+      <li>255 K</li>
+      <li>12 500 J</li>
+      <li>4.5 kJ</li>
+      <li>0.750 g</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>1E: Percentages and ratios</h4>
+    <ol>
+      <li>36</li>
+      <li>30%</li>
+      <li>(8.40 / 12.0) &times; 100 = 70.0%</li>
+      <li>(44 / 100) &times; 100 = 44%</li>
+      <li>Divide each by its <em>A</em><sub>r</sub>: 40/12 = 3.33; 6.7/1 = 6.7; 53.3/16 = 3.33. Ratio 1 : 2 : 1 &rarr; empirical formula CH<sub>2</sub>O</li>
+      <li>4.0 &times; 3 = 12.0 mol H<sub>2</sub></li>
+      <li>0.50 &times; 2 = 1.0 mol NH<sub>3</sub></li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>1F: Calculating <em>A</em><sub>r</sub></h4>
+    <ol>
+      <li>(50.5 &times; 79 + 49.5 &times; 81) &divide; 100 = 7999.0 &divide; 100 = <strong>80.0</strong> (3 sf)</li>
+      <li>(69.2 &times; 63 + 30.8 &times; 65) &divide; 100 = 6361.6 &divide; 100 = <strong>63.6</strong> (1 dp)</li>
+      <li>(19.9 &times; 10 + 80.1 &times; 11) &divide; 100 = 1080.1 &divide; 100 = <strong>10.8</strong></li>
+      <li>(79.0 &times; 24 + 10.0 &times; 25 + 11.0 &times; 26) &divide; 100 = 2432 &divide; 100 = <strong>24.3</strong></li>
+      <li>(60.1 &times; 69 + 39.9 &times; 71) &divide; 100 = 6979.8 &divide; 100 = <strong>69.8</strong>. Element is <strong>gallium</strong> (Ga).</li>
+      <li>Divisor is the sum of the relative abundances (3 + 1 = 4), not 100. <em>A</em><sub>r</sub> = (3 &times; 35 + 1 &times; 37) &divide; 4 = 142 &divide; 4 = <strong>35.5</strong>. Element is <strong>chlorine</strong>.</li>
+      <li>Let x = % abundance of <sup>35</sup>Cl. Then 35x + 37(100 &minus; x) = 35.5 &times; 100. Solving: x = <strong>75%</strong> <sup>35</sup>Cl and <strong>25%</strong> <sup>37</sup>Cl.</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>2A: Write the formula</h4>
+    <ol>
+      <li>NaCl</li><li>KBr</li><li>MgO</li><li>CaCl<sub>2</sub></li><li>AlF<sub>3</sub></li>
+      <li>FeO</li><li>Fe<sub>2</sub>O<sub>3</sub></li><li>CuSO<sub>4</sub></li><li>Na<sub>2</sub>CO<sub>3</sub></li><li>CaCO<sub>3</sub></li>
+      <li>NH<sub>4</sub>Cl</li><li>(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub></li><li>NH<sub>4</sub>NO<sub>3</sub></li><li>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></li><li>NaOH</li>
+      <li>Ca(OH)<sub>2</sub></li><li>Al(OH)<sub>3</sub></li><li>Fe(NO<sub>3</sub>)<sub>3</sub></li><li>Mg(NO<sub>3</sub>)<sub>2</sub></li><li>ZnCO<sub>3</sub></li>
+      <li>PbI<sub>2</sub></li><li>AgNO<sub>3</sub></li><li>BaSO<sub>4</sub></li><li>K<sub>3</sub>PO<sub>4</sub></li><li>Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>2B: Naming</h4>
+    <ol>
+      <li>potassium oxide</li><li>magnesium bromide</li><li>sodium sulfate</li><li>iron(III) chloride</li><li>copper(II) oxide</li>
+      <li>ammonium carbonate</li><li>aluminium sulfate</li><li>calcium nitrate</li><li>lead(II) iodide</li><li>silver carbonate</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>3A: Balancing</h4>
+    <ol>
+      <li>2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O</li>
+      <li>2Mg + O<sub>2</sub> &rarr; 2MgO</li>
+      <li>2Na + Cl<sub>2</sub> &rarr; 2NaCl</li>
+      <li>4Al + 3O<sub>2</sub> &rarr; 2Al<sub>2</sub>O<sub>3</sub></li>
+      <li>N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub></li>
+      <li>CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O</li>
+      <li>2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> &rarr; 4CO<sub>2</sub> + 6H<sub>2</sub>O</li>
+      <li>C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> &rarr; 3CO<sub>2</sub> + 4H<sub>2</sub>O</li>
+      <li>2C<sub>4</sub>H<sub>10</sub> + 13O<sub>2</sub> &rarr; 8CO<sub>2</sub> + 10H<sub>2</sub>O</li>
+      <li>2HCl + Mg &rarr; MgCl<sub>2</sub> + H<sub>2</sub></li>
+      <li>2HCl + CaCO<sub>3</sub> &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub></li>
+      <li>H<sub>2</sub>SO<sub>4</sub> + 2NaOH &rarr; Na<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O</li>
+      <li>2HNO<sub>3</sub> + Ca(OH)<sub>2</sub> &rarr; Ca(NO<sub>3</sub>)<sub>2</sub> + 2H<sub>2</sub>O</li>
+      <li>Fe<sub>2</sub>O<sub>3</sub> + 3CO &rarr; 2Fe + 3CO<sub>2</sub></li>
+      <li>2Al + 3Cl<sub>2</sub> &rarr; 2AlCl<sub>3</sub></li>
+      <li>2Cu(NO<sub>3</sub>)<sub>2</sub> &rarr; 2CuO + 4NO<sub>2</sub> + O<sub>2</sub></li>
+      <li>Pb(NO<sub>3</sub>)<sub>2</sub> + 2KI &rarr; PbI<sub>2</sub> + 2KNO<sub>3</sub></li>
+      <li>4NH<sub>3</sub> + 5O<sub>2</sub> &rarr; 4NO + 6H<sub>2</sub>O</li>
+      <li>4FeS<sub>2</sub> + 11O<sub>2</sub> &rarr; 2Fe<sub>2</sub>O<sub>3</sub> + 8SO<sub>2</sub></li>
+      <li>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>3B: From description (with state symbols)</h4>
+    <ol>
+      <li>CaCO<sub>3</sub> (s) + 2HCl (aq) &rarr; CaCl<sub>2</sub> (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g)</li>
+      <li>Mg (s) + H<sub>2</sub>SO<sub>4</sub> (aq) &rarr; MgSO<sub>4</sub> (aq) + H<sub>2</sub> (g)</li>
+      <li>NaOH (aq) + HNO<sub>3</sub> (aq) &rarr; NaNO<sub>3</sub> (aq) + H<sub>2</sub>O (l)</li>
+      <li>Zn (s) + CuSO<sub>4</sub> (aq) &rarr; ZnSO<sub>4</sub> (aq) + Cu (s)</li>
+      <li>Pb(NO<sub>3</sub>)<sub>2</sub> (aq) + 2KI (aq) &rarr; PbI<sub>2</sub> (s) + 2KNO<sub>3</sub> (aq)</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>3C: Ionic equations</h4>
+    <ol>
+      <li>Ag<sup>+</sup> (aq) + Br<sup>&minus;</sup> (aq) &rarr; AgBr (s)</li>
+      <li>Ba<sup>2+</sup> (aq) + SO<sub>4</sub><sup>2&minus;</sup> (aq) &rarr; BaSO<sub>4</sub> (s)</li>
+      <li>H<sup>+</sup> (aq) + OH<sup>&minus;</sup> (aq) &rarr; H<sub>2</sub>O (l)</li>
+      <li>Zn (s) + Cu<sup>2+</sup> (aq) &rarr; Zn<sup>2+</sup> (aq) + Cu (s)</li>
+      <li>Mg (s) + 2H<sup>+</sup> (aq) &rarr; Mg<sup>2+</sup> (aq) + H<sub>2</sub> (g)</li>
+      <li>Full: CaCO<sub>3</sub> (s) + 2HNO<sub>3</sub> (aq) &rarr; Ca(NO<sub>3</sub>)<sub>2</sub> (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g). Ionic: CaCO<sub>3</sub> (s) + 2H<sup>+</sup> (aq) &rarr; Ca<sup>2+</sup> (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g)</li>
+      <li>Pb<sup>2+</sup> (aq) + 2I<sup>&minus;</sup> (aq) &rarr; PbI<sub>2</sub> (s)</li>
+      <li>Fe<sup>2+</sup> (aq) + 2OH<sup>&minus;</sup> (aq) &rarr; Fe(OH)<sub>2</sub> (s)</li>
+      <li>Sr (s) + 2H<sub>2</sub>O (l) &rarr; Sr<sup>2+</sup> (aq) + 2OH<sup>&minus;</sup> (aq) + H<sub>2</sub> (g). The full molecular equation is Sr (s) + 2H<sub>2</sub>O (l) &rarr; Sr(OH)<sub>2</sub> (aq) + H<sub>2</sub> (g), not SrO.</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>4A: Ions and gases</h4>
+    <ol>
+      <li>K<sup>+</sup> (potassium)</li>
+      <li>Fe<sup>2+</sup> (iron(II)); the green precipitate slowly turns brown as Fe(OH)<sub>2</sub> is oxidised in air to Fe(OH)<sub>3</sub></li>
+      <li>Al<sup>3+</sup> (aluminium)</li>
+      <li>Cl<sup>&minus;</sup> (chloride). Ag<sup>+</sup> (aq) + Cl<sup>&minus;</sup> (aq) &rarr; AgCl (s)</li>
+      <li>Carbonate, CO<sub>3</sub><sup>2&minus;</sup></li>
+      <li>Sulfate, SO<sub>4</sub><sup>2&minus;</sup>. Ba<sup>2+</sup> (aq) + SO<sub>4</sub><sup>2&minus;</sup> (aq) &rarr; BaSO<sub>4</sub> (s)</li>
+      <li>Oxygen, O<sub>2</sub></li>
+      <li>Ammonia, NH<sub>3</sub></li>
+      <li>Ammonium, NH<sub>4</sub><sup>+</sup></li>
+      <li>Copper(II) sulfate, CuSO<sub>4</sub></li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>4B: Whole-sample ID</h4>
+    <ol>
+      <li>Sodium sulfate, Na<sub>2</sub>SO<sub>4</sub> (yellow flame &rarr; Na<sup>+</sup>; white precipitate with BaCl<sub>2</sub>/HCl &rarr; SO<sub>4</sub><sup>2&minus;</sup>)</li>
+      <li>Iron(II) chloride, FeCl<sub>2</sub> (pale green solution + green precipitate with NaOH &rarr; Fe<sup>2+</sup>; white precipitate that dissolves in dilute NH<sub>3</sub> &rarr; AgCl &rarr; Cl<sup>&minus;</sup>)</li>
+      <li>Calcium carbonate, CaCO<sub>3</sub> (gas turning limewater milky &rarr; CO<sub>3</sub><sup>2&minus;</sup>; brick-red flame &rarr; Ca<sup>2+</sup>). Equation: CaCO<sub>3</sub> (s) + 2HNO<sub>3</sub> (aq) &rarr; Ca(NO<sub>3</sub>)<sub>2</sub> (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g)</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>4C: OCR halide + ammonia step</h4>
+    <ol>
+      <li>Bromide, Br<sup>&minus;</sup>. Ionic equation: Ag<sup>+</sup> (aq) + Br<sup>&minus;</sup> (aq) &rarr; AgBr (s).</li>
+      <li>Iodide, I<sup>&minus;</sup>. (AgI is so insoluble that even concentrated ammonia cannot dissolve it.)</li>
+      <li>Hydrochloric acid would introduce Cl<sup>&minus;</sup> ions, which would react with Ag<sup>+</sup> to form a white AgCl precipitate even if no halide were present — giving a false positive every time. Dilute nitric acid destroys any carbonate without adding any halide.</li>
+      <li>Carbonate reacts with both Ba<sup>2+</sup> and Ag<sup>+</sup> to give white precipitates (BaCO<sub>3</sub>, Ag<sub>2</sub>CO<sub>3</sub>), so it would give a false positive in both the sulfate and halide tests. Removing carbonate first, then sulfate, ensures each test only responds to the ion it is designed for.</li>
+      <li>A white precipitate could also be BaCO<sub>3</sub> (from any carbonate present). Acidifying with dilute HCl or HNO<sub>3</sub> first destroys any carbonate, so a white precipitate that forms after acidification can only be BaSO<sub>4</sub>.</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>5A: Names and formulae</h4>
+    <ol>
+      <li>C<sub>5</sub>H<sub>12</sub></li>
+      <li>C<sub>6</sub>H<sub>12</sub></li>
+      <li>propan-1-ol</li>
+      <li>ethanoic acid</li>
+      <li>C<sub><em>n</em></sub>H<sub>2<em>n</em>+2</sub></li>
+      <li>C<sub><em>n</em></sub>H<sub>2<em>n</em></sub></li>
+      <li>&ndash;OH (hydroxyl)</li>
+      <li>&ndash;COOH (carboxyl)</li>
+      <li>Add bromine water. Alkane: stays orange (no reaction). Alkene: decolourises (orange &rarr; colourless).</li>
+      <li>Three carbons joined by single bonds, with every C&ndash;C and C&ndash;H bond drawn explicitly — each end carbon has 3 H atoms, the middle carbon has 2 H atoms.</li>
+      <li>H<sub>2</sub>C=CH<sub>2</sub> with every bond drawn (C=C double bond, two H on each carbon).</li>
+      <li>CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;O&ndash;H with all bonds shown. Remember: the O is bonded to the C, not the H.</li>
+      <li>CH<sub>3</sub>&ndash;C(=O)&ndash;O&ndash;H drawn with the C=O double bond and the O&ndash;H to the side.</li>
+      <li>propan-2-ol (secondary alcohol; the OH is on the middle carbon of a 3-carbon chain).</li>
+    </ol>
+  </div>
+
+  <div class="answer-box">
+    <h4>5B: Equations</h4>
+    <ol>
+      <li>CH<sub>4</sub> (g) + 2O<sub>2</sub> (g) &rarr; CO<sub>2</sub> (g) + 2H<sub>2</sub>O (l)</li>
+      <li>C<sub>2</sub>H<sub>5</sub>OH (l) + 3O<sub>2</sub> (g) &rarr; 2CO<sub>2</sub> (g) + 3H<sub>2</sub>O (l)</li>
+      <li>C<sub>3</sub>H<sub>8</sub> (g) + 5O<sub>2</sub> (g) &rarr; 3CO<sub>2</sub> (g) + 4H<sub>2</sub>O (l)</li>
+      <li>C<sub>2</sub>H<sub>4</sub> + Br<sub>2</sub> &rarr; C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub> (1,2-dibromoethane)</li>
+      <li>CH<sub>3</sub>COOH (aq) + NaOH (aq) &rarr; CH<sub>3</sub>COONa (aq) + H<sub>2</sub>O (l)</li>
+      <li>2CH<sub>3</sub>COOH (aq) + Mg (s) &rarr; (CH<sub>3</sub>COO)<sub>2</sub>Mg (aq) + H<sub>2</sub> (g)</li>
+      <li>2CH<sub>3</sub>COOH (aq) + Na<sub>2</sub>CO<sub>3</sub> (aq) &rarr; 2CH<sub>3</sub>COONa (aq) + H<sub>2</sub>O (l) + CO<sub>2</sub> (g)</li>
+    </ol>
+  </div>
+</div>
+
+<footer>
+  Chemistry Department &nbsp;&middot;&nbsp; GCSE &rarr; A Level Chemistry Transition Booklet &nbsp;&middot;&nbsp; OCR A H032/H432
+</footer>
+
+</body>
+</html>
