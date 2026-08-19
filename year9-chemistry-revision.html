@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Year 9 Chemistry Revision | Chemistry Cracked</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#9333ea;--pr-dk:#6d28d9;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:12px;--sh:0 2px 10px rgba(147,51,234,.09);--sh2:0 6px 24px rgba(147,51,234,.16);--acc:#eef1ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;min-height:100vh}
+
+/* Topbar */
+.topbar{background:#4a1d96;color:#fff;padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem}
+.topbar-back{color:rgba(255,255,255,.75);text-decoration:none;font-size:.82rem;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:.22rem .7rem;border-radius:20px;transition:background .15s;white-space:nowrap}
+.topbar-back:hover{background:rgba(255,255,255,.12)}
+.topbar-title{font-size:.88rem;font-weight:600;opacity:.65}
+
+/* Print bar */
+.print-bar{background:var(--card);border-bottom:1px solid var(--bdr);padding:.5rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.print-btn{background:var(--pr);color:#fff;border:none;border-radius:8px;padding:.38rem 1rem;font-size:.84rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s}
+.print-btn:hover{background:var(--pr-dk)}
+.print-note{font-size:.78rem;color:var(--txm);font-weight:600}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#4a1d96 0%,#6d28d9 45%,#9333ea 80%,#c084fc 100%);color:#fff;padding:2.8rem 1.5rem 5.2rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(192,132,252,.35) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{font-size:2.9rem;display:block;margin-bottom:.55rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.95rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.97rem;opacity:.88;max-width:500px;margin:0 auto;font-weight:600}
+.hero-sub{margin-top:.35rem;font-size:.85rem;opacity:.65;font-weight:400}
+.hero-pills{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.95rem}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:.18rem .65rem;font-size:.78rem;font-weight:700}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+/* Main */
+main{max-width:860px;margin:0 auto;padding:1.5rem 1rem 5rem}
+
+/* Unit heading */
+.unit-heading{display:flex;align-items:center;gap:.75rem;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2.5px solid var(--pr)}
+.unit-heading h2{font-size:1.1rem;font-weight:900;color:var(--pr-dk)}
+.unit-badge{background:var(--pr);color:#fff;font-size:.72rem;font-weight:800;padding:.18rem .65rem;border-radius:20px;white-space:nowrap}
+
+/* Spec cards */
+.spec-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:1.2rem;overflow:hidden}
+.spec-header{display:flex;align-items:center;gap:.75rem;padding:.9rem 1.2rem;cursor:pointer;user-select:none;border-bottom:2px solid transparent;transition:border-color .15s}
+.spec-header:hover{border-bottom-color:var(--bdr)}
+.spec-header.open{border-bottom:2px solid var(--bdr)}
+.sec-icon{font-size:1.25rem;flex-shrink:0}
+.spec-num{background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.2rem .55rem;border-radius:6px;white-space:nowrap}
+.spec-name{font-weight:800;font-size:1rem;flex:1}
+.spec-arrow{font-size:.8rem;color:var(--txm);transition:transform .25s;margin-left:.2rem}
+.spec-header.open .spec-arrow{transform:rotate(180deg)}
+.spec-body{display:none;padding:1.3rem 1.5rem 1.6rem}
+.spec-body.open{display:block}
+
+/* Body typography */
+.spec-body p{margin-bottom:.85rem;font-size:.93rem;line-height:1.72}
+.plain-english{font-size:.95rem;color:#374151;background:#f8faff;border-left:3px solid var(--pr);padding:.6rem 1rem;border-radius:0 7px 7px 0;margin-bottom:1.1rem!important;font-style:italic}
+.spec-body h3{font-size:1rem;color:var(--pr-dk);margin:1.2rem 0 .5rem;font-weight:800}
+.spec-body ul,.spec-body ol{margin:.25rem 0 .9rem 1.5rem;font-size:.91rem}
+.spec-body li{margin-bottom:.3rem;line-height:1.65}
+.spec-body table{width:100%;border-collapse:collapse;font-size:.88rem;margin:.5rem 0 1.1rem}
+.spec-body th{background:var(--pr);color:#fff;padding:.45rem .8rem;text-align:left;font-weight:700}
+.spec-body td{padding:.42rem .8rem;border-bottom:1px solid var(--bdr);vertical-align:top}
+.spec-body tr:nth-child(even) td{background:#faf8ff}
+sup,sub{font-size:.74em}
+
+/* Info boxes */
+.pitfall-box{background:#fff8e1;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.9rem;line-height:1.6}
+.pitfall-box strong{color:#92400e}
+.takeaway-box{background:var(--acc);border-left:4px solid var(--pr);border-radius:0 8px 8px 0;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65}
+.takeaway-box strong{color:var(--pr-dk)}
+.tip-box{background:#f0fdf4;border-left:4px solid #16a34a;border-radius:0 8px 8px 0;padding:.8rem 1.05rem;margin:.5rem 0 .9rem;font-size:.9rem;line-height:1.6}
+.tip-box strong{color:#166534}
+
+/* Equation display */
+.eq-box{background:#eef1ff;border-left:3px solid var(--pr);border-radius:0 7px 7px 0;padding:.5rem 1rem;font-family:'Nunito','Segoe UI',system-ui,sans-serif;font-size:.93rem;font-weight:700;margin:.4rem 0 .85rem;letter-spacing:.01em}
+
+/* Numbered steps */
+.steps{counter-reset:step;list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding-left:2.5rem;margin-bottom:.75rem;font-size:.91rem;line-height:1.65}
+.steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:.05rem;background:var(--pr);color:#fff;font-weight:800;font-size:.75rem;width:1.7rem;height:1.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* Quick check */
+.quick-check{background:#fff;border:2px solid var(--pr);border-radius:10px;padding:1rem 1.25rem;margin:1.1rem 0}
+.quick-check-title{font-weight:800;color:var(--pr-dk);font-size:.9rem;margin-bottom:.5rem}
+.quick-check p{font-size:.9rem;margin-bottom:.45rem!important}
+.reveal-btn{background:var(--pr);color:#fff;border:none;border-radius:6px;padding:.35rem .9rem;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s;margin-top:.2rem}
+.reveal-btn:hover{background:var(--pr-dk)}
+.answer-reveal{display:none;background:var(--acc);border-radius:7px;padding:.65rem 1rem;margin-top:.65rem;font-size:.88rem;line-height:1.7}
+.answer-reveal.show{display:block}
+.answer-reveal ol,.answer-reveal ul{margin-left:1.2rem;font-size:.88rem}
+.answer-reveal li{margin-bottom:.3rem;line-height:1.6}
+
+/* Checklist */
+.checklist{list-style:none;padding:0;margin:.3rem 0}
+.checklist li{padding:.32rem 0 .32rem 2rem;position:relative;font-size:.91rem;line-height:1.55;border-bottom:1px dotted var(--bdr)}
+.checklist li::before{content:'☐';position:absolute;left:0;font-size:1.05rem;color:var(--pr)}
+.checklist li:last-child{border-bottom:none}
+
+/* Footer */
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600}
+footer a{color:var(--pr);text-decoration:none}
+
+/* Print */
+@media print{
+  .topbar,.print-bar,.hero-wave,footer{display:none!important}
+  .spec-body{display:block!important}
+  .spec-header{cursor:default!important;border-bottom:1px solid #ccc!important}
+  .spec-arrow{display:none!important}
+  .reveal-btn{display:none!important}
+  .answer-reveal{display:block!important;border:1px solid #ddd;background:#f5f5f5}
+  .spec-card{box-shadow:none!important;border:1px solid #ddd;break-inside:avoid;margin-bottom:.7rem}
+  .quick-check{break-inside:avoid}
+  .unit-heading{break-after:avoid}
+  main{padding:.5rem 1rem 2rem;max-width:100%}
+  body{background:#fff}
+  .hero{padding:1.2rem 1rem 2.5rem}
+}
+
+@media(max-width:600px){
+  .hero h1{font-size:1.5rem}
+  .spec-body{padding:1rem 1.1rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="topbar-back">&#8592; Chemistry Cracked</a>
+  <span class="topbar-title">Year 9 Chemistry Revision</span>
+</div>
+
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">&#128438; Print / Save as PDF</button>
+  <span class="print-note">All sections expand and answers appear automatically when printing</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-icon">&#9881;&#65039;</span>
+    <h1>Year 9 Chemistry Revision</h1>
+    <p>Everything you need to revise for both unit tests</p>
+    <p class="hero-sub">Chemical Reactions &nbsp;&#183;&nbsp; Representing Reactions</p>
+    <div class="hero-pills">
+      <span class="hero-pill">13 topics</span>
+      <span class="hero-pill">Quick-check questions</span>
+      <span class="hero-pill">Worked examples</span>
+      <span class="hero-pill">Printable</span>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+<!-- ═══ UNIT 1 ═══════════════════════════════════════════════ -->
+<div class="unit-heading">
+  <span class="unit-badge">Unit 1</span>
+  <h2>Chemical Reactions — Lessons 1–7</h2>
+</div>
+
+
+<!-- L1: Complete Combustion -->
+<div class="spec-card">
+  <div class="spec-header open">
+    <span class="sec-icon">&#128293;</span>
+    <span class="spec-num">L1</span>
+    <span class="spec-name">Complete Combustion</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body open">
+    <p class="plain-english">When fuels burn in plenty of oxygen they produce only carbon dioxide and water — shown by a blue, non-luminous flame.</p>
+
+    <h3>Key Facts</h3>
+    <ul>
+      <li>Combustion is a <strong>reaction with oxygen</strong> releasing energy as heat and light.</li>
+      <li>Three things needed: <strong>fuel, oxygen, ignition source</strong> — the <strong>fire triangle</strong>.</li>
+      <li>Complete combustion requires a <strong>plentiful (excess) supply of oxygen</strong>.</li>
+      <li>Products: <strong>carbon dioxide</strong> and <strong>water only</strong>. Flame colour: <strong>blue, non-luminous</strong>.</li>
+      <li>A <strong>hydrocarbon</strong> contains <strong>only carbon and hydrogen</strong> (e.g. methane CH<sub>4</sub>, propane C<sub>3</sub>H<sub>8</sub>, butane C<sub>4</sub>H<sub>10</sub>).</li>
+    </ul>
+    <div class="eq-box">fuel + oxygen &#8594; carbon dioxide + water</div>
+
+    <h3>Testing for the Products</h3>
+    <table>
+      <tr><th>Product</th><th>Test</th><th>Positive result</th></tr>
+      <tr><td>Carbon dioxide</td><td>Bubble gas through limewater</td><td>Limewater turns <strong>milky (cloudy)</strong></td></tr>
+      <tr><td>Water</td><td>Touch cobalt chloride paper to the surface</td><td>Paper turns <strong>blue &#8594; pink</strong></td></tr>
+      <tr><td>Water</td><td>Add anhydrous copper sulfate powder</td><td>Powder turns <strong>white &#8594; blue</strong></td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check 1</div>
+      <p>Write the word equation for complete combustion of propane. Name both products.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">propane + oxygen &#8594; carbon dioxide + water<br>Products: <strong>carbon dioxide</strong> and <strong>water</strong>.</div>
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check 2</div>
+      <p>A student holds cobalt chloride paper near a candle flame. What do they observe and what does it confirm?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">Paper turns from <strong>blue to pink</strong>. This confirms that <strong>water</strong> is a product of the combustion reaction.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L2: Incomplete Combustion -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#128168;</span>
+    <span class="spec-num">L2</span>
+    <span class="spec-name">Incomplete Combustion</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">When oxygen is limited, combustion is incomplete. The flame turns yellow and produces toxic carbon monoxide and/or black soot instead of carbon dioxide only.</p>
+
+    <h3>Causes and Products</h3>
+    <p>With a <strong>limited oxygen supply</strong>, carbon cannot all be oxidised to CO<sub>2</sub>. Some becomes carbon monoxide (CO) or soot (C).</p>
+    <div class="eq-box">fuel + oxygen &#8594; carbon monoxide + water &nbsp;(and/or soot)</div>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Carbon monoxide — a silent danger.</strong> CO is <strong>colourless and odourless</strong> — undetectable without an alarm. It binds to haemoglobin in red blood cells, preventing them from carrying oxygen. Even small amounts can be fatal.
+    </div>
+
+    <h3>Comparison Table</h3>
+    <table>
+      <tr><th>Feature</th><th>Complete</th><th>Incomplete</th></tr>
+      <tr><td>Oxygen supply</td><td>Plentiful</td><td>Limited</td></tr>
+      <tr><td>Carbon product</td><td>Carbon dioxide only</td><td>Carbon monoxide and/or soot</td></tr>
+      <tr><td>Hydrogen product</td><td>Water</td><td>Water</td></tr>
+      <tr><td>Flame colour</td><td>Blue, non-luminous</td><td>Yellow/orange, luminous</td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>A student closes the air hole on a Bunsen burner. The flame turns yellow and soot appears. (1) What type of combustion is this? (2) Give two reasons why carbon monoxide is particularly dangerous.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> Incomplete combustion — the closed air hole limits the oxygen supply.<br>
+        <strong>(2)</strong> (i) CO is <strong>colourless and odourless</strong>, so it cannot be detected without a CO alarm. (ii) CO <strong>binds to haemoglobin</strong> in red blood cells, preventing them from carrying oxygen around the body.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L3: Burning Candles Investigation -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#127775;</span>
+    <span class="spec-num">L3</span>
+    <span class="spec-name">Burning Candles Investigation</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">A candle under a sealed jar goes out when the oxygen inside is used up. The investigation tests how jar volume affects burning time.</p>
+
+    <h3>Variables</h3>
+    <table>
+      <tr><th>Variable</th><th>Type</th></tr>
+      <tr><td>Volume of the jar</td><td><strong>Independent</strong> — what you change</td></tr>
+      <tr><td>Time for flame to go out</td><td><strong>Dependent</strong> — what you measure</td></tr>
+      <tr><td>Candle type, size, starting temperature</td><td><strong>Control</strong> — kept the same</td></tr>
+    </table>
+
+    <h3>Interpreting Observations</h3>
+    <table>
+      <tr><th>Observation</th><th>What it tells you</th></tr>
+      <tr><td>Candle goes out</td><td>Oxygen inside has been used up (not the candle running out of wax)</td></tr>
+      <tr><td>Condensation on inside of jar</td><td>Water is a product of combustion</td></tr>
+      <tr><td>Limewater turns milky</td><td>Carbon dioxide is a product of combustion</td></tr>
+      <tr><td>Flame turns yellow before going out</td><td>Oxygen running low &#8594; incomplete combustion beginning</td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>A student only tests each jar size once. Why is this a weakness and how should they improve it?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">Testing once means any random error (e.g. a draught, variation in candle size) cannot be identified. The student should <strong>repeat each jar size at least three times</strong> and <strong>calculate a mean</strong> — this reduces the effect of random errors and makes results more reliable.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L4: Oxidation and Reduction -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9878;&#65039;</span>
+    <span class="spec-num">L4</span>
+    <span class="spec-name">Oxidation and Reduction</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Oxidation and reduction are always a pair — one substance gains oxygen while another loses it. A reaction where both happen is called a redox reaction.</p>
+
+    <table>
+      <tr><th>Process</th><th>Definition</th></tr>
+      <tr><td><strong>Oxidation</strong></td><td>Gain of oxygen</td></tr>
+      <tr><td><strong>Reduction</strong></td><td>Loss of oxygen</td></tr>
+      <tr><td><strong>Redox</strong></td><td>A reaction in which both oxidation and reduction occur simultaneously</td></tr>
+    </table>
+
+    <div class="takeaway-box"><strong>&#128274; Key rule:</strong> Oxidation and reduction <em>always occur together</em>. When one substance gains oxygen, another must lose it.</div>
+
+    <h3>How to Identify Them</h3>
+    <ol class="steps">
+      <li>Find the substance that <strong>gains</strong> oxygen &#8594; it is <strong>oxidised</strong></li>
+      <li>Find the substance that <strong>loses</strong> oxygen &#8594; it is <strong>reduced</strong></li>
+    </ol>
+
+    <h3>Worked Examples</h3>
+    <div class="eq-box">copper oxide + carbon &#8594; copper + carbon dioxide</div>
+    <ul>
+      <li>Carbon <strong>gains</strong> oxygen (becomes CO<sub>2</sub>) &#8594; carbon is <strong>oxidised</strong></li>
+      <li>Copper oxide <strong>loses</strong> oxygen (becomes Cu) &#8594; copper oxide is <strong>reduced</strong></li>
+    </ul>
+    <div class="eq-box">lead oxide + hydrogen &#8594; lead + water</div>
+    <ul>
+      <li>Hydrogen <strong>gains</strong> oxygen &#8594; <strong>oxidised</strong></li>
+      <li>Lead oxide <strong>loses</strong> oxygen &#8594; <strong>reduced</strong></li>
+    </ul>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Iron oxide + aluminium &#8594; aluminium oxide + iron. Which substance is oxidised and which is reduced? Explain how you know.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>Aluminium is oxidised</strong> — it gains oxygen to form aluminium oxide.<br>
+        <strong>Iron oxide is reduced</strong> — it loses oxygen to form iron.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L5: Thermal Decomposition -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#127776;&#65039;</span>
+    <span class="spec-num">L5</span>
+    <span class="spec-name">Thermal Decomposition</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Heating some compounds breaks them apart. Metal carbonates always give a metal oxide and carbon dioxide — confirm the CO<sub>2</sub> with limewater.</p>
+
+    <p><strong>Thermal decomposition</strong> is the breaking down of a compound into simpler substances using heat. It is <strong>endothermic</strong> — continuous heat must be supplied.</p>
+    <div class="eq-box">metal carbonate &#8594; metal oxide + carbon dioxide</div>
+
+    <table>
+      <tr><th>Reactant</th><th>Products</th><th>Observation</th></tr>
+      <tr><td>Copper carbonate (green)</td><td>Copper oxide (black) + CO<sub>2</sub></td><td>Green &#8594; black; limewater turns milky</td></tr>
+      <tr><td>Zinc carbonate (white)</td><td>Zinc oxide (yellow/white) + CO<sub>2</sub></td><td>Colour change; limewater turns milky</td></tr>
+      <tr><td>Calcium carbonate (white)</td><td>Calcium oxide (white) + CO<sub>2</sub></td><td>Little colour change; limewater turns milky</td></tr>
+    </table>
+
+    <div class="tip-box"><strong>&#128161; Signs to look for:</strong> colour change of solid; gas produced (limewater turns milky); solid loses mass because CO<sub>2</sub> escapes (total mass is still conserved).</div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>(1) Write the word equation for thermal decomposition of calcium carbonate. (2) Why does the solid lose mass during this reaction?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> calcium carbonate &#8594; calcium oxide + carbon dioxide<br>
+        <strong>(2)</strong> CO<sub>2</sub> is produced as a gas and <strong>escapes into the air</strong>. The mass of CO<sub>2</sub> was part of the solid, so the solid gets lighter. Total mass is conserved — the CO<sub>2</sub> has just left the solid.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L6: Displacement Reactions -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9889;</span>
+    <span class="spec-num">L6</span>
+    <span class="spec-name">Displacement Reactions</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">A more reactive metal can push a less reactive metal out of its compound. If the metal is lower in the reactivity series — no reaction occurs.</p>
+
+    <p>A <strong>displacement reaction</strong> occurs when a <strong>more reactive</strong> metal takes the place of a <strong>less reactive</strong> metal in a compound.</p>
+
+    <h3>The Reactivity Series</h3>
+    <table style="width:auto;min-width:260px">
+      <tr><th colspan="2" style="text-align:center">Most reactive &#8593;</th></tr>
+      <tr><td>Potassium</td><td>K</td></tr>
+      <tr><td>Sodium</td><td>Na</td></tr>
+      <tr><td>Calcium</td><td>Ca</td></tr>
+      <tr><td>Magnesium</td><td>Mg</td></tr>
+      <tr><td>Aluminium</td><td>Al</td></tr>
+      <tr><td>Zinc</td><td>Zn</td></tr>
+      <tr><td>Iron</td><td>Fe</td></tr>
+      <tr><td>Lead</td><td>Pb</td></tr>
+      <tr><td>Copper</td><td>Cu</td></tr>
+      <tr><td>Silver</td><td>Ag</td></tr>
+      <tr><th colspan="2" style="text-align:center">&#8595; Least reactive — Gold (Au)</th></tr>
+    </table>
+    <div class="tip-box"><strong>&#128161; Memory aid:</strong> <strong>P</strong>lease <strong>S</strong>top <strong>C</strong>alling <strong>M</strong>e <strong>A</strong> <strong>Z</strong>ealous <strong>I</strong>ntelligent <strong>L</strong>ion <strong>C</strong>ub, <strong>S</strong>illy <strong>G</strong>old</div>
+
+    <h3>Worked Example</h3>
+    <p>Zinc in copper sulfate solution — zinc is more reactive than copper &#8594; reaction occurs.</p>
+    <div class="eq-box">zinc + copper sulfate &#8594; zinc sulfate + copper</div>
+    <p>Observations: blue solution turns <strong>colourless</strong>; <strong>pink/brown solid</strong> (copper) deposits on the zinc.</p>
+    <p><em>Copper + zinc sulfate: no reaction — copper is less reactive than zinc.</em></p>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Magnesium is placed in iron sulfate solution. (1) Will a reaction occur? Explain. (2) Write the word equation.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> Yes — magnesium is <strong>above iron</strong> in the reactivity series, so it displaces iron.<br>
+        <strong>(2)</strong> magnesium + iron sulfate &#8594; magnesium sulfate + iron
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L7: Catalysts -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#127993;</span>
+    <span class="spec-num">L7</span>
+    <span class="spec-name">Catalysts</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">A catalyst speeds up a reaction without being used up — it can be recovered unchanged at the end. Enzymes are biological catalysts.</p>
+
+    <div class="takeaway-box"><strong>&#128214; Learn this definition word for word:</strong><br>A catalyst is a substance that <em>speeds up the rate of a reaction without altering the products of the reaction, being itself unchanged chemically and in mass at the end of the reaction.</em></div>
+
+    <h3>Four Key Properties</h3>
+    <ol class="steps">
+      <li>Speeds up the reaction</li>
+      <li>Does <strong>not</strong> change what products are formed</li>
+      <li>Is <strong>not used up</strong> — recovered unchanged at the end</li>
+      <li>Only a <strong>small amount</strong> is needed</li>
+    </ol>
+
+    <h3>Decomposition of Hydrogen Peroxide</h3>
+    <div class="eq-box">hydrogen peroxide &#8594; water + oxygen</div>
+    <table>
+      <tr><th>Catalyst</th><th>Observation</th></tr>
+      <tr><td>No catalyst</td><td>Very slow — little or no fizzing</td></tr>
+      <tr><td>Manganese(IV) oxide (MnO<sub>2</sub>)</td><td>Rapid fizzing; glowing splint relights</td></tr>
+      <tr><td>Liver / potato (contain catalase)</td><td>Vigorous fizzing</td></tr>
+    </table>
+    <div class="tip-box"><strong>&#128161; Test for oxygen:</strong> A <strong>glowing (not burning) splint relights</strong> in oxygen.</div>
+
+    <h3>Industrial Examples</h3>
+    <table>
+      <tr><th>Catalyst</th><th>Process</th></tr>
+      <tr><td>Iron</td><td>Haber process — making ammonia for fertilisers</td></tr>
+      <tr><td>Platinum + palladium</td><td>Catalytic converters in cars</td></tr>
+      <tr><td>Enzymes</td><td>Digestion, fermentation, biological washing powders</td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>A student says: "We need to buy more MnO<sub>2</sub> after each reaction because it gets used up." Correct this statement using the definition of a catalyst.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">The student is <strong>incorrect</strong>. A catalyst is <em>unchanged chemically and in mass</em> at the end of the reaction — it is <strong>not used up</strong>. The MnO<sub>2</sub> could be filtered off and reused in the next experiment.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ UNIT 2 ═══════════════════════════════════════════════ -->
+<div class="unit-heading">
+  <span class="unit-badge">Unit 2</span>
+  <h2>Representing Reactions — Lessons 10–16</h2>
+</div>
+
+
+<!-- L10: Word Equations -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9997;&#65039;</span>
+    <span class="spec-num">L10</span>
+    <span class="spec-name">Word Equations</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Reactants go on the left of the arrow, products on the right. The arrow is not an equals sign — it means "reacts to form".</p>
+
+    <div class="eq-box">reactant(s) &#8594; product(s)</div>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Three mistakes to avoid:</strong>
+      <ul style="margin:.35rem 0 0 1.2rem;line-height:1.75">
+        <li>Using <strong>=</strong> instead of <strong>&#8594;</strong></li>
+        <li>Writing products on the <strong>left</strong></li>
+        <li>Mixing <strong>words and formulae</strong> in the same equation (e.g. methane + O<sub>2</sub> &#8594;…)</li>
+      </ul>
+    </div>
+
+    <h3>Key Reactions to Know</h3>
+    <table>
+      <tr><th>Reaction</th><th>Word equation</th></tr>
+      <tr><td>Complete combustion of methane</td><td>methane + oxygen &#8594; carbon dioxide + water</td></tr>
+      <tr><td>Incomplete combustion (CO)</td><td>methane + oxygen &#8594; carbon monoxide + water</td></tr>
+      <tr><td>Reduction of copper oxide</td><td>copper oxide + carbon &#8594; copper + carbon dioxide</td></tr>
+      <tr><td>Thermal decomp. of copper carbonate</td><td>copper carbonate &#8594; copper oxide + carbon dioxide</td></tr>
+      <tr><td>Zinc displacing copper</td><td>zinc + copper sulfate &#8594; zinc sulfate + copper</td></tr>
+      <tr><td>Decomp. of hydrogen peroxide</td><td>hydrogen peroxide &#8594; water + oxygen</td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Write word equations for: (1) propane burning completely in oxygen; (2) calcium carbonate being heated.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> propane + oxygen &#8594; carbon dioxide + water<br>
+        <strong>(2)</strong> calcium carbonate &#8594; calcium oxide + carbon dioxide
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L11: Chemical Formulae -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#128300;</span>
+    <span class="spec-num">L11</span>
+    <span class="spec-name">Chemical Formulae</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Formulae use element symbols and subscript numbers to show what's in a substance. Seven elements naturally exist as two-atom pairs — these must always be written with a subscript 2.</p>
+
+    <h3>The Seven Diatomic Elements</h3>
+    <table>
+      <tr><th>Element</th><th>Formula</th><th>Element</th><th>Formula</th></tr>
+      <tr><td>Hydrogen</td><td>H<sub>2</sub></td><td>Chlorine</td><td>Cl<sub>2</sub></td></tr>
+      <tr><td>Nitrogen</td><td>N<sub>2</sub></td><td>Bromine</td><td>Br<sub>2</sub></td></tr>
+      <tr><td>Oxygen</td><td>O<sub>2</sub></td><td>Iodine</td><td>I<sub>2</sub></td></tr>
+      <tr><td>Fluorine</td><td>F<sub>2</sub></td><td></td><td></td></tr>
+    </table>
+    <div class="tip-box"><strong>&#128161; Memory aid:</strong> <strong>H</strong>ave <strong>N</strong>o <strong>F</strong>ear <strong>O</strong>f <strong>I</strong>ce <strong>C</strong>old <strong>B</strong>eer</div>
+
+    <h3>Common Compound Formulae to Know</h3>
+    <table>
+      <tr><th>Compound</th><th>Formula</th><th>Compound</th><th>Formula</th></tr>
+      <tr><td>Water</td><td>H<sub>2</sub>O</td><td>Sodium chloride</td><td>NaCl</td></tr>
+      <tr><td>Carbon dioxide</td><td>CO<sub>2</sub></td><td>Magnesium oxide</td><td>MgO</td></tr>
+      <tr><td>Carbon monoxide</td><td>CO</td><td>Copper(II) oxide</td><td>CuO</td></tr>
+      <tr><td>Methane</td><td>CH<sub>4</sub></td><td>Calcium carbonate</td><td>CaCO<sub>3</sub></td></tr>
+      <tr><td>Ammonia</td><td>NH<sub>3</sub></td><td>Copper(II) sulfate</td><td>CuSO<sub>4</sub></td></tr>
+    </table>
+
+    <h3>Reading a Formula</h3>
+    <table>
+      <tr><th>Formula</th><th>Atoms present</th></tr>
+      <tr><td>H<sub>2</sub>O</td><td>2 H, 1 O</td></tr>
+      <tr><td>CO<sub>2</sub></td><td>1 C, 2 O</td></tr>
+      <tr><td>CaCO<sub>3</sub></td><td>1 Ca, 1 C, 3 O</td></tr>
+      <tr><td>CuSO<sub>4</sub></td><td>1 Cu, 1 S, 4 O</td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>(1) A student writes O for oxygen gas. Why is this wrong? (2) How many atoms of each element are in CaCO<sub>3</sub>?</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> Oxygen is a diatomic element — it must be written as <strong>O<sub>2</sub></strong>. Writing O implies a single free atom, which does not exist under normal conditions.<br>
+        <strong>(2)</strong> 1 Ca, 1 C, 3 O.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L12: Ion Charges -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9883;&#65039;</span>
+    <span class="spec-num">L12</span>
+    <span class="spec-name">Ion Charges and Deducing Formulae</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Ionic compounds are always neutral — positive and negative charges must cancel. The swap-and-drop method uses ion charges to work out the formula automatically.</p>
+
+    <h3>Ion Charges</h3>
+    <table>
+      <tr><th>Positive ions (cations)</th><th>Charge</th><th>Negative ions (anions)</th><th>Charge</th></tr>
+      <tr><td>Sodium Na<sup>+</sup></td><td>+1</td><td>Chloride Cl<sup>&#8722;</sup></td><td>&#8722;1</td></tr>
+      <tr><td>Potassium K<sup>+</sup></td><td>+1</td><td>Oxide O<sup>2&#8722;</sup></td><td>&#8722;2</td></tr>
+      <tr><td>Calcium Ca<sup>2+</sup></td><td>+2</td><td>Sulfate SO<sub>4</sub><sup>2&#8722;</sup></td><td>&#8722;2</td></tr>
+      <tr><td>Magnesium Mg<sup>2+</sup></td><td>+2</td><td>Carbonate CO<sub>3</sub><sup>2&#8722;</sup></td><td>&#8722;2</td></tr>
+      <tr><td>Aluminium Al<sup>3+</sup></td><td>+3</td><td>Hydroxide OH<sup>&#8722;</sup></td><td>&#8722;1</td></tr>
+      <tr><td>Iron(II) Fe<sup>2+</sup></td><td>+2</td><td>Nitrate NO<sub>3</sub><sup>&#8722;</sup></td><td>&#8722;1</td></tr>
+      <tr><td>Iron(III) Fe<sup>3+</sup></td><td>+3</td><td></td><td></td></tr>
+      <tr><td>Copper(II) Cu<sup>2+</sup></td><td>+2</td><td></td><td></td></tr>
+    </table>
+
+    <h3>The Swap-and-Drop Method</h3>
+    <ol class="steps">
+      <li>Write the two ion symbols with their charges</li>
+      <li>Swap the <strong>magnitudes only</strong> (ignore + or &#8722;) across as subscripts</li>
+      <li>Simplify to the smallest whole-number ratio (e.g. Mg<sub>2</sub>O<sub>2</sub> &#8594; MgO)</li>
+      <li>Use <strong>brackets</strong> when a polyatomic ion appears more than once</li>
+    </ol>
+
+    <table>
+      <tr><th>Ions</th><th>Working</th><th>Formula</th></tr>
+      <tr><td>Mg<sup>2+</sup> and Cl<sup>&#8722;</sup></td><td>Swap 2 and 1 &#8594; Mg<sub>1</sub>Cl<sub>2</sub></td><td><strong>MgCl<sub>2</sub></strong></td></tr>
+      <tr><td>Al<sup>3+</sup> and O<sup>2&#8722;</sup></td><td>Swap 3 and 2 &#8594; Al<sub>2</sub>O<sub>3</sub></td><td><strong>Al<sub>2</sub>O<sub>3</sub></strong></td></tr>
+      <tr><td>Na<sup>+</sup> and SO<sub>4</sub><sup>2&#8722;</sup></td><td>Swap 1 and 2 &#8594; Na<sub>2</sub>SO<sub>4</sub></td><td><strong>Na<sub>2</sub>SO<sub>4</sub></strong></td></tr>
+      <tr><td>Ca<sup>2+</sup> and OH<sup>&#8722;</sup></td><td>Swap 2 and 1 &#8594; brackets: OH appears twice</td><td><strong>Ca(OH)<sub>2</sub></strong></td></tr>
+      <tr><td>Mg<sup>2+</sup> and O<sup>2&#8722;</sup></td><td>Mg<sub>2</sub>O<sub>2</sub> &#8594; simplify</td><td><strong>MgO</strong></td></tr>
+    </table>
+
+    <div class="pitfall-box">
+      <strong>&#9888;&#65039; Common mistakes:</strong>
+      <ul style="margin:.3rem 0 0 1.2rem;line-height:1.75">
+        <li>Forgetting to simplify: Mg<sub>2</sub>O<sub>2</sub> must be written <strong>MgO</strong></li>
+        <li>Missing brackets: Ca(OH)<sub>2</sub> not CaOH<sub>2</sub></li>
+        <li>K<sub>2</sub>SO<sub>4</sub> not KSO<sub>4</sub> — two K<sup>+</sup> needed to balance one SO<sub>4</sub><sup>2&#8722;</sup></li>
+      </ul>
+    </div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Use swap-and-drop to write the formulae of: (1) potassium chloride (K<sup>+</sup> and Cl<sup>&#8722;</sup>), (2) iron(III) oxide (Fe<sup>3+</sup> and O<sup>2&#8722;</sup>), (3) calcium hydroxide (Ca<sup>2+</sup> and OH<sup>&#8722;</sup>).</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> KCl<br>
+        <strong>(2)</strong> Fe<sub>2</sub>O<sub>3</sub><br>
+        <strong>(3)</strong> Ca(OH)<sub>2</sub> — brackets needed because OH<sup>&#8722;</sup> appears twice
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L13: Writing Symbol Equations -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#128221;</span>
+    <span class="spec-num">L13</span>
+    <span class="spec-name">Writing Symbol Equations</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Replace every name with its formula. Do this in two stages: get all formulae right first, then balance. Never change a subscript to balance — that changes the substance entirely.</p>
+
+    <table>
+      <tr><th>Stage</th><th>What you do</th></tr>
+      <tr><td><strong>Stage 1</strong></td><td>Replace each name with its correct formula &#8594; unbalanced symbol equation</td></tr>
+      <tr><td><strong>Stage 2</strong></td><td>Add coefficients to balance (next lesson)</td></tr>
+    </table>
+
+    <div class="pitfall-box"><strong>&#9888;&#65039; Formula errors to avoid:</strong> O not O<sub>2</sub> &nbsp;·&nbsp; H not H<sub>2</sub> &nbsp;·&nbsp; CO<sub>3</sub> not CO<sub>2</sub> for carbon dioxide</div>
+
+    <h3>Worked Examples</h3>
+    <p>Methane + oxygen &#8594; carbon dioxide + water</p>
+    <div class="eq-box">CH<sub>4</sub> + O<sub>2</sub> &#8594; CO<sub>2</sub> + H<sub>2</sub>O &nbsp;<em>(unbalanced)</em></div>
+    <p>Copper carbonate &#8594; copper oxide + carbon dioxide (already balanced &#10003;)</p>
+    <div class="eq-box">CuCO<sub>3</sub> &#8594; CuO + CO<sub>2</sub> &#10003;</div>
+    <p>Zinc + copper sulfate &#8594; zinc sulfate + copper (already balanced &#10003;)</p>
+    <div class="eq-box">Zn + CuSO<sub>4</sub> &#8594; ZnSO<sub>4</sub> + Cu &#10003;</div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check</div>
+      <p>Write the unbalanced symbol equation for: (1) magnesium burning in oxygen; (2) hydrogen peroxide decomposing to water and oxygen.</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answer</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> Mg + O<sub>2</sub> &#8594; MgO &nbsp;<em>(unbalanced)</em><br>
+        <strong>(2)</strong> H<sub>2</sub>O<sub>2</sub> &#8594; H<sub>2</sub>O + O<sub>2</sub> &nbsp;<em>(unbalanced)</em>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L14: Balancing Equations -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9878;&#65039;</span>
+    <span class="spec-num">L14</span>
+    <span class="spec-name">Balancing Equations</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">Atoms can't be created or destroyed — so atom counts must match on both sides. Add numbers in front of formulae (coefficients). Never change the subscripts inside a formula.</p>
+
+    <div class="takeaway-box"><strong>&#9878; Conservation of mass:</strong> Total mass of reactants = total mass of products. Atoms are rearranged, not created or destroyed.</div>
+
+    <h3>Rules</h3>
+    <ol class="steps">
+      <li>Write the correct <strong>unbalanced</strong> symbol equation</li>
+      <li>Count atoms of each element on both sides</li>
+      <li>Add <strong>coefficients</strong> in front of formulae to make counts equal</li>
+      <li><strong>Never change subscripts</strong> — H<sub>2</sub>O &#8800; H<sub>2</sub>O<sub>2</sub> (that's a completely different substance)</li>
+      <li>Check by counting atoms again</li>
+    </ol>
+
+    <h3>Worked Example — Combustion of Methane</h3>
+    <div class="eq-box">CH<sub>4</sub> + O<sub>2</sub> &#8594; CO<sub>2</sub> + H<sub>2</sub>O</div>
+    <table>
+      <tr><th>Element</th><th>Left</th><th>Right</th><th>Action</th></tr>
+      <tr><td>C</td><td>1</td><td>1</td><td>&#10003; balanced</td></tr>
+      <tr><td>H</td><td>4</td><td>2</td><td>Put <strong>2</strong> in front of H<sub>2</sub>O</td></tr>
+      <tr><td>O</td><td>2</td><td>2+2=4</td><td>Put <strong>2</strong> in front of O<sub>2</sub></td></tr>
+    </table>
+    <div class="eq-box">CH<sub>4</sub> + 2O<sub>2</sub> &#8594; CO<sub>2</sub> + 2H<sub>2</sub>O &#10003;</div>
+
+    <p>Other balanced equations to know:</p>
+    <div class="eq-box">2Mg + O<sub>2</sub> &#8594; 2MgO &#10003;</div>
+    <div class="eq-box">2H<sub>2</sub>O<sub>2</sub> &#8594; 2H<sub>2</sub>O + O<sub>2</sub> &#10003;</div>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check — Balance these</div>
+      <p>(1) H<sub>2</sub> + O<sub>2</sub> &#8594; H<sub>2</sub>O &nbsp;&nbsp; (2) Na + Cl<sub>2</sub> &#8594; NaCl &nbsp;&nbsp; (3) Fe + O<sub>2</sub> &#8594; Fe<sub>2</sub>O<sub>3</sub> &nbsp;&nbsp; (4) C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> &#8594; CO<sub>2</sub> + H<sub>2</sub>O</p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answers</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> 2H<sub>2</sub> + O<sub>2</sub> &#8594; 2H<sub>2</sub>O<br>
+        <strong>(2)</strong> 2Na + Cl<sub>2</sub> &#8594; 2NaCl<br>
+        <strong>(3)</strong> 4Fe + 3O<sub>2</sub> &#8594; 2Fe<sub>2</sub>O<sub>3</sub><br>
+        <strong>(4)</strong> C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> &#8594; 3CO<sub>2</sub> + 4H<sub>2</sub>O
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- L15: State Symbols -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#128167;</span>
+    <span class="spec-num">L15</span>
+    <span class="spec-name">State Symbols</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">State symbols are added after each formula to show physical state. The most important distinction is (aq) vs (l) — dissolved in water is not the same as liquid.</p>
+
+    <table>
+      <tr><th>Symbol</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td><strong>(s)</strong></td><td>Solid</td><td>Cu(s), CuO(s)</td></tr>
+      <tr><td><strong>(l)</strong></td><td>Pure liquid</td><td>H<sub>2</sub>O(l)</td></tr>
+      <tr><td><strong>(g)</strong></td><td>Gas</td><td>O<sub>2</sub>(g), CO<sub>2</sub>(g)</td></tr>
+      <tr><td><strong>(aq)</strong></td><td>Dissolved in water</td><td>CuSO<sub>4</sub>(aq), NaCl(aq)</td></tr>
+    </table>
+
+    <div class="pitfall-box"><strong>&#9888;&#65039; (aq) does NOT mean liquid.</strong> It means <strong>dissolved in water</strong>. Water itself is H<sub>2</sub>O(l). Metal salts in solution are always (aq) — never (s).</div>
+
+    <p><strong>Decision guide:</strong> dissolved in water &#8594; (aq) &nbsp;·&nbsp; pure liquid &#8594; (l) &nbsp;·&nbsp; gas &#8594; (g) &nbsp;·&nbsp; solid &#8594; (s)</p>
+
+    <h3>Examples</h3>
+    <table>
+      <tr><th>Reaction</th><th>Balanced equation with state symbols</th></tr>
+      <tr><td>Combustion of methane</td><td>CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &#8594; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)</td></tr>
+      <tr><td>Zinc + copper sulfate</td><td>Zn(s) + CuSO<sub>4</sub>(aq) &#8594; ZnSO<sub>4</sub>(aq) + Cu(s)</td></tr>
+      <tr><td>Decomp. of copper carbonate</td><td>CuCO<sub>3</sub>(s) &#8594; CuO(s) + CO<sub>2</sub>(g)</td></tr>
+      <tr><td>Decomp. of hydrogen peroxide</td><td>2H<sub>2</sub>O<sub>2</sub>(aq) &#8594; 2H<sub>2</sub>O(l) + O<sub>2</sub>(g)</td></tr>
+    </table>
+
+    <div class="quick-check">
+      <div class="quick-check-title">&#9989; Quick check — Add state symbols</div>
+      <p>(1) 2Mg( ) + O<sub>2</sub>( ) &#8594; 2MgO( ) &nbsp;<em>— Mg and MgO are solids; O<sub>2</sub> is a gas</em></p>
+      <p>(2) Zn( ) + CuSO<sub>4</sub>( ) &#8594; ZnSO<sub>4</sub>( ) + Cu( ) &nbsp;<em>— Zn and Cu are solid metals; both sulfates are dissolved in water</em></p>
+      <button class="reveal-btn" onclick="toggleAnswer(this)">Show answers</button>
+      <div class="answer-reveal">
+        <strong>(1)</strong> 2Mg<strong>(s)</strong> + O<sub>2</sub><strong>(g)</strong> &#8594; 2MgO<strong>(s)</strong><br>
+        <strong>(2)</strong> Zn<strong>(s)</strong> + CuSO<sub>4</sub><strong>(aq)</strong> &#8594; ZnSO<sub>4</sub><strong>(aq)</strong> + Cu<strong>(s)</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Full worked example -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#127942;</span>
+    <span class="spec-num">All 4 steps</span>
+    <span class="spec-name">Full Worked Example — Combustion of Propane</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <p class="plain-english">This is what the test will ask you to do — pull all four steps together for one reaction.</p>
+    <p><strong>Write the full balanced equation with state symbols for the complete combustion of propane (C<sub>3</sub>H<sub>8</sub>).</strong></p>
+    <ol class="steps">
+      <li><strong>Word equation</strong><div class="eq-box" style="margin-top:.35rem">propane + oxygen &#8594; carbon dioxide + water</div></li>
+      <li><strong>Unbalanced symbol equation</strong><div class="eq-box" style="margin-top:.35rem">C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> &#8594; CO<sub>2</sub> + H<sub>2</sub>O</div></li>
+      <li><strong>Balance</strong>
+        <table style="margin:.45rem 0 .5rem;width:auto">
+          <tr><th>Element</th><th>Left</th><th>Right</th><th>Action</th></tr>
+          <tr><td>C</td><td>3</td><td>1</td><td>Put <strong>3</strong> in front of CO<sub>2</sub></td></tr>
+          <tr><td>H</td><td>8</td><td>2</td><td>Put <strong>4</strong> in front of H<sub>2</sub>O</td></tr>
+          <tr><td>O</td><td>2</td><td>6+4=10</td><td>Put <strong>5</strong> in front of O<sub>2</sub></td></tr>
+        </table>
+        <div class="eq-box">C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> &#8594; 3CO<sub>2</sub> + 4H<sub>2</sub>O &#10003;</div>
+      </li>
+      <li><strong>State symbols</strong> — all gases; water is liquid at standard conditions.<div class="eq-box" style="margin-top:.35rem;font-weight:700">C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) &#8594; 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(l) &#10003;</div></li>
+    </ol>
+  </div>
+</div>
+
+
+<!-- Skills checklist -->
+<div class="spec-card">
+  <div class="spec-header">
+    <span class="sec-icon">&#9989;</span>
+    <span class="spec-num">Both units</span>
+    <span class="spec-name">Skills Checklist — Am I test-ready?</span>
+    <span class="spec-arrow">&#x25BC;</span>
+  </div>
+  <div class="spec-body">
+    <h3>Unit 1 — Chemical Reactions</h3>
+    <ul class="checklist">
+      <li>Write the word equation for complete combustion of any hydrocarbon</li>
+      <li>Name the products of incomplete combustion and explain why they form</li>
+      <li>Describe the tests for CO<sub>2</sub> and H<sub>2</sub>O, including positive results</li>
+      <li>Define oxidation and reduction and identify each in a given reaction</li>
+      <li>Write the word equation for thermal decomposition of any metal carbonate</li>
+      <li>Use the reactivity series to predict whether displacement occurs and write the word equation</li>
+      <li>Give the full definition of a catalyst and its four key properties</li>
+      <li>Describe the glowing splint test and state which gas it detects</li>
+    </ul>
+    <h3>Unit 2 — Representing Reactions</h3>
+    <ul class="checklist">
+      <li>Write correctly formatted word equations (arrow not equals sign; reactants left)</li>
+      <li>Write the formulae of all seven diatomic elements without notes</li>
+      <li>Recall the formulae of common compounds (H<sub>2</sub>O, CO<sub>2</sub>, CO, NaCl, MgO, CuO, CaCO<sub>3</sub>, CuSO<sub>4</sub>)</li>
+      <li>Use swap-and-drop to write the formula of any ionic compound</li>
+      <li>Use brackets correctly when a polyatomic ion appears more than once</li>
+      <li>Convert a word equation to an unbalanced symbol equation</li>
+      <li>Balance an equation using coefficients only — never change subscripts</li>
+      <li>Add correct state symbols and distinguish (aq) from (l)</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <a href="index.html">Chemistry Cracked</a> &nbsp;&middot;&nbsp; Year 9 Chemistry &nbsp;&middot;&nbsp; Chemical Reactions &amp; Representing Reactions &nbsp;&middot;&nbsp; <a href="index.html">Back to home</a>
+</footer>
+
+<script>
+document.querySelectorAll('.spec-header').forEach(function(h) {
+  h.addEventListener('click', function() {
+    var open = this.classList.contains('open');
+    this.classList.toggle('open', !open);
+    this.nextElementSibling.classList.toggle('open', !open);
+  });
+});
+
+function toggleAnswer(btn) {
+  var box = btn.nextElementSibling;
+  var shown = box.classList.contains('show');
+  box.classList.toggle('show', !shown);
+  btn.textContent = shown ? 'Show answer' : 'Hide answer';
+}
+</script>
+
+</body>
+</html>
