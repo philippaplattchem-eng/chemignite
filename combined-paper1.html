@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chemistry Cracked — Combined Science Paper 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pr:#9333ea;--pr-dk:#6d28d9;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--r:14px;--sh:0 2px 10px rgba(147,51,234,.10);--sh2:0 6px 24px rgba(147,51,234,.18);--warn:#7c2d12;--warn-bg:#fff7ed;--warn-bdr:#fdba74}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+
+/* Header */
+.site-header{background:linear-gradient(135deg,#4a1d96,#6d28d9 50%,var(--pr));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.p1-badge{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:.25rem .75rem;font-size:.78rem;font-weight:700;white-space:nowrap}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMDQiPjxwb2x5Z29uIHBvaW50cz0iMzAsMiA1OCwxNyA1OCw0NyAzMCw2MiAyLDQ3IDIsMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwuMDcpIiBzdHJva2Utd2lkdGg9IjEuNCIvPjxwb2x5Z29uIHBvaW50cz0iMCw1NCAyOCw2OSAyOCw5OSAwLDExNCAtMjgsOTkgLTI4LDY5IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjA3KSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjYwLDU0IDg4LDY5IDg4LDk5IDYwLDExNCAzMiw5OSAzMiw2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LC4wNykiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+") center/60px 104px repeat,linear-gradient(135deg,#4a1d96 0%,#6d28d9 45%,#9333ea 80%,#c084fc 100%);color:#fff;padding:3rem 1.5rem 5.5rem;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(192,132,252,.35) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero-icon{display:block;width:54px;height:54px;margin:0 auto .8rem;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.hero h1{font-size:1.95rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero p{font-size:.97rem;opacity:.87;max-width:480px;margin:0 auto;font-weight:600}
+.hero-sub{margin-top:.4rem;font-size:.85rem;opacity:.65;font-weight:400}
+.hero-pills{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem;position:relative;z-index:1}
+.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem .85rem;font-size:.82rem;font-weight:600}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:56px;pointer-events:none}
+
+/* Main layout */
+main{flex:1;max-width:960px;margin:0 auto;padding:0 1.2rem 4rem;width:100%}
+
+/* Alert banner */
+.alert-banner{background:var(--warn-bg);border:1.5px solid var(--warn-bdr);border-radius:var(--r);padding:1rem 1.25rem;margin:1.8rem 0 0;display:flex;align-items:flex-start;gap:.75rem}
+.alert-icon{flex-shrink:0;margin-top:.1rem}
+.alert-text{font-size:.9rem;color:var(--warn);line-height:1.6;font-weight:600}
+.alert-text strong{font-weight:800}
+
+/* Section label */
+.section-label{font-size:.82rem;font-weight:700;color:var(--txm);margin:2rem 0 1rem;letter-spacing:.04em;text-transform:uppercase;padding-left:.2rem}
+
+/* Tier legend */
+.tier-legend{display:flex;gap:.6rem;margin-bottom:1.8rem}
+.tier-leg-item{flex:1;padding:.75rem 1rem;text-align:center;border-radius:var(--r);box-shadow:var(--sh)}
+.tier-leg-item:nth-child(1){background:var(--sp)}
+.tier-leg-item:nth-child(2){background:var(--fl)}
+.tier-leg-item:nth-child(3){background:var(--inf)}
+.tl-name{font-weight:800;font-size:.88rem;color:#fff;margin-bottom:.12rem}
+.tl-desc{font-size:.76rem;color:rgba(210,230,255,.9);font-weight:600}
+
+/* Topic grid */
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-bottom:2.5rem}
+.topic-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;border:1.5px solid var(--bdr)}
+.topic-card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:#b3bcef}
+.tc-top{padding:1.1rem 1.2rem .9rem;flex:1}
+.tc-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.65rem}
+.tc-num{background:var(--pr);color:#fff;font-size:.7rem;font-weight:800;padding:.18rem .55rem;border-radius:6px;letter-spacing:.05em;flex-shrink:0}
+.tc-name{font-weight:800;font-size:.97rem;line-height:1.4;color:var(--tx)}
+.tc-warnings{display:flex;flex-direction:column;gap:.3rem;margin-top:.1rem}
+.tc-warn-item{display:flex;align-items:baseline;gap:.4rem;font-size:.82rem;color:#374151;line-height:1.5}
+.tc-warn-item::before{content:'⚠';font-size:.72rem;flex-shrink:0;color:#f97316}
+.tc-btns{display:flex;gap:.5rem;padding:.9rem 1.1rem 1.1rem}
+.tc-btn{flex:1;display:flex;align-items:center;justify-content:center;padding:.5rem .3rem;border-radius:8px;text-decoration:none;font-weight:800;font-size:.82rem;color:#fff;transition:filter .15s,transform .1s;text-align:center;line-height:1.3}
+.tc-btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.tc-btn.spark{background:var(--sp)}.tc-btn.flame{background:var(--fl)}.tc-btn.inferno{background:var(--inf)}
+
+/* Examiner tips strip */
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2rem}
+.tip-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border:1.5px solid var(--bdr);padding:1rem 1.1rem}
+.tip-topic{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--pr);margin-bottom:.45rem}
+.tip-list{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.tip-list li{font-size:.83rem;color:#374151;line-height:1.55;padding-left:1.1rem;position:relative}
+.tip-list li::before{content:'✓';position:absolute;left:0;color:#059669;font-weight:800;font-size:.78rem}
+
+/* Footer */
+footer{text-align:center;padding:1.4rem;font-size:.78rem;color:var(--txm);border-top:1px solid var(--bdr);background:var(--card);font-weight:600;margin-top:auto}
+footer a{color:var(--pr);text-decoration:none}
+
+/* Full-paper tier launch buttons */
+.paper-tiers{display:flex;gap:1rem;margin-bottom:2.5rem}
+.paper-tier-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem 1rem;border-radius:var(--r);text-decoration:none;color:#fff;font-weight:800;transition:transform .18s,box-shadow .18s;box-shadow:var(--sh2);text-align:center}
+.paper-tier-btn:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.28)}
+.pt-name{font-size:1.18rem;margin-bottom:.2rem}
+.pt-desc{font-size:.8rem;opacity:.88;font-weight:600}
+.pt-count{font-size:.72rem;opacity:.72;margin-top:.18rem}
+.paper-tier-btn.spark{background:linear-gradient(135deg,#4a90d9,var(--sp))}
+.paper-tier-btn.flame{background:linear-gradient(135deg,#1a237e,var(--fl))}
+.paper-tier-btn.inferno{background:linear-gradient(135deg,#060f2e,var(--inf))}
+
+@media(max-width:680px){
+  .topic-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr}
+  .tier-legend{flex-direction:column}
+  .paper-tiers{flex-direction:column}
+  .tc-btns{flex-direction:column}
+  .hero h1{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="home.html" class="back-link">&larr; Home</a>
+  <h1>Combined Science — Paper 1</h1>
+  <span class="p1-badge">Topics 1–5</span>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg class="hero-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="6" width="38" height="42" rx="4" stroke="white" stroke-width="2.4"/>
+      <rect x="14" y="2" width="38" height="42" rx="4" stroke="rgba(255,255,255,.4)" stroke-width="2" fill="none"/>
+      <line x1="15" y1="18" x2="35" y2="18" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="15" y1="25" x2="35" y2="25" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="15" y1="32" x2="27" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <h1>Combined Science: Paper 1</h1>
+    <p>Edexcel 1SC0 — Chemistry topics assessed in Paper 1</p>
+    <p class="hero-sub">Topics 1–5 only &middot; Tiered practice for every topic</p>
+    <div class="hero-pills">
+      <span class="hero-pill">5 topics</span>
+      <span class="hero-pill">3 tiers</span>
+      <span class="hero-pill">Examiner warnings</span>
+      <span class="hero-pill">Instant feedback</span>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f4f6fb"/>
+  </svg>
+</div>
+
+<main>
+
+  <div class="alert-banner">
+    <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <div class="alert-text">
+      <strong>Paper 1 covers Topics 1–5 only.</strong> Topics 6–9 are examined in Paper 2. Paper 1 content is typically taught in Year 10, which means by exam time in Year 11 it is the oldest material in your memory. Students across the board find this paper harder to prepare for because there is more time between learning and being tested. Regular practice of these five topics throughout Year 11 is the most effective fix.
+    </div>
+  </div>
+
+  <div class="section-label">Choose your level</div>
+  <div class="tier-legend">
+    <div class="tier-leg-item">
+      <div class="tl-name">Spark</div>
+      <div class="tl-desc">Recall &amp; basics</div>
+    </div>
+    <div class="tier-leg-item">
+      <div class="tl-name">Flame</div>
+      <div class="tl-desc">Application</div>
+    </div>
+    <div class="tier-leg-item">
+      <div class="tl-name">Inferno</div>
+      <div class="tl-desc">Exam challenge</div>
+    </div>
+  </div>
+
+  <div class="section-label">Full Paper 1 practice — all 5 topics</div>
+  <div class="paper-tiers">
+    <a href="cs-p1-spark.html" class="paper-tier-btn spark">
+      <div class="pt-name">Spark</div>
+      <div class="pt-desc">Recall &amp; recognition</div>
+      <div class="pt-count">15 questions &middot; Topics 1–5</div>
+    </a>
+    <a href="cs-p1-flame.html" class="paper-tier-btn flame">
+      <div class="pt-name">Flame</div>
+      <div class="pt-desc">Application &amp; calculation</div>
+      <div class="pt-count">15 questions &middot; Topics 1–5</div>
+    </a>
+    <a href="cs-p1-inferno.html" class="paper-tier-btn inferno">
+      <div class="pt-name">Inferno</div>
+      <div class="pt-desc">Exam challenge</div>
+      <div class="pt-count">15 questions &middot; Topics 1–5</div>
+    </a>
+  </div>
+
+  <div class="section-label">Practice by topic</div>
+  <div class="topic-grid">
+
+    <div class="topic-card">
+      <div class="tc-top">
+        <div class="tc-header">
+          <span class="tc-num">T1</span>
+          <span class="tc-name">Atomic Structure &amp; the Periodic Table</span>
+        </div>
+        <div class="tc-warnings">
+          <span class="tc-warn-item">Isotope definition needs <em>both</em> halves: same protons AND different neutrons</span>
+          <span class="tc-warn-item">Period vs group: very commonly confused — period = row, group = column</span>
+          <span class="tc-warn-item">Ar need not be a whole number — do not round your weighted mean</span>
+        </div>
+      </div>
+      <div class="tc-btns">
+        <a href="T1-spark.html" class="tc-btn spark">Spark</a>
+        <a href="T1-flame.html" class="tc-btn flame">Flame</a>
+        <a href="T1-inferno.html" class="tc-btn inferno">Inferno</a>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="tc-top">
+        <div class="tc-header">
+          <span class="tc-num">T2</span>
+          <span class="tc-name">Bonding, Structure &amp; Properties of Matter</span>
+        </div>
+        <div class="tc-warnings">
+          <span class="tc-warn-item">Ionic bonding drawn as covalent (shared pair shown instead of electron transfer)</span>
+          <span class="tc-warn-item">Write "ions free to move" — not "free ions"</span>
+          <span class="tc-warn-item">High melting point + conducts when molten = ionic, not covalent</span>
+        </div>
+      </div>
+      <div class="tc-btns">
+        <a href="T2-spark.html" class="tc-btn spark">Spark</a>
+        <a href="T2-flame.html" class="tc-btn flame">Flame</a>
+        <a href="T2-inferno.html" class="tc-btn inferno">Inferno</a>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="tc-top">
+        <div class="tc-header">
+          <span class="tc-num">T3</span>
+          <span class="tc-name">Quantitative Chemistry</span>
+        </div>
+        <div class="tc-warnings">
+          <span class="tc-warn-item">Convert cm³ to dm³ by dividing by 1000 — the single most penalised step</span>
+          <span class="tc-warn-item">Mr of CaCO₃: the subscript 3 multiplies the whole CO₃ group, not just the O</span>
+          <span class="tc-warn-item">Empirical formula: divide mass by Ar — do not multiply</span>
+        </div>
+      </div>
+      <div class="tc-btns">
+        <a href="T3-spark.html" class="tc-btn spark">Spark</a>
+        <a href="T3-flame.html" class="tc-btn flame">Flame</a>
+        <a href="T3-inferno.html" class="tc-btn inferno">Inferno</a>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="tc-top">
+        <div class="tc-header">
+          <span class="tc-num">T4</span>
+          <span class="tc-name">Chemical Changes</span>
+        </div>
+        <div class="tc-warnings">
+          <span class="tc-warn-item">Ammonia formula is NH₃ — not NH₂ or NH₄</span>
+          <span class="tc-warn-item">Hydrogen: lit splint, squeaky pop. Oxygen: glowing splint relights</span>
+          <span class="tc-warn-item">Sulfate test: acidify with HCl first, then add barium chloride</span>
+          <span class="tc-warn-item">Name the reaction "neutralisation" — do not just describe it</span>
+        </div>
+      </div>
+      <div class="tc-btns">
+        <a href="T4-spark.html" class="tc-btn spark">Spark</a>
+        <a href="T4-flame.html" class="tc-btn flame">Flame</a>
+        <a href="T4-inferno.html" class="tc-btn inferno">Inferno</a>
+      </div>
+    </div>
+
+    <div class="topic-card" style="grid-column:1/-1">
+      <div class="tc-top">
+        <div class="tc-header">
+          <span class="tc-num">T5</span>
+          <span class="tc-name">Energy Changes</span>
+        </div>
+        <div class="tc-warnings">
+          <span class="tc-warn-item">Activation energy arrow: from reactant level to peak — not from product level</span>
+          <span class="tc-warn-item">Bond breaking is endothermic; bond making is exothermic — do not reverse these</span>
+          <span class="tc-warn-item">Catalyst must mention "lower activation energy" — "speeds up the reaction" alone is not enough</span>
+          <span class="tc-warn-item">"Energy taken in → exothermic" is directly contradictory — check your label matches your explanation</span>
+        </div>
+      </div>
+      <div class="tc-btns">
+        <a href="T5-spark.html" class="tc-btn spark">Spark</a>
+        <a href="T5-flame.html" class="tc-btn flame">Flame</a>
+        <a href="T5-inferno.html" class="tc-btn inferno">Inferno</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Examiner must-knows — by topic</div>
+  <div class="tips-grid">
+
+    <div class="tip-card">
+      <div class="tip-topic">Topic 1: Atomic Structure</div>
+      <ul class="tip-list">
+        <li>Isotope = same element (same protons) + different neutrons. Both halves must appear in your answer.</li>
+        <li>Period = horizontal row. Group = vertical column. These are not interchangeable.</li>
+        <li>For an ion such as X²⁻ with 54 electrons: subtract the charge to find protons. 54 − 2 = 52 protons.</li>
+        <li>Relative atomic mass is a weighted mean and will not always be a whole number — do not round it.</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-topic">Topic 2: Bonding</div>
+      <ul class="tip-list">
+        <li>Ionic bonding = electron transfer (not sharing). Draw a dot-and-cross showing one atom gaining and one losing.</li>
+        <li>An ionic lattice contains "alternating positive and negative ions." Use the word "lattice."</li>
+        <li>Ionic compounds conduct when molten or dissolved because ions are free to move.</li>
+        <li>CO₂ has a low boiling point because it has weak intermolecular forces, despite strong covalent bonds.</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-topic">Topic 3: Quantitative Chemistry</div>
+      <ul class="tip-list">
+        <li>To convert cm³ to dm³: divide by 1000. This step is the most frequently penalised on Paper 1.</li>
+        <li>Mr of CaCO₃ = 40 + 12 + (3 × 16) = 100. The subscript 3 multiplies the whole CO₃.</li>
+        <li>Conservation of mass: if mass decreases, a gas was produced and escaped the open flask.</li>
+        <li>Empirical formula: divide each mass by its Ar, then find the simplest whole-number ratio.</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-topic">Topic 4: Chemical Changes</div>
+      <ul class="tip-list">
+        <li>Ammonia = NH₃. Three hydrogen atoms, not two or four.</li>
+        <li>Hydrogen gas: hold a lit splint to the mouth of the tube — squeaky pop. Oxygen: glowing splint relights.</li>
+        <li>Testing for sulfates: add dilute HCl to remove carbonates, then add BaCl₂ solution. White precipitate = sulfate.</li>
+        <li>Phenolphthalein: colourless in acid, pink/magenta in alkali.</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-topic">Topic 5: Energy Changes</div>
+      <ul class="tip-list">
+        <li>Activation energy arrow starts at the reactant energy level and ends at the peak of the curve.</li>
+        <li>Bond breaking requires energy (endothermic). Bond making releases energy (exothermic).</li>
+        <li>A catalyst lowers the activation energy — providing an alternative reaction pathway.</li>
+        <li>If overall energy released (bonds made) &gt; energy absorbed (bonds broken), the reaction is exothermic.</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-topic">Quick-check: 5 easy marks to stop losing</div>
+      <ul class="tip-list">
+        <li>Write the unit after every calculation answer — cm³, dm³, kJ/mol, g/mol.</li>
+        <li>Re-read the question after writing your answer — check command word and mark allocation.</li>
+        <li>Name reactions and processes: "neutralisation," "electrolysis," "precipitation."</li>
+        <li>Show all calculation steps — method marks are awarded even if the final answer is wrong.</li>
+        <li>Check rounding: if the question says "1 decimal place," give 1 decimal place.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <a href="home.html">Chemistry Cracked</a> &middot; Edexcel Combined Science (1SC0) &middot; Paper 1 Chemistry
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CS Paper 1 Flame | Combined Science Chemistry</title>
+<style>:root{--pr:#9333ea;--pr-dk:#283593;--sp:#5b9bd5;--fl:#1e5fb4;--inf:#0d3575;--bg:#f4f6fb;--card:#fff;--tx:#1c1f3a;--txm:#6b7280;--bdr:#dde1f0;--cok:#e8f5e9;--cob:#2e7d32;--wng:#ffebee;--wnb:#c62828;--r:14px;--sh:0 2px 10px rgba(147,51,234,.10);--sh2:0 6px 24px rgba(147,51,234,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;min-height:100vh}
+.site-header{background:linear-gradient(135deg,#1a237e,#283593 50%,var(--fl));color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.site-header h1{font-size:1rem;font-weight:600;flex:1}
+.back-link{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;white-space:nowrap;border:1px solid rgba(255,255,255,.35);padding:.25rem .7rem;border-radius:20px;transition:background .15s}
+.back-link:hover{background:rgba(255,255,255,.15);color:#fff}
+.tier-badge{font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;white-space:nowrap;color:#fff;letter-spacing:.03em}
+.tier-badge.flame{background:var(--fl)}
+main{max-width:820px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.quiz-meta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);color:var(--txm);font-size:.87rem}
+.score-banner{background:linear-gradient(135deg,#1a237e,#283593 50%,var(--fl));color:#fff;border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.5rem;text-align:center;display:none;box-shadow:var(--sh2)}
+.score-banner h2{font-size:2rem;font-weight:800}.score-banner p{opacity:.88;margin-top:.3rem;font-size:.97rem}
+.question-card{background:var(--card);border:2px solid var(--bdr);border-radius:var(--r);padding:1.2rem 1.3rem;margin-bottom:1rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.question-card.correct{border-color:var(--cob);background:var(--cok);box-shadow:none}
+.question-card.wrong{border-color:var(--wnb);background:var(--wng);box-shadow:none}
+.q-header{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.q-num{background:var(--fl);color:#fff;font-weight:700;font-size:.72rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:.12rem}
+.q-stem{font-size:.97rem;line-height:1.6}
+.options{display:flex;flex-direction:column;gap:.35rem;margin-left:2.6rem}
+.opt-lbl{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;padding:.4rem .6rem;border-radius:8px;transition:background .12s;font-size:.91rem;border:1px solid transparent}
+.opt-lbl:hover{background:#f0f2ff;border-color:var(--bdr)}
+.opt-lbl input{margin-top:.22rem;flex-shrink:0;accent-color:var(--fl)}
+.opt-lbl.hl-ok{background:var(--cok);border-color:var(--cob);font-weight:600;color:var(--cob)}
+.opt-lbl.hl-bad{background:var(--wng);border-color:var(--wnb);color:var(--wnb)}
+.res-icon{display:none;font-size:.93rem;font-weight:700;margin:.5rem 0 0 2.6rem;padding:.25rem .6rem;border-radius:6px}
+.res-ok{color:var(--cob);background:#d4edda}.res-bad{color:var(--wnb);background:#fde8e8}
+.explain-box{display:none;margin:.7rem 0 0 2.6rem;padding:.7rem 1rem;background:#e8eaf6;border-left:4px solid var(--fl);border-radius:0 8px 8px 0;font-size:.87rem;line-height:1.65;color:#374151}
+.explain-lbl{font-weight:700;color:var(--fl);margin-bottom:.2rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.submit-area{margin-top:2rem;text-align:center}
+.submit-btn{background:linear-gradient(135deg,#1a237e,#283593 50%,var(--fl));color:#fff;border:none;padding:.85rem 2.8rem;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(30,95,180,.35);transition:transform .15s,box-shadow .15s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,95,180,.45)}
+.submit-btn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+@media(max-width:480px){.site-header h1{font-size:.88rem}.options{margin-left:1.5rem}.explain-box{margin-left:1.5rem}}</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a href="combined-paper1.html" class="back-link">&larr; Paper 1 Hub</a>
+  <h1>Combined Science — Paper 1 (Topics 1–5)</h1>
+  <span class="tier-badge flame">Flame</span>
+</header>
+<main>
+  <div class="quiz-meta">
+    <span>15 questions &middot; Topics 1–5</span>
+    <span>Flame: Application</span>
+  </div>
+  <div id="score-banner" class="score-banner"></div>
+  <div id="questions"></div>
+  <div class="submit-area">
+    <button id="submit-btn" class="submit-btn">Submit All Answers</button>
+  </div>
+</main>
+<script>
+const QUESTIONS=[
+{"stem":"Chlorine exists as two isotopes: ³⁵Cl (75% abundance) and ³⁷Cl (25% abundance). Calculate the relative atomic mass of chlorine.","A":"36.0","B":"35.5","C":"35.0","D":"37.0","correct":"B","explain":"Ar = (75 × 35 + 25 × 37) ÷ 100 = (2625 + 925) ÷ 100 = 3550 ÷ 100 = 35.5. The Ar is a weighted average. Because ³⁵Cl is far more abundant (75%), the average sits much closer to 35 than to 37. Common errors: taking a simple unweighted average — (35 + 37) ÷ 2 = 36.0 — which ignores the different abundances; rounding to a whole number (the examiner reports state Ar need not be a whole number and that rounding loses the mark); forgetting to divide by 100 at the end."},
+{"stem":"An ion has the symbol X²⁻ and contains 18 electrons. How many protons does it have?","A":"20","B":"18","C":"16","D":"8","correct":"C","explain":"A 2− ion has gained 2 extra electrons compared with the neutral atom. Protons = electrons − 2 = 18 − 2 = 16. The element with 16 protons is sulfur (S); S²⁻ has 18 electrons. Common errors: choosing B (18) — ignoring the ionic charge entirely and assuming electrons = protons (the most common error, flagged in examiner reports); choosing A (20) — adding the charge instead of subtracting, treating the 2− charge as 'extra protons.'"},
+{"stem":"A student says: 'Isotopes of the same element react in exactly the same way.' Is this correct?","A":"No — isotopes react at different rates because heavier isotopes have more neutrons which affect bonding","B":"Yes — isotopes have the same number and arrangement of electrons, which determines chemical reactivity","C":"No — the heavier isotope always reacts more slowly because it is harder to move","D":"Yes, but only for elements with atomic number below 20","correct":"B","explain":"Chemical properties depend entirely on the number and arrangement of outer electrons. Since isotopes have the same number of protons (and electrons in a neutral atom), they have identical electronic configurations and identical chemical properties. Neutrons carry no charge and play no role in bonding. Common errors: believing heavier isotopes react more slowly or differently — isotopes may differ in physical properties (density, rate of diffusion) but not chemical properties; confusing chemical and physical properties."},
+{"stem":"A substance has a melting point of 1000°C and conducts electricity only when molten, not as a solid. Which type of bonding does it have?","A":"Simple molecular","B":"Giant covalent","C":"Metallic","D":"Ionic","correct":"D","explain":"High melting point → giant structure. Conducts only when molten (not as a solid) → ionic. Ions are fixed in the solid lattice; when melted, ions are free to move and carry charge. Common errors: choosing B (giant covalent) — giant covalent substances have very high melting points but do not conduct in any state; choosing C (metallic) — metals conduct as solids because delocalised electrons are free even in the solid state; choosing A (simple molecular) — low melting point rules this out immediately."},
+{"stem":"Which of the following best describes the structure of sodium chloride?","A":"Individual NaCl molecules held together by weak intermolecular forces","B":"A giant lattice of alternating Na⁺ and Cl⁻ ions held by electrostatic attraction","C":"Sodium and chlorine atoms bonded together in layers","D":"Positive sodium ions surrounded by a sea of delocalised electrons","correct":"B","explain":"Sodium chloride has a giant ionic lattice — millions of Na⁺ and Cl⁻ ions arranged in a regular 3D pattern with each ion surrounded by six of the opposite charge. There are no individual NaCl molecules. Common errors: choosing A — there are no NaCl molecules; writing 'lattice' without 'alternating' — the mark scheme typically requires both; choosing D — this describes metallic bonding, not ionic bonding."},
+{"stem":"Diamond has a very high melting point but iodine (I₂) has a very low boiling point. Both contain only covalent bonds. Why are their melting/boiling points so different?","A":"Diamond has stronger covalent bonds within each carbon atom than iodine has within each I₂ molecule","B":"Diamond has a giant covalent lattice — all bonds must be broken to melt it; iodine is simple molecular — only weak intermolecular forces need to be overcome","C":"Iodine is a non-metal and non-metals always have lower melting points than carbon","D":"Diamond is denser than iodine so needs more energy to separate","correct":"B","explain":"Structure determines properties. Diamond: every C is bonded to four others in a giant lattice — millions of strong covalent bonds must all be broken to melt it. Iodine: I₂ molecules are held to each other only by weak London dispersion forces. On boiling, only these weak intermolecular forces are overcome; the strong I−I bond within each molecule is not broken. Common errors: choosing A — comparing bond strengths within molecules misses the point; the key distinction is the type of structure (giant covalent vs simple molecular); saying 'the covalent bonds in iodine are broken on boiling.'"},
+{"stem":"Calcium carbonate decomposes on heating: CaCO₃ → CaO + CO₂. A student starts with 10.0 g of calcium carbonate. After heating, 5.6 g of solid remains. What mass of carbon dioxide was produced?","A":"5.6 g","B":"10.0 g","C":"4.4 g","D":"15.6 g","correct":"C","explain":"Conservation of mass: mass in = mass out. Mass of CO₂ = starting mass − remaining solid mass = 10.0 − 5.6 = 4.4 g. The CO₂ escaped as a gas — it is not destroyed. Common errors: choosing A (5.6 g) — giving the mass of the remaining solid (CaO) rather than the mass of gas produced; choosing D (15.6 g) — adding instead of subtracting; describing 'mass was lost' without calculating the actual mass of CO₂."},
+{"stem":"Calculate the number of moles in 36 g of water, H₂O. (H = 1, O = 16)","A":"3 mol","B":"18 mol","C":"2 mol","D":"1 mol","correct":"C","explain":"Mr(H₂O) = (2 × 1) + 16 = 18. Moles = mass ÷ Mr = 36 ÷ 18 = 2 mol. Always calculate Mr before dividing. Common errors: choosing D (1 mol) — correctly finding Mr = 18 but then dividing 18 ÷ 18 = 1 instead of 36 ÷ 18 = 2; calculating Mr as 17 — forgetting there are 2 hydrogen atoms and using 1 + 16 = 17 instead of 2 + 16 = 18."},
+{"stem":"A student dissolves 5.85 g of sodium chloride in water to make 500 cm³ of solution. What is the concentration in mol/dm³? (Na = 23, Cl = 35.5)","A":"5.85 mol/dm³","B":"0.1 mol/dm³","C":"0.2 mol/dm³","D":"11.7 mol/dm³","correct":"C","explain":"Mr(NaCl) = 23 + 35.5 = 58.5. Moles = 5.85 ÷ 58.5 = 0.1 mol. Volume = 500 cm³ ÷ 1000 = 0.5 dm³. Concentration = 0.1 ÷ 0.5 = 0.2 mol/dm³. Common errors: choosing B (0.1 mol/dm³) — finding the correct moles but forgetting to convert 500 cm³ to 0.5 dm³, so dividing by 500 rather than 0.5; using concentration = moles × volume instead of moles ÷ volume; not converting cm³ to dm³ at all."},
+{"stem":"During the electrolysis of copper(II) sulfate solution using inert (graphite) electrodes, which product forms at the cathode?","A":"Oxygen gas","B":"Sulfur","C":"Copper metal","D":"Hydrogen gas","correct":"C","explain":"The cathode is the negative electrode. Positive Cu²⁺ ions are attracted to the cathode and gain electrons (are reduced) to form copper metal: Cu²⁺ + 2e⁻ → Cu. Oxygen forms at the anode. Common errors: choosing D (hydrogen) — hydrogen forms at the cathode when using a dilute solution without a transition metal ion; in copper sulfate, Cu²⁺ ions are preferentially discharged over H⁺ ions; choosing A (oxygen) — oxygen forms at the anode (positive electrode), not the cathode; confusing anode and cathode."},
+{"stem":"A student is adding dilute hydrochloric acid drop by drop to an alkali. They test the solution and notice the litmus paper turns purple. What does this indicate?","A":"The solution is strongly acidic — more alkali should be added","B":"The solution is exactly neutral — the acid has neutralised the alkali","C":"The solution is still strongly alkaline","D":"Hydrogen gas is being produced","correct":"B","explain":"Litmus is red in acid, blue in alkali, and purple at neutral pH 7. Purple litmus shows the neutralisation point has been reached. Common errors: choosing C — students sometimes believe blue litmus = alkali and miss the fact that the colour has changed to purple, which indicates neutral; describing the process correctly but failing to name it 'neutralisation'; choosing D — hydrogen gas is produced when an acid reacts with a metal, not in acid-alkali neutralisation."},
+{"stem":"A student tests a solution for sulfate ions by adding barium chloride solution. A white precipitate forms. However, they forgot to add dilute hydrochloric acid first. Why is this a problem?","A":"Barium chloride will not react with sulfates unless acid is present to activate it","B":"The barium chloride is neutralised by the sulfate, making the result invalid","C":"Carbonate ions also produce a white precipitate with barium chloride — adding HCl first removes carbonates so the white precipitate confirms sulfate only","D":"Without acid, the precipitate will dissolve back into solution immediately","correct":"C","explain":"Carbonate ions (CO₃²⁻) also form a white precipitate with barium chloride (BaCO₃). Acidifying with dilute HCl first removes carbonate ions: CO₃²⁻ + 2H⁺ → H₂O + CO₂. A white precipitate after acidification then confirms sulfate ions only. Common errors: choosing A — barium chloride reacts with sulfate ions without needing acid; the acid removes the potential interferent; simply stating the test is 'incorrect' without explaining the specific reason (carbonate also gives a white precipitate with BaCl₂)."},
+{"stem":"On a reaction profile diagram for an exothermic reaction, where does the arrow for activation energy start and end?","A":"From the product energy level up to the peak of the curve","B":"From the reactant energy level up to the peak of the curve","C":"From the reactant energy level down to the product energy level","D":"From the peak of the curve down to the product energy level","correct":"B","explain":"Activation energy is the minimum energy reactants must have to reach the transition state (top of the energy hill). The Eₐ arrow starts at the reactant energy level and ends at the peak. Common errors: choosing A — drawing the Eₐ arrow from the product level to the peak (specifically flagged in the November 2021 examiner report); this gives the activation energy of the reverse, endothermic reaction; choosing C — this describes the overall energy change ΔH, not the activation energy."},
+{"stem":"The reaction H₂(g) + Cl₂(g) → 2HCl(g) uses these bond energies: H–H = 436 kJ/mol · Cl–Cl = 243 kJ/mol · H–Cl = 432 kJ/mol. Calculate the overall energy change.","A":"ΔH = +185 kJ/mol — endothermic","B":"ΔH = −185 kJ/mol — exothermic","C":"ΔH = −243 kJ/mol — exothermic","D":"ΔH = +679 kJ/mol — endothermic","correct":"B","explain":"Energy in (bonds broken): H–H + Cl–Cl = 436 + 243 = 679 kJ/mol. Energy out (bonds made): 2 × H–Cl = 2 × 432 = 864 kJ/mol. ΔH = 679 − 864 = −185 kJ/mol. Negative = exothermic. Common errors: choosing A (+185) — getting the subtraction the wrong way round (bonds made − bonds broken), or getting the correct magnitude but writing the wrong sign; only counting one H–Cl bond made instead of two — the equation produces 2HCl; choosing D — using only the bonds-broken total (679) as the answer without subtracting."},
+{"stem":"A hand warmer gets warm during use. A student writes: 'energy was taken in by the reaction, so it is exothermic.' Identify the error.","A":"The student is correct — taking in heat from the environment is what makes the hand warmer warm","B":"'Energy taken in' describes an endothermic process, not exothermic — if the hand warmer gets warm, energy is being released to the surroundings, making the reaction exothermic","C":"The student is correct — all chemical reactions release energy to the surroundings","D":"The hand warmer is endothermic, so the student has described it correctly","correct":"B","explain":"An exothermic reaction releases energy to the surroundings → the surroundings get warmer. An endothermic reaction absorbs energy from the surroundings → the surroundings get cooler. A hand warmer releasing heat = exothermic. 'Energy taken in → exothermic' is a directly contradictory statement. Common errors: accepting the student's answer as correct — the contradiction appears embedded in the sentence and students who read quickly may miss it; knowing the definitions separately but failing to spot when both halves of the student's answer contradict each other."}
+];
+function renderQuiz(){
+  var c=document.getElementById('questions');
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var div=document.createElement('div');
+    div.className='question-card';div.id='qcard-'+n;
+    var opts=['A','B','C','D'].map(function(l){
+      return '<label class="opt-lbl" id="opt-'+n+'-'+l+'"><input type="radio" name="q'+n+'" value="'+l+'"> <span><strong>'+l+'.</strong> '+q[l]+'</span></label>';
+    }).join('');
+    div.innerHTML='<div class="q-header"><span class="q-num">Q'+n+'</span><span class="q-stem">'+q.stem+'</span></div>'
+      +'<div class="options">'+opts+'</div>'
+      +'<div class="res-icon" id="res-'+n+'"></div>'
+      +'<div class="explain-box" id="ex-'+n+'"><div class="explain-lbl">Explanation</div>'+q.explain+'</div>';
+    c.appendChild(div);
+  });
+}
+function submitQuiz(){
+  var unanswered=[];
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    if(!document.querySelector('input[name="q'+n+'"]:checked'))unanswered.push(n);
+  });
+  if(unanswered.length>0&&!confirm(unanswered.length+' question(s) not answered. Submit anyway?'))return;
+  var score=0,total=QUESTIONS.length;
+  QUESTIONS.forEach(function(q,idx){
+    var n=idx+1;
+    var sel=document.querySelector('input[name="q'+n+'"]:checked');
+    var card=document.getElementById('qcard-'+n);
+    var res=document.getElementById('res-'+n);
+    var ex=document.getElementById('ex-'+n);
+    ['A','B','C','D'].forEach(function(l){
+      var lbl=document.getElementById('opt-'+n+'-'+l);
+      lbl.style.pointerEvents='none';
+      if(l===q.correct)lbl.classList.add('hl-ok');
+      else if(sel&&sel.value===l)lbl.classList.add('hl-bad');
+    });
+    if(sel&&sel.value===q.correct){score++;card.classList.add('correct');res.className='res-icon res-ok';res.textContent='✓ Correct';res.style.display='inline-block';}
+    else{card.classList.add('wrong');res.className='res-icon res-bad';res.textContent=sel?'✗ Incorrect':'— Not answered';res.style.display='inline-block';}
+    ex.style.display='block';
+  });
+  var banner=document.getElementById('score-banner');
+  var pct=Math.round(score/total*100);
+  banner.innerHTML='<h2>'+score+' / '+total+'</h2><p>'+pct+'% &mdash; '+
+    (pct>=80?'Excellent application skills!':pct>=60?'Good — review the questions you missed.':'Keep working — read the explanations carefully.')+'</p>';
+  banner.style.display='block';
+  document.getElementById('submit-btn').disabled=true;
+  banner.scrollIntoView({behavior:'smooth',block:'center'});
+}
+renderQuiz();
+document.getElementById('submit-btn').addEventListener('click',submitQuiz);
+</script>
+</body>
+</html>
